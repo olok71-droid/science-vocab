@@ -283,6 +283,7 @@
   <button class="tab-btn active" onclick="switchTab('vocab')">📖 단어장</button>
   <button class="tab-btn" onclick="switchTab('notes')">📝 핵심노트</button>
   <button class="tab-btn" onclick="switchTab('quiz')">✅ 퀴즈</button>
+  <button class="tab-btn" onclick="switchTab('spelling')">✏️ 단어시험</button>
 </div>
 
 <!-- ════════════════════════════════
@@ -563,138 +564,295 @@
 ════════════════════════════════ -->
 <div id="tab-notes" class="tab-content">
 
-  <!-- 반응식 -->
+  <!-- 1. 호흡이란? -->
   <div class="note-section">
-    <div class="note-section-title">⚗️ Key Equations 핵심 반응식</div>
-    <div class="eq-box">
-      <div style="font-size:12px;color:var(--green);margin-bottom:4px;">🌿 Aerobic 유산소</div>
-      <div class="eq-text">Glucose <span class="eq-plus">+</span> Oxygen <span class="eq-arrow">→</span> CO₂ <span class="eq-plus">+</span> Water <span class="eq-plus">+</span> Energy</div>
+    <div class="note-section-title">💡 1. Respiration vs Breathing 호흡 vs 숨쉬기</div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:200px;background:rgba(79,195,247,0.08);border-radius:12px;padding:14px;border-left:3px solid var(--accent);">
+        <div style="font-weight:800;color:var(--accent);font-size:14px;margin-bottom:8px;">🫁 Breathing 숨쉬기</div>
+        <div style="font-size:13px;color:#c5dff0;line-height:1.7;">공기를 <strong>폐 안으로 들이쉬고 내쉬는</strong> 물리적 움직임이에요.<br>횡격막(diaphragm)과 갈비뼈 근육이 움직여서 일어나요.</div>
+        <div style="margin-top:8px;font-size:12px;color:var(--muted);">→ Physical movement of air in and out of lungs</div>
+      </div>
+      <div style="flex:1;min-width:200px;background:rgba(105,240,174,0.08);border-radius:12px;padding:14px;border-left:3px solid var(--green);">
+        <div style="font-weight:800;color:var(--green);font-size:14px;margin-bottom:8px;">⚡ Respiration 세포호흡</div>
+        <div style="font-size:13px;color:#c5dff0;line-height:1.7;"><strong>세포 안에서</strong> 포도당을 분해해 <strong>에너지를 만드는</strong> 화학 반응이에요.<br>미토콘드리아(mitochondria)에서 일어나요.</div>
+        <div style="margin-top:8px;font-size:12px;color:var(--muted);">→ Chemical process releasing energy in cells</div>
+      </div>
     </div>
-    <div class="eq-box">
-      <div style="font-size:12px;color:var(--pink);margin-bottom:4px;">⚡ Anaerobic 무산소</div>
-      <div class="eq-text">Glucose <span class="eq-arrow">→</span> Lactic acid <span class="eq-plus">+</span> Energy</div>
-    </div>
-    <div style="margin-top:10px;font-size:12px;color:var(--muted);text-align:center;">
-      Haemoglobin <span class="eq-plus">+</span> Oxygen <span class="eq-arrow">→</span> Oxyhaemoglobin
+    <div style="margin-top:12px;background:rgba(255,215,64,0.08);border-radius:10px;padding:12px;border:1px solid rgba(255,215,64,0.2);font-size:13px;color:#ffd740;text-align:center;font-weight:700;">
+      ⚠️ 시험 주의! 호흡(Respiration)은 숨쉬기(Breathing)가 아니에요!
     </div>
   </div>
 
-  <!-- 유산소 vs 무산소 비교 -->
+  <!-- 2. 호흡기계 -->
   <div class="note-section">
-    <div class="note-section-title">⚖️ Aerobic vs Anaerobic 비교</div>
+    <div class="note-section-title">🫁 2. The Respiratory System 호흡기계</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;">
+      <!-- 호흡기 SVG 그림 -->
+      <svg viewBox="0 0 200 280" style="width:170px;flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
+        <rect width="200" height="280" fill="#1a2535" rx="12"/>
+        <!-- 코/입 -->
+        <ellipse cx="100" cy="24" rx="16" ry="9" fill="#2a3f5a" stroke="#4fc3f7" stroke-width="1.5"/>
+        <text x="100" y="28" text-anchor="middle" fill="#4fc3f7" font-size="7" font-weight="700">nose/mouth</text>
+        <!-- 기관 -->
+        <rect x="93" y="33" width="14" height="40" rx="7" fill="#2a4a6a" stroke="#4fc3f7" stroke-width="1.5"/>
+        <text x="140" y="52" fill="#4fc3f7" font-size="8" font-weight="700">Trachea</text>
+        <text x="140" y="62" fill="#7fa8c9" font-size="7">기관</text>
+        <line x1="135" y1="53" x2="110" y2="53" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="2"/>
+        <!-- 기관지 좌 -->
+        <path d="M93 73 Q70 80 55 90" fill="none" stroke="#4fc3f7" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- 기관지 우 -->
+        <path d="M107 73 Q130 80 145 90" fill="none" stroke="#4fc3f7" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="10" y="88" fill="#4fc3f7" font-size="7" font-weight="700">Bronchi</text>
+        <text x="10" y="97" fill="#7fa8c9" font-size="6">기관지</text>
+        <!-- 왼쪽 폐 -->
+        <ellipse cx="58" cy="150" rx="42" ry="65" fill="#1e3d5a" stroke="#4fc3f7" stroke-width="1.5" opacity="0.9"/>
+        <!-- 오른쪽 폐 -->
+        <ellipse cx="142" cy="150" rx="42" ry="65" fill="#1e3d5a" stroke="#4fc3f7" stroke-width="1.5" opacity="0.9"/>
+        <!-- 폐 라벨 -->
+        <text x="58" y="128" text-anchor="middle" fill="#4fc3f7" font-size="8" font-weight="700">Lung</text>
+        <text x="142" y="128" text-anchor="middle" fill="#4fc3f7" font-size="8" font-weight="700">Lung</text>
+        <!-- 폐포 표시 -->
+        <circle cx="48" cy="155" r="8" fill="#0f1923" stroke="#69f0ae" stroke-width="1.5"/>
+        <circle cx="63" cy="165" r="8" fill="#0f1923" stroke="#69f0ae" stroke-width="1.5"/>
+        <circle cx="55" cy="172" r="7" fill="#0f1923" stroke="#69f0ae" stroke-width="1.5"/>
+        <text x="58" y="195" text-anchor="middle" fill="#69f0ae" font-size="7" font-weight="700">Alveoli 폐포</text>
+        <!-- 횡격막 -->
+        <path d="M15 228 Q100 245 185 228" fill="none" stroke="#ffd740" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="100" y="248" text-anchor="middle" fill="#ffd740" font-size="8" font-weight="700">Diaphragm 횡격막</text>
+        <!-- 산소 화살표 -->
+        <text x="100" y="108" text-anchor="middle" fill="#69f0ae" font-size="9" font-weight="800">O₂ ↓ in</text>
+        <text x="100" y="120" text-anchor="middle" fill="#ff80ab" font-size="9" font-weight="800">CO₂ ↑ out</text>
+      </svg>
+      <!-- 설명 -->
+      <div style="flex:1;min-width:180px;display:flex;flex-direction:column;gap:10px;">
+        <div style="background:rgba(79,195,247,0.08);border-radius:10px;padding:12px;border-left:3px solid #4fc3f7;">
+          <div style="font-weight:800;color:#4fc3f7;margin-bottom:4px;">🔵 Trachea 기관</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">코와 입에서 폐까지 공기가 지나가는 관이에요. 연골(cartilage)로 둘러싸여 있어서 구멍이 막히지 않아요.</div>
+        </div>
+        <div style="background:rgba(79,195,247,0.08);border-radius:10px;padding:12px;border-left:3px solid #4fc3f7;">
+          <div style="font-weight:800;color:#4fc3f7;margin-bottom:4px;">🔵 Bronchi 기관지 → Bronchioles 세기관지</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">기관이 두 갈래로 갈라져 각 폐로 이어지는 관이에요. 점점 작아져서 세기관지가 돼요.</div>
+        </div>
+        <div style="background:rgba(105,240,174,0.08);border-radius:10px;padding:12px;border-left:3px solid #69f0ae;">
+          <div style="font-weight:800;color:#69f0ae;margin-bottom:4px;">🟢 Alveoli 폐포 ⭐ 핵심!</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">폐 안에 있는 아주 작은 공기 주머니예요. 여기서 <strong>기체 교환(gas exchange)</strong>이 일어나요.<br><br>
+          ✅ 얇은 벽 (thin walls) → 기체가 빨리 통과<br>
+          ✅ 넓은 표면적 (large surface area) → 교환 효율 ↑<br>
+          ✅ 모세혈관으로 둘러싸임 → 혈액과 가까움</div>
+        </div>
+        <div style="background:rgba(255,215,64,0.08);border-radius:10px;padding:12px;border-left:3px solid #ffd740;">
+          <div style="font-weight:800;color:#ffd740;margin-bottom:4px;">🟡 Diaphragm 횡격막</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">폐 바로 아래 있는 돔 모양의 근육이에요. 수축하면 납작해져서 폐가 커지고 공기가 들어와요.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 흡기 vs 호기 -->
+  <div class="note-section">
+    <div class="note-section-title">💨 3. Inhaling vs Exhaling 숨 들이쉬기 vs 내쉬기</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:180px;background:rgba(105,240,174,0.07);border-radius:12px;padding:14px;border:1px solid rgba(105,240,174,0.2);">
+        <div style="font-weight:800;color:#69f0ae;font-size:14px;margin-bottom:10px;">😮‍💨 Inhale 들이쉬기 (Inspiration)</div>
+        <div style="font-size:13px;color:#c5dff0;line-height:1.8;">
+          1️⃣ 횡격막이 <strong>수축</strong> → 납작해짐<br>
+          2️⃣ 늑간근이 수축 → 갈비뼈 위로 올라감<br>
+          3️⃣ 흉강(chest cavity) 커짐<br>
+          4️⃣ 기압 낮아짐 → 공기가 <strong>폐로 들어옴</strong>
+        </div>
+      </div>
+      <div style="flex:1;min-width:180px;background:rgba(255,128,171,0.07);border-radius:12px;padding:14px;border:1px solid rgba(255,128,171,0.2);">
+        <div style="font-weight:800;color:#ff80ab;font-size:14px;margin-bottom:10px;">😮 Exhale 내쉬기 (Expiration)</div>
+        <div style="font-size:13px;color:#c5dff0;line-height:1.8;">
+          1️⃣ 횡격막이 <strong>이완</strong> → 돔 모양으로 올라감<br>
+          2️⃣ 늑간근이 이완 → 갈비뼈 내려감<br>
+          3️⃣ 흉강 작아짐<br>
+          4️⃣ 기압 높아짐 → 공기가 <strong>폐에서 나감</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 기체교환 -->
+  <div class="note-section">
+    <div class="note-section-title">🔄 4. Gas Exchange at Alveoli 폐포에서 기체 교환</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+      <!-- 폐포 SVG -->
+      <svg viewBox="0 0 180 160" style="width:160px;flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
+        <rect width="180" height="160" fill="#1a2535" rx="10"/>
+        <!-- 폐포 원 -->
+        <circle cx="75" cy="75" r="50" fill="#1e3d5a" stroke="#69f0ae" stroke-width="2"/>
+        <text x="75" y="68" text-anchor="middle" fill="#69f0ae" font-size="9" font-weight="800">Alveolus</text>
+        <text x="75" y="80" text-anchor="middle" fill="#7fa8c9" font-size="8">폐포</text>
+        <!-- 공기 표시 -->
+        <text x="75" y="55" text-anchor="middle" fill="#c5dff0" font-size="8">air 공기</text>
+        <!-- 모세혈관 -->
+        <rect x="130" y="30" width="40" height="100" rx="20" fill="#3d1a1a" stroke="#ef5350" stroke-width="2"/>
+        <text x="150" y="80" text-anchor="middle" fill="#ef9a9a" font-size="7" font-weight="700">blood</text>
+        <text x="150" y="90" text-anchor="middle" fill="#ef9a9a" font-size="7">혈관</text>
+        <!-- O2 화살표 -->
+        <text x="112" y="68" text-anchor="middle" fill="#69f0ae" font-size="9" font-weight="800">O₂</text>
+        <text x="112" y="78" text-anchor="middle" fill="#69f0ae" font-size="14">→</text>
+        <!-- CO2 화살표 -->
+        <text x="112" y="98" text-anchor="middle" fill="#ff80ab" font-size="9" font-weight="800">CO₂</text>
+        <text x="112" y="108" text-anchor="middle" fill="#ff80ab" font-size="14">←</text>
+        <!-- 벽 표시 -->
+        <text x="75" y="140" text-anchor="middle" fill="#7fa8c9" font-size="7">thin wall 얇은 벽</text>
+      </svg>
+      <div style="flex:1;min-width:160px;">
+        <div style="font-size:13px;color:#c5dff0;line-height:1.8;margin-bottom:10px;">
+          기체 교환은 <strong>확산(diffusion)</strong>으로 일어나요.<br>
+          입자는 항상 <strong>농도 높은 곳 → 낮은 곳</strong>으로 이동해요.
+        </div>
+        <div style="background:rgba(105,240,174,0.08);border-radius:10px;padding:10px;margin-bottom:8px;border-left:3px solid #69f0ae;">
+          <div style="font-weight:800;color:#69f0ae;font-size:13px;">O₂ 산소의 이동</div>
+          <div style="font-size:12px;color:#c5dff0;margin-top:4px;line-height:1.6;">폐포 안 O₂ 농도 높음 → 혈액 O₂ 농도 낮음<br>∴ 폐포 → 혈액으로 확산 ✅</div>
+        </div>
+        <div style="background:rgba(255,128,171,0.08);border-radius:10px;padding:10px;border-left:3px solid #ff80ab;">
+          <div style="font-weight:800;color:#ff80ab;font-size:13px;">CO₂ 이산화탄소의 이동</div>
+          <div style="font-size:12px;color:#c5dff0;margin-top:4px;line-height:1.6;">혈액 CO₂ 농도 높음 → 폐포 CO₂ 농도 낮음<br>∴ 혈액 → 폐포로 확산 ✅</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 유산소 vs 무산소 -->
+  <div class="note-section">
+    <div class="note-section-title">⚗️ 5. Aerobic vs Anaerobic Respiration 유산소 vs 무산소 호흡</div>
+    <div style="margin-bottom:14px;">
+      <div style="background:rgba(105,240,174,0.08);border-radius:10px;padding:12px;margin-bottom:8px;border-left:3px solid #69f0ae;">
+        <div style="font-weight:800;color:#69f0ae;margin-bottom:6px;">🌿 Aerobic Respiration 유산소 호흡</div>
+        <div style="font-size:13px;color:#c5dff0;line-height:1.7;">산소를 이용해서 포도당을 완전히 분해해요. 에너지가 <strong>많이</strong> 나와요.<br>미토콘드리아에서 일어나요. 평상시에 사용해요.</div>
+        <div style="margin-top:8px;background:rgba(0,0,0,0.2);border-radius:8px;padding:8px;text-align:center;font-size:14px;font-weight:800;color:#fff;">
+          Glucose + Oxygen <span style="color:#69f0ae;">→</span> CO₂ + Water + <span style="color:#ffd740;">Energy</span>
+        </div>
+      </div>
+      <div style="background:rgba(255,128,171,0.08);border-radius:10px;padding:12px;border-left:3px solid #ff80ab;">
+        <div style="font-weight:800;color:#ff80ab;margin-bottom:6px;">⚡ Anaerobic Respiration 무산소 호흡</div>
+        <div style="font-size:13px;color:#c5dff0;line-height:1.7;">산소 <strong>없이</strong> 포도당을 불완전하게 분해해요. 에너지가 <strong>적게</strong> 나와요.<br>격렬한 운동을 할 때처럼 산소 공급이 부족할 때 사용해요.</div>
+        <div style="margin-top:8px;background:rgba(0,0,0,0.2);border-radius:8px;padding:8px;text-align:center;font-size:14px;font-weight:800;color:#fff;">
+          Glucose <span style="color:#ff80ab;">→</span> Lactic acid + <span style="color:#ffd740;">Energy (less)</span>
+        </div>
+        <div style="margin-top:8px;font-size:12px;color:#ffb3c8;line-height:1.6;">
+          💥 젖산(lactic acid)이 근육에 쌓이면 <strong>근육통</strong>이 생겨요!<br>
+          운동 후 숨이 가쁜 이유 = 젖산을 분해하려고 산소가 더 필요해서 → 이걸 <strong>산소 부채(oxygen debt)</strong>라고 해요.
+        </div>
+      </div>
+    </div>
     <table class="cmp-table">
       <thead>
         <tr>
           <th></th>
-          <th class="col-a">🌿 Aerobic<br>유산소</th>
-          <th class="col-b">⚡ Anaerobic<br>무산소</th>
+          <th class="col-a">🌿 Aerobic 유산소</th>
+          <th class="col-b">⚡ Anaerobic 무산소</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Oxygen 산소</td>
-          <td class="val-a">✅ 필요</td>
-          <td class="val-b">❌ 불필요</td>
-        </tr>
-        <tr>
-          <td>Glucose 포도당</td>
-          <td class="val-a">완전 분해</td>
-          <td class="val-b">불완전 분해</td>
-        </tr>
-        <tr>
-          <td>Products 산물</td>
-          <td class="val-a">CO₂ + 물</td>
-          <td class="val-b">젖산</td>
-        </tr>
-        <tr>
-          <td>Energy 에너지</td>
-          <td class="val-a">🔋🔋🔋 많음</td>
-          <td class="val-b">🔋 적음</td>
-        </tr>
-        <tr>
-          <td>When 시기</td>
-          <td class="val-a">평상시</td>
-          <td class="val-b">격렬한 운동</td>
-        </tr>
+        <tr><td>Oxygen 산소</td><td class="val-a">✅ 필요</td><td class="val-b">❌ 불필요</td></tr>
+        <tr><td>Products 산물</td><td class="val-a">CO₂ + 물</td><td class="val-b">젖산 (Lactic acid)</td></tr>
+        <tr><td>Energy 에너지</td><td class="val-a">🔋🔋🔋 많음</td><td class="val-b">🔋 적음</td></tr>
+        <tr><td>When 시기</td><td class="val-a">평상시</td><td class="val-b">격렬한 운동 시</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- 혈액 성분 -->
+  <!-- 6. 혈액 성분 -->
   <div class="note-section">
-    <div class="note-section-title">🩸 Components of Blood 혈액 성분</div>
-    <div class="blood-grid">
-      <svg viewBox="0 0 90 240" style="width:80px;flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
+    <div class="note-section-title">🩸 6. Components of Blood 혈액의 성분</div>
+    <div style="font-size:13px;color:#c5dff0;line-height:1.7;margin-bottom:14px;">
+      혈액은 4가지 성분으로 이루어져 있어요. 각각 다른 역할을 해요!
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;">
+      <svg viewBox="0 0 90 240" style="width:75px;flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
         <rect x="15" y="4" width="60" height="232" rx="30" fill="none" stroke="#4fc3f7" stroke-width="2"/>
-        <clipPath id="tc"><rect x="15" y="4" width="60" height="232" rx="30"/></clipPath>
-        <rect x="15" y="4"   width="60" height="128" fill="#ffd740" opacity="0.8" clip-path="url(#tc)"/>
-        <rect x="15" y="132" width="60" height="10"  fill="#fff"    opacity="0.5" clip-path="url(#tc)"/>
-        <rect x="15" y="142" width="60" height="94"  fill="#ef5350" opacity="0.85" clip-path="url(#tc)"/>
-        <text x="45" y="72"  text-anchor="middle" fill="#111" font-size="11" font-weight="800">55%</text>
-        <text x="45" y="139" text-anchor="middle" fill="#111" font-size="7"  font-weight="800">1%</text>
+        <clipPath id="tc2"><rect x="15" y="4" width="60" height="232" rx="30"/></clipPath>
+        <rect x="15" y="4"   width="60" height="128" fill="#ffd740" opacity="0.85" clip-path="url(#tc2)"/>
+        <rect x="15" y="132" width="60" height="10"  fill="#fff" opacity="0.5" clip-path="url(#tc2)"/>
+        <rect x="15" y="142" width="60" height="94"  fill="#ef5350" opacity="0.9" clip-path="url(#tc2)"/>
+        <text x="45" y="72"  text-anchor="middle" fill="#1a2535" font-size="11" font-weight="800">55%</text>
+        <text x="45" y="139" text-anchor="middle" fill="#1a2535" font-size="7"  font-weight="800">1%</text>
         <text x="45" y="198" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">44%</text>
       </svg>
-      <div class="blood-legend">
-        <div class="blood-item" style="background:rgba(255,215,64,0.1);border-color:#ffd740;">
-          <div class="blood-item-title" style="color:#ffd740;">Plasma 혈장 — 55%</div>
-          <div class="blood-item-en">Carries dissolved glucose, CO₂, hormones, nutrients.</div>
-          <div class="blood-item-ko">포도당, CO₂, 호르몬, 영양소 운반.</div>
+      <div style="flex:1;min-width:190px;display:flex;flex-direction:column;gap:9px;">
+        <div style="background:rgba(255,215,64,0.1);border-radius:10px;padding:12px;border-left:3px solid #ffd740;">
+          <div style="font-weight:800;color:#ffd740;margin-bottom:4px;">Plasma 혈장 — 55%</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">연한 노란색 액체예요. 혈액 세포들을 싣고 온몸을 돌아다니며 <strong>포도당, CO₂, 호르몬, 영양소</strong>를 운반해요.</div>
         </div>
-        <div class="blood-item" style="background:rgba(255,255,255,0.05);border-color:#aaa;">
-          <div class="blood-item-title" style="color:#ddd;">Platelets 혈소판 + WBC 백혈구 — 1%</div>
-          <div class="blood-item-en">Platelets: form scabs · WBC: fight pathogens</div>
-          <div class="blood-item-ko">혈소판: 딱지 형성 · 백혈구: 병원체 격퇴</div>
+        <div style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px;border-left:3px solid #aaa;">
+          <div style="font-weight:800;color:#ddd;margin-bottom:4px;">Platelets 혈소판 + WBC 백혈구 — 1%</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;"><strong>혈소판</strong>: 다치면 혈액을 굳혀 딱지를 만들어요 (blood clotting)<br><strong>백혈구</strong>: 병원체와 싸워요 (immune system)</div>
         </div>
-        <div class="blood-item" style="background:rgba(239,83,80,0.1);border-color:#ef5350;">
-          <div class="blood-item-title" style="color:#ef9a9a;">Red blood cells 적혈구 — 44%</div>
-          <div class="blood-item-en">Biconcave, no nucleus. Carry O₂ via haemoglobin.</div>
-          <div class="blood-item-ko">양오목형, 핵 없음. 헤모글로빈으로 산소 운반.</div>
+        <div style="background:rgba(239,83,80,0.1);border-radius:10px;padding:12px;border-left:3px solid #ef5350;">
+          <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">Red blood cells 적혈구 — 44%</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">폐에서 온몸 세포로 <strong>산소를 운반</strong>해요. 헤모글로빈(haemoglobin)이 산소와 결합해요.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 백혈구 2종류 -->
+  <!-- 7. 적혈구 구조 -->
   <div class="note-section">
-    <div class="note-section-title">🛡️ Two Types of White Blood Cell</div>
-    <div class="wbc-grid">
-      <div class="wbc-card" style="background:rgba(105,240,174,0.07);border-color:rgba(105,240,174,0.25);">
-        <div class="wbc-icon">🍀</div>
-        <div class="wbc-name" style="color:var(--green);">Phagocyte 식세포</div>
-        <div class="wbc-en">Surrounds, engulfs and <strong>destroys</strong> pathogens directly.</div>
-        <div class="wbc-ko">병원체를 직접 삼켜서 파괴한다.</div>
-      </div>
-      <div class="wbc-card" style="background:rgba(255,215,64,0.07);border-color:rgba(255,215,64,0.25);">
-        <div class="wbc-icon">🔫</div>
-        <div class="wbc-name" style="color:var(--yellow);">Lymphocyte 림프구</div>
-        <div class="wbc-en">Produces <strong>antibodies</strong> → pathogens clump → phagocytes destroy.</div>
-        <div class="wbc-ko">항체 생산 → 병원체 뭉침 → 식세포가 파괴.</div>
-      </div>
+    <div class="note-section-title">🔴 7. Red Blood Cell — Why is it special? 적혈구가 특별한 이유</div>
+    <div style="font-size:13px;color:#c5dff0;line-height:1.7;margin-bottom:12px;">
+      적혈구는 산소를 최대한 많이, 빠르게 운반하도록 구조가 적응(adapted)되어 있어요.
     </div>
-    <div style="margin-top:10px;font-size:12px;color:var(--muted);text-align:center;">
-      💡 Both made in bone marrow 골수 · Part of immune system 면역계
-    </div>
-  </div>
-
-  <!-- 적혈구 구조 -->
-  <div class="note-section">
-    <div class="note-section-title">🔴 Red Blood Cell Adaptations 적혈구 적응</div>
     <div style="display:flex;flex-direction:column;gap:10px;">
-      <div style="background:rgba(239,83,80,0.08);border-radius:10px;padding:12px 14px;border-left:3px solid #ef5350;">
-        <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">Biconcave shape 양오목형</div>
-        <div style="font-size:13px;color:#c5dff0;">Dips on both sides → maximises surface area → absorbs O₂ faster.</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:3px;">양쪽이 오목 → 표면적 최대화 → 산소를 더 빠르게 흡수.</div>
+      <div style="display:flex;gap:12px;align-items:center;background:rgba(239,83,80,0.07);border-radius:10px;padding:12px;">
+        <div style="font-size:32px;">🫘</div>
+        <div>
+          <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">Biconcave shape 양오목형</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">양쪽이 오목하게 들어간 모양이에요. 이 덕분에 <strong>표면적(surface area)이 넓어져서</strong> 산소를 더 빠르게 흡수할 수 있어요.</div>
+        </div>
       </div>
-      <div style="background:rgba(239,83,80,0.08);border-radius:10px;padding:12px 14px;border-left:3px solid #ef5350;">
-        <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">No nucleus 핵 없음</div>
-        <div style="font-size:13px;color:#c5dff0;">More space for haemoglobin → carries more oxygen.</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:3px;">헤모글로빈을 더 많이 담을 공간 → 산소를 더 많이 운반.</div>
+      <div style="display:flex;gap:12px;align-items:center;background:rgba(239,83,80,0.07);border-radius:10px;padding:12px;">
+        <div style="font-size:32px;">🚫</div>
+        <div>
+          <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">No nucleus 핵이 없어요</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">핵이 없는 덕분에 그 공간에 <strong>헤모글로빈을 더 많이</strong> 담을 수 있어요 → 산소를 더 많이 운반해요.</div>
+        </div>
       </div>
-      <div style="background:rgba(239,83,80,0.08);border-radius:10px;padding:12px 14px;border-left:3px solid #ef5350;">
-        <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">Contains haemoglobin 헤모글로빈 함유</div>
-        <div style="font-size:13px;color:#c5dff0;">Binds O₂ in lungs → oxyhaemoglobin → releases O₂ at body cells.</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:3px;">폐에서 O₂ 결합 → 산소헤모글로빈 → 세포에서 O₂ 방출.</div>
+      <div style="display:flex;gap:12px;align-items:center;background:rgba(239,83,80,0.07);border-radius:10px;padding:12px;">
+        <div style="font-size:32px;">🔴</div>
+        <div>
+          <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">Haemoglobin 헤모글로빈</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">적혈구 안에 가득 찬 빨간 단백질이에요.<br>
+          폐에서: Haemoglobin + O₂ → <strong>Oxyhaemoglobin</strong> (밝은 빨간색)<br>
+          세포에서: 산소를 방출 → 다시 Haemoglobin으로 돌아가요.</div>
+        </div>
       </div>
+      <div style="display:flex;gap:12px;align-items:center;background:rgba(239,83,80,0.07);border-radius:10px;padding:12px;">
+        <div style="font-size:32px;">🦴</div>
+        <div>
+          <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">Made in bone marrow 골수에서 생성</div>
+          <div style="font-size:13px;color:#c5dff0;line-height:1.6;">적혈구와 백혈구 모두 <strong>뼈 속 골수(bone marrow)</strong>에서 만들어져요.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. 백혈구 -->
+  <div class="note-section">
+    <div class="note-section-title">🛡️ 8. White Blood Cells 백혈구 — 몸의 방어군!</div>
+    <div style="font-size:13px;color:#c5dff0;line-height:1.7;margin-bottom:12px;">
+      백혈구는 <strong>면역계(immune system)</strong>의 일부예요. 몸에 침입한 병원체(pathogen)와 싸워요.<br>
+      두 가지 종류가 있고 각각 다른 방법으로 싸워요!
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+      <div style="flex:1;min-width:180px;background:rgba(105,240,174,0.07);border-radius:12px;padding:14px;border:1px solid rgba(105,240,174,0.2);">
+        <div style="font-size:28px;margin-bottom:8px;">😤</div>
+        <div style="font-weight:800;color:#69f0ae;font-size:15px;margin-bottom:8px;">Phagocyte 식세포</div>
+        <div style="font-size:13px;color:#c5dff0;line-height:1.7;">병원체를 발견하면 <strong>직접 둘러싸서 삼켜버려요!</strong><br>이 과정을 <strong>phagocytosis(식작용)</strong>라고 해요.<br><br>마치 팩맨이 적을 먹는 것처럼요 👾</div>
+      </div>
+      <div style="flex:1;min-width:180px;background:rgba(255,215,64,0.07);border-radius:12px;padding:14px;border:1px solid rgba(255,215,64,0.2);">
+        <div style="font-size:28px;margin-bottom:8px;">🎯</div>
+        <div style="font-weight:800;color:#ffd740;font-size:15px;margin-bottom:8px;">Lymphocyte 림프구</div>
+        <div style="font-size:13px;color:#c5dff0;line-height:1.7;"><strong>항체(antibody)</strong>를 만들어요.<br>항체가 병원체에 달라붙어서 병원체들을 <strong>뭉치게</strong> 만들어요.<br>그러면 식세포가 더 쉽게 잡아먹을 수 있어요!</div>
+      </div>
+    </div>
+    <div style="background:rgba(255,215,64,0.07);border-radius:10px;padding:12px;font-size:13px;color:#ffd740;text-align:center;border:1px solid rgba(255,215,64,0.15);">
+      💡 Phagocyte = 직접 공격 / Lymphocyte = 항체로 간접 공격<br>
+      <span style="color:#7fa8c9;font-size:12px;">둘 다 골수(bone marrow)에서 만들어져요!</span>
     </div>
   </div>
 
@@ -714,6 +872,57 @@
   <div id="quizContainer"></div>
 </div>
 
+<!-- ════════════════════════════════
+     ✏️ 단어시험
+════════════════════════════════ -->
+<div id="tab-spelling" class="tab-content">
+
+  <div class="quiz-score" style="border-color:rgba(255,215,64,0.2);">
+    <div>
+      <div class="score-label">✏️ 단어시험 Spelling Test</div>
+      <div class="score-val" id="spellScoreDisplay" style="color:var(--yellow);">0 / 0</div>
+    </div>
+    <button class="reset-btn" onclick="nextSpell()" style="background:rgba(255,215,64,0.15);border-color:rgba(255,215,64,0.3);color:var(--yellow);">다음 →</button>
+  </div>
+
+  <!-- 문제 카드 -->
+  <div id="spellCard" style="background:var(--card);border-radius:20px;padding:28px 20px;border:1px solid rgba(255,215,64,0.15);margin-bottom:14px;text-align:center;">
+    <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">한국어 뜻을 보고 영어 단어를 입력하세요</div>
+    <div id="spellHint" style="font-size:13px;color:var(--accent);margin-bottom:12px;"></div>
+    <div id="spellKo" style="font-size:26px;font-weight:900;color:#fff;margin-bottom:6px;"></div>
+    <div id="spellDefKo" style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.6;"></div>
+
+    <!-- 타이핑 입력 -->
+    <div style="position:relative;margin-bottom:16px;">
+      <input type="text" id="spellInput"
+        placeholder="영어로 입력하세요..."
+        oninput="checkSpelling()"
+        onkeydown="if(event.key==='Enter')nextSpell()"
+        autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+        style="width:100%;background:rgba(255,255,255,0.05);border:2px solid rgba(255,215,64,0.3);
+               border-radius:12px;padding:14px 16px;color:#fff;font-size:18px;font-weight:700;
+               font-family:inherit;outline:none;text-align:center;letter-spacing:1px;">
+    </div>
+
+    <!-- 실시간 글자 색상 피드백 -->
+    <div id="spellFeedback" style="font-size:22px;font-weight:800;letter-spacing:3px;min-height:32px;margin-bottom:12px;"></div>
+
+    <!-- 결과 메시지 -->
+    <div id="spellResult" style="display:none;font-size:14px;font-weight:700;padding:10px;border-radius:10px;margin-bottom:8px;"></div>
+
+    <!-- 정답 보기 버튼 -->
+    <button onclick="showAnswer()" id="showAnsBtn"
+      style="background:transparent;border:1.5px solid rgba(127,168,201,0.3);color:var(--muted);
+             border-radius:10px;padding:8px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">
+      정답 보기
+    </button>
+  </div>
+
+  <!-- 진행 상황 -->
+  <div style="text-align:center;font-size:12px;color:var(--muted);" id="spellProgress"></div>
+
+</div>
+
 <script>
 /* ── 탭 전환 ── */
 function switchTab(name) {
@@ -721,6 +930,7 @@ function switchTab(name) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   event.target.classList.add('active');
+  if (name === 'spelling') initSpell();
 }
 
 /* ── 발음 ── */
@@ -750,7 +960,7 @@ function applyFilter() {
   });
 }
 
-/* ── 퀴즈 ── */
+/* ── 객관식 퀴즈 ── */
 const quizData = [
   { q: "Where are red blood cells made?", opts: ["Heart","Liver","Bone marrow","Brain"], ans: 2 },
   { q: "Which cell component are red blood cells missing?", opts: ["Mitochondria","Cytoplasm","Cell membrane","Nucleus"], ans: 3 },
@@ -810,10 +1020,133 @@ function answer(qi, chosen) {
 function updateScore() {
   document.getElementById('scoreDisplay').textContent = score + ' / ' + answered;
 }
-
 function resetQuiz() { buildQuiz(); }
-
 buildQuiz();
+
+/* ══════════════════════════════
+   ✏️ 단어시험
+══════════════════════════════ */
+const spellWords = [
+  { en: 'trachea',            ko: '기관',           def: '코/입에서 폐로 공기를 운반하는 관' },
+  { en: 'bronchi',            ko: '기관지',          def: '기관에서 각 폐로 이어지는 두 개의 관' },
+  { en: 'alveoli',            ko: '폐포',            def: '폐 속 작은 공기 주머니, 기체 교환 장소' },
+  { en: 'diaphragm',          ko: '횡격막',          def: '폐 아래 돔 모양의 근육' },
+  { en: 'diffusion',          ko: '확산',            def: '입자가 농도 높은 곳에서 낮은 곳으로 이동' },
+  { en: 'haemoglobin',        ko: '헤모글로빈',       def: '적혈구 안의 빨간 단백질, 산소 운반' },
+  { en: 'oxyhaemoglobin',     ko: '산소헤모글로빈',   def: '헤모글로빈이 산소와 결합한 화합물' },
+  { en: 'plasma',             ko: '혈장',            def: '혈액의 노란색 액체 부분 (55%)' },
+  { en: 'platelet',           ko: '혈소판',          def: '혈액 응고를 돕는 작은 세포 조각' },
+  { en: 'phagocyte',          ko: '식세포',          def: '병원체를 삼켜서 파괴하는 백혈구' },
+  { en: 'lymphocyte',         ko: '림프구',          def: '항체를 만드는 백혈구' },
+  { en: 'antibody',           ko: '항체',            def: '림프구가 만드는 단백질, 병원체를 뭉치게 함' },
+  { en: 'pathogen',           ko: '병원체',          def: '질병을 일으키는 미생물' },
+  { en: 'biconcave',          ko: '양오목형',         def: '적혈구의 모양, 양쪽이 오목함' },
+  { en: 'mitochondria',       ko: '미토콘드리아',     def: '세포 호흡이 일어나는 세포 소기관' },
+  { en: 'lactic acid',        ko: '젖산',            def: '무산소 호흡의 부산물' },
+  { en: 'oxygen debt',        ko: '산소 부채',        def: '운동 후 젖산 분해에 필요한 추가 산소' },
+  { en: 'phagocytosis',       ko: '식작용',          def: '식세포가 병원체를 삼켜 파괴하는 과정' },
+  { en: 'bone marrow',        ko: '골수',            def: '적혈구와 백혈구가 만들어지는 뼈 안의 조직' },
+  { en: 'gas exchange',       ko: '기체 교환',        def: '산소와 이산화탄소가 폐포와 혈액 사이에서 이동' },
+];
+
+let spellList = [];
+let spellIdx = 0;
+let spellScore = 0;
+let spellAnswered = 0;
+let spellRevealed = false;
+
+function initSpell() {
+  spellList = [...spellWords].sort(() => Math.random() - 0.5);
+  spellIdx = 0; spellScore = 0; spellAnswered = 0;
+  updateSpellScore();
+  showSpellCard();
+}
+
+function showSpellCard() {
+  spellRevealed = false;
+  const w = spellList[spellIdx];
+  document.getElementById('spellKo').textContent = w.ko;
+  document.getElementById('spellDefKo').textContent = w.def;
+  document.getElementById('spellHint').textContent = `💡 ${w.en.length}글자`;
+  document.getElementById('spellInput').value = '';
+  document.getElementById('spellFeedback').innerHTML = '';
+  document.getElementById('spellResult').style.display = 'none';
+  document.getElementById('showAnsBtn').style.display = 'inline-block';
+  document.getElementById('spellInput').focus();
+  document.getElementById('spellProgress').textContent = `${spellIdx + 1} / ${spellList.length}`;
+}
+
+function checkSpelling() {
+  if (spellRevealed) return;
+  const w = spellList[spellIdx];
+  const typed = document.getElementById('spellInput').value;
+  const answer = w.en.toLowerCase();
+  const typedLow = typed.toLowerCase();
+
+  // 글자별 색상 피드백
+  let html = '';
+  for (let i = 0; i < typed.length; i++) {
+    const ch = typed[i];
+    if (i >= answer.length) {
+      html += `<span style="color:#ff80ab;">${ch}</span>`;
+    } else if (ch.toLowerCase() === answer[i]) {
+      html += `<span style="color:#69f0ae;">${ch}</span>`;
+    } else {
+      html += `<span style="color:#ff80ab;">${ch}</span>`;
+    }
+  }
+  // 아직 안 입력한 자리
+  for (let i = typed.length; i < answer.length; i++) {
+    html += `<span style="color:rgba(255,255,255,0.15);">_</span>`;
+  }
+  document.getElementById('spellFeedback').innerHTML = html;
+
+  // 정답 완성!
+  if (typedLow === answer) {
+    const res = document.getElementById('spellResult');
+    res.textContent = '🎉 정답! 잘했어요!';
+    res.style.background = 'rgba(105,240,174,0.15)';
+    res.style.color = '#69f0ae';
+    res.style.display = 'block';
+    document.getElementById('showAnsBtn').style.display = 'none';
+    spellScore++;
+    spellAnswered++;
+    spellRevealed = true;
+    updateSpellScore();
+    speak(w.en);
+    setTimeout(() => nextSpell(), 1800);
+  }
+}
+
+function showAnswer() {
+  if (spellRevealed) return;
+  spellRevealed = true;
+  const w = spellList[spellIdx];
+  const res = document.getElementById('spellResult');
+  res.textContent = '정답: ' + w.en;
+  res.style.background = 'rgba(255,128,171,0.12)';
+  res.style.color = '#ff80ab';
+  res.style.display = 'block';
+  document.getElementById('showAnsBtn').style.display = 'none';
+  // 정답 글자 모두 표시
+  document.getElementById('spellFeedback').innerHTML =
+    w.en.split('').map(c => `<span style="color:#ff80ab;">${c}</span>`).join('');
+  spellAnswered++;
+  updateSpellScore();
+  speak(w.en);
+}
+
+function nextSpell() {
+  spellIdx = (spellIdx + 1) % spellList.length;
+  if (spellIdx === 0) {
+    spellList = [...spellWords].sort(() => Math.random() - 0.5);
+  }
+  showSpellCard();
+}
+
+function updateSpellScore() {
+  document.getElementById('spellScoreDisplay').textContent = spellScore + ' / ' + spellAnswered;
+}
 </script>
 </body>
 </html>
