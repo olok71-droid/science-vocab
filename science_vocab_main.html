@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📚 단어장</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1923;
+    --card: #1a2535;
+    --card2: #1e2d42;
+    --accent: #4fc3f7;
+    --green: #69f0ae;
+    --yellow: #ffd740;
+    --pink: #ff80ab;
+    --purple: #ce93d8;
+    --orange: #ffab40;
+    --text: #e8f4fd;
+    --muted: #7fa8c9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito', 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    padding: 20px 16px 40px;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px 32px;
+  }
+
+  header .school {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  header h1 span { color: var(--accent); }
+
+  header p {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* 과목 그리드 */
+  .subjects-grid {
+    max-width: 760px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .subject-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 0;
+    border: 1.5px solid rgba(255,255,255,0.07);
+    cursor: pointer;
+    transition: all 0.25s;
+    overflow: hidden;
+  }
+
+  .subject-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,0.18);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+
+  .subject-header {
+    padding: 22px 20px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+  }
+
+  .subject-icon { font-size: 34px; }
+
+  .subject-name-en {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .subject-name-ko {
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+
+  .subject-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.07);
+    margin: 0 20px;
+  }
+
+  /* 단원 목록 */
+  .units-list {
+    padding: 12px 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .unit-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.2s;
+    gap: 8px;
+  }
+
+  .unit-link.ready {
+    background: rgba(255,255,255,0.05);
+    color: var(--text);
+  }
+
+  .unit-link.ready:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateX(3px);
+  }
+
+  .unit-link.coming {
+    color: var(--muted);
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  .unit-name { flex: 1; }
+
+  .badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+  }
+
+  .badge-ready {
+    background: rgba(105,240,174,0.2);
+    color: var(--green);
+  }
+
+  .badge-soon {
+    background: rgba(127,168,201,0.15);
+    color: var(--muted);
+  }
+
+  .coming-soon-box {
+    padding: 14px 20px 18px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+    font-size: 12px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="school">SJI International School Malaysia · Year 8 · 2025/26</div>
+  <h1>📚 <span>단어장</span> Vocab</h1>
+  <p>과목을 선택하세요 · Choose a subject</p>
+</header>
+
+<div class="subjects-grid">
+
+  <!-- Science -->
+  <div class="subject-card" style="border-color: rgba(79,195,247,0.25);">
+    <div class="subject-header">
+      <div class="subject-icon">🔬</div>
+      <div>
+        <div class="subject-name-en">Science</div>
+        <div class="subject-name-ko" style="color: var(--accent);">과학</div>
+      </div>
+    </div>
+    <div class="subject-divider"></div>
+    <div class="units-list">
+      <a class="unit-link ready" href="science_vocab_respiration.html">
+        <span class="unit-name">🫁 8B1 Respiration 호흡</span>
+        <span class="badge badge-ready">완성</span>
+      </a>
+      <div class="unit-link coming">
+        <span class="unit-name">🌿 8B2 Ecosystems 생태계</span>
+        <span class="badge badge-soon">준비중</span>
+      </div>
+      <div class="unit-link coming">
+        <span class="unit-name">🍎 8B3 Diet & Growth 식이</span>
+        <span class="badge badge-soon">준비중</span>
+      </div>
+      <div class="unit-link coming">
+        <span class="unit-name">🧪 8C1 Properties 물질</span>
+        <span class="badge badge-soon">준비중</span>
+      </div>
+      <div class="unit-link coming">
+        <span class="unit-name">⚗️ 8C2 Materials 물질순환</span>
+        <span class="badge badge-soon">준비중</span>
+      </div>
+      <div class="unit-link coming">
+        <span class="unit-name">⚡ 8C3 Chemical Reactions</span>
+        <span class="badge badge-soon">준비중</span>
+      </div>
+      <div class="unit-link coming">
+        <span class="unit-name">🏃 8P1 Forces 힘</span>
+        <span class="badge badge-soon">준비중</span>
+      </div>
+      <div class="unit-link coming">
+        <span class="unit-name">💡 8P2 Light 빛</span>
+        <span class="badge badge-soon">준비중</span>
+      </div>
+      <div class="unit-link coming">
+        <span class="unit-name">🧲 8P3 Magnetism 자기</span>
+        <span class="badge badge-soon">준비중</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Maths -->
+  <div class="subject-card" style="border-color: rgba(105,240,174,0.2);">
+    <div class="subject-header">
+      <div class="subject-icon">📐</div>
+      <div>
+        <div class="subject-name-en">Maths</div>
+        <div class="subject-name-ko" style="color: var(--green);">수학</div>
+      </div>
+    </div>
+    <div class="subject-divider"></div>
+    <div class="coming-soon-box">단원을 추가할 수 있어요 ✏️</div>
+  </div>
+
+  <!-- English -->
+  <div class="subject-card" style="border-color: rgba(255,215,64,0.2);">
+    <div class="subject-header">
+      <div class="subject-icon">📖</div>
+      <div>
+        <div class="subject-name-en">English</div>
+        <div class="subject-name-ko" style="color: var(--yellow);">영어</div>
+      </div>
+    </div>
+    <div class="subject-divider"></div>
+    <div class="coming-soon-box">단원을 추가할 수 있어요 ✏️</div>
+  </div>
+
+  <!-- Geography -->
+  <div class="subject-card" style="border-color: rgba(255,171,64,0.2);">
+    <div class="subject-header">
+      <div class="subject-icon">🌍</div>
+      <div>
+        <div class="subject-name-en">Geography</div>
+        <div class="subject-name-ko" style="color: var(--orange);">지리</div>
+      </div>
+    </div>
+    <div class="subject-divider"></div>
+    <div class="coming-soon-box">단원을 추가할 수 있어요 ✏️</div>
+  </div>
+
+  <!-- History -->
+  <div class="subject-card" style="border-color: rgba(206,147,216,0.2);">
+    <div class="subject-header">
+      <div class="subject-icon">🏛️</div>
+      <div>
+        <div class="subject-name-en">History</div>
+        <div class="subject-name-ko" style="color: var(--purple);">역사</div>
+      </div>
+    </div>
+    <div class="subject-divider"></div>
+    <div class="coming-soon-box">단원을 추가할 수 있어요 ✏️</div>
+  </div>
+
+</div>
+
+<footer>
+  SJI International School Malaysia · Year 8 · 2025/26
+</footer>
+
+</body>
+</html>
