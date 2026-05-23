@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8B1 Respiration 호흡 단어장</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1923;
+    --card: #1a2535;
+    --card2: #1e2d42;
+    --accent: #4fc3f7;
+    --accent2: #81d4fa;
+    --green: #69f0ae;
+    --yellow: #ffd740;
+    --pink: #ff80ab;
+    --text: #e8f4fd;
+    --muted: #7fa8c9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito', 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 30px 20px 20px;
+  }
+
+  header .subject {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  header p {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* 다이어그램 */
+  .diagram-section {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 24px;
+    margin: 20px auto;
+    max-width: 700px;
+    border: 1px solid rgba(79,195,247,0.2);
+  }
+
+  .diagram-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .diagram-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .diagram-svg {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+  }
+
+  .diagram-svg svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .diagram-legend {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .legend-en { font-weight: 700; color: #fff; }
+  .legend-ko { color: var(--muted); font-size: 12px; }
+
+  /* 탭 */
+  .tabs {
+    display: flex;
+    gap: 8px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1.5px solid rgba(79,195,247,0.3);
+    background: transparent;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .tab.active, .tab:hover {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+  }
+
+  /* 단어 카드 */
+  .cards-grid {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .word-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 18px 20px;
+    border: 1px solid rgba(79,195,247,0.1);
+    transition: all 0.2s;
+    cursor: default;
+  }
+
+  .word-card:hover {
+    border-color: rgba(79,195,247,0.4);
+    background: var(--card2);
+    transform: translateY(-1px);
+  }
+
+  .word-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .word-en {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .word-ko {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 700;
+    background: rgba(79,195,247,0.1);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .speak-btn {
+    background: rgba(79,195,247,0.15);
+    border: 1.5px solid rgba(79,195,247,0.4);
+    color: var(--accent);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .speak-btn:hover, .speak-btn.playing {
+    background: var(--accent);
+    color: #000;
+    transform: scale(1.1);
+  }
+
+  .def-en {
+    font-size: 14px;
+    color: #c5dff0;
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  .def-ko {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .tag-organ { background: rgba(105,240,174,0.15); color: var(--green); }
+  .tag-process { background: rgba(255,215,64,0.15); color: var(--yellow); }
+  .tag-blood { background: rgba(255,128,171,0.15); color: var(--pink); }
+  .tag-gas { background: rgba(79,195,247,0.15); color: var(--accent); }
+
+  /* 반응식 */
+  .equation-box {
+    background: rgba(79,195,247,0.08);
+    border: 1px solid rgba(79,195,247,0.2);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: center;
+  }
+
+  .equation-title {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .equation {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.8;
+  }
+
+  .equation .arrow { color: var(--accent); }
+  .equation .plus { color: var(--muted); }
+
+  .hidden { display: none; }
+
+  /* 검색 */
+  .search-box {
+    max-width: 700px;
+    margin: 0 auto 16px;
+  }
+
+  .search-box input {
+    width: 100%;
+    background: var(--card);
+    border: 1.5px solid rgba(79,195,247,0.2);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-box input:focus {
+    border-color: var(--accent);
+  }
+
+  .search-box input::placeholder { color: var(--muted); }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="subject">Year 8 Science · Cambridge Lower Secondary</div>
+  <h1>🫁 8B1 Respiration 호흡</h1>
+  <p>단어를 클릭하면 발음을 들을 수 있어요 · Click 🔊 to hear pronunciation</p>
+</header>
+
+<!-- 호흡기 다이어그램 -->
+<div class="diagram-section">
+  <div class="diagram-title">🫁 The Respiratory System 호흡계</div>
+  <div class="diagram-container">
+    <div class="diagram-svg">
+      <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg">
+        <!-- 배경 -->
+        <rect width="220" height="280" fill="#0f1923" rx="12"/>
+        
+        <!-- 코/입 -->
+        <ellipse cx="110" cy="28" rx="18" ry="10" fill="#2a3f5a" stroke="#4fc3f7" stroke-width="1.5"/>
+        <text x="110" y="32" text-anchor="middle" fill="#4fc3f7" font-size="9" font-family="Nunito">nose/mouth</text>
+        
+        <!-- 기관 (trachea) -->
+        <rect x="102" y="38" width="16" height="45" rx="8" fill="#1e3a5a" stroke="#4fc3f7" stroke-width="1.5"/>
+        <text x="140" y="58" fill="#81d4fa" font-size="8.5" font-family="Nunito" font-weight="700">Trachea</text>
+        <line x1="118" y1="55" x2="138" y2="55" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="2,2"/>
+        
+        <!-- 기관지 (bronchi) -->
+        <path d="M110 83 Q90 95 75 105" stroke="#4fc3f7" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M110 83 Q130 95 145 105" stroke="#4fc3f7" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <text x="32" y="100" fill="#81d4fa" font-size="8.5" font-family="Nunito" font-weight="700">Bronchi</text>
+        
+        <!-- 왼쪽 폐 -->
+        <path d="M75 105 Q45 120 42 155 Q40 185 55 205 Q68 218 82 215 Q95 212 98 195 Q102 170 102 140 Q102 120 95 108 Z" fill="#1a3a5a" stroke="#4fc3f7" stroke-width="1.5"/>
+        
+        <!-- 오른쪽 폐 -->
+        <path d="M145 105 Q175 120 178 155 Q180 185 165 205 Q152 218 138 215 Q125 212 122 195 Q118 170 118 140 Q118 120 125 108 Z" fill="#1a3a5a" stroke="#4fc3f7" stroke-width="1.5"/>
+        
+        <!-- 폐포 (alveoli) - 왼쪽 -->
+        <circle cx="68" cy="150" r="10" fill="#0d2a40" stroke="#69f0ae" stroke-width="1.5"/>
+        <circle cx="82" cy="165" r="9" fill="#0d2a40" stroke="#69f0ae" stroke-width="1.5"/>
+        <circle cx="65" cy="172" r="8" fill="#0d2a40" stroke="#69f0ae" stroke-width="1.5"/>
+        <circle cx="78" cy="148" r="7" fill="#0d2a40" stroke="#69f0ae" stroke-width="1.5"/>
+        
+        <!-- 폐포 (alveoli) - 오른쪽 -->
+        <circle cx="152" cy="150" r="10" fill="#0d2a40" stroke="#69f0ae" stroke-width="1.5"/>
+        <circle cx="138" cy="165" r="9" fill="#0d2a40" stroke="#69f0ae" stroke-width="1.5"/>
+        <circle cx="155" cy="172" r="8" fill="#0d2a40" stroke="#69f0ae" stroke-width="1.5"/>
+        <circle cx="142" cy="148" r="7" fill="#0d2a40" stroke="#69f0ae" stroke-width="1.5"/>
+
+        <!-- Alveoli 레이블 -->
+        <text x="110" y="195" text-anchor="middle" fill="#69f0ae" font-size="8" font-family="Nunito" font-weight="700">Alveoli</text>
+        <text x="110" y="205" text-anchor="middle" fill="#69f0ae" font-size="7.5" font-family="Nunito">폐포</text>
+
+        <!-- 횡격막 (diaphragm) -->
+        <path d="M45 220 Q110 240 175 220" stroke="#ffd740" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <text x="110" y="250" text-anchor="middle" fill="#ffd740" font-size="9" font-family="Nunito" font-weight="700">Diaphragm 횡격막</text>
+
+        <!-- 화살표: O2 들어옴 -->
+        <text x="110" y="18" text-anchor="middle" fill="#69f0ae" font-size="9" font-family="Nunito">O₂ ↓ in</text>
+        
+        <!-- 폐 레이블 -->
+        <text x="60" y="125" text-anchor="middle" fill="#7fa8c9" font-size="8" font-family="Nunito">Lung</text>
+        <text x="160" y="125" text-anchor="middle" fill="#7fa8c9" font-size="8" font-family="Nunito">Lung</text>
+      </svg>
+    </div>
+
+    <div class="diagram-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#4fc3f7"></div>
+        <div><div class="legend-en">Trachea</div><div class="legend-ko">기관 — 공기 통로</div></div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#4fc3f7"></div>
+        <div><div class="legend-en">Bronchi</div><div class="legend-ko">기관지 — 폐로 이어지는 관</div></div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#69f0ae"></div>
+        <div><div class="legend-en">Alveoli</div><div class="legend-ko">폐포 — 기체 교환 장소</div></div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#ffd740"></div>
+        <div><div class="legend-en">Diaphragm</div><div class="legend-ko">횡격막 — 호흡 근육</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 반응식 -->
+<div class="equation-box" style="max-width:700px;">
+  <div class="equation-title">⚗️ Key Equations 핵심 반응식</div>
+  <div class="equation">
+    <span style="color:#69f0ae">Aerobic 유산소:</span><br>
+    Glucose <span class="plus">+</span> Oxygen <span class="arrow">→</span> CO₂ <span class="plus">+</span> Water <span class="plus">+</span> Energy
+  </div>
+  <div style="height:10px"></div>
+  <div class="equation">
+    <span style="color:#ff80ab">Anaerobic 무산소:</span><br>
+    Glucose <span class="arrow">→</span> Lactic acid <span class="plus">+</span> Energy
+  </div>
+</div>
+
+<!-- 탭 -->
+<div class="tabs" style="max-width:700px; margin: 0 auto 16px;">
+  <button class="tab active" onclick="filterCards('all')">전체 All</button>
+  <button class="tab" onclick="filterCards('organ')">🫁 기관 Organs</button>
+  <button class="tab" onclick="filterCards('process')">⚙️ 과정 Process</button>
+  <button class="tab" onclick="filterCards('blood')">🩸 혈액 Blood</button>
+  <button class="tab" onclick="filterCards('gas')">💨 기체 Gas</button>
+</div>
+
+<!-- 검색 -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="🔍 단어 검색 Search words..." oninput="searchCards()">
+</div>
+
+<!-- 단어 카드 -->
+<div class="cards-grid" id="cardsGrid">
+
+  <!-- 기관 Organs -->
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Respiratory system</div>
+        <div class="word-ko">호흡계</div>
+      </div>
+      <button class="speak-btn" onclick="speak('respiratory system')">🔊</button>
+    </div>
+    <div class="def-en">The organs involved in breathing and gas exchange.</div>
+    <div class="def-ko">호흡과 기체 교환에 관여하는 기관들.</div>
+  </div>
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Nasal cavity</div>
+        <div class="word-ko">비강</div>
+      </div>
+      <button class="speak-btn" onclick="speak('nasal cavity')">🔊</button>
+    </div>
+    <div class="def-en">The space inside the nose that warms, moistens and filters air before it reaches the lungs.</div>
+    <div class="def-ko">코 안쪽 공간으로, 공기가 폐에 도달하기 전에 따뜻하게 하고 습기를 더하고 먼지를 걸러낸다.</div>
+  </div>
+
+
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Trachea</div>
+        <div class="word-ko">기관</div>
+      </div>
+      <button class="speak-btn" onclick="speak('trachea')">🔊</button>
+    </div>
+    <div class="def-en">The tube that carries air from the mouth and nose down to the lungs.</div>
+    <div class="def-ko">입과 코에서 폐로 공기를 운반하는 관.</div>
+  </div>
+
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Bronchi</div>
+        <div class="word-ko">기관지</div>
+      </div>
+      <button class="speak-btn" onclick="speak('bronchi')">🔊</button>
+    </div>
+    <div class="def-en">The two tubes that branch from the trachea into each lung.</div>
+    <div class="def-ko">기관에서 각 폐로 이어지는 두 개의 관.</div>
+  </div>
+
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Bronchioles</div>
+        <div class="word-ko">세기관지</div>
+      </div>
+      <button class="speak-btn" onclick="speak('bronchioles')">🔊</button>
+    </div>
+    <div class="def-en">Smaller tubes that branch off the bronchi inside the lungs.</div>
+    <div class="def-ko">폐 안에서 기관지에서 갈라지는 더 작은 관.</div>
+  </div>
+
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Alveoli</div>
+        <div class="word-ko">폐포</div>
+      </div>
+      <button class="speak-btn" onclick="speak('alveoli')">🔊</button>
+    </div>
+    <div class="def-en">Tiny air sacs in the lungs where gas exchange occurs. They have thin walls and a large surface area.</div>
+    <div class="def-ko">폐 속 작은 공기 주머니. 얇은 벽과 넓은 표면적으로 기체 교환이 일어난다.</div>
+  </div>
+
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Diaphragm</div>
+        <div class="word-ko">횡격막</div>
+      </div>
+      <button class="speak-btn" onclick="speak('diaphragm')">🔊</button>
+    </div>
+    <div class="def-en">A dome-shaped muscle below the lungs. It contracts and flattens when you breathe in.</div>
+    <div class="def-ko">폐 아래에 있는 돔 모양의 근육. 숨을 들이쉬면 수축하여 납작해진다.</div>
+  </div>
+
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Intercostal muscles</div>
+        <div class="word-ko">늑간근</div>
+      </div>
+      <button class="speak-btn" onclick="speak('intercostal muscles')">🔊</button>
+    </div>
+    <div class="def-en">Muscles between the ribs that help move the ribcage during breathing.</div>
+    <div class="def-ko">갈비뼈 사이에 있는 근육으로, 호흡 중 흉곽을 움직이는 것을 돕는다.</div>
+  </div>
+
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Capillary</div>
+        <div class="word-ko">모세혈관</div>
+      </div>
+      <button class="speak-btn" onclick="speak('capillary')">🔊</button>
+    </div>
+    <div class="def-en">The smallest blood vessel. Surrounds the alveoli for gas exchange.</div>
+    <div class="def-ko">가장 작은 혈관. 폐포를 둘러싸서 기체 교환이 일어난다.</div>
+  </div>
+
+  <!-- 과정 Process -->
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Gas exchange</div>
+        <div class="word-ko">기체 교환</div>
+      </div>
+      <button class="speak-btn" onclick="speak('gas exchange')">🔊</button>
+    </div>
+    <div class="def-en">Oxygen moves from the alveoli into the blood. Carbon dioxide moves from the blood into the alveoli.</div>
+    <div class="def-ko">산소는 폐포에서 혈액으로, 이산화탄소는 혈액에서 폐포로 이동한다.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Diffusion</div>
+        <div class="word-ko">확산</div>
+      </div>
+      <button class="speak-btn" onclick="speak('diffusion')">🔊</button>
+    </div>
+    <div class="def-en">Movement of particles from an area of high concentration to low concentration.</div>
+    <div class="def-ko">입자가 농도가 높은 곳에서 낮은 곳으로 이동하는 것.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Aerobic respiration</div>
+        <div class="word-ko">유산소 호흡</div>
+      </div>
+      <button class="speak-btn" onclick="speak('aerobic respiration')">🔊</button>
+    </div>
+    <div class="def-en">Glucose + Oxygen → Carbon dioxide + Water + Energy. Requires oxygen.</div>
+    <div class="def-ko">산소를 이용해 포도당을 분해하여 에너지를 만드는 것.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Anaerobic respiration</div>
+        <div class="word-ko">무산소 호흡</div>
+      </div>
+      <button class="speak-btn" onclick="speak('anaerobic respiration')">🔊</button>
+    </div>
+    <div class="def-en">Glucose → Lactic acid + Energy. Occurs without oxygen, produces less energy.</div>
+    <div class="def-ko">산소 없이 포도당을 분해하는 것. 젖산이 만들어지고 에너지가 적게 생성된다.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Inhale / Inspiration</div>
+        <div class="word-ko">흡기 (숨 들이쉬기)</div>
+      </div>
+      <button class="speak-btn" onclick="speak('inhale inspiration')">🔊</button>
+    </div>
+    <div class="def-en">Breathing in. Diaphragm contracts, ribcage moves up and out, air rushes in.</div>
+    <div class="def-ko">숨을 들이쉬는 것. 횡격막이 수축하고, 흉곽이 위로 바깥으로 움직이며 공기가 들어온다.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Exhale / Expiration</div>
+        <div class="word-ko">호기 (숨 내쉬기)</div>
+      </div>
+      <button class="speak-btn" onclick="speak('exhale expiration')">🔊</button>
+    </div>
+    <div class="def-en">Breathing out. Diaphragm relaxes, ribcage moves down and in, air is pushed out.</div>
+    <div class="def-ko">숨을 내쉬는 것. 횡격막이 이완하고, 흉곽이 아래로 안으로 움직이며 공기가 나간다.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Glucose</div>
+        <div class="word-ko">포도당</div>
+      </div>
+      <button class="speak-btn" onclick="speak('glucose')">🔊</button>
+    </div>
+    <div class="def-en">A type of sugar used as fuel in respiration to release energy.</div>
+    <div class="def-ko">호흡에서 에너지를 방출하는 데 사용되는 연료인 당.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Lactic acid</div>
+        <div class="word-ko">젖산</div>
+      </div>
+      <button class="speak-btn" onclick="speak('lactic acid')">🔊</button>
+    </div>
+    <div class="def-en">The waste product of anaerobic respiration. Causes muscle fatigue and cramps.</div>
+    <div class="def-ko">무산소 호흡의 부산물. 근육 피로와 경련을 일으킨다.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Oxygen debt</div>
+        <div class="word-ko">산소 부채</div>
+      </div>
+      <button class="speak-btn" onclick="speak('oxygen debt')">🔊</button>
+    </div>
+    <div class="def-en">Extra oxygen needed after exercise to break down the lactic acid that built up.</div>
+    <div class="def-ko">운동 후 쌓인 젖산을 분해하기 위해 추가로 필요한 산소.</div>
+  </div>
+
+  <!-- 혈액 Blood -->
+  <div class="word-card" data-cat="blood">
+    <div class="tag tag-blood">🩸 Blood 혈액</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Red blood cell</div>
+        <div class="word-ko">적혈구</div>
+      </div>
+      <button class="speak-btn" onclick="speak('red blood cell')">🔊</button>
+    </div>
+    <div class="def-en">A blood cell that carries oxygen around the body. Has no nucleus and is biconcave shaped.</div>
+    <div class="def-ko">온몸에 산소를 운반하는 혈액 세포. 핵이 없고 양쪽이 오목한 모양이다.</div>
+  </div>
+
+  <div class="word-card" data-cat="blood">
+    <div class="tag tag-blood">🩸 Blood 혈액</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Haemoglobin</div>
+        <div class="word-ko">헤모글로빈</div>
+      </div>
+      <button class="speak-btn" onclick="speak('haemoglobin')">🔊</button>
+    </div>
+    <div class="def-en">A red protein in red blood cells that binds to oxygen and carries it around the body.</div>
+    <div class="def-ko">적혈구 안의 빨간 단백질로, 산소와 결합하여 온몸으로 운반한다.</div>
+  </div>
+
+  <div class="word-card" data-cat="blood">
+    <div class="tag tag-blood">🩸 Blood 혈액</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">White blood cell</div>
+        <div class="word-ko">백혈구</div>
+      </div>
+      <button class="speak-btn" onclick="speak('white blood cell')">🔊</button>
+    </div>
+    <div class="def-en">A blood cell that fights infection and disease by engulfing pathogens.</div>
+    <div class="def-ko">병원체를 삼켜서 감염과 질병에 맞서 싸우는 혈액 세포.</div>
+  </div>
+
+  <div class="word-card" data-cat="blood">
+    <div class="tag tag-blood">🩸 Blood 혈액</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Platelet</div>
+        <div class="word-ko">혈소판</div>
+      </div>
+      <button class="speak-btn" onclick="speak('platelet')">🔊</button>
+    </div>
+    <div class="def-en">A tiny cell fragment that helps blood to clot when you are injured.</div>
+    <div class="def-ko">다칠 때 혈액이 굳도록 돕는 작은 세포 조각.</div>
+  </div>
+
+  <div class="word-card" data-cat="blood">
+    <div class="tag tag-blood">🩸 Blood 혈액</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Plasma</div>
+        <div class="word-ko">혈장</div>
+      </div>
+      <button class="speak-btn" onclick="speak('plasma')">🔊</button>
+    </div>
+    <div class="def-en">The yellow liquid part of blood that transports dissolved nutrients, hormones, and waste.</div>
+    <div class="def-ko">혈액의 노란색 액체 부분으로, 용해된 영양소, 호르몬, 노폐물을 운반한다.</div>
+  </div>
+
+  <div class="word-card" data-cat="blood">
+    <div class="tag tag-blood">🩸 Blood 혈액</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Artery</div>
+        <div class="word-ko">동맥</div>
+      </div>
+      <button class="speak-btn" onclick="speak('artery')">🔊</button>
+    </div>
+    <div class="def-en">A blood vessel that carries blood away from the heart. Has thick, elastic walls.</div>
+    <div class="def-ko">심장에서 몸으로 혈액을 운반하는 혈관. 두껍고 탄력 있는 벽을 가진다.</div>
+  </div>
+
+  <div class="word-card" data-cat="blood">
+    <div class="tag tag-blood">🩸 Blood 혈액</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Vein</div>
+        <div class="word-ko">정맥</div>
+      </div>
+      <button class="speak-btn" onclick="speak('vein')">🔊</button>
+    </div>
+    <div class="def-en">A blood vessel that carries blood back to the heart. Has valves to prevent backflow.</div>
+    <div class="def-ko">몸에서 심장으로 혈액을 운반하는 혈관. 역류를 막는 판막이 있다.</div>
+  </div>
+
+  <!-- 기체 Gas -->
+  <div class="word-card" data-cat="gas">
+    <div class="tag tag-gas">💨 Gas 기체</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Oxygen (O₂)</div>
+        <div class="word-ko">산소</div>
+      </div>
+      <button class="speak-btn" onclick="speak('oxygen')">🔊</button>
+    </div>
+    <div class="def-en">A gas needed for aerobic respiration. Breathed in through the lungs.</div>
+    <div class="def-ko">유산소 호흡에 필요한 기체. 폐를 통해 들이쉰다.</div>
+  </div>
+
+  <div class="word-card" data-cat="gas">
+    <div class="tag tag-gas">💨 Gas 기체</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Carbon dioxide (CO₂)</div>
+        <div class="word-ko">이산화탄소</div>
+      </div>
+      <button class="speak-btn" onclick="speak('carbon dioxide')">🔊</button>
+    </div>
+    <div class="def-en">A waste gas produced in respiration. Breathed out through the lungs.</div>
+    <div class="def-ko">호흡에서 생성되는 노폐 기체. 폐를 통해 내쉰다.</div>
+  </div>
+
+  <div class="word-card" data-cat="gas">
+    <div class="tag tag-gas">💨 Gas 기체</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Concentration gradient</div>
+        <div class="word-ko">농도 기울기</div>
+      </div>
+      <button class="speak-btn" onclick="speak('concentration gradient')">🔊</button>
+    </div>
+    <div class="def-en">The difference in concentration between two areas. Diffusion occurs down the concentration gradient.</div>
+    <div class="def-ko">두 공간 사이의 농도 차이. 확산은 농도 기울기를 따라 일어난다.</div>
+  </div>
+
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Larynx</div>
+        <div class="word-ko">후두</div>
+      </div>
+      <button class="speak-btn" onclick="speak('larynx')">🔊</button>
+    </div>
+    <div class="def-en">The voice box. Located at the top of the trachea, it contains the vocal cords.</div>
+    <div class="def-ko">성대가 있는 기관. 기관 위쪽에 위치하며 소리를 만들어낸다.</div>
+  </div>
+
+  <div class="word-card" data-cat="organ">
+    <div class="tag tag-organ">🫁 Organ 기관</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Mitochondria</div>
+        <div class="word-ko">미토콘드리아</div>
+      </div>
+      <button class="speak-btn" onclick="speak('mitochondria')">🔊</button>
+    </div>
+    <div class="def-en">The organelle inside cells where aerobic respiration takes place and energy is released.</div>
+    <div class="def-ko">세포 안의 소기관으로, 유산소 호흡이 일어나 에너지가 방출되는 곳.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Breathing</div>
+        <div class="word-ko">호흡 운동</div>
+      </div>
+      <button class="speak-btn" onclick="speak('breathing')">🔊</button>
+    </div>
+    <div class="def-en">The physical movement of air into and out of the lungs. Different from respiration!</div>
+    <div class="def-ko">폐로 공기를 들이쉬고 내쉬는 물리적 움직임. 세포 호흡(respiration)과 다름!</div>
+  </div>
+
+  <div class="word-card" data-cat="blood">
+    <div class="tag tag-blood">🩸 Blood 혈액</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Oxyhaemoglobin</div>
+        <div class="word-ko">산소헤모글로빈</div>
+      </div>
+      <button class="speak-btn" onclick="speak('oxyhaemoglobin')">🔊</button>
+    </div>
+    <div class="def-en">The bright red compound formed when haemoglobin combines with oxygen in the lungs.</div>
+    <div class="def-ko">폐에서 헤모글로빈이 산소와 결합하여 만들어지는 밝은 빨간색 화합물.</div>
+  </div>
+
+  <div class="word-card" data-cat="gas">
+    <div class="tag tag-gas">💨 Gas 기체</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Limewater</div>
+        <div class="word-ko">석회수</div>
+      </div>
+      <button class="speak-btn" onclick="speak('limewater')">🔊</button>
+    </div>
+    <div class="def-en">A liquid used to test for carbon dioxide. It turns cloudy/milky when CO₂ is bubbled through it.</div>
+    <div class="def-ko">이산화탄소를 확인하는 데 사용하는 액체. CO₂를 통과시키면 뿌옇게 흐려진다.</div>
+  </div>
+
+  <div class="word-card" data-cat="gas">
+    <div class="tag tag-gas">💨 Gas 기체</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Hydrogencarbonate indicator</div>
+        <div class="word-ko">탄산수소 지시약</div>
+      </div>
+      <button class="speak-btn" onclick="speak('hydrogencarbonate indicator')">🔊</button>
+    </div>
+    <div class="def-en">A liquid that changes colour depending on CO₂ levels. Red = normal, Yellow = more CO₂, Purple = less CO₂.</div>
+    <div class="def-ko">CO₂ 농도에 따라 색이 변하는 액체. 빨강=보통, 노랑=CO₂ 많음, 보라=CO₂ 적음.</div>
+  </div>
+
+  <div class="word-card" data-cat="process">
+    <div class="tag tag-process">⚙️ Process 과정</div>
+    <div class="word-header">
+      <div>
+        <div class="word-en">Lung volume / Vital capacity</div>
+        <div class="word-ko">폐활량</div>
+      </div>
+      <button class="speak-btn" onclick="speak('lung volume vital capacity')">🔊</button>
+    </div>
+    <div class="def-en">The maximum amount of air a person can breathe in and out in one breath.</div>
+    <div class="def-ko">한 번에 최대로 들이쉬고 내쉴 수 있는 공기의 양.</div>
+  </div>
+
+</div>
+
+<footer>
+  Cambridge Lower Secondary Science · Year 8 · SJI International School Malaysia<br>
+  🔊 버튼을 눌러 발음을 들으세요 · Tap 🔊 to hear pronunciation
+</footer>
+
+<script>
+function speak(text) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-GB';
+    utterance.rate = 0.85;
+    utterance.pitch = 1;
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+function filterCards(cat) {
+  const cards = document.querySelectorAll('.word-card');
+  cards.forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+function searchCards() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.word-card');
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.classList.toggle('hidden', query.length > 0 && !text.includes(query));
+  });
+}
+</script>
+</body>
+</html>
