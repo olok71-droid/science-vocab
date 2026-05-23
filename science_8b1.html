@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8B1 Respiration 호흡</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1923;
+    --card: #1a2535;
+    --card2: #1e2d42;
+    --accent: #4fc3f7;
+    --green: #69f0ae;
+    --yellow: #ffd740;
+    --pink: #ff80ab;
+    --text: #e8f4fd;
+    --muted: #7fa8c9;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito','Noto Sans KR',sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ── 헤더 ── */
+  header {
+    background: var(--card);
+    border-bottom: 1px solid rgba(79,195,247,0.15);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .back-btn {
+    background: rgba(79,195,247,0.12);
+    border: 1.5px solid rgba(79,195,247,0.3);
+    color: var(--accent);
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+  }
+  .header-title { font-size: 18px; font-weight: 900; color: #fff; }
+  .header-sub { font-size: 12px; color: var(--muted); }
+
+  /* ── 탭 ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    max-width: 760px;
+    margin: 24px auto 0;
+    padding: 0 16px;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 14px 8px;
+    border: none;
+    background: var(--card);
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: inherit;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    border-radius: 12px 12px 0 0;
+  }
+  .tab-btn.active {
+    color: #fff;
+    border-bottom-color: var(--accent);
+    background: var(--card2);
+  }
+  .tab-btn:hover:not(.active) { color: var(--text); }
+
+  /* ── 콘텐츠 공통 ── */
+  .tab-content { display: none; padding: 20px 16px 60px; max-width: 760px; margin: 0 auto; }
+  .tab-content.active { display: block; }
+
+  /* ══════════════════════════════
+     📖 단어장
+  ══════════════════════════════ */
+  .search-box input {
+    width: 100%;
+    background: var(--card);
+    border: 1.5px solid rgba(79,195,247,0.2);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    margin-bottom: 12px;
+  }
+  .search-box input:focus { border-color: var(--accent); }
+  .search-box input::placeholder { color: var(--muted); }
+
+  .cat-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+  .cat-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1.5px solid rgba(79,195,247,0.3);
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .cat-btn.active, .cat-btn:hover {
+    background: var(--accent); color: #000; border-color: var(--accent);
+  }
+
+  .cards-grid { display:flex; flex-direction:column; gap:10px; }
+
+  .word-card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 16px 18px;
+    border: 1px solid rgba(79,195,247,0.1);
+    transition: all 0.2s;
+  }
+  .word-card:hover { border-color: rgba(79,195,247,0.35); background: var(--card2); }
+  .word-card.hidden { display: none; }
+
+  .tag {
+    display:inline-block; font-size:10px; padding:2px 8px;
+    border-radius:10px; font-weight:700; margin-bottom:8px;
+    text-transform:uppercase; letter-spacing:0.5px;
+  }
+  .tag-organ  { background:rgba(105,240,174,0.15); color:var(--green); }
+  .tag-process{ background:rgba(255,215,64,0.15);  color:var(--yellow); }
+  .tag-blood  { background:rgba(255,128,171,0.15); color:var(--pink); }
+  .tag-gas    { background:rgba(79,195,247,0.15);  color:var(--accent); }
+
+  .word-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; gap:8px; }
+  .word-en { font-size:20px; font-weight:800; color:#fff; }
+  .word-ko {
+    font-size:13px; color:var(--accent); font-weight:700;
+    background:rgba(79,195,247,0.1); padding:3px 10px; border-radius:20px;
+  }
+  .speak-btn {
+    background:rgba(79,195,247,0.15); border:1.5px solid rgba(79,195,247,0.4);
+    color:var(--accent); border-radius:50%; width:36px; height:36px;
+    cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; transition:all 0.2s; font-family:inherit;
+  }
+  .speak-btn:hover { background:var(--accent); color:#000; }
+  .def-en { font-size:13px; color:#c5dff0; line-height:1.6; margin-bottom:4px; }
+  .def-ko  { font-size:12px; color:var(--muted); line-height:1.6; }
+
+  /* ══════════════════════════════
+     📝 핵심노트
+  ══════════════════════════════ */
+  .note-section {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(79,195,247,0.12);
+  }
+  .note-section-title {
+    font-size: 13px; font-weight: 800; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+  }
+
+  /* 반응식 */
+  .eq-box {
+    background: rgba(79,195,247,0.07);
+    border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; text-align:center;
+  }
+  .eq-text { font-size:15px; font-weight:700; color:#fff; line-height:1.9; }
+  .eq-arrow { color:var(--accent); }
+  .eq-plus  { color:var(--muted); }
+
+  /* 비교표 */
+  .cmp-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .cmp-table th { padding:9px 12px; font-weight:800; font-size:12px; text-transform:uppercase; }
+  .cmp-table th:first-child { color:var(--muted); text-align:left; width:28%; }
+  .cmp-table th.col-a { color:var(--green); background:rgba(105,240,174,0.1); border-radius:8px 8px 0 0; text-align:center; }
+  .cmp-table th.col-b { color:var(--pink);  background:rgba(255,128,171,0.1); border-radius:8px 8px 0 0; text-align:center; }
+  .cmp-table td { padding:10px 12px; border-top:1px solid rgba(255,255,255,0.06); vertical-align:top; }
+  .cmp-table td:first-child { color:var(--muted); font-weight:700; font-size:11px; text-transform:uppercase; }
+  .cmp-table td.val-a { background:rgba(105,240,174,0.05); color:#b9f6ca; text-align:center; font-weight:600; }
+  .cmp-table td.val-b { background:rgba(255,128,171,0.05); color:#ffb3c8; text-align:center; font-weight:600; }
+
+  /* 혈액 다이어그램 */
+  .blood-grid { display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; }
+  .blood-legend { flex:1; min-width:200px; display:flex; flex-direction:column; gap:8px; }
+  .blood-item {
+    border-radius:10px; padding:10px 14px;
+    border-left: 3px solid;
+  }
+  .blood-item-title { font-weight:800; font-size:13px; margin-bottom:3px; }
+  .blood-item-en { font-size:12px; color:#c5dff0; line-height:1.5; }
+  .blood-item-ko { font-size:11px; color:var(--muted); margin-top:2px; }
+
+  /* 백혈구 */
+  .wbc-grid { display:flex; gap:12px; flex-wrap:wrap; }
+  .wbc-card {
+    flex:1; min-width:180px; border-radius:12px; padding:14px;
+    border:1px solid; 
+  }
+  .wbc-icon { font-size:26px; margin-bottom:8px; }
+  .wbc-name { font-weight:800; font-size:15px; margin-bottom:6px; }
+  .wbc-en { font-size:12px; color:#c5dff0; line-height:1.6; }
+  .wbc-ko { font-size:11px; color:var(--muted); margin-top:4px; }
+
+  /* ══════════════════════════════
+     ✅ 퀴즈
+  ══════════════════════════════ */
+  .quiz-score {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    border: 1px solid rgba(105,240,174,0.2);
+  }
+  .score-label { font-size:13px; color:var(--muted); font-weight:700; }
+  .score-val { font-size:26px; font-weight:900; color:var(--green); }
+  .reset-btn {
+    background: rgba(255,128,171,0.15);
+    border: 1.5px solid rgba(255,128,171,0.3);
+    color: var(--pink);
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size:13px; font-weight:700;
+    cursor:pointer; font-family:inherit;
+  }
+
+  .quiz-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(79,195,247,0.1);
+  }
+  .quiz-q { font-size:15px; font-weight:800; color:#fff; margin-bottom:14px; line-height:1.5; }
+  .quiz-options { display:flex; flex-direction:column; gap:8px; }
+  .quiz-option {
+    padding: 11px 16px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+    color: var(--text);
+    font-size:14px; font-weight:600;
+    cursor:pointer; font-family:inherit;
+    text-align:left; transition:all 0.2s;
+  }
+  .quiz-option:hover:not(:disabled) { border-color:var(--accent); background:rgba(79,195,247,0.08); }
+  .quiz-option.correct { background:rgba(105,240,174,0.15); border-color:var(--green); color:var(--green); }
+  .quiz-option.wrong   { background:rgba(255,128,171,0.12); border-color:var(--pink);  color:var(--pink); }
+  .quiz-option:disabled { cursor:default; }
+  .quiz-feedback { margin-top:10px; font-size:13px; font-weight:700; padding:8px 12px; border-radius:8px; }
+  .quiz-feedback.correct { background:rgba(105,240,174,0.1); color:var(--green); }
+  .quiz-feedback.wrong   { background:rgba(255,128,171,0.1);  color:var(--pink); }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-btn" href="science_main.html">← 뒤로</a>
+  <div>
+    <div class="header-title">🫁 8B1 Respiration</div>
+    <div class="header-sub">호흡 · Year 8 Science</div>
+  </div>
+</header>
+
+<!-- 탭 버튼 -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('vocab')">📖 단어장</button>
+  <button class="tab-btn" onclick="switchTab('notes')">📝 핵심노트</button>
+  <button class="tab-btn" onclick="switchTab('quiz')">✅ 퀴즈</button>
+</div>
+
+<!-- ════════════════════════════════
+     📖 단어장
+════════════════════════════════ -->
+<div id="tab-vocab" class="tab-content active">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 단어 검색..." oninput="searchCards()">
+  </div>
+  <div class="cat-tabs">
+    <button class="cat-btn active" onclick="filterCards('all',this)">전체</button>
+    <button class="cat-btn" onclick="filterCards('organ',this)">🫁 기관</button>
+    <button class="cat-btn" onclick="filterCards('process',this)">⚙️ 과정</button>
+    <button class="cat-btn" onclick="filterCards('blood',this)">🩸 혈액</button>
+    <button class="cat-btn" onclick="filterCards('gas',this)">💨 기체</button>
+  </div>
+  <div class="cards-grid" id="cardsGrid">
+
+    <!-- 기관 -->
+    <div class="word-card" data-cat="organ">
+      <div class="tag tag-organ">🫁 Organ 기관</div>
+      <div class="word-header">
+        <div><div class="word-en">Trachea</div><div class="word-ko">기관</div></div>
+        <button class="speak-btn" onclick="speak('trachea')">🔊</button>
+      </div>
+      <div class="def-en">The tube that carries air from the mouth and nose down to the lungs.</div>
+      <div class="def-ko">입과 코에서 폐로 공기를 운반하는 관.</div>
+    </div>
+
+    <div class="word-card" data-cat="organ">
+      <div class="tag tag-organ">🫁 Organ 기관</div>
+      <div class="word-header">
+        <div><div class="word-en">Bronchi</div><div class="word-ko">기관지</div></div>
+        <button class="speak-btn" onclick="speak('bronchi')">🔊</button>
+      </div>
+      <div class="def-en">The two tubes that branch from the trachea into each lung.</div>
+      <div class="def-ko">기관에서 각 폐로 이어지는 두 개의 관.</div>
+    </div>
+
+    <div class="word-card" data-cat="organ">
+      <div class="tag tag-organ">🫁 Organ 기관</div>
+      <div class="word-header">
+        <div><div class="word-en">Alveoli</div><div class="word-ko">폐포</div></div>
+        <button class="speak-btn" onclick="speak('alveoli')">🔊</button>
+      </div>
+      <div class="def-en">Tiny air sacs in the lungs where gas exchange occurs. Thin walls, large surface area.</div>
+      <div class="def-ko">폐 속 작은 공기 주머니. 얇은 벽과 넓은 표면적으로 기체 교환이 일어난다.</div>
+    </div>
+
+    <div class="word-card" data-cat="organ">
+      <div class="tag tag-organ">🫁 Organ 기관</div>
+      <div class="word-header">
+        <div><div class="word-en">Diaphragm</div><div class="word-ko">횡격막</div></div>
+        <button class="speak-btn" onclick="speak('diaphragm')">🔊</button>
+      </div>
+      <div class="def-en">A dome-shaped muscle below the lungs that contracts when you breathe in.</div>
+      <div class="def-ko">폐 아래 돔 모양의 근육. 숨을 들이쉬면 수축하여 납작해진다.</div>
+    </div>
+
+    <div class="word-card" data-cat="organ">
+      <div class="tag tag-organ">🫁 Organ 기관</div>
+      <div class="word-header">
+        <div><div class="word-en">Mitochondria</div><div class="word-ko">미토콘드리아</div></div>
+        <button class="speak-btn" onclick="speak('mitochondria')">🔊</button>
+      </div>
+      <div class="def-en">The organelle inside cells where aerobic respiration takes place.</div>
+      <div class="def-ko">세포 안의 소기관으로, 유산소 호흡이 일어나 에너지가 방출되는 곳.</div>
+    </div>
+
+    <!-- 과정 -->
+    <div class="word-card" data-cat="process">
+      <div class="tag tag-process">⚙️ Process 과정</div>
+      <div class="word-header">
+        <div><div class="word-en">Aerobic respiration</div><div class="word-ko">유산소 호흡</div></div>
+        <button class="speak-btn" onclick="speak('aerobic respiration')">🔊</button>
+      </div>
+      <div class="def-en">Glucose + Oxygen → CO₂ + Water + Energy. Requires oxygen.</div>
+      <div class="def-ko">산소를 이용해 포도당을 분해하여 에너지를 만드는 것.</div>
+    </div>
+
+    <div class="word-card" data-cat="process">
+      <div class="tag tag-process">⚙️ Process 과정</div>
+      <div class="word-header">
+        <div><div class="word-en">Anaerobic respiration</div><div class="word-ko">무산소 호흡</div></div>
+        <button class="speak-btn" onclick="speak('anaerobic respiration')">🔊</button>
+      </div>
+      <div class="def-en">Glucose → Lactic acid + Energy. No oxygen needed, less energy released.</div>
+      <div class="def-ko">산소 없이 포도당을 분해. 젖산 생성, 에너지 적게 방출.</div>
+    </div>
+
+    <div class="word-card" data-cat="process">
+      <div class="tag tag-process">⚙️ Process 과정</div>
+      <div class="word-header">
+        <div><div class="word-en">Diffusion</div><div class="word-ko">확산</div></div>
+        <button class="speak-btn" onclick="speak('diffusion')">🔊</button>
+      </div>
+      <div class="def-en">Movement of particles from high concentration to low concentration.</div>
+      <div class="def-ko">입자가 농도 높은 곳에서 낮은 곳으로 이동하는 것.</div>
+    </div>
+
+    <div class="word-card" data-cat="process">
+      <div class="tag tag-process">⚙️ Process 과정</div>
+      <div class="word-header">
+        <div><div class="word-en">Gas exchange</div><div class="word-ko">기체 교환</div></div>
+        <button class="speak-btn" onclick="speak('gas exchange')">🔊</button>
+      </div>
+      <div class="def-en">O₂ moves from alveoli into blood. CO₂ moves from blood into alveoli.</div>
+      <div class="def-ko">산소는 폐포→혈액으로, 이산화탄소는 혈액→폐포로 이동.</div>
+    </div>
+
+    <div class="word-card" data-cat="process">
+      <div class="tag tag-process">⚙️ Process 과정</div>
+      <div class="word-header">
+        <div><div class="word-en">Lactic acid</div><div class="word-ko">젖산</div></div>
+        <button class="speak-btn" onclick="speak('lactic acid')">🔊</button>
+      </div>
+      <div class="def-en">Waste product of anaerobic respiration. Builds up and causes muscle pain.</div>
+      <div class="def-ko">무산소 호흡의 부산물. 쌓이면 근육통을 일으킨다.</div>
+    </div>
+
+    <div class="word-card" data-cat="process">
+      <div class="tag tag-process">⚙️ Process 과정</div>
+      <div class="word-header">
+        <div><div class="word-en">Oxygen debt</div><div class="word-ko">산소 부채</div></div>
+        <button class="speak-btn" onclick="speak('oxygen debt')">🔊</button>
+      </div>
+      <div class="def-en">Extra oxygen needed after exercise to break down lactic acid that built up.</div>
+      <div class="def-ko">운동 후 쌓인 젖산을 분해하기 위해 추가로 필요한 산소.</div>
+    </div>
+
+    <!-- 혈액 -->
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Red blood cell</div><div class="word-ko">적혈구</div></div>
+        <button class="speak-btn" onclick="speak('red blood cell')">🔊</button>
+      </div>
+      <div class="def-en">Biconcave, no nucleus. Carries O₂ using haemoglobin. Made in bone marrow.</div>
+      <div class="def-ko">양오목형, 핵 없음. 헤모글로빈으로 산소 운반. 골수에서 생성.</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Haemoglobin</div><div class="word-ko">헤모글로빈</div></div>
+        <button class="speak-btn" onclick="speak('haemoglobin')">🔊</button>
+      </div>
+      <div class="def-en">Red pigment in RBC. Binds with O₂ in lungs → oxyhaemoglobin. Released at body cells.</div>
+      <div class="def-ko">적혈구 속 빨간 색소. 폐에서 산소와 결합 → 산소헤모글로빈. 세포에서 산소 방출.</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">White blood cell</div><div class="word-ko">백혈구</div></div>
+        <button class="speak-btn" onclick="speak('white blood cell')">🔊</button>
+      </div>
+      <div class="def-en">Part of immune system. Two types: phagocytes (engulf pathogens) and lymphocytes (make antibodies).</div>
+      <div class="def-ko">면역계의 일부. 식세포(병원체 삼킴)와 림프구(항체 생산) 두 종류.</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Phagocyte</div><div class="word-ko">식세포</div></div>
+        <button class="speak-btn" onclick="speak('phagocyte')">🔊</button>
+      </div>
+      <div class="def-en">A white blood cell that surrounds, engulfs and destroys pathogens.</div>
+      <div class="def-ko">병원체를 둘러싸고 삼켜서 파괴하는 백혈구.</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Lymphocyte</div><div class="word-ko">림프구</div></div>
+        <button class="speak-btn" onclick="speak('lymphocyte')">🔊</button>
+      </div>
+      <div class="def-en">A white blood cell that produces antibodies to stick pathogens together.</div>
+      <div class="def-ko">항체를 만들어 병원체를 뭉치게 하는 백혈구.</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Antibody</div><div class="word-ko">항체</div></div>
+        <button class="speak-btn" onclick="speak('antibody')">🔊</button>
+      </div>
+      <div class="def-en">Protein made by lymphocytes that sticks pathogens together for easier destruction.</div>
+      <div class="def-ko">림프구가 만드는 단백질. 병원체를 뭉치게 해 파괴하기 쉽게 한다.</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Pathogen</div><div class="word-ko">병원체</div></div>
+        <button class="speak-btn" onclick="speak('pathogen')">🔊</button>
+      </div>
+      <div class="def-en">A microorganism (e.g. bacteria, virus) that causes disease.</div>
+      <div class="def-ko">질병을 일으키는 미생물 (예: 세균, 바이러스).</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Platelet</div><div class="word-ko">혈소판</div></div>
+        <button class="speak-btn" onclick="speak('platelet')">🔊</button>
+      </div>
+      <div class="def-en">Tiny cell fragment that helps blood clot and form scabs when injured.</div>
+      <div class="def-ko">다칠 때 혈액을 굳혀 딱지를 만드는 작은 세포 조각.</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Plasma</div><div class="word-ko">혈장</div></div>
+        <button class="speak-btn" onclick="speak('plasma')">🔊</button>
+      </div>
+      <div class="def-en">Pale yellow liquid (55% of blood). Carries dissolved glucose, CO₂, hormones, nutrients.</div>
+      <div class="def-ko">노란색 액체 (혈액의 55%). 포도당, CO₂, 호르몬, 영양소 운반.</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Biconcave</div><div class="word-ko">양오목형</div></div>
+        <button class="speak-btn" onclick="speak('biconcave')">🔊</button>
+      </div>
+      <div class="def-en">Shape of RBC — dipped on both sides to maximise surface area for absorbing oxygen.</div>
+      <div class="def-ko">적혈구 모양 — 양쪽이 오목해 산소 흡수 표면적을 최대화한다.</div>
+    </div>
+
+    <div class="word-card" data-cat="blood">
+      <div class="tag tag-blood">🩸 Blood 혈액</div>
+      <div class="word-header">
+        <div><div class="word-en">Bone marrow</div><div class="word-ko">골수</div></div>
+        <button class="speak-btn" onclick="speak('bone marrow')">🔊</button>
+      </div>
+      <div class="def-en">Soft tissue inside bones where red and white blood cells are produced.</div>
+      <div class="def-ko">뼈 안쪽의 조직. 적혈구와 백혈구가 만들어지는 곳.</div>
+    </div>
+
+    <!-- 기체 -->
+    <div class="word-card" data-cat="gas">
+      <div class="tag tag-gas">💨 Gas 기체</div>
+      <div class="word-header">
+        <div><div class="word-en">Oxygen (O₂)</div><div class="word-ko">산소</div></div>
+        <button class="speak-btn" onclick="speak('oxygen')">🔊</button>
+      </div>
+      <div class="def-en">Gas needed for aerobic respiration. Breathed in, diffuses into blood at alveoli.</div>
+      <div class="def-ko">유산소 호흡에 필요한 기체. 들이쉬어 폐포에서 혈액으로 확산.</div>
+    </div>
+
+    <div class="word-card" data-cat="gas">
+      <div class="tag tag-gas">💨 Gas 기체</div>
+      <div class="word-header">
+        <div><div class="word-en">Carbon dioxide (CO₂)</div><div class="word-ko">이산화탄소</div></div>
+        <button class="speak-btn" onclick="speak('carbon dioxide')">🔊</button>
+      </div>
+      <div class="def-en">Waste gas from respiration. Diffuses from blood into alveoli, breathed out.</div>
+      <div class="def-ko">호흡의 노폐 기체. 혈액에서 폐포로 확산되어 내쉬어진다.</div>
+    </div>
+
+    <div class="word-card" data-cat="gas">
+      <div class="tag tag-gas">💨 Gas 기체</div>
+      <div class="word-header">
+        <div><div class="word-en">Limewater</div><div class="word-ko">석회수</div></div>
+        <button class="speak-btn" onclick="speak('limewater')">🔊</button>
+      </div>
+      <div class="def-en">Liquid used to test for CO₂. Turns cloudy/milky when CO₂ is bubbled through.</div>
+      <div class="def-ko">CO₂ 검출에 사용. CO₂를 통과시키면 뿌옇게 흐려진다.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     📝 핵심노트
+════════════════════════════════ -->
+<div id="tab-notes" class="tab-content">
+
+  <!-- 반응식 -->
+  <div class="note-section">
+    <div class="note-section-title">⚗️ Key Equations 핵심 반응식</div>
+    <div class="eq-box">
+      <div style="font-size:12px;color:var(--green);margin-bottom:4px;">🌿 Aerobic 유산소</div>
+      <div class="eq-text">Glucose <span class="eq-plus">+</span> Oxygen <span class="eq-arrow">→</span> CO₂ <span class="eq-plus">+</span> Water <span class="eq-plus">+</span> Energy</div>
+    </div>
+    <div class="eq-box">
+      <div style="font-size:12px;color:var(--pink);margin-bottom:4px;">⚡ Anaerobic 무산소</div>
+      <div class="eq-text">Glucose <span class="eq-arrow">→</span> Lactic acid <span class="eq-plus">+</span> Energy</div>
+    </div>
+    <div style="margin-top:10px;font-size:12px;color:var(--muted);text-align:center;">
+      Haemoglobin <span class="eq-plus">+</span> Oxygen <span class="eq-arrow">→</span> Oxyhaemoglobin
+    </div>
+  </div>
+
+  <!-- 유산소 vs 무산소 비교 -->
+  <div class="note-section">
+    <div class="note-section-title">⚖️ Aerobic vs Anaerobic 비교</div>
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="col-a">🌿 Aerobic<br>유산소</th>
+          <th class="col-b">⚡ Anaerobic<br>무산소</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Oxygen 산소</td>
+          <td class="val-a">✅ 필요</td>
+          <td class="val-b">❌ 불필요</td>
+        </tr>
+        <tr>
+          <td>Glucose 포도당</td>
+          <td class="val-a">완전 분해</td>
+          <td class="val-b">불완전 분해</td>
+        </tr>
+        <tr>
+          <td>Products 산물</td>
+          <td class="val-a">CO₂ + 물</td>
+          <td class="val-b">젖산</td>
+        </tr>
+        <tr>
+          <td>Energy 에너지</td>
+          <td class="val-a">🔋🔋🔋 많음</td>
+          <td class="val-b">🔋 적음</td>
+        </tr>
+        <tr>
+          <td>When 시기</td>
+          <td class="val-a">평상시</td>
+          <td class="val-b">격렬한 운동</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 혈액 성분 -->
+  <div class="note-section">
+    <div class="note-section-title">🩸 Components of Blood 혈액 성분</div>
+    <div class="blood-grid">
+      <svg viewBox="0 0 90 240" style="width:80px;flex-shrink:0;" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="4" width="60" height="232" rx="30" fill="none" stroke="#4fc3f7" stroke-width="2"/>
+        <clipPath id="tc"><rect x="15" y="4" width="60" height="232" rx="30"/></clipPath>
+        <rect x="15" y="4"   width="60" height="128" fill="#ffd740" opacity="0.8" clip-path="url(#tc)"/>
+        <rect x="15" y="132" width="60" height="10"  fill="#fff"    opacity="0.5" clip-path="url(#tc)"/>
+        <rect x="15" y="142" width="60" height="94"  fill="#ef5350" opacity="0.85" clip-path="url(#tc)"/>
+        <text x="45" y="72"  text-anchor="middle" fill="#111" font-size="11" font-weight="800">55%</text>
+        <text x="45" y="139" text-anchor="middle" fill="#111" font-size="7"  font-weight="800">1%</text>
+        <text x="45" y="198" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">44%</text>
+      </svg>
+      <div class="blood-legend">
+        <div class="blood-item" style="background:rgba(255,215,64,0.1);border-color:#ffd740;">
+          <div class="blood-item-title" style="color:#ffd740;">Plasma 혈장 — 55%</div>
+          <div class="blood-item-en">Carries dissolved glucose, CO₂, hormones, nutrients.</div>
+          <div class="blood-item-ko">포도당, CO₂, 호르몬, 영양소 운반.</div>
+        </div>
+        <div class="blood-item" style="background:rgba(255,255,255,0.05);border-color:#aaa;">
+          <div class="blood-item-title" style="color:#ddd;">Platelets 혈소판 + WBC 백혈구 — 1%</div>
+          <div class="blood-item-en">Platelets: form scabs · WBC: fight pathogens</div>
+          <div class="blood-item-ko">혈소판: 딱지 형성 · 백혈구: 병원체 격퇴</div>
+        </div>
+        <div class="blood-item" style="background:rgba(239,83,80,0.1);border-color:#ef5350;">
+          <div class="blood-item-title" style="color:#ef9a9a;">Red blood cells 적혈구 — 44%</div>
+          <div class="blood-item-en">Biconcave, no nucleus. Carry O₂ via haemoglobin.</div>
+          <div class="blood-item-ko">양오목형, 핵 없음. 헤모글로빈으로 산소 운반.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 백혈구 2종류 -->
+  <div class="note-section">
+    <div class="note-section-title">🛡️ Two Types of White Blood Cell</div>
+    <div class="wbc-grid">
+      <div class="wbc-card" style="background:rgba(105,240,174,0.07);border-color:rgba(105,240,174,0.25);">
+        <div class="wbc-icon">🍀</div>
+        <div class="wbc-name" style="color:var(--green);">Phagocyte 식세포</div>
+        <div class="wbc-en">Surrounds, engulfs and <strong>destroys</strong> pathogens directly.</div>
+        <div class="wbc-ko">병원체를 직접 삼켜서 파괴한다.</div>
+      </div>
+      <div class="wbc-card" style="background:rgba(255,215,64,0.07);border-color:rgba(255,215,64,0.25);">
+        <div class="wbc-icon">🔫</div>
+        <div class="wbc-name" style="color:var(--yellow);">Lymphocyte 림프구</div>
+        <div class="wbc-en">Produces <strong>antibodies</strong> → pathogens clump → phagocytes destroy.</div>
+        <div class="wbc-ko">항체 생산 → 병원체 뭉침 → 식세포가 파괴.</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:12px;color:var(--muted);text-align:center;">
+      💡 Both made in bone marrow 골수 · Part of immune system 면역계
+    </div>
+  </div>
+
+  <!-- 적혈구 구조 -->
+  <div class="note-section">
+    <div class="note-section-title">🔴 Red Blood Cell Adaptations 적혈구 적응</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:rgba(239,83,80,0.08);border-radius:10px;padding:12px 14px;border-left:3px solid #ef5350;">
+        <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">Biconcave shape 양오목형</div>
+        <div style="font-size:13px;color:#c5dff0;">Dips on both sides → maximises surface area → absorbs O₂ faster.</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px;">양쪽이 오목 → 표면적 최대화 → 산소를 더 빠르게 흡수.</div>
+      </div>
+      <div style="background:rgba(239,83,80,0.08);border-radius:10px;padding:12px 14px;border-left:3px solid #ef5350;">
+        <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">No nucleus 핵 없음</div>
+        <div style="font-size:13px;color:#c5dff0;">More space for haemoglobin → carries more oxygen.</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px;">헤모글로빈을 더 많이 담을 공간 → 산소를 더 많이 운반.</div>
+      </div>
+      <div style="background:rgba(239,83,80,0.08);border-radius:10px;padding:12px 14px;border-left:3px solid #ef5350;">
+        <div style="font-weight:800;color:#ef9a9a;margin-bottom:4px;">Contains haemoglobin 헤모글로빈 함유</div>
+        <div style="font-size:13px;color:#c5dff0;">Binds O₂ in lungs → oxyhaemoglobin → releases O₂ at body cells.</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px;">폐에서 O₂ 결합 → 산소헤모글로빈 → 세포에서 O₂ 방출.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════
+     ✅ 퀴즈
+════════════════════════════════ -->
+<div id="tab-quiz" class="tab-content">
+  <div class="quiz-score">
+    <div>
+      <div class="score-label">점수 Score</div>
+      <div class="score-val" id="scoreDisplay">0 / 0</div>
+    </div>
+    <button class="reset-btn" onclick="resetQuiz()">🔄 다시하기</button>
+  </div>
+  <div id="quizContainer"></div>
+</div>
+
+<script>
+/* ── 탭 전환 ── */
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+/* ── 발음 ── */
+function speak(word) {
+  const u = new SpeechSynthesisUtterance(word);
+  u.lang = 'en-GB'; u.rate = 0.85;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
+/* ── 단어 필터 ── */
+let currentCat = 'all';
+function filterCards(cat, btn) {
+  currentCat = cat;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilter();
+}
+function searchCards() { applyFilter(); }
+function applyFilter() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.word-card').forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const catOk = currentCat === 'all' || card.dataset.cat === currentCat;
+    const searchOk = !q || text.includes(q);
+    card.classList.toggle('hidden', !(catOk && searchOk));
+  });
+}
+
+/* ── 퀴즈 ── */
+const quizData = [
+  { q: "Where are red blood cells made?", opts: ["Heart","Liver","Bone marrow","Brain"], ans: 2 },
+  { q: "Which cell component are red blood cells missing?", opts: ["Mitochondria","Cytoplasm","Cell membrane","Nucleus"], ans: 3 },
+  { q: "What moves into the blood in the lungs?", opts: ["Nitrogen","Water","Oxygen","Carbon dioxide"], ans: 2 },
+  { q: "By which process does oxygen move from red blood cells into body cells?", opts: ["Respiration","Diffusion","Active transport","Osmosis"], ans: 1 },
+  { q: "Which process requires oxygen to release energy?", opts: ["Photosynthesis","Respiration","Digestion","Protein synthesis"], ans: 1 },
+  { q: "Which of these is NOT a type of white blood cell?", opts: ["Lymphocyte","Phagocyte","Erythrocyte"], ans: 2 },
+  { q: "True or false: There are more white blood cells than red blood cells.", opts: ["False","True"], ans: 0 },
+  { q: "True or false: White blood cells are part of the immune system.", opts: ["True","False"], ans: 0 },
+  { q: "Which substance is NOT carried directly in blood plasma?", opts: ["Oxygen","Enzymes","Carbon dioxide","Hormones"], ans: 0 },
+  { q: "What is the word equation for anaerobic respiration?", opts: ["Glucose + Oxygen → CO₂ + Water + Energy","Glucose → Lactic acid + Energy","Glucose → CO₂ + Energy","Oxygen → Lactic acid + Glucose"], ans: 1 },
+  { q: "What shape are red blood cells?", opts: ["Spherical","Cylindrical","Biconcave","Flat square"], ans: 2 },
+  { q: "Why do red blood cells have no nucleus?", opts: ["To make them lighter","To maximise space for haemoglobin","To help them divide faster","To absorb more water"], ans: 1 },
+];
+
+let score = 0, answered = 0;
+
+function buildQuiz() {
+  score = 0; answered = 0;
+  updateScore();
+  const c = document.getElementById('quizContainer');
+  c.innerHTML = quizData.map((q, qi) => `
+    <div class="quiz-card" id="qcard-${qi}">
+      <div class="quiz-q">Q${qi+1}. ${q.q}</div>
+      <div class="quiz-options">
+        ${q.opts.map((o, oi) => `
+          <button class="quiz-option" onclick="answer(${qi},${oi})">${o}</button>
+        `).join('')}
+      </div>
+      <div class="quiz-feedback" id="qfb-${qi}" style="display:none;"></div>
+    </div>
+  `).join('');
+}
+
+function answer(qi, chosen) {
+  const q = quizData[qi];
+  const card = document.getElementById('qcard-' + qi);
+  const fb = document.getElementById('qfb-' + qi);
+  const btns = card.querySelectorAll('.quiz-option');
+  btns.forEach(b => b.disabled = true);
+  if (chosen === q.ans) {
+    btns[chosen].classList.add('correct');
+    fb.textContent = '✅ 정답!';
+    fb.className = 'quiz-feedback correct';
+    score++;
+  } else {
+    btns[chosen].classList.add('wrong');
+    btns[q.ans].classList.add('correct');
+    fb.textContent = '❌ 오답! 정답: ' + q.opts[q.ans];
+    fb.className = 'quiz-feedback wrong';
+  }
+  fb.style.display = 'block';
+  answered++;
+  updateScore();
+}
+
+function updateScore() {
+  document.getElementById('scoreDisplay').textContent = score + ' / ' + answered;
+}
+
+function resetQuiz() { buildQuiz(); }
+
+buildQuiz();
+</script>
+</body>
+</html>
