@@ -1,8 +1,8 @@
 // AMY Study App — Service Worker
-// 빌드 버전: v20260524-183252
+// 빌드 버전: v20260524-184616
 // 새 버전이 push되면 자동으로 클라이언트 새로고침.
 
-const CACHE_VERSION = 'v20260524-183252';
+const CACHE_VERSION = 'v20260524-184616';
 const CACHE_NAME = 'amy-study-' + CACHE_VERSION;
 const CORE_FILES = ["./", "biology.html", "chemistry.html", "ecosystems.html", "atoms.html", "forces.html", "index.html"];
 
