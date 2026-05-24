@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8B1 Respiration 호흡 단어장</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d1b2a;
+  --card: #162032;
+  --card2: #1c2d42;
+  --accent: #38bdf8;
+  --green: #4ade80;
+  --yellow: #fbbf24;
+  --pink: #f472b6;
+  --orange: #fb923c;
+  --purple: #c084fc;
+  --text: #e2f0ff;
+  --muted: #6b9ab8;
+  --border: rgba(56,189,248,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito','Noto Sans KR',sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+}
+
+/* ── HEADER ── */
+header {
+  background: rgba(22,32,50,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-icon { font-size: 28px; line-height:1; }
+.header-text { flex: 1; }
+.header-title { font-size: 17px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  padding: 32px 20px 24px;
+}
+.hero h1 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+.hero h1 span { color: var(--accent); }
+.hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.stat-chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ── EQUATION BOX ── */
+.eq-box {
+  max-width: 720px;
+  margin: 0 auto 24px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media(max-width:480px){ .eq-box { grid-template-columns: 1fr; } }
+.eq-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+.eq-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.eq-label.aerobic { color: var(--green); }
+.eq-label.anaerobic { color: var(--orange); }
+.eq-formula {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* ── FILTER TABS ── */
+.filter-wrap {
+  max-width: 720px;
+  margin: 0 auto 20px;
+  padding: 0 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.filter-wrap::-webkit-scrollbar { display: none; }
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+.filter-btn {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: rgba(56,189,248,0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── SECTION HEADERS ── */
+.section-header {
+  max-width: 720px;
+  margin: 0 auto 12px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-header h2 {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+}
+.section-line { flex: 1; height: 1px; background: var(--border); }
+
+/* ── VOCAB CARD ── */
+.cards-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.vcard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: start;
+  transition: border-color 0.2s, transform 0.15s;
+  cursor: default;
+}
+.vcard:hover {
+  border-color: rgba(56,189,248,0.3);
+  transform: translateY(-1px);
+}
+.vcard-left { min-width: 0; }
+.vcard-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.vcard-cat {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
+.cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
+.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+
+.vcard-en {
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+.vcard-ko {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.vcard-def {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.vcard-def-ko {
+  font-size: 11.5px;
+  color: #4a7090;
+  line-height: 1.5;
+  margin-top: 3px;
+}
+.vcard-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+.btn-speak {
+  background: rgba(56,189,248,0.1);
+  border: 1.5px solid rgba(56,189,248,0.25);
+  color: var(--accent);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+
+/* YouTube button */
+.btn-yt {
+  background: rgba(254,44,44,0.12);
+  border: 1.5px solid rgba(254,44,44,0.3);
+  color: #ff6b6b;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  transition: all 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.btn-yt:hover {
+  background: rgba(254,44,44,0.22);
+  border-color: rgba(254,44,44,0.6);
+  color: #ff4444;
+  transform: scale(1.03);
+}
+.btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* ── VIDEO SECTION ── */
+.video-section {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  padding: 0 16px;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.video-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  transition: all 0.2s;
+}
+.video-card:hover {
+  border-color: rgba(254,44,44,0.4);
+  background: rgba(22,32,50,0.9);
+  transform: translateY(-2px);
+}
+.video-thumb {
+  width: 44px;
+  height: 44px;
+  background: rgba(254,44,44,0.15);
+  border: 1.5px solid rgba(254,44,44,0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.video-thumb svg { width: 20px; height: 20px; }
+.video-info { min-width: 0; }
+.video-channel {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ff6b6b;
+  margin-bottom: 3px;
+}
+.video-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 24px 20px 32px;
+  font-size: 11px;
+  color: #2a4060;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+/* ── HIDDEN ── */
+.vcard.hidden { display: none; }
+.section-header.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-icon">🫁</div>
+  <div class="header-text">
+    <div class="header-title">8B1 Respiration 호흡 단어장</div>
+    <div class="header-sub">Year 8 Science · Cambridge Lower Secondary</div>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>🫁 8B1 <span>Respiration</span> 호흡</h1>
+  <p>단어 클릭 🔊 발음 · 🎬 버튼으로 YouTube 강의 바로 보기</p>
+  <div class="stats-row">
+    <span class="stat-chip">🫁 기관 9단어</span>
+    <span class="stat-chip">⚙️ 과정 10단어</span>
+    <span class="stat-chip">🩸 혈액 8단어</span>
+    <span class="stat-chip">💨 기체 5단어</span>
+  </div>
+</div>
+
+<div class="eq-box">
+  <div class="eq-card">
+    <div class="eq-label aerobic">✅ Aerobic 유산소</div>
+    <div class="eq-formula">Glucose + Oxygen<br>→ CO₂ + Water + Energy</div>
+  </div>
+  <div class="eq-card">
+    <div class="eq-label anaerobic">⚡ Anaerobic 무산소</div>
+    <div class="eq-formula">Glucose<br>→ Lactic acid + Energy</div>
+  </div>
+</div>
+
+<div class="filter-wrap">
+  <div class="filter-tabs">
+    <button class="filter-btn active" onclick="filterCards('all')">전체 All</button>
+    <button class="filter-btn" onclick="filterCards('organ')">🫁 기관 Organs</button>
+    <button class="filter-btn" onclick="filterCards('process')">⚙️ 과정 Process</button>
+    <button class="filter-btn" onclick="filterCards('blood')">🩸 혈액 Blood</button>
+    <button class="filter-btn" onclick="filterCards('gas')">💨 기체 Gas</button>
+  </div>
+</div>
+
+<!-- ─── ORGAN SECTION ─── -->
+<div class="section-header" id="sec-organ">
+  <h2>🫁 기관 Organs</h2><div class="section-line"></div>
+</div>
+<div class="cards-wrap">
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Respiratory system</div>
+      <div class="vcard-ko">호흡계</div>
+      <div class="vcard-def">The organs involved in breathing and gas exchange.</div>
+      <div class="vcard-def-ko">호흡과 기체 교환에 관여하는 기관들.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Respiratory system')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Nasal cavity</div>
+      <div class="vcard-ko">비강</div>
+      <div class="vcard-def">The space inside the nose that warms, moistens and filters air before it reaches the lungs.</div>
+      <div class="vcard-def-ko">코 안쪽 공간으로, 공기가 폐에 도달하기 전에 따뜻하게 하고 습기를 더하고 먼지를 걸러낸다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Nasal cavity')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Trachea</div>
+      <div class="vcard-ko">기관</div>
+      <div class="vcard-def">The tube that carries air from the mouth and nose down to the lungs.</div>
+      <div class="vcard-def-ko">입과 코에서 폐로 공기를 운반하는 관.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Trachea')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Bronchi</div>
+      <div class="vcard-ko">기관지</div>
+      <div class="vcard-def">The two tubes that branch from the trachea into each lung.</div>
+      <div class="vcard-def-ko">기관에서 각 폐로 이어지는 두 개의 관.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Bronchi')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Bronchioles</div>
+      <div class="vcard-ko">세기관지</div>
+      <div class="vcard-def">Smaller tubes that branch off the bronchi inside the lungs.</div>
+      <div class="vcard-def-ko">폐 안에서 기관지에서 갈라지는 더 작은 관.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Bronchioles')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Alveoli</div>
+      <div class="vcard-ko">폐포</div>
+      <div class="vcard-def">Tiny air sacs in the lungs where gas exchange occurs. They have thin walls and a large surface area.</div>
+      <div class="vcard-def-ko">폐 속 작은 공기 주머니. 얇은 벽과 넓은 표면적으로 기체 교환이 일어난다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Alveoli')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=aPUPfzsqDgs" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Diaphragm</div>
+      <div class="vcard-ko">횡격막</div>
+      <div class="vcard-def">A dome-shaped muscle below the lungs. It contracts and flattens when you breathe in.</div>
+      <div class="vcard-def-ko">폐 아래에 있는 돔 모양의 근육. 숨을 들이쉬면 수축하여 납작해진다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Diaphragm')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Intercostal muscles</div>
+      <div class="vcard-ko">늑간근</div>
+      <div class="vcard-def">Muscles between the ribs that help move the ribcage during breathing.</div>
+      <div class="vcard-def-ko">갈비뼈 사이에 있는 근육으로, 호흡 중 흉곽을 움직이는 것을 돕는다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Intercostal muscles')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Capillary</div>
+      <div class="vcard-ko">모세혈관</div>
+      <div class="vcard-def">The smallest blood vessel. Surrounds the alveoli for gas exchange.</div>
+      <div class="vcard-def-ko">가장 작은 혈관. 폐포를 둘러싸서 기체 교환이 일어난다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Capillary')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=aPUPfzsqDgs" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Larynx</div>
+      <div class="vcard-ko">후두</div>
+      <div class="vcard-def">The voice box. Located at the top of the trachea, it contains the vocal cords.</div>
+      <div class="vcard-def-ko">성대가 있는 기관. 기관 위쪽에 위치하며 소리를 만들어낸다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Larynx')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="organ">
+    <div class="vcard-left">
+      <div class="vcard-top">
+        <span class="vcard-cat cat-organ">🫁 Organ 기관</span>
+      </div>
+      <div class="vcard-en">Mitochondria</div>
+      <div class="vcard-ko">미토콘드리아</div>
+      <div class="vcard-def">The organelle inside cells where aerobic respiration takes place and energy is released.</div>
+      <div class="vcard-def-ko">세포 안의 소기관으로, 유산소 호흡이 일어나 에너지가 방출되는 곳.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Mitochondria')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=ZKAaDbTP6Dc" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+</div><!-- /cards-wrap organ -->
+
+<!-- ─── PROCESS SECTION ─── -->
+<div class="section-header" id="sec-process">
+  <h2>⚙️ 과정 Process</h2><div class="section-line"></div>
+</div>
+<div class="cards-wrap">
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Breathing / Ventilation</div>
+      <div class="vcard-ko">호흡 운동 / 환기</div>
+      <div class="vcard-def">The physical movement of air into and out of the lungs. Different from respiration!</div>
+      <div class="vcard-def-ko">폐로 공기를 들이쉬고 내쉬는 물리적 움직임. 세포 호흡(respiration)과 다름!</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Breathing')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Inhale / Inspiration</div>
+      <div class="vcard-ko">흡기 (숨 들이쉬기)</div>
+      <div class="vcard-def">Breathing in. Diaphragm contracts, ribcage moves up and out, air rushes in.</div>
+      <div class="vcard-def-ko">숨을 들이쉬는 것. 횡격막이 수축하고, 흉곽이 위로 바깥으로 움직이며 공기가 들어온다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Inhale, inspiration')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Exhale / Expiration</div>
+      <div class="vcard-ko">호기 (숨 내쉬기)</div>
+      <div class="vcard-def">Breathing out. Diaphragm relaxes, ribcage moves down and in, air is pushed out.</div>
+      <div class="vcard-def-ko">숨을 내쉬는 것. 횡격막이 이완하고, 흉곽이 아래로 안으로 움직이며 공기가 나간다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Exhale, expiration')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Gas exchange</div>
+      <div class="vcard-ko">기체 교환</div>
+      <div class="vcard-def">Oxygen moves from the alveoli into the blood. Carbon dioxide moves from the blood into the alveoli.</div>
+      <div class="vcard-def-ko">산소는 폐포에서 혈액으로, 이산화탄소는 혈액에서 폐포로 이동한다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Gas exchange')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=aPUPfzsqDgs" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Diffusion</div>
+      <div class="vcard-ko">확산</div>
+      <div class="vcard-def">Movement of particles from an area of high concentration to low concentration.</div>
+      <div class="vcard-def-ko">입자가 농도가 높은 곳에서 낮은 곳으로 이동하는 것.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Diffusion')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=C5pMigXBAgk" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Aerobic respiration</div>
+      <div class="vcard-ko">유산소 호흡</div>
+      <div class="vcard-def">Glucose + Oxygen → Carbon dioxide + Water + Energy. Requires oxygen.</div>
+      <div class="vcard-def-ko">산소를 이용해 포도당을 분해하여 에너지를 만드는 것.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Aerobic respiration')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=xzDAZUZido0" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Anaerobic respiration</div>
+      <div class="vcard-ko">무산소 호흡</div>
+      <div class="vcard-def">Glucose → Lactic acid + Energy. Occurs without oxygen, produces less energy.</div>
+      <div class="vcard-def-ko">산소 없이 포도당을 분해하는 것. 젖산이 만들어지고 에너지가 적게 생성된다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Anaerobic respiration')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=xzDAZUZido0" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Glucose</div>
+      <div class="vcard-ko">포도당</div>
+      <div class="vcard-def">A type of sugar used as fuel in respiration to release energy.</div>
+      <div class="vcard-def-ko">호흡에서 에너지를 방출하는 데 사용되는 연료인 당.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Glucose')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=ZKAaDbTP6Dc" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Lactic acid</div>
+      <div class="vcard-ko">젖산</div>
+      <div class="vcard-def">The waste product of anaerobic respiration. Causes muscle fatigue and cramps.</div>
+      <div class="vcard-def-ko">무산소 호흡의 부산물. 근육 피로와 경련을 일으킨다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Lactic acid')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=xzDAZUZido0" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Oxygen debt</div>
+      <div class="vcard-ko">산소 부채</div>
+      <div class="vcard-def">Extra oxygen needed after exercise to break down the lactic acid that built up.</div>
+      <div class="vcard-def-ko">운동 후 쌓인 젖산을 분해하기 위해 추가로 필요한 산소.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Oxygen debt')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=xzDAZUZido0" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="process">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process 과정</span></div>
+      <div class="vcard-en">Lung volume / Vital capacity</div>
+      <div class="vcard-ko">폐활량</div>
+      <div class="vcard-def">The maximum amount of air a person can breathe in and out in one breath.</div>
+      <div class="vcard-def-ko">한 번에 최대로 들이쉬고 내쉴 수 있는 공기의 양.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Vital capacity')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+</div><!-- /cards-wrap process -->
+
+<!-- ─── BLOOD SECTION ─── -->
+<div class="section-header" id="sec-blood">
+  <h2>🩸 혈액 Blood</h2><div class="section-line"></div>
+</div>
+<div class="cards-wrap">
+
+  <div class="vcard" data-cat="blood">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood 혈액</span></div>
+      <div class="vcard-en">Red blood cell</div>
+      <div class="vcard-ko">적혈구</div>
+      <div class="vcard-def">A blood cell that carries oxygen around the body. Has no nucleus and is biconcave shaped.</div>
+      <div class="vcard-def-ko">온몸에 산소를 운반하는 혈액 세포. 핵이 없고 양쪽이 오목한 모양이다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Red blood cell')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="blood">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood 혈액</span></div>
+      <div class="vcard-en">Haemoglobin</div>
+      <div class="vcard-ko">헤모글로빈</div>
+      <div class="vcard-def">A red protein in red blood cells that binds to oxygen and carries it around the body.</div>
+      <div class="vcard-def-ko">적혈구 안의 빨간 단백질로, 산소와 결합하여 온몸으로 운반한다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Haemoglobin')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="blood">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood 혈액</span></div>
+      <div class="vcard-en">Oxyhaemoglobin</div>
+      <div class="vcard-ko">산소헤모글로빈</div>
+      <div class="vcard-def">The bright red compound formed when haemoglobin combines with oxygen in the lungs.</div>
+      <div class="vcard-def-ko">폐에서 헤모글로빈이 산소와 결합하여 만들어지는 밝은 빨간색 화합물.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Oxyhaemoglobin')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="blood">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood 혈액</span></div>
+      <div class="vcard-en">White blood cell</div>
+      <div class="vcard-ko">백혈구</div>
+      <div class="vcard-def">A blood cell that fights infection and disease by engulfing pathogens.</div>
+      <div class="vcard-def-ko">병원체를 삼켜서 감염과 질병에 맞서 싸우는 혈액 세포.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('White blood cell')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="blood">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood 혈액</span></div>
+      <div class="vcard-en">Platelet</div>
+      <div class="vcard-ko">혈소판</div>
+      <div class="vcard-def">A tiny cell fragment that helps blood to clot when you are injured.</div>
+      <div class="vcard-def-ko">다칠 때 혈액이 굳도록 돕는 작은 세포 조각.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Platelet')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="blood">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood 혈액</span></div>
+      <div class="vcard-en">Plasma</div>
+      <div class="vcard-ko">혈장</div>
+      <div class="vcard-def">The yellow liquid part of blood that transports dissolved nutrients, hormones, and waste.</div>
+      <div class="vcard-def-ko">혈액의 노란색 액체 부분으로, 용해된 영양소, 호르몬, 노폐물을 운반한다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Plasma')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="blood">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood 혈액</span></div>
+      <div class="vcard-en">Artery</div>
+      <div class="vcard-ko">동맥</div>
+      <div class="vcard-def">A blood vessel that carries blood away from the heart. Has thick, elastic walls.</div>
+      <div class="vcard-def-ko">심장에서 몸으로 혈액을 운반하는 혈관. 두껍고 탄력 있는 벽을 가진다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Artery')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="blood">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood 혈액</span></div>
+      <div class="vcard-en">Vein</div>
+      <div class="vcard-ko">정맥</div>
+      <div class="vcard-def">A blood vessel that carries blood back to the heart. Has valves to prevent backflow.</div>
+      <div class="vcard-def-ko">몸에서 심장으로 혈액을 운반하는 혈관. 역류를 막는 판막이 있다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Vein')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        Cognito
+      </a>
+    </div>
+  </div>
+
+</div><!-- /cards-wrap blood -->
+
+<!-- ─── GAS SECTION ─── -->
+<div class="section-header" id="sec-gas">
+  <h2>💨 기체 Gas</h2><div class="section-line"></div>
+</div>
+<div class="cards-wrap">
+
+  <div class="vcard" data-cat="gas">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas 기체</span></div>
+      <div class="vcard-en">Oxygen (O₂)</div>
+      <div class="vcard-ko">산소</div>
+      <div class="vcard-def">A gas needed for aerobic respiration. Breathed in through the lungs.</div>
+      <div class="vcard-def-ko">유산소 호흡에 필요한 기체. 폐를 통해 들이쉰다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Oxygen')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=aPUPfzsqDgs" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="gas">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas 기체</span></div>
+      <div class="vcard-en">Carbon dioxide (CO₂)</div>
+      <div class="vcard-ko">이산화탄소</div>
+      <div class="vcard-def">A waste gas produced in respiration. Breathed out through the lungs.</div>
+      <div class="vcard-def-ko">호흡에서 생성되는 노폐 기체. 폐를 통해 내쉰다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Carbon dioxide')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=aPUPfzsqDgs" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="gas">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas 기체</span></div>
+      <div class="vcard-en">Concentration gradient</div>
+      <div class="vcard-ko">농도 기울기</div>
+      <div class="vcard-def">The difference in concentration between two areas. Diffusion occurs down the concentration gradient.</div>
+      <div class="vcard-def-ko">두 공간 사이의 농도 차이. 확산은 농도 기울기를 따라 일어난다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Concentration gradient')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=C5pMigXBAgk" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="gas">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas 기체</span></div>
+      <div class="vcard-en">Limewater</div>
+      <div class="vcard-ko">석회수</div>
+      <div class="vcard-def">A liquid used to test for carbon dioxide. It turns cloudy/milky when CO₂ is bubbled through it.</div>
+      <div class="vcard-def-ko">이산화탄소를 확인하는 데 사용하는 액체. CO₂를 통과시키면 뿌옇게 흐려진다.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Limewater')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=ZKAaDbTP6Dc" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+  <div class="vcard" data-cat="gas">
+    <div class="vcard-left">
+      <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas 기체</span></div>
+      <div class="vcard-en">Hydrogencarbonate indicator</div>
+      <div class="vcard-ko">탄산수소 지시약</div>
+      <div class="vcard-def">A liquid that changes colour depending on CO₂ levels. Red = normal, Yellow = more CO₂, Purple = less CO₂.</div>
+      <div class="vcard-def-ko">CO₂ 농도에 따라 색이 변하는 액체. 빨강=보통, 노랑=CO₂ 많음, 보라=CO₂ 적음.</div>
+    </div>
+    <div class="vcard-right">
+      <button class="btn-speak" onclick="speak('Hydrogencarbonate indicator')">🔊</button>
+      <a class="btn-yt" href="https://www.youtube.com/watch?v=ZKAaDbTP6Dc" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        FreeSci
+      </a>
+    </div>
+  </div>
+
+</div><!-- /cards-wrap gas -->
+
+<!-- ─── VIDEO HUB ─── -->
+<div class="video-section">
+  <div class="section-header" style="margin:0 0 0 0; padding:0;">
+    <h2>🎬 강의 영상 모음 Video Hub</h2><div class="section-line"></div>
+  </div>
+  <div class="video-grid">
+
+    <a class="video-card" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank">
+      <div class="video-thumb">
+        <svg viewBox="0 0 24 24" fill="#ff6b6b"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+      </div>
+      <div class="video-info">
+        <div class="video-channel">Cognito</div>
+        <div class="video-title">The Lungs & Gas Exchange</div>
+      </div>
+    </a>
+
+    <a class="video-card" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank">
+      <div class="video-thumb">
+        <svg viewBox="0 0 24 24" fill="#ff6b6b"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+      </div>
+      <div class="video-info">
+        <div class="video-channel">Cognito</div>
+        <div class="video-title">Ventilation Mechanism / How Breathing Works</div>
+      </div>
+    </a>
+
+    <a class="video-card" href="https://www.youtube.com/watch?v=xzDAZUZido0" target="_blank">
+      <div class="video-thumb">
+        <svg viewBox="0 0 24 24" fill="#ff6b6b"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+      </div>
+      <div class="video-info">
+        <div class="video-channel">Cognito</div>
+        <div class="video-title">Aerobic & Anaerobic Respiration</div>
+      </div>
+    </a>
+
+    <a class="video-card" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank">
+      <div class="video-thumb">
+        <svg viewBox="0 0 24 24" fill="#ff6b6b"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+      </div>
+      <div class="video-info">
+        <div class="video-channel">Cognito</div>
+        <div class="video-title">The Blood (Components)</div>
+      </div>
+    </a>
+
+    <a class="video-card" href="https://www.youtube.com/watch?v=aPUPfzsqDgs" target="_blank">
+      <div class="video-thumb">
+        <svg viewBox="0 0 24 24" fill="#ff6b6b"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+      </div>
+      <div class="video-info">
+        <div class="video-channel">FreeScienceLessons</div>
+        <div class="video-title">Gas Exchange in the Lungs</div>
+      </div>
+    </a>
+
+    <a class="video-card" href="https://www.youtube.com/watch?v=ZKAaDbTP6Dc" target="_blank">
+      <div class="video-thumb">
+        <svg viewBox="0 0 24 24" fill="#ff6b6b"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+      </div>
+      <div class="video-info">
+        <div class="video-channel">FreeScienceLessons</div>
+        <div class="video-title">Respiration (Aerobic & Anaerobic)</div>
+      </div>
+    </a>
+
+    <a class="video-card" href="https://www.youtube.com/watch?v=C5pMigXBAgk" target="_blank">
+      <div class="video-thumb">
+        <svg viewBox="0 0 24 24" fill="#ff6b6b"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+      </div>
+      <div class="video-info">
+        <div class="video-channel">FreeScienceLessons</div>
+        <div class="video-title">Diffusion</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  Cambridge Lower Secondary Science · Year 8 · SJI International School Malaysia<br>
+  🔊 버튼을 눌러 발음을 들으세요 · 🎬 버튼으로 YouTube 강의 보기
+</footer>
+
+<script>
+function speak(text) {
+  if ('speechSynthesis' in window) {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB';
+    u.rate = 0.85;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(u);
+  }
+}
+
+function filterCards(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  const cards = document.querySelectorAll('.vcard');
+  const sections = {
+    'organ': document.getElementById('sec-organ'),
+    'process': document.getElementById('sec-process'),
+    'blood': document.getElementById('sec-blood'),
+    'gas': document.getElementById('sec-gas'),
+  };
+
+  cards.forEach(c => {
+    if (cat === 'all' || c.dataset.cat === cat) {
+      c.classList.remove('hidden');
+    } else {
+      c.classList.add('hidden');
+    }
+  });
+
+  // show/hide section headers
+  Object.entries(sections).forEach(([key, el]) => {
+    if (!el) return;
+    if (cat === 'all' || cat === key) {
+      el.classList.remove('hidden');
+    } else {
+      el.classList.add('hidden');
+    }
+  });
+}
+</script>
+</body>
+</html>
