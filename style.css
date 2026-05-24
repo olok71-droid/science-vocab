@@ -1,0 +1,62 @@
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;background:#f7f7f9;color:#222;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+
+/* ===== 홈 ===== */
+body.home .hero{padding:32px 20px 16px;background:linear-gradient(135deg,#264653,#2a9d8f);color:#fff;text-align:center}
+body.home .hero h1{margin:0 0 6px;font-size:28px}
+body.home .hero p{margin:0;opacity:.85}
+.unit-grid{padding:16px;display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:640px){.unit-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.unit-grid{grid-template-columns:repeat(3,1fr);max-width:1100px;margin:0 auto}}
+.unit-card{display:flex;flex-direction:column;gap:6px;padding:24px 20px;background:#fff;border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06);border-left:6px solid var(--accent);transition:transform .15s,box-shadow .15s}
+.unit-card:active{transform:scale(.98)}
+.unit-card .card-icon{font-size:36px}
+.unit-card .card-title{font-size:18px;font-weight:700;color:#222}
+.unit-card .card-meta{font-size:13px;color:#777}
+.all-search{padding:16px;max-width:780px;margin:24px auto}
+.all-search h2{font-size:18px;margin:0 0 10px}
+.all-search input{width:100%;padding:14px 16px;font-size:16px;border:2px solid #ddd;border-radius:12px;background:#fff}
+.all-search input:focus{outline:none;border-color:#2a9d8f}
+
+/* ===== 단원 페이지 ===== */
+.topbar{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--bar-bg,#fff);border-bottom:1px solid #eee;position:sticky;top:0;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.topbar .back{font-size:22px;width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#f0f0f0}
+.topbar-title{display:flex;align-items:center;gap:8px;min-width:0;flex:1}
+.topbar-title .icon{font-size:20px}
+.topbar-title h1{margin:0;font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.unit[data-accent]{--accent-color:attr(data-accent)}
+
+.chapter-nav{padding:8px 14px;background:#fff;border-bottom:1px solid #eee}
+.chapter-nav details{font-size:14px}
+.chapter-nav summary{padding:8px 4px;cursor:pointer;font-weight:600;color:#444}
+.chapter-nav ol{margin:6px 0 8px 22px;padding:0}
+.chapter-nav li{padding:4px 0}
+.chapter-nav a{color:#2a9d8f;font-weight:500}
+
+.search-wrap{position:relative;padding:10px 14px;background:#fff;border-bottom:1px solid #eee;display:flex;gap:8px}
+.search-wrap input{flex:1;padding:11px 14px;font-size:15px;border:1.5px solid #ddd;border-radius:10px;background:#fafafa}
+.search-wrap input:focus{outline:none;border-color:#2a9d8f;background:#fff}
+.search-wrap button{padding:0 14px;border:none;background:#eee;border-radius:10px;font-size:16px;cursor:pointer}
+
+.search-results{padding:8px 14px;background:#fffae6;border-bottom:1px solid #f0e0a0;max-height:50vh;overflow-y:auto}
+.search-results .hit{padding:10px;border-bottom:1px solid #f5e8b5;cursor:pointer}
+.search-results .hit:last-child{border:none}
+.search-results .hit-title{font-weight:600;font-size:14px;color:#444}
+.search-results .hit-snippet{font-size:13px;color:#666;margin-top:3px}
+.search-results .hit mark{background:#fff176;padding:0 2px}
+.search-results .empty{padding:14px;color:#888;text-align:center}
+
+.chapters{padding:8px 14px 60px;max-width:920px;margin:0 auto}
+.chapter{background:#fff;border-radius:14px;margin:14px 0;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.chapter h2{margin:0;padding:14px 16px;background:#f0f4f5;border-bottom:1px solid #e5eaeb;font-size:16px;color:#264653}
+.pages{display:flex;flex-direction:column;gap:10px;padding:10px}
+.pages figure{margin:0;border:1px solid #eee;border-radius:8px;overflow:hidden;background:#fafafa}
+.pages figure img{width:100%;display:block;loading:lazy}
+.pages figcaption{padding:6px 10px;font-size:12px;color:#888;background:#fafafa;text-align:center}
+
+footer{text-align:center;padding:24px 14px;color:#999;font-size:12px}
+.highlight{background:#fff176;animation:flash 1.5s ease-out}
+@keyframes flash{0%{background:#fff59d}100%{background:transparent}}

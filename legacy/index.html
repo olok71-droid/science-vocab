@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🤍 AMY Study App</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f0faf8;
+    --card: #ffffff;
+    --accent: #3ecfb2;
+    --accent2: #7de8d5;
+    --green: #3ecfb2;
+    --yellow: #ffcc5c;
+    --purple: #a78bfa;
+    --blue: #60c4f8;
+    --text: #1f3d38;
+    --muted: #8abdb6;
+    --shadow: rgba(62,207,178,0.13);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito','Noto Sans KR',sans-serif;
+    min-height: 100vh;
+    padding: 0 0 60px;
+    background-image: radial-gradient(circle at 15% 15%, rgba(62,207,178,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 85% 80%, rgba(125,232,213,0.12) 0%, transparent 50%);
+  }
+
+  header {
+    text-align: center;
+    padding: 48px 20px 32px;
+  }
+
+  .cat-wrap {
+    display: inline-block;
+    background: white;
+    border-radius: 50%;
+    width: 80px; height: 80px;
+    line-height: 80px;
+    font-size: 48px;
+    box-shadow: 0 4px 20px rgba(62,207,178,0.2);
+    margin-bottom: 14px;
+    animation: bounce 2.2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-9px); }
+  }
+
+  header h1 {
+    font-size: 32px; font-weight: 900;
+    margin-bottom: 6px; letter-spacing: -0.5px;
+  }
+  .amy   { color: var(--accent); }
+  .study { color: var(--purple); }
+
+  header .tagline {
+    font-size: 14px; color: var(--muted); font-weight: 600;
+  }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+  .subject-section { margin-bottom: 28px; }
+
+  .subject-label {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 4px; margin-bottom: 12px;
+  }
+  .subject-label .icon { font-size: 22px; }
+  .subject-label .name-en { font-size: 17px; font-weight: 900; color: var(--text); }
+  .subject-label .name-ko { font-size: 13px; font-weight: 700; color: var(--muted); }
+
+  .units-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px;
+  }
+
+  .unit-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 16px;
+    border: 2px solid rgba(62,207,178,0.15);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.22s;
+    display: flex; flex-direction: column; gap: 8px;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .unit-card.ready:hover {
+    transform: translateY(-4px);
+    border-color: rgba(62,207,178,0.45);
+    box-shadow: 0 8px 28px var(--shadow);
+  }
+  .unit-card.coming {
+    opacity: 0.4; cursor: default; pointer-events: none; box-shadow: none;
+  }
+
+  .unit-top { display:flex; align-items:center; justify-content:space-between; }
+  .unit-icon { font-size: 26px; }
+
+  .badge {
+    font-size: 10px; padding: 3px 9px;
+    border-radius: 20px; font-weight: 800; letter-spacing: 0.3px;
+  }
+  .badge-ready { background: rgba(62,207,178,0.15); color: var(--accent); }
+  .badge-soon  { background: rgba(138,189,182,0.15); color: var(--muted); }
+
+  .unit-name-en { font-size: 14px; font-weight: 800; color: var(--text); line-height: 1.3; }
+  .unit-name-ko { font-size: 12px; color: var(--muted); font-weight: 600; }
+
+  .unit-menu { display:flex; gap:5px; flex-wrap:wrap; margin-top:4px; }
+  .menu-chip {
+    font-size: 11px; padding: 3px 8px; border-radius: 8px; font-weight: 700;
+    background: rgba(62,207,178,0.1); color: var(--accent);
+  }
+
+  .divider {
+    height: 1.5px;
+    background: linear-gradient(to right, transparent, rgba(62,207,178,0.25), transparent);
+    margin: 4px 0 24px;
+  }
+
+  footer {
+    text-align: center; padding: 20px;
+    color: var(--muted); font-size: 11px;
+  }
+  footer span { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="cat-wrap">🐱</div>
+  <h1><span class="amy">AMY</span> <span class="study">Study App</span> ✨</h1>
+  <p class="tagline">공부하자냥~ · Let's study! 🐾</p>
+</header>
+
+<div class="container">
+
+  <!-- Science -->
+  <div class="subject-section">
+    <div class="subject-label">
+      <span class="icon">🔬</span>
+      <span class="name-en">Science</span>
+      <span class="name-ko">과학</span>
+    </div>
+    <div class="units-grid">
+
+      <a class="unit-card ready" href="science_8b1.html">
+        <div class="unit-top">
+          <span class="unit-icon">🫁</span>
+          <span class="badge badge-ready">완성 ✓</span>
+        </div>
+        <div class="unit-name-en">8B1 Respiration</div>
+        <div class="unit-name-ko">호흡</div>
+        <div class="unit-menu">
+          <span class="menu-chip">📖 단어장</span>
+          <span class="menu-chip">📝 노트</span>
+          <span class="menu-chip">✅ 퀴즈</span>
+        </div>
+      </a>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🌿</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8B2 Ecosystems</div>
+        <div class="unit-name-ko">생태계</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🍎</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8B3 Diet & Growth</div>
+        <div class="unit-name-ko">식이와 성장</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🧪</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8C1 Properties</div>
+        <div class="unit-name-ko">물질의 성질</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">⚗️</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8C2 Materials</div>
+        <div class="unit-name-ko">물질과 순환</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">⚡</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8C3 Chemical Reactions</div>
+        <div class="unit-name-ko">화학 반응</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🏃</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8P1 Forces & Energy</div>
+        <div class="unit-name-ko">힘과 에너지</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">💡</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8P2 Light</div>
+        <div class="unit-name-ko">빛</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🧲</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8P3 Magnetism</div>
+        <div class="unit-name-ko">자기</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Maths -->
+  <div class="subject-section">
+    <div class="subject-label">
+      <span class="icon">📐</span>
+      <span class="name-en">Maths</span>
+      <span class="name-ko">수학</span>
+    </div>
+    <div class="units-grid">
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">➕</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">Coming soon</div>
+        <div class="unit-name-ko">곧 추가돼요 🐾</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- English -->
+  <div class="subject-section">
+    <div class="subject-label">
+      <span class="icon">📖</span>
+      <span class="name-en">English</span>
+      <span class="name-ko">영어</span>
+    </div>
+    <div class="units-grid">
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">✏️</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">Coming soon</div>
+        <div class="unit-name-ko">곧 추가돼요 🐾</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>🐱 <span>AMY Study App</span> · SJI International School Malaysia · Year 8</footer>
+
+</body>
+</html>
