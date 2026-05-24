@@ -1,10 +1,10 @@
 // AMY Study App — Service Worker
-// 빌드 버전: v20260524-184616
+// 빌드 버전: v20260524-190358
 // 새 버전이 push되면 자동으로 클라이언트 새로고침.
 
-const CACHE_VERSION = 'v20260524-184616';
+const CACHE_VERSION = 'v20260524-190358';
 const CACHE_NAME = 'amy-study-' + CACHE_VERSION;
-const CORE_FILES = ["./", "biology.html", "chemistry.html", "ecosystems.html", "atoms.html", "forces.html", "index.html"];
+const CORE_FILES = ["./", "biology.html", "chemistry.html", "ecosystems.html", "atoms.html", "forces.html", "atmosphere.html", "motion.html", "pressure.html", "purity.html", "index.html"];
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
