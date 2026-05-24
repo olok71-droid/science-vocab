@@ -131,6 +131,59 @@
     color: var(--muted); font-size: 11px;
   }
   footer span { color: var(--accent); }
+
+  /* AI Tools 카드 (Claude API) */
+  .ai-tools-section { margin-bottom: 28px; }
+  .ai-tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 480px) { .ai-tools-grid { grid-template-columns: 1fr; } }
+  .ai-tool-card {
+    background: linear-gradient(135deg, #ffffff, #f0faf8);
+    border-radius: 20px;
+    padding: 18px 16px;
+    border: 2px solid rgba(167,139,250,0.25);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.22s;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 2px 12px rgba(167,139,250,0.15);
+  }
+  .ai-tool-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(167,139,250,0.55);
+    box-shadow: 0 10px 30px rgba(167,139,250,0.25);
+  }
+  .ai-tool-card.cam { border-color: rgba(96,196,248,0.3); box-shadow: 0 2px 12px rgba(96,196,248,0.15); }
+  .ai-tool-card.cam:hover { border-color: rgba(96,196,248,0.6); box-shadow: 0 10px 30px rgba(96,196,248,0.25); }
+  .ai-tool-icon {
+    font-size: 36px;
+    width: 60px; height: 60px;
+    background: rgba(167,139,250,0.12);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .ai-tool-card.cam .ai-tool-icon { background: rgba(96,196,248,0.12); }
+  .ai-tool-info { min-width: 0; }
+  .ai-tool-title { font-size: 15px; font-weight: 900; color: var(--text); line-height: 1.2; margin-bottom: 3px; }
+  .ai-tool-desc { font-size: 12px; color: var(--muted); font-weight: 600; line-height: 1.4; }
+  .ai-tool-badge {
+    display: inline-block;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    background: rgba(167,139,250,0.2);
+    color: var(--purple);
+    font-weight: 800;
+    margin-top: 4px;
+    letter-spacing: 0.3px;
+  }
+  .ai-tool-card.cam .ai-tool-badge { background: rgba(96,196,248,0.2); color: var(--blue); }
 </style>
 </head>
 <body>
@@ -142,6 +195,35 @@
 </header>
 
 <div class="container">
+
+  <!-- AI Tools (Claude API) -->
+  <div class="ai-tools-section">
+    <div class="subject-label">
+      <span class="icon">🤖</span>
+      <span class="name-en">AI Tools</span>
+      <span class="name-ko">AI 도구</span>
+    </div>
+    <div class="ai-tools-grid">
+      <a class="ai-tool-card cam" href="grading.html">
+        <div class="ai-tool-icon">📷</div>
+        <div class="ai-tool-info">
+          <div class="ai-tool-title">문제집 채점</div>
+          <div class="ai-tool-desc">사진 찍으면 Claude가 채점</div>
+          <span class="ai-tool-badge">Claude AI</span>
+        </div>
+      </a>
+      <a class="ai-tool-card" href="tutor.html">
+        <div class="ai-tool-icon">💬</div>
+        <div class="ai-tool-info">
+          <div class="ai-tool-title">AI 튜터</div>
+          <div class="ai-tool-desc">모르는 거 바로 물어봐</div>
+          <span class="ai-tool-badge">Claude AI</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
 
   <!-- Science -->
   <div class="subject-section">

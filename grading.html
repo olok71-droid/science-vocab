@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1b2a">
+<title>📷 문제집 채점 · AMY Study App</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="amy-common.css">
+<style>
+.upload-zone {
+  border: 2px dashed rgba(56,189,248,0.3);
+  border-radius: 16px;
+  padding: 36px 20px;
+  text-align: center;
+  background: rgba(56,189,248,0.04);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.upload-zone:hover, .upload-zone.dragging {
+  border-color: var(--accent);
+  background: rgba(56,189,248,0.1);
+}
+.upload-zone .uz-icon { font-size: 44px; margin-bottom: 10px; }
+.upload-zone .uz-title { font-size: 15px; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+.upload-zone .uz-hint { font-size: 12px; color: var(--muted); }
+#file-input { display: none; }
+
+.previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+.preview {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--card2);
+  border: 1px solid var(--border);
+  aspect-ratio: 1;
+}
+.preview img { width: 100%; height: 100%; object-fit: cover; }
+.preview .remove-btn {
+  position: absolute; top: 4px; right: 4px;
+  background: rgba(0,0,0,0.7); color: #fff;
+  border: none; width: 22px; height: 22px;
+  border-radius: 50%; cursor: pointer;
+  font-size: 13px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.action-row {
+  display: flex; gap: 10px; margin-top: 14px;
+}
+.action-row .amy-btn { flex: 1; }
+
+.context-input {
+  width: 100%;
+  background: var(--card2);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  margin-bottom: 12px;
+  resize: vertical;
+  min-height: 60px;
+}
+.context-input:focus { border-color: var(--accent); }
+.context-label {
+  font-size: 12px; color: var(--muted); font-weight: 700;
+  display: block; margin-bottom: 6px;
+}
+
+.result-card { background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 18px; margin-top: 16px; }
+.result-card h3 {
+  font-size: 14px; font-weight: 800; color: var(--accent);
+  margin-bottom: 12px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<header class="amy-topbar">
+  <a class="amy-back" href="index.html" aria-label="홈">←</a>
+  <span class="amy-topbar-icon">📷</span>
+  <span class="amy-topbar-title">문제집 채점</span>
+  <button class="amy-key-btn" onclick="showApiKeyModal(()=>{})">🔑 API 키</button>
+</header>
+
+<div class="amy-container">
+
+  <div class="amy-card">
+    <label class="context-label">📌 단원·문제 정보 (선택, 정확도 향상)</label>
+    <textarea class="context-input" id="context-input" placeholder="예: Year 8 Biology - Respiration / 8B1 호흡 단원 / 페이지 22"></textarea>
+
+    <label class="upload-zone" id="upload-zone" for="file-input">
+      <div class="uz-icon">📸</div>
+      <div class="uz-title">사진 누르거나 끌어다 놓기</div>
+      <div class="uz-hint">여러 장 가능 · JPG/PNG/HEIC</div>
+      <input id="file-input" type="file" accept="image/*" multiple capture="environment">
+    </label>
+
+    <div class="previews" id="previews"></div>
+
+    <div class="action-row">
+      <button class="amy-btn amy-btn-secondary" onclick="clearAll()">🗑️ 모두 지우기</button>
+      <button class="amy-btn amy-btn-primary" id="grade-btn" onclick="gradeNow()" disabled>✅ 채점 시작</button>
+    </div>
+  </div>
+
+  <div id="result"></div>
+
+</div>
+
+<script src="common.js"></script>
+<script>
+let files = [];
+
+document.getElementById('file-input').addEventListener('change', e => addFiles(e.target.files));
+
+const uz = document.getElementById('upload-zone');
+['dragenter','dragover'].forEach(evt => uz.addEventListener(evt, e => {
+  e.preventDefault(); e.stopPropagation(); uz.classList.add('dragging');
+}));
+['dragleave','drop'].forEach(evt => uz.addEventListener(evt, e => {
+  e.preventDefault(); e.stopPropagation(); uz.classList.remove('dragging');
+}));
+uz.addEventListener('drop', e => addFiles(e.dataTransfer.files));
+
+function addFiles(fileList) {
+  for (const f of fileList) {
+    if (!f.type.startsWith('image/')) continue;
+    files.push(f);
+  }
+  renderPreviews();
+}
+
+function removeFile(idx) {
+  files.splice(idx, 1);
+  renderPreviews();
+}
+
+function clearAll() {
+  files = [];
+  renderPreviews();
+  document.getElementById('result').innerHTML = '';
+}
+
+function renderPreviews() {
+  const wrap = document.getElementById('previews');
+  wrap.innerHTML = '';
+  files.forEach((f, i) => {
+    const div = document.createElement('div');
+    div.className = 'preview';
+    const url = URL.createObjectURL(f);
+    div.innerHTML = `<img src="${url}" alt=""><button class="remove-btn" onclick="removeFile(${i})">×</button>`;
+    wrap.appendChild(div);
+  });
+  document.getElementById('grade-btn').disabled = files.length === 0;
+}
+
+async function gradeNow() {
+  const btn = document.getElementById('grade-btn');
+  const result = document.getElementById('result');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="amy-spinner"></span>채점 중…';
+  result.innerHTML = '<div class="amy-card"><span class="amy-spinner"></span>Claude가 문제를 읽고 풀이 중… (사진 ' + files.length + '장)</div>';
+
+  try {
+    const context = document.getElementById('context-input').value.trim();
+    const imageBlocks = await Promise.all(files.map(async f => {
+      const img = await fileToBase64(f);
+      return { type: 'image', source: { type: 'base64', media_type: img.media_type, data: img.data } };
+    }));
+
+    const contextLine = context ? `\n\n학생이 적은 추가 정보: ${context}` : '';
+    const userPrompt = `이 이미지(들)에 있는 모든 문제를 읽고, 학생이 적은 답이 있다면 그것을 채점해 줘. 학생이 답을 안 적은 빈칸이라면, 정답이 무엇이어야 하는지 알려줘.${contextLine}
+
+각 문제마다 다음 형식으로:
+
+## Question N (문제 N)
+**Problem:** (문제를 영어로 그대로 옮기기)
+**Student's answer:** (학생이 쓴 답 — 없으면 "비어있음")
+**Correct?** ✅ 또는 ❌ (혹은 ⚠️ 부분 맞음)
+**Correct answer:** (정답)
+**Why / 해설:** (왜 틀렸는지 또는 풀이 과정 — 영어 + 핵심은 한국어로 한 줄 요약)
+
+마지막에:
+## 📊 Summary
+- 총 문제 수
+- 맞은 문제 수
+- 학습 추천: 어떤 개념을 더 봐야 하는지 (한국어로 짧게)`;
+
+    const response = await callClaude({
+      system: `You are an expert science tutor grading a Year 8 student's worksheet for Cambridge Lower Secondary Science (Hodder Education). Subject focus: Biology (respiration, blood, gas exchange) and Chemistry (dissolving, solutions, solubility). The student is Korean attending an international school in Malaysia — keep English answers but add short Korean hints in parentheses for tough vocabulary. Be accurate, use British English (haemoglobin, colour, behaviour), and explain mistakes clearly.`,
+      messages: [{
+        role: 'user',
+        content: [...imageBlocks, { type: 'text', text: userPrompt }],
+      }],
+      maxTokens: 4096,
+      temperature: 0.3,
+    });
+
+    const text = extractText(response);
+    result.innerHTML = `
+      <div class="result-card">
+        <h3>📋 채점 결과</h3>
+        <div class="amy-md">${renderMarkdown(text)}</div>
+      </div>`;
+  } catch (e) {
+    result.innerHTML = `<div class="amy-err">❌ 오류: ${e.message}</div>`;
+  } finally {
+    btn.disabled = files.length === 0;
+    btn.innerHTML = '✅ 다시 채점';
+  }
+}
+</script>
+</body>
+</html>

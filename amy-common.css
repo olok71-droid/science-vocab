@@ -1,0 +1,205 @@
+/* AMY Study App — 공통 다크모드 스타일 (grading/tutor 페이지 공용) */
+:root {
+  --bg: #0d1b2a;
+  --card: #162032;
+  --card2: #1c2d42;
+  --accent: #38bdf8;
+  --green: #4ade80;
+  --yellow: #fbbf24;
+  --pink: #f472b6;
+  --orange: #fb923c;
+  --purple: #c084fc;
+  --red: #ef4444;
+  --text: #e2f0ff;
+  --muted: #6b9ab8;
+  --border: rgba(56,189,248,0.12);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', 'Noto Sans KR', sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+}
+a { color: var(--accent); text-decoration: none; }
+
+/* ── 공통 헤더 ── */
+.amy-topbar {
+  background: rgba(22,32,50,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 18px;
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 12px;
+}
+.amy-back {
+  background: rgba(56,189,248,0.1);
+  border: 1.5px solid rgba(56,189,248,0.25);
+  color: var(--accent);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 18px; text-decoration: none; flex-shrink: 0;
+}
+.amy-back:hover { background: rgba(56,189,248,0.18); }
+.amy-topbar-icon { font-size: 26px; }
+.amy-topbar-title { font-size: 16px; font-weight: 900; color: #fff; flex: 1; min-width: 0; }
+.amy-key-btn {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+}
+.amy-key-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ── 컨테이너 ── */
+.amy-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ── 카드 ── */
+.amy-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+/* ── 버튼 ── */
+.amy-btn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1.5px solid;
+  transition: all 0.15s;
+}
+.amy-btn-primary {
+  background: rgba(56,189,248,0.18);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.amy-btn-primary:hover:not(:disabled) {
+  background: rgba(56,189,248,0.3);
+  transform: translateY(-1px);
+}
+.amy-btn-secondary {
+  background: var(--card2);
+  border-color: var(--border);
+  color: var(--text);
+}
+.amy-btn-secondary:hover { border-color: var(--muted); }
+.amy-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── 모달 (API 키) ── */
+.amy-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 20px;
+}
+.amy-modal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 22px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.amy-modal h2 {
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.amy-modal-desc {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.amy-modal-input {
+  width: 100%;
+  background: var(--card2);
+  border: 2px solid var(--border);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  outline: none;
+  margin-bottom: 14px;
+}
+.amy-modal-input:focus { border-color: var(--accent); }
+.amy-modal-buttons {
+  display: flex; gap: 8px; justify-content: flex-end;
+}
+
+/* ── 로딩 스피너 ── */
+.amy-spinner {
+  display: inline-block;
+  width: 16px; height: 16px;
+  border: 2.5px solid rgba(56,189,248,0.25);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: amy-spin 0.8s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+@keyframes amy-spin { to { transform: rotate(360deg); } }
+
+/* ── Markdown 렌더 결과 ── */
+.amy-md { font-size: 14px; line-height: 1.65; color: var(--text); }
+.amy-md p { margin-bottom: 10px; }
+.amy-md p:last-child { margin-bottom: 0; }
+.amy-md h2, .amy-md h3, .amy-md h4 { color: #fff; margin: 12px 0 6px; font-weight: 800; }
+.amy-md h2 { font-size: 17px; }
+.amy-md h3 { font-size: 15px; color: var(--accent); }
+.amy-md h4 { font-size: 14px; }
+.amy-md ul { margin: 8px 0 10px 20px; }
+.amy-md li { margin-bottom: 4px; }
+.amy-md b { color: #fff; }
+.amy-md code {
+  background: var(--card2);
+  padding: 1px 6px; border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 12.5px; color: var(--yellow);
+}
+.amy-md pre {
+  background: var(--card2);
+  padding: 12px; border-radius: 8px;
+  overflow-x: auto; margin: 10px 0;
+  border: 1px solid var(--border);
+}
+.amy-md pre code {
+  background: transparent; padding: 0; color: var(--text);
+}
+
+/* ── 에러 박스 ── */
+.amy-err {
+  background: rgba(239,68,68,0.12);
+  border: 1.5px solid rgba(239,68,68,0.4);
+  color: #fca5a5;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 10px 0;
+  white-space: pre-wrap;
+}
