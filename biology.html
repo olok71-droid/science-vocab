@@ -166,12 +166,18 @@ header {
 .btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
 .btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-/* NOTES (탭 1: 핵심노트) */
+/* NOTES (탭: 핵심노트) */
 .chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
 .chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
 .chapter-head .ch-icon { font-size: 22px; }
+.chapter-head .ch-text { flex: 1; min-width: 0; }
 .chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
 .chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.btn-pdf { background: rgba(192,132,252,0.12); border: 1.5px solid rgba(192,132,252,0.35);
+  color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  flex-shrink: 0; font-family: inherit; white-space: nowrap; }
+.btn-pdf:hover { background: rgba(192,132,252,0.22); border-color: var(--purple); transform: scale(1.03); }
 .notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
 .note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
 .note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
@@ -741,10 +747,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">🫁</span>
-    <div>
+    <div class="ch-text">
       <h2>1. 호흡기관의 구조</h2>
       <span class="ch-sub">Respiratory system</span>
     </div>
+    <a class="btn-pdf" href="pdfs/1.1%20Human%20respiratory%20system.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
@@ -782,10 +789,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">💨</span>
-    <div>
+    <div class="ch-text">
       <h2>2. 호흡 운동 (Breathing)</h2>
       <span class="ch-sub">B1.3 Breathing / Ventilation</span>
     </div>
+    <a class="btn-pdf" href="pdfs/B1.3%20Breathing.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
@@ -831,10 +839,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">🔄</span>
-    <div>
+    <div class="ch-text">
       <h2>3. 기체 교환 (Gas exchange)</h2>
       <span class="ch-sub">1.2 Gas exchange</span>
     </div>
+    <a class="btn-pdf" href="pdfs/1.2%20Gas%20exchange.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
@@ -872,10 +881,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">✅</span>
-    <div>
+    <div class="ch-text">
       <h2>4. 유산소 호흡 (Aerobic respiration)</h2>
       <span class="ch-sub">1.4 Aerobic respiration</span>
     </div>
+    <a class="btn-pdf" href="pdfs/1.4%20Aerobic%20respiration.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
@@ -913,10 +923,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">⚡</span>
-    <div>
+    <div class="ch-text">
       <h2>5. 무산소 호흡 (Anaerobic respiration)</h2>
       <span class="ch-sub">1.4 Anaerobic respiration</span>
     </div>
+    <a class="btn-pdf" href="pdfs/1.4%20Anaerobic%20respiration%20%282%29.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
@@ -954,10 +965,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">🩸</span>
-    <div>
+    <div class="ch-text">
       <h2>6. 혈액 (Blood)</h2>
       <span class="ch-sub">1.5 Blood</span>
     </div>
+    <a class="btn-pdf" href="pdfs/1.5%20Blood%20%281%29.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">

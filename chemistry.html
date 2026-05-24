@@ -166,12 +166,18 @@ header {
 .btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
 .btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-/* NOTES (탭 1: 핵심노트) */
+/* NOTES (탭: 핵심노트) */
 .chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
 .chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
 .chapter-head .ch-icon { font-size: 22px; }
+.chapter-head .ch-text { flex: 1; min-width: 0; }
 .chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
 .chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.btn-pdf { background: rgba(192,132,252,0.12); border: 1.5px solid rgba(192,132,252,0.35);
+  color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  flex-shrink: 0; font-family: inherit; white-space: nowrap; }
+.btn-pdf:hover { background: rgba(192,132,252,0.22); border-color: var(--purple); transform: scale(1.03); }
 .notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
 .note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
 .note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
@@ -561,10 +567,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">💧</span>
-    <div>
+    <div class="ch-text">
       <h2>1. 용해와 입자 모델</h2>
       <span class="ch-sub">2.1 Dissolving</span>
     </div>
+    <a class="btn-pdf" href="pdfs/2.1%20Dissolving.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
@@ -610,10 +617,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">📊</span>
-    <div>
+    <div class="ch-text">
       <h2>2. 용액의 농도 (Concentration)</h2>
       <span class="ch-sub">SC 2.2 Concentration of solutions</span>
     </div>
+    <a class="btn-pdf" href="pdfs/SC%202.2%20Concentration%20of%20solutions.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
@@ -651,10 +659,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">💎</span>
-    <div>
+    <div class="ch-text">
       <h2>3. 물에 대한 용해도 (Solubility)</h2>
       <span class="ch-sub">2.3 Solubility in Water</span>
     </div>
+    <a class="btn-pdf" href="pdfs/2.3%20Solubility%20in%20Water.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
@@ -692,10 +701,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">🌡️</span>
-    <div>
+    <div class="ch-text">
       <h2>4. 용해도와 온도 (Temperature)</h2>
       <span class="ch-sub">2.4 Solubility and temperature</span>
     </div>
+    <a class="btn-pdf" href="pdfs/2.4%20Solubility%20and%20temperature.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
