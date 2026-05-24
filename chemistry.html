@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0d1b2a">
-<title>8C 용해와 용액 Solutions</title>
+<title>8C Solutions 용해와 용액</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -192,39 +192,73 @@ header {
 .note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
 .note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
 .note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
-.note-body { font-size: 13px; color: var(--text); line-height: 1.65; }
+.note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
 .note-body b { color: #fff; }
-.note-body table { border-collapse: collapse; margin: 8px 0; }
+/* 영어 문단 */
+.note-body p.en { color: var(--text); margin-bottom: 3px; }
+/* 한국어 문단 (영어 바로 아래 짝) */
+.note-body p.ko { color: #8ab4ce; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
+.note-body p.ko:last-child { margin-bottom: 0; }
+.note-body ul.en { margin: 4px 0 4px 20px; }
+.note-body ul.ko { margin: 0 0 12px 20px; color: #8ab4ce; font-size: 13px; padding-left: 8px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); }
+.note-body ul li { margin-bottom: 3px; }
+.note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
 .note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
 .note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
 .note-img { display: block; max-width: 100%; margin: 10px 0 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff; }
 
-/* QUIZ (탭 3) */
+/* QUIZ (서술형 short-answer) */
 .quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
-.quiz-progress { font-size: 12px; color: var(--muted); font-weight: 700; margin-bottom: 8px; text-align: center; }
-.quiz-progress b { color: var(--accent); }
-.quiz-bar { height: 6px; background: var(--card); border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
-.quiz-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); transition: width 0.3s; }
+.quiz-info { font-size: 12px; color: var(--muted); margin-bottom: 12px; text-align: center;
+  background: var(--card); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); line-height: 1.5; }
+.quiz-info b { color: var(--accent); }
 .q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
-.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center; }
+.q-num .q-marks { background: rgba(192,132,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
 .q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
-.q-options { display: flex; flex-direction: column; gap: 8px; }
-.q-opt { background: var(--card2); border: 1.5px solid var(--border); color: var(--text); padding: 12px 14px;
-  border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; font-family: inherit; text-align: left; transition: all 0.15s; line-height: 1.4; }
-.q-opt:hover:not(:disabled) { border-color: var(--accent); background: rgba(56,189,248,0.08); }
-.q-opt.correct { background: rgba(74,222,128,0.18); border-color: var(--green); color: #fff; }
-.q-opt.wrong { background: rgba(254,44,44,0.18); border-color: #ff6b6b; color: #fff; }
-.q-opt:disabled { cursor: default; }
-.q-explanation { margin-top: 12px; padding: 10px 12px; background: rgba(56,189,248,0.08);
-  border-left: 3px solid var(--accent); border-radius: 6px; font-size: 12.5px; color: var(--text); line-height: 1.5; display: none; }
-.q-explanation.show { display: block; }
-.q-explanation b { color: var(--accent); }
+.q-answer-input {
+  width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
+  padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
+  outline: none; resize: vertical; min-height: 70px; line-height: 1.5;
+}
+.q-answer-input:focus { border-color: var(--accent); }
+.q-show-row { display: flex; gap: 8px; margin-top: 10px; }
+.q-show-row button { flex: 1; padding: 10px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.q-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-btn-show:hover { background: rgba(251,191,36,0.22); }
 
-.quiz-result { text-align: center; padding: 28px 16px; background: var(--card); border-radius: 14px; border: 1px solid var(--border); display: none; }
-.quiz-result.show { display: block; }
-.quiz-result h2 { font-size: 22px; color: #fff; margin-bottom: 8px; }
-.quiz-result .score { font-size: 36px; font-weight: 900; color: var(--accent); margin: 12px 0; }
-.quiz-result button { background: var(--accent); color: #0d1b2a; border: none; padding: 10px 24px; border-radius: 8px; font-weight: 800; cursor: pointer; font-family: inherit; font-size: 14px; }
+.q-model {
+  display: none;
+  margin-top: 14px; padding: 14px 14px; background: rgba(56,189,248,0.06);
+  border: 1.5px solid rgba(56,189,248,0.25); border-radius: 10px;
+}
+.q-model.show { display: block; }
+.q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
+.q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
+.q-model .model-text b { color: #fff; }
+.q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
+  padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
+.q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.q-model .points ul { margin-left: 16px; }
+.q-model .points li { margin-bottom: 3px; line-height: 1.45; }
+.q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
+  color: #5d809a; font-size: 12px; line-height: 1.5;
+  background: rgba(255,255,255,0.02); border-radius: 4px; }
+
+.q-self-rate { display: none; margin-top: 12px; gap: 6px; }
+.q-self-rate.show { display: flex; }
+.q-self-rate button {
+  flex: 1; padding: 9px 4px; border-radius: 8px; font-weight: 800; font-family: inherit;
+  font-size: 12px; cursor: pointer; border: 1.5px solid; transition: all 0.15s;
+}
+.q-self-rate .rate-good { background: rgba(74,222,128,0.12); border-color: rgba(74,222,128,0.4); color: var(--green); }
+.q-self-rate .rate-mid { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-self-rate .rate-bad { background: rgba(244,114,182,0.12); border-color: rgba(244,114,182,0.4); color: var(--pink); }
+.q-self-rate .selected { transform: scale(1.04); border-width: 2px; }
 
 /* FOOTER */
 footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
@@ -238,8 +272,8 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <a class="header-back" href="index.html" aria-label="홈">←</a>
   <div class="header-icon">🧪</div>
   <div class="header-text">
-    <div class="header-title">8C 용해와 용액 Solutions</div>
-    <div class="header-sub">Year 8 · Cambridge Lower Secondary</div>
+    <div class="header-title">8C Solutions 용해와 용액</div>
+    <div class="header-sub">Year 8 Chemistry · Cambridge Lower Secondary</div>
   </div>
   <div class="header-actions">
     <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제집 채점">📷</a>
@@ -248,19 +282,19 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </header>
 
 <div class="hero">
-  <h1>🧪 <span>8C 용해와 용액 Solutions</span></h1>
-  <p>용해 원리 → 농도 → 용해도 → 온도 영향</p>
+  <h1>🧪 <span>8C Solutions 용해와 용액</span></h1>
+  <p>Dissolving → solute & solvent → concentration → solubility → temperature</p>
   <div class="stats-row">
-    <span class="stat-chip">🧪 용해 4단원</span>
-    <span class="stat-chip">💧 입자 모델</span>
-    <span class="stat-chip">📊 농도·용해도</span>
-    <span class="stat-chip">🌡️ 온도 영향</span>
+    <span class="stat-chip">💧 Dissolving</span>
+    <span class="stat-chip">📊 Concentration</span>
+    <span class="stat-chip">💎 Solubility</span>
+    <span class="stat-chip">🌡️ Temperature</span>
   </div>
 </div>
 
 <div class="eq-box">
-  <div class="eq-card"><div class="eq-label aerobic">✅ 용해 공식</div><div class="eq-formula">Solute(용질) + Solvent(용매)<br>= Solution(용액)</div></div>
-  <div class="eq-card"><div class="eq-label anaerobic">⚖️ 질량 보존</div><div class="eq-formula">Mass solute + Mass solvent<br>= Mass solution</div></div>
+  <div class="eq-card"><div class="eq-label aerobic">✅ Dissolving formula</div><div class="eq-formula">Solute + Solvent = Solution</div></div>
+  <div class="eq-card"><div class="eq-label anaerobic">⚖️ Mass conservation</div><div class="eq-formula">Mass(solute) + Mass(solvent) = Mass(solution)</div></div>
 </div>
 
 <div class="tabs-wrap">
@@ -317,7 +351,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
     <div class="vcard-en">Solution</div>
     <div class="vcard-ko">용액</div>
-    <div class="vcard-def">Mixture formed when a solute dissolves in a solvent.</div>
+    <div class="vcard-def">The mixture formed when a solute dissolves in a solvent.</div>
     <div class="vcard-def-ko">용질이 용매에 녹아 만들어진 균일한 혼합물.</div>
   </div>
   <div class="vcard-right">
@@ -329,7 +363,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
     <div class="vcard-en">Dissolving</div>
     <div class="vcard-ko">용해</div>
-    <div class="vcard-def">Process where a solute breaks up into particles and spreads through a solvent.</div>
+    <div class="vcard-def">When a solute breaks up into particles and spreads through a solvent.</div>
     <div class="vcard-def-ko">용질이 입자로 흩어져 용매에 섞이는 과정.</div>
   </div>
   <div class="vcard-right">
@@ -366,7 +400,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="vcard-en">Mixture</div>
     <div class="vcard-ko">혼합물</div>
     <div class="vcard-def">Two or more substances mixed but not chemically joined.</div>
-    <div class="vcard-def-ko">두 개 이상의 물질이 섞였지만 화학적으로 결합하지 않은 것.</div>
+    <div class="vcard-def-ko">둘 이상의 물질이 섞였지만 화학결합 없는 것.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick="speak("Mixture")">🔊</button>
@@ -378,7 +412,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="vcard-en">Particle</div>
     <div class="vcard-ko">입자</div>
     <div class="vcard-def">Tiny piece of a substance (atom, molecule, ion).</div>
-    <div class="vcard-def-ko">물질을 이루는 매우 작은 알갱이 (원자·분자·이온).</div>
+    <div class="vcard-def-ko">물질을 이루는 매우 작은 알갱이.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick="speak("Particle")">🔊</button>
@@ -403,7 +437,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="vcard-left">
     <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
     <div class="vcard-en">Concentrated</div>
-    <div class="vcard-ko">진한 (농축)</div>
+    <div class="vcard-ko">진한</div>
     <div class="vcard-def">A solution with a relatively large amount of solute.</div>
     <div class="vcard-def-ko">용질이 비교적 많이 녹아 있는 용액.</div>
   </div>
@@ -441,7 +475,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="vcard-en">Melting</div>
     <div class="vcard-ko">녹음 (용융)</div>
     <div class="vcard-def">Change of state from solid to liquid due to heating.</div>
-    <div class="vcard-def-ko">열로 인해 고체→액체로 상태 변화. (용해와 다름!)</div>
+    <div class="vcard-def-ko">열로 고체가 액체로 상태가 바뀌는 것.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick="speak("Melting")">🔊</button>
@@ -467,7 +501,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
     <div class="vcard-en">Solubility</div>
     <div class="vcard-ko">용해도</div>
-    <div class="vcard-def">Maximum amount of solute that can dissolve in a given amount of solvent at a set temperature.</div>
+    <div class="vcard-def">Max amount of solute that can dissolve in a given amount of solvent at a set temperature.</div>
     <div class="vcard-def-ko">특정 온도·일정한 용매 양에 녹을 수 있는 최대 용질 양.</div>
   </div>
   <div class="vcard-right">
@@ -480,7 +514,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="vcard-en">Saturated</div>
     <div class="vcard-ko">포화</div>
     <div class="vcard-def">A solution that cannot dissolve any more solute at that temperature.</div>
-    <div class="vcard-def-ko">더 이상 용질이 녹지 않는 상태의 용액.</div>
+    <div class="vcard-def-ko">그 온도에서 더 이상 용질이 녹지 않는 용액.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick="speak("Saturated")">🔊</button>
@@ -492,10 +526,22 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="vcard-en">Unsaturated</div>
     <div class="vcard-ko">불포화</div>
     <div class="vcard-def">A solution that can still dissolve more solute.</div>
-    <div class="vcard-def-ko">용질이 더 녹을 수 있는 상태의 용액.</div>
+    <div class="vcard-def-ko">용질이 더 녹을 수 있는 용액.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick="speak("Unsaturated")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Evaporate</div>
+    <div class="vcard-ko">증발하다</div>
+    <div class="vcard-def">To change from liquid to gas (e.g. water turns to vapour).</div>
+    <div class="vcard-def-ko">액체가 기체로 변하다 (물이 수증기로).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Evaporate")">🔊</button>
   </div>
 </div>
 </div>
@@ -506,8 +552,8 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
     <div class="vcard-en">Temperature</div>
     <div class="vcard-ko">온도</div>
-    <div class="vcard-def">How hot or cold something is. Higher temperature → faster particles → usually more dissolving.</div>
-    <div class="vcard-def-ko">물체의 차고 더운 정도. 보통 온도가 높을수록 용해도 증가.</div>
+    <div class="vcard-def">How hot or cold something is.</div>
+    <div class="vcard-def-ko">물체의 차고 더운 정도.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick="speak("Temperature")">🔊</button>
@@ -582,49 +628,49 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="chapter-head">
     <span class="ch-icon">💧</span>
     <div class="ch-text">
-      <h2>1. 용해와 입자 모델</h2>
+      <h2>1. Dissolving and the Particle Model</h2>
       <span class="ch-sub">2.1 Dissolving</span>
     </div>
     <a class="btn-pdf" href="pdfs/2.1%20Dissolving.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
-    <h3>용해(Dissolving)란?</h3>
+    <h3>What is dissolving? (용해란?)</h3>
     
   </div>
-  <div class="note-body">고체가 액체에 녹아 <b>입자 단위로 흩어지는 것</b>. 설탕을 물에 넣으면 설탕은 사라진 게 아니라 작은 입자로 물 사이사이에 퍼진다. 그래서 컵을 흔들거나 맛을 봐도 단맛이 난다.</div>
+  <div class="note-body"><p class='en'><b>Dissolving</b> is when a solid breaks up into <b>tiny particles</b> and spreads evenly through a liquid.</p><p class='ko'><b>용해(dissolving)</b>는 고체가 <b>작은 입자</b>로 나뉘어 액체 속에 골고루 퍼지는 현상입니다.</p><p class='en'>The sugar does <b>not disappear</b> — its particles are simply spread between the water particles.</p><p class='ko'>설탕은 <b>사라지는 게 아닙니다</b> — 입자가 물 분자 사이에 흩어진 것뿐입니다.</p><p class='en'>That's why you can still taste the sweetness everywhere in the cup.</p><p class='ko'>그래서 컵 어디서든 단맛이 느껴집니다.</p></div>
   <img class="note-img" src="assets/diagrams/2.1_Dissolving/p11_img008.png" alt="" loading="lazy">
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>Solute + Solvent = Solution</h3>
+    <h3>Solute, Solvent, Solution (용질·용매·용액)</h3>
     
   </div>
-  <div class="note-body"><b>Solute(용질)</b>: 녹는 물질 — 보통 고체 (예: 설탕, 소금).<br><b>Solvent(용매)</b>: 녹이는 물질 — 보통 액체 (예: 물).<br><b>Solution(용액)</b>: 둘이 섞여서 만들어진 균일한 혼합물.<br><br><span style='color:var(--green)'>설탕 + 물 = 설탕물</span></div>
+  <div class="note-body"><p class='en'>The <b>solute</b> is the substance that is being dissolved (usually a solid).</p><p class='ko'><b>용질(solute)</b>은 녹는 물질입니다 (보통 고체).</p><p class='en'>The <b>solvent</b> is the liquid that does the dissolving.</p><p class='ko'><b>용매(solvent)</b>는 용질을 녹이는 액체입니다.</p><p class='en'>The <b>solution</b> is the mixture formed when the solute dissolves in the solvent.</p><p class='ko'><b>용액(solution)</b>은 용질이 용매에 녹아 만들어진 혼합물입니다.</p><p class='en'>Example: sugar (solute) + water (solvent) = sugar water (solution).</p><p class='ko'>예: 설탕(용질) + 물(용매) = 설탕물(용액).</p></div>
   <img class="note-img" src="assets/diagrams/2.1_Dissolving/p15_img016.png" alt="" loading="lazy">
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>Soluble vs Insoluble</h3>
+    <h3>Soluble vs Insoluble (녹는 것 vs 안 녹는 것)</h3>
     
   </div>
-  <div class="note-body"><b>Soluble(가용성)</b>: 용매에 녹는 물질 (예: 소금은 물에 soluble).<br><b>Insoluble(불용성)</b>: 용매에 녹지 않는 물질 (예: 모래는 물에 insoluble).<br><br>같은 물질이라도 용매가 달라지면 결과가 다름. 기름은 물에 안 녹지만 다른 기름엔 잘 녹는다.</div>
+  <div class="note-body"><p class='en'>A substance that <b>dissolves</b> in a solvent is called <b>soluble</b>.</p><p class='ko'>용매에 <b>녹는</b> 물질은 <b>soluble(가용성)</b>이라고 합니다.</p><p class='en'>A substance that does <b>not dissolve</b> is called <b>insoluble</b>.</p><p class='ko'><b>녹지 않는</b> 물질은 <b>insoluble(불용성)</b>이라고 합니다.</p><p class='en'>For example, salt is soluble in water, but sand is insoluble in water.</p><p class='ko'>예: 소금은 물에 soluble, 모래는 물에 insoluble.</p></div>
   
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>질량 보존 (Mass conservation)</h3>
+    <h3>Mass conservation (질량 보존)</h3>
     
   </div>
-  <div class="note-body">설탕 9g + 물 146g → 설탕물 155g. <b>질량은 사라지지 않는다!</b><br>입자가 물 사이로 흩어졌을 뿐이라서 무게는 그대로 보존된다. 이것을 <b>mass conservation(질량 보존)</b>이라 한다.</div>
+  <div class="note-body"><p class='en'>When 9 g of sugar dissolves in 146 g of water, the solution weighs <b>155 g</b> (not less!).</p><p class='ko'>설탕 9g이 물 146g에 녹으면 용액은 <b>155g</b>입니다 (줄지 않음!).</p><p class='en'>Mass is <b>conserved</b> — the sugar particles are still there, just spread out.</p><p class='ko'>질량은 <b>보존</b>됩니다 — 설탕 입자가 흩어졌을 뿐 그대로 있기 때문입니다.</p><p class='en'><b>Mass of solute + Mass of solvent = Mass of solution</b>.</p><p class='ko'><b>용질 질량 + 용매 질량 = 용액 질량</b>.</p></div>
   <img class="note-img" src="assets/diagrams/2.1_Dissolving/p18_img018.png" alt="" loading="lazy">
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>용해 ≠ 녹음(Melting)</h3>
+    <h3>Dissolving is NOT melting (용해는 녹음과 다릅니다)</h3>
     
   </div>
-  <div class="note-body">둘 다 한국어로 '녹는다'고 말하지만 과학에서는 다르다!<br>• <b>Dissolving(용해)</b>: 고체가 액체에 <b>섞여 들어가는 것</b>. 두 물질 필요.<br>• <b>Melting(녹음/용융)</b>: <b>온도가 올라가 상태가 바뀌는 것</b>. 한 물질이 고체→액체.<br><br>얼음이 물이 되는 건 melting, 설탕이 물에 풀리는 건 dissolving.</div>
+  <div class="note-body"><p class='en'>In Korean both are called '녹다', but in English they are different!</p><p class='ko'>한국어로는 둘 다 '녹다'지만 영어로는 다릅니다!</p><p class='en'><b>Dissolving</b>: a solute spreads through a solvent (needs TWO substances).</p><p class='ko'><b>Dissolving(용해)</b>: 용질이 용매 속에 흩어짐 (두 물질 필요).</p><p class='en'><b>Melting</b>: a solid changes to a liquid when heated (one substance, state change).</p><p class='ko'><b>Melting(녹음/용융)</b>: 가열로 고체가 액체로 상태 변화 (한 물질).</p><p class='en'>Ice → water is melting. Sugar in water is dissolving.</p><p class='ko'>얼음 → 물은 melting. 설탕이 물에 풀리는 건 dissolving.</p></div>
   
 </div></div>
 </div>
@@ -632,41 +678,41 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="chapter-head">
     <span class="ch-icon">📊</span>
     <div class="ch-text">
-      <h2>2. 용액의 농도 (Concentration)</h2>
+      <h2>2. Concentration of Solutions</h2>
       <span class="ch-sub">SC 2.2 Concentration of solutions</span>
     </div>
     <a class="btn-pdf" href="pdfs/SC%202.2%20Concentration%20of%20solutions.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
-    <h3>농도(Concentration)란?</h3>
+    <h3>What is concentration? (농도란?)</h3>
     
   </div>
-  <div class="note-body">같은 양의 용매에 <b>얼마나 많은 용질이 녹아 있는가</b>를 나타내는 값. 입자 모델로 보면, 같은 부피 안에 용질 입자가 많을수록 더 진하다.</div>
+  <div class="note-body"><p class='en'><b>Concentration</b> is a measure of how much solute is dissolved in a given amount of solvent.</p><p class='ko'><b>농도(concentration)</b>는 정해진 양의 용매에 녹아 있는 용질의 양입니다.</p><p class='en'>The more solute particles in the same volume of solvent, the higher the concentration.</p><p class='ko'>같은 부피의 용매에 용질 입자가 많을수록 농도가 높습니다.</p></div>
   <img class="note-img" src="assets/diagrams/SC_2.2_Concentration_of_solutions/p07_img012.png" alt="" loading="lazy">
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>Concentrated vs Dilute</h3>
+    <h3>Concentrated vs Dilute (진한 vs 묽은)</h3>
     
   </div>
-  <div class="note-body"><b>Concentrated(진한 용액)</b>: 용매 양에 비해 용질이 <b>많다</b>. 입자가 빽빽함.<br><b>Dilute(묽은 용액)</b>: 용매 양에 비해 용질이 <b>적다</b>. 입자가 듬성듬성.<br><br>홍차에 설탕 5스푼 = concentrated, 1스푼 = dilute.</div>
+  <div class="note-body"><p class='en'>A <b>concentrated</b> solution has a <b>large amount</b> of solute compared to the solvent.</p><p class='ko'><b>진한(concentrated)</b> 용액은 용매에 비해 용질이 <b>많이</b> 녹아 있는 용액입니다.</p><p class='en'>A <b>dilute</b> solution has a <b>small amount</b> of solute compared to the solvent.</p><p class='ko'><b>묽은(dilute)</b> 용액은 용매에 비해 용질이 <b>적게</b> 녹아 있는 용액입니다.</p><p class='en'>Sugar in tea: 5 spoons = concentrated; 1 spoon = dilute.</p><p class='ko'>홍차에 설탕 5스푼 = 진함, 1스푼 = 묽음.</p></div>
   
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>농도를 바꾸는 방법</h3>
+    <h3>How to change the concentration (농도 바꾸는 방법)</h3>
     
   </div>
-  <div class="note-body"><b>더 진하게(more concentrated):</b><br>• 용질을 더 넣는다<br>• 용매를 증발시킨다 (물 끓이기)<br><br><b>더 묽게(more dilute):</b><br>• 용매(물)를 더 넣는다<br>• 용질의 양은 그대로 두고 용매만 늘림</div>
+  <div class="note-body"><p class='en'>To make a solution <b>more concentrated</b>: add more solute, or evaporate some of the solvent.</p><p class='ko'>용액을 <b>더 진하게</b> 하려면: 용질을 더 넣거나 용매를 증발시킵니다.</p><p class='en'>To make a solution <b>more dilute</b>: add more solvent (e.g. water).</p><p class='ko'>용액을 <b>더 묽게</b> 하려면: 용매(예: 물)를 더 넣습니다.</p></div>
   
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>입자 모델로 표현하기</h3>
+    <h3>Showing concentration with particle diagrams (입자 모델)</h3>
     
   </div>
-  <div class="note-body">농도 비교는 <b>같은 크기의 그릇에 같은 부피</b>로 그린다. 같은 부피 안에 검은 점(용질 입자)이 더 많으면 진한 용액, 적으면 묽은 용액이다.</div>
+  <div class="note-body"><p class='en'>To compare concentrations, draw the <b>same volume</b> of solution and count solute particles inside.</p><p class='ko'>농도를 비교할 때는 <b>같은 부피</b>의 용액을 그리고 안에 있는 용질 입자를 셉니다.</p><p class='en'>More dots in the same box = more concentrated.</p><p class='ko'>같은 상자 안에 점이 많을수록 = 더 진한 용액.</p></div>
   <img class="note-img" src="assets/diagrams/SC_2.2_Concentration_of_solutions/p09_img016.png" alt="" loading="lazy">
 </div></div>
 </div>
@@ -674,41 +720,41 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="chapter-head">
     <span class="ch-icon">💎</span>
     <div class="ch-text">
-      <h2>3. 물에 대한 용해도 (Solubility)</h2>
+      <h2>3. Solubility in Water</h2>
       <span class="ch-sub">2.3 Solubility in Water</span>
     </div>
     <a class="btn-pdf" href="pdfs/2.3%20Solubility%20in%20Water.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
-    <h3>Saturated vs Unsaturated</h3>
+    <h3>Saturated vs Unsaturated (포화 vs 불포화)</h3>
     
   </div>
-  <div class="note-body"><b>Unsaturated(불포화)</b>: 아직 더 녹을 수 있는 상태.<br><b>Saturated(포화)</b>: 더 이상 녹지 않는 상태. 추가 용질은 그릇 바닥에 가라앉는다.<br><br>설탕을 계속 넣다 보면 어느 순간 더 이상 녹지 않고 가라앉기 시작 — 그 시점이 포화점.</div>
+  <div class="note-body"><p class='en'>An <b>unsaturated</b> solution can still dissolve more solute.</p><p class='ko'><b>불포화(unsaturated)</b> 용액은 아직 더 용질을 녹일 수 있는 상태입니다.</p><p class='en'>A <b>saturated</b> solution <b>cannot dissolve any more</b> solute at that temperature — extra solute sinks to the bottom.</p><p class='ko'><b>포화(saturated)</b> 용액은 그 온도에서 <b>더 이상 용질을 녹일 수 없는</b> 상태입니다 — 더 넣은 용질은 바닥에 가라앉습니다.</p></div>
   <img class="note-img" src="assets/diagrams/2.3_Solubility_in_Water/p04_img002.png" alt="" loading="lazy">
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>용해도(Solubility)의 정의</h3>
+    <h3>What is solubility? (용해도의 정의)</h3>
     
   </div>
-  <div class="note-body"><b>일정한 온도에서 정해진 양의 용매에 녹을 수 있는 최대 용질의 양</b>. 보통 '100g의 물에 녹는 용질의 g수'로 표시한다.<br><br>예: 20℃에서 설탕의 용해도는 약 203g (= 100g 물에 203g 설탕이 녹음).</div>
+  <div class="note-body"><p class='en'><b>Solubility</b> is the <b>maximum amount</b> of solute that can dissolve in a given amount of solvent at a particular temperature.</p><p class='ko'><b>용해도(solubility)</b>는 특정 온도에서 정해진 용매에 녹을 수 있는 <b>용질의 최대량</b>입니다.</p><p class='en'>Usually measured as 'grams of solute per 100 g of water'.</p><p class='ko'>보통 '물 100g에 녹는 용질의 g수'로 표시합니다.</p><p class='en'>Example: at 20°C, the solubility of sugar in water is about 203 g per 100 g of water.</p><p class='ko'>예: 20°C에서 설탕의 용해도는 물 100g당 약 203g입니다.</p></div>
   
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>물질마다 용해도가 다르다</h3>
+    <h3>Different substances have different solubilities (물질마다 용해도가 다릅니다)</h3>
     
   </div>
-  <div class="note-body">같은 온도의 물이라도 어떤 용질을 넣느냐에 따라 녹는 양이 다르다.<br>• 설탕: 매우 잘 녹음<br>• 소금: 잘 녹음<br>• 분필가루(석회): 거의 안 녹음<br><br>그래서 실험에서 '같은 양의 물'에 '다른 용질'을 넣어 몇 스푼이 녹는지 비교한다.</div>
+  <div class="note-body"><p class='en'>Different solutes dissolve different amounts in the same amount of water.</p><p class='ko'>같은 양의 물에 녹는 용질의 양은 물질마다 다릅니다.</p><p class='en'>Sugar dissolves very well, salt dissolves well, but chalk barely dissolves.</p><p class='ko'>설탕은 매우 잘 녹고, 소금도 잘 녹지만, 분필가루는 거의 안 녹습니다.</p></div>
   <img class="note-img" src="assets/diagrams/2.3_Solubility_in_Water/p05_img003.png" alt="" loading="lazy">
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>공정 실험(Fair test)의 변수</h3>
+    <h3>Variables in a fair test (공정 실험의 변수)</h3>
     
   </div>
-  <div class="note-body">용해도 실험을 공정하게 하려면:<br>• <b>Independent variable(독립변수)</b>: 바꾸는 것 — 용질 종류<br>• <b>Dependent variable(종속변수)</b>: 측정하는 것 — 녹은 양(스푼 수)<br>• <b>Control variable(통제변수)</b>: 똑같이 유지 — 물의 부피, 온도, 스푼 크기</div>
+  <div class="note-body"><p class='en'><b>Independent variable</b>: the one you deliberately change (e.g. type of solute).</p><p class='ko'><b>독립변수</b>: 의도적으로 바꾸는 것 (예: 용질의 종류).</p><p class='en'><b>Dependent variable</b>: the one you measure (e.g. spoons that dissolve).</p><p class='ko'><b>종속변수</b>: 측정하는 것 (예: 녹은 스푼 수).</p><p class='en'><b>Control variables</b>: kept the same to make it a fair test (volume of water, temperature, stirring).</p><p class='ko'><b>통제변수</b>: 공정 실험을 위해 같게 유지 (물 부피, 온도, 젓기).</p></div>
   
 </div></div>
 </div>
@@ -716,211 +762,312 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="chapter-head">
     <span class="ch-icon">🌡️</span>
     <div class="ch-text">
-      <h2>4. 용해도와 온도 (Temperature)</h2>
+      <h2>4. Solubility and Temperature</h2>
       <span class="ch-sub">2.4 Solubility and temperature</span>
     </div>
     <a class="btn-pdf" href="pdfs/2.4%20Solubility%20and%20temperature.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
   <div class="notes-list"><div class="note-card">
   <div class="note-head">
-    <h3>온도가 올라가면…</h3>
+    <h3>How temperature affects solubility (온도가 용해도에 미치는 영향)</h3>
     
   </div>
-  <div class="note-body">온도가 높아지면 물 분자가 <b>더 많은 열에너지·운동에너지</b>를 가져 더 빠르게 움직인다. 그래서 용질 입자를 더 잘 흩어 놓을 수 있어 <b>대부분 용해도가 증가</b>한다.<br><br>찬물보다 따뜻한 물에 설탕이 더 잘 녹는 이유.</div>
+  <div class="note-body"><p class='en'>When water gets <b>hotter</b>, its particles have more <b>kinetic energy</b> and move faster.</p><p class='ko'>물이 <b>뜨거워지면</b> 물 입자가 <b>운동 에너지</b>를 더 많이 가지고 빠르게 움직입니다.</p><p class='en'>Fast-moving water particles can break up solute particles more easily, so <b>more solute dissolves</b>.</p><p class='ko'>빠르게 움직이는 물 입자는 용질 입자를 더 쉽게 흩어 놓아 <b>더 많은 용질이 녹습니다</b>.</p><p class='en'>So for most solid solutes, solubility <b>increases</b> with temperature.</p><p class='ko'>그래서 대부분의 고체 용질은 온도가 올라가면 용해도가 <b>증가</b>합니다.</p></div>
   <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p04_img004.png" alt="" loading="lazy">
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>실험: 온도별 설탕 용해도</h3>
+    <h3>Experiment: solubility of sugar at different temperatures (온도별 설탕 용해도 실험)</h3>
     
   </div>
-  <div class="note-body"><b>변수 설정:</b><br>• 독립: 물 온도 (실온 / 50℃ / 100℃)<br>• 종속: 녹은 설탕의 질량(g)<br>• 통제: 물의 부피(25 cm³), 젓는 힘, 같은 비커<br><br><b>방법:</b> 비커에 물 25 cm³ → 10 g씩 설탕 추가하며 젓기 → 포화 상태가 될 때까지 → 총 g 기록.</div>
+  <div class="note-body"><p class='en'>Aim: see how temperature affects the amount of sugar that dissolves in 25 cm³ of water.</p><p class='ko'>실험 목적: 물 25cm³에 녹는 설탕의 양이 온도에 따라 어떻게 달라지는지 봅니다.</p><p class='en'>Variables — Independent: water temperature (room temp, 50°C, 100°C). Dependent: mass of sugar dissolved (g).</p><p class='ko'>변수 — 독립: 물 온도 (실온, 50°C, 100°C). 종속: 녹은 설탕의 질량(g).</p><p class='en'>Control variables: volume of water (25 cm³), stirring, same beaker size.</p><p class='ko'>통제변수: 물 부피(25cm³), 젓는 힘, 같은 비커 크기.</p><p class='en'>Method: add 10 g of sugar at a time and stir, until no more dissolves (saturated).</p><p class='ko'>방법: 설탕을 10g씩 넣고 저어가며 더 이상 녹지 않을 때(포화)까지.</p></div>
   <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p11_img013.png" alt="" loading="lazy">
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>안전 (Safety)</h3>
+    <h3>Safety (안전 수칙)</h3>
     
   </div>
-  <div class="note-body">뜨거운 물을 다루므로:<br>• 안전 고글 착용<br>• 긴 머리 묶기<br>• Bunsen burner·삼발이·금속망 안전 셋업<br>• 비커 잡을 땐 test tube holder 사용</div>
+  <div class="note-body"><p class='en'>Hot water can burn you, so:</p><p class='ko'>뜨거운 물은 화상을 입힐 수 있으니:</p><p class='en'>• Wear <b>safety goggles</b>.</p><p class='ko'>• <b>안전 고글</b>을 착용합니다.</p><p class='en'>• Tie back long hair.</p><p class='ko'>• 긴 머리는 묶습니다.</p><p class='en'>• Use a <b>test tube holder</b> when picking up hot beakers.</p><p class='ko'>• 뜨거운 비커는 <b>집게(test tube holder)</b>로 잡습니다.</p></div>
   
 </div>
 <div class="note-card">
   <div class="note-head">
-    <h3>결과 그래프와 결론</h3>
+    <h3>Results and conclusion (결과와 결론)</h3>
     
   </div>
-  <div class="note-body">온도(x축) vs 녹은 설탕 양(y축) 선 그래프를 그리면 <b>오른쪽 위로 향하는 선</b>이 나온다.<br><br><b>결론:</b> 물의 온도가 올라갈수록 설탕의 용해도는 증가한다. (정비례에 가까움)<br><br>주의: 모든 고체가 이렇진 않음 — 일부 물질은 온도와 상관없거나 오히려 감소.</div>
+  <div class="note-body"><p class='en'>When you plot temperature (x-axis) vs mass of sugar dissolved (y-axis), the line goes <b>up to the right</b>.</p><p class='ko'>온도(x축) vs 녹은 설탕 양(y축)으로 그래프를 그리면, 선이 <b>오른쪽 위로</b> 향합니다.</p><p class='en'><b>Conclusion</b>: as the temperature of water increases, the solubility of sugar increases.</p><p class='ko'><b>결론</b>: 물의 온도가 올라갈수록 설탕의 용해도가 증가합니다.</p><p class='en'>Note: not ALL substances behave this way — a few solids become less soluble at higher temperatures.</p><p class='ko'>주의: 모든 물질이 그렇진 않습니다 — 일부 고체는 오히려 온도가 높을수록 덜 녹습니다.</p></div>
   <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p17_img024.png" alt="" loading="lazy">
 </div></div>
 </div>
 </div>
 
-<!-- 퀴즈 -->
+<!-- 퀴즈 (서술형) -->
 <div class="tab-pane" id="tab-quiz">
   <div class="quiz-wrap">
-    <div class="quiz-progress">Question <b id="q-current">1</b> / 14  ·  Score <b id="q-score">0</b></div>
-    <div class="quiz-bar"><div class="quiz-bar-fill" id="q-bar" style="width:0%"></div></div>
+    <div class="quiz-info">
+      📝 <b>Written-answer practice</b> · 시험 형식: 서술형<br>
+      답을 영어로 써본 다음 <b>Show model answer</b>를 눌러 비교하세요.
+    </div>
     <div id="quiz-list"><div class="q-card" id="q-card-0">
-  <div class="q-num">문제 1 / 14</div>
-  <div class="q-text">When you stir sugar into water, what really happens to the sugar?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(0,0)">The sugar disappears completely</button>
-      <button class="q-opt" onclick="answerQuestion(0,1)">Sugar particles spread out between the water particles</button>
-      <button class="q-opt" onclick="answerQuestion(0,2)">The sugar floats on top of the water</button>
-      <button class="q-opt" onclick="answerQuestion(0,3)">Water turns into sugar</button>
+  <div class="q-num"><span>Question 1 of 10</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Explain what happens to sugar particles when sugar dissolves in water. Why does the sugar 'disappear'?</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(0)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> Sugar doesn't disappear — its particles spread between water particles. (사라지는 게 아니라 입자가 흩어짐)</div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>The sugar particles <b>break up and spread out</b> evenly between the water particles.</p><p class='ko'>설탕 입자가 <b>흩어져서</b> 물 입자 사이에 골고루 퍼집니다.</p><p class='en'>The sugar does <b>not disappear</b> — it is still there, but each particle is too small to see.</p><p class='ko'>설탕은 <b>사라지는 게 아닙니다</b> — 그대로 있지만 각 입자가 너무 작아 보이지 않을 뿐입니다.</p><p class='en'>You can still taste the sweetness everywhere in the cup, which proves the sugar is still there.</p><p class='ko'>컵 어디서나 단맛이 나는 것이 설탕이 그대로 있다는 증거입니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Particles spread out evenly through the solvent</li>
+      <li>Sugar does NOT disappear (just spread out)</li>
+      <li>Evidence (e.g. still tastes sweet)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 입자가 흩어진다 + 사라지지 않는다 + 증거(단맛).</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(0,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(0,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(0,'bad')">😅 다시</button>
+  </div>
 </div>
 <div class="q-card" id="q-card-1">
-  <div class="q-num">문제 2 / 14</div>
-  <div class="q-text">In a cup of sugar water, which is correct?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(1,0)">Sugar = solvent, water = solute</button>
-      <button class="q-opt" onclick="answerQuestion(1,1)">Sugar = solute, water = solvent</button>
-      <button class="q-opt" onclick="answerQuestion(1,2)">Sugar = solution, water = solute</button>
-      <button class="q-opt" onclick="answerQuestion(1,3)">All three terms mean the same thing</button>
+  <div class="q-num"><span>Question 2 of 10</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Define SOLUTE, SOLVENT and SOLUTION. Give an example for each.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(1)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> The thing being dissolved = solute. The liquid doing the dissolving = solvent. (녹는 쪽 = solute)</div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>The <b>solute</b> is the substance being dissolved — for example, <b>sugar</b>.</p><p class='ko'><b>용질(solute)</b>은 녹는 물질입니다 — 예: <b>설탕</b>.</p><p class='en'>The <b>solvent</b> is the liquid that dissolves the solute — for example, <b>water</b>.</p><p class='ko'><b>용매(solvent)</b>는 용질을 녹이는 액체입니다 — 예: <b>물</b>.</p><p class='en'>The <b>solution</b> is the mixture formed — for example, <b>sugar water</b>.</p><p class='ko'><b>용액(solution)</b>은 만들어진 혼합물입니다 — 예: <b>설탕물</b>.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Solute = thing being dissolved (with example)</li>
+      <li>Solvent = liquid doing the dissolving (with example)</li>
+      <li>Solution = the mixture formed (with example)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 세 단어 정의 + 예시 각 1개씩.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(1,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(1,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(1,'bad')">😅 다시</button>
+  </div>
 </div>
 <div class="q-card" id="q-card-2">
-  <div class="q-num">문제 3 / 14</div>
-  <div class="q-text">If you dissolve 9 g of sugar in 146 g of water, what is the mass of the solution?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(2,0)">9 g</button>
-      <button class="q-opt" onclick="answerQuestion(2,1)">146 g</button>
-      <button class="q-opt" onclick="answerQuestion(2,2)">155 g</button>
-      <button class="q-opt" onclick="answerQuestion(2,3)">137 g</button>
+  <div class="q-num"><span>Question 3 of 10</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">A student dissolves 9 g of sugar in 146 g of water. What is the mass of the solution? Explain using the principle of CONSERVATION OF MASS.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(2)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> Mass is conserved: solute + solvent = solution. 9 + 146 = 155 g. (질량 보존)</div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>The mass of the solution is <b>9 + 146 = 155 g</b>.</p><p class='ko'>용액의 질량은 <b>9 + 146 = 155g</b> 입니다.</p><p class='en'>Mass is <b>conserved</b> — no mass is lost during dissolving.</p><p class='ko'>질량은 <b>보존</b>됩니다 — 용해 중 질량이 사라지지 않습니다.</p><p class='en'>The sugar particles are still present in the solution, just spread out between the water particles.</p><p class='ko'>설탕 입자는 용액 안에 그대로 있고, 물 입자 사이에 흩어져 있을 뿐입니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Correct answer: 155 g</li>
+      <li>States mass is conserved</li>
+      <li>Explains particles are still present, just spread out</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 155g + 질량 보존 + 입자는 그대로 있음.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(2,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(2,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(2,'bad')">😅 다시</button>
+  </div>
 </div>
 <div class="q-card" id="q-card-3">
-  <div class="q-num">문제 4 / 14</div>
-  <div class="q-text">What name is given to a substance that does NOT dissolve in water?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(3,0)">Soluble</button>
-      <button class="q-opt" onclick="answerQuestion(3,1)">Insoluble</button>
-      <button class="q-opt" onclick="answerQuestion(3,2)">Solvent</button>
-      <button class="q-opt" onclick="answerQuestion(3,3)">Saturated</button>
+  <div class="q-num"><span>Question 4 of 10</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Explain the difference between DISSOLVING and MELTING.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(3)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> Insoluble = does not dissolve. Soluble = does dissolve. (insoluble = 안 녹는)</div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'><b>Dissolving</b> is when a <b>solute spreads through a solvent</b> (a liquid). Two substances are needed.</p><p class='ko'><b>Dissolving(용해)</b>는 <b>용질이 용매(액체)에 흩어지는</b> 것입니다. 두 물질이 필요합니다.</p><p class='en'><b>Melting</b> is when a <b>solid changes to a liquid</b> because it is heated. Only one substance is involved.</p><p class='ko'><b>Melting(녹음·용융)</b>은 가열로 <b>고체가 액체로 상태 변화</b>하는 것입니다. 한 물질만 관여합니다.</p><p class='en'>Example: sugar in water = dissolving; ice → water = melting.</p><p class='ko'>예: 설탕이 물에 = dissolving; 얼음 → 물 = melting.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Dissolving = solute spreads through solvent (2 substances)</li>
+      <li>Melting = solid → liquid by heating (1 substance, state change)</li>
+      <li>Clear example for each</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 둘은 완전 다름! 정의 + 예시.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(3,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(3,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(3,'bad')">😅 다시</button>
+  </div>
 </div>
 <div class="q-card" id="q-card-4">
-  <div class="q-num">문제 5 / 14</div>
-  <div class="q-text">What is the difference between dissolving and melting?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(4,0)">They are the same process</button>
-      <button class="q-opt" onclick="answerQuestion(4,1)">Dissolving needs a temperature change; melting needs particles to spread</button>
-      <button class="q-opt" onclick="answerQuestion(4,2)">Dissolving = a solute spreads through a solvent; melting = a solid changes to a liquid when heated</button>
-      <button class="q-opt" onclick="answerQuestion(4,3)">Melting only happens with solids mixed together</button>
+  <div class="q-num"><span>Question 5 of 10</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Use the particle model to explain the difference between a CONCENTRATED and a DILUTE solution.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(4)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> Dissolving = two substances mix. Melting = one substance changes state from solid to liquid. (둘은 다른 과정)</div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>In a <b>concentrated</b> solution, there are <b>many solute particles</b> in a given volume of solvent.</p><p class='ko'><b>진한(concentrated)</b> 용액에는 정해진 부피의 용매 안에 <b>많은 용질 입자</b>가 있습니다.</p><p class='en'>In a <b>dilute</b> solution, there are <b>fewer solute particles</b> in the same volume of solvent.</p><p class='ko'><b>묽은(dilute)</b> 용액에는 같은 부피의 용매 안에 <b>적은 용질 입자</b>가 있습니다.</p><p class='en'>If you drew them as particle diagrams (same-size boxes), the concentrated one would have many more dots inside.</p><p class='ko'>같은 크기 상자로 입자 그림을 그리면, 진한 용액에 점이 훨씬 많이 그려집니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Concentrated = many solute particles in same volume</li>
+      <li>Dilute = few solute particles in same volume</li>
+      <li>Uses particle model / particle diagram comparison</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 같은 부피 비교 + 입자 수 차이로 설명.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(4,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(4,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(4,'bad')">😅 다시</button>
+  </div>
 </div>
 <div class="q-card" id="q-card-5">
-  <div class="q-num">문제 6 / 14</div>
-  <div class="q-text">What is a concentrated solution?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(5,0)">A solution with a lot of solute compared to solvent</button>
-      <button class="q-opt" onclick="answerQuestion(5,1)">A solution with only a little solute compared to solvent</button>
-      <button class="q-opt" onclick="answerQuestion(5,2)">A solution with no solute at all</button>
-      <button class="q-opt" onclick="answerQuestion(5,3)">A cold solution</button>
+  <div class="q-num"><span>Question 6 of 10</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Describe TWO ways to make a dilute solution MORE concentrated.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(5)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> Concentrated = lots of solute. Dilute = little solute. (진한 = 용질 많음)</div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>1) Add <b>more solute</b> (e.g. more sugar) to the solution.</p><p class='ko'>1) 용액에 <b>용질을 더 넣습니다</b> (예: 설탕 추가).</p><p class='en'>2) <b>Evaporate</b> some of the solvent (e.g. heat the water so some turns to vapour).</p><p class='ko'>2) 용매 일부를 <b>증발시킵니다</b> (예: 물을 가열해 일부를 수증기로).</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Add more solute</li>
+      <li>Evaporate the solvent</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 용질 추가 또는 용매 증발.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(5,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(5,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(5,'bad')">😅 다시</button>
+  </div>
 </div>
 <div class="q-card" id="q-card-6">
-  <div class="q-num">문제 7 / 14</div>
-  <div class="q-text">How can you make a dilute solution MORE concentrated?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(6,0)">Add more water</button>
-      <button class="q-opt" onclick="answerQuestion(6,1)">Cool the solution down</button>
-      <button class="q-opt" onclick="answerQuestion(6,2)">Add more solute, or evaporate some of the solvent</button>
-      <button class="q-opt" onclick="answerQuestion(6,3)">Just leave it standing for a long time</button>
+  <div class="q-num"><span>Question 7 of 10</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">What is meant by a SATURATED solution? Describe what happens if you add even more solute to a saturated solution.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(6)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> Either add more solute or remove some of the solvent (e.g. by heating). (용질 추가 또는 물 증발)</div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>A <b>saturated solution</b> is one that cannot dissolve <b>any more solute</b> at that temperature.</p><p class='ko'><b>포화 용액</b>은 그 온도에서 <b>더 이상 용질을 녹일 수 없는</b> 용액입니다.</p><p class='en'>If you add more solute, it will <b>not dissolve</b>.</p><p class='ko'>더 많은 용질을 넣어도 <b>녹지 않습니다</b>.</p><p class='en'>The extra solute will sink and sit at the <b>bottom of the container</b> as undissolved solid.</p><p class='ko'>여분의 용질은 <b>그릇 바닥에</b> 가라앉아 녹지 않은 고체로 남습니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Defines saturated correctly (no more can dissolve)</li>
+      <li>Extra solute does NOT dissolve</li>
+      <li>Extra solute settles at the bottom</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 정의 + 더 안 녹음 + 가라앉음.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(6,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(6,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(6,'bad')">😅 다시</button>
+  </div>
 </div>
 <div class="q-card" id="q-card-7">
-  <div class="q-num">문제 8 / 14</div>
-  <div class="q-text">A solution that cannot dissolve any more solute at a given temperature is called…</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(7,0)">Unsaturated</button>
-      <button class="q-opt" onclick="answerQuestion(7,1)">Saturated</button>
-      <button class="q-opt" onclick="answerQuestion(7,2)">Dilute</button>
-      <button class="q-opt" onclick="answerQuestion(7,3)">Concentrated</button>
+  <div class="q-num"><span>Question 8 of 10</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Define SOLUBILITY, including its units.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(7)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> Saturated = no more solute can dissolve. (포화 = 더 안 녹음)</div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'><b>Solubility</b> is the <b>maximum mass of solute</b> that can dissolve in a fixed amount of solvent at a particular temperature.</p><p class='ko'><b>용해도</b>는 특정 온도에서 일정한 용매에 녹을 수 있는 <b>용질의 최대 질량</b>입니다.</p><p class='en'>It is usually measured in <b>grams of solute per 100 g of water</b> (g/100g).</p><p class='ko'>보통 <b>물 100g당 녹는 용질의 g수</b>(g/100g)로 표시합니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Max solute that can dissolve at a given temperature</li>
+      <li>Units: grams per 100 g of water (or equivalent)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 정의 + 단위(g per 100 g water).</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(7,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(7,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(7,'bad')">😅 다시</button>
+  </div>
 </div>
 <div class="q-card" id="q-card-8">
-  <div class="q-num">문제 9 / 14</div>
-  <div class="q-text">What is meant by 'solubility'?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(8,0)">The colour of the solute</button>
-      <button class="q-opt" onclick="answerQuestion(8,1)">The volume of the solution</button>
-      <button class="q-opt" onclick="answerQuestion(8,2)">The maximum mass of solute that dissolves in a fixed amount of solvent at a set temperature</button>
-      <button class="q-opt" onclick="answerQuestion(8,3)">How fast a solute sinks to the bottom</button>
+  <div class="q-num"><span>Question 9 of 10</span> <span class="q-marks">4 marks</span></div>
+  <div class="q-text">Describe how to plan a fair test to investigate how the TYPE of solute affects the solubility in water. Name the independent, dependent and control variables.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(8)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> Solubility = max amount of solute that can dissolve at a given temperature. (특정 온도에서 녹는 최대량)</div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>The <b>independent variable</b> is the <b>type of solute</b> (e.g. sugar, salt, chalk).</p><p class='ko'><b>독립변수</b>는 <b>용질의 종류</b> (예: 설탕, 소금, 분필가루).</p><p class='en'>The <b>dependent variable</b> is the <b>amount of solute that dissolves</b> (e.g. number of spatulas).</p><p class='ko'><b>종속변수</b>는 <b>녹은 용질의 양</b> (예: 스푼 수).</p><p class='en'>The <b>control variables</b> include the volume of water, the temperature, the size of each spatula, and the stirring time.</p><p class='ko'><b>통제변수</b>: 물의 부피, 온도, 스푼 크기, 젓는 시간 등.</p><p class='en'>Method: use the same volume of water at the same temperature, add one spatula of solute at a time and stir, count how many dissolve before the solution becomes saturated.</p><p class='ko'>방법: 같은 온도·부피의 물에 용질을 한 스푼씩 넣고 저으면서 포화될 때까지 몇 스푼이 녹는지 셉니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>IV: type of solute</li>
+      <li>DV: amount/spatulas that dissolve</li>
+      <li>CVs: volume of water, temperature, spatula size, stirring (any 2)</li>
+      <li>Sensible method description</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 IV/DV/CV 3개 + 방법.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(8,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(8,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(8,'bad')">😅 다시</button>
+  </div>
 </div>
 <div class="q-card" id="q-card-9">
-  <div class="q-num">문제 10 / 14</div>
-  <div class="q-text">For most solid solutes in water, what happens to solubility as the water gets hotter?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(9,0)">It decreases</button>
-      <button class="q-opt" onclick="answerQuestion(9,1)">It increases</button>
-      <button class="q-opt" onclick="answerQuestion(9,2)">It stays the same</button>
-      <button class="q-opt" onclick="answerQuestion(9,3)">It changes randomly</button>
+  <div class="q-num"><span>Question 10 of 10</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Explain how INCREASING TEMPERATURE affects the solubility of most solids in water. Use the particle model.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(9)">👁️ Show model answer</button>
   </div>
-  <div class="q-explanation"><b>해설:</b> Higher temperature → water particles have more energy → more solute usually dissolves. (대부분 용해도 증가)</div>
-</div>
-<div class="q-card" id="q-card-10">
-  <div class="q-num">문제 11 / 14</div>
-  <div class="q-text">In an experiment testing how temperature affects sugar dissolving, what is the independent variable?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(10,0)">The volume of water</button>
-      <button class="q-opt" onclick="answerQuestion(10,1)">The water temperature (the variable you change)</button>
-      <button class="q-opt" onclick="answerQuestion(10,2)">The mass of sugar that dissolves (what you measure)</button>
-      <button class="q-opt" onclick="answerQuestion(10,3)">The size of the beaker</button>
-  </div>
-  <div class="q-explanation"><b>해설:</b> Independent variable = the one you deliberately change. (의도적으로 바꾸는 것)</div>
-</div>
-<div class="q-card" id="q-card-11">
-  <div class="q-num">문제 12 / 14</div>
-  <div class="q-text">In a fair test comparing the solubility of sugar and salt in water, which is NOT a control variable?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(11,0)">Volume of water</button>
-      <button class="q-opt" onclick="answerQuestion(11,1)">Size of spatula</button>
-      <button class="q-opt" onclick="answerQuestion(11,2)">Type of solute (sugar vs salt)</button>
-      <button class="q-opt" onclick="answerQuestion(11,3)">Stirring force</button>
-  </div>
-  <div class="q-explanation"><b>해설:</b> Comparing solutes = solute type is the INDEPENDENT variable, not a control. (용질 종류는 독립변수)</div>
-</div>
-<div class="q-card" id="q-card-12">
-  <div class="q-num">문제 13 / 14</div>
-  <div class="q-text">Which statement about a mixture is correct?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(12,0)">Its parts are joined by chemical bonds</button>
-      <button class="q-opt" onclick="answerQuestion(12,1)">Its parts are mixed but not chemically joined and can be separated physically</button>
-      <button class="q-opt" onclick="answerQuestion(12,2)">It always contains only one type of element</button>
-      <button class="q-opt" onclick="answerQuestion(12,3)">It can only exist as a solution</button>
-  </div>
-  <div class="q-explanation"><b>해설:</b> Mixture = physically combined, no chemical bonds, can be separated physically. (화학결합 없음)</div>
-</div>
-<div class="q-card" id="q-card-13">
-  <div class="q-num">문제 14 / 14</div>
-  <div class="q-text">Which of the following is NOT a true solution?</div>
-  <div class="q-options">
-      <button class="q-opt" onclick="answerQuestion(13,0)">Sugar in water</button>
-      <button class="q-opt" onclick="answerQuestion(13,1)">Salt in water</button>
-      <button class="q-opt" onclick="answerQuestion(13,2)">Sand stirred into water</button>
-      <button class="q-opt" onclick="answerQuestion(13,3)">A cup of tea</button>
-  </div>
-  <div class="q-explanation"><b>해설:</b> Sand is insoluble in water — it stays as visible solid particles, so it isn't a true solution. (모래는 안 녹음)</div>
-</div></div>
-    <div class="quiz-result" id="quiz-result">
-      <h2>🎉 Done!</h2>
-      <div class="score" id="final-score">0 / 14</div>
-      <p style="color:var(--muted);margin-bottom:16px" id="final-msg">Well done!</p>
-      <button onclick="resetQuiz()">다시 풀기 / Try Again</button>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>When the water is heated, water particles gain more <b>kinetic energy</b> and move faster.</p><p class='ko'>물을 가열하면 물 입자가 <b>운동 에너지</b>를 더 얻어 더 빨리 움직입니다.</p><p class='en'>Faster water particles can break up the solute particles more easily and spread them out.</p><p class='ko'>빠르게 움직이는 물 입자는 용질 입자를 더 쉽게 흩어 놓습니다.</p><p class='en'>So <b>more solute can dissolve</b> at higher temperatures — solubility increases.</p><p class='ko'>그래서 온도가 높을수록 <b>더 많은 용질이 녹습니다</b> — 용해도가 증가합니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Higher temperature → more kinetic energy</li>
+      <li>Particles move faster</li>
+      <li>More solute dissolves / solubility increases</li>
+      </ul>
     </div>
+    <span class="ko-help">💡 운동에너지 ↑ → 입자 움직임 ↑ → 용해도 ↑.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(9,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(9,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(9,'bad')">😅 다시</button>
+  </div>
+</div></div>
   </div>
 </div>
 
@@ -929,7 +1076,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">23</span> 남음</div>
+      <div>📚 <span id="sp-remaining">24</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -948,13 +1095,13 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8C 용해와 용액 Solutions · science-vocab</footer>
+<footer>8C Solutions 용해와 용액 · science-vocab</footer>
 
 <script>
-const QUIZ_DATA = [{"q": "When you stir sugar into water, what really happens to the sugar?", "options": ["The sugar disappears completely", "Sugar particles spread out between the water particles", "The sugar floats on top of the water", "Water turns into sugar"], "answer": 1, "explanation": "Sugar doesn't disappear — its particles spread between water particles. (사라지는 게 아니라 입자가 흩어짐)"}, {"q": "In a cup of sugar water, which is correct?", "options": ["Sugar = solvent, water = solute", "Sugar = solute, water = solvent", "Sugar = solution, water = solute", "All three terms mean the same thing"], "answer": 1, "explanation": "The thing being dissolved = solute. The liquid doing the dissolving = solvent. (녹는 쪽 = solute)"}, {"q": "If you dissolve 9 g of sugar in 146 g of water, what is the mass of the solution?", "options": ["9 g", "146 g", "155 g", "137 g"], "answer": 2, "explanation": "Mass is conserved: solute + solvent = solution. 9 + 146 = 155 g. (질량 보존)"}, {"q": "What name is given to a substance that does NOT dissolve in water?", "options": ["Soluble", "Insoluble", "Solvent", "Saturated"], "answer": 1, "explanation": "Insoluble = does not dissolve. Soluble = does dissolve. (insoluble = 안 녹는)"}, {"q": "What is the difference between dissolving and melting?", "options": ["They are the same process", "Dissolving needs a temperature change; melting needs particles to spread", "Dissolving = a solute spreads through a solvent; melting = a solid changes to a liquid when heated", "Melting only happens with solids mixed together"], "answer": 2, "explanation": "Dissolving = two substances mix. Melting = one substance changes state from solid to liquid. (둘은 다른 과정)"}, {"q": "What is a concentrated solution?", "options": ["A solution with a lot of solute compared to solvent", "A solution with only a little solute compared to solvent", "A solution with no solute at all", "A cold solution"], "answer": 0, "explanation": "Concentrated = lots of solute. Dilute = little solute. (진한 = 용질 많음)"}, {"q": "How can you make a dilute solution MORE concentrated?", "options": ["Add more water", "Cool the solution down", "Add more solute, or evaporate some of the solvent", "Just leave it standing for a long time"], "answer": 2, "explanation": "Either add more solute or remove some of the solvent (e.g. by heating). (용질 추가 또는 물 증발)"}, {"q": "A solution that cannot dissolve any more solute at a given temperature is called…", "options": ["Unsaturated", "Saturated", "Dilute", "Concentrated"], "answer": 1, "explanation": "Saturated = no more solute can dissolve. (포화 = 더 안 녹음)"}, {"q": "What is meant by 'solubility'?", "options": ["The colour of the solute", "The volume of the solution", "The maximum mass of solute that dissolves in a fixed amount of solvent at a set temperature", "How fast a solute sinks to the bottom"], "answer": 2, "explanation": "Solubility = max amount of solute that can dissolve at a given temperature. (특정 온도에서 녹는 최대량)"}, {"q": "For most solid solutes in water, what happens to solubility as the water gets hotter?", "options": ["It decreases", "It increases", "It stays the same", "It changes randomly"], "answer": 1, "explanation": "Higher temperature → water particles have more energy → more solute usually dissolves. (대부분 용해도 증가)"}, {"q": "In an experiment testing how temperature affects sugar dissolving, what is the independent variable?", "options": ["The volume of water", "The water temperature (the variable you change)", "The mass of sugar that dissolves (what you measure)", "The size of the beaker"], "answer": 1, "explanation": "Independent variable = the one you deliberately change. (의도적으로 바꾸는 것)"}, {"q": "In a fair test comparing the solubility of sugar and salt in water, which is NOT a control variable?", "options": ["Volume of water", "Size of spatula", "Type of solute (sugar vs salt)", "Stirring force"], "answer": 2, "explanation": "Comparing solutes = solute type is the INDEPENDENT variable, not a control. (용질 종류는 독립변수)"}, {"q": "Which statement about a mixture is correct?", "options": ["Its parts are joined by chemical bonds", "Its parts are mixed but not chemically joined and can be separated physically", "It always contains only one type of element", "It can only exist as a solution"], "answer": 1, "explanation": "Mixture = physically combined, no chemical bonds, can be separated physically. (화학결합 없음)"}, {"q": "Which of the following is NOT a true solution?", "options": ["Sugar in water", "Salt in water", "Sand stirred into water", "A cup of tea"], "answer": 2, "explanation": "Sand is insoluble in water — it stays as visible solid particles, so it isn't a true solution. (모래는 안 녹음)"}];
-const VOCAB_DATA = [{"en": "Solute", "ko": "용질", "def_en": "The substance being dissolved (usually a solid like sugar or salt).", "cat": "organ"}, {"en": "Solvent", "ko": "용매", "def_en": "The liquid that dissolves the solute (often water).", "cat": "organ"}, {"en": "Solution", "ko": "용액", "def_en": "Mixture formed when a solute dissolves in a solvent.", "cat": "organ"}, {"en": "Dissolving", "ko": "용해", "def_en": "Process where a solute breaks up into particles and spreads through a solvent.", "cat": "organ"}, {"en": "Soluble", "ko": "녹는 (가용성)", "def_en": "A substance that can dissolve in a given solvent.", "cat": "organ"}, {"en": "Insoluble", "ko": "안 녹는 (불용성)", "def_en": "A substance that does not dissolve in a given solvent.", "cat": "organ"}, {"en": "Mixture", "ko": "혼합물", "def_en": "Two or more substances mixed but not chemically joined.", "cat": "organ"}, {"en": "Particle", "ko": "입자", "def_en": "Tiny piece of a substance (atom, molecule, ion).", "cat": "organ"}, {"en": "Concentration", "ko": "농도", "def_en": "Amount of solute dissolved in a given amount of solvent.", "cat": "process"}, {"en": "Concentrated", "ko": "진한 (농축)", "def_en": "A solution with a relatively large amount of solute.", "cat": "process"}, {"en": "Dilute", "ko": "묽은", "def_en": "A solution with a relatively small amount of solute.", "cat": "process"}, {"en": "Dissolve", "ko": "녹다 (동사)", "def_en": "(verb) To break up and spread evenly through a solvent.", "cat": "process"}, {"en": "Melting", "ko": "녹음 (용융)", "def_en": "Change of state from solid to liquid due to heating.", "cat": "process"}, {"en": "Mass conservation", "ko": "질량 보존", "def_en": "Total mass stays the same before and after dissolving.", "cat": "process"}, {"en": "Solubility", "ko": "용해도", "def_en": "Maximum amount of solute that can dissolve in a given amount of solvent at a set temperature.", "cat": "gas"}, {"en": "Saturated", "ko": "포화", "def_en": "A solution that cannot dissolve any more solute at that temperature.", "cat": "gas"}, {"en": "Unsaturated", "ko": "불포화", "def_en": "A solution that can still dissolve more solute.", "cat": "gas"}, {"en": "Temperature", "ko": "온도", "def_en": "How hot or cold something is. Higher temperature → faster particles → usually more dissolving.", "cat": "blood"}, {"en": "Independent variable", "ko": "독립변수", "def_en": "The variable you deliberately change in an experiment.", "cat": "blood"}, {"en": "Dependent variable", "ko": "종속변수", "def_en": "The variable you measure as a result.", "cat": "blood"}, {"en": "Control variable", "ko": "통제변수", "def_en": "Variables kept the same to keep the test fair.", "cat": "blood"}, {"en": "Fair test", "ko": "공정 실험", "def_en": "An experiment in which only one variable is changed at a time.", "cat": "blood"}, {"en": "Hypothesis", "ko": "가설", "def_en": "A predicted answer to a scientific question that can be tested.", "cat": "blood"}];
-const UNIT_TITLE = "8C 용해와 용액 Solutions";
-const UNIT_TOPICS = ["1. 용해와 입자 모델", "2. 용액의 농도 (Concentration)", "3. 물에 대한 용해도 (Solubility)", "4. 용해도와 온도 (Temperature)"];
+const QUIZ_DATA = [{"q": "Explain what happens to sugar particles when sugar dissolves in water. Why does the sugar 'disappear'?", "marks": 3, "sample_answer": "<p class='en'>The sugar particles <b>break up and spread out</b> evenly between the water particles.</p><p class='ko'>설탕 입자가 <b>흩어져서</b> 물 입자 사이에 골고루 퍼집니다.</p><p class='en'>The sugar does <b>not disappear</b> — it is still there, but each particle is too small to see.</p><p class='ko'>설탕은 <b>사라지는 게 아닙니다</b> — 그대로 있지만 각 입자가 너무 작아 보이지 않을 뿐입니다.</p><p class='en'>You can still taste the sweetness everywhere in the cup, which proves the sugar is still there.</p><p class='ko'>컵 어디서나 단맛이 나는 것이 설탕이 그대로 있다는 증거입니다.</p>", "mark_points": ["Particles spread out evenly through the solvent", "Sugar does NOT disappear (just spread out)", "Evidence (e.g. still tastes sweet)"], "ko_hint": "입자가 흩어진다 + 사라지지 않는다 + 증거(단맛)."}, {"q": "Define SOLUTE, SOLVENT and SOLUTION. Give an example for each.", "marks": 3, "sample_answer": "<p class='en'>The <b>solute</b> is the substance being dissolved — for example, <b>sugar</b>.</p><p class='ko'><b>용질(solute)</b>은 녹는 물질입니다 — 예: <b>설탕</b>.</p><p class='en'>The <b>solvent</b> is the liquid that dissolves the solute — for example, <b>water</b>.</p><p class='ko'><b>용매(solvent)</b>는 용질을 녹이는 액체입니다 — 예: <b>물</b>.</p><p class='en'>The <b>solution</b> is the mixture formed — for example, <b>sugar water</b>.</p><p class='ko'><b>용액(solution)</b>은 만들어진 혼합물입니다 — 예: <b>설탕물</b>.</p>", "mark_points": ["Solute = thing being dissolved (with example)", "Solvent = liquid doing the dissolving (with example)", "Solution = the mixture formed (with example)"], "ko_hint": "세 단어 정의 + 예시 각 1개씩."}, {"q": "A student dissolves 9 g of sugar in 146 g of water. What is the mass of the solution? Explain using the principle of CONSERVATION OF MASS.", "marks": 3, "sample_answer": "<p class='en'>The mass of the solution is <b>9 + 146 = 155 g</b>.</p><p class='ko'>용액의 질량은 <b>9 + 146 = 155g</b> 입니다.</p><p class='en'>Mass is <b>conserved</b> — no mass is lost during dissolving.</p><p class='ko'>질량은 <b>보존</b>됩니다 — 용해 중 질량이 사라지지 않습니다.</p><p class='en'>The sugar particles are still present in the solution, just spread out between the water particles.</p><p class='ko'>설탕 입자는 용액 안에 그대로 있고, 물 입자 사이에 흩어져 있을 뿐입니다.</p>", "mark_points": ["Correct answer: 155 g", "States mass is conserved", "Explains particles are still present, just spread out"], "ko_hint": "155g + 질량 보존 + 입자는 그대로 있음."}, {"q": "Explain the difference between DISSOLVING and MELTING.", "marks": 3, "sample_answer": "<p class='en'><b>Dissolving</b> is when a <b>solute spreads through a solvent</b> (a liquid). Two substances are needed.</p><p class='ko'><b>Dissolving(용해)</b>는 <b>용질이 용매(액체)에 흩어지는</b> 것입니다. 두 물질이 필요합니다.</p><p class='en'><b>Melting</b> is when a <b>solid changes to a liquid</b> because it is heated. Only one substance is involved.</p><p class='ko'><b>Melting(녹음·용융)</b>은 가열로 <b>고체가 액체로 상태 변화</b>하는 것입니다. 한 물질만 관여합니다.</p><p class='en'>Example: sugar in water = dissolving; ice → water = melting.</p><p class='ko'>예: 설탕이 물에 = dissolving; 얼음 → 물 = melting.</p>", "mark_points": ["Dissolving = solute spreads through solvent (2 substances)", "Melting = solid → liquid by heating (1 substance, state change)", "Clear example for each"], "ko_hint": "둘은 완전 다름! 정의 + 예시."}, {"q": "Use the particle model to explain the difference between a CONCENTRATED and a DILUTE solution.", "marks": 3, "sample_answer": "<p class='en'>In a <b>concentrated</b> solution, there are <b>many solute particles</b> in a given volume of solvent.</p><p class='ko'><b>진한(concentrated)</b> 용액에는 정해진 부피의 용매 안에 <b>많은 용질 입자</b>가 있습니다.</p><p class='en'>In a <b>dilute</b> solution, there are <b>fewer solute particles</b> in the same volume of solvent.</p><p class='ko'><b>묽은(dilute)</b> 용액에는 같은 부피의 용매 안에 <b>적은 용질 입자</b>가 있습니다.</p><p class='en'>If you drew them as particle diagrams (same-size boxes), the concentrated one would have many more dots inside.</p><p class='ko'>같은 크기 상자로 입자 그림을 그리면, 진한 용액에 점이 훨씬 많이 그려집니다.</p>", "mark_points": ["Concentrated = many solute particles in same volume", "Dilute = few solute particles in same volume", "Uses particle model / particle diagram comparison"], "ko_hint": "같은 부피 비교 + 입자 수 차이로 설명."}, {"q": "Describe TWO ways to make a dilute solution MORE concentrated.", "marks": 2, "sample_answer": "<p class='en'>1) Add <b>more solute</b> (e.g. more sugar) to the solution.</p><p class='ko'>1) 용액에 <b>용질을 더 넣습니다</b> (예: 설탕 추가).</p><p class='en'>2) <b>Evaporate</b> some of the solvent (e.g. heat the water so some turns to vapour).</p><p class='ko'>2) 용매 일부를 <b>증발시킵니다</b> (예: 물을 가열해 일부를 수증기로).</p>", "mark_points": ["Add more solute", "Evaporate the solvent"], "ko_hint": "용질 추가 또는 용매 증발."}, {"q": "What is meant by a SATURATED solution? Describe what happens if you add even more solute to a saturated solution.", "marks": 3, "sample_answer": "<p class='en'>A <b>saturated solution</b> is one that cannot dissolve <b>any more solute</b> at that temperature.</p><p class='ko'><b>포화 용액</b>은 그 온도에서 <b>더 이상 용질을 녹일 수 없는</b> 용액입니다.</p><p class='en'>If you add more solute, it will <b>not dissolve</b>.</p><p class='ko'>더 많은 용질을 넣어도 <b>녹지 않습니다</b>.</p><p class='en'>The extra solute will sink and sit at the <b>bottom of the container</b> as undissolved solid.</p><p class='ko'>여분의 용질은 <b>그릇 바닥에</b> 가라앉아 녹지 않은 고체로 남습니다.</p>", "mark_points": ["Defines saturated correctly (no more can dissolve)", "Extra solute does NOT dissolve", "Extra solute settles at the bottom"], "ko_hint": "정의 + 더 안 녹음 + 가라앉음."}, {"q": "Define SOLUBILITY, including its units.", "marks": 2, "sample_answer": "<p class='en'><b>Solubility</b> is the <b>maximum mass of solute</b> that can dissolve in a fixed amount of solvent at a particular temperature.</p><p class='ko'><b>용해도</b>는 특정 온도에서 일정한 용매에 녹을 수 있는 <b>용질의 최대 질량</b>입니다.</p><p class='en'>It is usually measured in <b>grams of solute per 100 g of water</b> (g/100g).</p><p class='ko'>보통 <b>물 100g당 녹는 용질의 g수</b>(g/100g)로 표시합니다.</p>", "mark_points": ["Max solute that can dissolve at a given temperature", "Units: grams per 100 g of water (or equivalent)"], "ko_hint": "정의 + 단위(g per 100 g water)."}, {"q": "Describe how to plan a fair test to investigate how the TYPE of solute affects the solubility in water. Name the independent, dependent and control variables.", "marks": 4, "sample_answer": "<p class='en'>The <b>independent variable</b> is the <b>type of solute</b> (e.g. sugar, salt, chalk).</p><p class='ko'><b>독립변수</b>는 <b>용질의 종류</b> (예: 설탕, 소금, 분필가루).</p><p class='en'>The <b>dependent variable</b> is the <b>amount of solute that dissolves</b> (e.g. number of spatulas).</p><p class='ko'><b>종속변수</b>는 <b>녹은 용질의 양</b> (예: 스푼 수).</p><p class='en'>The <b>control variables</b> include the volume of water, the temperature, the size of each spatula, and the stirring time.</p><p class='ko'><b>통제변수</b>: 물의 부피, 온도, 스푼 크기, 젓는 시간 등.</p><p class='en'>Method: use the same volume of water at the same temperature, add one spatula of solute at a time and stir, count how many dissolve before the solution becomes saturated.</p><p class='ko'>방법: 같은 온도·부피의 물에 용질을 한 스푼씩 넣고 저으면서 포화될 때까지 몇 스푼이 녹는지 셉니다.</p>", "mark_points": ["IV: type of solute", "DV: amount/spatulas that dissolve", "CVs: volume of water, temperature, spatula size, stirring (any 2)", "Sensible method description"], "ko_hint": "IV/DV/CV 3개 + 방법."}, {"q": "Explain how INCREASING TEMPERATURE affects the solubility of most solids in water. Use the particle model.", "marks": 3, "sample_answer": "<p class='en'>When the water is heated, water particles gain more <b>kinetic energy</b> and move faster.</p><p class='ko'>물을 가열하면 물 입자가 <b>운동 에너지</b>를 더 얻어 더 빨리 움직입니다.</p><p class='en'>Faster water particles can break up the solute particles more easily and spread them out.</p><p class='ko'>빠르게 움직이는 물 입자는 용질 입자를 더 쉽게 흩어 놓습니다.</p><p class='en'>So <b>more solute can dissolve</b> at higher temperatures — solubility increases.</p><p class='ko'>그래서 온도가 높을수록 <b>더 많은 용질이 녹습니다</b> — 용해도가 증가합니다.</p>", "mark_points": ["Higher temperature → more kinetic energy", "Particles move faster", "More solute dissolves / solubility increases"], "ko_hint": "운동에너지 ↑ → 입자 움직임 ↑ → 용해도 ↑."}];
+const VOCAB_DATA = [{"en": "Solute", "ko": "용질", "def_en": "The substance being dissolved (usually a solid like sugar or salt).", "cat": "organ"}, {"en": "Solvent", "ko": "용매", "def_en": "The liquid that dissolves the solute (often water).", "cat": "organ"}, {"en": "Solution", "ko": "용액", "def_en": "The mixture formed when a solute dissolves in a solvent.", "cat": "organ"}, {"en": "Dissolving", "ko": "용해", "def_en": "When a solute breaks up into particles and spreads through a solvent.", "cat": "organ"}, {"en": "Soluble", "ko": "녹는 (가용성)", "def_en": "A substance that can dissolve in a given solvent.", "cat": "organ"}, {"en": "Insoluble", "ko": "안 녹는 (불용성)", "def_en": "A substance that does not dissolve in a given solvent.", "cat": "organ"}, {"en": "Mixture", "ko": "혼합물", "def_en": "Two or more substances mixed but not chemically joined.", "cat": "organ"}, {"en": "Particle", "ko": "입자", "def_en": "Tiny piece of a substance (atom, molecule, ion).", "cat": "organ"}, {"en": "Concentration", "ko": "농도", "def_en": "Amount of solute dissolved in a given amount of solvent.", "cat": "process"}, {"en": "Concentrated", "ko": "진한", "def_en": "A solution with a relatively large amount of solute.", "cat": "process"}, {"en": "Dilute", "ko": "묽은", "def_en": "A solution with a relatively small amount of solute.", "cat": "process"}, {"en": "Dissolve", "ko": "녹다 (동사)", "def_en": "(verb) To break up and spread evenly through a solvent.", "cat": "process"}, {"en": "Melting", "ko": "녹음 (용융)", "def_en": "Change of state from solid to liquid due to heating.", "cat": "process"}, {"en": "Mass conservation", "ko": "질량 보존", "def_en": "Total mass stays the same before and after dissolving.", "cat": "process"}, {"en": "Solubility", "ko": "용해도", "def_en": "Max amount of solute that can dissolve in a given amount of solvent at a set temperature.", "cat": "gas"}, {"en": "Saturated", "ko": "포화", "def_en": "A solution that cannot dissolve any more solute at that temperature.", "cat": "gas"}, {"en": "Unsaturated", "ko": "불포화", "def_en": "A solution that can still dissolve more solute.", "cat": "gas"}, {"en": "Evaporate", "ko": "증발하다", "def_en": "To change from liquid to gas (e.g. water turns to vapour).", "cat": "gas"}, {"en": "Temperature", "ko": "온도", "def_en": "How hot or cold something is.", "cat": "blood"}, {"en": "Independent variable", "ko": "독립변수", "def_en": "The variable you deliberately change in an experiment.", "cat": "blood"}, {"en": "Dependent variable", "ko": "종속변수", "def_en": "The variable you measure as a result.", "cat": "blood"}, {"en": "Control variable", "ko": "통제변수", "def_en": "Variables kept the same to keep the test fair.", "cat": "blood"}, {"en": "Fair test", "ko": "공정 실험", "def_en": "An experiment in which only one variable is changed at a time.", "cat": "blood"}, {"en": "Hypothesis", "ko": "가설", "def_en": "A predicted answer to a scientific question that can be tested.", "cat": "blood"}];
+const UNIT_TITLE = "8C Solutions 용해와 용액";
+const UNIT_TOPICS = ["1. Dissolving and the Particle Model", "2. Concentration of Solutions", "3. Solubility in Water", "4. Solubility and Temperature"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
 
 // ─── claude.ai 새 창 링크 ───
@@ -1170,60 +1317,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// 퀴즈 채점
-function answerQuestion(qi, oi) {
-  if (qAnswered[qi] !== null) return;
-  const correct = QUIZ_DATA[qi].answer;
-  qAnswered[qi] = (oi === correct);
-  const card = document.getElementById('q-card-' + qi);
-  card.querySelectorAll('.q-opt').forEach((b, i) => {
-    b.disabled = true;
-    if (i === correct) b.classList.add('correct');
-    else if (i === oi) b.classList.add('wrong');
-  });
-  card.querySelector('.q-explanation').classList.add('show');
-  updateScore();
-  // 다음 문제로 이동
-  setTimeout(() => {
-    const next = document.getElementById('q-card-' + (qi + 1));
-    if (next) next.scrollIntoView({behavior: 'smooth', block: 'start'});
-    else showResult();
-  }, 1200);
+// 서술형 퀴즈: 모범 답안 보이기 + 자기 채점
+function showModel(qi) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  var model = card.querySelector('.q-model');
+  var rate = card.querySelector('.q-self-rate');
+  model.classList.add('show');
+  rate.classList.add('show');
 }
 
-function updateScore() {
-  const correct = qAnswered.filter(x => x === true).length;
-  const answered = qAnswered.filter(x => x !== null).length;
-  document.getElementById('q-score').textContent = correct;
-  document.getElementById('q-current').textContent = Math.min(answered + 1, QUIZ_DATA.length);
-  document.getElementById('q-bar').style.width = (answered / QUIZ_DATA.length * 100) + '%';
-}
-
-function showResult() {
-  const correct = qAnswered.filter(x => x === true).length;
-  const total = QUIZ_DATA.length;
-  document.getElementById('final-score').textContent = correct + ' / ' + total;
-  const pct = correct / total;
-  let msg;
-  if (pct >= 0.9) msg = '🌟 완벽해요!';
-  else if (pct >= 0.7) msg = '👍 잘했어요!';
-  else if (pct >= 0.5) msg = '📚 조금 더 복습해봐요';
-  else msg = '🔁 핵심노트부터 다시 보기';
-  document.getElementById('final-msg').textContent = msg;
-  document.getElementById('quiz-result').classList.add('show');
-  document.getElementById('quiz-result').scrollIntoView({behavior: 'smooth'});
-}
-
-function resetQuiz() {
-  qAnswered = new Array(QUIZ_DATA.length).fill(null);
-  document.querySelectorAll('.q-opt').forEach(b => {
-    b.disabled = false;
-    b.classList.remove('correct', 'wrong');
-  });
-  document.querySelectorAll('.q-explanation').forEach(e => e.classList.remove('show'));
-  document.getElementById('quiz-result').classList.remove('show');
-  updateScore();
-  document.querySelector('#tab-quiz').scrollIntoView({behavior: 'smooth'});
+function rateSelf(qi, level) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  card.querySelectorAll('.q-self-rate button').forEach(function(b) { b.classList.remove('selected'); });
+  card.querySelector('.q-self-rate .rate-' + level).classList.add('selected');
 }
 </script>
 </body>
