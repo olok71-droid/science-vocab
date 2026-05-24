@@ -959,34 +959,27 @@ let qAnswered = new Array(QUIZ_DATA.length).fill(null);
 
 // ─── claude.ai 새 창 링크 ───
 (function setupClaudeLinks() {
-  const topicsList = UNIT_TOPICS.map((t, i) => `${i+1}. ${t}`).join('
-');
-  const askMsg = `I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English.
-
-Current unit: ${UNIT_TITLE}
-Topics:
-${topicsList}
-
-Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use — if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary.
-
-질문 시작할게요:
-`;
-  const gradeMsg = `I'm a Year 8 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:
-
-Unit: ${UNIT_TITLE}
-Topics: ${UNIT_TOPICS.join(' · ')}
-
-Please grade my worksheet. For each question:
-- Read the problem and my answer (if any).
-- Mark ✅ correct / ❌ wrong / ⚠️ partial.
-- Give the correct answer.
-- Explain mistakes in British English with a short Korean hint in parentheses for tough words.
-
-End with a summary: total / correct / what to review next.
-
-사진 첨부할게요!`;
-  document.getElementById('btn-ask').href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
-  document.getElementById('btn-grade').href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
+  var NL = String.fromCharCode(10);
+  var topicsList = UNIT_TOPICS.map(function(t, i) { return (i+1) + '. ' + t; }).join(NL);
+  var askMsg = "I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
+    "Current unit: " + UNIT_TITLE + NL +
+    "Topics:" + NL + topicsList + NL + NL +
+    "Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use - if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary." + NL + NL +
+    "질문 시작할게요:" + NL;
+  var gradeMsg = "I'm a Year 8 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
+    "Unit: " + UNIT_TITLE + NL +
+    "Topics: " + UNIT_TOPICS.join(' · ') + NL + NL +
+    "Please grade my worksheet. For each question:" + NL +
+    "- Read the problem and my answer (if any)." + NL +
+    "- Mark ✅ correct / ❌ wrong / ⚠️ partial." + NL +
+    "- Give the correct answer." + NL +
+    "- Explain mistakes in British English with a short Korean hint in parentheses for tough words." + NL + NL +
+    "End with a summary: total / correct / what to review next." + NL + NL +
+    "사진 첨부할게요!";
+  var ask = document.getElementById('btn-ask');
+  var grade = document.getElementById('btn-grade');
+  if (ask) ask.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
+  if (grade) grade.href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
 })();
 
 // 탭 전환

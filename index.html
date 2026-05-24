@@ -132,58 +132,52 @@
   }
   footer span { color: var(--accent); }
 
-  /* AI Tools 카드 (Claude API) */
-  .ai-tools-section { margin-bottom: 28px; }
-  .ai-tools-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  @media (max-width: 480px) { .ai-tools-grid { grid-template-columns: 1fr; } }
-  .ai-tool-card {
-    background: linear-gradient(135deg, #ffffff, #f0faf8);
-    border-radius: 20px;
-    padding: 18px 16px;
-    border: 2px solid rgba(167,139,250,0.25);
-    text-decoration: none;
-    color: var(--text);
-    transition: all 0.22s;
+  /* AI Tools - 우측 floating button (FAB) */
+  .fab-stack {
+    position: fixed;
+    right: 14px;
+    bottom: 80px;
     display: flex;
-    align-items: center;
-    gap: 14px;
-    box-shadow: 0 2px 12px rgba(167,139,250,0.15);
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
   }
-  .ai-tool-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(167,139,250,0.55);
-    box-shadow: 0 10px 30px rgba(167,139,250,0.25);
-  }
-  .ai-tool-card.cam { border-color: rgba(96,196,248,0.3); box-shadow: 0 2px 12px rgba(96,196,248,0.15); }
-  .ai-tool-card.cam:hover { border-color: rgba(96,196,248,0.6); box-shadow: 0 10px 30px rgba(96,196,248,0.25); }
-  .ai-tool-icon {
-    font-size: 36px;
-    width: 60px; height: 60px;
-    background: rgba(167,139,250,0.12);
-    border-radius: 16px;
+  .fab {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    border: 2px solid rgba(167,139,250,0.35);
     display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
+    font-size: 22px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
   }
-  .ai-tool-card.cam .ai-tool-icon { background: rgba(96,196,248,0.12); }
-  .ai-tool-info { min-width: 0; }
-  .ai-tool-title { font-size: 15px; font-weight: 900; color: var(--text); line-height: 1.2; margin-bottom: 3px; }
-  .ai-tool-desc { font-size: 12px; color: var(--muted); font-weight: 600; line-height: 1.4; }
-  .ai-tool-badge {
-    display: inline-block;
-    font-size: 9px;
-    padding: 2px 7px;
-    border-radius: 10px;
-    background: rgba(167,139,250,0.2);
-    color: var(--purple);
+  .fab:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
+  .fab.grade { border-color: rgba(96,196,248,0.45); }
+  .fab-label {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(31,61,56,0.92);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 11px;
     font-weight: 800;
-    margin-top: 4px;
-    letter-spacing: 0.3px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s;
   }
-  .ai-tool-card.cam .ai-tool-badge { background: rgba(96,196,248,0.2); color: var(--blue); }
+  .fab:hover .fab-label { opacity: 1; }
+  @media (max-width: 480px) {
+    .fab { width: 48px; height: 48px; font-size: 20px; }
+    .fab-stack { bottom: 16px; right: 12px; }
+  }
 </style>
 </head>
 <body>
@@ -195,60 +189,6 @@
 </header>
 
 <div class="container">
-
-  <!-- AI Tools (claude.ai 새 창) -->
-  <div class="ai-tools-section">
-    <div class="subject-label">
-      <span class="icon">🤖</span>
-      <span class="name-en">AI Tools</span>
-      <span class="name-ko">AI 도구</span>
-    </div>
-    <div class="ai-tools-grid">
-      <a class="ai-tool-card cam" id="ai-grade" target="_blank" rel="noopener" href="#">
-        <div class="ai-tool-icon">📷</div>
-        <div class="ai-tool-info">
-          <div class="ai-tool-title">문제집 채점</div>
-          <div class="ai-tool-desc">claude.ai 새 창 · 사진 첨부해서 채점</div>
-          <span class="ai-tool-badge">claude.ai</span>
-        </div>
-      </a>
-      <a class="ai-tool-card" id="ai-tutor" target="_blank" rel="noopener" href="#">
-        <div class="ai-tool-icon">💬</div>
-        <div class="ai-tool-info">
-          <div class="ai-tool-title">AI 튜터</div>
-          <div class="ai-tool-desc">claude.ai 새 창 · 모르는 거 바로 물어봐</div>
-          <span class="ai-tool-badge">claude.ai</span>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <script>
-    // claude.ai로 단원 정보를 prefilled prompt로 보내기 (q 파라미터)
-    const _gradeMsg = `I'm a Year 8 student at Cambridge Lower Secondary Science (Hodder Education). I will attach a photo of my worksheet — please grade it for me.
-
-For each question:
-- Read the question and the student's answer (if any).
-- Mark ✅ correct / ❌ wrong / ⚠️ partial.
-- Give the correct answer.
-- Briefly explain mistakes in British English (haemoglobin, colour…), with a short Korean hint in parentheses for tough vocabulary.
-
-End with a summary: total / correct / what to review.
-
-저는 한국 학생이라 어려운 단어는 한국어로 짧게 설명해주세요. 사진 첨부할게요.`;
-
-    const _tutorMsg = `Hi Claude! I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learning all subjects in English.
-
-Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any other subject I ask about. Use British English. Reply in the same language I use — if I ask in Korean, answer in Korean with English keywords; if I ask in English, answer in English with short Korean hints for tough words.
-
-질문 시작할게요:
-`;
-
-    document.getElementById('ai-grade').href = 'https://claude.ai/new?q=' + encodeURIComponent(_gradeMsg);
-    document.getElementById('ai-tutor').href = 'https://claude.ai/new?q=' + encodeURIComponent(_tutorMsg);
-  </script>
-
-  <div class="divider"></div>
 
   <!-- Science -->
   <div class="subject-section">
@@ -377,6 +317,37 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
 </div>
 
 <footer>🐱 <span>AMY Study App</span> · SJI International School Malaysia · Year 8</footer>
+
+<!-- 우측 floating AI 도구 -->
+<div class="fab-stack">
+  <a class="fab grade" id="fab-grade" target="_blank" rel="noopener" href="#" aria-label="문제집 채점">
+    📷<span class="fab-label">📷 문제집 채점</span>
+  </a>
+  <a class="fab" id="fab-tutor" target="_blank" rel="noopener" href="#" aria-label="AI 튜터">
+    💬<span class="fab-label">💬 AI 튜터</span>
+  </a>
+</div>
+<script>
+  const _g = `I'm a Year 8 student at Cambridge Lower Secondary Science (Hodder Education). I will attach a photo of my worksheet — please grade it.
+
+For each question:
+- Read the question and my answer (if any).
+- Mark ✅ correct / ❌ wrong / ⚠️ partial.
+- Give the correct answer.
+- Explain mistakes briefly in British English (haemoglobin, colour…), with a short Korean hint in parentheses for tough words.
+
+End with summary: total / correct / what to review.
+
+사진 첨부할게요!`;
+  const _t = `Hi Claude! I'm a Year 8 Korean student at an international school in Malaysia. I study Cambridge Lower Secondary Science (Hodder Education).
+
+Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any other subject I ask. Use British English. Reply in the same language I use — Korean Q → Korean A with English keywords; English Q → English A with short Korean hints for tough vocabulary.
+
+질문 시작할게요:
+`;
+  document.getElementById('fab-grade').href = 'https://claude.ai/new?q=' + encodeURIComponent(_g);
+  document.getElementById('fab-tutor').href = 'https://claude.ai/new?q=' + encodeURIComponent(_t);
+</script>
 
 </body>
 </html>
