@@ -37,18 +37,28 @@ header {
   background: rgba(22,32,50,0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 14px 20px;
+  padding: 14px 18px;
   position: sticky; top: 0; z-index: 100;
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 10px;
 }
 .header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
-.header-icon { font-size: 28px; line-height:1; }
+.header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
 .header-text { flex: 1; min-width:0; }
-.header-title { font-size: 17px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+.header-title { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* Claude 묻기 / 채점 버튼 (헤더) */
+.header-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.btn-claude { background: rgba(192,132,252,0.14); border: 1.5px solid rgba(192,132,252,0.4);
+  color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  font-family: inherit; white-space: nowrap; cursor: pointer; }
+.btn-claude:hover { background: rgba(192,132,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(96,196,248,0.12); border-color: rgba(96,196,248,0.4); color: #60c4f8; }
+.btn-claude.grade:hover { background: rgba(96,196,248,0.24); }
 
 /* HERO */
 .hero { text-align: center; padding: 28px 20px 18px; }
@@ -230,6 +240,10 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="header-text">
     <div class="header-title">8C 용해와 용액 Solutions</div>
     <div class="header-sub">Year 8 · Cambridge Lower Secondary</div>
+  </div>
+  <div class="header-actions">
+    <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제집 채점">📷</a>
+    <a class="btn-claude" id="btn-ask" target="_blank" rel="noopener" href="#" title="이 단원에 대해 Claude에게 질문">💬 Claude</a>
   </div>
 </header>
 
@@ -939,7 +953,41 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <script>
 const QUIZ_DATA = [{"q": "When you stir sugar into water, what really happens to the sugar?", "options": ["The sugar disappears completely", "Sugar particles spread out between the water particles", "The sugar floats on top of the water", "Water turns into sugar"], "answer": 1, "explanation": "Sugar doesn't disappear — its particles spread between water particles. (사라지는 게 아니라 입자가 흩어짐)"}, {"q": "In a cup of sugar water, which is correct?", "options": ["Sugar = solvent, water = solute", "Sugar = solute, water = solvent", "Sugar = solution, water = solute", "All three terms mean the same thing"], "answer": 1, "explanation": "The thing being dissolved = solute. The liquid doing the dissolving = solvent. (녹는 쪽 = solute)"}, {"q": "If you dissolve 9 g of sugar in 146 g of water, what is the mass of the solution?", "options": ["9 g", "146 g", "155 g", "137 g"], "answer": 2, "explanation": "Mass is conserved: solute + solvent = solution. 9 + 146 = 155 g. (질량 보존)"}, {"q": "What name is given to a substance that does NOT dissolve in water?", "options": ["Soluble", "Insoluble", "Solvent", "Saturated"], "answer": 1, "explanation": "Insoluble = does not dissolve. Soluble = does dissolve. (insoluble = 안 녹는)"}, {"q": "What is the difference between dissolving and melting?", "options": ["They are the same process", "Dissolving needs a temperature change; melting needs particles to spread", "Dissolving = a solute spreads through a solvent; melting = a solid changes to a liquid when heated", "Melting only happens with solids mixed together"], "answer": 2, "explanation": "Dissolving = two substances mix. Melting = one substance changes state from solid to liquid. (둘은 다른 과정)"}, {"q": "What is a concentrated solution?", "options": ["A solution with a lot of solute compared to solvent", "A solution with only a little solute compared to solvent", "A solution with no solute at all", "A cold solution"], "answer": 0, "explanation": "Concentrated = lots of solute. Dilute = little solute. (진한 = 용질 많음)"}, {"q": "How can you make a dilute solution MORE concentrated?", "options": ["Add more water", "Cool the solution down", "Add more solute, or evaporate some of the solvent", "Just leave it standing for a long time"], "answer": 2, "explanation": "Either add more solute or remove some of the solvent (e.g. by heating). (용질 추가 또는 물 증발)"}, {"q": "A solution that cannot dissolve any more solute at a given temperature is called…", "options": ["Unsaturated", "Saturated", "Dilute", "Concentrated"], "answer": 1, "explanation": "Saturated = no more solute can dissolve. (포화 = 더 안 녹음)"}, {"q": "What is meant by 'solubility'?", "options": ["The colour of the solute", "The volume of the solution", "The maximum mass of solute that dissolves in a fixed amount of solvent at a set temperature", "How fast a solute sinks to the bottom"], "answer": 2, "explanation": "Solubility = max amount of solute that can dissolve at a given temperature. (특정 온도에서 녹는 최대량)"}, {"q": "For most solid solutes in water, what happens to solubility as the water gets hotter?", "options": ["It decreases", "It increases", "It stays the same", "It changes randomly"], "answer": 1, "explanation": "Higher temperature → water particles have more energy → more solute usually dissolves. (대부분 용해도 증가)"}, {"q": "In an experiment testing how temperature affects sugar dissolving, what is the independent variable?", "options": ["The volume of water", "The water temperature (the variable you change)", "The mass of sugar that dissolves (what you measure)", "The size of the beaker"], "answer": 1, "explanation": "Independent variable = the one you deliberately change. (의도적으로 바꾸는 것)"}, {"q": "In a fair test comparing the solubility of sugar and salt in water, which is NOT a control variable?", "options": ["Volume of water", "Size of spatula", "Type of solute (sugar vs salt)", "Stirring force"], "answer": 2, "explanation": "Comparing solutes = solute type is the INDEPENDENT variable, not a control. (용질 종류는 독립변수)"}, {"q": "Which statement about a mixture is correct?", "options": ["Its parts are joined by chemical bonds", "Its parts are mixed but not chemically joined and can be separated physically", "It always contains only one type of element", "It can only exist as a solution"], "answer": 1, "explanation": "Mixture = physically combined, no chemical bonds, can be separated physically. (화학결합 없음)"}, {"q": "Which of the following is NOT a true solution?", "options": ["Sugar in water", "Salt in water", "Sand stirred into water", "A cup of tea"], "answer": 2, "explanation": "Sand is insoluble in water — it stays as visible solid particles, so it isn't a true solution. (모래는 안 녹음)"}];
 const VOCAB_DATA = [{"en": "Solute", "ko": "용질", "def_en": "The substance being dissolved (usually a solid like sugar or salt).", "cat": "organ"}, {"en": "Solvent", "ko": "용매", "def_en": "The liquid that dissolves the solute (often water).", "cat": "organ"}, {"en": "Solution", "ko": "용액", "def_en": "Mixture formed when a solute dissolves in a solvent.", "cat": "organ"}, {"en": "Dissolving", "ko": "용해", "def_en": "Process where a solute breaks up into particles and spreads through a solvent.", "cat": "organ"}, {"en": "Soluble", "ko": "녹는 (가용성)", "def_en": "A substance that can dissolve in a given solvent.", "cat": "organ"}, {"en": "Insoluble", "ko": "안 녹는 (불용성)", "def_en": "A substance that does not dissolve in a given solvent.", "cat": "organ"}, {"en": "Mixture", "ko": "혼합물", "def_en": "Two or more substances mixed but not chemically joined.", "cat": "organ"}, {"en": "Particle", "ko": "입자", "def_en": "Tiny piece of a substance (atom, molecule, ion).", "cat": "organ"}, {"en": "Concentration", "ko": "농도", "def_en": "Amount of solute dissolved in a given amount of solvent.", "cat": "process"}, {"en": "Concentrated", "ko": "진한 (농축)", "def_en": "A solution with a relatively large amount of solute.", "cat": "process"}, {"en": "Dilute", "ko": "묽은", "def_en": "A solution with a relatively small amount of solute.", "cat": "process"}, {"en": "Dissolve", "ko": "녹다 (동사)", "def_en": "(verb) To break up and spread evenly through a solvent.", "cat": "process"}, {"en": "Melting", "ko": "녹음 (용융)", "def_en": "Change of state from solid to liquid due to heating.", "cat": "process"}, {"en": "Mass conservation", "ko": "질량 보존", "def_en": "Total mass stays the same before and after dissolving.", "cat": "process"}, {"en": "Solubility", "ko": "용해도", "def_en": "Maximum amount of solute that can dissolve in a given amount of solvent at a set temperature.", "cat": "gas"}, {"en": "Saturated", "ko": "포화", "def_en": "A solution that cannot dissolve any more solute at that temperature.", "cat": "gas"}, {"en": "Unsaturated", "ko": "불포화", "def_en": "A solution that can still dissolve more solute.", "cat": "gas"}, {"en": "Temperature", "ko": "온도", "def_en": "How hot or cold something is. Higher temperature → faster particles → usually more dissolving.", "cat": "blood"}, {"en": "Independent variable", "ko": "독립변수", "def_en": "The variable you deliberately change in an experiment.", "cat": "blood"}, {"en": "Dependent variable", "ko": "종속변수", "def_en": "The variable you measure as a result.", "cat": "blood"}, {"en": "Control variable", "ko": "통제변수", "def_en": "Variables kept the same to keep the test fair.", "cat": "blood"}, {"en": "Fair test", "ko": "공정 실험", "def_en": "An experiment in which only one variable is changed at a time.", "cat": "blood"}, {"en": "Hypothesis", "ko": "가설", "def_en": "A predicted answer to a scientific question that can be tested.", "cat": "blood"}];
+const UNIT_TITLE = "8C 용해와 용액 Solutions";
+const UNIT_TOPICS = ["1. 용해와 입자 모델", "2. 용액의 농도 (Concentration)", "3. 물에 대한 용해도 (Solubility)", "4. 용해도와 온도 (Temperature)"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
+
+// ─── claude.ai 새 창 링크 ───
+(function setupClaudeLinks() {
+  const topicsList = UNIT_TOPICS.map((t, i) => `${i+1}. ${t}`).join('
+');
+  const askMsg = `I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English.
+
+Current unit: ${UNIT_TITLE}
+Topics:
+${topicsList}
+
+Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use — if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary.
+
+질문 시작할게요:
+`;
+  const gradeMsg = `I'm a Year 8 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:
+
+Unit: ${UNIT_TITLE}
+Topics: ${UNIT_TOPICS.join(' · ')}
+
+Please grade my worksheet. For each question:
+- Read the problem and my answer (if any).
+- Mark ✅ correct / ❌ wrong / ⚠️ partial.
+- Give the correct answer.
+- Explain mistakes in British English with a short Korean hint in parentheses for tough words.
+
+End with a summary: total / correct / what to review next.
+
+사진 첨부할게요!`;
+  document.getElementById('btn-ask').href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
+  document.getElementById('btn-grade').href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
+})();
 
 // 탭 전환
 document.querySelectorAll('.tab-btn').forEach(btn => {

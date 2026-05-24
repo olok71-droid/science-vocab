@@ -37,18 +37,28 @@ header {
   background: rgba(22,32,50,0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 14px 20px;
+  padding: 14px 18px;
   position: sticky; top: 0; z-index: 100;
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 10px;
 }
 .header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
-.header-icon { font-size: 28px; line-height:1; }
+.header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
 .header-text { flex: 1; min-width:0; }
-.header-title { font-size: 17px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+.header-title { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* Claude 묻기 / 채점 버튼 (헤더) */
+.header-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.btn-claude { background: rgba(192,132,252,0.14); border: 1.5px solid rgba(192,132,252,0.4);
+  color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  font-family: inherit; white-space: nowrap; cursor: pointer; }
+.btn-claude:hover { background: rgba(192,132,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(96,196,248,0.12); border-color: rgba(96,196,248,0.4); color: #60c4f8; }
+.btn-claude.grade:hover { background: rgba(96,196,248,0.24); }
 
 /* HERO */
 .hero { text-align: center; padding: 28px 20px 18px; }
@@ -230,6 +240,10 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="header-text">
     <div class="header-title">8B 호흡 Respiration</div>
     <div class="header-sub">Year 8 · Cambridge Lower Secondary</div>
+  </div>
+  <div class="header-actions">
+    <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제집 채점">📷</a>
+    <a class="btn-claude" id="btn-ask" target="_blank" rel="noopener" href="#" title="이 단원에 대해 Claude에게 질문">💬 Claude</a>
   </div>
 </header>
 
@@ -1247,7 +1261,41 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <script>
 const QUIZ_DATA = [{"q": "What is the correct order of structures that air passes through into the lungs?", "options": ["Mouth → alveoli → trachea → bronchi → bronchioles", "Mouth → trachea → bronchi → bronchioles → alveoli", "Mouth → bronchi → trachea → alveoli → bronchioles", "Mouth → bronchioles → bronchi → trachea → alveoli"], "answer": 1, "explanation": "Air goes from large to smaller tubes: trachea → bronchi → bronchioles → alveoli. (위에서 아래로 점점 더 작은 관)"}, {"q": "Which of the following is NOT part of the human respiratory system?", "options": ["Diaphragm", "Heart", "Lungs", "Trachea"], "answer": 1, "explanation": "The heart is part of the circulatory system, not the respiratory system. (심장은 순환계)"}, {"q": "Why is the left lung smaller than the right lung?", "options": ["Its muscles are weaker", "To make space for the heart", "The left lung is not used", "Humans are born with it smaller"], "answer": 1, "explanation": "The heart sits on the left side, so the left lung is smaller to leave room for it. (심장이 왼쪽에 있어서)"}, {"q": "Which statement correctly defines diffusion?", "options": ["Movement of particles from low to high concentration", "Movement of particles from high to low concentration", "Particles stop moving when temperature rises", "Particles stay still in random positions"], "answer": 1, "explanation": "Diffusion = net movement from HIGH → LOW concentration. (농도 높은 곳→낮은 곳)"}, {"q": "Which of these is NOT an adaptation of the alveoli for gas exchange?", "options": ["Thin walls, one cell thick", "Large surface area", "Thick muscle layer", "Moist surface"], "answer": 2, "explanation": "Alveoli have THIN walls, not thick muscle. Thick walls would slow diffusion. (얇은 벽이 정답)"}, {"q": "What is the word equation for aerobic respiration?", "options": ["Glucose → Lactic acid + Energy", "Glucose + Oxygen → Carbon dioxide + Water + Energy", "Oxygen + Water → Glucose + Carbon dioxide", "Carbon dioxide + Water → Glucose + Oxygen"], "answer": 1, "explanation": "Aerobic: Glucose + O₂ → CO₂ + Water + Energy. (유산소 호흡 식)"}, {"q": "In which organelle does aerobic respiration take place?", "options": ["Nucleus", "Ribosome", "Mitochondria", "Cell wall"], "answer": 2, "explanation": "Aerobic respiration happens inside mitochondria. (미토콘드리아)"}, {"q": "What is the chemical formula of glucose?", "options": ["H₂O", "CO₂", "C₆H₁₂O₆", "O₂"], "answer": 2, "explanation": "Glucose = C₆H₁₂O₆. (포도당의 분자식)"}, {"q": "During a 100 m sprint, which type of respiration takes place in the muscle cells?", "options": ["Aerobic respiration", "Anaerobic respiration", "No respiration", "Photosynthesis"], "answer": 1, "explanation": "Oxygen can't be supplied fast enough, so muscles use anaerobic respiration for quick energy. (산소 공급이 못 따라가서 무산소)"}, {"q": "What is the waste product of anaerobic respiration in human muscle cells?", "options": ["Carbon dioxide + Water", "Lactic acid", "Glucose", "Oxygen"], "answer": 1, "explanation": "Anaerobic: Glucose → Lactic acid + Energy. (젖산 생성)"}, {"q": "What is the difference between breathing and respiration?", "options": ["They mean the same thing", "Breathing is a chemical reaction; respiration is movement", "Breathing is the movement of air in/out of the lungs; respiration is a chemical reaction in cells", "Both only happen in the lungs"], "answer": 2, "explanation": "Breathing = physical movement of air. Respiration = chemical reaction in cells releasing energy. (둘은 완전 다름!)"}, {"q": "Which substance is used to test for the presence of carbon dioxide?", "options": ["Blue litmus paper", "Limewater", "Iodine solution", "Benedict's solution"], "answer": 1, "explanation": "CO₂ turns limewater from clear to cloudy/milky. (석회수가 우유빛으로 흐림)"}, {"q": "What happens to the diaphragm when you breathe in (inhale)?", "options": ["It relaxes and becomes dome-shaped", "It contracts and flattens", "It disappears", "It moves upwards"], "answer": 1, "explanation": "Inhale: diaphragm contracts → flattens → chest volume ↑ → pressure ↓ → air rushes in. (들숨 = 수축+평평)"}, {"q": "Which of the following is NOT a feature of a red blood cell?", "options": ["Biconcave shape (dipped on both sides)", "No nucleus", "Contains haemoglobin", "Engulfs and destroys pathogens"], "answer": 3, "explanation": "Engulfing pathogens is the job of phagocytes (white blood cells). RBCs carry oxygen. (병원체를 먹는 건 백혈구)"}, {"q": "Which of these is NOT one of the four components of blood?", "options": ["Plasma", "Red blood cells", "White blood cells", "Cardiac muscle"], "answer": 3, "explanation": "Blood = plasma + RBCs + WBCs + platelets. Cardiac muscle is heart tissue. (심장 근육은 혈액이 아님)"}, {"q": "Which type of white blood cell surrounds and destroys pathogens?", "options": ["Phagocyte", "Lymphocyte", "Red blood cell", "Platelet"], "answer": 0, "explanation": "Phagocytes carry out phagocytosis: engulf + destroy pathogens. (식세포가 식작용)"}, {"q": "Compared with inhaled air, which gas is MORE concentrated in exhaled air?", "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Helium"], "answer": 2, "explanation": "Cellular respiration produces CO₂, so exhaled air has more (0.04% → 4%). (날숨에 CO₂↑)"}, {"q": "What is the main function of haemoglobin?", "options": ["Binds to oxygen and carries it around the body", "Fights pathogens", "Forms scabs at wounds", "Carries the blood"], "answer": 0, "explanation": "Haemoglobin in red blood cells binds O₂ in the lungs and releases it at the cells. (산소 운반)"}];
 const VOCAB_DATA = [{"en": "Respiratory system", "ko": "호흡계", "def_en": "The organs involved in breathing and gas exchange.", "cat": "organ"}, {"en": "Nasal cavity", "ko": "비강", "def_en": "Space inside the nose that warms, moistens and filters air.", "cat": "organ"}, {"en": "Trachea", "ko": "기관", "def_en": "Windpipe. Tube from mouth to lungs, kept open by cartilage rings.", "cat": "organ"}, {"en": "Bronchi", "ko": "기관지", "def_en": "Two tubes that branch from the trachea, one into each lung.", "cat": "organ"}, {"en": "Bronchioles", "ko": "세기관지", "def_en": "Smaller tubes that branch off the bronchi inside the lungs.", "cat": "organ"}, {"en": "Alveoli", "ko": "폐포", "def_en": "Tiny air sacs in the lungs where gas exchange takes place.", "cat": "organ"}, {"en": "Diaphragm", "ko": "횡격막", "def_en": "Dome-shaped muscle below the lungs. Contracts and flattens when inhaling.", "cat": "organ"}, {"en": "Intercostal muscles", "ko": "늑간근", "def_en": "Muscles between the ribs that help move the ribcage during breathing.", "cat": "organ"}, {"en": "Ribcage", "ko": "흉곽", "def_en": "Bony cage of ribs that protects the lungs and heart.", "cat": "organ"}, {"en": "Mitochondria", "ko": "미토콘드리아", "def_en": "Organelle in cells where aerobic respiration takes place and energy is released.", "cat": "organ"}, {"en": "Goblet cells", "ko": "술잔세포", "def_en": "Cells in the airways that produce mucus to trap dust and pathogens.", "cat": "organ"}, {"en": "Ciliated cells", "ko": "섬모세포", "def_en": "Cells with tiny hairs (cilia) that move mucus up towards the mouth.", "cat": "organ"}, {"en": "Breathing / Ventilation", "ko": "호흡 운동 / 환기", "def_en": "Physical movement of air into and out of the lungs.", "cat": "process"}, {"en": "Inhale / Inspiration", "ko": "흡기 (들숨)", "def_en": "Breathing in. Diaphragm contracts, ribcage moves up and out, air rushes in.", "cat": "process"}, {"en": "Exhale / Expiration", "ko": "호기 (날숨)", "def_en": "Breathing out. Diaphragm relaxes, ribcage moves down and in, air pushed out.", "cat": "process"}, {"en": "Gas exchange", "ko": "기체 교환", "def_en": "Oxygen moves alveoli→blood; carbon dioxide moves blood→alveoli.", "cat": "process"}, {"en": "Diffusion", "ko": "확산", "def_en": "Net movement of particles from high to low concentration.", "cat": "process"}, {"en": "Aerobic respiration", "ko": "유산소 호흡", "def_en": "Glucose + Oxygen → CO₂ + Water + Energy. Needs oxygen, releases lots of energy.", "cat": "process"}, {"en": "Anaerobic respiration", "ko": "무산소 호흡", "def_en": "Glucose → Lactic acid + Energy. No oxygen, less energy released.", "cat": "process"}, {"en": "Glucose", "ko": "포도당", "def_en": "Sugar used as fuel in respiration. Formula C₆H₁₂O₆.", "cat": "process"}, {"en": "Lactic acid", "ko": "젖산", "def_en": "Waste product of anaerobic respiration. Causes muscle fatigue.", "cat": "process"}, {"en": "Oxygen debt", "ko": "산소 빚", "def_en": "Extra oxygen needed after exercise to break down built-up lactic acid.", "cat": "process"}, {"en": "Vital capacity", "ko": "폐활량", "def_en": "Maximum volume of air you can breathe in and out in one breath.", "cat": "process"}, {"en": "Limewater test", "ko": "석회수 검사", "def_en": "Limewater turns cloudy when CO₂ is bubbled through it.", "cat": "process"}, {"en": "Red blood cell", "ko": "적혈구", "def_en": "Biconcave cell without a nucleus that carries oxygen around the body.", "cat": "blood"}, {"en": "Haemoglobin", "ko": "헤모글로빈", "def_en": "Red protein in red blood cells that binds to oxygen.", "cat": "blood"}, {"en": "Plasma", "ko": "혈장", "def_en": "Yellow liquid part of blood. Transports cells, glucose, CO₂.", "cat": "blood"}, {"en": "Platelets", "ko": "혈소판", "def_en": "Tiny blood fragments that form clots and scabs at wounds.", "cat": "blood"}, {"en": "White blood cell", "ko": "백혈구", "def_en": "Cell of the immune system that fights pathogens.", "cat": "blood"}, {"en": "Phagocyte", "ko": "식세포", "def_en": "White blood cell that engulfs and destroys pathogens (phagocytosis).", "cat": "blood"}, {"en": "Lymphocyte", "ko": "림프구", "def_en": "White blood cell that produces antibodies to fight pathogens.", "cat": "blood"}, {"en": "Antibody", "ko": "항체", "def_en": "Protein made by lymphocytes that sticks pathogens together.", "cat": "blood"}, {"en": "Pathogen", "ko": "병원체", "def_en": "Microorganism (e.g. bacteria, virus) that causes disease.", "cat": "blood"}, {"en": "Bone marrow", "ko": "골수", "def_en": "Soft tissue inside bones where blood cells are produced.", "cat": "blood"}, {"en": "Oxygen (O₂)", "ko": "산소", "def_en": "Gas needed for aerobic respiration. 21% of air.", "cat": "gas"}, {"en": "Carbon dioxide (CO₂)", "ko": "이산화탄소", "def_en": "Waste gas from respiration. Turns limewater cloudy.", "cat": "gas"}, {"en": "Nitrogen (N₂)", "ko": "질소", "def_en": "About 78% of the air. Not used in respiration.", "cat": "gas"}, {"en": "Water vapour", "ko": "수증기", "def_en": "Gas form of water. Exhaled air contains more water vapour.", "cat": "gas"}];
+const UNIT_TITLE = "8B 호흡 Respiration";
+const UNIT_TOPICS = ["1. 호흡기관의 구조", "2. 호흡 운동 (Breathing)", "3. 기체 교환 (Gas exchange)", "4. 유산소 호흡 (Aerobic respiration)", "5. 무산소 호흡 (Anaerobic respiration)", "6. 혈액 (Blood)"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
+
+// ─── claude.ai 새 창 링크 ───
+(function setupClaudeLinks() {
+  const topicsList = UNIT_TOPICS.map((t, i) => `${i+1}. ${t}`).join('
+');
+  const askMsg = `I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English.
+
+Current unit: ${UNIT_TITLE}
+Topics:
+${topicsList}
+
+Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use — if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary.
+
+질문 시작할게요:
+`;
+  const gradeMsg = `I'm a Year 8 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:
+
+Unit: ${UNIT_TITLE}
+Topics: ${UNIT_TOPICS.join(' · ')}
+
+Please grade my worksheet. For each question:
+- Read the problem and my answer (if any).
+- Mark ✅ correct / ❌ wrong / ⚠️ partial.
+- Give the correct answer.
+- Explain mistakes in British English with a short Korean hint in parentheses for tough words.
+
+End with a summary: total / correct / what to review next.
+
+사진 첨부할게요!`;
+  document.getElementById('btn-ask').href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
+  document.getElementById('btn-grade').href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
+})();
 
 // 탭 전환
 document.querySelectorAll('.tab-btn').forEach(btn => {
