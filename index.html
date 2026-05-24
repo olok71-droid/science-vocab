@@ -348,19 +348,27 @@
 
   <div class="divider"></div>
 
-  <!-- English -->
+  <!-- English (EAL) -->
   <div class="subject-section">
     <div class="subject-label">
       <span class="icon">📖</span>
-      <span class="name-en">English</span>
+      <span class="name-en">English (EAL)</span>
       <span class="name-ko">영어</span>
     </div>
     <div class="units-grid">
-      <div class="unit-card coming">
-        <div class="unit-top"><span class="unit-icon">✏️</span><span class="badge badge-soon">준비중</span></div>
-        <div class="unit-name-en">Coming soon</div>
-        <div class="unit-name-ko">곧 추가돼요 🐾</div>
-      </div>
+      <a class="unit-card ready" href="eal.html">
+        <div class="unit-top">
+          <span class="unit-icon">✏️</span>
+          <span class="badge badge-ready">완성 ✓</span>
+        </div>
+        <div class="unit-name-en">EAL Y8 EoY Exam</div>
+        <div class="unit-name-ko">영어 기말 대비</div>
+        <div class="unit-menu">
+          <span class="menu-chip">📖 단어장</span>
+          <span class="menu-chip">📝 노트</span>
+          <span class="menu-chip">✅ 퀴즈</span>
+        </div>
+      </a>
     </div>
   </div>
 
@@ -398,6 +406,7 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
   document.getElementById('fab-grade').href = 'https://claude.ai/new?q=' + encodeURIComponent(_g);
   document.getElementById('fab-tutor').href = 'https://claude.ai/new?q=' + encodeURIComponent(_t);
 </script>
+
 
 
 
