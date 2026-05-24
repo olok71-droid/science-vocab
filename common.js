@@ -5,16 +5,29 @@ const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
 const MODEL = 'claude-sonnet-4-6';
 const STORAGE_KEY = 'amy_anthropic_api_key';
 
+function sanitizeKey(k) {
+  if (!k) return '';
+  // 공백 제거 + ASCII printable(0x20-0x7E)만 남김 (한글, zero-width, 보이지 않는 문자 제거)
+  return k.trim().replace(/[^\x20-\x7E]/g, '').trim();
+}
+
 function getApiKey() {
-  return localStorage.getItem(STORAGE_KEY) || '';
+  return sanitizeKey(localStorage.getItem(STORAGE_KEY) || '');
 }
 
 function setApiKey(k) {
-  localStorage.setItem(STORAGE_KEY, k.trim());
+  const clean = sanitizeKey(k);
+  localStorage.setItem(STORAGE_KEY, clean);
+  return clean;
 }
 
 function clearApiKey() {
   localStorage.removeItem(STORAGE_KEY);
+}
+
+function isLikelyValidKey(k) {
+  // sk-ant-로 시작 + ASCII만 + 적당히 긴 길이
+  return /^sk-ant-[A-Za-z0-9_\-]{20,}$/.test(k);
 }
 
 // ─── API 키 모달 ───
@@ -35,15 +48,19 @@ function showApiKeyModal(onSave) {
     modal = document.createElement('div');
     modal.id = 'api-key-modal';
     modal.className = 'amy-modal-overlay';
+    const saved = getApiKey();
+    const savedHint = saved ? `<small style="color:var(--green)">✅ 현재 키 저장됨: ${saved.slice(0,10)}...${saved.slice(-4)} (다시 입력하면 교체)</small>` : '';
     modal.innerHTML = `
       <div class="amy-modal">
         <h2>🔑 Claude API 키 입력</h2>
         <p class="amy-modal-desc">
           채점·튜터 기능은 Anthropic의 Claude AI를 사용해요.<br>
           <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener" style="color: var(--accent)">console.anthropic.com</a>에서 API 키를 만들어 붙여넣어 주세요. (sk-ant-...로 시작)<br><br>
-          <small style="color:var(--muted)">키는 이 기기 브라우저에만 저장됩니다. 서버로 보내지 않아요.</small>
+          <small style="color:var(--muted)">• 키는 <b>이 기기 브라우저에만</b> 저장돼요 (서버로 안 보냄)<br>• 한 번 입력하면 다음부터 자동 사용<br>• 복붙할 때 한국어 자판 OFF로 두면 안전해요</small><br>
+          ${savedHint}
         </p>
-        <input type="password" id="amy-key-input" class="amy-modal-input" placeholder="sk-ant-..." autocomplete="off">
+        <input type="password" id="amy-key-input" class="amy-modal-input" placeholder="sk-ant-..." autocomplete="off" spellcheck="false">
+        <div id="amy-key-status" style="font-size:12px;font-weight:700;min-height:18px;margin-bottom:10px"></div>
         <div class="amy-modal-buttons">
           <button class="amy-btn amy-btn-secondary" onclick="closeApiKeyModal()">취소</button>
           <button class="amy-btn amy-btn-primary" onclick="saveApiKeyFromModal()">저장</button>
@@ -62,11 +79,29 @@ function showApiKeyModal(onSave) {
 }
 
 function saveApiKeyFromModal() {
-  const v = document.getElementById('amy-key-input').value.trim();
-  if (!v) return;
-  setApiKey(v);
-  closeApiKeyModal();
-  if (window._amyKeyCallback) window._amyKeyCallback(v);
+  const raw = document.getElementById('amy-key-input').value;
+  const clean = sanitizeKey(raw);
+  const status = document.getElementById('amy-key-status');
+  if (!clean) {
+    if (status) { status.textContent = '⚠️ 키가 비어있어요'; status.style.color = '#fca5a5'; }
+    return;
+  }
+  if (raw.length !== clean.length) {
+    // 비-ASCII 문자가 제거됨 — 사용자에게 알림
+    if (status) { status.textContent = '⚠️ 키에 잘못된 문자가 있어 ' + (raw.length - clean.length) + '자 제거됨. 다시 정확히 복사해주세요.'; status.style.color = '#fbbf24'; }
+    document.getElementById('amy-key-input').value = clean;
+    return;
+  }
+  if (!isLikelyValidKey(clean)) {
+    if (status) { status.textContent = '⚠️ 키 형식이 이상해요 (sk-ant-... 형식이어야 함)'; status.style.color = '#fbbf24'; }
+    return;
+  }
+  setApiKey(clean);
+  if (status) { status.textContent = '✅ 저장됨! 이 기기에서 다시 입력 안 해도 돼요'; status.style.color = '#4ade80'; }
+  setTimeout(() => {
+    closeApiKeyModal();
+    if (window._amyKeyCallback) window._amyKeyCallback(clean);
+  }, 700);
 }
 
 function closeApiKeyModal() {
@@ -78,7 +113,14 @@ function closeApiKeyModal() {
 
 // ─── Claude API 호출 ───
 async function callClaude({ system, messages, maxTokens = 2048, temperature = 0.7 }) {
-  const apiKey = await ensureApiKey();
+  let apiKey = await ensureApiKey();
+  apiKey = sanitizeKey(apiKey);  // 안전성: 헤더로 보내기 전에 한 번 더 정화
+  if (!apiKey) {
+    throw new Error('API 키가 비어있어요. 🔑 버튼을 눌러 입력해주세요.');
+  }
+  if (!isLikelyValidKey(apiKey)) {
+    throw new Error('API 키 형식이 이상해요 (sk-ant-... 형식이어야 함). 🔑 버튼을 눌러 다시 입력해주세요.\n현재 길이: ' + apiKey.length);
+  }
   const body = {
     model: MODEL,
     max_tokens: maxTokens,
@@ -103,12 +145,14 @@ async function callClaude({ system, messages, maxTokens = 2048, temperature = 0.
     try {
       const errJson = await res.json();
       errText = errJson?.error?.message || errText;
-      if (res.status === 401) {
-        clearApiKey();
-        throw new Error('API 키가 잘못됐어요. 다시 입력해 주세요.\n(' + errText + ')');
-      }
-    } catch (e) {
-      if (e.message && e.message.includes('API 키')) throw e;
+    } catch (e) { /* ignore */ }
+    if (res.status === 401) {
+      // 키는 지우지 않음 (사용자가 직접 🔑 버튼으로 확인/수정).
+      // 자동 삭제하면 사용자가 매번 다시 입력해야 함.
+      throw new Error('API 키가 거부됐어요. 상단 🔑 버튼으로 키를 확인해주세요.\n(' + errText + ')');
+    }
+    if (res.status === 429) {
+      throw new Error('요청이 너무 많아요. 잠시 후 다시 시도해주세요.\n(' + errText + ')');
     }
     throw new Error(errText);
   }
