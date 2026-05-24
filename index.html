@@ -2,215 +2,274 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0d1b2a">
-<title>과학 학습 · Science Vocab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🤍 AMY Study App</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #0d1b2a;
-  --card: #162032;
-  --card2: #1c2d42;
-  --accent: #38bdf8;
-  --green: #4ade80;
-  --yellow: #fbbf24;
-  --pink: #f472b6;
-  --orange: #fb923c;
-  --purple: #c084fc;
-  --text: #e2f0ff;
-  --muted: #6b9ab8;
-  --border: rgba(56,189,248,0.12);
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Nunito','Noto Sans KR',sans-serif;
-  min-height: 100vh;
-  background-image:
-    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
-}
+  :root {
+    --bg: #f0faf8;
+    --card: #ffffff;
+    --accent: #3ecfb2;
+    --accent2: #7de8d5;
+    --green: #3ecfb2;
+    --yellow: #ffcc5c;
+    --purple: #a78bfa;
+    --blue: #60c4f8;
+    --text: #1f3d38;
+    --muted: #8abdb6;
+    --shadow: rgba(62,207,178,0.13);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
 
-/* HEADER */
-header {
-  background: rgba(22,32,50,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 20px;
-  position: sticky; top: 0; z-index: 100;
-  display: flex; align-items: center; gap: 12px;
-}
-.header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
-  display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
-.header-icon { font-size: 28px; line-height:1; }
-.header-text { flex: 1; min-width:0; }
-.header-title { font-size: 17px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
-  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito','Noto Sans KR',sans-serif;
+    min-height: 100vh;
+    padding: 0 0 60px;
+    background-image: radial-gradient(circle at 15% 15%, rgba(62,207,178,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 85% 80%, rgba(125,232,213,0.12) 0%, transparent 50%);
+  }
 
-/* HERO */
-.hero { text-align: center; padding: 28px 20px 18px; }
-.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
-.hero h1 span { color: var(--accent); }
-.hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
-.stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-.stat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 20px;
-  padding: 5px 12px; font-size: 11.5px; font-weight: 700; color: var(--accent); }
+  header {
+    text-align: center;
+    padding: 48px 20px 32px;
+  }
 
-/* EQUATION BOX */
-.eq-box { max-width: 720px; margin: 0 auto 24px; padding: 0 16px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-@media(max-width:480px){ .eq-box { grid-template-columns: 1fr; } }
-.eq-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
-.eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-.eq-label.aerobic { color: var(--green); }
-.eq-label.anaerobic { color: var(--orange); }
-.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+  .cat-wrap {
+    display: inline-block;
+    background: white;
+    border-radius: 50%;
+    width: 80px; height: 80px;
+    line-height: 80px;
+    font-size: 48px;
+    box-shadow: 0 4px 20px rgba(62,207,178,0.2);
+    margin-bottom: 14px;
+    animation: bounce 2.2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-9px); }
+  }
 
-/* TABS */
-.tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
-.tabs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
-.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 6px; border-radius: 10px;
-  font-size: 13px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; }
-.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
-.tab-pane { display: none; }
-.tab-pane.active { display: block; }
+  header h1 {
+    font-size: 32px; font-weight: 900;
+    margin-bottom: 6px; letter-spacing: -0.5px;
+  }
+  .amy   { color: var(--accent); }
+  .study { color: var(--purple); }
 
-/* SECTION HEADERS (vocab filter) */
-.filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
-.filter-wrap::-webkit-scrollbar { display: none; }
-.filter-tabs { display: flex; gap: 8px; white-space: nowrap; padding-bottom: 2px; }
-.filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
-  border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
-  font-family: inherit; transition: all 0.2s; white-space: nowrap; }
-.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+  header .tagline {
+    font-size: 14px; color: var(--muted); font-weight: 600;
+  }
 
-.section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
-.section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
-.section-line { flex: 1; height: 1px; background: var(--border); }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 16px; }
 
-/* CARDS WRAP */
-.cards-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+  .subject-section { margin-bottom: 28px; }
 
-/* VOCAB CARD */
-.vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
-  display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
-.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
-.vcard-left { min-width: 0; }
-.vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
-.vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
-.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
-.cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
-.cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
-.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+  .subject-label {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0 4px; margin-bottom: 12px;
+  }
+  .subject-label .icon { font-size: 22px; }
+  .subject-label .name-en { font-size: 17px; font-weight: 900; color: var(--text); }
+  .subject-label .name-ko { font-size: 13px; font-weight: 700; color: var(--muted); }
 
-.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
-.vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
-.vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
-.vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
-.vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
+  .units-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px;
+  }
 
-.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
-  color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
-  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
-.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+  .unit-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 16px;
+    border: 2px solid rgba(62,207,178,0.15);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.22s;
+    display: flex; flex-direction: column; gap: 8px;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .unit-card.ready:hover {
+    transform: translateY(-4px);
+    border-color: rgba(62,207,178,0.45);
+    box-shadow: 0 8px 28px var(--shadow);
+  }
+  .unit-card.coming {
+    opacity: 0.4; cursor: default; pointer-events: none; box-shadow: none;
+  }
 
-.btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
-  color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
-  cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; transition: all 0.15s; white-space: nowrap; font-family: inherit; }
-.btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
-.btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .unit-top { display:flex; align-items:center; justify-content:space-between; }
+  .unit-icon { font-size: 26px; }
 
-/* NOTES (탭 1: 핵심노트) */
-.chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
-.chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-.chapter-head .ch-icon { font-size: 22px; }
-.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
-.chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
-.notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
-.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
-.note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
-.note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
-.note-body { font-size: 13px; color: var(--text); line-height: 1.65; }
-.note-body b { color: #fff; }
-.note-body table { border-collapse: collapse; margin: 8px 0; }
-.note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
-.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
-.note-img { display: block; max-width: 100%; margin: 10px 0 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff; }
+  .badge {
+    font-size: 10px; padding: 3px 9px;
+    border-radius: 20px; font-weight: 800; letter-spacing: 0.3px;
+  }
+  .badge-ready { background: rgba(62,207,178,0.15); color: var(--accent); }
+  .badge-soon  { background: rgba(138,189,182,0.15); color: var(--muted); }
 
-/* QUIZ (탭 3) */
-.quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
-.quiz-progress { font-size: 12px; color: var(--muted); font-weight: 700; margin-bottom: 8px; text-align: center; }
-.quiz-progress b { color: var(--accent); }
-.quiz-bar { height: 6px; background: var(--card); border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
-.quiz-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); transition: width 0.3s; }
-.q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
-.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
-.q-options { display: flex; flex-direction: column; gap: 8px; }
-.q-opt { background: var(--card2); border: 1.5px solid var(--border); color: var(--text); padding: 12px 14px;
-  border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; font-family: inherit; text-align: left; transition: all 0.15s; line-height: 1.4; }
-.q-opt:hover:not(:disabled) { border-color: var(--accent); background: rgba(56,189,248,0.08); }
-.q-opt.correct { background: rgba(74,222,128,0.18); border-color: var(--green); color: #fff; }
-.q-opt.wrong { background: rgba(254,44,44,0.18); border-color: #ff6b6b; color: #fff; }
-.q-opt:disabled { cursor: default; }
-.q-explanation { margin-top: 12px; padding: 10px 12px; background: rgba(56,189,248,0.08);
-  border-left: 3px solid var(--accent); border-radius: 6px; font-size: 12.5px; color: var(--text); line-height: 1.5; display: none; }
-.q-explanation.show { display: block; }
-.q-explanation b { color: var(--accent); }
+  .unit-name-en { font-size: 14px; font-weight: 800; color: var(--text); line-height: 1.3; }
+  .unit-name-ko { font-size: 12px; color: var(--muted); font-weight: 600; }
 
-.quiz-result { text-align: center; padding: 28px 16px; background: var(--card); border-radius: 14px; border: 1px solid var(--border); display: none; }
-.quiz-result.show { display: block; }
-.quiz-result h2 { font-size: 22px; color: #fff; margin-bottom: 8px; }
-.quiz-result .score { font-size: 36px; font-weight: 900; color: var(--accent); margin: 12px 0; }
-.quiz-result button { background: var(--accent); color: #0d1b2a; border: none; padding: 10px 24px; border-radius: 8px; font-weight: 800; cursor: pointer; font-family: inherit; font-size: 14px; }
+  .unit-menu { display:flex; gap:5px; flex-wrap:wrap; margin-top:4px; }
+  .menu-chip {
+    font-size: 11px; padding: 3px 8px; border-radius: 8px; font-weight: 700;
+    background: rgba(62,207,178,0.1); color: var(--accent);
+  }
 
-/* FOOTER */
-footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
-.vcard.hidden { display: none; }
-.section-header.hidden { display: none; }
+  .divider {
+    height: 1.5px;
+    background: linear-gradient(to right, transparent, rgba(62,207,178,0.25), transparent);
+    margin: 4px 0 24px;
+  }
 
-.home-hero { padding: 48px 20px 28px; text-align: center; }
-.home-hero h1 { font-size: 32px; font-weight: 900; color: #fff; letter-spacing: -0.5px; margin-bottom: 8px; }
-.home-hero h1 span { color: var(--accent); }
-.home-hero p { color: var(--muted); font-size: 14px; }
-.unit-grid { max-width: 720px; margin: 0 auto; padding: 0 16px; display: grid; gap: 14px; grid-template-columns: 1fr; }
-@media(min-width:640px){ .unit-grid { grid-template-columns: 1fr 1fr; } }
-.unit-link { background: var(--card); border: 1px solid var(--border); border-radius: 16px;
-  padding: 22px 18px; text-decoration: none; color: var(--text); display: flex; gap: 14px;
-  align-items: flex-start; transition: all 0.2s; border-left: 4px solid var(--accent); }
-.unit-link:hover { transform: translateY(-2px); border-color: var(--accent); }
-.unit-link .u-icon { font-size: 36px; line-height: 1; }
-.unit-link .u-title { font-size: 16px; font-weight: 900; color: #fff; margin-bottom: 4px; }
-.unit-link .u-sub { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
-.unit-link .u-meta { font-size: 11px; color: var(--accent); font-weight: 700; }
+  footer {
+    text-align: center; padding: 20px;
+    color: var(--muted); font-size: 11px;
+  }
+  footer span { color: var(--accent); }
 </style>
 </head>
 <body>
-<div class="home-hero">
-  <h1>🔬 <span>Science</span> Vocab</h1>
-  <p>Year 8 Cambridge Lower Secondary 학습 사이트</p>
-</div>
-<div class="unit-grid">
-  <a class="unit-link" href="biology.html">
-    <span class="u-icon">🫁</span>
-    <div>
-      <div class="u-title">8B 호흡 Respiration</div>
-      <div class="u-sub">Year 8 · Cambridge Lower Secondary</div>
-      <div class="u-meta">6 단원 · 38 단어 · 18 문제</div>
+
+<header>
+  <div class="cat-wrap">🐱</div>
+  <h1><span class="amy">AMY</span> <span class="study">Study App</span> ✨</h1>
+  <p class="tagline">공부하자냥~ · Let's study! 🐾</p>
+</header>
+
+<div class="container">
+
+  <!-- Science -->
+  <div class="subject-section">
+    <div class="subject-label">
+      <span class="icon">🔬</span>
+      <span class="name-en">Science</span>
+      <span class="name-ko">과학</span>
     </div>
-  </a>
-  <a class="unit-link" href="chemistry.html">
-    <span class="u-icon">🧪</span>
-    <div>
-      <div class="u-title">8C 용해와 용액 Solutions</div>
-      <div class="u-sub">Year 8 · Cambridge Lower Secondary</div>
-      <div class="u-meta">4 단원 · 23 단어 · 14 문제</div>
+    <div class="units-grid">
+
+      <a class="unit-card ready" href="biology.html">
+        <div class="unit-top">
+          <span class="unit-icon">🫁</span>
+          <span class="badge badge-ready">완성 ✓</span>
+        </div>
+        <div class="unit-name-en">8B1 Respiration</div>
+        <div class="unit-name-ko">호흡</div>
+        <div class="unit-menu">
+          <span class="menu-chip">📖 단어장</span>
+          <span class="menu-chip">📝 노트</span>
+          <span class="menu-chip">✅ 퀴즈</span>
+        </div>
+      </a>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🌿</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8B2 Ecosystems</div>
+        <div class="unit-name-ko">생태계</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🍎</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8B3 Diet & Growth</div>
+        <div class="unit-name-ko">식이와 성장</div>
+      </div>
+
+      <a class="unit-card ready" href="chemistry.html">
+        <div class="unit-top">
+          <span class="unit-icon">💧</span>
+          <span class="badge badge-ready">완성 ✓</span>
+        </div>
+        <div class="unit-name-en">8C Solutions</div>
+        <div class="unit-name-ko">용액과 용해</div>
+        <div class="unit-menu">
+          <span class="menu-chip">📖 단어장</span>
+          <span class="menu-chip">📝 노트</span>
+          <span class="menu-chip">✅ 퀴즈</span>
+        </div>
+      </a>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🧪</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8C1 Properties</div>
+        <div class="unit-name-ko">물질의 성질</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">⚗️</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8C2 Materials</div>
+        <div class="unit-name-ko">물질과 순환</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">⚡</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8C3 Chemical Reactions</div>
+        <div class="unit-name-ko">화학 반응</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🏃</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8P1 Forces & Energy</div>
+        <div class="unit-name-ko">힘과 에너지</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">💡</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8P2 Light</div>
+        <div class="unit-name-ko">빛</div>
+      </div>
+
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">🧲</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">8P3 Magnetism</div>
+        <div class="unit-name-ko">자기</div>
+      </div>
+
     </div>
-  </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Maths -->
+  <div class="subject-section">
+    <div class="subject-label">
+      <span class="icon">📐</span>
+      <span class="name-en">Maths</span>
+      <span class="name-ko">수학</span>
+    </div>
+    <div class="units-grid">
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">➕</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">Coming soon</div>
+        <div class="unit-name-ko">곧 추가돼요 🐾</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- English -->
+  <div class="subject-section">
+    <div class="subject-label">
+      <span class="icon">📖</span>
+      <span class="name-en">English</span>
+      <span class="name-ko">영어</span>
+    </div>
+    <div class="units-grid">
+      <div class="unit-card coming">
+        <div class="unit-top"><span class="unit-icon">✏️</span><span class="badge badge-soon">준비중</span></div>
+        <div class="unit-name-en">Coming soon</div>
+        <div class="unit-name-ko">곧 추가돼요 🐾</div>
+      </div>
+    </div>
+  </div>
+
 </div>
-<footer>science-vocab · 마지막 빌드: 2026-05-24 15:30</footer>
+
+<footer>🐱 <span>AMY Study App</span> · SJI International School Malaysia · Year 8</footer>
+
 </body>
 </html>
