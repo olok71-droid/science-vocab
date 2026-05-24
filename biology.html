@@ -207,7 +207,12 @@ header {
 .note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
 .note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
 .note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
-.note-img { display: block; max-width: 100%; margin: 10px 0 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff; }
+.note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
+  margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
+  object-fit: contain; }
+@media (max-width: 480px) {
+  .note-img { max-width: 100%; max-height: 180px; }
+}
 
 /* QUIZ (서술형 short-answer) */
 .quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
@@ -1028,7 +1033,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     
   </div>
   <div class="note-body"><p class='en'>It happens during <b>short, intense exercise</b> such as a 100 m sprint.</p><p class='ko'>100m 전력 질주처럼 <b>짧고 격렬한 운동</b> 때 일어납니다.</p><p class='en'>The heart and lungs cannot deliver oxygen <b>fast enough</b> to the muscles.</p><p class='ko'>심장과 폐가 근육에 산소를 <b>충분히 빨리</b> 보내지 못합니다.</p><p class='en'>Muscle cells switch to anaerobic respiration so they can keep working quickly.</p><p class='ko'>근육 세포는 빠르게 일하기 위해 무산소 호흡으로 전환합니다.</p><p class='en'><b>Lactic acid builds up</b> in the muscles, causing pain and fatigue.</p><p class='ko'>근육에 <b>젖산이 쌓여서</b> 통증과 피로가 생깁니다.</p></div>
-  <img class="note-img" src="assets/diagrams/1.4_Anaerobic_respiration_2/p03_img004.png" alt="" loading="lazy">
+  
 </div>
 <div class="note-card">
   <div class="note-head">
