@@ -2,51 +2,215 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#264653">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1b2a">
 <title>과학 학습 · Science Vocab</title>
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d1b2a;
+  --card: #162032;
+  --card2: #1c2d42;
+  --accent: #38bdf8;
+  --green: #4ade80;
+  --yellow: #fbbf24;
+  --pink: #f472b6;
+  --orange: #fb923c;
+  --purple: #c084fc;
+  --text: #e2f0ff;
+  --muted: #6b9ab8;
+  --border: rgba(56,189,248,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito','Noto Sans KR',sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+}
+
+/* HEADER */
+header {
+  background: rgba(22,32,50,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 12px;
+}
+.header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
+.header-icon { font-size: 28px; line-height:1; }
+.header-text { flex: 1; min-width:0; }
+.header-title { font-size: 17px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* HERO */
+.hero { text-align: center; padding: 28px 20px 18px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+.hero h1 span { color: var(--accent); }
+.hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.stat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 5px 12px; font-size: 11.5px; font-weight: 700; color: var(--accent); }
+
+/* EQUATION BOX */
+.eq-box { max-width: 720px; margin: 0 auto 24px; padding: 0 16px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width:480px){ .eq-box { grid-template-columns: 1fr; } }
+.eq-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.eq-label.aerobic { color: var(--green); }
+.eq-label.anaerobic { color: var(--orange); }
+.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+
+/* TABS */
+.tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 6px; border-radius: 10px;
+  font-size: 13px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; }
+.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* SECTION HEADERS (vocab filter) */
+.filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
+.filter-wrap::-webkit-scrollbar { display: none; }
+.filter-tabs { display: flex; gap: 8px; white-space: nowrap; padding-bottom: 2px; }
+.filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
+  border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
+  font-family: inherit; transition: all 0.2s; white-space: nowrap; }
+.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+
+.section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
+.section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+.section-line { flex: 1; height: 1px; background: var(--border); }
+
+/* CARDS WRAP */
+.cards-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+/* VOCAB CARD */
+.vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+  display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
+.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
+.vcard-left { min-width: 0; }
+.vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
+.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
+.cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
+.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+
+.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
+.vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
+
+.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
+  color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
+.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+
+.btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
+  color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
+  cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; transition: all 0.15s; white-space: nowrap; font-family: inherit; }
+.btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
+.btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* NOTES (탭 1: 핵심노트) */
+.chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
+.chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.chapter-head .ch-icon { font-size: 22px; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
+.chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
+.note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
+.note-body { font-size: 13px; color: var(--text); line-height: 1.65; }
+.note-body b { color: #fff; }
+.note-body table { border-collapse: collapse; margin: 8px 0; }
+.note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
+.note-img { display: block; max-width: 100%; margin: 10px 0 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff; }
+
+/* QUIZ (탭 3) */
+.quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.quiz-progress { font-size: 12px; color: var(--muted); font-weight: 700; margin-bottom: 8px; text-align: center; }
+.quiz-progress b { color: var(--accent); }
+.quiz-bar { height: 6px; background: var(--card); border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
+.quiz-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); transition: width 0.3s; }
+.q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
+.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
+.q-options { display: flex; flex-direction: column; gap: 8px; }
+.q-opt { background: var(--card2); border: 1.5px solid var(--border); color: var(--text); padding: 12px 14px;
+  border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; font-family: inherit; text-align: left; transition: all 0.15s; line-height: 1.4; }
+.q-opt:hover:not(:disabled) { border-color: var(--accent); background: rgba(56,189,248,0.08); }
+.q-opt.correct { background: rgba(74,222,128,0.18); border-color: var(--green); color: #fff; }
+.q-opt.wrong { background: rgba(254,44,44,0.18); border-color: #ff6b6b; color: #fff; }
+.q-opt:disabled { cursor: default; }
+.q-explanation { margin-top: 12px; padding: 10px 12px; background: rgba(56,189,248,0.08);
+  border-left: 3px solid var(--accent); border-radius: 6px; font-size: 12.5px; color: var(--text); line-height: 1.5; display: none; }
+.q-explanation.show { display: block; }
+.q-explanation b { color: var(--accent); }
+
+.quiz-result { text-align: center; padding: 28px 16px; background: var(--card); border-radius: 14px; border: 1px solid var(--border); display: none; }
+.quiz-result.show { display: block; }
+.quiz-result h2 { font-size: 22px; color: #fff; margin-bottom: 8px; }
+.quiz-result .score { font-size: 36px; font-weight: 900; color: var(--accent); margin: 12px 0; }
+.quiz-result button { background: var(--accent); color: #0d1b2a; border: none; padding: 10px 24px; border-radius: 8px; font-weight: 800; cursor: pointer; font-family: inherit; font-size: 14px; }
+
+/* FOOTER */
+footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
+.vcard.hidden { display: none; }
+.section-header.hidden { display: none; }
+
+.home-hero { padding: 48px 20px 28px; text-align: center; }
+.home-hero h1 { font-size: 32px; font-weight: 900; color: #fff; letter-spacing: -0.5px; margin-bottom: 8px; }
+.home-hero h1 span { color: var(--accent); }
+.home-hero p { color: var(--muted); font-size: 14px; }
+.unit-grid { max-width: 720px; margin: 0 auto; padding: 0 16px; display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media(min-width:640px){ .unit-grid { grid-template-columns: 1fr 1fr; } }
+.unit-link { background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 22px 18px; text-decoration: none; color: var(--text); display: flex; gap: 14px;
+  align-items: flex-start; transition: all 0.2s; border-left: 4px solid var(--accent); }
+.unit-link:hover { transform: translateY(-2px); border-color: var(--accent); }
+.unit-link .u-icon { font-size: 36px; line-height: 1; }
+.unit-link .u-title { font-size: 16px; font-weight: 900; color: #fff; margin-bottom: 4px; }
+.unit-link .u-sub { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.unit-link .u-meta { font-size: 11px; color: var(--accent); font-weight: 700; }
+</style>
 </head>
-<body class="home">
-<header class="hero">
-  <h1>🔬 과학 학습</h1>
-  <p>PDF 자료를 단원별로 정리한 모바일 학습 사이트</p>
-</header>
-
-<main class="unit-grid">
-<a class="unit-card" href="biology.html" style="--accent:#e76f51">
-  <span class="card-icon">🫁</span>
-  <span class="card-title">1단원 — 호흡과 혈액 (Biology)</span>
-  <span class="card-meta">7개 자료 · 112페이지</span>
-</a>
-
-<a class="unit-card" href="chemistry.html" style="--accent:#2a9d8f">
-  <span class="card-icon">🧪</span>
-  <span class="card-title">2단원 — 용해와 용액 (Chemistry)</span>
-  <span class="card-meta">4개 자료 · 64페이지</span>
-</a>
-
-<a class="unit-card" href="markscheme.html" style="--accent:#6a4c93">
-  <span class="card-icon">📝</span>
-  <span class="card-title">Workbook 정답 (Markscheme)</span>
-  <span class="card-meta">1개 자료 · 4페이지</span>
-</a>
-
-</main>
-
-<section class="all-search">
-  <h2>🔍 전체 검색</h2>
-  <input id="search-all" type="search" placeholder="모든 단원에서 검색 (영어/한글)" aria-label="전체 검색">
-  <div id="search-all-results" class="search-results"></div>
-</section>
-
-<footer>
-  <p>science-vocab · 마지막 빌드: 2026-05-24 14:13</p>
-</footer>
-
-<script>
-  const ALL_DATA = {"units": [{"id": "biology", "title": "1단원 — 호흡과 혈액 (Biology)", "icon": "🫁", "color": "#e76f51", "href": "biology.html", "count": 7, "pages": 112, "chapters": [{"slug": "1.1_Human_respiratory_system", "title": "1.1 Human respiratory system", "pages": ["Human respiratory system Lesson objectives: ●To describe the function of the major organs of the respiratory system such as trachea, lungs and alveoli. ●To list the organs in order that air passes through, as it moves into and out of the lungs. Thinking back to Year 7 … What are the levels of organisation in an organism?", "", "Levels of organisation", "Respiratory system The respiratory system contains: ●Two lungs ●Tubes that lead from the entrance (mouth and nose) to the lungs ●Different structures in the chest that allow air to move in and out of the lungs", "In groups of 4s, you are tasked to: 1. 2. 3. Each student in each group will have 30 seconds to go outside of class to memorize what they can remember on the A3 sheet paper. 4. Once 30 seconds is up, you have to come back in to your group and write it down on your A3 sheet paper as much as you can remember 5. Then, the next group member have 30 seconds to go out and look at the picture and come back in. Sit In Circles Have a pen in your hand", "Respiratory system Intercostal muscles", "Concept check! Which structure is not part of the human respiratory system? a) diaphragm b) heart c) lungs d) trachea", "All: Add labels to the diagram Most: Describe the function of each Stretch: Your right lung is bigger than your left lung, can you think why? Write your answer in your book (ask if you want a hint) Textbook page 9 + 10", "Respiratory system Part of the gas exchange system Function Trachea This is also called the windpipe. This tube runs from the mouth, down the throat towards the lungs. It is lined with rings of cartilage which keep it open at all times. Bronchus The trachea splits into a left and right bronchus (plural: bronchi), each leads to a lung. Bronchiole Each bronchus splits again and again into thousands of smaller tubes called bronchioles which take the air deeper into the lungs. Alveoli At the ends of bronchioles are tiny air sacs called alveoli. Here oxygen moves into the blood and carbon dioxide moves out. Intercostal muscles These muscles run between the ribs and form the chest wall. They contract and relax with the diaphragm when a person breathes. Diaphragm The diaphragm is a dome-shaped, ﬂat sheet of muscle under the lungs. It contracts and relaxes with the intercostal muscles during breathing.", "Concept check! 1. The lungs are an example of a tissue. 2. The trachea allows air to move from the nose and mouth into the lungs. 3. We have one lung. 4. The diaphragm is a muscle. 5. The lungs are big sacs of air. 6. The bronchi are smaller than the bronchioles.", "Concept check! 1. The lungs are an example of a tissue. 2. The trachea allows air to move from the nose and mouth into the lungs. 3. We have one lung. 4. The diaphragm is a muscle. 5. The lungs are big sacs of air. 6. The bronchi are smaller than the bronchioles.", "Your lungs are located in your chest, inside your ribs. We have two lungs, but they are not the same size, like the way your eyes or ears are equal in size. Your left lung is smaller than your right lung. This allows room for your heart, which is on the left side of the body.", "Microscopic tissues in the respiratory system Goblet cells • Produce mucus (mucin) • Mucus traps dust, dirt & pathogens Ciliated cells • Cilia beat rhythmically to move mucus up towards the mouth • Mucus is then swallowed or coughed out", "Describe the journey of an oxygen molecule from the air into the lungs. To ‘describe’, your answer should: •Use bullet points. •Include each step of the process in a logical order. •Use keywords. Sentence starter: • The oxygen molecule enters the mouth or nose. • It then travels down the __________ Stretch: “The lungs are like big empty plastic bags inside our chest” Is this statement correct or incorrect, explain your answer.", "• The oxygen molecule enters the mouth or nose. • Then it travels down the trachea. •The trachea branches into two tubes called bronchi, allowing oxygen to pass into the left and right lungs. •The bronchi branch into bronchioles, which allows oxygen to reach the millions of tiny air sacs called alveoli. Describe the journey of an oxygen molecule from the air into the lungs. We will learn this topic how oxygen can then move from the alveoli into our bloodstream."]}, {"slug": "B1.3_Breathing", "title": "B1.3 Breathing", "pages": ["Breathing Lesson objectives: ●To describe how air moves into and out of the lungs ●To create a scientiﬁc model to show how air moves in and out of the lungs Breathe in… breathe out… What are the scientiﬁc words for what you have just done?", "Answer the following questions in your book: 1. What is the function of the respiratory system? 2. What is the name of the small air sacs inside our lungs? 3. Is there any carbon dioxide in the air that we breathe in? 4. Organise these keywords in the correct order to show the passage of air through our respiratory system trachea, bronchioles, mouth, nose, alveoli, bronchi To move air in and out of our lungs Alveoli Yes (0.03%) mouth/nose > trachea > bronchi > bronchioles > alveoli", "The lungs cannot make air move in or out. Only muscle can contract/relax to cause movement. Can you name the muscles related to the respiratory system? The respiratory system", "The lungs are surrounded by the ribcage. The ribs have intercostal muscles between them. These contract and relax to move the rib cage Breathing Below the lungs sits a layer of muscle called the diaphragm. The diaphragm can contract and relax to change the size of the chest cavity (where the lungs are).", "How much air can you breathe out? Demonstration Spirometers are commonly used to measure \"vital capacity,\" the maximum volume of air that you can exhale in one breath. Everybody’s vital lung capacity is different depending on factors such as their age and ﬁtness levels. We can also use some very simple apparatus to ﬁnd out - a plastic bottle, measuring cylinder, bendy tubing and water!", "Intercostal muscles contracted Diaphragm contracted Intercostal muscles relaxed Diaphragm relaxed", "", "Using a model to represent breathing movements 1. What are the benefits of using a scientific model? 使用科学模型有什么好处？ 과학적 모델을 사용하면 어떤 이점이 있나요? 2. Are there any limitations to using a scientific model? 使用科学模型有什么限制吗? 과학적 모델을 사용하는 데에는 제한이 있습니까?", "Balloon Lung Model", "Using a model to represent breathing movements Work in your groups to create a balloon lung model. Draw and label the model in your books. Describe what happens when you move the diaphragm? What are the similarities and differences between the bell jar model and our respiratory system?", "1. Which part of the balloon lung model represents the diaphragm in our body? What does the diaphragm do when we breathe? 2. Explain the steps you took to make the balloon inflate and deflate. How is this action similar to real breathing? 3. Why did we use 2 balloons for our model? How does this reflect the structure of our actual lungs? 4. Is the balloon lung model a perfect representation of our actual lungs? What are some differences between the model and real lungs that you’ve learned about through this activity? Discussion Questions (answer in your book in full sentences)", "Create a table to show the advantages and limitations of the balloon lung model? (Can you think of others to add?) Advantages Limitations ● Good representation of how air is moved into and out of the lungs ● Helps to visualise the mechanism ● The balloons simplify the structure of the lungs as there’s no alveoli or bronchioles ● Not an accurate size ● The rib cage does not move Balloon Lung Model", "Describe what happens when we breathe in? Describe what happens when we breathe out?", "Describe how air moves into the lungs. To ‘describe’, your answer should: •Use bullet points. •Include each step of the process in a logical order. •Use keywords. Sentence starters: ● The intercostal muscles … ● The diaphragm… ● This causes the volume of the chest cavity to… ● This means that air moves… Key words Diaphragm, intercostal muscles, contract, increase, decrease", "Describe how air moves into the lungs. To ‘describe’, your answer should: •Use bullet points. •Include each step of the process in a logical order. •Use keywords. Model Answer: •The intercostal muscles of the ribcage contract and the ribcage moves up and out. •The diaphragm contracts and moves downwards to become flat •This causes the volume of the chest cavity to increase, so the pressure inside the chest cavity decreases. •This means that air moves down the trachea into the lungs to fill the extra space Key words Diaphragm, intercostal muscles, contract, increase, decrease"]}, {"slug": "1.2_Gas_exchange", "title": "1.2 Gas exchange", "pages": ["Gas exchange Lesson objectives: ●To state the gases that make up the air. ●To describe the structure of alveoli. ●To explain how the adaptations of the parts of the gas exchange system help them perform their function. Which fact is true? a) There are about 600 million alveoli in your lungs and if you stretched them out, they would cover an entire tennis court. b) There are about 1 million alveoli in your lungs and if you stretched them out, they would cover an entire football pitch. c) There are about 10 million alveoli in your lungs and if you stretched them out, they would cover an entire surface of the Moon.", "The table shows the composition of inhaled air and exhaled air. Gas Inhaled air Exhaled air oxygen 21% 16% carbon dioxide 0.04% 4.0% water vapour 0.96% 3.0% nitrogen 78.1% 78.1% noble gases 0.94% 0.94% What similarities and differences can you see? The changing composition of air", "What is gas exchange? It is the process of gases exchanging at the alveoli. Two gases exchange places. Oxygen goes from alveoli to blood circulation Carbon dioxide goes from blood circulation to alveoli Aim for excellence! Use the word ‘diffuses’ rather than ‘goes’ Diffusion is the net movement of particles from a region of high concentration to a region of low concentration.", "Diffusion is the movement of particles from an area of high concentration to an area of low concentration Diffusion", "Our body needs oxygen from the air so that cells can carry out the process of respiration. Oxygen diffuses from the air into our blood. Carbon dioxide diffuses out of the blood into the air. Diffusion of gases Name the part of the respiratory system that gas exchange occurs", "Structure of the alveolus", "Describe to your partner what is happening in this animation Keywords: oxygen, carbon dioxide, alveoli, blood, capillary", "Copy the sentences into your books and fill in the blanks: 1. Oxygen diffuses from the air in the _________ into the __________. 2. Carbon ___________ diffuses from the blood into the __________ in the alveoli. 3. We breathe out air. The air we breathe out contains _________ oxygen but __________ carbon dioxide. Key Points", "Copy the sentences into your books and fill in the blanks: 1. Oxygen diffuses from the air in the _________ into the __________. 2. Carbon ___________ diffuses from the blood into the __________ in the alveoli. 3. We breathe out air. The air we breathe out contains _________ oxygen but __________ carbon dioxide. Key Points alveoli blood dioxide air less more", "What are the adaptations of the alveoli?", "Oxygen needs to diffuses quickly from the air in the alveoli into the blood. Alveoli Adaptations Alveoli have: 1. Thin walls, made of just one layer of cells 2. A large surface area: There are millions of alveoli and they are spherical 3. Many capillaries surrounding them, so they have a good blood supply 4. a moist surface, which helps gases to diffuse across", "Red blood cells When oxygen gets into the blood, it dissolves. The oxygen goes into the red blood cells where it combines with haemoglobin. We will learn more about this next week!", "Gas exchange continued Lesson objectives: ●To create a model to demonstrate how surface area affects diffusion.", "Learner’s book: pg 15", "", "Complete Workbook page 5-9 Note: ● Make sure you arrange the data accordingly in order (from lowest to highest). ● Draw graph using pencil only! ● Bar chart is the bars not sticking to each other! ● first add up all the numbers in your data set. Then, divide the total sum by the count of the numbers you added."]}, {"slug": "1.4_Aerobic_respiration", "title": "1.4 Aerobic respiration", "pages": ["Aerobic respiration Lesson objectives: ●To state the word equation for aerobic respiration. ●To explain why respiration is important in living organisms. Year 7 recall! Draw and label an animal cell.", "Respiration Respiration is a chemical reaction in which energy is released from food substances. Glucose is the substance that animals use for energy. It takes place in the mitochondria. Remember: energy cannot be made or destroyed, only transferred.", "Aerobic respiration from the digestive system from the respiratory system waste product exhaled waste product exhaled", "Aerobic respiration Use the equation for aerobic respiration to explain why the air you breathe out contains more carbon dioxide than the air that you breathe in.", "What is breathing? The breathing system is used by the body to take in the oxygen needed for respiration. It is also use to remove the waste products of respiration (carbon dioxide and water). Copy and complete the sentences below: Breathing involves the lungs and allows our bodies to draw in air from the outside environment. We breathe in and out through our mouth and our ______. Respiration is a chemical _______that takes place in all of our _______. It is a reaction between glucose and __________ to make water, carbon dioxide and release _______.", "What is breathing? The breathing system is used by the body to take in the oxygen needed for respiration. It is also use to remove the waste product of respiration (carbon dioxide and water). Copy and complete the sentences below: Breathing involves the lungs and allows our bodies to draw in air from the outside environment. We breathe in and out through our mouth and our nose. Respiration is a chemical reaction that takes place in all of our cells. It is a reaction between glucose and oxygen to make water, carbon dioxide and release energy.", "Investigating respiration Respiration by living organisms can be investigated by carrying out experiments to show the production of carbon dioxide and heat. Limewater can be used to detect carbon dioxide. If carbon dioxide is bubbled through limewater then it turns from clear to cloudy/milky in colour.", "", "", "Where is energy needed? Respiration takes place in all cells of the body however some tissues/cells/organs require more energy than others. Which cells have the most mitochondria in them?", "1. What is the process that allows oxygen to move into cells and carbon dioxide to leave? 2. What does aerobic mean? 3. What is the chemical formula for glucose? 4. What are the products of aerobic respiration? 5. True or false - Respiration occurs in all body cells", "1. What is the process that allows oxygen to move into cells and carbon dioxide to leave? Diffusion 2. What does aerobic mean? ‘With oxygen’ 3. What is the chemical formula for glucose? C6H12O6 4. What are the products of aerobic respiration? Carbon dioxide + Water + Energy 5. True or false - Respiration occurs in all body cells True"]}, {"slug": "1.4_Anaerobic_respiration_2", "title": "1.4 Anaerobic respiration (2)", "pages": ["Anaerobic respiration Lesson objectives: ●To state the word equation for anaerobic respiration. ●To describe differences between aerobic and anaerobic respiration. Respiration is often confused with breathing - But this is not the case. What is respiration? You have two minutes to answer this question in your books.", "Breathing vs Respiration", "Energy released If aerobic respiration uses oxygen to break down glucose for energy, but anaerobic does not require oxygen - when do you think we might use anaerobic respiration? ● When exercising intensely for short periods of time, the body cannot easily get the oxygen it needs. ● Paralympian Jonnie Peacock respires anaerobically during the 100m sprint. Anaerobic respiration", "How does it work?", "Effects of intense exercise", "", "Aerobic vs Anaerobic respiration Aerobic respiration Anaerobic respiration Oxygen Glucose breakdown End product(s) Energy released", "Aerobic vs Anaerobic respiration Aerobic respiration Anaerobic respiration Oxygen Needed Not needed Glucose breakdown Complete Incomplete End product(s) Carbon dioxide and water Lactic acid Energy released Large amounts Small amounts", "Aerobic vs Anaerobic respiration Keywords: oxygen, glucose, carbon dioxide, water, lactic acid, ATP, energy", "Workbook page 5-11"]}, {"slug": "1.5_Blood_1", "title": "1.5 Blood (1)", "pages": ["Blood Lesson objectives: ●To describe the components of blood and their functions. In Year 7 you learnt about specialised cells. What do you remember about red blood cells? What is their function? How is their structure adapted to the function?", "Red blood cells ●Red blood cells have dips on both sides to maximise their surface area to absorb oxygen as quickly as possible. This shape is called biconcave. ●They do not have a nucleus to maximise the oxygen they can carry. ●Produced in the bone marrow.", "Red blood cells ● Oxygen moves by diffusion into red blood cells in the lungs. ● They have a chemical inside them called haemoglobin, a red pigment which binds with the oxygen to carry oxygen to where it is needed for respiration. ● This reaction is reversed near the cells.", "Quiz time! A B C D", "Quiz time! A B C D C", "Quiz time! A B C D", "Quiz time! A B C D D", "Quiz time! A B C D", "Quiz time! A B C D C", "Quiz time! C D A B", "Quiz time! C D A B B", "Quiz time! C D A B", "Quiz time! C D A B B", "Your blood consists of 4 components, do you know what they are?", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Component Function Plasma Platelets White blood cell Red blood cell", "Component Function Plasma Platelets White blood cell Red blood cell", "White blood cells ● White blood cells form part of the immune system to keep us safe from infection and disease. ● There are two types of white blood cell: - Phagocytes which surround, engulf and destroy pathogens - Lymphocytes which produce antibodies that stick pathogens together. This makes it easier for phagocytes to destroy the pathogens. ● Produced in the bone marrow.", "Lymphocytes", "Phagocytes Phagocytes surround, engulf and destroy pathogens", "", "Phagocytes In small groups, write a voiceover for the gif to describe what happens during phagocytosis. Every member of the group should have it written in their books. Each group will have the opportunity to speak their voiceover. Keywords: Engulf 吞噬 / 삼키다 Destroy 摧毁/파괴하다 Phagocyte 吞噬细胞 /식세포 Pathogen (eg. bacteria) 病 原体(细菌)/병원체(박테리아) Challenge: Can you think of a real-life example where this might happen?", "Phagocytes", "Quiz time! A B C", "Quiz time! A B C C", "Quiz time! A B", "Quiz time! A B A", "Quiz time! A B", "Quiz time! A B A", "Quiz time! A B C D", "Quiz time! A B C D A"]}, {"slug": "Microscopy_blood_experiment_Workbook", "title": "Microscopy blood experiment + Workbook", "pages": ["Starter - Learner’s book page 67", "Starter - Learner’s book page 67 Saturated solution From 20OC to 80OC 10OC interval Volume of water Temperature of water", "How to Use a Microscope 1) Plug in the microscope and turn on the light. 2) Place the Red blood cell specimen (the object to observe) on the stage. 3) Turn the magnification to the smallest. 4) Make sure that the specimen is in the centre; fasten with the clips. 5) Look down the microscope. 6) Use the fine-focusing wheel to observe the specimen. 7) Draw/write down any observations in your notebook. Please work in pairs", "❶ Use x4 lens ❷ Place slide on stage ❸ Turn until slide closest to lens ❹ Observe ❻ Turn slowly to focus image ❼ Turn slowly to sharpen image ❽ Draw what you see ❾ Repeat for x10 and x40 lenses ❺ Start lens close, move away to focus", "Review Workbook questions page 16-20 Draw graph using pencil Will discuss the questions after 25 minutes", "Mark your work using a green pen", "Mark your work using a green pen", "Mark your work using a green pen", "Mark your work using a green pen"]}]}, {"id": "chemistry", "title": "2단원 — 용해와 용액 (Chemistry)", "icon": "🧪", "color": "#2a9d8f", "href": "chemistry.html", "count": 4, "pages": 64, "chapters": [{"slug": "2.1_Dissolving", "title": "2.1 Dissolving", "pages": ["Lesson objectives ● To understand that the mass of a solution is mass of solute + mass of solvent. ● To demonstrate that a solute dissolves in a solvent to form a solution. ● To use particle theory to explain dissolving. Dissolving On your whiteboard, draw a diagram of the way particles are arranged in a liquid. Keywords: solute, solvent, solution, dissolve, particles", "Success Criteria Working towards Working at Working beyond I can identify a solute, solvent, and solution in a mixture. I can measure mass/volume and describe dissolving using the particle model. I can explain how particles interact in a solution and relate solute-solvent relationships Dissolving", "Solid, liquid and gas What is X, Y and Z?", "What are the differences between an element, compound and mixture? Elements, compounds and mixtures", "Element One type of atom, on its own or joined to another atom of the same type. These atoms are ALL iron – there’s nothing else in here", "Compound Different types of atom joined by a chemical bond. Water 2 Hydrogen and 1 Oxygen", "Mixture Different types of atoms or compounds that can be physically separated, NO chemical bond.", "Element, compound, mixture A B C D F E", "Element, compound, mixture A B C D F Element Element Mixture (of elements) Compound Compound E Mixture (of compounds)", "What happens to sugar when it is put in water?", "The sugar DOES NOT disappear! It is still there but now separate particles spread around the water. Dissolving A substance that can dissolve is soluble in water. A substance that cannot dissolve is insoluble in water. The diagram below shows what happens when particles dissolve.", "Mixture vs Solution two or more substances that are mixed together but not chemically joined a special type of mixture that is made when a solid dissolves and mixes a liquid.", "Mixture vs Solution two or more substances that are mixed together but not chemically joined a special type of mixture that is made when a solid dissolves and mixes a liquid.", "TASK: Use the particle model to explain dissolving Particles in solid sugar. Particles in liquid water. Particles in sugar solution. Dissolving", "solute + solvent = solution solid being dissolved liquid that does the dissolving = + sugar water the dissolved solute and the solvent How many other examples of solutions can you think of?", "Dissolving and mass Learner’s book page 43 You are going to investigate how the mass of a solution is affected when a solute dissolves in a solvent. 1. Record the mass of your solvent (water) 2. Record the mass of your solute (salt) 3. Add the solute to the solvent and record your observations 4. Record the mass of your solution", "What do you think will happen to the mass when we dissolve sugar in water? a) The sugar water will be lighter than the water and sugar separately. b) The mass of the sugar water will be equal to the mass of the sugar and water separately. c) The sugar water will be heavier than the sugar and water separately. Dissolving and Mass", "solute + solvent = solution solid being dissolved liquid that does the dissolving = + sugar water the dissolved solute and the solvent 9g 146g 155g", "solute + solvent = solution solid being dissolved liquid that does the dissolving = + sugar water the dissolved solute and the solvent 9g 146g 155g The mass of solute and solvent equals mass of the solution. No mass has been lost. The mass has been conserved. What would happen to the mass of sugar if this solution was made a) more concentrated b) more dilute", "Dissolving and melting", "Plenary", "Plenary"]}, {"slug": "SC_2.2_Concentration_of_solutions", "title": "SC 2.2 Concentration of solutions", "pages": ["Lesson objectives ●Compare concentrations of solutions. ●Use particle theory to explain the difference between a dilute and concentrated solution ●Prepare solutions of different concentrations. Concentration of Solutions When you add sugar to a cup of tea what happens… • to the sugar? • to the mass of the tea? What is the solute, solvent and solution in this example?", "", "When a solid dissolves in a liquid it makes a special type of mixture called a ________________. The solid part of the solution is called the ____________ and the liquid it dissolves in is called the _______________. The most common type of solvent is water, but some solutes dissolve in other solvents such as oil or _____________________________. A substance which dissolves in water is called __________________, a substance which does not dissolve easily is called ____________________. Dissolving", "Particle diagrams 1. Draw a particle diagram to show instant coffee 2. Draw a particle diagram to show liquid hot water Stretch: Write a sentence to explain the arrangement of particles in each diagram Success criteria for drawing particle diagrams: ● Draw particles that are the same size (not too small) ● Take care and draw carefully ● Full circles ● Think about the arrangement ● You can show particles to be different by either drawing them a different size or different colour 3. Draw a particle diagram to show the coffee dissolved in the hot water", "Dissolving and melting In your own words, what is the difference between dissolving and melting?", "Where have you heard the word ‘concentration’ before? Concentration", "Solutions The concentration of a solution is a measure of the amount of solute that has been dissolved in a given amount of solvent or solution. A concentrated solution is one that has a relatively large amount of dissolved solute. A dilute solution is one that has a relatively small amount of dissolved solute.", "Making diﬀerent concentrations of a solution Learner’s Book, page 46-47", "Stretch: Can you draw a particle diagram to show the solute dissolved in the solvent for solution B and solution E ?", "Concentration", "Before you go Explain the difference between… a concentrated solution and a less concentrated one You must use the words: “solvent”, “solute” and “particle”"]}, {"slug": "2.3_Solubility_in_Water", "title": "2.3 Solubility in Water", "pages": ["Lesson objectives ●Explain how concentration affects dissolving or saturation. ●Investigate the solubilities of different solutes in water ●Be able to identify when a solution is saturated Solubility in Water", "1. What is a solute? 2. What is a solvent? 3. If you have a concentrated solution and add water to it, describe the change in the solution (keywords to use in your answer: dilute, concentrated) 4. Describe the difference between dissolving and melting Something that can dissolve in a solvent Something that a solute dissolves into It would become more dilute/ less concentrated Dissolving is when a solute dissolves into a solvent, melting is a change of state from solid to liquid due to temperature Solubility in Water", "Solubility in Water What would happen if i continue to add more and more sugar? The concentration of the solute would increase Eventually the sugar will stop dissolving", "A solution that can still dissolve more solute is unsaturated A solution that cannot dissolve any more solute is saturated Solubility in Water", "Solubility in Water The amount of solute that is able to dissolve is the solubility of that solute. Different solutes have different solubility in water. We will look at temperature next lesson", "Solubility in Water You are going to investigate the solubility of 3 different solutes in water Pg 48", "1. What are we investigating? 2. What is the independent variable in this investigation? (what you change) 3. What is the dependent variable in this investigation? (what you measure) 4. What is a control variable in this investigation? (keep the same) Solubility of different solutes The type of solute The number of spatulas of solute added Volume of water, the temperature, size of spatula Solubility in Water", "Stretch: Can you draw a particle diagram to show the solute dissolved in the solvent for your different solutions Solubility in Water", "Solubility in Water Let’s practice… Workbook Pg 21 - 26 Exercise 2.1B and 2.1C pg 22 Exercise 2.2A and 2.2B pg 24", "Mark your work using a green pen!", "Mark your work using a green pen!", "Mark your work using a green pen!", "Mark your work using a green pen!"]}, {"slug": "2.4_Solubility_and_temperature", "title": "2.4 Solubility and temperature", "pages": ["Lesson objectives ●To plan an investigation to test how temperature affects solubility. ●To collect data accurately and record it in a table. ●To draw and interpret a graph. Solubility and temperature Which beaker shows the solution? Where is the solvent? Which one shows undissolved solute? Keywords: solubility, temperature, variable, fair test, data A B C", "Success Criteria Working towards Working at Working beyond I can follow instructions to test how temperature affects solubility. I can record results and draw a graph. I can plan, carry out, and interpret results in relation to the effect of temperature on solubility. Solubility and temperature", "1. What is the missing label from the diagram? 2. If a solution is not able to dissolve any more solute, the solution is ___________________ 3. If the solution is able to dissolve more solute, the solution is ___________________ 4. If we add more water to the solution, the solution becomes more ______________ Solute saturated unsaturated dilute Solubility and Temperature ?", "When we increase the temperature of water, there will be more thermal energy, so more kinetic energy How will this affect solubility? Solubility and Temperature", "You are going to plan a safe and valid experiment into the solubility of sugar or salt (the solute) in water. Solubility is a measure of how much solute will dissolve. You will record how much sugar dissolves at different temperatures. Solubility and Temperature", "Use the activity sheet to plan your experiment, the following slides will guide you Planning an Experiment", "Lesson objectives ●To conduct an investigation to test how temperature affects solubility. ●To collect data accurately and record it in a table. ●To draw and interpret a graph. Solubility and temperature Keywords: solubility, temperature, variable, fair test, data", "Words to use: solution, saturated, solute, solvent. When a substance is dissolved into a liquid, we call the substance dissolving a s__________ , the liquid a s__________ , and the mixture formed is called a s______________ . We are going to plan an experiment to see how much solute dissolves at different temperatures, this is known as solubility. If we keep adding the solute and no more dissolves, then the solution is fully s________________ . Background Information", "a. Add 10g of sugar (solute) at a time, noting down how much you have added. b. Stir gently with a stirring rod, applying the same amount of force each time. c. Clear a suitable working area, tie long hair up and put on safety goggles. d. Fill a glass beaker with 25cm3 of water (solvent) at room temperature. e. Repeat steps b to d with hotter water. The temperatures we will use are 50°C and 100°C. f. Keep adding the solute until no more dissolves and the solution is fully saturated and record the total amount of grams of solute added. Method: put these steps in the correct order", "1. Clear a suitable working area, tie long hair up and put on safety goggles. 2. Fill a glass beaker with 25cm3 of water (solvent) at room temperature. 3. Add 10g of sugar (solute) at a time, noting down how much you have added. 4. Stir gently with a stirring rod, applying the same amount of force each time. 5. Keep adding the solute until no more dissolves and the solution is fully saturated and record the total amount of grams of solute added. 6. Repeat steps 2 to 5 with hotter water. The temperatures we will use are 50°C and 100°C. Method TIP: - Use an appropriate sized beaker so that the bulb of the thermometer can be covered by the water.", "●3 beakers ●Mass balance ●Weighing boat ●Spatula ●Stirring rod ●Bunsen burner ●Tripod ●Gauze ●Thermometer ●Test tube holder ●Water ●Sugar Equipment", "I hypothesise that as the temperature of the water increases, (more/ less) sugar will dissolve. Hypothesis", "Results Mass of sugar dissolved (g)", "Investigating the eﬀect of temperature on solubility", "Results Mass of sugar dissolved (g)", "Conclusion", "Conclusion", "Compare your results with the results on the graph. 1. Were your results the same/ different? - why? 2. What do you think would have happened if you put the sugar in but didn't mix it? 3. Why do you think we used sugar instead of salt?"]}]}, {"id": "markscheme", "title": "Workbook 정답 (Markscheme)", "icon": "📝", "color": "#6a4c93", "href": "markscheme.html", "count": 1, "pages": 4, "chapters": [{"slug": "Workbook_page_21_26_markscheme", "title": "Workbook page 21-26 markscheme", "pages": ["Mark your work using a green pen!", "Mark your work using a green pen!", "Mark your work using a green pen!", "Mark your work using a green pen!"]}]}]};
-</script>
-<script src="app.js"></script>
+<body>
+<div class="home-hero">
+  <h1>🔬 <span>Science</span> Vocab</h1>
+  <p>Year 8 Cambridge Lower Secondary 학습 사이트</p>
+</div>
+<div class="unit-grid">
+  <a class="unit-link" href="biology.html">
+    <span class="u-icon">🫁</span>
+    <div>
+      <div class="u-title">8B 호흡 Respiration</div>
+      <div class="u-sub">Year 8 · Cambridge Lower Secondary</div>
+      <div class="u-meta">6 단원 · 38 단어 · 18 문제</div>
+    </div>
+  </a>
+  <a class="unit-link" href="chemistry.html">
+    <span class="u-icon">🧪</span>
+    <div>
+      <div class="u-title">8C 용해와 용액 Solutions</div>
+      <div class="u-sub">Year 8 · Cambridge Lower Secondary</div>
+      <div class="u-meta">4 단원 · 23 단어 · 14 문제</div>
+    </div>
+  </a>
+</div>
+<footer>science-vocab · 마지막 빌드: 2026-05-24 15:30</footer>
 </body>
 </html>

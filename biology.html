@@ -2,205 +2,1294 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e76f51">
-<title>1단원 — 호흡과 혈액 (Biology) · 과학 학습</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1b2a">
+<title>8B 호흡 Respiration</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d1b2a;
+  --card: #162032;
+  --card2: #1c2d42;
+  --accent: #38bdf8;
+  --green: #4ade80;
+  --yellow: #fbbf24;
+  --pink: #f472b6;
+  --orange: #fb923c;
+  --purple: #c084fc;
+  --text: #e2f0ff;
+  --muted: #6b9ab8;
+  --border: rgba(56,189,248,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito','Noto Sans KR',sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+}
+
+/* HEADER */
+header {
+  background: rgba(22,32,50,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 12px;
+}
+.header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
+.header-icon { font-size: 28px; line-height:1; }
+.header-text { flex: 1; min-width:0; }
+.header-title { font-size: 17px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* HERO */
+.hero { text-align: center; padding: 28px 20px 18px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+.hero h1 span { color: var(--accent); }
+.hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.stat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 5px 12px; font-size: 11.5px; font-weight: 700; color: var(--accent); }
+
+/* EQUATION BOX */
+.eq-box { max-width: 720px; margin: 0 auto 24px; padding: 0 16px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width:480px){ .eq-box { grid-template-columns: 1fr; } }
+.eq-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.eq-label.aerobic { color: var(--green); }
+.eq-label.anaerobic { color: var(--orange); }
+.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+
+/* TABS */
+.tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 6px; border-radius: 10px;
+  font-size: 13px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; }
+.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* SECTION HEADERS (vocab filter) */
+.filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
+.filter-wrap::-webkit-scrollbar { display: none; }
+.filter-tabs { display: flex; gap: 8px; white-space: nowrap; padding-bottom: 2px; }
+.filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
+  border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
+  font-family: inherit; transition: all 0.2s; white-space: nowrap; }
+.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+
+.section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
+.section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+.section-line { flex: 1; height: 1px; background: var(--border); }
+
+/* CARDS WRAP */
+.cards-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+/* VOCAB CARD */
+.vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+  display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
+.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
+.vcard-left { min-width: 0; }
+.vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
+.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
+.cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
+.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+
+.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
+.vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
+
+.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
+  color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
+.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+
+.btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
+  color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
+  cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; transition: all 0.15s; white-space: nowrap; font-family: inherit; }
+.btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
+.btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* NOTES (탭 1: 핵심노트) */
+.chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
+.chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.chapter-head .ch-icon { font-size: 22px; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
+.chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
+.note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
+.note-body { font-size: 13px; color: var(--text); line-height: 1.65; }
+.note-body b { color: #fff; }
+.note-body table { border-collapse: collapse; margin: 8px 0; }
+.note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
+.note-img { display: block; max-width: 100%; margin: 10px 0 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff; }
+
+/* QUIZ (탭 3) */
+.quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.quiz-progress { font-size: 12px; color: var(--muted); font-weight: 700; margin-bottom: 8px; text-align: center; }
+.quiz-progress b { color: var(--accent); }
+.quiz-bar { height: 6px; background: var(--card); border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
+.quiz-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); transition: width 0.3s; }
+.q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
+.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
+.q-options { display: flex; flex-direction: column; gap: 8px; }
+.q-opt { background: var(--card2); border: 1.5px solid var(--border); color: var(--text); padding: 12px 14px;
+  border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; font-family: inherit; text-align: left; transition: all 0.15s; line-height: 1.4; }
+.q-opt:hover:not(:disabled) { border-color: var(--accent); background: rgba(56,189,248,0.08); }
+.q-opt.correct { background: rgba(74,222,128,0.18); border-color: var(--green); color: #fff; }
+.q-opt.wrong { background: rgba(254,44,44,0.18); border-color: #ff6b6b; color: #fff; }
+.q-opt:disabled { cursor: default; }
+.q-explanation { margin-top: 12px; padding: 10px 12px; background: rgba(56,189,248,0.08);
+  border-left: 3px solid var(--accent); border-radius: 6px; font-size: 12.5px; color: var(--text); line-height: 1.5; display: none; }
+.q-explanation.show { display: block; }
+.q-explanation b { color: var(--accent); }
+
+.quiz-result { text-align: center; padding: 28px 16px; background: var(--card); border-radius: 14px; border: 1px solid var(--border); display: none; }
+.quiz-result.show { display: block; }
+.quiz-result h2 { font-size: 22px; color: #fff; margin-bottom: 8px; }
+.quiz-result .score { font-size: 36px; font-weight: 900; color: var(--accent); margin: 12px 0; }
+.quiz-result button { background: var(--accent); color: #0d1b2a; border: none; padding: 10px 24px; border-radius: 8px; font-weight: 800; cursor: pointer; font-family: inherit; font-size: 14px; }
+
+/* FOOTER */
+footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
+.vcard.hidden { display: none; }
+.section-header.hidden { display: none; }
+</style>
 </head>
-<body class="unit" data-accent="#e76f51">
-<header class="topbar">
-  <a href="index.html" class="back" aria-label="홈으로">←</a>
-  <div class="topbar-title">
-    <span class="icon">🫁</span>
-    <h1>1단원 — 호흡과 혈액 (Biology)</h1>
+<body>
+
+<header>
+  <a class="header-back" href="index.html" aria-label="홈">←</a>
+  <div class="header-icon">🫁</div>
+  <div class="header-text">
+    <div class="header-title">8B 호흡 Respiration</div>
+    <div class="header-sub">Year 8 · Cambridge Lower Secondary</div>
   </div>
 </header>
 
-<nav class="chapter-nav">
-  <details>
-    <summary>📚 단원 목차 (7개)</summary>
-    <ol>
-      <li><a href="#ch-1.1_Human_respiratory_system">1.1 Human respiratory system</a> (15p)</li>
-      <li><a href="#ch-B1.3_Breathing">B1.3 Breathing</a> (15p)</li>
-      <li><a href="#ch-1.2_Gas_exchange">1.2 Gas exchange</a> (16p)</li>
-      <li><a href="#ch-1.4_Aerobic_respiration">1.4 Aerobic respiration</a> (12p)</li>
-      <li><a href="#ch-1.4_Anaerobic_respiration_2">1.4 Anaerobic respiration (2)</a> (10p)</li>
-      <li><a href="#ch-1.5_Blood_1">1.5 Blood (1)</a> (35p)</li>
-      <li><a href="#ch-Microscopy_blood_experiment_Workbook">Microscopy blood experiment + Workbook</a> (9p)</li>
-    </ol>
-  </details>
-</nav>
-
-<div class="search-wrap">
-  <input id="search" type="search" placeholder="🔍 단원 안에서 검색 (예: oxygen, 호흡, alveoli)" aria-label="검색">
-  <button id="clear-search" aria-label="지우기" hidden>✕</button>
+<div class="hero">
+  <h1>🫁 <span>8B 호흡 Respiration</span></h1>
+  <p>호흡기관 → 기체 교환 → 세포 호흡 → 혈액까지 한 번에</p>
+  <div class="stats-row">
+    <span class="stat-chip">🫁 호흡기관 6단원</span>
+    <span class="stat-chip">💨 기체 교환</span>
+    <span class="stat-chip">⚙️ 유산소·무산소</span>
+    <span class="stat-chip">🩸 혈액</span>
+  </div>
 </div>
-<div id="search-results" class="search-results" hidden></div>
 
-<main class="chapters">
-<section class="chapter" id="ch-1.1_Human_respiratory_system">
-  <h2>1. 1.1 Human respiratory system</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/biology/1.1_Human_respiratory_system_p01.png" alt="1.1 Human respiratory system 1쪽" loading="lazy"><figcaption>1 / 15</figcaption></figure>
-    <figure data-page="2"><img src="assets/biology/1.1_Human_respiratory_system_p02.png" alt="1.1 Human respiratory system 2쪽" loading="lazy"><figcaption>2 / 15</figcaption></figure>
-    <figure data-page="3"><img src="assets/biology/1.1_Human_respiratory_system_p03.png" alt="1.1 Human respiratory system 3쪽" loading="lazy"><figcaption>3 / 15</figcaption></figure>
-    <figure data-page="4"><img src="assets/biology/1.1_Human_respiratory_system_p04.png" alt="1.1 Human respiratory system 4쪽" loading="lazy"><figcaption>4 / 15</figcaption></figure>
-    <figure data-page="5"><img src="assets/biology/1.1_Human_respiratory_system_p05.png" alt="1.1 Human respiratory system 5쪽" loading="lazy"><figcaption>5 / 15</figcaption></figure>
-    <figure data-page="6"><img src="assets/biology/1.1_Human_respiratory_system_p06.png" alt="1.1 Human respiratory system 6쪽" loading="lazy"><figcaption>6 / 15</figcaption></figure>
-    <figure data-page="7"><img src="assets/biology/1.1_Human_respiratory_system_p07.png" alt="1.1 Human respiratory system 7쪽" loading="lazy"><figcaption>7 / 15</figcaption></figure>
-    <figure data-page="8"><img src="assets/biology/1.1_Human_respiratory_system_p08.png" alt="1.1 Human respiratory system 8쪽" loading="lazy"><figcaption>8 / 15</figcaption></figure>
-    <figure data-page="9"><img src="assets/biology/1.1_Human_respiratory_system_p09.png" alt="1.1 Human respiratory system 9쪽" loading="lazy"><figcaption>9 / 15</figcaption></figure>
-    <figure data-page="10"><img src="assets/biology/1.1_Human_respiratory_system_p10.png" alt="1.1 Human respiratory system 10쪽" loading="lazy"><figcaption>10 / 15</figcaption></figure>
-    <figure data-page="11"><img src="assets/biology/1.1_Human_respiratory_system_p11.png" alt="1.1 Human respiratory system 11쪽" loading="lazy"><figcaption>11 / 15</figcaption></figure>
-    <figure data-page="12"><img src="assets/biology/1.1_Human_respiratory_system_p12.png" alt="1.1 Human respiratory system 12쪽" loading="lazy"><figcaption>12 / 15</figcaption></figure>
-    <figure data-page="13"><img src="assets/biology/1.1_Human_respiratory_system_p13.png" alt="1.1 Human respiratory system 13쪽" loading="lazy"><figcaption>13 / 15</figcaption></figure>
-    <figure data-page="14"><img src="assets/biology/1.1_Human_respiratory_system_p14.png" alt="1.1 Human respiratory system 14쪽" loading="lazy"><figcaption>14 / 15</figcaption></figure>
-    <figure data-page="15"><img src="assets/biology/1.1_Human_respiratory_system_p15.png" alt="1.1 Human respiratory system 15쪽" loading="lazy"><figcaption>15 / 15</figcaption></figure>
+<div class="eq-box">
+  <div class="eq-card"><div class="eq-label aerobic">✅ Aerobic 유산소</div><div class="eq-formula">Glucose + Oxygen<br>→ CO₂ + Water + Energy</div></div>
+  <div class="eq-card"><div class="eq-label anaerobic">⚡ Anaerobic 무산소</div><div class="eq-formula">Glucose<br>→ Lactic acid + Energy</div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="notes">📘 핵심노트</button>
+    <button class="tab-btn" data-tab="vocab">📚 단어장</button>
+    <button class="tab-btn" data-tab="quiz">📝 퀴즈</button>
   </div>
-</section>
+</div>
 
-<section class="chapter" id="ch-B1.3_Breathing">
-  <h2>2. B1.3 Breathing</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/biology/B1.3_Breathing_p01.png" alt="B1.3 Breathing 1쪽" loading="lazy"><figcaption>1 / 15</figcaption></figure>
-    <figure data-page="2"><img src="assets/biology/B1.3_Breathing_p02.png" alt="B1.3 Breathing 2쪽" loading="lazy"><figcaption>2 / 15</figcaption></figure>
-    <figure data-page="3"><img src="assets/biology/B1.3_Breathing_p03.png" alt="B1.3 Breathing 3쪽" loading="lazy"><figcaption>3 / 15</figcaption></figure>
-    <figure data-page="4"><img src="assets/biology/B1.3_Breathing_p04.png" alt="B1.3 Breathing 4쪽" loading="lazy"><figcaption>4 / 15</figcaption></figure>
-    <figure data-page="5"><img src="assets/biology/B1.3_Breathing_p05.png" alt="B1.3 Breathing 5쪽" loading="lazy"><figcaption>5 / 15</figcaption></figure>
-    <figure data-page="6"><img src="assets/biology/B1.3_Breathing_p06.png" alt="B1.3 Breathing 6쪽" loading="lazy"><figcaption>6 / 15</figcaption></figure>
-    <figure data-page="7"><img src="assets/biology/B1.3_Breathing_p07.png" alt="B1.3 Breathing 7쪽" loading="lazy"><figcaption>7 / 15</figcaption></figure>
-    <figure data-page="8"><img src="assets/biology/B1.3_Breathing_p08.png" alt="B1.3 Breathing 8쪽" loading="lazy"><figcaption>8 / 15</figcaption></figure>
-    <figure data-page="9"><img src="assets/biology/B1.3_Breathing_p09.png" alt="B1.3 Breathing 9쪽" loading="lazy"><figcaption>9 / 15</figcaption></figure>
-    <figure data-page="10"><img src="assets/biology/B1.3_Breathing_p10.png" alt="B1.3 Breathing 10쪽" loading="lazy"><figcaption>10 / 15</figcaption></figure>
-    <figure data-page="11"><img src="assets/biology/B1.3_Breathing_p11.png" alt="B1.3 Breathing 11쪽" loading="lazy"><figcaption>11 / 15</figcaption></figure>
-    <figure data-page="12"><img src="assets/biology/B1.3_Breathing_p12.png" alt="B1.3 Breathing 12쪽" loading="lazy"><figcaption>12 / 15</figcaption></figure>
-    <figure data-page="13"><img src="assets/biology/B1.3_Breathing_p13.png" alt="B1.3 Breathing 13쪽" loading="lazy"><figcaption>13 / 15</figcaption></figure>
-    <figure data-page="14"><img src="assets/biology/B1.3_Breathing_p14.png" alt="B1.3 Breathing 14쪽" loading="lazy"><figcaption>14 / 15</figcaption></figure>
-    <figure data-page="15"><img src="assets/biology/B1.3_Breathing_p15.png" alt="B1.3 Breathing 15쪽" loading="lazy"><figcaption>15 / 15</figcaption></figure>
+<!-- 핵심노트 -->
+<div class="tab-pane active" id="tab-notes">
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🫁</span>
+    <div>
+      <h2>1. 호흡기관의 구조</h2>
+      <span class="ch-sub">Respiratory system</span>
+    </div>
   </div>
-</section>
-
-<section class="chapter" id="ch-1.2_Gas_exchange">
-  <h2>3. 1.2 Gas exchange</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/biology/1.2_Gas_exchange_p01.png" alt="1.2 Gas exchange 1쪽" loading="lazy"><figcaption>1 / 16</figcaption></figure>
-    <figure data-page="2"><img src="assets/biology/1.2_Gas_exchange_p02.png" alt="1.2 Gas exchange 2쪽" loading="lazy"><figcaption>2 / 16</figcaption></figure>
-    <figure data-page="3"><img src="assets/biology/1.2_Gas_exchange_p03.png" alt="1.2 Gas exchange 3쪽" loading="lazy"><figcaption>3 / 16</figcaption></figure>
-    <figure data-page="4"><img src="assets/biology/1.2_Gas_exchange_p04.png" alt="1.2 Gas exchange 4쪽" loading="lazy"><figcaption>4 / 16</figcaption></figure>
-    <figure data-page="5"><img src="assets/biology/1.2_Gas_exchange_p05.png" alt="1.2 Gas exchange 5쪽" loading="lazy"><figcaption>5 / 16</figcaption></figure>
-    <figure data-page="6"><img src="assets/biology/1.2_Gas_exchange_p06.png" alt="1.2 Gas exchange 6쪽" loading="lazy"><figcaption>6 / 16</figcaption></figure>
-    <figure data-page="7"><img src="assets/biology/1.2_Gas_exchange_p07.png" alt="1.2 Gas exchange 7쪽" loading="lazy"><figcaption>7 / 16</figcaption></figure>
-    <figure data-page="8"><img src="assets/biology/1.2_Gas_exchange_p08.png" alt="1.2 Gas exchange 8쪽" loading="lazy"><figcaption>8 / 16</figcaption></figure>
-    <figure data-page="9"><img src="assets/biology/1.2_Gas_exchange_p09.png" alt="1.2 Gas exchange 9쪽" loading="lazy"><figcaption>9 / 16</figcaption></figure>
-    <figure data-page="10"><img src="assets/biology/1.2_Gas_exchange_p10.png" alt="1.2 Gas exchange 10쪽" loading="lazy"><figcaption>10 / 16</figcaption></figure>
-    <figure data-page="11"><img src="assets/biology/1.2_Gas_exchange_p11.png" alt="1.2 Gas exchange 11쪽" loading="lazy"><figcaption>11 / 16</figcaption></figure>
-    <figure data-page="12"><img src="assets/biology/1.2_Gas_exchange_p12.png" alt="1.2 Gas exchange 12쪽" loading="lazy"><figcaption>12 / 16</figcaption></figure>
-    <figure data-page="13"><img src="assets/biology/1.2_Gas_exchange_p13.png" alt="1.2 Gas exchange 13쪽" loading="lazy"><figcaption>13 / 16</figcaption></figure>
-    <figure data-page="14"><img src="assets/biology/1.2_Gas_exchange_p14.png" alt="1.2 Gas exchange 14쪽" loading="lazy"><figcaption>14 / 16</figcaption></figure>
-    <figure data-page="15"><img src="assets/biology/1.2_Gas_exchange_p15.png" alt="1.2 Gas exchange 15쪽" loading="lazy"><figcaption>15 / 16</figcaption></figure>
-    <figure data-page="16"><img src="assets/biology/1.2_Gas_exchange_p16.png" alt="1.2 Gas exchange 16쪽" loading="lazy"><figcaption>16 / 16</figcaption></figure>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>공기가 지나가는 길</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
   </div>
-</section>
-
-<section class="chapter" id="ch-1.4_Aerobic_respiration">
-  <h2>4. 1.4 Aerobic respiration</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/biology/1.4_Aerobic_respiration_p01.png" alt="1.4 Aerobic respiration 1쪽" loading="lazy"><figcaption>1 / 12</figcaption></figure>
-    <figure data-page="2"><img src="assets/biology/1.4_Aerobic_respiration_p02.png" alt="1.4 Aerobic respiration 2쪽" loading="lazy"><figcaption>2 / 12</figcaption></figure>
-    <figure data-page="3"><img src="assets/biology/1.4_Aerobic_respiration_p03.png" alt="1.4 Aerobic respiration 3쪽" loading="lazy"><figcaption>3 / 12</figcaption></figure>
-    <figure data-page="4"><img src="assets/biology/1.4_Aerobic_respiration_p04.png" alt="1.4 Aerobic respiration 4쪽" loading="lazy"><figcaption>4 / 12</figcaption></figure>
-    <figure data-page="5"><img src="assets/biology/1.4_Aerobic_respiration_p05.png" alt="1.4 Aerobic respiration 5쪽" loading="lazy"><figcaption>5 / 12</figcaption></figure>
-    <figure data-page="6"><img src="assets/biology/1.4_Aerobic_respiration_p06.png" alt="1.4 Aerobic respiration 6쪽" loading="lazy"><figcaption>6 / 12</figcaption></figure>
-    <figure data-page="7"><img src="assets/biology/1.4_Aerobic_respiration_p07.png" alt="1.4 Aerobic respiration 7쪽" loading="lazy"><figcaption>7 / 12</figcaption></figure>
-    <figure data-page="8"><img src="assets/biology/1.4_Aerobic_respiration_p08.png" alt="1.4 Aerobic respiration 8쪽" loading="lazy"><figcaption>8 / 12</figcaption></figure>
-    <figure data-page="9"><img src="assets/biology/1.4_Aerobic_respiration_p09.png" alt="1.4 Aerobic respiration 9쪽" loading="lazy"><figcaption>9 / 12</figcaption></figure>
-    <figure data-page="10"><img src="assets/biology/1.4_Aerobic_respiration_p10.png" alt="1.4 Aerobic respiration 10쪽" loading="lazy"><figcaption>10 / 12</figcaption></figure>
-    <figure data-page="11"><img src="assets/biology/1.4_Aerobic_respiration_p11.png" alt="1.4 Aerobic respiration 11쪽" loading="lazy"><figcaption>11 / 12</figcaption></figure>
-    <figure data-page="12"><img src="assets/biology/1.4_Aerobic_respiration_p12.png" alt="1.4 Aerobic respiration 12쪽" loading="lazy"><figcaption>12 / 12</figcaption></figure>
+  <div class="note-body">공기는 <b>입/코 → 기관(trachea) → 기관지(bronchi) → 세기관지(bronchioles) → 폐포(alveoli)</b> 순서로 폐 깊숙이 들어간다. 기관에는 연골 고리(cartilage)가 있어 항상 열려 있다.</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>주요 기관과 기능</h3>
+    
   </div>
-</section>
-
-<section class="chapter" id="ch-1.4_Anaerobic_respiration_2">
-  <h2>5. 1.4 Anaerobic respiration (2)</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/biology/1.4_Anaerobic_respiration_2_p01.png" alt="1.4 Anaerobic respiration (2) 1쪽" loading="lazy"><figcaption>1 / 10</figcaption></figure>
-    <figure data-page="2"><img src="assets/biology/1.4_Anaerobic_respiration_2_p02.png" alt="1.4 Anaerobic respiration (2) 2쪽" loading="lazy"><figcaption>2 / 10</figcaption></figure>
-    <figure data-page="3"><img src="assets/biology/1.4_Anaerobic_respiration_2_p03.png" alt="1.4 Anaerobic respiration (2) 3쪽" loading="lazy"><figcaption>3 / 10</figcaption></figure>
-    <figure data-page="4"><img src="assets/biology/1.4_Anaerobic_respiration_2_p04.png" alt="1.4 Anaerobic respiration (2) 4쪽" loading="lazy"><figcaption>4 / 10</figcaption></figure>
-    <figure data-page="5"><img src="assets/biology/1.4_Anaerobic_respiration_2_p05.png" alt="1.4 Anaerobic respiration (2) 5쪽" loading="lazy"><figcaption>5 / 10</figcaption></figure>
-    <figure data-page="6"><img src="assets/biology/1.4_Anaerobic_respiration_2_p06.png" alt="1.4 Anaerobic respiration (2) 6쪽" loading="lazy"><figcaption>6 / 10</figcaption></figure>
-    <figure data-page="7"><img src="assets/biology/1.4_Anaerobic_respiration_2_p07.png" alt="1.4 Anaerobic respiration (2) 7쪽" loading="lazy"><figcaption>7 / 10</figcaption></figure>
-    <figure data-page="8"><img src="assets/biology/1.4_Anaerobic_respiration_2_p08.png" alt="1.4 Anaerobic respiration (2) 8쪽" loading="lazy"><figcaption>8 / 10</figcaption></figure>
-    <figure data-page="9"><img src="assets/biology/1.4_Anaerobic_respiration_2_p09.png" alt="1.4 Anaerobic respiration (2) 9쪽" loading="lazy"><figcaption>9 / 10</figcaption></figure>
-    <figure data-page="10"><img src="assets/biology/1.4_Anaerobic_respiration_2_p10.png" alt="1.4 Anaerobic respiration (2) 10쪽" loading="lazy"><figcaption>10 / 10</figcaption></figure>
+  <div class="note-body"><b>Trachea(기관)</b>: 공기 통로, 연골로 항상 열림.<br><b>Bronchus(기관지)</b>: 좌/우 폐로 갈라짐.<br><b>Bronchioles(세기관지)</b>: 폐 안에서 더 작게 가지치기.<br><b>Alveoli(폐포)</b>: 작은 공기 주머니, 기체 교환.<br><b>Intercostal muscles(늑간근)</b>·<b>Diaphragm(횡격막)</b>: 호흡 운동을 일으키는 근육.</div>
+  <img class="note-img" src="assets/diagrams/1.1_Human_respiratory_system/p06_img009.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>좌폐가 더 작은 이유</h3>
+    
   </div>
-</section>
-
-<section class="chapter" id="ch-1.5_Blood_1">
-  <h2>6. 1.5 Blood (1)</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/biology/1.5_Blood_1_p01.png" alt="1.5 Blood (1) 1쪽" loading="lazy"><figcaption>1 / 35</figcaption></figure>
-    <figure data-page="2"><img src="assets/biology/1.5_Blood_1_p02.png" alt="1.5 Blood (1) 2쪽" loading="lazy"><figcaption>2 / 35</figcaption></figure>
-    <figure data-page="3"><img src="assets/biology/1.5_Blood_1_p03.png" alt="1.5 Blood (1) 3쪽" loading="lazy"><figcaption>3 / 35</figcaption></figure>
-    <figure data-page="4"><img src="assets/biology/1.5_Blood_1_p04.png" alt="1.5 Blood (1) 4쪽" loading="lazy"><figcaption>4 / 35</figcaption></figure>
-    <figure data-page="5"><img src="assets/biology/1.5_Blood_1_p05.png" alt="1.5 Blood (1) 5쪽" loading="lazy"><figcaption>5 / 35</figcaption></figure>
-    <figure data-page="6"><img src="assets/biology/1.5_Blood_1_p06.png" alt="1.5 Blood (1) 6쪽" loading="lazy"><figcaption>6 / 35</figcaption></figure>
-    <figure data-page="7"><img src="assets/biology/1.5_Blood_1_p07.png" alt="1.5 Blood (1) 7쪽" loading="lazy"><figcaption>7 / 35</figcaption></figure>
-    <figure data-page="8"><img src="assets/biology/1.5_Blood_1_p08.png" alt="1.5 Blood (1) 8쪽" loading="lazy"><figcaption>8 / 35</figcaption></figure>
-    <figure data-page="9"><img src="assets/biology/1.5_Blood_1_p09.png" alt="1.5 Blood (1) 9쪽" loading="lazy"><figcaption>9 / 35</figcaption></figure>
-    <figure data-page="10"><img src="assets/biology/1.5_Blood_1_p10.png" alt="1.5 Blood (1) 10쪽" loading="lazy"><figcaption>10 / 35</figcaption></figure>
-    <figure data-page="11"><img src="assets/biology/1.5_Blood_1_p11.png" alt="1.5 Blood (1) 11쪽" loading="lazy"><figcaption>11 / 35</figcaption></figure>
-    <figure data-page="12"><img src="assets/biology/1.5_Blood_1_p12.png" alt="1.5 Blood (1) 12쪽" loading="lazy"><figcaption>12 / 35</figcaption></figure>
-    <figure data-page="13"><img src="assets/biology/1.5_Blood_1_p13.png" alt="1.5 Blood (1) 13쪽" loading="lazy"><figcaption>13 / 35</figcaption></figure>
-    <figure data-page="14"><img src="assets/biology/1.5_Blood_1_p14.png" alt="1.5 Blood (1) 14쪽" loading="lazy"><figcaption>14 / 35</figcaption></figure>
-    <figure data-page="15"><img src="assets/biology/1.5_Blood_1_p15.png" alt="1.5 Blood (1) 15쪽" loading="lazy"><figcaption>15 / 35</figcaption></figure>
-    <figure data-page="16"><img src="assets/biology/1.5_Blood_1_p16.png" alt="1.5 Blood (1) 16쪽" loading="lazy"><figcaption>16 / 35</figcaption></figure>
-    <figure data-page="17"><img src="assets/biology/1.5_Blood_1_p17.png" alt="1.5 Blood (1) 17쪽" loading="lazy"><figcaption>17 / 35</figcaption></figure>
-    <figure data-page="18"><img src="assets/biology/1.5_Blood_1_p18.png" alt="1.5 Blood (1) 18쪽" loading="lazy"><figcaption>18 / 35</figcaption></figure>
-    <figure data-page="19"><img src="assets/biology/1.5_Blood_1_p19.png" alt="1.5 Blood (1) 19쪽" loading="lazy"><figcaption>19 / 35</figcaption></figure>
-    <figure data-page="20"><img src="assets/biology/1.5_Blood_1_p20.png" alt="1.5 Blood (1) 20쪽" loading="lazy"><figcaption>20 / 35</figcaption></figure>
-    <figure data-page="21"><img src="assets/biology/1.5_Blood_1_p21.png" alt="1.5 Blood (1) 21쪽" loading="lazy"><figcaption>21 / 35</figcaption></figure>
-    <figure data-page="22"><img src="assets/biology/1.5_Blood_1_p22.png" alt="1.5 Blood (1) 22쪽" loading="lazy"><figcaption>22 / 35</figcaption></figure>
-    <figure data-page="23"><img src="assets/biology/1.5_Blood_1_p23.png" alt="1.5 Blood (1) 23쪽" loading="lazy"><figcaption>23 / 35</figcaption></figure>
-    <figure data-page="24"><img src="assets/biology/1.5_Blood_1_p24.png" alt="1.5 Blood (1) 24쪽" loading="lazy"><figcaption>24 / 35</figcaption></figure>
-    <figure data-page="25"><img src="assets/biology/1.5_Blood_1_p25.png" alt="1.5 Blood (1) 25쪽" loading="lazy"><figcaption>25 / 35</figcaption></figure>
-    <figure data-page="26"><img src="assets/biology/1.5_Blood_1_p26.png" alt="1.5 Blood (1) 26쪽" loading="lazy"><figcaption>26 / 35</figcaption></figure>
-    <figure data-page="27"><img src="assets/biology/1.5_Blood_1_p27.png" alt="1.5 Blood (1) 27쪽" loading="lazy"><figcaption>27 / 35</figcaption></figure>
-    <figure data-page="28"><img src="assets/biology/1.5_Blood_1_p28.png" alt="1.5 Blood (1) 28쪽" loading="lazy"><figcaption>28 / 35</figcaption></figure>
-    <figure data-page="29"><img src="assets/biology/1.5_Blood_1_p29.png" alt="1.5 Blood (1) 29쪽" loading="lazy"><figcaption>29 / 35</figcaption></figure>
-    <figure data-page="30"><img src="assets/biology/1.5_Blood_1_p30.png" alt="1.5 Blood (1) 30쪽" loading="lazy"><figcaption>30 / 35</figcaption></figure>
-    <figure data-page="31"><img src="assets/biology/1.5_Blood_1_p31.png" alt="1.5 Blood (1) 31쪽" loading="lazy"><figcaption>31 / 35</figcaption></figure>
-    <figure data-page="32"><img src="assets/biology/1.5_Blood_1_p32.png" alt="1.5 Blood (1) 32쪽" loading="lazy"><figcaption>32 / 35</figcaption></figure>
-    <figure data-page="33"><img src="assets/biology/1.5_Blood_1_p33.png" alt="1.5 Blood (1) 33쪽" loading="lazy"><figcaption>33 / 35</figcaption></figure>
-    <figure data-page="34"><img src="assets/biology/1.5_Blood_1_p34.png" alt="1.5 Blood (1) 34쪽" loading="lazy"><figcaption>34 / 35</figcaption></figure>
-    <figure data-page="35"><img src="assets/biology/1.5_Blood_1_p35.png" alt="1.5 Blood (1) 35쪽" loading="lazy"><figcaption>35 / 35</figcaption></figure>
+  <div class="note-body">사람은 폐가 두 개이지만 <b>왼쪽 폐가 오른쪽보다 작다</b>. 왼쪽에는 <b>심장</b>이 자리 잡을 공간이 필요하기 때문이다.</div>
+  <img class="note-img" src="assets/diagrams/1.1_Human_respiratory_system/p12_img016.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>기관 안의 미세 조직</h3>
+    
   </div>
-</section>
-
-<section class="chapter" id="ch-Microscopy_blood_experiment_Workbook">
-  <h2>7. Microscopy blood experiment + Workbook</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/biology/Microscopy_blood_experiment_Workbook_p01.png" alt="Microscopy blood experiment + Workbook 1쪽" loading="lazy"><figcaption>1 / 9</figcaption></figure>
-    <figure data-page="2"><img src="assets/biology/Microscopy_blood_experiment_Workbook_p02.png" alt="Microscopy blood experiment + Workbook 2쪽" loading="lazy"><figcaption>2 / 9</figcaption></figure>
-    <figure data-page="3"><img src="assets/biology/Microscopy_blood_experiment_Workbook_p03.png" alt="Microscopy blood experiment + Workbook 3쪽" loading="lazy"><figcaption>3 / 9</figcaption></figure>
-    <figure data-page="4"><img src="assets/biology/Microscopy_blood_experiment_Workbook_p04.png" alt="Microscopy blood experiment + Workbook 4쪽" loading="lazy"><figcaption>4 / 9</figcaption></figure>
-    <figure data-page="5"><img src="assets/biology/Microscopy_blood_experiment_Workbook_p05.png" alt="Microscopy blood experiment + Workbook 5쪽" loading="lazy"><figcaption>5 / 9</figcaption></figure>
-    <figure data-page="6"><img src="assets/biology/Microscopy_blood_experiment_Workbook_p06.png" alt="Microscopy blood experiment + Workbook 6쪽" loading="lazy"><figcaption>6 / 9</figcaption></figure>
-    <figure data-page="7"><img src="assets/biology/Microscopy_blood_experiment_Workbook_p07.png" alt="Microscopy blood experiment + Workbook 7쪽" loading="lazy"><figcaption>7 / 9</figcaption></figure>
-    <figure data-page="8"><img src="assets/biology/Microscopy_blood_experiment_Workbook_p08.png" alt="Microscopy blood experiment + Workbook 8쪽" loading="lazy"><figcaption>8 / 9</figcaption></figure>
-    <figure data-page="9"><img src="assets/biology/Microscopy_blood_experiment_Workbook_p09.png" alt="Microscopy blood experiment + Workbook 9쪽" loading="lazy"><figcaption>9 / 9</figcaption></figure>
+  <div class="note-body">기관 벽에는 두 종류의 세포가 있다.<br>• <b>Goblet cells(술잔세포)</b> → 점액(mucus) 분비, 먼지·세균 잡음.<br>• <b>Ciliated cells(섬모세포)</b> → 섬모를 움직여 점액을 입쪽으로 밀어냄. 그래서 삼키거나 기침으로 배출.</div>
+  <img class="note-img" src="assets/diagrams/1.1_Human_respiratory_system/p13_img019.png" alt="" loading="lazy">
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">💨</span>
+    <div>
+      <h2>2. 호흡 운동 (Breathing)</h2>
+      <span class="ch-sub">B1.3 Breathing / Ventilation</span>
+    </div>
   </div>
-</section>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Breathing ≠ Respiration</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+  <div class="note-body"><b>Breathing(호흡 운동)</b>은 공기를 폐로 넣었다 빼는 <b>물리적 움직임</b>.<br><b>Respiration(세포 호흡)</b>은 세포 안에서 포도당으로 에너지를 만드는 <b>화학 반응</b>. 둘은 완전히 다른 것!</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>들숨 (Inhalation)</h3>
+    
+  </div>
+  <div class="note-body">1) <b>늑간근 수축</b> → 흉곽이 위·바깥으로 움직임.<br>2) <b>횡격막 수축</b> → 평평해짐(아래로).<br>3) 흉강 부피 ↑ → 압력 ↓.<br>4) 공기가 기관을 따라 폐로 빨려 들어옴.</div>
+  <img class="note-img" src="assets/diagrams/B1.3_Breathing/p06_img007.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>날숨 (Exhalation)</h3>
+    
+  </div>
+  <div class="note-body">1) <b>늑간근 이완</b> → 흉곽이 아래·안쪽으로 움직임.<br>2) <b>횡격막 이완</b> → 다시 돔 모양으로 위로 올라감.<br>3) 흉강 부피 ↓ → 압력 ↑.<br>4) 공기가 폐 밖으로 밀려 나감.</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>폐활량 (Vital capacity)</h3>
+    
+  </div>
+  <div class="note-body">한 번에 최대로 들이쉬고 내쉴 수 있는 공기의 양. <b>나이·성별·운동량</b>에 따라 다르다. 측정 장치는 <b>Spirometer(폐활량계)</b>. 간단하게는 물병+눈금실린더로도 측정 가능.</div>
+  <img class="note-img" src="assets/diagrams/B1.3_Breathing/p05_img005.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>벨자(Bell jar) 풍선 모델</h3>
+    
+  </div>
+  <div class="note-body">유리 종, 풍선, 고무막으로 폐 호흡을 흉내내는 모델.<br>• 고무막 = <b>횡격막</b><br>• 풍선 = <b>폐</b><br>• 유리 종 = <b>흉곽</b><br>한계: 늑골이 움직이지 않고, 폐포·세기관지 같은 세부 구조가 없다.</div>
+  <img class="note-img" src="assets/diagrams/B1.3_Breathing/p09_img011.png" alt="" loading="lazy">
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🔄</span>
+    <div>
+      <h2>3. 기체 교환 (Gas exchange)</h2>
+      <span class="ch-sub">1.2 Gas exchange</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>들숨 vs 날숨의 조성</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=aPUPfzsqDgs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeSci</a>
+  </div>
+  <div class="note-body"><b>들숨</b>: O₂ 21%, CO₂ 0.04%, N₂ 78.1%, 수증기 0.96%.<br><b>날숨</b>: O₂ 16%(감소), CO₂ 4.0%(증가), 수증기 3%(증가). 질소는 변화 없음. 세포 호흡 때문에 O₂가 줄고 CO₂가 늘어남.</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>확산 (Diffusion)</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=C5pMigXBAgk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeSci</a>
+  </div>
+  <div class="note-body"><b>입자가 농도가 높은 쪽에서 낮은 쪽으로 이동</b>하는 현상. 폐포에서는 O₂가 공기→혈액으로, CO₂가 혈액→공기로 확산.</div>
+  <img class="note-img" src="assets/diagrams/1.2_Gas_exchange/p04_img005.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>폐포의 적응 (Alveoli adaptations)</h3>
+    
+  </div>
+  <div class="note-body">폐포가 기체 교환을 잘 하는 4가지 이유:<br>1) <b>얇은 벽</b> (세포 한 층) → 확산 거리 짧음<br>2) <b>넓은 표면적</b> (약 6억 개, 테니스 코트 넓이)<br>3) <b>모세혈관이 많음</b> → 혈액이 가까이<br>4) <b>촉촉한 표면</b> → 기체가 잘 녹아 확산</div>
+  <img class="note-img" src="assets/diagrams/1.2_Gas_exchange/p11_img010.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>기체 교환 한 줄 정리</h3>
+    
+  </div>
+  <div class="note-body">오 산소는 폐포→혈액으로 <b>확산</b>해 적혈구의 <b>헤모글로빈</b>과 결합한다. 이산화탄소는 혈액→폐포로 확산해 날숨으로 배출된다.</div>
+  <img class="note-img" src="assets/diagrams/1.2_Gas_exchange/p06_img007.png" alt="" loading="lazy">
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">✅</span>
+    <div>
+      <h2>4. 유산소 호흡 (Aerobic respiration)</h2>
+      <span class="ch-sub">1.4 Aerobic respiration</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>정의와 식</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=xzDAZUZido0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+  <div class="note-body">산소를 이용해 포도당을 분해, <b>많은 에너지</b>를 만드는 화학 반응.<br><br><b>Glucose + Oxygen → Carbon dioxide + Water + Energy</b><br>(포도당 + 산소 → 이산화탄소 + 물 + 에너지)<br><br>화학식 포도당: C₆H₁₂O₆</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>어디서 일어날까?</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=ZKAaDbTP6Dc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeSci</a>
+  </div>
+  <div class="note-body"><b>모든 세포의 미토콘드리아(mitochondria)</b> 안에서 일어난다. 에너지를 많이 쓰는 세포(근육세포, 정자세포 등)는 미토콘드리아가 더 많다.</div>
+  <img class="note-img" src="assets/diagrams/1.4_Aerobic_respiration/p02_img002.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Breathing과의 관계</h3>
+    
+  </div>
+  <div class="note-body">호흡 운동(breathing)은 세포 호흡에 필요한 <b>O₂를 들여오고</b>, 폐기물 <b>CO₂를 내보내는</b> 일을 한다. 즉 breathing이 respiration을 위한 공급 시스템.</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>CO₂ 검출 (Limewater)</h3>
+    
+  </div>
+  <div class="note-body"><b>석회수(Limewater)</b>에 이산화탄소를 통과시키면 투명 → 우유빛 흐림으로 변한다. 사람이 숨을 내쉬면 석회수가 흐려지는 실험으로 호흡으로 CO₂가 나옴을 증명할 수 있다.</div>
+  <img class="note-img" src="assets/diagrams/1.4_Aerobic_respiration/p07_img009.png" alt="" loading="lazy">
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">⚡</span>
+    <div>
+      <h2>5. 무산소 호흡 (Anaerobic respiration)</h2>
+      <span class="ch-sub">1.4 Anaerobic respiration</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>정의와 식</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=xzDAZUZido0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+  <div class="note-body"><b>산소 없이</b> 포도당을 분해해 에너지를 얻는 호흡. 에너지는 유산소 호흡보다 <b>훨씬 적게</b> 나온다.<br><br><b>Glucose → Lactic acid + Energy</b><br>(포도당 → 젖산 + 에너지)</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>언제 일어날까?</h3>
+    
+  </div>
+  <div class="note-body">100m 전력 질주처럼 <b>짧고 격렬한 운동</b>을 할 때, 산소 공급이 빨리 따라오지 못해서 무산소 호흡이 일어난다. 결과로 근육에 <b>젖산(lactic acid)</b>이 쌓인다.</div>
+  <img class="note-img" src="assets/diagrams/1.4_Anaerobic_respiration_2/p03_img004.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>산소 빚 (Oxygen debt)</h3>
+    
+  </div>
+  <div class="note-body">운동 후 쌓인 젖산을 분해하려면 <b>추가의 산소</b>가 필요하다. 그래서 운동을 멈춰도 한동안 거친 숨이 계속된다 — 이게 'oxygen debt(산소 빚)'을 갚는 과정.</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>유산소 vs 무산소 비교</h3>
+    
+  </div>
+  <div class="note-body"><table style='width:100%;font-size:12.5px'><tr><th></th><th>Aerobic</th><th>Anaerobic</th></tr><tr><td>산소</td><td>필요</td><td>불필요</td></tr><tr><td>포도당 분해</td><td>완전</td><td>불완전</td></tr><tr><td>산물</td><td>CO₂ + 물</td><td>젖산</td></tr><tr><td>에너지</td><td>많이</td><td>적게</td></tr></table></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🩸</span>
+    <div>
+      <h2>6. 혈액 (Blood)</h2>
+      <span class="ch-sub">1.5 Blood</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>혈액의 4가지 성분</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+  <div class="note-body"><b>Plasma(혈장)</b>: 노란 액체. 세포·당·CO₂·노폐물 운반.<br><b>Red blood cells(적혈구)</b>: 산소 운반.<br><b>White blood cells(백혈구)</b>: 병원체 방어.<br><b>Platelets(혈소판)</b>: 상처 부위에 딱지(scab) 형성.</div>
+  <img class="note-img" src="assets/diagrams/1.5_Blood_1/p15_img018.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>적혈구 (Red blood cell)</h3>
+    
+  </div>
+  <div class="note-body">• 양쪽이 오목한 <b>biconcave(원반)</b> 모양 → 표면적 ↑<br>• <b>핵 없음</b> → 산소 더 많이 실음<br>• <b>골수(bone marrow)</b>에서 생성<br>• 안에 <b>헤모글로빈(haemoglobin)</b>이라는 빨간 단백질이 있어 산소와 결합.</div>
+  <img class="note-img" src="assets/diagrams/1.5_Blood_1/p02_img003.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>백혈구 (White blood cell)</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=k1oCiR9Y2zQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+  <div class="note-body">면역 시스템의 일부. 두 종류:<br>• <b>Phagocytes(식세포)</b>: 병원체를 둘러싸고(engulf) 삼켜(destroy) 분해 — 이 과정을 <b>phagocytosis(식작용)</b>이라 부름.<br>• <b>Lymphocytes(림프구)</b>: <b>항체(antibodies)</b>를 만들어 병원체를 뭉치게 해 식세포가 잡기 쉽게 함.</div>
+  <img class="note-img" src="assets/diagrams/1.5_Blood_1/p24_img027.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>헤모글로빈 작동 방식</h3>
+    
+  </div>
+  <div class="note-body">폐에서 산소 농도가 높음 → 헤모글로빈이 산소와 결합해 <b>옥시헤모글로빈</b>. 세포 근처에서 산소 농도가 낮음 → 반대 반응으로 산소를 풀어줌. 이렇게 산소를 필요한 곳까지 옮긴다.</div>
+  
+</div></div>
+</div>
+</div>
 
-</main>
+<!-- 단어장 -->
+<div class="tab-pane" id="tab-vocab">
+  <div class="filter-wrap">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-cat="all" onclick="filterCards("all")">전체 All</button>
+      <button class="filter-btn" data-cat="organ" onclick="filterCards("organ")">🫁 기관 Organs</button>
+      <button class="filter-btn" data-cat="process" onclick="filterCards("process")">⚙️ 과정 Process</button>
+      <button class="filter-btn" data-cat="blood" onclick="filterCards("blood")">🩸 혈액 Blood</button>
+      <button class="filter-btn" data-cat="gas" onclick="filterCards("gas")">💨 기체 Gas</button>
+    </div>
+  </div>
+<div class="section-header" data-cat="organ"><h2>🫁 기관 Organs</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Respiratory system</div>
+    <div class="vcard-ko">호흡계</div>
+    <div class="vcard-def">The organs involved in breathing and gas exchange.</div>
+    <div class="vcard-def-ko">호흡과 기체 교환에 관여하는 기관들.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Respiratory system")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Nasal cavity</div>
+    <div class="vcard-ko">비강</div>
+    <div class="vcard-def">Space inside the nose that warms, moistens and filters air.</div>
+    <div class="vcard-def-ko">코 안 공간. 공기를 따뜻하게·습하게·먼지 제거.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Nasal cavity")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Trachea</div>
+    <div class="vcard-ko">기관</div>
+    <div class="vcard-def">Windpipe. Tube from mouth to lungs, kept open by cartilage rings.</div>
+    <div class="vcard-def-ko">공기 통로(숨길). 연골 고리로 항상 열려 있다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Trachea")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=Nn4ke02sW8Q" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Bronchi</div>
+    <div class="vcard-ko">기관지</div>
+    <div class="vcard-def">Two tubes that branch from the trachea, one into each lung.</div>
+    <div class="vcard-def-ko">기관에서 좌·우 폐로 갈라지는 두 관.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Bronchi")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Bronchioles</div>
+    <div class="vcard-ko">세기관지</div>
+    <div class="vcard-def">Smaller tubes that branch off the bronchi inside the lungs.</div>
+    <div class="vcard-def-ko">폐 안에서 기관지에서 더 작게 갈라지는 관.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Bronchioles")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Alveoli</div>
+    <div class="vcard-ko">폐포</div>
+    <div class="vcard-def">Tiny air sacs in the lungs where gas exchange takes place.</div>
+    <div class="vcard-def-ko">폐 속 작은 공기 주머니. 기체 교환이 일어남.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Alveoli")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=aPUPfzsqDgs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeSci</a>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Diaphragm</div>
+    <div class="vcard-ko">횡격막</div>
+    <div class="vcard-def">Dome-shaped muscle below the lungs. Contracts and flattens when inhaling.</div>
+    <div class="vcard-def-ko">폐 아래 돔 모양 근육. 들숨 때 수축해 평평해진다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Diaphragm")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Intercostal muscles</div>
+    <div class="vcard-ko">늑간근</div>
+    <div class="vcard-def">Muscles between the ribs that help move the ribcage during breathing.</div>
+    <div class="vcard-def-ko">갈비뼈 사이 근육. 호흡 중 흉곽 움직임.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Intercostal muscles")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Ribcage</div>
+    <div class="vcard-ko">흉곽</div>
+    <div class="vcard-def">Bony cage of ribs that protects the lungs and heart.</div>
+    <div class="vcard-def-ko">폐와 심장을 보호하는 갈비뼈 구조.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Ribcage")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Mitochondria</div>
+    <div class="vcard-ko">미토콘드리아</div>
+    <div class="vcard-def">Organelle in cells where aerobic respiration takes place and energy is released.</div>
+    <div class="vcard-def-ko">세포 안 소기관. 유산소 호흡이 일어나 에너지 방출.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Mitochondria")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=ZKAaDbTP6Dc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeSci</a>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Goblet cells</div>
+    <div class="vcard-ko">술잔세포</div>
+    <div class="vcard-def">Cells in the airways that produce mucus to trap dust and pathogens.</div>
+    <div class="vcard-def-ko">기관 벽에서 점액을 만들어 먼지·병원체를 잡는 세포.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Goblet cells")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Ciliated cells</div>
+    <div class="vcard-ko">섬모세포</div>
+    <div class="vcard-def">Cells with tiny hairs (cilia) that move mucus up towards the mouth.</div>
+    <div class="vcard-def-ko">섬모로 점액을 입쪽으로 밀어내는 세포.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Ciliated cells")">🔊</button>
+    
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="process"><h2>⚙️ 과정 Process</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Breathing / Ventilation</div>
+    <div class="vcard-ko">호흡 운동 / 환기</div>
+    <div class="vcard-def">Physical movement of air into and out of the lungs.</div>
+    <div class="vcard-def-ko">폐로 공기를 들이쉬고 내쉬는 물리적 움직임.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Breathing / Ventilation")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=rsA-4TroH6Y" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Inhale / Inspiration</div>
+    <div class="vcard-ko">흡기 (들숨)</div>
+    <div class="vcard-def">Breathing in. Diaphragm contracts, ribcage moves up and out, air rushes in.</div>
+    <div class="vcard-def-ko">숨 들이쉬기. 횡격막·늑간근 수축, 흉곽 확장, 공기 유입.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Inhale / Inspiration")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Exhale / Expiration</div>
+    <div class="vcard-ko">호기 (날숨)</div>
+    <div class="vcard-def">Breathing out. Diaphragm relaxes, ribcage moves down and in, air pushed out.</div>
+    <div class="vcard-def-ko">숨 내쉬기. 횡격막·늑간근 이완, 흉곽 축소, 공기 배출.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Exhale / Expiration")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Gas exchange</div>
+    <div class="vcard-ko">기체 교환</div>
+    <div class="vcard-def">Oxygen moves alveoli→blood; carbon dioxide moves blood→alveoli.</div>
+    <div class="vcard-def-ko">산소는 폐포→혈액, 이산화탄소는 혈액→폐포로 이동.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Gas exchange")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=aPUPfzsqDgs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeSci</a>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Diffusion</div>
+    <div class="vcard-ko">확산</div>
+    <div class="vcard-def">Net movement of particles from high to low concentration.</div>
+    <div class="vcard-def-ko">입자가 농도가 높은 곳→낮은 곳으로 이동.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Diffusion")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=C5pMigXBAgk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeSci</a>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Aerobic respiration</div>
+    <div class="vcard-ko">유산소 호흡</div>
+    <div class="vcard-def">Glucose + Oxygen → CO₂ + Water + Energy. Needs oxygen, releases lots of energy.</div>
+    <div class="vcard-def-ko">산소 이용 호흡. 많은 에너지 방출.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Aerobic respiration")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=xzDAZUZido0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Anaerobic respiration</div>
+    <div class="vcard-ko">무산소 호흡</div>
+    <div class="vcard-def">Glucose → Lactic acid + Energy. No oxygen, less energy released.</div>
+    <div class="vcard-def-ko">산소 없이 일어남. 젖산 생성, 에너지 적음.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Anaerobic respiration")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Glucose</div>
+    <div class="vcard-ko">포도당</div>
+    <div class="vcard-def">Sugar used as fuel in respiration. Formula C₆H₁₂O₆.</div>
+    <div class="vcard-def-ko">호흡 연료로 쓰이는 당. C₆H₁₂O₆.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Glucose")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Lactic acid</div>
+    <div class="vcard-ko">젖산</div>
+    <div class="vcard-def">Waste product of anaerobic respiration. Causes muscle fatigue.</div>
+    <div class="vcard-def-ko">무산소 호흡의 부산물. 근육 피로 원인.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Lactic acid")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Oxygen debt</div>
+    <div class="vcard-ko">산소 빚</div>
+    <div class="vcard-def">Extra oxygen needed after exercise to break down built-up lactic acid.</div>
+    <div class="vcard-def-ko">운동 후 쌓인 젖산을 분해하려고 추가로 필요한 산소.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Oxygen debt")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Vital capacity</div>
+    <div class="vcard-ko">폐활량</div>
+    <div class="vcard-def">Maximum volume of air you can breathe in and out in one breath.</div>
+    <div class="vcard-def-ko">한 번에 최대로 들이쉬고 내쉴 수 있는 공기의 양.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Vital capacity")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Limewater test</div>
+    <div class="vcard-ko">석회수 검사</div>
+    <div class="vcard-def">Limewater turns cloudy when CO₂ is bubbled through it.</div>
+    <div class="vcard-def-ko">이산화탄소를 통과시키면 석회수가 뿌옇게 변함.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Limewater test")">🔊</button>
+    
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="blood"><h2>🩸 혈액 Blood</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Red blood cell</div>
+    <div class="vcard-ko">적혈구</div>
+    <div class="vcard-def">Biconcave cell without a nucleus that carries oxygen around the body.</div>
+    <div class="vcard-def-ko">양쪽 오목 모양·핵 없음. 산소 운반.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Red blood cell")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=c-6ZhcHkB4s" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Haemoglobin</div>
+    <div class="vcard-ko">헤모글로빈</div>
+    <div class="vcard-def">Red protein in red blood cells that binds to oxygen.</div>
+    <div class="vcard-def-ko">적혈구 안 빨간 단백질. 산소와 결합.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Haemoglobin")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Plasma</div>
+    <div class="vcard-ko">혈장</div>
+    <div class="vcard-def">Yellow liquid part of blood. Transports cells, glucose, CO₂.</div>
+    <div class="vcard-def-ko">혈액의 노란 액체. 세포·당·이산화탄소 운반.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Plasma")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Platelets</div>
+    <div class="vcard-ko">혈소판</div>
+    <div class="vcard-def">Tiny blood fragments that form clots and scabs at wounds.</div>
+    <div class="vcard-def-ko">상처에 딱지(scab)를 만드는 작은 혈액 조각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Platelets")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">White blood cell</div>
+    <div class="vcard-ko">백혈구</div>
+    <div class="vcard-def">Cell of the immune system that fights pathogens.</div>
+    <div class="vcard-def-ko">면역계 세포. 병원체와 싸움.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("White blood cell")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=k1oCiR9Y2zQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Phagocyte</div>
+    <div class="vcard-ko">식세포</div>
+    <div class="vcard-def">White blood cell that engulfs and destroys pathogens (phagocytosis).</div>
+    <div class="vcard-def-ko">병원체를 둘러싸 삼키고 분해하는 백혈구.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Phagocyte")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Lymphocyte</div>
+    <div class="vcard-ko">림프구</div>
+    <div class="vcard-def">White blood cell that produces antibodies to fight pathogens.</div>
+    <div class="vcard-def-ko">항체를 만들어 병원체와 싸우는 백혈구.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Lymphocyte")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Antibody</div>
+    <div class="vcard-ko">항체</div>
+    <div class="vcard-def">Protein made by lymphocytes that sticks pathogens together.</div>
+    <div class="vcard-def-ko">림프구가 만드는 단백질. 병원체를 뭉치게 함.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Antibody")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Pathogen</div>
+    <div class="vcard-ko">병원체</div>
+    <div class="vcard-def">Microorganism (e.g. bacteria, virus) that causes disease.</div>
+    <div class="vcard-def-ko">질병을 일으키는 미생물 (세균·바이러스 등).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Pathogen")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Bone marrow</div>
+    <div class="vcard-ko">골수</div>
+    <div class="vcard-def">Soft tissue inside bones where blood cells are produced.</div>
+    <div class="vcard-def-ko">뼈 안의 부드러운 조직. 혈액 세포가 만들어짐.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Bone marrow")">🔊</button>
+    
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="gas"><h2>💨 기체 Gas</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Oxygen (O₂)</div>
+    <div class="vcard-ko">산소</div>
+    <div class="vcard-def">Gas needed for aerobic respiration. 21% of air.</div>
+    <div class="vcard-def-ko">유산소 호흡에 필요한 기체. 공기의 21%.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Oxygen (O\u2082)")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Carbon dioxide (CO₂)</div>
+    <div class="vcard-ko">이산화탄소</div>
+    <div class="vcard-def">Waste gas from respiration. Turns limewater cloudy.</div>
+    <div class="vcard-def-ko">호흡의 노폐물 기체. 석회수 흐려짐.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Carbon dioxide (CO\u2082)")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Nitrogen (N₂)</div>
+    <div class="vcard-ko">질소</div>
+    <div class="vcard-def">About 78% of the air. Not used in respiration.</div>
+    <div class="vcard-def-ko">공기의 78%. 호흡에 쓰이지 않음.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Nitrogen (N\u2082)")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Water vapour</div>
+    <div class="vcard-ko">수증기</div>
+    <div class="vcard-def">Gas form of water. Exhaled air contains more water vapour.</div>
+    <div class="vcard-def-ko">기체 상태의 물. 날숨에 더 많이 포함.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Water vapour")">🔊</button>
+    
+  </div>
+</div>
+</div>
+</div>
 
-<footer>
-  <p>science-vocab · 모바일 친화 학습 사이트</p>
-</footer>
+<!-- 퀴즈 -->
+<div class="tab-pane" id="tab-quiz">
+  <div class="quiz-wrap">
+    <div class="quiz-progress">진행 <b id="q-current">1</b> / 18  ·  점수 <b id="q-score">0</b></div>
+    <div class="quiz-bar"><div class="quiz-bar-fill" id="q-bar" style="width:0%"></div></div>
+    <div id="quiz-list"><div class="q-card" id="q-card-0">
+  <div class="q-num">문제 1 / 18</div>
+  <div class="q-text">공기가 폐로 들어가는 올바른 순서는?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(0,0)">입/코 → 폐포 → 기관 → 기관지 → 세기관지</button>
+      <button class="q-opt" onclick="answerQuestion(0,1)">입/코 → 기관 → 기관지 → 세기관지 → 폐포</button>
+      <button class="q-opt" onclick="answerQuestion(0,2)">입/코 → 기관지 → 기관 → 폐포 → 세기관지</button>
+      <button class="q-opt" onclick="answerQuestion(0,3)">입/코 → 세기관지 → 기관지 → 기관 → 폐포</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 공기는 위에서 아래로 점점 더 작은 관을 통과: trachea → bronchi → bronchioles → alveoli.</div>
+</div>
+<div class="q-card" id="q-card-1">
+  <div class="q-num">문제 2 / 18</div>
+  <div class="q-text">다음 중 호흡계의 일부가 아닌 것은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(1,0)">횡격막 (diaphragm)</button>
+      <button class="q-opt" onclick="answerQuestion(1,1)">심장 (heart)</button>
+      <button class="q-opt" onclick="answerQuestion(1,2)">폐 (lungs)</button>
+      <button class="q-opt" onclick="answerQuestion(1,3)">기관 (trachea)</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 심장은 순환계(circulatory system)의 기관이다. 호흡계가 아님.</div>
+</div>
+<div class="q-card" id="q-card-2">
+  <div class="q-num">문제 3 / 18</div>
+  <div class="q-text">왼쪽 폐가 오른쪽 폐보다 작은 이유는?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(2,0)">근육이 약해서</button>
+      <button class="q-opt" onclick="answerQuestion(2,1)">심장이 들어갈 공간이 필요해서</button>
+      <button class="q-opt" onclick="answerQuestion(2,2)">왼쪽 폐는 사용하지 않아서</button>
+      <button class="q-opt" onclick="answerQuestion(2,3)">원래 작게 태어남</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 심장은 몸 왼쪽에 위치하므로 좌폐가 자리를 양보한다.</div>
+</div>
+<div class="q-card" id="q-card-3">
+  <div class="q-num">문제 4 / 18</div>
+  <div class="q-text">확산(diffusion)의 정의로 옳은 것은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(3,0)">입자가 낮은 농도에서 높은 농도로 이동</button>
+      <button class="q-opt" onclick="answerQuestion(3,1)">입자가 높은 농도에서 낮은 농도로 이동</button>
+      <button class="q-opt" onclick="answerQuestion(3,2)">온도가 높아질 때 입자가 멈춤</button>
+      <button class="q-opt" onclick="answerQuestion(3,3)">입자가 무작위로 멈춰 있는 상태</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 확산은 농도 차이로 일어남: high → low.</div>
+</div>
+<div class="q-card" id="q-card-4">
+  <div class="q-num">문제 5 / 18</div>
+  <div class="q-text">폐포가 기체 교환을 잘하는 적응이 아닌 것은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(4,0)">얇은 벽 (one cell thick)</button>
+      <button class="q-opt" onclick="answerQuestion(4,1)">넓은 표면적</button>
+      <button class="q-opt" onclick="answerQuestion(4,2)">두꺼운 근육층</button>
+      <button class="q-opt" onclick="answerQuestion(4,3)">촉촉한 표면</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 폐포는 두꺼운 근육이 아니라 얇은 벽이 있다. 두꺼운 벽은 확산을 방해함.</div>
+</div>
+<div class="q-card" id="q-card-5">
+  <div class="q-num">문제 6 / 18</div>
+  <div class="q-text">유산소 호흡의 단어 방정식은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(5,0)">Glucose → Lactic acid + Energy</button>
+      <button class="q-opt" onclick="answerQuestion(5,1)">Glucose + Oxygen → CO₂ + Water + Energy</button>
+      <button class="q-opt" onclick="answerQuestion(5,2)">Oxygen + Water → Glucose + CO₂</button>
+      <button class="q-opt" onclick="answerQuestion(5,3)">CO₂ + Water → Glucose + Oxygen</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 유산소 호흡: Glucose + Oxygen → CO₂ + Water + Energy.</div>
+</div>
+<div class="q-card" id="q-card-6">
+  <div class="q-num">문제 7 / 18</div>
+  <div class="q-text">세포 호흡이 일어나는 소기관은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(6,0)">핵 (nucleus)</button>
+      <button class="q-opt" onclick="answerQuestion(6,1)">리보솜 (ribosome)</button>
+      <button class="q-opt" onclick="answerQuestion(6,2)">미토콘드리아 (mitochondria)</button>
+      <button class="q-opt" onclick="answerQuestion(6,3)">세포벽 (cell wall)</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 유산소 호흡은 미토콘드리아 안에서 일어난다.</div>
+</div>
+<div class="q-card" id="q-card-7">
+  <div class="q-num">문제 8 / 18</div>
+  <div class="q-text">포도당의 화학식은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(7,0)">H₂O</button>
+      <button class="q-opt" onclick="answerQuestion(7,1)">CO₂</button>
+      <button class="q-opt" onclick="answerQuestion(7,2)">C₆H₁₂O₆</button>
+      <button class="q-opt" onclick="answerQuestion(7,3)">O₂</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 포도당(glucose)의 분자식은 C₆H₁₂O₆.</div>
+</div>
+<div class="q-card" id="q-card-8">
+  <div class="q-num">문제 9 / 18</div>
+  <div class="q-text">100m 전력질주처럼 격렬한 운동을 할 때, 근육 세포에서 일어나는 호흡은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(8,0)">유산소 호흡 (aerobic)</button>
+      <button class="q-opt" onclick="answerQuestion(8,1)">무산소 호흡 (anaerobic)</button>
+      <button class="q-opt" onclick="answerQuestion(8,2)">호흡 안 함</button>
+      <button class="q-opt" onclick="answerQuestion(8,3)">광합성</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 산소 공급이 따라오지 못해 무산소 호흡으로 ATP를 빠르게 만든다.</div>
+</div>
+<div class="q-card" id="q-card-9">
+  <div class="q-num">문제 10 / 18</div>
+  <div class="q-text">무산소 호흡의 산물은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(9,0)">CO₂ + 물</button>
+      <button class="q-opt" onclick="answerQuestion(9,1)">젖산 (lactic acid)</button>
+      <button class="q-opt" onclick="answerQuestion(9,2)">포도당</button>
+      <button class="q-opt" onclick="answerQuestion(9,3)">산소</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 무산소 호흡: Glucose → Lactic acid + Energy.</div>
+</div>
+<div class="q-card" id="q-card-10">
+  <div class="q-num">문제 11 / 18</div>
+  <div class="q-text">Breathing(호흡 운동)과 Respiration(세포 호흡)의 차이는?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(10,0)">같은 것이다</button>
+      <button class="q-opt" onclick="answerQuestion(10,1)">Breathing은 화학 반응, Respiration은 물리 운동</button>
+      <button class="q-opt" onclick="answerQuestion(10,2)">Breathing은 폐의 물리 운동, Respiration은 세포의 화학 반응</button>
+      <button class="q-opt" onclick="answerQuestion(10,3)">둘 다 폐에서만 일어남</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> Breathing은 공기를 폐에 넣고 빼는 운동. Respiration은 세포 안에서 ATP를 만드는 화학 반응.</div>
+</div>
+<div class="q-card" id="q-card-11">
+  <div class="q-num">문제 12 / 18</div>
+  <div class="q-text">이산화탄소를 검출하는 데 쓰는 시약은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(11,0)">청색 리트머스</button>
+      <button class="q-opt" onclick="answerQuestion(11,1)">석회수 (limewater)</button>
+      <button class="q-opt" onclick="answerQuestion(11,2)">요오드 용액</button>
+      <button class="q-opt" onclick="answerQuestion(11,3)">벤딕트 용액</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> CO₂가 석회수를 통과하면 투명→우유빛 흐림으로 변한다.</div>
+</div>
+<div class="q-card" id="q-card-12">
+  <div class="q-num">문제 13 / 18</div>
+  <div class="q-text">들숨을 할 때 횡격막은 어떻게 되는가?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(12,0)">이완하여 돔 모양이 된다</button>
+      <button class="q-opt" onclick="answerQuestion(12,1)">수축하여 평평해진다</button>
+      <button class="q-opt" onclick="answerQuestion(12,2)">사라진다</button>
+      <button class="q-opt" onclick="answerQuestion(12,3)">위로 올라간다</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 들숨: 횡격막 수축→평평해짐→흉강 부피↑→압력↓→공기 유입.</div>
+</div>
+<div class="q-card" id="q-card-13">
+  <div class="q-num">문제 14 / 18</div>
+  <div class="q-text">적혈구의 특징이 아닌 것은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(13,0)">양쪽이 오목한 biconcave 모양</button>
+      <button class="q-opt" onclick="answerQuestion(13,1)">핵이 없다</button>
+      <button class="q-opt" onclick="answerQuestion(13,2)">헤모글로빈을 가진다</button>
+      <button class="q-opt" onclick="answerQuestion(13,3)">병원체를 잡아먹는다</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 병원체를 잡아먹는 것은 백혈구(phagocyte)의 역할. 적혈구는 산소 운반.</div>
+</div>
+<div class="q-card" id="q-card-14">
+  <div class="q-num">문제 15 / 18</div>
+  <div class="q-text">혈액의 4가지 성분이 아닌 것은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(14,0)">혈장 (plasma)</button>
+      <button class="q-opt" onclick="answerQuestion(14,1)">적혈구 (red blood cells)</button>
+      <button class="q-opt" onclick="answerQuestion(14,2)">백혈구 (white blood cells)</button>
+      <button class="q-opt" onclick="answerQuestion(14,3)">심장 근육 (cardiac muscle)</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 혈액 성분: plasma, RBC, WBC, platelets. 심장 근육은 혈액이 아닌 심장의 조직.</div>
+</div>
+<div class="q-card" id="q-card-15">
+  <div class="q-num">문제 16 / 18</div>
+  <div class="q-text">병원체를 둘러싸고 삼켜 분해하는 백혈구는?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(15,0)">Phagocyte (식세포)</button>
+      <button class="q-opt" onclick="answerQuestion(15,1)">Lymphocyte (림프구)</button>
+      <button class="q-opt" onclick="answerQuestion(15,2)">적혈구</button>
+      <button class="q-opt" onclick="answerQuestion(15,3)">혈소판</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> Phagocyte가 phagocytosis로 병원체를 engulf+destroy.</div>
+</div>
+<div class="q-card" id="q-card-16">
+  <div class="q-num">문제 17 / 18</div>
+  <div class="q-text">들숨과 비교했을 때, 날숨에서 더 많아지는 기체는?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(16,0)">산소</button>
+      <button class="q-opt" onclick="answerQuestion(16,1)">질소</button>
+      <button class="q-opt" onclick="answerQuestion(16,2)">이산화탄소</button>
+      <button class="q-opt" onclick="answerQuestion(16,3)">헬륨</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 세포 호흡으로 CO₂가 만들어지므로 날숨에 더 많아진다 (0.04% → 4%).</div>
+</div>
+<div class="q-card" id="q-card-17">
+  <div class="q-num">문제 18 / 18</div>
+  <div class="q-text">헤모글로빈의 기능은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(17,0)">산소와 결합해 운반</button>
+      <button class="q-opt" onclick="answerQuestion(17,1)">병원체와 싸움</button>
+      <button class="q-opt" onclick="answerQuestion(17,2)">딱지를 만듦</button>
+      <button class="q-opt" onclick="answerQuestion(17,3)">혈액을 운반</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 헤모글로빈은 산소와 결합하여 옥시헤모글로빈을 형성, 세포까지 산소를 운반.</div>
+</div></div>
+    <div class="quiz-result" id="quiz-result">
+      <h2>🎉 완료!</h2>
+      <div class="score" id="final-score">0 / 18</div>
+      <p style="color:var(--muted);margin-bottom:16px" id="final-msg">잘했어요!</p>
+      <button onclick="resetQuiz()">다시 풀기</button>
+    </div>
+  </div>
+</div>
+
+<footer>8B 호흡 Respiration · science-vocab</footer>
 
 <script>
-  const PAGE_DATA = [{"slug": "1.1_Human_respiratory_system", "title": "1.1 Human respiratory system", "pages": ["Human respiratory system Lesson objectives: ●To describe the function of the major organs of the respiratory system such as trachea, lungs and alveoli. ●To list the organs in order that air passes through, as it moves into and out of the lungs. Thinking back to Year 7 … What are the levels of organisation in an organism?", "", "Levels of organisation", "Respiratory system The respiratory system contains: ●Two lungs ●Tubes that lead from the entrance (mouth and nose) to the lungs ●Different structures in the chest that allow air to move in and out of the lungs", "In groups of 4s, you are tasked to: 1. 2. 3. Each student in each group will have 30 seconds to go outside of class to memorize what they can remember on the A3 sheet paper. 4. Once 30 seconds is up, you have to come back in to your group and write it down on your A3 sheet paper as much as you can remember 5. Then, the next group member have 30 seconds to go out and look at the picture and come back in. Sit In Circles Have a pen in your hand", "Respiratory system Intercostal muscles", "Concept check! Which structure is not part of the human respiratory system? a) diaphragm b) heart c) lungs d) trachea", "All: Add labels to the diagram Most: Describe the function of each Stretch: Your right lung is bigger than your left lung, can you think why? Write your answer in your book (ask if you want a hint) Textbook page 9 + 10", "Respiratory system Part of the gas exchange system Function Trachea This is also called the windpipe. This tube runs from the mouth, down the throat towards the lungs. It is lined with rings of cartilage which keep it open at all times. Bronchus The trachea splits into a left and right bronchus (plural: bronchi), each leads to a lung. Bronchiole Each bronchus splits again and again into thousands of smaller tubes called bronchioles which take the air deeper into the lungs. Alveoli At the ends of bronchioles are tiny air sacs called alveoli. Here oxygen moves into the blood and carbon dioxide moves out. Intercostal muscles These muscles run between the ribs and form the chest wall. They contract and relax with the diaphragm when a person breathes. Diaphragm The diaphragm is a dome-shaped, ﬂat sheet of muscle under the lungs. It contracts and relaxes with the intercostal muscles during breathing.", "Concept check! 1. The lungs are an example of a tissue. 2. The trachea allows air to move from the nose and mouth into the lungs. 3. We have one lung. 4. The diaphragm is a muscle. 5. The lungs are big sacs of air. 6. The bronchi are smaller than the bronchioles.", "Concept check! 1. The lungs are an example of a tissue. 2. The trachea allows air to move from the nose and mouth into the lungs. 3. We have one lung. 4. The diaphragm is a muscle. 5. The lungs are big sacs of air. 6. The bronchi are smaller than the bronchioles.", "Your lungs are located in your chest, inside your ribs. We have two lungs, but they are not the same size, like the way your eyes or ears are equal in size. Your left lung is smaller than your right lung. This allows room for your heart, which is on the left side of the body.", "Microscopic tissues in the respiratory system Goblet cells • Produce mucus (mucin) • Mucus traps dust, dirt & pathogens Ciliated cells • Cilia beat rhythmically to move mucus up towards the mouth • Mucus is then swallowed or coughed out", "Describe the journey of an oxygen molecule from the air into the lungs. To ‘describe’, your answer should: •Use bullet points. •Include each step of the process in a logical order. •Use keywords. Sentence starter: • The oxygen molecule enters the mouth or nose. • It then travels down the __________ Stretch: “The lungs are like big empty plastic bags inside our chest” Is this statement correct or incorrect, explain your answer.", "• The oxygen molecule enters the mouth or nose. • Then it travels down the trachea. •The trachea branches into two tubes called bronchi, allowing oxygen to pass into the left and right lungs. •The bronchi branch into bronchioles, which allows oxygen to reach the millions of tiny air sacs called alveoli. Describe the journey of an oxygen molecule from the air into the lungs. We will learn this topic how oxygen can then move from the alveoli into our bloodstream."]}, {"slug": "B1.3_Breathing", "title": "B1.3 Breathing", "pages": ["Breathing Lesson objectives: ●To describe how air moves into and out of the lungs ●To create a scientiﬁc model to show how air moves in and out of the lungs Breathe in… breathe out… What are the scientiﬁc words for what you have just done?", "Answer the following questions in your book: 1. What is the function of the respiratory system? 2. What is the name of the small air sacs inside our lungs? 3. Is there any carbon dioxide in the air that we breathe in? 4. Organise these keywords in the correct order to show the passage of air through our respiratory system trachea, bronchioles, mouth, nose, alveoli, bronchi To move air in and out of our lungs Alveoli Yes (0.03%) mouth/nose > trachea > bronchi > bronchioles > alveoli", "The lungs cannot make air move in or out. Only muscle can contract/relax to cause movement. Can you name the muscles related to the respiratory system? The respiratory system", "The lungs are surrounded by the ribcage. The ribs have intercostal muscles between them. These contract and relax to move the rib cage Breathing Below the lungs sits a layer of muscle called the diaphragm. The diaphragm can contract and relax to change the size of the chest cavity (where the lungs are).", "How much air can you breathe out? Demonstration Spirometers are commonly used to measure \"vital capacity,\" the maximum volume of air that you can exhale in one breath. Everybody’s vital lung capacity is different depending on factors such as their age and ﬁtness levels. We can also use some very simple apparatus to ﬁnd out - a plastic bottle, measuring cylinder, bendy tubing and water!", "Intercostal muscles contracted Diaphragm contracted Intercostal muscles relaxed Diaphragm relaxed", "", "Using a model to represent breathing movements 1. What are the benefits of using a scientific model? 使用科学模型有什么好处？ 과학적 모델을 사용하면 어떤 이점이 있나요? 2. Are there any limitations to using a scientific model? 使用科学模型有什么限制吗? 과학적 모델을 사용하는 데에는 제한이 있습니까?", "Balloon Lung Model", "Using a model to represent breathing movements Work in your groups to create a balloon lung model. Draw and label the model in your books. Describe what happens when you move the diaphragm? What are the similarities and differences between the bell jar model and our respiratory system?", "1. Which part of the balloon lung model represents the diaphragm in our body? What does the diaphragm do when we breathe? 2. Explain the steps you took to make the balloon inflate and deflate. How is this action similar to real breathing? 3. Why did we use 2 balloons for our model? How does this reflect the structure of our actual lungs? 4. Is the balloon lung model a perfect representation of our actual lungs? What are some differences between the model and real lungs that you’ve learned about through this activity? Discussion Questions (answer in your book in full sentences)", "Create a table to show the advantages and limitations of the balloon lung model? (Can you think of others to add?) Advantages Limitations ● Good representation of how air is moved into and out of the lungs ● Helps to visualise the mechanism ● The balloons simplify the structure of the lungs as there’s no alveoli or bronchioles ● Not an accurate size ● The rib cage does not move Balloon Lung Model", "Describe what happens when we breathe in? Describe what happens when we breathe out?", "Describe how air moves into the lungs. To ‘describe’, your answer should: •Use bullet points. •Include each step of the process in a logical order. •Use keywords. Sentence starters: ● The intercostal muscles … ● The diaphragm… ● This causes the volume of the chest cavity to… ● This means that air moves… Key words Diaphragm, intercostal muscles, contract, increase, decrease", "Describe how air moves into the lungs. To ‘describe’, your answer should: •Use bullet points. •Include each step of the process in a logical order. •Use keywords. Model Answer: •The intercostal muscles of the ribcage contract and the ribcage moves up and out. •The diaphragm contracts and moves downwards to become flat •This causes the volume of the chest cavity to increase, so the pressure inside the chest cavity decreases. •This means that air moves down the trachea into the lungs to fill the extra space Key words Diaphragm, intercostal muscles, contract, increase, decrease"]}, {"slug": "1.2_Gas_exchange", "title": "1.2 Gas exchange", "pages": ["Gas exchange Lesson objectives: ●To state the gases that make up the air. ●To describe the structure of alveoli. ●To explain how the adaptations of the parts of the gas exchange system help them perform their function. Which fact is true? a) There are about 600 million alveoli in your lungs and if you stretched them out, they would cover an entire tennis court. b) There are about 1 million alveoli in your lungs and if you stretched them out, they would cover an entire football pitch. c) There are about 10 million alveoli in your lungs and if you stretched them out, they would cover an entire surface of the Moon.", "The table shows the composition of inhaled air and exhaled air. Gas Inhaled air Exhaled air oxygen 21% 16% carbon dioxide 0.04% 4.0% water vapour 0.96% 3.0% nitrogen 78.1% 78.1% noble gases 0.94% 0.94% What similarities and differences can you see? The changing composition of air", "What is gas exchange? It is the process of gases exchanging at the alveoli. Two gases exchange places. Oxygen goes from alveoli to blood circulation Carbon dioxide goes from blood circulation to alveoli Aim for excellence! Use the word ‘diffuses’ rather than ‘goes’ Diffusion is the net movement of particles from a region of high concentration to a region of low concentration.", "Diffusion is the movement of particles from an area of high concentration to an area of low concentration Diffusion", "Our body needs oxygen from the air so that cells can carry out the process of respiration. Oxygen diffuses from the air into our blood. Carbon dioxide diffuses out of the blood into the air. Diffusion of gases Name the part of the respiratory system that gas exchange occurs", "Structure of the alveolus", "Describe to your partner what is happening in this animation Keywords: oxygen, carbon dioxide, alveoli, blood, capillary", "Copy the sentences into your books and fill in the blanks: 1. Oxygen diffuses from the air in the _________ into the __________. 2. Carbon ___________ diffuses from the blood into the __________ in the alveoli. 3. We breathe out air. The air we breathe out contains _________ oxygen but __________ carbon dioxide. Key Points", "Copy the sentences into your books and fill in the blanks: 1. Oxygen diffuses from the air in the _________ into the __________. 2. Carbon ___________ diffuses from the blood into the __________ in the alveoli. 3. We breathe out air. The air we breathe out contains _________ oxygen but __________ carbon dioxide. Key Points alveoli blood dioxide air less more", "What are the adaptations of the alveoli?", "Oxygen needs to diffuses quickly from the air in the alveoli into the blood. Alveoli Adaptations Alveoli have: 1. Thin walls, made of just one layer of cells 2. A large surface area: There are millions of alveoli and they are spherical 3. Many capillaries surrounding them, so they have a good blood supply 4. a moist surface, which helps gases to diffuse across", "Red blood cells When oxygen gets into the blood, it dissolves. The oxygen goes into the red blood cells where it combines with haemoglobin. We will learn more about this next week!", "Gas exchange continued Lesson objectives: ●To create a model to demonstrate how surface area affects diffusion.", "Learner’s book: pg 15", "", "Complete Workbook page 5-9 Note: ● Make sure you arrange the data accordingly in order (from lowest to highest). ● Draw graph using pencil only! ● Bar chart is the bars not sticking to each other! ● first add up all the numbers in your data set. Then, divide the total sum by the count of the numbers you added."]}, {"slug": "1.4_Aerobic_respiration", "title": "1.4 Aerobic respiration", "pages": ["Aerobic respiration Lesson objectives: ●To state the word equation for aerobic respiration. ●To explain why respiration is important in living organisms. Year 7 recall! Draw and label an animal cell.", "Respiration Respiration is a chemical reaction in which energy is released from food substances. Glucose is the substance that animals use for energy. It takes place in the mitochondria. Remember: energy cannot be made or destroyed, only transferred.", "Aerobic respiration from the digestive system from the respiratory system waste product exhaled waste product exhaled", "Aerobic respiration Use the equation for aerobic respiration to explain why the air you breathe out contains more carbon dioxide than the air that you breathe in.", "What is breathing? The breathing system is used by the body to take in the oxygen needed for respiration. It is also use to remove the waste products of respiration (carbon dioxide and water). Copy and complete the sentences below: Breathing involves the lungs and allows our bodies to draw in air from the outside environment. We breathe in and out through our mouth and our ______. Respiration is a chemical _______that takes place in all of our _______. It is a reaction between glucose and __________ to make water, carbon dioxide and release _______.", "What is breathing? The breathing system is used by the body to take in the oxygen needed for respiration. It is also use to remove the waste product of respiration (carbon dioxide and water). Copy and complete the sentences below: Breathing involves the lungs and allows our bodies to draw in air from the outside environment. We breathe in and out through our mouth and our nose. Respiration is a chemical reaction that takes place in all of our cells. It is a reaction between glucose and oxygen to make water, carbon dioxide and release energy.", "Investigating respiration Respiration by living organisms can be investigated by carrying out experiments to show the production of carbon dioxide and heat. Limewater can be used to detect carbon dioxide. If carbon dioxide is bubbled through limewater then it turns from clear to cloudy/milky in colour.", "", "", "Where is energy needed? Respiration takes place in all cells of the body however some tissues/cells/organs require more energy than others. Which cells have the most mitochondria in them?", "1. What is the process that allows oxygen to move into cells and carbon dioxide to leave? 2. What does aerobic mean? 3. What is the chemical formula for glucose? 4. What are the products of aerobic respiration? 5. True or false - Respiration occurs in all body cells", "1. What is the process that allows oxygen to move into cells and carbon dioxide to leave? Diffusion 2. What does aerobic mean? ‘With oxygen’ 3. What is the chemical formula for glucose? C6H12O6 4. What are the products of aerobic respiration? Carbon dioxide + Water + Energy 5. True or false - Respiration occurs in all body cells True"]}, {"slug": "1.4_Anaerobic_respiration_2", "title": "1.4 Anaerobic respiration (2)", "pages": ["Anaerobic respiration Lesson objectives: ●To state the word equation for anaerobic respiration. ●To describe differences between aerobic and anaerobic respiration. Respiration is often confused with breathing - But this is not the case. What is respiration? You have two minutes to answer this question in your books.", "Breathing vs Respiration", "Energy released If aerobic respiration uses oxygen to break down glucose for energy, but anaerobic does not require oxygen - when do you think we might use anaerobic respiration? ● When exercising intensely for short periods of time, the body cannot easily get the oxygen it needs. ● Paralympian Jonnie Peacock respires anaerobically during the 100m sprint. Anaerobic respiration", "How does it work?", "Effects of intense exercise", "", "Aerobic vs Anaerobic respiration Aerobic respiration Anaerobic respiration Oxygen Glucose breakdown End product(s) Energy released", "Aerobic vs Anaerobic respiration Aerobic respiration Anaerobic respiration Oxygen Needed Not needed Glucose breakdown Complete Incomplete End product(s) Carbon dioxide and water Lactic acid Energy released Large amounts Small amounts", "Aerobic vs Anaerobic respiration Keywords: oxygen, glucose, carbon dioxide, water, lactic acid, ATP, energy", "Workbook page 5-11"]}, {"slug": "1.5_Blood_1", "title": "1.5 Blood (1)", "pages": ["Blood Lesson objectives: ●To describe the components of blood and their functions. In Year 7 you learnt about specialised cells. What do you remember about red blood cells? What is their function? How is their structure adapted to the function?", "Red blood cells ●Red blood cells have dips on both sides to maximise their surface area to absorb oxygen as quickly as possible. This shape is called biconcave. ●They do not have a nucleus to maximise the oxygen they can carry. ●Produced in the bone marrow.", "Red blood cells ● Oxygen moves by diffusion into red blood cells in the lungs. ● They have a chemical inside them called haemoglobin, a red pigment which binds with the oxygen to carry oxygen to where it is needed for respiration. ● This reaction is reversed near the cells.", "Quiz time! A B C D", "Quiz time! A B C D C", "Quiz time! A B C D", "Quiz time! A B C D D", "Quiz time! A B C D", "Quiz time! A B C D C", "Quiz time! C D A B", "Quiz time! C D A B B", "Quiz time! C D A B", "Quiz time! C D A B B", "Your blood consists of 4 components, do you know what they are?", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Components of blood Component Function Plasma Transport blood cells and other dissolved substances around the body e.g. glucose, carbon dioxide Platelets Form scabs White blood cell Fight infection by pathogens and stop disease Red blood cell Carry oxygen from the lungs to every cell in the rest of the body", "Component Function Plasma Platelets White blood cell Red blood cell", "Component Function Plasma Platelets White blood cell Red blood cell", "White blood cells ● White blood cells form part of the immune system to keep us safe from infection and disease. ● There are two types of white blood cell: - Phagocytes which surround, engulf and destroy pathogens - Lymphocytes which produce antibodies that stick pathogens together. This makes it easier for phagocytes to destroy the pathogens. ● Produced in the bone marrow.", "Lymphocytes", "Phagocytes Phagocytes surround, engulf and destroy pathogens", "", "Phagocytes In small groups, write a voiceover for the gif to describe what happens during phagocytosis. Every member of the group should have it written in their books. Each group will have the opportunity to speak their voiceover. Keywords: Engulf 吞噬 / 삼키다 Destroy 摧毁/파괴하다 Phagocyte 吞噬细胞 /식세포 Pathogen (eg. bacteria) 病 原体(细菌)/병원체(박테리아) Challenge: Can you think of a real-life example where this might happen?", "Phagocytes", "Quiz time! A B C", "Quiz time! A B C C", "Quiz time! A B", "Quiz time! A B A", "Quiz time! A B", "Quiz time! A B A", "Quiz time! A B C D", "Quiz time! A B C D A"]}, {"slug": "Microscopy_blood_experiment_Workbook", "title": "Microscopy blood experiment + Workbook", "pages": ["Starter - Learner’s book page 67", "Starter - Learner’s book page 67 Saturated solution From 20OC to 80OC 10OC interval Volume of water Temperature of water", "How to Use a Microscope 1) Plug in the microscope and turn on the light. 2) Place the Red blood cell specimen (the object to observe) on the stage. 3) Turn the magnification to the smallest. 4) Make sure that the specimen is in the centre; fasten with the clips. 5) Look down the microscope. 6) Use the fine-focusing wheel to observe the specimen. 7) Draw/write down any observations in your notebook. Please work in pairs", "❶ Use x4 lens ❷ Place slide on stage ❸ Turn until slide closest to lens ❹ Observe ❻ Turn slowly to focus image ❼ Turn slowly to sharpen image ❽ Draw what you see ❾ Repeat for x10 and x40 lenses ❺ Start lens close, move away to focus", "Review Workbook questions page 16-20 Draw graph using pencil Will discuss the questions after 25 minutes", "Mark your work using a green pen", "Mark your work using a green pen", "Mark your work using a green pen", "Mark your work using a green pen"]}];
+const QUIZ_DATA = [{"q": "공기가 폐로 들어가는 올바른 순서는?", "options": ["입/코 → 폐포 → 기관 → 기관지 → 세기관지", "입/코 → 기관 → 기관지 → 세기관지 → 폐포", "입/코 → 기관지 → 기관 → 폐포 → 세기관지", "입/코 → 세기관지 → 기관지 → 기관 → 폐포"], "answer": 1, "explanation": "공기는 위에서 아래로 점점 더 작은 관을 통과: trachea → bronchi → bronchioles → alveoli."}, {"q": "다음 중 호흡계의 일부가 아닌 것은?", "options": ["횡격막 (diaphragm)", "심장 (heart)", "폐 (lungs)", "기관 (trachea)"], "answer": 1, "explanation": "심장은 순환계(circulatory system)의 기관이다. 호흡계가 아님."}, {"q": "왼쪽 폐가 오른쪽 폐보다 작은 이유는?", "options": ["근육이 약해서", "심장이 들어갈 공간이 필요해서", "왼쪽 폐는 사용하지 않아서", "원래 작게 태어남"], "answer": 1, "explanation": "심장은 몸 왼쪽에 위치하므로 좌폐가 자리를 양보한다."}, {"q": "확산(diffusion)의 정의로 옳은 것은?", "options": ["입자가 낮은 농도에서 높은 농도로 이동", "입자가 높은 농도에서 낮은 농도로 이동", "온도가 높아질 때 입자가 멈춤", "입자가 무작위로 멈춰 있는 상태"], "answer": 1, "explanation": "확산은 농도 차이로 일어남: high → low."}, {"q": "폐포가 기체 교환을 잘하는 적응이 아닌 것은?", "options": ["얇은 벽 (one cell thick)", "넓은 표면적", "두꺼운 근육층", "촉촉한 표면"], "answer": 2, "explanation": "폐포는 두꺼운 근육이 아니라 얇은 벽이 있다. 두꺼운 벽은 확산을 방해함."}, {"q": "유산소 호흡의 단어 방정식은?", "options": ["Glucose → Lactic acid + Energy", "Glucose + Oxygen → CO₂ + Water + Energy", "Oxygen + Water → Glucose + CO₂", "CO₂ + Water → Glucose + Oxygen"], "answer": 1, "explanation": "유산소 호흡: Glucose + Oxygen → CO₂ + Water + Energy."}, {"q": "세포 호흡이 일어나는 소기관은?", "options": ["핵 (nucleus)", "리보솜 (ribosome)", "미토콘드리아 (mitochondria)", "세포벽 (cell wall)"], "answer": 2, "explanation": "유산소 호흡은 미토콘드리아 안에서 일어난다."}, {"q": "포도당의 화학식은?", "options": ["H₂O", "CO₂", "C₆H₁₂O₆", "O₂"], "answer": 2, "explanation": "포도당(glucose)의 분자식은 C₆H₁₂O₆."}, {"q": "100m 전력질주처럼 격렬한 운동을 할 때, 근육 세포에서 일어나는 호흡은?", "options": ["유산소 호흡 (aerobic)", "무산소 호흡 (anaerobic)", "호흡 안 함", "광합성"], "answer": 1, "explanation": "산소 공급이 따라오지 못해 무산소 호흡으로 ATP를 빠르게 만든다."}, {"q": "무산소 호흡의 산물은?", "options": ["CO₂ + 물", "젖산 (lactic acid)", "포도당", "산소"], "answer": 1, "explanation": "무산소 호흡: Glucose → Lactic acid + Energy."}, {"q": "Breathing(호흡 운동)과 Respiration(세포 호흡)의 차이는?", "options": ["같은 것이다", "Breathing은 화학 반응, Respiration은 물리 운동", "Breathing은 폐의 물리 운동, Respiration은 세포의 화학 반응", "둘 다 폐에서만 일어남"], "answer": 2, "explanation": "Breathing은 공기를 폐에 넣고 빼는 운동. Respiration은 세포 안에서 ATP를 만드는 화학 반응."}, {"q": "이산화탄소를 검출하는 데 쓰는 시약은?", "options": ["청색 리트머스", "석회수 (limewater)", "요오드 용액", "벤딕트 용액"], "answer": 1, "explanation": "CO₂가 석회수를 통과하면 투명→우유빛 흐림으로 변한다."}, {"q": "들숨을 할 때 횡격막은 어떻게 되는가?", "options": ["이완하여 돔 모양이 된다", "수축하여 평평해진다", "사라진다", "위로 올라간다"], "answer": 1, "explanation": "들숨: 횡격막 수축→평평해짐→흉강 부피↑→압력↓→공기 유입."}, {"q": "적혈구의 특징이 아닌 것은?", "options": ["양쪽이 오목한 biconcave 모양", "핵이 없다", "헤모글로빈을 가진다", "병원체를 잡아먹는다"], "answer": 3, "explanation": "병원체를 잡아먹는 것은 백혈구(phagocyte)의 역할. 적혈구는 산소 운반."}, {"q": "혈액의 4가지 성분이 아닌 것은?", "options": ["혈장 (plasma)", "적혈구 (red blood cells)", "백혈구 (white blood cells)", "심장 근육 (cardiac muscle)"], "answer": 3, "explanation": "혈액 성분: plasma, RBC, WBC, platelets. 심장 근육은 혈액이 아닌 심장의 조직."}, {"q": "병원체를 둘러싸고 삼켜 분해하는 백혈구는?", "options": ["Phagocyte (식세포)", "Lymphocyte (림프구)", "적혈구", "혈소판"], "answer": 0, "explanation": "Phagocyte가 phagocytosis로 병원체를 engulf+destroy."}, {"q": "들숨과 비교했을 때, 날숨에서 더 많아지는 기체는?", "options": ["산소", "질소", "이산화탄소", "헬륨"], "answer": 2, "explanation": "세포 호흡으로 CO₂가 만들어지므로 날숨에 더 많아진다 (0.04% → 4%)."}, {"q": "헤모글로빈의 기능은?", "options": ["산소와 결합해 운반", "병원체와 싸움", "딱지를 만듦", "혈액을 운반"], "answer": 0, "explanation": "헤모글로빈은 산소와 결합하여 옥시헤모글로빈을 형성, 세포까지 산소를 운반."}];
+let qAnswered = new Array(QUIZ_DATA.length).fill(null);
+
+// 탭 전환
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+});
+
+// 발음
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.9;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+// 단어장 필터
+function filterCards(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    c.classList.toggle('hidden', cat !== 'all' && c.dataset.cat !== cat);
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', cat !== 'all' && cat !== target);
+  });
+}
+
+// 퀴즈 채점
+function answerQuestion(qi, oi) {
+  if (qAnswered[qi] !== null) return;
+  const correct = QUIZ_DATA[qi].answer;
+  qAnswered[qi] = (oi === correct);
+  const card = document.getElementById('q-card-' + qi);
+  card.querySelectorAll('.q-opt').forEach((b, i) => {
+    b.disabled = true;
+    if (i === correct) b.classList.add('correct');
+    else if (i === oi) b.classList.add('wrong');
+  });
+  card.querySelector('.q-explanation').classList.add('show');
+  updateScore();
+  // 다음 문제로 이동
+  setTimeout(() => {
+    const next = document.getElementById('q-card-' + (qi + 1));
+    if (next) next.scrollIntoView({behavior: 'smooth', block: 'start'});
+    else showResult();
+  }, 1200);
+}
+
+function updateScore() {
+  const correct = qAnswered.filter(x => x === true).length;
+  const answered = qAnswered.filter(x => x !== null).length;
+  document.getElementById('q-score').textContent = correct;
+  document.getElementById('q-current').textContent = Math.min(answered + 1, QUIZ_DATA.length);
+  document.getElementById('q-bar').style.width = (answered / QUIZ_DATA.length * 100) + '%';
+}
+
+function showResult() {
+  const correct = qAnswered.filter(x => x === true).length;
+  const total = QUIZ_DATA.length;
+  document.getElementById('final-score').textContent = correct + ' / ' + total;
+  const pct = correct / total;
+  let msg;
+  if (pct >= 0.9) msg = '🌟 완벽해요!';
+  else if (pct >= 0.7) msg = '👍 잘했어요!';
+  else if (pct >= 0.5) msg = '📚 조금 더 복습해봐요';
+  else msg = '🔁 핵심노트부터 다시 보기';
+  document.getElementById('final-msg').textContent = msg;
+  document.getElementById('quiz-result').classList.add('show');
+  document.getElementById('quiz-result').scrollIntoView({behavior: 'smooth'});
+}
+
+function resetQuiz() {
+  qAnswered = new Array(QUIZ_DATA.length).fill(null);
+  document.querySelectorAll('.q-opt').forEach(b => {
+    b.disabled = false;
+    b.classList.remove('correct', 'wrong');
+  });
+  document.querySelectorAll('.q-explanation').forEach(e => e.classList.remove('show'));
+  document.getElementById('quiz-result').classList.remove('show');
+  updateScore();
+  document.querySelector('#tab-quiz').scrollIntoView({behavior: 'smooth'});
+}
 </script>
-<script src="app.js"></script>
 </body>
 </html>

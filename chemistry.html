@@ -2,136 +2,973 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#2a9d8f">
-<title>2단원 — 용해와 용액 (Chemistry) · 과학 학습</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1b2a">
+<title>8C 용해와 용액 Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d1b2a;
+  --card: #162032;
+  --card2: #1c2d42;
+  --accent: #38bdf8;
+  --green: #4ade80;
+  --yellow: #fbbf24;
+  --pink: #f472b6;
+  --orange: #fb923c;
+  --purple: #c084fc;
+  --text: #e2f0ff;
+  --muted: #6b9ab8;
+  --border: rgba(56,189,248,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito','Noto Sans KR',sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+}
+
+/* HEADER */
+header {
+  background: rgba(22,32,50,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 12px;
+}
+.header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
+.header-icon { font-size: 28px; line-height:1; }
+.header-text { flex: 1; min-width:0; }
+.header-title { font-size: 17px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* HERO */
+.hero { text-align: center; padding: 28px 20px 18px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+.hero h1 span { color: var(--accent); }
+.hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.stat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 5px 12px; font-size: 11.5px; font-weight: 700; color: var(--accent); }
+
+/* EQUATION BOX */
+.eq-box { max-width: 720px; margin: 0 auto 24px; padding: 0 16px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width:480px){ .eq-box { grid-template-columns: 1fr; } }
+.eq-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.eq-label.aerobic { color: var(--green); }
+.eq-label.anaerobic { color: var(--orange); }
+.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+
+/* TABS */
+.tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 6px; border-radius: 10px;
+  font-size: 13px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; }
+.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* SECTION HEADERS (vocab filter) */
+.filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
+.filter-wrap::-webkit-scrollbar { display: none; }
+.filter-tabs { display: flex; gap: 8px; white-space: nowrap; padding-bottom: 2px; }
+.filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
+  border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
+  font-family: inherit; transition: all 0.2s; white-space: nowrap; }
+.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+
+.section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
+.section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+.section-line { flex: 1; height: 1px; background: var(--border); }
+
+/* CARDS WRAP */
+.cards-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+/* VOCAB CARD */
+.vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+  display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
+.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
+.vcard-left { min-width: 0; }
+.vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
+.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
+.cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
+.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+
+.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
+.vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
+
+.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
+  color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
+.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+
+.btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
+  color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
+  cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; transition: all 0.15s; white-space: nowrap; font-family: inherit; }
+.btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
+.btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* NOTES (탭 1: 핵심노트) */
+.chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
+.chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.chapter-head .ch-icon { font-size: 22px; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
+.chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
+.note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
+.note-body { font-size: 13px; color: var(--text); line-height: 1.65; }
+.note-body b { color: #fff; }
+.note-body table { border-collapse: collapse; margin: 8px 0; }
+.note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
+.note-img { display: block; max-width: 100%; margin: 10px 0 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff; }
+
+/* QUIZ (탭 3) */
+.quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.quiz-progress { font-size: 12px; color: var(--muted); font-weight: 700; margin-bottom: 8px; text-align: center; }
+.quiz-progress b { color: var(--accent); }
+.quiz-bar { height: 6px; background: var(--card); border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
+.quiz-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--green)); transition: width 0.3s; }
+.q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
+.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
+.q-options { display: flex; flex-direction: column; gap: 8px; }
+.q-opt { background: var(--card2); border: 1.5px solid var(--border); color: var(--text); padding: 12px 14px;
+  border-radius: 10px; cursor: pointer; font-size: 13.5px; font-weight: 600; font-family: inherit; text-align: left; transition: all 0.15s; line-height: 1.4; }
+.q-opt:hover:not(:disabled) { border-color: var(--accent); background: rgba(56,189,248,0.08); }
+.q-opt.correct { background: rgba(74,222,128,0.18); border-color: var(--green); color: #fff; }
+.q-opt.wrong { background: rgba(254,44,44,0.18); border-color: #ff6b6b; color: #fff; }
+.q-opt:disabled { cursor: default; }
+.q-explanation { margin-top: 12px; padding: 10px 12px; background: rgba(56,189,248,0.08);
+  border-left: 3px solid var(--accent); border-radius: 6px; font-size: 12.5px; color: var(--text); line-height: 1.5; display: none; }
+.q-explanation.show { display: block; }
+.q-explanation b { color: var(--accent); }
+
+.quiz-result { text-align: center; padding: 28px 16px; background: var(--card); border-radius: 14px; border: 1px solid var(--border); display: none; }
+.quiz-result.show { display: block; }
+.quiz-result h2 { font-size: 22px; color: #fff; margin-bottom: 8px; }
+.quiz-result .score { font-size: 36px; font-weight: 900; color: var(--accent); margin: 12px 0; }
+.quiz-result button { background: var(--accent); color: #0d1b2a; border: none; padding: 10px 24px; border-radius: 8px; font-weight: 800; cursor: pointer; font-family: inherit; font-size: 14px; }
+
+/* FOOTER */
+footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
+.vcard.hidden { display: none; }
+.section-header.hidden { display: none; }
+</style>
 </head>
-<body class="unit" data-accent="#2a9d8f">
-<header class="topbar">
-  <a href="index.html" class="back" aria-label="홈으로">←</a>
-  <div class="topbar-title">
-    <span class="icon">🧪</span>
-    <h1>2단원 — 용해와 용액 (Chemistry)</h1>
+<body>
+
+<header>
+  <a class="header-back" href="index.html" aria-label="홈">←</a>
+  <div class="header-icon">🧪</div>
+  <div class="header-text">
+    <div class="header-title">8C 용해와 용액 Solutions</div>
+    <div class="header-sub">Year 8 · Cambridge Lower Secondary</div>
   </div>
 </header>
 
-<nav class="chapter-nav">
-  <details>
-    <summary>📚 단원 목차 (4개)</summary>
-    <ol>
-      <li><a href="#ch-2.1_Dissolving">2.1 Dissolving</a> (22p)</li>
-      <li><a href="#ch-SC_2.2_Concentration_of_solutions">SC 2.2 Concentration of solutions</a> (11p)</li>
-      <li><a href="#ch-2.3_Solubility_in_Water">2.3 Solubility in Water</a> (13p)</li>
-      <li><a href="#ch-2.4_Solubility_and_temperature">2.4 Solubility and temperature</a> (18p)</li>
-    </ol>
-  </details>
-</nav>
-
-<div class="search-wrap">
-  <input id="search" type="search" placeholder="🔍 단원 안에서 검색 (예: oxygen, 호흡, alveoli)" aria-label="검색">
-  <button id="clear-search" aria-label="지우기" hidden>✕</button>
+<div class="hero">
+  <h1>🧪 <span>8C 용해와 용액 Solutions</span></h1>
+  <p>용해 원리 → 농도 → 용해도 → 온도 영향</p>
+  <div class="stats-row">
+    <span class="stat-chip">🧪 용해 4단원</span>
+    <span class="stat-chip">💧 입자 모델</span>
+    <span class="stat-chip">📊 농도·용해도</span>
+    <span class="stat-chip">🌡️ 온도 영향</span>
+  </div>
 </div>
-<div id="search-results" class="search-results" hidden></div>
 
-<main class="chapters">
-<section class="chapter" id="ch-2.1_Dissolving">
-  <h2>1. 2.1 Dissolving</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/chemistry/2.1_Dissolving_p01.png" alt="2.1 Dissolving 1쪽" loading="lazy"><figcaption>1 / 22</figcaption></figure>
-    <figure data-page="2"><img src="assets/chemistry/2.1_Dissolving_p02.png" alt="2.1 Dissolving 2쪽" loading="lazy"><figcaption>2 / 22</figcaption></figure>
-    <figure data-page="3"><img src="assets/chemistry/2.1_Dissolving_p03.png" alt="2.1 Dissolving 3쪽" loading="lazy"><figcaption>3 / 22</figcaption></figure>
-    <figure data-page="4"><img src="assets/chemistry/2.1_Dissolving_p04.png" alt="2.1 Dissolving 4쪽" loading="lazy"><figcaption>4 / 22</figcaption></figure>
-    <figure data-page="5"><img src="assets/chemistry/2.1_Dissolving_p05.png" alt="2.1 Dissolving 5쪽" loading="lazy"><figcaption>5 / 22</figcaption></figure>
-    <figure data-page="6"><img src="assets/chemistry/2.1_Dissolving_p06.png" alt="2.1 Dissolving 6쪽" loading="lazy"><figcaption>6 / 22</figcaption></figure>
-    <figure data-page="7"><img src="assets/chemistry/2.1_Dissolving_p07.png" alt="2.1 Dissolving 7쪽" loading="lazy"><figcaption>7 / 22</figcaption></figure>
-    <figure data-page="8"><img src="assets/chemistry/2.1_Dissolving_p08.png" alt="2.1 Dissolving 8쪽" loading="lazy"><figcaption>8 / 22</figcaption></figure>
-    <figure data-page="9"><img src="assets/chemistry/2.1_Dissolving_p09.png" alt="2.1 Dissolving 9쪽" loading="lazy"><figcaption>9 / 22</figcaption></figure>
-    <figure data-page="10"><img src="assets/chemistry/2.1_Dissolving_p10.png" alt="2.1 Dissolving 10쪽" loading="lazy"><figcaption>10 / 22</figcaption></figure>
-    <figure data-page="11"><img src="assets/chemistry/2.1_Dissolving_p11.png" alt="2.1 Dissolving 11쪽" loading="lazy"><figcaption>11 / 22</figcaption></figure>
-    <figure data-page="12"><img src="assets/chemistry/2.1_Dissolving_p12.png" alt="2.1 Dissolving 12쪽" loading="lazy"><figcaption>12 / 22</figcaption></figure>
-    <figure data-page="13"><img src="assets/chemistry/2.1_Dissolving_p13.png" alt="2.1 Dissolving 13쪽" loading="lazy"><figcaption>13 / 22</figcaption></figure>
-    <figure data-page="14"><img src="assets/chemistry/2.1_Dissolving_p14.png" alt="2.1 Dissolving 14쪽" loading="lazy"><figcaption>14 / 22</figcaption></figure>
-    <figure data-page="15"><img src="assets/chemistry/2.1_Dissolving_p15.png" alt="2.1 Dissolving 15쪽" loading="lazy"><figcaption>15 / 22</figcaption></figure>
-    <figure data-page="16"><img src="assets/chemistry/2.1_Dissolving_p16.png" alt="2.1 Dissolving 16쪽" loading="lazy"><figcaption>16 / 22</figcaption></figure>
-    <figure data-page="17"><img src="assets/chemistry/2.1_Dissolving_p17.png" alt="2.1 Dissolving 17쪽" loading="lazy"><figcaption>17 / 22</figcaption></figure>
-    <figure data-page="18"><img src="assets/chemistry/2.1_Dissolving_p18.png" alt="2.1 Dissolving 18쪽" loading="lazy"><figcaption>18 / 22</figcaption></figure>
-    <figure data-page="19"><img src="assets/chemistry/2.1_Dissolving_p19.png" alt="2.1 Dissolving 19쪽" loading="lazy"><figcaption>19 / 22</figcaption></figure>
-    <figure data-page="20"><img src="assets/chemistry/2.1_Dissolving_p20.png" alt="2.1 Dissolving 20쪽" loading="lazy"><figcaption>20 / 22</figcaption></figure>
-    <figure data-page="21"><img src="assets/chemistry/2.1_Dissolving_p21.png" alt="2.1 Dissolving 21쪽" loading="lazy"><figcaption>21 / 22</figcaption></figure>
-    <figure data-page="22"><img src="assets/chemistry/2.1_Dissolving_p22.png" alt="2.1 Dissolving 22쪽" loading="lazy"><figcaption>22 / 22</figcaption></figure>
+<div class="eq-box">
+  <div class="eq-card"><div class="eq-label aerobic">✅ 용해 공식</div><div class="eq-formula">Solute(용질) + Solvent(용매)<br>= Solution(용액)</div></div>
+  <div class="eq-card"><div class="eq-label anaerobic">⚖️ 질량 보존</div><div class="eq-formula">Mass solute + Mass solvent<br>= Mass solution</div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="notes">📘 핵심노트</button>
+    <button class="tab-btn" data-tab="vocab">📚 단어장</button>
+    <button class="tab-btn" data-tab="quiz">📝 퀴즈</button>
   </div>
-</section>
+</div>
 
-<section class="chapter" id="ch-SC_2.2_Concentration_of_solutions">
-  <h2>2. SC 2.2 Concentration of solutions</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p01.png" alt="SC 2.2 Concentration of solutions 1쪽" loading="lazy"><figcaption>1 / 11</figcaption></figure>
-    <figure data-page="2"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p02.png" alt="SC 2.2 Concentration of solutions 2쪽" loading="lazy"><figcaption>2 / 11</figcaption></figure>
-    <figure data-page="3"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p03.png" alt="SC 2.2 Concentration of solutions 3쪽" loading="lazy"><figcaption>3 / 11</figcaption></figure>
-    <figure data-page="4"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p04.png" alt="SC 2.2 Concentration of solutions 4쪽" loading="lazy"><figcaption>4 / 11</figcaption></figure>
-    <figure data-page="5"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p05.png" alt="SC 2.2 Concentration of solutions 5쪽" loading="lazy"><figcaption>5 / 11</figcaption></figure>
-    <figure data-page="6"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p06.png" alt="SC 2.2 Concentration of solutions 6쪽" loading="lazy"><figcaption>6 / 11</figcaption></figure>
-    <figure data-page="7"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p07.png" alt="SC 2.2 Concentration of solutions 7쪽" loading="lazy"><figcaption>7 / 11</figcaption></figure>
-    <figure data-page="8"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p08.png" alt="SC 2.2 Concentration of solutions 8쪽" loading="lazy"><figcaption>8 / 11</figcaption></figure>
-    <figure data-page="9"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p09.png" alt="SC 2.2 Concentration of solutions 9쪽" loading="lazy"><figcaption>9 / 11</figcaption></figure>
-    <figure data-page="10"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p10.png" alt="SC 2.2 Concentration of solutions 10쪽" loading="lazy"><figcaption>10 / 11</figcaption></figure>
-    <figure data-page="11"><img src="assets/chemistry/SC_2.2_Concentration_of_solutions_p11.png" alt="SC 2.2 Concentration of solutions 11쪽" loading="lazy"><figcaption>11 / 11</figcaption></figure>
+<!-- 핵심노트 -->
+<div class="tab-pane active" id="tab-notes">
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">💧</span>
+    <div>
+      <h2>1. 용해와 입자 모델</h2>
+      <span class="ch-sub">2.1 Dissolving</span>
+    </div>
   </div>
-</section>
-
-<section class="chapter" id="ch-2.3_Solubility_in_Water">
-  <h2>3. 2.3 Solubility in Water</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/chemistry/2.3_Solubility_in_Water_p01.png" alt="2.3 Solubility in Water 1쪽" loading="lazy"><figcaption>1 / 13</figcaption></figure>
-    <figure data-page="2"><img src="assets/chemistry/2.3_Solubility_in_Water_p02.png" alt="2.3 Solubility in Water 2쪽" loading="lazy"><figcaption>2 / 13</figcaption></figure>
-    <figure data-page="3"><img src="assets/chemistry/2.3_Solubility_in_Water_p03.png" alt="2.3 Solubility in Water 3쪽" loading="lazy"><figcaption>3 / 13</figcaption></figure>
-    <figure data-page="4"><img src="assets/chemistry/2.3_Solubility_in_Water_p04.png" alt="2.3 Solubility in Water 4쪽" loading="lazy"><figcaption>4 / 13</figcaption></figure>
-    <figure data-page="5"><img src="assets/chemistry/2.3_Solubility_in_Water_p05.png" alt="2.3 Solubility in Water 5쪽" loading="lazy"><figcaption>5 / 13</figcaption></figure>
-    <figure data-page="6"><img src="assets/chemistry/2.3_Solubility_in_Water_p06.png" alt="2.3 Solubility in Water 6쪽" loading="lazy"><figcaption>6 / 13</figcaption></figure>
-    <figure data-page="7"><img src="assets/chemistry/2.3_Solubility_in_Water_p07.png" alt="2.3 Solubility in Water 7쪽" loading="lazy"><figcaption>7 / 13</figcaption></figure>
-    <figure data-page="8"><img src="assets/chemistry/2.3_Solubility_in_Water_p08.png" alt="2.3 Solubility in Water 8쪽" loading="lazy"><figcaption>8 / 13</figcaption></figure>
-    <figure data-page="9"><img src="assets/chemistry/2.3_Solubility_in_Water_p09.png" alt="2.3 Solubility in Water 9쪽" loading="lazy"><figcaption>9 / 13</figcaption></figure>
-    <figure data-page="10"><img src="assets/chemistry/2.3_Solubility_in_Water_p10.png" alt="2.3 Solubility in Water 10쪽" loading="lazy"><figcaption>10 / 13</figcaption></figure>
-    <figure data-page="11"><img src="assets/chemistry/2.3_Solubility_in_Water_p11.png" alt="2.3 Solubility in Water 11쪽" loading="lazy"><figcaption>11 / 13</figcaption></figure>
-    <figure data-page="12"><img src="assets/chemistry/2.3_Solubility_in_Water_p12.png" alt="2.3 Solubility in Water 12쪽" loading="lazy"><figcaption>12 / 13</figcaption></figure>
-    <figure data-page="13"><img src="assets/chemistry/2.3_Solubility_in_Water_p13.png" alt="2.3 Solubility in Water 13쪽" loading="lazy"><figcaption>13 / 13</figcaption></figure>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>용해(Dissolving)란?</h3>
+    
   </div>
-</section>
-
-<section class="chapter" id="ch-2.4_Solubility_and_temperature">
-  <h2>4. 2.4 Solubility and temperature</h2>
-  <div class="pages">
-    <figure data-page="1"><img src="assets/chemistry/2.4_Solubility_and_temperature_p01.png" alt="2.4 Solubility and temperature 1쪽" loading="lazy"><figcaption>1 / 18</figcaption></figure>
-    <figure data-page="2"><img src="assets/chemistry/2.4_Solubility_and_temperature_p02.png" alt="2.4 Solubility and temperature 2쪽" loading="lazy"><figcaption>2 / 18</figcaption></figure>
-    <figure data-page="3"><img src="assets/chemistry/2.4_Solubility_and_temperature_p03.png" alt="2.4 Solubility and temperature 3쪽" loading="lazy"><figcaption>3 / 18</figcaption></figure>
-    <figure data-page="4"><img src="assets/chemistry/2.4_Solubility_and_temperature_p04.png" alt="2.4 Solubility and temperature 4쪽" loading="lazy"><figcaption>4 / 18</figcaption></figure>
-    <figure data-page="5"><img src="assets/chemistry/2.4_Solubility_and_temperature_p05.png" alt="2.4 Solubility and temperature 5쪽" loading="lazy"><figcaption>5 / 18</figcaption></figure>
-    <figure data-page="6"><img src="assets/chemistry/2.4_Solubility_and_temperature_p06.png" alt="2.4 Solubility and temperature 6쪽" loading="lazy"><figcaption>6 / 18</figcaption></figure>
-    <figure data-page="7"><img src="assets/chemistry/2.4_Solubility_and_temperature_p07.png" alt="2.4 Solubility and temperature 7쪽" loading="lazy"><figcaption>7 / 18</figcaption></figure>
-    <figure data-page="8"><img src="assets/chemistry/2.4_Solubility_and_temperature_p08.png" alt="2.4 Solubility and temperature 8쪽" loading="lazy"><figcaption>8 / 18</figcaption></figure>
-    <figure data-page="9"><img src="assets/chemistry/2.4_Solubility_and_temperature_p09.png" alt="2.4 Solubility and temperature 9쪽" loading="lazy"><figcaption>9 / 18</figcaption></figure>
-    <figure data-page="10"><img src="assets/chemistry/2.4_Solubility_and_temperature_p10.png" alt="2.4 Solubility and temperature 10쪽" loading="lazy"><figcaption>10 / 18</figcaption></figure>
-    <figure data-page="11"><img src="assets/chemistry/2.4_Solubility_and_temperature_p11.png" alt="2.4 Solubility and temperature 11쪽" loading="lazy"><figcaption>11 / 18</figcaption></figure>
-    <figure data-page="12"><img src="assets/chemistry/2.4_Solubility_and_temperature_p12.png" alt="2.4 Solubility and temperature 12쪽" loading="lazy"><figcaption>12 / 18</figcaption></figure>
-    <figure data-page="13"><img src="assets/chemistry/2.4_Solubility_and_temperature_p13.png" alt="2.4 Solubility and temperature 13쪽" loading="lazy"><figcaption>13 / 18</figcaption></figure>
-    <figure data-page="14"><img src="assets/chemistry/2.4_Solubility_and_temperature_p14.png" alt="2.4 Solubility and temperature 14쪽" loading="lazy"><figcaption>14 / 18</figcaption></figure>
-    <figure data-page="15"><img src="assets/chemistry/2.4_Solubility_and_temperature_p15.png" alt="2.4 Solubility and temperature 15쪽" loading="lazy"><figcaption>15 / 18</figcaption></figure>
-    <figure data-page="16"><img src="assets/chemistry/2.4_Solubility_and_temperature_p16.png" alt="2.4 Solubility and temperature 16쪽" loading="lazy"><figcaption>16 / 18</figcaption></figure>
-    <figure data-page="17"><img src="assets/chemistry/2.4_Solubility_and_temperature_p17.png" alt="2.4 Solubility and temperature 17쪽" loading="lazy"><figcaption>17 / 18</figcaption></figure>
-    <figure data-page="18"><img src="assets/chemistry/2.4_Solubility_and_temperature_p18.png" alt="2.4 Solubility and temperature 18쪽" loading="lazy"><figcaption>18 / 18</figcaption></figure>
+  <div class="note-body">고체가 액체에 녹아 <b>입자 단위로 흩어지는 것</b>. 설탕을 물에 넣으면 설탕은 사라진 게 아니라 작은 입자로 물 사이사이에 퍼진다. 그래서 컵을 흔들거나 맛을 봐도 단맛이 난다.</div>
+  <img class="note-img" src="assets/diagrams/2.1_Dissolving/p11_img008.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Solute + Solvent = Solution</h3>
+    
   </div>
-</section>
+  <div class="note-body"><b>Solute(용질)</b>: 녹는 물질 — 보통 고체 (예: 설탕, 소금).<br><b>Solvent(용매)</b>: 녹이는 물질 — 보통 액체 (예: 물).<br><b>Solution(용액)</b>: 둘이 섞여서 만들어진 균일한 혼합물.<br><br><span style='color:var(--green)'>설탕 + 물 = 설탕물</span></div>
+  <img class="note-img" src="assets/diagrams/2.1_Dissolving/p15_img016.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Soluble vs Insoluble</h3>
+    
+  </div>
+  <div class="note-body"><b>Soluble(가용성)</b>: 용매에 녹는 물질 (예: 소금은 물에 soluble).<br><b>Insoluble(불용성)</b>: 용매에 녹지 않는 물질 (예: 모래는 물에 insoluble).<br><br>같은 물질이라도 용매가 달라지면 결과가 다름. 기름은 물에 안 녹지만 다른 기름엔 잘 녹는다.</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>질량 보존 (Mass conservation)</h3>
+    
+  </div>
+  <div class="note-body">설탕 9g + 물 146g → 설탕물 155g. <b>질량은 사라지지 않는다!</b><br>입자가 물 사이로 흩어졌을 뿐이라서 무게는 그대로 보존된다. 이것을 <b>mass conservation(질량 보존)</b>이라 한다.</div>
+  <img class="note-img" src="assets/diagrams/2.1_Dissolving/p18_img018.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>용해 ≠ 녹음(Melting)</h3>
+    
+  </div>
+  <div class="note-body">둘 다 한국어로 '녹는다'고 말하지만 과학에서는 다르다!<br>• <b>Dissolving(용해)</b>: 고체가 액체에 <b>섞여 들어가는 것</b>. 두 물질 필요.<br>• <b>Melting(녹음/용융)</b>: <b>온도가 올라가 상태가 바뀌는 것</b>. 한 물질이 고체→액체.<br><br>얼음이 물이 되는 건 melting, 설탕이 물에 풀리는 건 dissolving.</div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📊</span>
+    <div>
+      <h2>2. 용액의 농도 (Concentration)</h2>
+      <span class="ch-sub">SC 2.2 Concentration of solutions</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>농도(Concentration)란?</h3>
+    
+  </div>
+  <div class="note-body">같은 양의 용매에 <b>얼마나 많은 용질이 녹아 있는가</b>를 나타내는 값. 입자 모델로 보면, 같은 부피 안에 용질 입자가 많을수록 더 진하다.</div>
+  <img class="note-img" src="assets/diagrams/SC_2.2_Concentration_of_solutions/p07_img012.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Concentrated vs Dilute</h3>
+    
+  </div>
+  <div class="note-body"><b>Concentrated(진한 용액)</b>: 용매 양에 비해 용질이 <b>많다</b>. 입자가 빽빽함.<br><b>Dilute(묽은 용액)</b>: 용매 양에 비해 용질이 <b>적다</b>. 입자가 듬성듬성.<br><br>홍차에 설탕 5스푼 = concentrated, 1스푼 = dilute.</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>농도를 바꾸는 방법</h3>
+    
+  </div>
+  <div class="note-body"><b>더 진하게(more concentrated):</b><br>• 용질을 더 넣는다<br>• 용매를 증발시킨다 (물 끓이기)<br><br><b>더 묽게(more dilute):</b><br>• 용매(물)를 더 넣는다<br>• 용질의 양은 그대로 두고 용매만 늘림</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>입자 모델로 표현하기</h3>
+    
+  </div>
+  <div class="note-body">농도 비교는 <b>같은 크기의 그릇에 같은 부피</b>로 그린다. 같은 부피 안에 검은 점(용질 입자)이 더 많으면 진한 용액, 적으면 묽은 용액이다.</div>
+  <img class="note-img" src="assets/diagrams/SC_2.2_Concentration_of_solutions/p09_img016.png" alt="" loading="lazy">
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">💎</span>
+    <div>
+      <h2>3. 물에 대한 용해도 (Solubility)</h2>
+      <span class="ch-sub">2.3 Solubility in Water</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Saturated vs Unsaturated</h3>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=bSMzRNcv8Cs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+  <div class="note-body"><b>Unsaturated(불포화)</b>: 아직 더 녹을 수 있는 상태.<br><b>Saturated(포화)</b>: 더 이상 녹지 않는 상태. 추가 용질은 그릇 바닥에 가라앉는다.<br><br>설탕을 계속 넣다 보면 어느 순간 더 이상 녹지 않고 가라앉기 시작 — 그 시점이 포화점.</div>
+  <img class="note-img" src="assets/diagrams/2.3_Solubility_in_Water/p04_img002.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>용해도(Solubility)의 정의</h3>
+    
+  </div>
+  <div class="note-body"><b>일정한 온도에서 정해진 양의 용매에 녹을 수 있는 최대 용질의 양</b>. 보통 '100g의 물에 녹는 용질의 g수'로 표시한다.<br><br>예: 20℃에서 설탕의 용해도는 약 203g (= 100g 물에 203g 설탕이 녹음).</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>물질마다 용해도가 다르다</h3>
+    
+  </div>
+  <div class="note-body">같은 온도의 물이라도 어떤 용질을 넣느냐에 따라 녹는 양이 다르다.<br>• 설탕: 매우 잘 녹음<br>• 소금: 잘 녹음<br>• 분필가루(석회): 거의 안 녹음<br><br>그래서 실험에서 '같은 양의 물'에 '다른 용질'을 넣어 몇 스푼이 녹는지 비교한다.</div>
+  <img class="note-img" src="assets/diagrams/2.3_Solubility_in_Water/p05_img003.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>공정 실험(Fair test)의 변수</h3>
+    
+  </div>
+  <div class="note-body">용해도 실험을 공정하게 하려면:<br>• <b>Independent variable(독립변수)</b>: 바꾸는 것 — 용질 종류<br>• <b>Dependent variable(종속변수)</b>: 측정하는 것 — 녹은 양(스푼 수)<br>• <b>Control variable(통제변수)</b>: 똑같이 유지 — 물의 부피, 온도, 스푼 크기</div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🌡️</span>
+    <div>
+      <h2>4. 용해도와 온도 (Temperature)</h2>
+      <span class="ch-sub">2.4 Solubility and temperature</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>온도가 올라가면…</h3>
+    
+  </div>
+  <div class="note-body">온도가 높아지면 물 분자가 <b>더 많은 열에너지·운동에너지</b>를 가져 더 빠르게 움직인다. 그래서 용질 입자를 더 잘 흩어 놓을 수 있어 <b>대부분 용해도가 증가</b>한다.<br><br>찬물보다 따뜻한 물에 설탕이 더 잘 녹는 이유.</div>
+  <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p04_img004.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>실험: 온도별 설탕 용해도</h3>
+    
+  </div>
+  <div class="note-body"><b>변수 설정:</b><br>• 독립: 물 온도 (실온 / 50℃ / 100℃)<br>• 종속: 녹은 설탕의 질량(g)<br>• 통제: 물의 부피(25 cm³), 젓는 힘, 같은 비커<br><br><b>방법:</b> 비커에 물 25 cm³ → 10 g씩 설탕 추가하며 젓기 → 포화 상태가 될 때까지 → 총 g 기록.</div>
+  <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p11_img013.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>안전 (Safety)</h3>
+    
+  </div>
+  <div class="note-body">뜨거운 물을 다루므로:<br>• 안전 고글 착용<br>• 긴 머리 묶기<br>• Bunsen burner·삼발이·금속망 안전 셋업<br>• 비커 잡을 땐 test tube holder 사용</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>결과 그래프와 결론</h3>
+    
+  </div>
+  <div class="note-body">온도(x축) vs 녹은 설탕 양(y축) 선 그래프를 그리면 <b>오른쪽 위로 향하는 선</b>이 나온다.<br><br><b>결론:</b> 물의 온도가 올라갈수록 설탕의 용해도는 증가한다. (정비례에 가까움)<br><br>주의: 모든 고체가 이렇진 않음 — 일부 물질은 온도와 상관없거나 오히려 감소.</div>
+  <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p17_img024.png" alt="" loading="lazy">
+</div></div>
+</div>
+</div>
 
-</main>
+<!-- 단어장 -->
+<div class="tab-pane" id="tab-vocab">
+  <div class="filter-wrap">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-cat="all" onclick="filterCards("all")">전체 All</button>
+      <button class="filter-btn" data-cat="organ" onclick="filterCards("organ")">💧 기본 Basics</button>
+      <button class="filter-btn" data-cat="process" onclick="filterCards("process")">📊 농도 Concentration</button>
+      <button class="filter-btn" data-cat="gas" onclick="filterCards("gas")">💎 용해도 Solubility</button>
+      <button class="filter-btn" data-cat="blood" onclick="filterCards("blood")">🧪 실험 Experiment</button>
+    </div>
+  </div>
+<div class="section-header" data-cat="organ"><h2>💧 기본 Basics</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Solute</div>
+    <div class="vcard-ko">용질</div>
+    <div class="vcard-def">The substance being dissolved (usually a solid like sugar or salt).</div>
+    <div class="vcard-def-ko">녹는 물질 (보통 설탕·소금 같은 고체).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Solute")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Solvent</div>
+    <div class="vcard-ko">용매</div>
+    <div class="vcard-def">The liquid that dissolves the solute (often water).</div>
+    <div class="vcard-def-ko">용질을 녹이는 액체 (보통 물).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Solvent")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Solution</div>
+    <div class="vcard-ko">용액</div>
+    <div class="vcard-def">Mixture formed when a solute dissolves in a solvent.</div>
+    <div class="vcard-def-ko">용질이 용매에 녹아 만들어진 균일한 혼합물.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Solution")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Dissolving</div>
+    <div class="vcard-ko">용해</div>
+    <div class="vcard-def">Process where a solute breaks up into particles and spreads through a solvent.</div>
+    <div class="vcard-def-ko">용질이 입자로 흩어져 용매에 섞이는 과정.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Dissolving")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Soluble</div>
+    <div class="vcard-ko">녹는 (가용성)</div>
+    <div class="vcard-def">A substance that can dissolve in a given solvent.</div>
+    <div class="vcard-def-ko">특정 용매에 녹을 수 있는 물질.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Soluble")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Insoluble</div>
+    <div class="vcard-ko">안 녹는 (불용성)</div>
+    <div class="vcard-def">A substance that does not dissolve in a given solvent.</div>
+    <div class="vcard-def-ko">특정 용매에 녹지 않는 물질.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Insoluble")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Mixture</div>
+    <div class="vcard-ko">혼합물</div>
+    <div class="vcard-def">Two or more substances mixed but not chemically joined.</div>
+    <div class="vcard-def-ko">두 개 이상의 물질이 섞였지만 화학적으로 결합하지 않은 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Mixture")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Particle</div>
+    <div class="vcard-ko">입자</div>
+    <div class="vcard-def">Tiny piece of a substance (atom, molecule, ion).</div>
+    <div class="vcard-def-ko">물질을 이루는 매우 작은 알갱이 (원자·분자·이온).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Particle")">🔊</button>
+    
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="process"><h2>📊 농도 Concentration</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Concentration</div>
+    <div class="vcard-ko">농도</div>
+    <div class="vcard-def">Amount of solute dissolved in a given amount of solvent.</div>
+    <div class="vcard-def-ko">정해진 양의 용매에 녹아 있는 용질의 양.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Concentration")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Concentrated</div>
+    <div class="vcard-ko">진한 (농축)</div>
+    <div class="vcard-def">A solution with a relatively large amount of solute.</div>
+    <div class="vcard-def-ko">용질이 비교적 많이 녹아 있는 용액.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Concentrated")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Dilute</div>
+    <div class="vcard-ko">묽은</div>
+    <div class="vcard-def">A solution with a relatively small amount of solute.</div>
+    <div class="vcard-def-ko">용질이 비교적 적게 녹아 있는 용액.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Dilute")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Dissolve</div>
+    <div class="vcard-ko">녹다 (동사)</div>
+    <div class="vcard-def">(verb) To break up and spread evenly through a solvent.</div>
+    <div class="vcard-def-ko">(동사) 용매 속에서 흩어져 섞이는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Dissolve")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Melting</div>
+    <div class="vcard-ko">녹음 (용융)</div>
+    <div class="vcard-def">Change of state from solid to liquid due to heating.</div>
+    <div class="vcard-def-ko">열로 인해 고체→액체로 상태 변화. (용해와 다름!)</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Melting")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Mass conservation</div>
+    <div class="vcard-ko">질량 보존</div>
+    <div class="vcard-def">Total mass stays the same before and after dissolving.</div>
+    <div class="vcard-def-ko">용해 전후 총 질량은 변하지 않는다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Mass conservation")">🔊</button>
+    
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="gas"><h2>💎 용해도 Solubility</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Solubility</div>
+    <div class="vcard-ko">용해도</div>
+    <div class="vcard-def">Maximum amount of solute that can dissolve in a given amount of solvent at a set temperature.</div>
+    <div class="vcard-def-ko">특정 온도·일정한 용매 양에 녹을 수 있는 최대 용질 양.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Solubility")">🔊</button>
+    <a class="btn-yt" href="https://www.youtube.com/watch?v=bSMzRNcv8Cs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Saturated</div>
+    <div class="vcard-ko">포화</div>
+    <div class="vcard-def">A solution that cannot dissolve any more solute at that temperature.</div>
+    <div class="vcard-def-ko">더 이상 용질이 녹지 않는 상태의 용액.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Saturated")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Unsaturated</div>
+    <div class="vcard-ko">불포화</div>
+    <div class="vcard-def">A solution that can still dissolve more solute.</div>
+    <div class="vcard-def-ko">용질이 더 녹을 수 있는 상태의 용액.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Unsaturated")">🔊</button>
+    
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="blood"><h2>🧪 실험 Experiment</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Temperature</div>
+    <div class="vcard-ko">온도</div>
+    <div class="vcard-def">How hot or cold something is. Higher temperature → faster particles → usually more dissolving.</div>
+    <div class="vcard-def-ko">물체의 차고 더운 정도. 보통 온도가 높을수록 용해도 증가.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Temperature")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Independent variable</div>
+    <div class="vcard-ko">독립변수</div>
+    <div class="vcard-def">The variable you deliberately change in an experiment.</div>
+    <div class="vcard-def-ko">실험에서 의도적으로 바꾸는 변수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Independent variable")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Dependent variable</div>
+    <div class="vcard-ko">종속변수</div>
+    <div class="vcard-def">The variable you measure as a result.</div>
+    <div class="vcard-def-ko">실험 결과로 측정하는 변수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Dependent variable")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Control variable</div>
+    <div class="vcard-ko">통제변수</div>
+    <div class="vcard-def">Variables kept the same to keep the test fair.</div>
+    <div class="vcard-def-ko">공정 실험을 위해 같게 유지하는 변수들.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Control variable")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Fair test</div>
+    <div class="vcard-ko">공정 실험</div>
+    <div class="vcard-def">An experiment in which only one variable is changed at a time.</div>
+    <div class="vcard-def-ko">한 번에 한 변수만 바꾸어 비교하는 실험.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Fair test")">🔊</button>
+    
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Hypothesis</div>
+    <div class="vcard-ko">가설</div>
+    <div class="vcard-def">A predicted answer to a scientific question that can be tested.</div>
+    <div class="vcard-def-ko">실험으로 검증 가능한 예상 답.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Hypothesis")">🔊</button>
+    
+  </div>
+</div>
+</div>
+</div>
 
-<footer>
-  <p>science-vocab · 모바일 친화 학습 사이트</p>
-</footer>
+<!-- 퀴즈 -->
+<div class="tab-pane" id="tab-quiz">
+  <div class="quiz-wrap">
+    <div class="quiz-progress">진행 <b id="q-current">1</b> / 14  ·  점수 <b id="q-score">0</b></div>
+    <div class="quiz-bar"><div class="quiz-bar-fill" id="q-bar" style="width:0%"></div></div>
+    <div id="quiz-list"><div class="q-card" id="q-card-0">
+  <div class="q-num">문제 1 / 14</div>
+  <div class="q-text">설탕을 물에 넣고 저으면…</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(0,0)">설탕은 완전히 사라진다</button>
+      <button class="q-opt" onclick="answerQuestion(0,1)">설탕 입자가 흩어져서 물 사이로 퍼진다</button>
+      <button class="q-opt" onclick="answerQuestion(0,2)">설탕은 물 위에 떠 있다</button>
+      <button class="q-opt" onclick="answerQuestion(0,3)">물이 설탕으로 변한다</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 설탕은 사라지지 않고 작은 입자로 흩어져 물 분자 사이에 퍼진다 (= 용해).</div>
+</div>
+<div class="q-card" id="q-card-1">
+  <div class="q-num">문제 2 / 14</div>
+  <div class="q-text">다음 중 옳게 짝지은 것은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(1,0)">설탕물에서 — 설탕=용매, 물=용질</button>
+      <button class="q-opt" onclick="answerQuestion(1,1)">설탕물에서 — 설탕=용질, 물=용매</button>
+      <button class="q-opt" onclick="answerQuestion(1,2)">설탕물에서 — 설탕=용액, 물=용질</button>
+      <button class="q-opt" onclick="answerQuestion(1,3)">셋 다 같은 의미다</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 녹는 쪽=solute(용질), 녹이는 쪽=solvent(용매). 합쳐진 것=solution(용액).</div>
+</div>
+<div class="q-card" id="q-card-2">
+  <div class="q-num">문제 3 / 14</div>
+  <div class="q-text">9g 설탕을 146g 물에 녹였다. 용액의 질량은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(2,0)">9g</button>
+      <button class="q-opt" onclick="answerQuestion(2,1)">146g</button>
+      <button class="q-opt" onclick="answerQuestion(2,2)">155g</button>
+      <button class="q-opt" onclick="answerQuestion(2,3)">137g</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 질량 보존: 용질 + 용매 = 용액. 9 + 146 = 155g.</div>
+</div>
+<div class="q-card" id="q-card-3">
+  <div class="q-num">문제 4 / 14</div>
+  <div class="q-text">물에 녹지 않는 물질을 무엇이라 하는가?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(3,0)">Soluble</button>
+      <button class="q-opt" onclick="answerQuestion(3,1)">Insoluble</button>
+      <button class="q-opt" onclick="answerQuestion(3,2)">Solvent</button>
+      <button class="q-opt" onclick="answerQuestion(3,3)">Saturated</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> Insoluble = 안 녹는, Soluble = 녹는.</div>
+</div>
+<div class="q-card" id="q-card-4">
+  <div class="q-num">문제 5 / 14</div>
+  <div class="q-text">Dissolving(용해)과 Melting(녹음·용융)의 차이는?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(4,0)">둘 다 같은 것이다</button>
+      <button class="q-opt" onclick="answerQuestion(4,1)">Dissolving은 온도 변화, Melting은 입자 분산</button>
+      <button class="q-opt" onclick="answerQuestion(4,2)">Dissolving은 용매 속에 흩어짐, Melting은 고체→액체 상태 변화</button>
+      <button class="q-opt" onclick="answerQuestion(4,3)">Melting은 고체끼리만 일어남</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> Dissolving은 두 물질이 섞이는 것, Melting은 한 물질이 가열로 상태가 바뀌는 것.</div>
+</div>
+<div class="q-card" id="q-card-5">
+  <div class="q-num">문제 6 / 14</div>
+  <div class="q-text">Concentrated solution(진한 용액)이란?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(5,0)">용매에 비해 용질이 많은 용액</button>
+      <button class="q-opt" onclick="answerQuestion(5,1)">용매에 비해 용질이 적은 용액</button>
+      <button class="q-opt" onclick="answerQuestion(5,2)">용질이 전혀 없는 용액</button>
+      <button class="q-opt" onclick="answerQuestion(5,3)">차가운 용액</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> Concentrated = 진한 = 용질이 많이 녹아있음. Dilute = 묽은.</div>
+</div>
+<div class="q-card" id="q-card-6">
+  <div class="q-num">문제 7 / 14</div>
+  <div class="q-text">묽은 용액(dilute)을 더 진하게 만들려면?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(6,0)">물을 더 넣는다</button>
+      <button class="q-opt" onclick="answerQuestion(6,1)">용액을 차게 한다</button>
+      <button class="q-opt" onclick="answerQuestion(6,2)">용질을 더 넣거나 물을 증발시킨다</button>
+      <button class="q-opt" onclick="answerQuestion(6,3)">오래 그대로 둔다</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 용질을 추가하거나, 가열해 용매(물)를 줄이면 농도가 진해진다.</div>
+</div>
+<div class="q-card" id="q-card-7">
+  <div class="q-num">문제 8 / 14</div>
+  <div class="q-text">더 이상 용질이 녹지 않는 용액의 상태는?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(7,0)">Unsaturated (불포화)</button>
+      <button class="q-opt" onclick="answerQuestion(7,1)">Saturated (포화)</button>
+      <button class="q-opt" onclick="answerQuestion(7,2)">Dilute (묽음)</button>
+      <button class="q-opt" onclick="answerQuestion(7,3)">Concentrated (진함)</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 녹을 수 있는 한계까지 녹은 상태 = saturated(포화).</div>
+</div>
+<div class="q-card" id="q-card-8">
+  <div class="q-num">문제 9 / 14</div>
+  <div class="q-text">용해도(Solubility)의 정의는?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(8,0)">용질의 색깔</button>
+      <button class="q-opt" onclick="answerQuestion(8,1)">용액의 부피</button>
+      <button class="q-opt" onclick="answerQuestion(8,2)">특정 온도에서 정해진 용매에 녹는 용질의 최대 양</button>
+      <button class="q-opt" onclick="answerQuestion(8,3)">용질이 가라앉는 속도</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> Solubility = 일정 온도·일정 용매량에서 녹을 수 있는 용질의 최대량.</div>
+</div>
+<div class="q-card" id="q-card-9">
+  <div class="q-num">문제 10 / 14</div>
+  <div class="q-text">보통 물의 온도가 높아질수록 고체의 용해도는…</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(9,0)">감소한다</button>
+      <button class="q-opt" onclick="answerQuestion(9,1)">증가한다</button>
+      <button class="q-opt" onclick="answerQuestion(9,2)">변하지 않는다</button>
+      <button class="q-opt" onclick="answerQuestion(9,3)">예측할 수 없다</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 온도↑ → 물 분자의 운동에너지↑ → 대부분 고체의 용해도↑.</div>
+</div>
+<div class="q-card" id="q-card-10">
+  <div class="q-num">문제 11 / 14</div>
+  <div class="q-text">용해도 실험에서 '독립변수'에 해당하는 것은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(10,0)">물의 부피</button>
+      <button class="q-opt" onclick="answerQuestion(10,1)">물의 온도(바꾸는 것)</button>
+      <button class="q-opt" onclick="answerQuestion(10,2)">녹은 설탕의 양(측정)</button>
+      <button class="q-opt" onclick="answerQuestion(10,3)">비커 크기</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 독립변수 = 의도적으로 바꾸는 것. 이 실험에서는 물 온도.</div>
+</div>
+<div class="q-card" id="q-card-11">
+  <div class="q-num">문제 12 / 14</div>
+  <div class="q-text">용해도 실험에서 '통제변수'에 해당하지 않는 것은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(11,0)">물의 부피</button>
+      <button class="q-opt" onclick="answerQuestion(11,1)">스푼 크기</button>
+      <button class="q-opt" onclick="answerQuestion(11,2)">용질의 종류(설탕 vs 소금 비교 실험에서)</button>
+      <button class="q-opt" onclick="answerQuestion(11,3)">젓는 힘</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 용질 종류를 비교하는 실험이면 그것은 독립변수. 부피·도구·힘은 통제변수.</div>
+</div>
+<div class="q-card" id="q-card-12">
+  <div class="q-num">문제 13 / 14</div>
+  <div class="q-text">Mixture(혼합물)의 특징은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(12,0)">원소가 화학결합으로 결합되어 있다</button>
+      <button class="q-opt" onclick="answerQuestion(12,1)">물리적으로 분리 가능, 화학결합 없음</button>
+      <button class="q-opt" onclick="answerQuestion(12,2)">항상 한 종류의 원소만 있다</button>
+      <button class="q-opt" onclick="answerQuestion(12,3)">용해된 상태만 가능</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 혼합물 = 화학결합 없이 단순히 섞여 있음. 물리적으로 분리 가능.</div>
+</div>
+<div class="q-card" id="q-card-13">
+  <div class="q-num">문제 14 / 14</div>
+  <div class="q-text">다음 중 용액(solution)이 아닌 것은?</div>
+  <div class="q-options">
+      <button class="q-opt" onclick="answerQuestion(13,0)">설탕물</button>
+      <button class="q-opt" onclick="answerQuestion(13,1)">소금물</button>
+      <button class="q-opt" onclick="answerQuestion(13,2)">모래와 물을 섞은 것</button>
+      <button class="q-opt" onclick="answerQuestion(13,3)">차(tea)</button>
+  </div>
+  <div class="q-explanation"><b>해설:</b> 모래는 물에 녹지 않으므로(insoluble) 용액이 아니라 그냥 혼합물(불균일).</div>
+</div></div>
+    <div class="quiz-result" id="quiz-result">
+      <h2>🎉 완료!</h2>
+      <div class="score" id="final-score">0 / 14</div>
+      <p style="color:var(--muted);margin-bottom:16px" id="final-msg">잘했어요!</p>
+      <button onclick="resetQuiz()">다시 풀기</button>
+    </div>
+  </div>
+</div>
+
+<footer>8C 용해와 용액 Solutions · science-vocab</footer>
 
 <script>
-  const PAGE_DATA = [{"slug": "2.1_Dissolving", "title": "2.1 Dissolving", "pages": ["Lesson objectives ● To understand that the mass of a solution is mass of solute + mass of solvent. ● To demonstrate that a solute dissolves in a solvent to form a solution. ● To use particle theory to explain dissolving. Dissolving On your whiteboard, draw a diagram of the way particles are arranged in a liquid. Keywords: solute, solvent, solution, dissolve, particles", "Success Criteria Working towards Working at Working beyond I can identify a solute, solvent, and solution in a mixture. I can measure mass/volume and describe dissolving using the particle model. I can explain how particles interact in a solution and relate solute-solvent relationships Dissolving", "Solid, liquid and gas What is X, Y and Z?", "What are the differences between an element, compound and mixture? Elements, compounds and mixtures", "Element One type of atom, on its own or joined to another atom of the same type. These atoms are ALL iron – there’s nothing else in here", "Compound Different types of atom joined by a chemical bond. Water 2 Hydrogen and 1 Oxygen", "Mixture Different types of atoms or compounds that can be physically separated, NO chemical bond.", "Element, compound, mixture A B C D F E", "Element, compound, mixture A B C D F Element Element Mixture (of elements) Compound Compound E Mixture (of compounds)", "What happens to sugar when it is put in water?", "The sugar DOES NOT disappear! It is still there but now separate particles spread around the water. Dissolving A substance that can dissolve is soluble in water. A substance that cannot dissolve is insoluble in water. The diagram below shows what happens when particles dissolve.", "Mixture vs Solution two or more substances that are mixed together but not chemically joined a special type of mixture that is made when a solid dissolves and mixes a liquid.", "Mixture vs Solution two or more substances that are mixed together but not chemically joined a special type of mixture that is made when a solid dissolves and mixes a liquid.", "TASK: Use the particle model to explain dissolving Particles in solid sugar. Particles in liquid water. Particles in sugar solution. Dissolving", "solute + solvent = solution solid being dissolved liquid that does the dissolving = + sugar water the dissolved solute and the solvent How many other examples of solutions can you think of?", "Dissolving and mass Learner’s book page 43 You are going to investigate how the mass of a solution is affected when a solute dissolves in a solvent. 1. Record the mass of your solvent (water) 2. Record the mass of your solute (salt) 3. Add the solute to the solvent and record your observations 4. Record the mass of your solution", "What do you think will happen to the mass when we dissolve sugar in water? a) The sugar water will be lighter than the water and sugar separately. b) The mass of the sugar water will be equal to the mass of the sugar and water separately. c) The sugar water will be heavier than the sugar and water separately. Dissolving and Mass", "solute + solvent = solution solid being dissolved liquid that does the dissolving = + sugar water the dissolved solute and the solvent 9g 146g 155g", "solute + solvent = solution solid being dissolved liquid that does the dissolving = + sugar water the dissolved solute and the solvent 9g 146g 155g The mass of solute and solvent equals mass of the solution. No mass has been lost. The mass has been conserved. What would happen to the mass of sugar if this solution was made a) more concentrated b) more dilute", "Dissolving and melting", "Plenary", "Plenary"]}, {"slug": "SC_2.2_Concentration_of_solutions", "title": "SC 2.2 Concentration of solutions", "pages": ["Lesson objectives ●Compare concentrations of solutions. ●Use particle theory to explain the difference between a dilute and concentrated solution ●Prepare solutions of different concentrations. Concentration of Solutions When you add sugar to a cup of tea what happens… • to the sugar? • to the mass of the tea? What is the solute, solvent and solution in this example?", "", "When a solid dissolves in a liquid it makes a special type of mixture called a ________________. The solid part of the solution is called the ____________ and the liquid it dissolves in is called the _______________. The most common type of solvent is water, but some solutes dissolve in other solvents such as oil or _____________________________. A substance which dissolves in water is called __________________, a substance which does not dissolve easily is called ____________________. Dissolving", "Particle diagrams 1. Draw a particle diagram to show instant coffee 2. Draw a particle diagram to show liquid hot water Stretch: Write a sentence to explain the arrangement of particles in each diagram Success criteria for drawing particle diagrams: ● Draw particles that are the same size (not too small) ● Take care and draw carefully ● Full circles ● Think about the arrangement ● You can show particles to be different by either drawing them a different size or different colour 3. Draw a particle diagram to show the coffee dissolved in the hot water", "Dissolving and melting In your own words, what is the difference between dissolving and melting?", "Where have you heard the word ‘concentration’ before? Concentration", "Solutions The concentration of a solution is a measure of the amount of solute that has been dissolved in a given amount of solvent or solution. A concentrated solution is one that has a relatively large amount of dissolved solute. A dilute solution is one that has a relatively small amount of dissolved solute.", "Making diﬀerent concentrations of a solution Learner’s Book, page 46-47", "Stretch: Can you draw a particle diagram to show the solute dissolved in the solvent for solution B and solution E ?", "Concentration", "Before you go Explain the difference between… a concentrated solution and a less concentrated one You must use the words: “solvent”, “solute” and “particle”"]}, {"slug": "2.3_Solubility_in_Water", "title": "2.3 Solubility in Water", "pages": ["Lesson objectives ●Explain how concentration affects dissolving or saturation. ●Investigate the solubilities of different solutes in water ●Be able to identify when a solution is saturated Solubility in Water", "1. What is a solute? 2. What is a solvent? 3. If you have a concentrated solution and add water to it, describe the change in the solution (keywords to use in your answer: dilute, concentrated) 4. Describe the difference between dissolving and melting Something that can dissolve in a solvent Something that a solute dissolves into It would become more dilute/ less concentrated Dissolving is when a solute dissolves into a solvent, melting is a change of state from solid to liquid due to temperature Solubility in Water", "Solubility in Water What would happen if i continue to add more and more sugar? The concentration of the solute would increase Eventually the sugar will stop dissolving", "A solution that can still dissolve more solute is unsaturated A solution that cannot dissolve any more solute is saturated Solubility in Water", "Solubility in Water The amount of solute that is able to dissolve is the solubility of that solute. Different solutes have different solubility in water. We will look at temperature next lesson", "Solubility in Water You are going to investigate the solubility of 3 different solutes in water Pg 48", "1. What are we investigating? 2. What is the independent variable in this investigation? (what you change) 3. What is the dependent variable in this investigation? (what you measure) 4. What is a control variable in this investigation? (keep the same) Solubility of different solutes The type of solute The number of spatulas of solute added Volume of water, the temperature, size of spatula Solubility in Water", "Stretch: Can you draw a particle diagram to show the solute dissolved in the solvent for your different solutions Solubility in Water", "Solubility in Water Let’s practice… Workbook Pg 21 - 26 Exercise 2.1B and 2.1C pg 22 Exercise 2.2A and 2.2B pg 24", "Mark your work using a green pen!", "Mark your work using a green pen!", "Mark your work using a green pen!", "Mark your work using a green pen!"]}, {"slug": "2.4_Solubility_and_temperature", "title": "2.4 Solubility and temperature", "pages": ["Lesson objectives ●To plan an investigation to test how temperature affects solubility. ●To collect data accurately and record it in a table. ●To draw and interpret a graph. Solubility and temperature Which beaker shows the solution? Where is the solvent? Which one shows undissolved solute? Keywords: solubility, temperature, variable, fair test, data A B C", "Success Criteria Working towards Working at Working beyond I can follow instructions to test how temperature affects solubility. I can record results and draw a graph. I can plan, carry out, and interpret results in relation to the effect of temperature on solubility. Solubility and temperature", "1. What is the missing label from the diagram? 2. If a solution is not able to dissolve any more solute, the solution is ___________________ 3. If the solution is able to dissolve more solute, the solution is ___________________ 4. If we add more water to the solution, the solution becomes more ______________ Solute saturated unsaturated dilute Solubility and Temperature ?", "When we increase the temperature of water, there will be more thermal energy, so more kinetic energy How will this affect solubility? Solubility and Temperature", "You are going to plan a safe and valid experiment into the solubility of sugar or salt (the solute) in water. Solubility is a measure of how much solute will dissolve. You will record how much sugar dissolves at different temperatures. Solubility and Temperature", "Use the activity sheet to plan your experiment, the following slides will guide you Planning an Experiment", "Lesson objectives ●To conduct an investigation to test how temperature affects solubility. ●To collect data accurately and record it in a table. ●To draw and interpret a graph. Solubility and temperature Keywords: solubility, temperature, variable, fair test, data", "Words to use: solution, saturated, solute, solvent. When a substance is dissolved into a liquid, we call the substance dissolving a s__________ , the liquid a s__________ , and the mixture formed is called a s______________ . We are going to plan an experiment to see how much solute dissolves at different temperatures, this is known as solubility. If we keep adding the solute and no more dissolves, then the solution is fully s________________ . Background Information", "a. Add 10g of sugar (solute) at a time, noting down how much you have added. b. Stir gently with a stirring rod, applying the same amount of force each time. c. Clear a suitable working area, tie long hair up and put on safety goggles. d. Fill a glass beaker with 25cm3 of water (solvent) at room temperature. e. Repeat steps b to d with hotter water. The temperatures we will use are 50°C and 100°C. f. Keep adding the solute until no more dissolves and the solution is fully saturated and record the total amount of grams of solute added. Method: put these steps in the correct order", "1. Clear a suitable working area, tie long hair up and put on safety goggles. 2. Fill a glass beaker with 25cm3 of water (solvent) at room temperature. 3. Add 10g of sugar (solute) at a time, noting down how much you have added. 4. Stir gently with a stirring rod, applying the same amount of force each time. 5. Keep adding the solute until no more dissolves and the solution is fully saturated and record the total amount of grams of solute added. 6. Repeat steps 2 to 5 with hotter water. The temperatures we will use are 50°C and 100°C. Method TIP: - Use an appropriate sized beaker so that the bulb of the thermometer can be covered by the water.", "●3 beakers ●Mass balance ●Weighing boat ●Spatula ●Stirring rod ●Bunsen burner ●Tripod ●Gauze ●Thermometer ●Test tube holder ●Water ●Sugar Equipment", "I hypothesise that as the temperature of the water increases, (more/ less) sugar will dissolve. Hypothesis", "Results Mass of sugar dissolved (g)", "Investigating the eﬀect of temperature on solubility", "Results Mass of sugar dissolved (g)", "Conclusion", "Conclusion", "Compare your results with the results on the graph. 1. Were your results the same/ different? - why? 2. What do you think would have happened if you put the sugar in but didn't mix it? 3. Why do you think we used sugar instead of salt?"]}];
+const QUIZ_DATA = [{"q": "설탕을 물에 넣고 저으면…", "options": ["설탕은 완전히 사라진다", "설탕 입자가 흩어져서 물 사이로 퍼진다", "설탕은 물 위에 떠 있다", "물이 설탕으로 변한다"], "answer": 1, "explanation": "설탕은 사라지지 않고 작은 입자로 흩어져 물 분자 사이에 퍼진다 (= 용해)."}, {"q": "다음 중 옳게 짝지은 것은?", "options": ["설탕물에서 — 설탕=용매, 물=용질", "설탕물에서 — 설탕=용질, 물=용매", "설탕물에서 — 설탕=용액, 물=용질", "셋 다 같은 의미다"], "answer": 1, "explanation": "녹는 쪽=solute(용질), 녹이는 쪽=solvent(용매). 합쳐진 것=solution(용액)."}, {"q": "9g 설탕을 146g 물에 녹였다. 용액의 질량은?", "options": ["9g", "146g", "155g", "137g"], "answer": 2, "explanation": "질량 보존: 용질 + 용매 = 용액. 9 + 146 = 155g."}, {"q": "물에 녹지 않는 물질을 무엇이라 하는가?", "options": ["Soluble", "Insoluble", "Solvent", "Saturated"], "answer": 1, "explanation": "Insoluble = 안 녹는, Soluble = 녹는."}, {"q": "Dissolving(용해)과 Melting(녹음·용융)의 차이는?", "options": ["둘 다 같은 것이다", "Dissolving은 온도 변화, Melting은 입자 분산", "Dissolving은 용매 속에 흩어짐, Melting은 고체→액체 상태 변화", "Melting은 고체끼리만 일어남"], "answer": 2, "explanation": "Dissolving은 두 물질이 섞이는 것, Melting은 한 물질이 가열로 상태가 바뀌는 것."}, {"q": "Concentrated solution(진한 용액)이란?", "options": ["용매에 비해 용질이 많은 용액", "용매에 비해 용질이 적은 용액", "용질이 전혀 없는 용액", "차가운 용액"], "answer": 0, "explanation": "Concentrated = 진한 = 용질이 많이 녹아있음. Dilute = 묽은."}, {"q": "묽은 용액(dilute)을 더 진하게 만들려면?", "options": ["물을 더 넣는다", "용액을 차게 한다", "용질을 더 넣거나 물을 증발시킨다", "오래 그대로 둔다"], "answer": 2, "explanation": "용질을 추가하거나, 가열해 용매(물)를 줄이면 농도가 진해진다."}, {"q": "더 이상 용질이 녹지 않는 용액의 상태는?", "options": ["Unsaturated (불포화)", "Saturated (포화)", "Dilute (묽음)", "Concentrated (진함)"], "answer": 1, "explanation": "녹을 수 있는 한계까지 녹은 상태 = saturated(포화)."}, {"q": "용해도(Solubility)의 정의는?", "options": ["용질의 색깔", "용액의 부피", "특정 온도에서 정해진 용매에 녹는 용질의 최대 양", "용질이 가라앉는 속도"], "answer": 2, "explanation": "Solubility = 일정 온도·일정 용매량에서 녹을 수 있는 용질의 최대량."}, {"q": "보통 물의 온도가 높아질수록 고체의 용해도는…", "options": ["감소한다", "증가한다", "변하지 않는다", "예측할 수 없다"], "answer": 1, "explanation": "온도↑ → 물 분자의 운동에너지↑ → 대부분 고체의 용해도↑."}, {"q": "용해도 실험에서 '독립변수'에 해당하는 것은?", "options": ["물의 부피", "물의 온도(바꾸는 것)", "녹은 설탕의 양(측정)", "비커 크기"], "answer": 1, "explanation": "독립변수 = 의도적으로 바꾸는 것. 이 실험에서는 물 온도."}, {"q": "용해도 실험에서 '통제변수'에 해당하지 않는 것은?", "options": ["물의 부피", "스푼 크기", "용질의 종류(설탕 vs 소금 비교 실험에서)", "젓는 힘"], "answer": 2, "explanation": "용질 종류를 비교하는 실험이면 그것은 독립변수. 부피·도구·힘은 통제변수."}, {"q": "Mixture(혼합물)의 특징은?", "options": ["원소가 화학결합으로 결합되어 있다", "물리적으로 분리 가능, 화학결합 없음", "항상 한 종류의 원소만 있다", "용해된 상태만 가능"], "answer": 1, "explanation": "혼합물 = 화학결합 없이 단순히 섞여 있음. 물리적으로 분리 가능."}, {"q": "다음 중 용액(solution)이 아닌 것은?", "options": ["설탕물", "소금물", "모래와 물을 섞은 것", "차(tea)"], "answer": 2, "explanation": "모래는 물에 녹지 않으므로(insoluble) 용액이 아니라 그냥 혼합물(불균일)."}];
+let qAnswered = new Array(QUIZ_DATA.length).fill(null);
+
+// 탭 전환
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+});
+
+// 발음
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.9;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+// 단어장 필터
+function filterCards(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    c.classList.toggle('hidden', cat !== 'all' && c.dataset.cat !== cat);
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', cat !== 'all' && cat !== target);
+  });
+}
+
+// 퀴즈 채점
+function answerQuestion(qi, oi) {
+  if (qAnswered[qi] !== null) return;
+  const correct = QUIZ_DATA[qi].answer;
+  qAnswered[qi] = (oi === correct);
+  const card = document.getElementById('q-card-' + qi);
+  card.querySelectorAll('.q-opt').forEach((b, i) => {
+    b.disabled = true;
+    if (i === correct) b.classList.add('correct');
+    else if (i === oi) b.classList.add('wrong');
+  });
+  card.querySelector('.q-explanation').classList.add('show');
+  updateScore();
+  // 다음 문제로 이동
+  setTimeout(() => {
+    const next = document.getElementById('q-card-' + (qi + 1));
+    if (next) next.scrollIntoView({behavior: 'smooth', block: 'start'});
+    else showResult();
+  }, 1200);
+}
+
+function updateScore() {
+  const correct = qAnswered.filter(x => x === true).length;
+  const answered = qAnswered.filter(x => x !== null).length;
+  document.getElementById('q-score').textContent = correct;
+  document.getElementById('q-current').textContent = Math.min(answered + 1, QUIZ_DATA.length);
+  document.getElementById('q-bar').style.width = (answered / QUIZ_DATA.length * 100) + '%';
+}
+
+function showResult() {
+  const correct = qAnswered.filter(x => x === true).length;
+  const total = QUIZ_DATA.length;
+  document.getElementById('final-score').textContent = correct + ' / ' + total;
+  const pct = correct / total;
+  let msg;
+  if (pct >= 0.9) msg = '🌟 완벽해요!';
+  else if (pct >= 0.7) msg = '👍 잘했어요!';
+  else if (pct >= 0.5) msg = '📚 조금 더 복습해봐요';
+  else msg = '🔁 핵심노트부터 다시 보기';
+  document.getElementById('final-msg').textContent = msg;
+  document.getElementById('quiz-result').classList.add('show');
+  document.getElementById('quiz-result').scrollIntoView({behavior: 'smooth'});
+}
+
+function resetQuiz() {
+  qAnswered = new Array(QUIZ_DATA.length).fill(null);
+  document.querySelectorAll('.q-opt').forEach(b => {
+    b.disabled = false;
+    b.classList.remove('correct', 'wrong');
+  });
+  document.querySelectorAll('.q-explanation').forEach(e => e.classList.remove('show'));
+  document.getElementById('quiz-result').classList.remove('show');
+  updateScore();
+  document.querySelector('#tab-quiz').scrollIntoView({behavior: 'smooth'});
+}
 </script>
-<script src="app.js"></script>
 </body>
 </html>
