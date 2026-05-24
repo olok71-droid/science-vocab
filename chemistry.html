@@ -71,12 +71,55 @@ header {
 
 /* TABS */
 .tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
-.tabs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
-.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 6px; border-radius: 10px;
-  font-size: 13px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
+  font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
 .tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
+
+/* SEARCH BOX (단어장) */
+.search-wrap { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; }
+.search-input { width: 100%; background: var(--card); border: 1.5px solid var(--border); color: var(--text);
+  padding: 12px 16px; border-radius: 12px; font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.15s; }
+.search-input:focus { border-color: var(--accent); background: var(--card2); }
+.search-input::placeholder { color: var(--muted); }
+
+/* SPELLING TEST (탭 4) */
+.spell-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.spell-stats { display: flex; justify-content: space-between; align-items: center; padding: 10px 0 16px; font-size: 13px; color: var(--muted); font-weight: 700; }
+.spell-stats b { color: var(--accent); }
+.spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
+.spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
+.spell-ko { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+.spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
+.spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: #fff;
+  padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
+  letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
+.spell-input:focus { border-color: var(--accent); }
+.spell-input.disabled { opacity: 0.6; pointer-events: none; }
+.spell-feedback { font-family: 'Courier New', monospace; font-size: 20px; letter-spacing: 3px;
+  text-align: center; padding: 10px; min-height: 42px; font-weight: 800; margin-bottom: 12px;
+  background: var(--card2); border-radius: 10px; border: 1px solid var(--border); }
+.spell-feedback .ok { color: var(--green); }
+.spell-feedback .bad { color: #ff6b6b; }
+.spell-feedback .miss { color: var(--muted); }
+.spell-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.spell-btn { padding: 12px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.spell-btn-show:hover { background: rgba(251,191,36,0.22); }
+.spell-btn-next { background: rgba(56,189,248,0.14); border-color: rgba(56,189,248,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(56,189,248,0.24); }
+.spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
+  color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
+  color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner b { color: #fff; font-size: 16px; letter-spacing: 1px; }
 
 /* SECTION HEADERS (vocab filter) */
 .filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
@@ -202,190 +245,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 
 <div class="tabs-wrap">
   <div class="tabs">
-    <button class="tab-btn active" data-tab="notes">📘 핵심노트</button>
-    <button class="tab-btn" data-tab="vocab">📚 단어장</button>
-    <button class="tab-btn" data-tab="quiz">📝 퀴즈</button>
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
+    <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
+    <button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
   </div>
-</div>
-
-<!-- 핵심노트 -->
-<div class="tab-pane active" id="tab-notes">
-<div class="chapter-block">
-  <div class="chapter-head">
-    <span class="ch-icon">💧</span>
-    <div>
-      <h2>1. 용해와 입자 모델</h2>
-      <span class="ch-sub">2.1 Dissolving</span>
-    </div>
-  </div>
-  <div class="notes-list"><div class="note-card">
-  <div class="note-head">
-    <h3>용해(Dissolving)란?</h3>
-    
-  </div>
-  <div class="note-body">고체가 액체에 녹아 <b>입자 단위로 흩어지는 것</b>. 설탕을 물에 넣으면 설탕은 사라진 게 아니라 작은 입자로 물 사이사이에 퍼진다. 그래서 컵을 흔들거나 맛을 봐도 단맛이 난다.</div>
-  <img class="note-img" src="assets/diagrams/2.1_Dissolving/p11_img008.png" alt="" loading="lazy">
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>Solute + Solvent = Solution</h3>
-    
-  </div>
-  <div class="note-body"><b>Solute(용질)</b>: 녹는 물질 — 보통 고체 (예: 설탕, 소금).<br><b>Solvent(용매)</b>: 녹이는 물질 — 보통 액체 (예: 물).<br><b>Solution(용액)</b>: 둘이 섞여서 만들어진 균일한 혼합물.<br><br><span style='color:var(--green)'>설탕 + 물 = 설탕물</span></div>
-  <img class="note-img" src="assets/diagrams/2.1_Dissolving/p15_img016.png" alt="" loading="lazy">
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>Soluble vs Insoluble</h3>
-    
-  </div>
-  <div class="note-body"><b>Soluble(가용성)</b>: 용매에 녹는 물질 (예: 소금은 물에 soluble).<br><b>Insoluble(불용성)</b>: 용매에 녹지 않는 물질 (예: 모래는 물에 insoluble).<br><br>같은 물질이라도 용매가 달라지면 결과가 다름. 기름은 물에 안 녹지만 다른 기름엔 잘 녹는다.</div>
-  
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>질량 보존 (Mass conservation)</h3>
-    
-  </div>
-  <div class="note-body">설탕 9g + 물 146g → 설탕물 155g. <b>질량은 사라지지 않는다!</b><br>입자가 물 사이로 흩어졌을 뿐이라서 무게는 그대로 보존된다. 이것을 <b>mass conservation(질량 보존)</b>이라 한다.</div>
-  <img class="note-img" src="assets/diagrams/2.1_Dissolving/p18_img018.png" alt="" loading="lazy">
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>용해 ≠ 녹음(Melting)</h3>
-    
-  </div>
-  <div class="note-body">둘 다 한국어로 '녹는다'고 말하지만 과학에서는 다르다!<br>• <b>Dissolving(용해)</b>: 고체가 액체에 <b>섞여 들어가는 것</b>. 두 물질 필요.<br>• <b>Melting(녹음/용융)</b>: <b>온도가 올라가 상태가 바뀌는 것</b>. 한 물질이 고체→액체.<br><br>얼음이 물이 되는 건 melting, 설탕이 물에 풀리는 건 dissolving.</div>
-  
-</div></div>
-</div>
-<div class="chapter-block">
-  <div class="chapter-head">
-    <span class="ch-icon">📊</span>
-    <div>
-      <h2>2. 용액의 농도 (Concentration)</h2>
-      <span class="ch-sub">SC 2.2 Concentration of solutions</span>
-    </div>
-  </div>
-  <div class="notes-list"><div class="note-card">
-  <div class="note-head">
-    <h3>농도(Concentration)란?</h3>
-    
-  </div>
-  <div class="note-body">같은 양의 용매에 <b>얼마나 많은 용질이 녹아 있는가</b>를 나타내는 값. 입자 모델로 보면, 같은 부피 안에 용질 입자가 많을수록 더 진하다.</div>
-  <img class="note-img" src="assets/diagrams/SC_2.2_Concentration_of_solutions/p07_img012.png" alt="" loading="lazy">
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>Concentrated vs Dilute</h3>
-    
-  </div>
-  <div class="note-body"><b>Concentrated(진한 용액)</b>: 용매 양에 비해 용질이 <b>많다</b>. 입자가 빽빽함.<br><b>Dilute(묽은 용액)</b>: 용매 양에 비해 용질이 <b>적다</b>. 입자가 듬성듬성.<br><br>홍차에 설탕 5스푼 = concentrated, 1스푼 = dilute.</div>
-  
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>농도를 바꾸는 방법</h3>
-    
-  </div>
-  <div class="note-body"><b>더 진하게(more concentrated):</b><br>• 용질을 더 넣는다<br>• 용매를 증발시킨다 (물 끓이기)<br><br><b>더 묽게(more dilute):</b><br>• 용매(물)를 더 넣는다<br>• 용질의 양은 그대로 두고 용매만 늘림</div>
-  
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>입자 모델로 표현하기</h3>
-    
-  </div>
-  <div class="note-body">농도 비교는 <b>같은 크기의 그릇에 같은 부피</b>로 그린다. 같은 부피 안에 검은 점(용질 입자)이 더 많으면 진한 용액, 적으면 묽은 용액이다.</div>
-  <img class="note-img" src="assets/diagrams/SC_2.2_Concentration_of_solutions/p09_img016.png" alt="" loading="lazy">
-</div></div>
-</div>
-<div class="chapter-block">
-  <div class="chapter-head">
-    <span class="ch-icon">💎</span>
-    <div>
-      <h2>3. 물에 대한 용해도 (Solubility)</h2>
-      <span class="ch-sub">2.3 Solubility in Water</span>
-    </div>
-  </div>
-  <div class="notes-list"><div class="note-card">
-  <div class="note-head">
-    <h3>Saturated vs Unsaturated</h3>
-    
-  </div>
-  <div class="note-body"><b>Unsaturated(불포화)</b>: 아직 더 녹을 수 있는 상태.<br><b>Saturated(포화)</b>: 더 이상 녹지 않는 상태. 추가 용질은 그릇 바닥에 가라앉는다.<br><br>설탕을 계속 넣다 보면 어느 순간 더 이상 녹지 않고 가라앉기 시작 — 그 시점이 포화점.</div>
-  <img class="note-img" src="assets/diagrams/2.3_Solubility_in_Water/p04_img002.png" alt="" loading="lazy">
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>용해도(Solubility)의 정의</h3>
-    
-  </div>
-  <div class="note-body"><b>일정한 온도에서 정해진 양의 용매에 녹을 수 있는 최대 용질의 양</b>. 보통 '100g의 물에 녹는 용질의 g수'로 표시한다.<br><br>예: 20℃에서 설탕의 용해도는 약 203g (= 100g 물에 203g 설탕이 녹음).</div>
-  
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>물질마다 용해도가 다르다</h3>
-    
-  </div>
-  <div class="note-body">같은 온도의 물이라도 어떤 용질을 넣느냐에 따라 녹는 양이 다르다.<br>• 설탕: 매우 잘 녹음<br>• 소금: 잘 녹음<br>• 분필가루(석회): 거의 안 녹음<br><br>그래서 실험에서 '같은 양의 물'에 '다른 용질'을 넣어 몇 스푼이 녹는지 비교한다.</div>
-  <img class="note-img" src="assets/diagrams/2.3_Solubility_in_Water/p05_img003.png" alt="" loading="lazy">
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>공정 실험(Fair test)의 변수</h3>
-    
-  </div>
-  <div class="note-body">용해도 실험을 공정하게 하려면:<br>• <b>Independent variable(독립변수)</b>: 바꾸는 것 — 용질 종류<br>• <b>Dependent variable(종속변수)</b>: 측정하는 것 — 녹은 양(스푼 수)<br>• <b>Control variable(통제변수)</b>: 똑같이 유지 — 물의 부피, 온도, 스푼 크기</div>
-  
-</div></div>
-</div>
-<div class="chapter-block">
-  <div class="chapter-head">
-    <span class="ch-icon">🌡️</span>
-    <div>
-      <h2>4. 용해도와 온도 (Temperature)</h2>
-      <span class="ch-sub">2.4 Solubility and temperature</span>
-    </div>
-  </div>
-  <div class="notes-list"><div class="note-card">
-  <div class="note-head">
-    <h3>온도가 올라가면…</h3>
-    
-  </div>
-  <div class="note-body">온도가 높아지면 물 분자가 <b>더 많은 열에너지·운동에너지</b>를 가져 더 빠르게 움직인다. 그래서 용질 입자를 더 잘 흩어 놓을 수 있어 <b>대부분 용해도가 증가</b>한다.<br><br>찬물보다 따뜻한 물에 설탕이 더 잘 녹는 이유.</div>
-  <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p04_img004.png" alt="" loading="lazy">
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>실험: 온도별 설탕 용해도</h3>
-    
-  </div>
-  <div class="note-body"><b>변수 설정:</b><br>• 독립: 물 온도 (실온 / 50℃ / 100℃)<br>• 종속: 녹은 설탕의 질량(g)<br>• 통제: 물의 부피(25 cm³), 젓는 힘, 같은 비커<br><br><b>방법:</b> 비커에 물 25 cm³ → 10 g씩 설탕 추가하며 젓기 → 포화 상태가 될 때까지 → 총 g 기록.</div>
-  <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p11_img013.png" alt="" loading="lazy">
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>안전 (Safety)</h3>
-    
-  </div>
-  <div class="note-body">뜨거운 물을 다루므로:<br>• 안전 고글 착용<br>• 긴 머리 묶기<br>• Bunsen burner·삼발이·금속망 안전 셋업<br>• 비커 잡을 땐 test tube holder 사용</div>
-  
-</div>
-<div class="note-card">
-  <div class="note-head">
-    <h3>결과 그래프와 결론</h3>
-    
-  </div>
-  <div class="note-body">온도(x축) vs 녹은 설탕 양(y축) 선 그래프를 그리면 <b>오른쪽 위로 향하는 선</b>이 나온다.<br><br><b>결론:</b> 물의 온도가 올라갈수록 설탕의 용해도는 증가한다. (정비례에 가까움)<br><br>주의: 모든 고체가 이렇진 않음 — 일부 물질은 온도와 상관없거나 오히려 감소.</div>
-  <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p17_img024.png" alt="" loading="lazy">
-</div></div>
-</div>
 </div>
 
 <!-- 단어장 -->
-<div class="tab-pane" id="tab-vocab">
+<div class="tab-pane active" id="tab-vocab">
+  <div class="search-wrap">
+    <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+  </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
       <button class="filter-btn active" data-cat="all" onclick="filterCards("all")">전체 All</button>
@@ -685,10 +556,186 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </div>
 </div>
 
+<!-- 핵심노트 -->
+<div class="tab-pane" id="tab-notes">
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">💧</span>
+    <div>
+      <h2>1. 용해와 입자 모델</h2>
+      <span class="ch-sub">2.1 Dissolving</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>용해(Dissolving)란?</h3>
+    
+  </div>
+  <div class="note-body">고체가 액체에 녹아 <b>입자 단위로 흩어지는 것</b>. 설탕을 물에 넣으면 설탕은 사라진 게 아니라 작은 입자로 물 사이사이에 퍼진다. 그래서 컵을 흔들거나 맛을 봐도 단맛이 난다.</div>
+  <img class="note-img" src="assets/diagrams/2.1_Dissolving/p11_img008.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Solute + Solvent = Solution</h3>
+    
+  </div>
+  <div class="note-body"><b>Solute(용질)</b>: 녹는 물질 — 보통 고체 (예: 설탕, 소금).<br><b>Solvent(용매)</b>: 녹이는 물질 — 보통 액체 (예: 물).<br><b>Solution(용액)</b>: 둘이 섞여서 만들어진 균일한 혼합물.<br><br><span style='color:var(--green)'>설탕 + 물 = 설탕물</span></div>
+  <img class="note-img" src="assets/diagrams/2.1_Dissolving/p15_img016.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Soluble vs Insoluble</h3>
+    
+  </div>
+  <div class="note-body"><b>Soluble(가용성)</b>: 용매에 녹는 물질 (예: 소금은 물에 soluble).<br><b>Insoluble(불용성)</b>: 용매에 녹지 않는 물질 (예: 모래는 물에 insoluble).<br><br>같은 물질이라도 용매가 달라지면 결과가 다름. 기름은 물에 안 녹지만 다른 기름엔 잘 녹는다.</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>질량 보존 (Mass conservation)</h3>
+    
+  </div>
+  <div class="note-body">설탕 9g + 물 146g → 설탕물 155g. <b>질량은 사라지지 않는다!</b><br>입자가 물 사이로 흩어졌을 뿐이라서 무게는 그대로 보존된다. 이것을 <b>mass conservation(질량 보존)</b>이라 한다.</div>
+  <img class="note-img" src="assets/diagrams/2.1_Dissolving/p18_img018.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>용해 ≠ 녹음(Melting)</h3>
+    
+  </div>
+  <div class="note-body">둘 다 한국어로 '녹는다'고 말하지만 과학에서는 다르다!<br>• <b>Dissolving(용해)</b>: 고체가 액체에 <b>섞여 들어가는 것</b>. 두 물질 필요.<br>• <b>Melting(녹음/용융)</b>: <b>온도가 올라가 상태가 바뀌는 것</b>. 한 물질이 고체→액체.<br><br>얼음이 물이 되는 건 melting, 설탕이 물에 풀리는 건 dissolving.</div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📊</span>
+    <div>
+      <h2>2. 용액의 농도 (Concentration)</h2>
+      <span class="ch-sub">SC 2.2 Concentration of solutions</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>농도(Concentration)란?</h3>
+    
+  </div>
+  <div class="note-body">같은 양의 용매에 <b>얼마나 많은 용질이 녹아 있는가</b>를 나타내는 값. 입자 모델로 보면, 같은 부피 안에 용질 입자가 많을수록 더 진하다.</div>
+  <img class="note-img" src="assets/diagrams/SC_2.2_Concentration_of_solutions/p07_img012.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Concentrated vs Dilute</h3>
+    
+  </div>
+  <div class="note-body"><b>Concentrated(진한 용액)</b>: 용매 양에 비해 용질이 <b>많다</b>. 입자가 빽빽함.<br><b>Dilute(묽은 용액)</b>: 용매 양에 비해 용질이 <b>적다</b>. 입자가 듬성듬성.<br><br>홍차에 설탕 5스푼 = concentrated, 1스푼 = dilute.</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>농도를 바꾸는 방법</h3>
+    
+  </div>
+  <div class="note-body"><b>더 진하게(more concentrated):</b><br>• 용질을 더 넣는다<br>• 용매를 증발시킨다 (물 끓이기)<br><br><b>더 묽게(more dilute):</b><br>• 용매(물)를 더 넣는다<br>• 용질의 양은 그대로 두고 용매만 늘림</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>입자 모델로 표현하기</h3>
+    
+  </div>
+  <div class="note-body">농도 비교는 <b>같은 크기의 그릇에 같은 부피</b>로 그린다. 같은 부피 안에 검은 점(용질 입자)이 더 많으면 진한 용액, 적으면 묽은 용액이다.</div>
+  <img class="note-img" src="assets/diagrams/SC_2.2_Concentration_of_solutions/p09_img016.png" alt="" loading="lazy">
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">💎</span>
+    <div>
+      <h2>3. 물에 대한 용해도 (Solubility)</h2>
+      <span class="ch-sub">2.3 Solubility in Water</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Saturated vs Unsaturated</h3>
+    
+  </div>
+  <div class="note-body"><b>Unsaturated(불포화)</b>: 아직 더 녹을 수 있는 상태.<br><b>Saturated(포화)</b>: 더 이상 녹지 않는 상태. 추가 용질은 그릇 바닥에 가라앉는다.<br><br>설탕을 계속 넣다 보면 어느 순간 더 이상 녹지 않고 가라앉기 시작 — 그 시점이 포화점.</div>
+  <img class="note-img" src="assets/diagrams/2.3_Solubility_in_Water/p04_img002.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>용해도(Solubility)의 정의</h3>
+    
+  </div>
+  <div class="note-body"><b>일정한 온도에서 정해진 양의 용매에 녹을 수 있는 최대 용질의 양</b>. 보통 '100g의 물에 녹는 용질의 g수'로 표시한다.<br><br>예: 20℃에서 설탕의 용해도는 약 203g (= 100g 물에 203g 설탕이 녹음).</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>물질마다 용해도가 다르다</h3>
+    
+  </div>
+  <div class="note-body">같은 온도의 물이라도 어떤 용질을 넣느냐에 따라 녹는 양이 다르다.<br>• 설탕: 매우 잘 녹음<br>• 소금: 잘 녹음<br>• 분필가루(석회): 거의 안 녹음<br><br>그래서 실험에서 '같은 양의 물'에 '다른 용질'을 넣어 몇 스푼이 녹는지 비교한다.</div>
+  <img class="note-img" src="assets/diagrams/2.3_Solubility_in_Water/p05_img003.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>공정 실험(Fair test)의 변수</h3>
+    
+  </div>
+  <div class="note-body">용해도 실험을 공정하게 하려면:<br>• <b>Independent variable(독립변수)</b>: 바꾸는 것 — 용질 종류<br>• <b>Dependent variable(종속변수)</b>: 측정하는 것 — 녹은 양(스푼 수)<br>• <b>Control variable(통제변수)</b>: 똑같이 유지 — 물의 부피, 온도, 스푼 크기</div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🌡️</span>
+    <div>
+      <h2>4. 용해도와 온도 (Temperature)</h2>
+      <span class="ch-sub">2.4 Solubility and temperature</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>온도가 올라가면…</h3>
+    
+  </div>
+  <div class="note-body">온도가 높아지면 물 분자가 <b>더 많은 열에너지·운동에너지</b>를 가져 더 빠르게 움직인다. 그래서 용질 입자를 더 잘 흩어 놓을 수 있어 <b>대부분 용해도가 증가</b>한다.<br><br>찬물보다 따뜻한 물에 설탕이 더 잘 녹는 이유.</div>
+  <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p04_img004.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>실험: 온도별 설탕 용해도</h3>
+    
+  </div>
+  <div class="note-body"><b>변수 설정:</b><br>• 독립: 물 온도 (실온 / 50℃ / 100℃)<br>• 종속: 녹은 설탕의 질량(g)<br>• 통제: 물의 부피(25 cm³), 젓는 힘, 같은 비커<br><br><b>방법:</b> 비커에 물 25 cm³ → 10 g씩 설탕 추가하며 젓기 → 포화 상태가 될 때까지 → 총 g 기록.</div>
+  <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p11_img013.png" alt="" loading="lazy">
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>안전 (Safety)</h3>
+    
+  </div>
+  <div class="note-body">뜨거운 물을 다루므로:<br>• 안전 고글 착용<br>• 긴 머리 묶기<br>• Bunsen burner·삼발이·금속망 안전 셋업<br>• 비커 잡을 땐 test tube holder 사용</div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>결과 그래프와 결론</h3>
+    
+  </div>
+  <div class="note-body">온도(x축) vs 녹은 설탕 양(y축) 선 그래프를 그리면 <b>오른쪽 위로 향하는 선</b>이 나온다.<br><br><b>결론:</b> 물의 온도가 올라갈수록 설탕의 용해도는 증가한다. (정비례에 가까움)<br><br>주의: 모든 고체가 이렇진 않음 — 일부 물질은 온도와 상관없거나 오히려 감소.</div>
+  <img class="note-img" src="assets/diagrams/2.4_Solubility_and_temperature/p17_img024.png" alt="" loading="lazy">
+</div></div>
+</div>
+</div>
+
 <!-- 퀴즈 -->
 <div class="tab-pane" id="tab-quiz">
   <div class="quiz-wrap">
-    <div class="quiz-progress">진행 <b id="q-current">1</b> / 14  ·  점수 <b id="q-score">0</b></div>
+    <div class="quiz-progress">Question <b id="q-current">1</b> / 14  ·  Score <b id="q-score">0</b></div>
     <div class="quiz-bar"><div class="quiz-bar-fill" id="q-bar" style="width:0%"></div></div>
     <div id="quiz-list"><div class="q-card" id="q-card-0">
   <div class="q-num">문제 1 / 14</div>
@@ -845,10 +892,34 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="q-explanation"><b>해설:</b> Sand is insoluble in water — it stays as visible solid particles, so it isn't a true solution. (모래는 안 녹음)</div>
 </div></div>
     <div class="quiz-result" id="quiz-result">
-      <h2>🎉 완료!</h2>
+      <h2>🎉 Done!</h2>
       <div class="score" id="final-score">0 / 14</div>
-      <p style="color:var(--muted);margin-bottom:16px" id="final-msg">잘했어요!</p>
-      <button onclick="resetQuiz()">다시 풀기</button>
+      <p style="color:var(--muted);margin-bottom:16px" id="final-msg">Well done!</p>
+      <button onclick="resetQuiz()">다시 풀기 / Try Again</button>
+    </div>
+  </div>
+</div>
+
+<!-- 단어시험 -->
+<div class="tab-pane" id="tab-spelling">
+  <div class="spell-wrap">
+    <div class="spell-stats">
+      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
+      <div>📚 <span id="sp-remaining">23</span> 남음</div>
+    </div>
+    <div class="spell-card" id="spell-card">
+      <span class="spell-cat" id="sp-cat">CATEGORY</span>
+      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
+      <div class="spell-def" id="sp-def">English definition</div>
+      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
+      <div class="spell-feedback" id="sp-feedback"></div>
+      <div class="spell-input-row">
+        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
+      </div>
+      <div class="spell-buttons">
+        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
+        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
+      </div>
     </div>
   </div>
 </div>
@@ -857,6 +928,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 
 <script>
 const QUIZ_DATA = [{"q": "When you stir sugar into water, what really happens to the sugar?", "options": ["The sugar disappears completely", "Sugar particles spread out between the water particles", "The sugar floats on top of the water", "Water turns into sugar"], "answer": 1, "explanation": "Sugar doesn't disappear — its particles spread between water particles. (사라지는 게 아니라 입자가 흩어짐)"}, {"q": "In a cup of sugar water, which is correct?", "options": ["Sugar = solvent, water = solute", "Sugar = solute, water = solvent", "Sugar = solution, water = solute", "All three terms mean the same thing"], "answer": 1, "explanation": "The thing being dissolved = solute. The liquid doing the dissolving = solvent. (녹는 쪽 = solute)"}, {"q": "If you dissolve 9 g of sugar in 146 g of water, what is the mass of the solution?", "options": ["9 g", "146 g", "155 g", "137 g"], "answer": 2, "explanation": "Mass is conserved: solute + solvent = solution. 9 + 146 = 155 g. (질량 보존)"}, {"q": "What name is given to a substance that does NOT dissolve in water?", "options": ["Soluble", "Insoluble", "Solvent", "Saturated"], "answer": 1, "explanation": "Insoluble = does not dissolve. Soluble = does dissolve. (insoluble = 안 녹는)"}, {"q": "What is the difference between dissolving and melting?", "options": ["They are the same process", "Dissolving needs a temperature change; melting needs particles to spread", "Dissolving = a solute spreads through a solvent; melting = a solid changes to a liquid when heated", "Melting only happens with solids mixed together"], "answer": 2, "explanation": "Dissolving = two substances mix. Melting = one substance changes state from solid to liquid. (둘은 다른 과정)"}, {"q": "What is a concentrated solution?", "options": ["A solution with a lot of solute compared to solvent", "A solution with only a little solute compared to solvent", "A solution with no solute at all", "A cold solution"], "answer": 0, "explanation": "Concentrated = lots of solute. Dilute = little solute. (진한 = 용질 많음)"}, {"q": "How can you make a dilute solution MORE concentrated?", "options": ["Add more water", "Cool the solution down", "Add more solute, or evaporate some of the solvent", "Just leave it standing for a long time"], "answer": 2, "explanation": "Either add more solute or remove some of the solvent (e.g. by heating). (용질 추가 또는 물 증발)"}, {"q": "A solution that cannot dissolve any more solute at a given temperature is called…", "options": ["Unsaturated", "Saturated", "Dilute", "Concentrated"], "answer": 1, "explanation": "Saturated = no more solute can dissolve. (포화 = 더 안 녹음)"}, {"q": "What is meant by 'solubility'?", "options": ["The colour of the solute", "The volume of the solution", "The maximum mass of solute that dissolves in a fixed amount of solvent at a set temperature", "How fast a solute sinks to the bottom"], "answer": 2, "explanation": "Solubility = max amount of solute that can dissolve at a given temperature. (특정 온도에서 녹는 최대량)"}, {"q": "For most solid solutes in water, what happens to solubility as the water gets hotter?", "options": ["It decreases", "It increases", "It stays the same", "It changes randomly"], "answer": 1, "explanation": "Higher temperature → water particles have more energy → more solute usually dissolves. (대부분 용해도 증가)"}, {"q": "In an experiment testing how temperature affects sugar dissolving, what is the independent variable?", "options": ["The volume of water", "The water temperature (the variable you change)", "The mass of sugar that dissolves (what you measure)", "The size of the beaker"], "answer": 1, "explanation": "Independent variable = the one you deliberately change. (의도적으로 바꾸는 것)"}, {"q": "In a fair test comparing the solubility of sugar and salt in water, which is NOT a control variable?", "options": ["Volume of water", "Size of spatula", "Type of solute (sugar vs salt)", "Stirring force"], "answer": 2, "explanation": "Comparing solutes = solute type is the INDEPENDENT variable, not a control. (용질 종류는 독립변수)"}, {"q": "Which statement about a mixture is correct?", "options": ["Its parts are joined by chemical bonds", "Its parts are mixed but not chemically joined and can be separated physically", "It always contains only one type of element", "It can only exist as a solution"], "answer": 1, "explanation": "Mixture = physically combined, no chemical bonds, can be separated physically. (화학결합 없음)"}, {"q": "Which of the following is NOT a true solution?", "options": ["Sugar in water", "Salt in water", "Sand stirred into water", "A cup of tea"], "answer": 2, "explanation": "Sand is insoluble in water — it stays as visible solid particles, so it isn't a true solution. (모래는 안 녹음)"}];
+const VOCAB_DATA = [{"en": "Solute", "ko": "용질", "def_en": "The substance being dissolved (usually a solid like sugar or salt).", "cat": "organ"}, {"en": "Solvent", "ko": "용매", "def_en": "The liquid that dissolves the solute (often water).", "cat": "organ"}, {"en": "Solution", "ko": "용액", "def_en": "Mixture formed when a solute dissolves in a solvent.", "cat": "organ"}, {"en": "Dissolving", "ko": "용해", "def_en": "Process where a solute breaks up into particles and spreads through a solvent.", "cat": "organ"}, {"en": "Soluble", "ko": "녹는 (가용성)", "def_en": "A substance that can dissolve in a given solvent.", "cat": "organ"}, {"en": "Insoluble", "ko": "안 녹는 (불용성)", "def_en": "A substance that does not dissolve in a given solvent.", "cat": "organ"}, {"en": "Mixture", "ko": "혼합물", "def_en": "Two or more substances mixed but not chemically joined.", "cat": "organ"}, {"en": "Particle", "ko": "입자", "def_en": "Tiny piece of a substance (atom, molecule, ion).", "cat": "organ"}, {"en": "Concentration", "ko": "농도", "def_en": "Amount of solute dissolved in a given amount of solvent.", "cat": "process"}, {"en": "Concentrated", "ko": "진한 (농축)", "def_en": "A solution with a relatively large amount of solute.", "cat": "process"}, {"en": "Dilute", "ko": "묽은", "def_en": "A solution with a relatively small amount of solute.", "cat": "process"}, {"en": "Dissolve", "ko": "녹다 (동사)", "def_en": "(verb) To break up and spread evenly through a solvent.", "cat": "process"}, {"en": "Melting", "ko": "녹음 (용융)", "def_en": "Change of state from solid to liquid due to heating.", "cat": "process"}, {"en": "Mass conservation", "ko": "질량 보존", "def_en": "Total mass stays the same before and after dissolving.", "cat": "process"}, {"en": "Solubility", "ko": "용해도", "def_en": "Maximum amount of solute that can dissolve in a given amount of solvent at a set temperature.", "cat": "gas"}, {"en": "Saturated", "ko": "포화", "def_en": "A solution that cannot dissolve any more solute at that temperature.", "cat": "gas"}, {"en": "Unsaturated", "ko": "불포화", "def_en": "A solution that can still dissolve more solute.", "cat": "gas"}, {"en": "Temperature", "ko": "온도", "def_en": "How hot or cold something is. Higher temperature → faster particles → usually more dissolving.", "cat": "blood"}, {"en": "Independent variable", "ko": "독립변수", "def_en": "The variable you deliberately change in an experiment.", "cat": "blood"}, {"en": "Dependent variable", "ko": "종속변수", "def_en": "The variable you measure as a result.", "cat": "blood"}, {"en": "Control variable", "ko": "통제변수", "def_en": "Variables kept the same to keep the test fair.", "cat": "blood"}, {"en": "Fair test", "ko": "공정 실험", "def_en": "An experiment in which only one variable is changed at a time.", "cat": "blood"}, {"en": "Hypothesis", "ko": "가설", "def_en": "A predicted answer to a scientific question that can be tested.", "cat": "blood"}];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
 
 // 탭 전환
@@ -867,6 +939,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top: 0, behavior: 'smooth'});
+    if (btn.dataset.tab === 'spelling' && !spellState.started) startSpelling();
   });
 });
 
@@ -874,22 +947,177 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 function speak(text) {
   if (!window.speechSynthesis) return;
   const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'en-US'; u.rate = 0.9;
+  u.lang = 'en-GB'; u.rate = 0.9;
+  // en-GB 보이스 우선 선택
+  const voices = window.speechSynthesis.getVoices();
+  const gb = voices.find(v => v.lang === 'en-GB');
+  if (gb) u.voice = gb;
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
 }
 
-// 단어장 필터
-function filterCards(cat) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+// 단어장: 필터 + 검색 통합
+let currentCat = 'all';
+let currentQuery = '';
+
+function applyVocabFilter() {
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
   document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
-    c.classList.toggle('hidden', cat !== 'all' && c.dataset.cat !== cat);
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (currentCat === 'all' || cat === currentCat);
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const show = catOk && qOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
   document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
     const target = h.dataset.cat;
-    h.classList.toggle('hidden', cat !== 'all' && cat !== target);
+    h.classList.toggle('hidden', !visibleByCat[target]);
   });
 }
+
+function filterCards(cat) {
+  currentCat = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+});
+
+// ─── 단어시험 (Spelling Test) ───
+const spellState = {
+  started: false,
+  pool: [],         // 남은 단어들
+  current: null,    // 현재 단어
+  correct: 0,
+  wrong: 0,
+  revealed: false,
+};
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startSpelling() {
+  spellState.started = true;
+  spellState.pool = shuffle(VOCAB_DATA);
+  spellState.correct = 0;
+  spellState.wrong = 0;
+  updateSpellStats();
+  nextWord();
+  setTimeout(() => document.getElementById('sp-input')?.focus(), 200);
+}
+
+function nextWord() {
+  if (spellState.pool.length === 0) {
+    // 다 끝나면 다시 섞기
+    spellState.pool = shuffle(VOCAB_DATA);
+  }
+  spellState.current = spellState.pool.shift();
+  spellState.revealed = false;
+  const w = spellState.current;
+  const catLabel = {organ:'🫁 Organ',process:'⚙️ Process',blood:'🩸 Blood',gas:'💨 Gas'}[w.cat] || w.cat;
+  const catEl = document.getElementById('sp-cat');
+  catEl.textContent = catLabel;
+  catEl.className = 'spell-cat cat-' + w.cat;
+  document.getElementById('sp-ko').textContent = w.ko;
+  document.getElementById('sp-def').textContent = w.def_en;
+  // 글자수 힌트 — 공백/특수문자는 그대로, 글자는 _로
+  const hint = w.en.split('').map(ch => /[A-Za-z0-9]/.test(ch) ? '_' : ch).join(' ');
+  document.getElementById('sp-hint').textContent = hint + '  (' + w.en.length + ')';
+  document.getElementById('sp-feedback').innerHTML = '';
+  const input = document.getElementById('sp-input');
+  input.value = '';
+  input.classList.remove('disabled');
+  input.disabled = false;
+  input.placeholder = w.en.length + ' chars · 영어로 입력…';
+  input.focus();
+  updateSpellStats();
+}
+
+function showAnswer() {
+  if (!spellState.current || spellState.revealed) return;
+  spellState.revealed = true;
+  const w = spellState.current;
+  document.getElementById('sp-feedback').innerHTML =
+    '<span class="ok">' + w.en + '</span>';
+  const input = document.getElementById('sp-input');
+  input.value = w.en;
+  input.classList.add('disabled');
+  input.disabled = true;
+  // 자동으로 발음
+  if (window.speechSynthesis) speak(w.en);
+}
+
+function updateSpellStats() {
+  document.getElementById('sp-correct').textContent = spellState.correct;
+  document.getElementById('sp-wrong').textContent = spellState.wrong;
+  document.getElementById('sp-remaining').textContent = spellState.pool.length;
+}
+
+function renderSpellFeedback(typed, target) {
+  // 글자별 색상 표시
+  let html = '';
+  for (let i = 0; i < target.length; i++) {
+    const t = typed[i];
+    const a = target[i];
+    if (t === undefined) {
+      html += '<span class="miss">' + (a === ' ' ? '&nbsp;' : '_') + '</span>';
+    } else if (t.toLowerCase() === a.toLowerCase()) {
+      html += '<span class="ok">' + a + '</span>';
+    } else {
+      html += '<span class="bad">' + t + '</span>';
+    }
+  }
+  return html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('sp-input');
+  if (!input) return;
+  input.addEventListener('input', () => {
+    if (!spellState.current || spellState.revealed) return;
+    const typed = input.value;
+    const target = spellState.current.en;
+    document.getElementById('sp-feedback').innerHTML = renderSpellFeedback(typed, target);
+    // 완전 일치 (대소문자 무시)
+    if (typed.toLowerCase() === target.toLowerCase()) {
+      spellState.correct++;
+      input.classList.add('disabled');
+      input.disabled = true;
+      document.getElementById('sp-feedback').innerHTML =
+        '<span class="ok">✓ ' + target + '</span>';
+      updateSpellStats();
+      // 0.9초 후 다음 단어
+      setTimeout(() => nextWord(), 900);
+    }
+  });
+  // Enter로 정답이 아니면 틀린 것 처리
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && spellState.current && !spellState.revealed) {
+      const typed = input.value.trim();
+      const target = spellState.current.en;
+      if (typed.toLowerCase() !== target.toLowerCase() && typed.length > 0) {
+        spellState.wrong++;
+        showAnswer();
+        updateSpellStats();
+      }
+    }
+  });
+});
 
 // 퀴즈 채점
 function answerQuestion(qi, oi) {
