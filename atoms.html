@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d1b2a">
+<title>8E Atoms & Particles 원자와 입자 운동</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d1b2a;
+  --card: #162032;
+  --card2: #1c2d42;
+  --accent: #38bdf8;
+  --green: #4ade80;
+  --yellow: #fbbf24;
+  --pink: #f472b6;
+  --orange: #fb923c;
+  --purple: #c084fc;
+  --text: #e2f0ff;
+  --muted: #6b9ab8;
+  --border: rgba(56,189,248,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito','Noto Sans KR',sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+}
+
+/* HEADER */
+header {
+  background: rgba(22,32,50,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 18px;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 10px;
+}
+.header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
+.header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
+.header-text { flex: 1; min-width:0; }
+.header-title { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* Claude 묻기 / 채점 버튼 (헤더) */
+.header-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.btn-claude { background: rgba(192,132,252,0.14); border: 1.5px solid rgba(192,132,252,0.4);
+  color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  font-family: inherit; white-space: nowrap; cursor: pointer; }
+.btn-claude:hover { background: rgba(192,132,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(96,196,248,0.12); border-color: rgba(96,196,248,0.4); color: #60c4f8; }
+.btn-claude.grade:hover { background: rgba(96,196,248,0.24); }
+
+/* HERO */
+.hero { text-align: center; padding: 28px 20px 18px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+.hero h1 span { color: var(--accent); }
+.hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.stat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 5px 12px; font-size: 11.5px; font-weight: 700; color: var(--accent); }
+
+/* EQUATION BOX */
+.eq-box { max-width: 720px; margin: 0 auto 24px; padding: 0 16px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width:480px){ .eq-box { grid-template-columns: 1fr; } }
+.eq-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.eq-label.aerobic { color: var(--green); }
+.eq-label.anaerobic { color: var(--orange); }
+.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+
+/* TABS */
+.tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
+  font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
+.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* SEARCH BOX (단어장) */
+.search-wrap { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; }
+.search-input { width: 100%; background: var(--card); border: 1.5px solid var(--border); color: var(--text);
+  padding: 12px 16px; border-radius: 12px; font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.15s; }
+.search-input:focus { border-color: var(--accent); background: var(--card2); }
+.search-input::placeholder { color: var(--muted); }
+
+/* SPELLING TEST (탭 4) */
+.spell-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.spell-stats { display: flex; justify-content: space-between; align-items: center; padding: 10px 0 16px; font-size: 13px; color: var(--muted); font-weight: 700; }
+.spell-stats b { color: var(--accent); }
+.spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
+.spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
+.spell-ko { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+.spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
+.spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: #fff;
+  padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
+  letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
+.spell-input:focus { border-color: var(--accent); }
+.spell-input.disabled { opacity: 0.6; pointer-events: none; }
+.spell-feedback { font-family: 'Courier New', monospace; font-size: 20px; letter-spacing: 3px;
+  text-align: center; padding: 10px; min-height: 42px; font-weight: 800; margin-bottom: 12px;
+  background: var(--card2); border-radius: 10px; border: 1px solid var(--border); }
+.spell-feedback .ok { color: var(--green); }
+.spell-feedback .bad { color: #ff6b6b; }
+.spell-feedback .miss { color: var(--muted); }
+.spell-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.spell-btn { padding: 12px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.spell-btn-show:hover { background: rgba(251,191,36,0.22); }
+.spell-btn-next { background: rgba(56,189,248,0.14); border-color: rgba(56,189,248,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(56,189,248,0.24); }
+.spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
+  color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
+  color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner b { color: #fff; font-size: 16px; letter-spacing: 1px; }
+
+/* SECTION HEADERS (vocab filter) */
+.filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
+.filter-wrap::-webkit-scrollbar { display: none; }
+.filter-tabs { display: flex; gap: 8px; white-space: nowrap; padding-bottom: 2px; }
+.filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
+  border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
+  font-family: inherit; transition: all 0.2s; white-space: nowrap; }
+.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+
+.section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
+.section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+.section-line { flex: 1; height: 1px; background: var(--border); }
+
+/* CARDS WRAP */
+.cards-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+/* VOCAB CARD */
+.vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+  display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
+.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
+.vcard-left { min-width: 0; }
+.vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
+.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
+.cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
+.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+
+.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
+.vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
+
+.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
+  color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
+.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+
+.btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
+  color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
+  cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; transition: all 0.15s; white-space: nowrap; font-family: inherit; }
+.btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
+.btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* NOTES (탭: 핵심노트) */
+.chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
+.chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.chapter-head .ch-icon { font-size: 22px; }
+.chapter-head .ch-text { flex: 1; min-width: 0; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
+.chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.btn-pdf { background: rgba(192,132,252,0.12); border: 1.5px solid rgba(192,132,252,0.35);
+  color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  flex-shrink: 0; font-family: inherit; white-space: nowrap; }
+.btn-pdf:hover { background: rgba(192,132,252,0.22); border-color: var(--purple); transform: scale(1.03); }
+.notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
+.note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
+.note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
+.note-body b { color: #fff; }
+/* 영어 문단 */
+.note-body p.en { color: var(--text); margin-bottom: 3px; }
+/* 한국어 문단 (영어 바로 아래 짝) */
+.note-body p.ko { color: #8ab4ce; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
+.note-body p.ko:last-child { margin-bottom: 0; }
+.note-body ul.en { margin: 4px 0 4px 20px; }
+.note-body ul.ko { margin: 0 0 12px 20px; color: #8ab4ce; font-size: 13px; padding-left: 8px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); }
+.note-body ul li { margin-bottom: 3px; }
+.note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
+.note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
+.note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
+  margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
+  object-fit: contain; }
+@media (max-width: 480px) {
+  .note-img { max-width: 100%; max-height: 180px; }
+}
+
+/* QUIZ (서술형 short-answer) */
+.quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.quiz-info { font-size: 12px; color: var(--muted); margin-bottom: 12px; text-align: center;
+  background: var(--card); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); line-height: 1.5; }
+.quiz-info b { color: var(--accent); }
+.q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
+.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center; }
+.q-num .q-marks { background: rgba(192,132,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
+.q-answer-input {
+  width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
+  padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
+  outline: none; resize: vertical; min-height: 70px; line-height: 1.5;
+}
+.q-answer-input:focus { border-color: var(--accent); }
+.q-show-row { display: flex; gap: 8px; margin-top: 10px; }
+.q-show-row button { flex: 1; padding: 10px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.q-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-btn-show:hover { background: rgba(251,191,36,0.22); }
+
+.q-model {
+  display: none;
+  margin-top: 14px; padding: 14px 14px; background: rgba(56,189,248,0.06);
+  border: 1.5px solid rgba(56,189,248,0.25); border-radius: 10px;
+}
+.q-model.show { display: block; }
+.q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
+.q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
+.q-model .model-text b { color: #fff; }
+.q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
+  padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
+.q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.q-model .points ul { margin-left: 16px; }
+.q-model .points li { margin-bottom: 3px; line-height: 1.45; }
+.q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
+  color: #5d809a; font-size: 12px; line-height: 1.5;
+  background: rgba(255,255,255,0.02); border-radius: 4px; }
+
+.q-self-rate { display: none; margin-top: 12px; gap: 6px; }
+.q-self-rate.show { display: flex; }
+.q-self-rate button {
+  flex: 1; padding: 9px 4px; border-radius: 8px; font-weight: 800; font-family: inherit;
+  font-size: 12px; cursor: pointer; border: 1.5px solid; transition: all 0.15s;
+}
+.q-self-rate .rate-good { background: rgba(74,222,128,0.12); border-color: rgba(74,222,128,0.4); color: var(--green); }
+.q-self-rate .rate-mid { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-self-rate .rate-bad { background: rgba(244,114,182,0.12); border-color: rgba(244,114,182,0.4); color: var(--pink); }
+.q-self-rate .selected { transform: scale(1.04); border-width: 2px; }
+
+/* FOOTER */
+footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
+.vcard.hidden { display: none; }
+.section-header.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="header-back" href="index.html" aria-label="홈">←</a>
+  <div class="header-icon">⚛️</div>
+  <div class="header-text">
+    <div class="header-title">8E Atoms & Particles 원자와 입자 운동</div>
+    <div class="header-sub">Year 8 Chemistry · Cambridge Lower Secondary</div>
+  </div>
+  <div class="header-actions">
+    <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제집 채점">📷</a>
+    <a class="btn-claude" id="btn-ask" target="_blank" rel="noopener" href="#" title="이 단원에 대해 Claude에게 질문">💬 Claude</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>⚛️ <span>8E Atoms & Particles 원자와 입자 운동</span></h1>
+  <p>Atom structure → atomic models → particle motion → gas pressure</p>
+  <div class="stats-row">
+    <span class="stat-chip">⚛️ Atom</span>
+    <span class="stat-chip">⚖️ Subatomic</span>
+    <span class="stat-chip">💨 Particle motion</span>
+    <span class="stat-chip">📊 Pressure</span>
+  </div>
+</div>
+
+<div class="eq-box">
+  <div class="eq-card"><div class="eq-label aerobic">⚛️ Atom composition</div><div class="eq-formula">Atom = Nucleus (protons + neutrons) + Electrons in shells</div></div>
+  <div class="eq-card"><div class="eq-label anaerobic">🔢 Mass number</div><div class="eq-formula">Mass number = Protons + Neutrons</div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
+    <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
+    <button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
+  </div>
+</div>
+
+<!-- 단어장 -->
+<div class="tab-pane active" id="tab-vocab">
+  <div class="search-wrap">
+    <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+  </div>
+  <div class="filter-wrap">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-cat="all" onclick="filterCards("all")">전체 All</button>
+      <button class="filter-btn" data-cat="organ" onclick="filterCards("organ")">⚛️ 원자 Atom</button>
+      <button class="filter-btn" data-cat="process" onclick="filterCards("process")">📜 모델 Models</button>
+      <button class="filter-btn" data-cat="gas" onclick="filterCards("gas")">💨 입자 Particles</button>
+      <button class="filter-btn" data-cat="blood" onclick="filterCards("blood")">📊 압력 Pressure</button>
+    </div>
+  </div>
+<div class="section-header" data-cat="organ"><h2>⚛️ 원자 Atom</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Atom</div>
+    <div class="vcard-ko">원자</div>
+    <div class="vcard-def">The smallest particle of an element with that element's properties.</div>
+    <div class="vcard-def-ko">원소의 가장 작은 입자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Atom")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Element</div>
+    <div class="vcard-ko">원소</div>
+    <div class="vcard-def">A substance made of only one type of atom.</div>
+    <div class="vcard-def-ko">한 종류의 원자로만 이루어진 물질.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Element")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Compound</div>
+    <div class="vcard-ko">화합물</div>
+    <div class="vcard-def">Two or more elements chemically joined.</div>
+    <div class="vcard-def-ko">두 가지 이상의 원소가 화학결합된 물질.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Compound")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Molecule</div>
+    <div class="vcard-ko">분자</div>
+    <div class="vcard-def">Two or more atoms chemically bonded together.</div>
+    <div class="vcard-def-ko">두 개 이상의 원자가 결합한 입자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Molecule")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Nucleus</div>
+    <div class="vcard-ko">원자핵</div>
+    <div class="vcard-def">The dense centre of an atom containing protons and neutrons.</div>
+    <div class="vcard-def-ko">원자 중심의 핵 (양성자+중성자).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Nucleus")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Proton</div>
+    <div class="vcard-ko">양성자</div>
+    <div class="vcard-def">Positively charged particle in the nucleus.</div>
+    <div class="vcard-def-ko">핵 안의 (+) 입자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Proton")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Neutron</div>
+    <div class="vcard-ko">중성자</div>
+    <div class="vcard-def">Neutral particle (no charge) in the nucleus.</div>
+    <div class="vcard-def-ko">핵 안의 전하 없는 입자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Neutron")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Electron</div>
+    <div class="vcard-ko">전자</div>
+    <div class="vcard-def">Negatively charged particle that orbits the nucleus in shells.</div>
+    <div class="vcard-def-ko">핵 주위 껍질을 도는 (−) 입자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Electron")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Electron shell</div>
+    <div class="vcard-ko">전자 껍질</div>
+    <div class="vcard-def">An energy level where electrons orbit the nucleus.</div>
+    <div class="vcard-def-ko">전자가 도는 에너지 층.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Electron shell")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Atomic number</div>
+    <div class="vcard-ko">원자번호</div>
+    <div class="vcard-def">Number of protons in an atom's nucleus.</div>
+    <div class="vcard-def-ko">원자핵 안 양성자의 개수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Atomic number")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Mass number</div>
+    <div class="vcard-ko">질량수</div>
+    <div class="vcard-def">Total number of protons + neutrons.</div>
+    <div class="vcard-def-ko">양성자 + 중성자의 합.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Mass number")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-organ">🫁 Organ</span></div>
+    <div class="vcard-en">Periodic table</div>
+    <div class="vcard-ko">주기율표</div>
+    <div class="vcard-def">Table of all known elements organised by atomic number.</div>
+    <div class="vcard-def-ko">원소를 원자번호 순으로 정리한 표.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Periodic table")">🔊</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="process"><h2>📜 모델 Models</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Dalton model</div>
+    <div class="vcard-ko">돌턴 모델</div>
+    <div class="vcard-def">1803 — atoms are tiny indivisible solid spheres.</div>
+    <div class="vcard-def-ko">1803년 — 원자는 쪼갤 수 없는 단단한 구.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Dalton model")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Plum pudding model</div>
+    <div class="vcard-ko">건포도 푸딩 모델</div>
+    <div class="vcard-def">Thomson (1897) — positive 'dough' with electrons inside.</div>
+    <div class="vcard-def-ko">톰슨(1897) — 양전하 덩어리 안에 전자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Plum pudding model")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Nuclear model</div>
+    <div class="vcard-ko">원자핵 모델</div>
+    <div class="vcard-def">Rutherford (1909) — small dense positive nucleus, mostly empty space.</div>
+    <div class="vcard-def-ko">러더퍼드(1909) — 작고 밀도 높은 핵.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Nuclear model")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-process">⚙️ Process</span></div>
+    <div class="vcard-en">Bohr model</div>
+    <div class="vcard-ko">보어 모델</div>
+    <div class="vcard-def">Bohr (1913) — electrons orbit in fixed shells.</div>
+    <div class="vcard-def-ko">보어(1913) — 전자는 정해진 껍질에서 회전.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Bohr model")">🔊</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="gas"><h2>💨 입자 Particles</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Particle model</div>
+    <div class="vcard-ko">입자 모델</div>
+    <div class="vcard-def">Idea that all matter is made of tiny moving particles.</div>
+    <div class="vcard-def-ko">모든 물질은 움직이는 작은 입자로 이루어짐.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Particle model")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Diffusion</div>
+    <div class="vcard-ko">확산</div>
+    <div class="vcard-def">Net movement of particles from high to low concentration.</div>
+    <div class="vcard-def-ko">농도 높은 곳 → 낮은 곳으로 입자 이동.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Diffusion")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Brownian motion</div>
+    <div class="vcard-ko">브라운 운동</div>
+    <div class="vcard-def">Random jiggling of small particles caused by collisions with gas molecules.</div>
+    <div class="vcard-def-ko">기체 분자 충돌로 일어나는 무작위 떨림.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Brownian motion")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-gas">💨 Gas</span></div>
+    <div class="vcard-en">Kinetic energy</div>
+    <div class="vcard-ko">운동 에너지</div>
+    <div class="vcard-def">Energy of moving particles; higher temperature = more kinetic energy.</div>
+    <div class="vcard-def-ko">움직이는 입자의 에너지. 온도↑ → KE↑.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Kinetic energy")">🔊</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="blood"><h2>📊 압력 Pressure</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Gas pressure</div>
+    <div class="vcard-ko">기체 압력</div>
+    <div class="vcard-def">Force per unit area from gas particles colliding with walls.</div>
+    <div class="vcard-def-ko">기체 입자가 벽에 부딪쳐 만드는 단위면적당 힘.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Gas pressure")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Pressure formula</div>
+    <div class="vcard-ko">압력 공식</div>
+    <div class="vcard-def">Pressure = Force ÷ Area; unit: Pascal (Pa).</div>
+    <div class="vcard-def-ko">P = F÷A, 단위: 파스칼(Pa).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Pressure formula")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Collision</div>
+    <div class="vcard-ko">충돌</div>
+    <div class="vcard-def">When particles hit each other or hit container walls.</div>
+    <div class="vcard-def-ko">입자가 서로 또는 벽에 부딪치는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Collision")">🔊</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-top"><span class="vcard-cat cat-blood">🩸 Blood</span></div>
+    <div class="vcard-en">Volume</div>
+    <div class="vcard-ko">부피</div>
+    <div class="vcard-def">The space something takes up.</div>
+    <div class="vcard-def-ko">물체가 차지하는 공간.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick="speak("Volume")">🔊</button>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 핵심노트 -->
+<div class="tab-pane" id="tab-notes">
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">⚛️</span>
+    <div class="ch-text">
+      <h2>1. Structure of the Atom</h2>
+      <span class="ch-sub">Lesson 1: Structure of Atom</span>
+    </div>
+    <a class="btn-pdf" href="pdfs/Lesson%201%20Structure%20of%20Atom.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>What is an atom? (원자란?)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>An <b>atom</b> is the smallest particle of an element that still has the properties of that element.</p><p class='ko'><b>원자</b>는 원소의 가장 작은 입자로, 그 원소의 성질을 그대로 가지고 있습니다.</p><p class='en'>Atoms are incredibly tiny — about 0.1 nanometres across (a million atoms fit in 1 mm).</p><p class='ko'>원자는 매우 작아요 — 약 0.1나노미터 (1mm 안에 100만 개가 들어감).</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>The three subatomic particles (원자를 이루는 세 입자)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>The <b>proton</b> has a <b>positive (+1)</b> charge, mass of 1, and sits in the <b>nucleus</b>.</p><p class='ko'><b>양성자(proton)</b>는 <b>(+1)</b> 전하, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>neutron</b> has <b>no charge (0)</b>, mass of 1, and also sits in the nucleus.</p><p class='ko'><b>중성자(neutron)</b>는 <b>전하 없음(0)</b>, 질량 1, 원자핵에 있습니다.</p><p class='en'>The <b>electron</b> has a <b>negative (-1)</b> charge, almost zero mass, and orbits the nucleus in <b>shells</b>.</p><p class='ko'><b>전자(electron)</b>는 <b>(-1)</b> 전하, 질량은 거의 0, 핵 주위 <b>전자 껍질</b>을 돕니다.</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Why atoms are NEUTRAL (원자는 왜 중성인가)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>An atom has the <b>same number</b> of protons (+1) and electrons (-1).</p><p class='ko'>원자는 양성자(+1)와 전자(-1)의 <b>개수가 같습니다</b>.</p><p class='en'>So the positive and negative charges cancel out, making the atom <b>electrically neutral</b>.</p><p class='ko'>그래서 양·음 전하가 서로 상쇄되어 원자는 <b>전기적으로 중성</b>입니다.</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Atomic number and mass number (원자번호와 질량수)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>The <b>atomic number</b> = number of <b>protons</b> in the nucleus. Each element has its own atomic number.</p><p class='ko'><b>원자번호</b> = 원자핵 안 <b>양성자</b> 개수. 각 원소마다 고유합니다.</p><p class='en'>The <b>mass number</b> = number of <b>protons + neutrons</b>.</p><p class='ko'><b>질량수</b> = <b>양성자 + 중성자</b> 개수.</p><p class='en'>So: Neutrons = Mass number − Atomic number.</p><p class='ko'>따라서: 중성자 = 질량수 − 원자번호.</p></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📜</span>
+    <div class="ch-text">
+      <h2>2. History of Atomic Models</h2>
+      <span class="ch-sub">How the model changed</span>
+    </div>
+    <a class="btn-pdf" href="pdfs/Atomic-theory-timeline.docx%20%283%29.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Why scientific models change (모델이 바뀌는 이유)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>Scientists could not see atoms directly, so they built <b>models</b> based on experiments.</p><p class='ko'>과학자들은 원자를 직접 볼 수 없어서 실험을 바탕으로 <b>모델</b>을 만들었습니다.</p><p class='en'>As new evidence appeared, the model was improved — this is how science usually works.</p><p class='ko'>새 증거가 나타날 때마다 모델이 개선되었습니다 — 과학은 보통 이렇게 발전합니다.</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Dalton (1803) — solid spheres (단단한 구 모델)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'><b>John Dalton</b> proposed that atoms are <b>tiny indivisible solid balls</b>.</p><p class='ko'><b>존 돌턴</b>은 원자가 <b>더 이상 쪼갤 수 없는 작고 단단한 공</b>이라고 했습니다.</p><p class='en'>Each element has its own type of atom. (We now know atoms can be split, but this was a great start.)</p><p class='ko'>각 원소마다 고유한 원자가 있다고 했습니다. (지금은 원자도 쪼갤 수 있다고 알고 있지만 시작점으로는 훌륭했습니다.)</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Thomson (1897) — plum pudding (건포도 푸딩)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'><b>J.J. Thomson</b> discovered the electron.</p><p class='ko'><b>J.J. 톰슨</b>은 전자를 발견했습니다.</p><p class='en'>His <b>plum pudding model</b>: the atom is a ball of positive 'dough' with negative electrons stuck inside, like raisins in pudding.</p><p class='ko'>그의 <b>건포도 푸딩 모델</b>: 원자는 양전하 '반죽' 안에 음전하 전자가 박혀 있는 모양 (푸딩 속 건포도처럼).</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Rutherford (1909) — nucleus discovered (원자핵 발견)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'><b>Ernest Rutherford's gold foil experiment</b>: he fired tiny particles at a thin sheet of gold.</p><p class='ko'><b>러더퍼드의 금박 실험</b>: 얇은 금박에 작은 입자들을 쏘았습니다.</p><p class='en'>Most particles passed straight through, but a few <b>bounced back</b>.</p><p class='ko'>대부분의 입자는 그대로 통과했지만, 몇 개는 <b>튕겨 돌아왔습니다</b>.</p><p class='en'>This proved there is a <b>tiny dense positive nucleus</b> in the centre, with mostly empty space around it.</p><p class='ko'>이것은 중심에 <b>작고 밀도 높은 양전하 원자핵</b>이 있고, 주위는 거의 빈 공간임을 증명했습니다.</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Bohr (1913) — electrons in shells (전자 껍질)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'><b>Niels Bohr</b> said electrons orbit the nucleus in <b>fixed shells</b> (energy levels), not just anywhere.</p><p class='ko'><b>닐스 보어</b>는 전자가 어디나 도는 게 아니라 <b>정해진 껍질</b>(에너지 준위)을 따라 돈다고 했습니다.</p><p class='en'>This is the model we usually draw at Year 8.</p><p class='ko'>이게 8학년에서 보통 그리는 모델입니다.</p></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">💨</span>
+    <div class="ch-text">
+      <h2>3. The Particle Model & Diffusion</h2>
+      <span class="ch-sub">Particles on the move</span>
+    </div>
+    <a class="btn-pdf" href="pdfs/Cover%207.%20Particles%20on%20the%20Move.pptx.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>States of matter (물질의 상태)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>All matter is made of <b>tiny particles</b>. The arrangement and movement depends on the state.</p><p class='ko'>모든 물질은 <b>작은 입자</b>로 이루어져 있습니다. 배열과 움직임은 상태에 따라 다릅니다.</p><p class='en'><b>Solid</b>: particles packed tightly in a regular pattern; only vibrate.</p><p class='ko'><b>고체</b>: 입자가 규칙적으로 빽빽이 모여 있고, 진동만 합니다.</p><p class='en'><b>Liquid</b>: particles touching but free to slide past each other.</p><p class='ko'><b>액체</b>: 입자가 서로 닿아 있지만 자유롭게 미끄러져 움직입니다.</p><p class='en'><b>Gas</b>: particles are far apart and move very fast in all directions.</p><p class='ko'><b>기체</b>: 입자가 멀리 떨어져 있고 모든 방향으로 매우 빠르게 움직입니다.</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Diffusion (확산)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'><b>Diffusion</b> is the net movement of particles from a region of <b>high concentration</b> to a region of <b>low concentration</b>.</p><p class='ko'><b>확산</b>은 입자가 <b>농도가 높은 곳</b>에서 <b>낮은 곳</b>으로 이동하는 것입니다.</p><p class='en'>It happens in <b>gases and liquids</b> because particles are always moving.</p><p class='ko'>입자가 항상 움직이는 <b>기체와 액체</b>에서 일어납니다.</p><p class='en'>Example: perfume sprayed in one corner of a room spreads until you can smell it everywhere.</p><p class='ko'>예: 방 한쪽에서 뿌린 향수가 퍼져서 어디서든 냄새가 납니다.</p><p class='en'>Diffusion is <b>faster at higher temperatures</b>, because particles have more kinetic energy.</p><p class='ko'>온도가 높을수록 입자가 운동에너지가 커서 확산이 <b>빨라집니다</b>.</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Brownian motion (브라운 운동)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>When we look at smoke or dust particles under a microscope, they appear to <b>jiggle randomly</b>.</p><p class='ko'>현미경으로 연기·먼지 입자를 보면 <b>무작위로 떨립니다</b>.</p><p class='en'>This is because invisible <b>air molecules are constantly bumping into them</b>.</p><p class='ko'>보이지 않는 <b>공기 분자가 계속 부딪치기 때문</b>입니다.</p><p class='en'>This is evidence that gas particles are real and always moving.</p><p class='ko'>이것은 기체 입자가 실제로 존재하고 항상 움직인다는 증거입니다.</p></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📊</span>
+    <div class="ch-text">
+      <h2>4. Gas Pressure</h2>
+      <span class="ch-sub">Why gases push on walls</span>
+    </div>
+    <a class="btn-pdf" href="pdfs/Particles%20on%20the%20move%20answers.pptx.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>What causes gas pressure? (기체 압력의 원인)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>Gas particles move fast in all directions and constantly <b>collide with the container walls</b>.</p><p class='ko'>기체 입자는 모든 방향으로 빠르게 움직이며 <b>용기 벽에 계속 부딪칩니다</b>.</p><p class='en'>Each collision pushes on the wall — millions of collisions per second add up to <b>gas pressure</b>.</p><p class='ko'>각 충돌이 벽을 밀고, 초당 수백만 번의 충돌이 합쳐져 <b>기체 압력</b>이 됩니다.</p><p class='en'>More collisions, or harder collisions = higher pressure.</p><p class='ko'>충돌이 더 많거나 더 강하면 = 압력이 더 높습니다.</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Effect of temperature (온도의 영향)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>When you <b>heat</b> a gas in a sealed container, the particles gain <b>kinetic energy</b> and move faster.</p><p class='ko'>밀폐된 용기 안 기체를 <b>가열</b>하면 입자가 <b>운동 에너지</b>를 얻어 더 빠르게 움직입니다.</p><p class='en'>They collide with the walls <b>more often</b> and with <b>more force</b>.</p><p class='ko'>벽에 <b>더 자주</b> 그리고 <b>더 강하게</b> 부딪칩니다.</p><p class='en'>So gas pressure <b>increases</b>. (This is why a sealed can can burst if heated!)</p><p class='ko'>그래서 기체 압력이 <b>증가</b>합니다. (밀폐된 캔이 가열되면 터지는 이유!)</p></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Effect of volume (부피의 영향)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>If you <b>squeeze</b> a gas into a smaller volume (at the same temperature), the particles have <b>less space</b>.</p><p class='ko'>같은 온도에서 기체를 더 작은 부피로 <b>압축</b>하면 입자가 <b>공간이 적어집니다</b>.</p><p class='en'>They collide with the walls <b>more often</b>, so pressure <b>increases</b>.</p><p class='ko'>벽에 <b>더 자주</b> 부딪치므로 압력이 <b>증가</b>합니다.</p><p class='en'>This is why a bicycle pump gets harder to push as you compress the air inside.</p><p class='ko'>자전거 펌프 안 공기를 압축할수록 누르기 힘들어지는 이유입니다.</p></div>
+  
+</div></div>
+</div>
+</div>
+
+<!-- 퀴즈 (서술형) -->
+<div class="tab-pane" id="tab-quiz">
+  <div class="quiz-wrap">
+    <div class="quiz-info">
+      📝 <b>Written-answer practice</b> · 시험 형식: 서술형<br>
+      답을 영어로 써본 다음 <b>Show model answer</b>를 눌러 비교하세요.
+    </div>
+    <div id="quiz-list"><div class="q-card" id="q-card-0">
+  <div class="q-num"><span>Question 1 of 6</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Describe the three subatomic particles in an atom — including their charge, mass and location.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(0)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>The <b>proton</b> has a <b>positive (+1)</b> charge, a mass of 1 and is found in the <b>nucleus</b>.</p><p class='ko'><b>양성자</b>는 <b>(+1)</b> 전하, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>neutron</b> has <b>no charge (0)</b>, a mass of 1 and is also in the <b>nucleus</b>.</p><p class='ko'><b>중성자</b>는 <b>전하 없음(0)</b>, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>electron</b> has a <b>negative (-1)</b> charge, almost zero mass, and orbits the nucleus in <b>electron shells</b>.</p><p class='ko'><b>전자</b>는 <b>(-1)</b> 전하, 질량 거의 0, <b>전자 껍질</b>을 따라 핵 주위를 돕니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Proton: +1, mass 1, in nucleus</li>
+      <li>Neutron: 0 charge, mass 1, in nucleus</li>
+      <li>Electron: -1, mass ≈0, in shells</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 3 입자 각각 — 전하 + 질량 + 위치.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(0,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(0,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(0,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-1">
+  <div class="q-num"><span>Question 2 of 6</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">An atom of carbon has 6 protons and 6 neutrons. State its atomic number and its mass number.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(1)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>The <b>atomic number</b> equals the number of protons: <b>6</b>.</p><p class='ko'><b>원자번호</b>는 양성자 개수와 같으므로 <b>6</b>.</p><p class='en'>The <b>mass number</b> equals protons + neutrons: 6 + 6 = <b>12</b>.</p><p class='ko'><b>질량수</b>는 양성자+중성자이므로 6+6 = <b>12</b>.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Atomic number = 6</li>
+      <li>Mass number = 12</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 원자번호 = 양성자 수, 질량수 = 양성자+중성자.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(1,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(1,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(1,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-2">
+  <div class="q-num"><span>Question 3 of 6</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Why is an atom electrically NEUTRAL overall?</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(2)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>An atom has the <b>same number</b> of protons (+1 each) and electrons (-1 each).</p><p class='ko'>원자는 양성자(각 +1)와 전자(각 -1)의 <b>개수가 같습니다</b>.</p><p class='en'>The positive and negative charges cancel out, so the total charge is zero — the atom is neutral.</p><p class='ko'>양·음 전하가 상쇄되어 총 전하가 0 — 원자는 중성입니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Equal numbers of protons (+) and electrons (-)</li>
+      <li>Charges cancel → total charge = 0</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 양성자=전자 개수 → 전하 상쇄.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(2,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(2,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(2,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-3">
+  <div class="q-num"><span>Question 4 of 6</span> <span class="q-marks">4 marks</span></div>
+  <div class="q-text">Describe Rutherford's gold foil experiment and explain what it revealed about the structure of the atom.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(3)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>Rutherford fired tiny <b>positive particles</b> (alpha particles) at a very thin sheet of <b>gold foil</b>.</p><p class='ko'>러더퍼드는 매우 얇은 <b>금박</b>에 작은 <b>양전하 입자</b>(알파 입자)들을 쏘았습니다.</p><p class='en'>Most particles passed <b>straight through</b>, but a few <b>bounced back</b> at large angles.</p><p class='ko'>대부분의 입자는 <b>곧장 통과</b>했지만, 몇 개는 큰 각도로 <b>튕겨 돌아왔습니다</b>.</p><p class='en'>This showed that the atom is <b>mostly empty space</b>, but contains a <b>tiny dense positive nucleus</b> in the centre.</p><p class='ko'>이것은 원자가 <b>대부분 빈 공간</b>이지만 중심에 <b>작고 밀도 높은 양전하 핵</b>이 있다는 것을 보여주었습니다.</p><p class='en'>The positive nucleus repelled the positive alpha particles, causing some to bounce back.</p><p class='ko'>양전하 핵이 양전하 알파 입자를 밀어내서 일부가 튕겨 돌아온 것입니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Method: fired particles at thin gold foil</li>
+      <li>Most passed through</li>
+      <li>A few bounced back</li>
+      <li>Conclusion: small dense positive nucleus + mostly empty space</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 방법 + 관찰(대부분 통과, 일부 튕김) + 결론(핵 발견).</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(3,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(3,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(3,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-4">
+  <div class="q-num"><span>Question 5 of 6</span> <span class="q-marks">4 marks</span></div>
+  <div class="q-text">Use the particle model to explain why GAS PRESSURE INCREASES when a gas in a sealed container is heated.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(4)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>When the gas is heated, the particles gain <b>kinetic energy</b> and move faster.</p><p class='ko'>가열되면 기체 입자는 <b>운동 에너지</b>를 얻어 더 빠르게 움직입니다.</p><p class='en'>The particles collide with the container walls <b>more frequently</b>.</p><p class='ko'>입자가 용기 벽에 <b>더 자주</b> 부딪칩니다.</p><p class='en'>The collisions are also <b>more forceful</b> because the particles move faster.</p><p class='ko'>입자가 더 빠르므로 충돌이 <b>더 강력</b>합니다.</p><p class='en'>So the total force on the walls increases — meaning the <b>pressure increases</b>.</p><p class='ko'>벽에 가해지는 힘이 커지므로 <b>압력이 증가</b>합니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Particles gain kinetic energy / move faster</li>
+      <li>Collide with walls more frequently</li>
+      <li>Collide with more force</li>
+      <li>Pressure increases</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 운동에너지↑ → 충돌 잦고 강해짐 → 압력↑.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(4,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(4,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(4,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-5">
+  <div class="q-num"><span>Question 6 of 6</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Define DIFFUSION and explain why diffusion is faster at higher temperatures.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(5)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'><b>Diffusion</b> is the net movement of particles from a region of <b>high concentration</b> to a region of <b>low concentration</b>.</p><p class='ko'><b>확산</b>은 입자가 농도가 <b>높은 곳</b>에서 <b>낮은 곳</b>으로 이동하는 것입니다.</p><p class='en'>At higher temperatures, the particles have more <b>kinetic energy</b> and move faster.</p><p class='ko'>온도가 높을수록 입자는 <b>운동 에너지</b>가 커서 더 빠르게 움직입니다.</p><p class='en'>Faster-moving particles spread through the area more quickly, so diffusion happens faster.</p><p class='ko'>빠른 입자가 더 빨리 퍼지므로 확산도 빨라집니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Defines diffusion correctly</li>
+      <li>Higher temp → more kinetic energy</li>
+      <li>Particles move faster → faster diffusion</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 정의 + 운동에너지 + 빠르게 퍼짐.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(5,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(5,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(5,'bad')">😅 다시</button>
+  </div>
+</div></div>
+  </div>
+</div>
+
+<!-- 단어시험 -->
+<div class="tab-pane" id="tab-spelling">
+  <div class="spell-wrap">
+    <div class="spell-stats">
+      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
+      <div>📚 <span id="sp-remaining">24</span> 남음</div>
+    </div>
+    <div class="spell-card" id="spell-card">
+      <span class="spell-cat" id="sp-cat">CATEGORY</span>
+      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
+      <div class="spell-def" id="sp-def">English definition</div>
+      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
+      <div class="spell-feedback" id="sp-feedback"></div>
+      <div class="spell-input-row">
+        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
+      </div>
+      <div class="spell-buttons">
+        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
+        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>8E Atoms & Particles 원자와 입자 운동 · science-vocab · <span style="opacity:.5">v20260524-183252</span></footer>
+
+<script>
+const QUIZ_DATA = [{"q": "Describe the three subatomic particles in an atom — including their charge, mass and location.", "marks": 3, "sample_answer": "<p class='en'>The <b>proton</b> has a <b>positive (+1)</b> charge, a mass of 1 and is found in the <b>nucleus</b>.</p><p class='ko'><b>양성자</b>는 <b>(+1)</b> 전하, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>neutron</b> has <b>no charge (0)</b>, a mass of 1 and is also in the <b>nucleus</b>.</p><p class='ko'><b>중성자</b>는 <b>전하 없음(0)</b>, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>electron</b> has a <b>negative (-1)</b> charge, almost zero mass, and orbits the nucleus in <b>electron shells</b>.</p><p class='ko'><b>전자</b>는 <b>(-1)</b> 전하, 질량 거의 0, <b>전자 껍질</b>을 따라 핵 주위를 돕니다.</p>", "mark_points": ["Proton: +1, mass 1, in nucleus", "Neutron: 0 charge, mass 1, in nucleus", "Electron: -1, mass ≈0, in shells"], "ko_hint": "3 입자 각각 — 전하 + 질량 + 위치."}, {"q": "An atom of carbon has 6 protons and 6 neutrons. State its atomic number and its mass number.", "marks": 2, "sample_answer": "<p class='en'>The <b>atomic number</b> equals the number of protons: <b>6</b>.</p><p class='ko'><b>원자번호</b>는 양성자 개수와 같으므로 <b>6</b>.</p><p class='en'>The <b>mass number</b> equals protons + neutrons: 6 + 6 = <b>12</b>.</p><p class='ko'><b>질량수</b>는 양성자+중성자이므로 6+6 = <b>12</b>.</p>", "mark_points": ["Atomic number = 6", "Mass number = 12"], "ko_hint": "원자번호 = 양성자 수, 질량수 = 양성자+중성자."}, {"q": "Why is an atom electrically NEUTRAL overall?", "marks": 2, "sample_answer": "<p class='en'>An atom has the <b>same number</b> of protons (+1 each) and electrons (-1 each).</p><p class='ko'>원자는 양성자(각 +1)와 전자(각 -1)의 <b>개수가 같습니다</b>.</p><p class='en'>The positive and negative charges cancel out, so the total charge is zero — the atom is neutral.</p><p class='ko'>양·음 전하가 상쇄되어 총 전하가 0 — 원자는 중성입니다.</p>", "mark_points": ["Equal numbers of protons (+) and electrons (-)", "Charges cancel → total charge = 0"], "ko_hint": "양성자=전자 개수 → 전하 상쇄."}, {"q": "Describe Rutherford's gold foil experiment and explain what it revealed about the structure of the atom.", "marks": 4, "sample_answer": "<p class='en'>Rutherford fired tiny <b>positive particles</b> (alpha particles) at a very thin sheet of <b>gold foil</b>.</p><p class='ko'>러더퍼드는 매우 얇은 <b>금박</b>에 작은 <b>양전하 입자</b>(알파 입자)들을 쏘았습니다.</p><p class='en'>Most particles passed <b>straight through</b>, but a few <b>bounced back</b> at large angles.</p><p class='ko'>대부분의 입자는 <b>곧장 통과</b>했지만, 몇 개는 큰 각도로 <b>튕겨 돌아왔습니다</b>.</p><p class='en'>This showed that the atom is <b>mostly empty space</b>, but contains a <b>tiny dense positive nucleus</b> in the centre.</p><p class='ko'>이것은 원자가 <b>대부분 빈 공간</b>이지만 중심에 <b>작고 밀도 높은 양전하 핵</b>이 있다는 것을 보여주었습니다.</p><p class='en'>The positive nucleus repelled the positive alpha particles, causing some to bounce back.</p><p class='ko'>양전하 핵이 양전하 알파 입자를 밀어내서 일부가 튕겨 돌아온 것입니다.</p>", "mark_points": ["Method: fired particles at thin gold foil", "Most passed through", "A few bounced back", "Conclusion: small dense positive nucleus + mostly empty space"], "ko_hint": "방법 + 관찰(대부분 통과, 일부 튕김) + 결론(핵 발견)."}, {"q": "Use the particle model to explain why GAS PRESSURE INCREASES when a gas in a sealed container is heated.", "marks": 4, "sample_answer": "<p class='en'>When the gas is heated, the particles gain <b>kinetic energy</b> and move faster.</p><p class='ko'>가열되면 기체 입자는 <b>운동 에너지</b>를 얻어 더 빠르게 움직입니다.</p><p class='en'>The particles collide with the container walls <b>more frequently</b>.</p><p class='ko'>입자가 용기 벽에 <b>더 자주</b> 부딪칩니다.</p><p class='en'>The collisions are also <b>more forceful</b> because the particles move faster.</p><p class='ko'>입자가 더 빠르므로 충돌이 <b>더 강력</b>합니다.</p><p class='en'>So the total force on the walls increases — meaning the <b>pressure increases</b>.</p><p class='ko'>벽에 가해지는 힘이 커지므로 <b>압력이 증가</b>합니다.</p>", "mark_points": ["Particles gain kinetic energy / move faster", "Collide with walls more frequently", "Collide with more force", "Pressure increases"], "ko_hint": "운동에너지↑ → 충돌 잦고 강해짐 → 압력↑."}, {"q": "Define DIFFUSION and explain why diffusion is faster at higher temperatures.", "marks": 3, "sample_answer": "<p class='en'><b>Diffusion</b> is the net movement of particles from a region of <b>high concentration</b> to a region of <b>low concentration</b>.</p><p class='ko'><b>확산</b>은 입자가 농도가 <b>높은 곳</b>에서 <b>낮은 곳</b>으로 이동하는 것입니다.</p><p class='en'>At higher temperatures, the particles have more <b>kinetic energy</b> and move faster.</p><p class='ko'>온도가 높을수록 입자는 <b>운동 에너지</b>가 커서 더 빠르게 움직입니다.</p><p class='en'>Faster-moving particles spread through the area more quickly, so diffusion happens faster.</p><p class='ko'>빠른 입자가 더 빨리 퍼지므로 확산도 빨라집니다.</p>", "mark_points": ["Defines diffusion correctly", "Higher temp → more kinetic energy", "Particles move faster → faster diffusion"], "ko_hint": "정의 + 운동에너지 + 빠르게 퍼짐."}];
+const VOCAB_DATA = [{"en": "Atom", "ko": "원자", "def_en": "The smallest particle of an element with that element's properties.", "cat": "organ"}, {"en": "Element", "ko": "원소", "def_en": "A substance made of only one type of atom.", "cat": "organ"}, {"en": "Compound", "ko": "화합물", "def_en": "Two or more elements chemically joined.", "cat": "organ"}, {"en": "Molecule", "ko": "분자", "def_en": "Two or more atoms chemically bonded together.", "cat": "organ"}, {"en": "Nucleus", "ko": "원자핵", "def_en": "The dense centre of an atom containing protons and neutrons.", "cat": "organ"}, {"en": "Proton", "ko": "양성자", "def_en": "Positively charged particle in the nucleus.", "cat": "organ"}, {"en": "Neutron", "ko": "중성자", "def_en": "Neutral particle (no charge) in the nucleus.", "cat": "organ"}, {"en": "Electron", "ko": "전자", "def_en": "Negatively charged particle that orbits the nucleus in shells.", "cat": "organ"}, {"en": "Electron shell", "ko": "전자 껍질", "def_en": "An energy level where electrons orbit the nucleus.", "cat": "organ"}, {"en": "Atomic number", "ko": "원자번호", "def_en": "Number of protons in an atom's nucleus.", "cat": "organ"}, {"en": "Mass number", "ko": "질량수", "def_en": "Total number of protons + neutrons.", "cat": "organ"}, {"en": "Periodic table", "ko": "주기율표", "def_en": "Table of all known elements organised by atomic number.", "cat": "organ"}, {"en": "Dalton model", "ko": "돌턴 모델", "def_en": "1803 — atoms are tiny indivisible solid spheres.", "cat": "process"}, {"en": "Plum pudding model", "ko": "건포도 푸딩 모델", "def_en": "Thomson (1897) — positive 'dough' with electrons inside.", "cat": "process"}, {"en": "Nuclear model", "ko": "원자핵 모델", "def_en": "Rutherford (1909) — small dense positive nucleus, mostly empty space.", "cat": "process"}, {"en": "Bohr model", "ko": "보어 모델", "def_en": "Bohr (1913) — electrons orbit in fixed shells.", "cat": "process"}, {"en": "Particle model", "ko": "입자 모델", "def_en": "Idea that all matter is made of tiny moving particles.", "cat": "gas"}, {"en": "Diffusion", "ko": "확산", "def_en": "Net movement of particles from high to low concentration.", "cat": "gas"}, {"en": "Brownian motion", "ko": "브라운 운동", "def_en": "Random jiggling of small particles caused by collisions with gas molecules.", "cat": "gas"}, {"en": "Kinetic energy", "ko": "운동 에너지", "def_en": "Energy of moving particles; higher temperature = more kinetic energy.", "cat": "gas"}, {"en": "Gas pressure", "ko": "기체 압력", "def_en": "Force per unit area from gas particles colliding with walls.", "cat": "blood"}, {"en": "Pressure formula", "ko": "압력 공식", "def_en": "Pressure = Force ÷ Area; unit: Pascal (Pa).", "cat": "blood"}, {"en": "Collision", "ko": "충돌", "def_en": "When particles hit each other or hit container walls.", "cat": "blood"}, {"en": "Volume", "ko": "부피", "def_en": "The space something takes up.", "cat": "blood"}];
+const UNIT_TITLE = "8E Atoms & Particles 원자와 입자 운동";
+const UNIT_TOPICS = ["1. Structure of the Atom", "2. History of Atomic Models", "3. The Particle Model & Diffusion", "4. Gas Pressure"];
+let qAnswered = new Array(QUIZ_DATA.length).fill(null);
+
+// ─── claude.ai 새 창 링크 ───
+(function setupClaudeLinks() {
+  var NL = String.fromCharCode(10);
+  var topicsList = UNIT_TOPICS.map(function(t, i) { return (i+1) + '. ' + t; }).join(NL);
+  var askMsg = "I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
+    "Current unit: " + UNIT_TITLE + NL +
+    "Topics:" + NL + topicsList + NL + NL +
+    "Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use - if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary." + NL + NL +
+    "질문 시작할게요:" + NL;
+  var gradeMsg = "I'm a Year 8 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
+    "Unit: " + UNIT_TITLE + NL +
+    "Topics: " + UNIT_TOPICS.join(' · ') + NL + NL +
+    "Please grade my worksheet. For each question:" + NL +
+    "- Read the problem and my answer (if any)." + NL +
+    "- Mark ✅ correct / ❌ wrong / ⚠️ partial." + NL +
+    "- Give the correct answer." + NL +
+    "- Explain mistakes in British English with a short Korean hint in parentheses for tough words." + NL + NL +
+    "End with a summary: total / correct / what to review next." + NL + NL +
+    "사진 첨부할게요!";
+  var ask = document.getElementById('btn-ask');
+  var grade = document.getElementById('btn-grade');
+  if (ask) ask.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
+  if (grade) grade.href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
+})();
+
+// 탭 전환
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    if (btn.dataset.tab === 'spelling' && !spellState.started) startSpelling();
+  });
+});
+
+// 발음
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-GB'; u.rate = 0.9;
+  // en-GB 보이스 우선 선택
+  const voices = window.speechSynthesis.getVoices();
+  const gb = voices.find(v => v.lang === 'en-GB');
+  if (gb) u.voice = gb;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+// 단어장: 필터 + 검색 통합
+let currentCat = 'all';
+let currentQuery = '';
+
+function applyVocabFilter() {
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (currentCat === 'all' || cat === currentCat);
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const show = catOk && qOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', !visibleByCat[target]);
+  });
+}
+
+function filterCards(cat) {
+  currentCat = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+});
+
+// ─── 단어시험 (Spelling Test) ───
+const spellState = {
+  started: false,
+  pool: [],         // 남은 단어들
+  current: null,    // 현재 단어
+  correct: 0,
+  wrong: 0,
+  revealed: false,
+};
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startSpelling() {
+  spellState.started = true;
+  spellState.pool = shuffle(VOCAB_DATA);
+  spellState.correct = 0;
+  spellState.wrong = 0;
+  updateSpellStats();
+  nextWord();
+  setTimeout(() => document.getElementById('sp-input')?.focus(), 200);
+}
+
+function nextWord() {
+  if (spellState.pool.length === 0) {
+    // 다 끝나면 다시 섞기
+    spellState.pool = shuffle(VOCAB_DATA);
+  }
+  spellState.current = spellState.pool.shift();
+  spellState.revealed = false;
+  const w = spellState.current;
+  const catLabel = {organ:'🫁 Organ',process:'⚙️ Process',blood:'🩸 Blood',gas:'💨 Gas'}[w.cat] || w.cat;
+  const catEl = document.getElementById('sp-cat');
+  catEl.textContent = catLabel;
+  catEl.className = 'spell-cat cat-' + w.cat;
+  document.getElementById('sp-ko').textContent = w.ko;
+  document.getElementById('sp-def').textContent = w.def_en;
+  // 글자수 힌트 — 공백/특수문자는 그대로, 글자는 _로
+  const hint = w.en.split('').map(ch => /[A-Za-z0-9]/.test(ch) ? '_' : ch).join(' ');
+  document.getElementById('sp-hint').textContent = hint + '  (' + w.en.length + ')';
+  document.getElementById('sp-feedback').innerHTML = '';
+  const input = document.getElementById('sp-input');
+  input.value = '';
+  input.classList.remove('disabled');
+  input.disabled = false;
+  input.placeholder = w.en.length + ' chars · 영어로 입력…';
+  input.focus();
+  updateSpellStats();
+}
+
+function showAnswer() {
+  if (!spellState.current || spellState.revealed) return;
+  spellState.revealed = true;
+  const w = spellState.current;
+  document.getElementById('sp-feedback').innerHTML =
+    '<span class="ok">' + w.en + '</span>';
+  const input = document.getElementById('sp-input');
+  input.value = w.en;
+  input.classList.add('disabled');
+  input.disabled = true;
+  // 자동으로 발음
+  if (window.speechSynthesis) speak(w.en);
+}
+
+function updateSpellStats() {
+  document.getElementById('sp-correct').textContent = spellState.correct;
+  document.getElementById('sp-wrong').textContent = spellState.wrong;
+  document.getElementById('sp-remaining').textContent = spellState.pool.length;
+}
+
+function renderSpellFeedback(typed, target) {
+  // 글자별 색상 표시
+  let html = '';
+  for (let i = 0; i < target.length; i++) {
+    const t = typed[i];
+    const a = target[i];
+    if (t === undefined) {
+      html += '<span class="miss">' + (a === ' ' ? '&nbsp;' : '_') + '</span>';
+    } else if (t.toLowerCase() === a.toLowerCase()) {
+      html += '<span class="ok">' + a + '</span>';
+    } else {
+      html += '<span class="bad">' + t + '</span>';
+    }
+  }
+  return html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('sp-input');
+  if (!input) return;
+  input.addEventListener('input', () => {
+    if (!spellState.current || spellState.revealed) return;
+    const typed = input.value;
+    const target = spellState.current.en;
+    document.getElementById('sp-feedback').innerHTML = renderSpellFeedback(typed, target);
+    // 완전 일치 (대소문자 무시)
+    if (typed.toLowerCase() === target.toLowerCase()) {
+      spellState.correct++;
+      input.classList.add('disabled');
+      input.disabled = true;
+      document.getElementById('sp-feedback').innerHTML =
+        '<span class="ok">✓ ' + target + '</span>';
+      updateSpellStats();
+      // 0.9초 후 다음 단어
+      setTimeout(() => nextWord(), 900);
+    }
+  });
+  // Enter로 정답이 아니면 틀린 것 처리
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && spellState.current && !spellState.revealed) {
+      const typed = input.value.trim();
+      const target = spellState.current.en;
+      if (typed.toLowerCase() !== target.toLowerCase() && typed.length > 0) {
+        spellState.wrong++;
+        showAnswer();
+        updateSpellStats();
+      }
+    }
+  });
+});
+
+// 서술형 퀴즈: 모범 답안 보이기 + 자기 채점
+function showModel(qi) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  var model = card.querySelector('.q-model');
+  var rate = card.querySelector('.q-self-rate');
+  model.classList.add('show');
+  rate.classList.add('show');
+}
+
+function rateSelf(qi, level) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  card.querySelectorAll('.q-self-rate button').forEach(function(b) { b.classList.remove('selected'); });
+  card.querySelector('.q-self-rate .rate-' + level).classList.add('selected');
+}
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      // 새 SW 발견 시 즉시 적용 → 페이지 자동 새로고침
+      reg.addEventListener('updatefound', function() {
+        var newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', function() {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+            // 새 버전 준비됨 → 즉시 활성화 명령
+            newSW.postMessage({type: 'SKIP_WAITING'});
+          }
+        });
+      });
+      // 매 30분마다 새 버전 확인
+      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+    }).catch(function(e) { /* fail silently */ });
+    // 새 SW가 통제권 잡으면 페이지 자동 reload (한 번만)
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (reloaded) return;
+      reloaded = true;
+      window.location.reload();
+    });
+  });
+}
+</script>
+</body>
+</html>

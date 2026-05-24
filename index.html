@@ -213,11 +213,19 @@
         </div>
       </a>
 
-      <div class="unit-card coming">
-        <div class="unit-top"><span class="unit-icon">🌿</span><span class="badge badge-soon">준비중</span></div>
-        <div class="unit-name-en">8B2 Ecosystems</div>
+      <a class="unit-card ready" href="ecosystems.html">
+        <div class="unit-top">
+          <span class="unit-icon">🌿</span>
+          <span class="badge badge-ready">완성 ✓</span>
+        </div>
+        <div class="unit-name-en">8J Ecosystems</div>
         <div class="unit-name-ko">생태계</div>
-      </div>
+        <div class="unit-menu">
+          <span class="menu-chip">📖 단어장</span>
+          <span class="menu-chip">📝 노트</span>
+          <span class="menu-chip">✅ 퀴즈</span>
+        </div>
+      </a>
 
       <div class="unit-card coming">
         <div class="unit-top"><span class="unit-icon">🍎</span><span class="badge badge-soon">준비중</span></div>
@@ -239,11 +247,19 @@
         </div>
       </a>
 
-      <div class="unit-card coming">
-        <div class="unit-top"><span class="unit-icon">🧪</span><span class="badge badge-soon">준비중</span></div>
-        <div class="unit-name-en">8C1 Properties</div>
-        <div class="unit-name-ko">물질의 성질</div>
-      </div>
+      <a class="unit-card ready" href="atoms.html">
+        <div class="unit-top">
+          <span class="unit-icon">⚛️</span>
+          <span class="badge badge-ready">완성 ✓</span>
+        </div>
+        <div class="unit-name-en">8E Atoms & Particles</div>
+        <div class="unit-name-ko">원자와 입자</div>
+        <div class="unit-menu">
+          <span class="menu-chip">📖 단어장</span>
+          <span class="menu-chip">📝 노트</span>
+          <span class="menu-chip">✅ 퀴즈</span>
+        </div>
+      </a>
 
       <div class="unit-card coming">
         <div class="unit-top"><span class="unit-icon">⚗️</span><span class="badge badge-soon">준비중</span></div>
@@ -257,11 +273,19 @@
         <div class="unit-name-ko">화학 반응</div>
       </div>
 
-      <div class="unit-card coming">
-        <div class="unit-top"><span class="unit-icon">🏃</span><span class="badge badge-soon">준비중</span></div>
-        <div class="unit-name-en">8P1 Forces & Energy</div>
-        <div class="unit-name-ko">힘과 에너지</div>
-      </div>
+      <a class="unit-card ready" href="forces.html">
+        <div class="unit-top">
+          <span class="unit-icon">🏃</span>
+          <span class="badge badge-ready">완성 ✓</span>
+        </div>
+        <div class="unit-name-en">8P Forces & Moments</div>
+        <div class="unit-name-ko">힘과 회전력</div>
+        <div class="unit-menu">
+          <span class="menu-chip">📖 단어장</span>
+          <span class="menu-chip">📝 노트</span>
+          <span class="menu-chip">✅ 퀴즈</span>
+        </div>
+      </a>
 
       <div class="unit-card coming">
         <div class="unit-top"><span class="unit-icon">💡</span><span class="badge badge-soon">준비중</span></div>
@@ -349,5 +373,37 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
   document.getElementById('fab-tutor').href = 'https://claude.ai/new?q=' + encodeURIComponent(_t);
 </script>
 
+<!-- SW-AUTO-START -->
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      // 새 SW 발견 시 즉시 적용 → 페이지 자동 새로고침
+      reg.addEventListener('updatefound', function() {
+        var newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', function() {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+            // 새 버전 준비됨 → 즉시 활성화 명령
+            newSW.postMessage({type: 'SKIP_WAITING'});
+          }
+        });
+      });
+      // 매 30분마다 새 버전 확인
+      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+    }).catch(function(e) { /* fail silently */ });
+    // 새 SW가 통제권 잡으면 페이지 자동 reload (한 번만)
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (reloaded) return;
+      reloaded = true;
+      window.location.reload();
+    });
+  });
+}
+</script>
+
+<!-- SW-AUTO-END -->
 </body>
 </html>
