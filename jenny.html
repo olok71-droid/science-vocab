@@ -29,19 +29,15 @@
     background-image: radial-gradient(circle at 15% 12%, rgba(246,166,35,0.13) 0%, transparent 50%),
                       radial-gradient(circle at 85% 85%, rgba(255,204,92,0.13) 0%, transparent 50%);
   }
-  header { text-align:center; padding: 30px 20px 18px; }
+  header { text-align:center; padding: 48px 20px 16px; }
   .back {
     position: absolute; left: 14px; top: 18px;
     text-decoration:none; color: var(--accent); font-weight:800; font-size:14px;
     background:#fff; padding:6px 12px; border-radius:20px;
     box-shadow:0 2px 10px var(--shadow);
   }
-  .emo {
-    display:inline-block; background:#fff; border-radius:50%;
-    width:72px; height:72px; line-height:72px; font-size:40px;
-    box-shadow:0 4px 18px var(--shadow); margin-bottom:10px;
-  }
   header h1 { font-size:26px; font-weight:900; margin-bottom:4px; letter-spacing:-0.5px; }
+  header h1 .heart { font-size:20px; }
   header h1 .y { color: var(--accent); }
   header .tagline { font-size:13px; color:var(--muted); font-weight:700; }
 
@@ -80,18 +76,17 @@
 
   /* Day 섹션 */
   .day-head {
-    font-size:15px; font-weight:900; color:var(--accent); margin:18px 4px 10px;
-    display:flex; align-items:center; gap:8px;
+    font-size:15px; font-weight:900; color:var(--accent); margin:18px 2px 10px;
+    display:flex; align-items:center; justify-content:space-between; gap:6px; flex-wrap:wrap;
   }
-  .day-head::before { content:'📅'; }
   .day-head .cnt { font-size:12px; color:var(--muted); font-weight:700; }
+  .dh-btns { display:flex; gap:5px; }
 
-  /* 블라인드 버튼 줄 */
-  .blind-bar { display:flex; gap:6px; margin-bottom:12px; }
+  /* 블라인드 버튼 (Day 줄 오른쪽) */
   .blind-btn {
-    flex:1; border:2px solid rgba(246,166,35,0.25); background:#fff; color:var(--muted);
-    font-family:inherit; font-weight:800; font-size:13px; padding:9px 4px; border-radius:11px;
-    cursor:pointer; transition:all .15s;
+    border:1.5px solid rgba(246,166,35,0.3); background:#fff; color:var(--muted);
+    font-family:inherit; font-weight:800; font-size:11px; padding:5px 9px; border-radius:14px;
+    cursor:pointer; transition:all .15s; white-space:nowrap;
   }
   .blind-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 
@@ -111,11 +106,6 @@
   }
   .spk:hover { background:var(--accent); color:#fff; }
   .spk.sm { width:28px; height:28px; font-size:13px; }
-  .ex-btn {
-    border:none; background:transparent; color:var(--muted); font-size:15px;
-    cursor:pointer; flex-shrink:0; width:26px;
-  }
-  .ex-btn.on { color:var(--accent); }
 
   /* 블라인드(가림) — 글자 숨기고 톡 누르면 잠깐 보임 */
   .cell { position:relative; cursor:default; }
@@ -128,14 +118,13 @@
   .cell.blinded.peek > span { filter:none; opacity:1; }
   .cell.blinded.peek::after { content:''; }
 
-  /* 예문 펼침 줄 */
+  /* 예문 줄 (항상 보임) */
   .ex-row {
-    display:none; align-items:center; gap:8px;
+    display:flex; align-items:center; gap:8px;
     margin:-3px 0 9px 8px; padding:9px 12px;
     background:rgba(246,166,35,0.06); border-radius:11px;
     border-left:3px solid rgba(246,166,35,0.4);
   }
-  .ex-row.open { display:flex; }
   .ex-en { flex:1.05; font-size:13.5px; color:#6a5a3a; font-style:italic; line-height:1.35; min-width:0; }
   .ex-ko { flex:1; font-size:12.5px; color:var(--muted); font-weight:600; line-height:1.35; min-width:0; }
 
@@ -195,8 +184,7 @@
 
 <a class="back" href="index.html">← 메인</a>
 <header>
-  <div class="emo">💛</div>
-  <h1><span class="y">Jenny</span> 영어공부</h1>
+  <h1><span class="heart">💛</span> <span class="y">Jenny</span> 영어공부</h1>
   <p class="tagline">phrase - May · Day 1–7 · 듣고 따라 말해요 🎧</p>
 </header>
 
@@ -209,11 +197,6 @@
 
   <!-- 단어장 -->
   <div class="tab-panel active" id="tab-vocab">
-    <div class="blind-bar">
-      <button class="blind-btn active" data-blind="none" onclick="setBlind('none')">👁 다 보기</button>
-      <button class="blind-btn" data-blind="en" onclick="setBlind('en')">🇬🇧 영어 가림</button>
-      <button class="blind-btn" data-blind="ko" onclick="setBlind('ko')">🇰🇷 한글 가림</button>
-    </div>
     <input class="search" id="search" placeholder="🔍 영어 또는 한글 검색…">
     <div class="day-filter" id="day-filter"></div>
     <div id="vocab-list"></div>
@@ -400,12 +383,10 @@ let query = '';
 
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-let blindMode = 'none';   // none | en | ko
+let blindEn = false, blindKo = false;   // 각각 켜기/끄기 토글
 
-function setBlind(mode) {
-  blindMode = mode;
-  document.querySelectorAll('.blind-btn').forEach(b =>
-    b.classList.toggle('active', b.dataset.blind === mode));
+function toggleBlind(side) {
+  if (side === 'en') blindEn = !blindEn; else blindKo = !blindKo;
   renderVocab();
 }
 
@@ -415,16 +396,15 @@ function peek(el) {
 }
 
 function cell(side, text) {
-  const blinded = (blindMode === side) ? ' blinded' : '';
-  return `<div class="w-${side} cell${blinded}" onclick="peek(this)"><span>${esc(text)}</span></div>`;
+  const isBlind = (side === 'en') ? blindEn : blindKo;
+  return `<div class="w-${side} cell${isBlind ? ' blinded' : ''}" onclick="peek(this)"><span>${esc(text)}</span></div>`;
 }
 
-function toggleEx(id) {
-  const row = document.getElementById('ex-' + id);
-  const btn = document.getElementById('exbtn-' + id);
-  if (!row) return;
-  const open = row.classList.toggle('open');
-  if (btn) btn.classList.toggle('on', open);
+function blindButtons() {
+  return `<span class="dh-btns">
+    <button class="blind-btn${blindEn ? ' active' : ''}" onclick="toggleBlind('en')">🇬🇧 영어가림</button>
+    <button class="blind-btn${blindKo ? ' active' : ''}" onclick="toggleBlind('ko')">🇰🇷 한글가림</button>
+  </span>`;
 }
 
 function renderVocab() {
@@ -437,19 +417,16 @@ function renderVocab() {
       !q || w.en.toLowerCase().includes(q) || w.ko.toLowerCase().includes(q) || w.ex.toLowerCase().includes(q)
     ));
     if (items.length === 0) return;
-    html += `<div class="day-head">Day ${day} <span class="cnt">· ${items.length}개</span></div>`;
+    html += `<div class="day-head"><span class="dh-title">📅 Day ${day} <span class="cnt">· ${items.length}개</span></span>${blindButtons()}</div>`;
     items.forEach(w => {
-      const exBlindEn = (blindMode === 'en') ? ' blinded' : '';
-      const exBlindKo = (blindMode === 'ko') ? ' blinded' : '';
       html += `<div class="wrow">
         ${cell('en', w.en)}
         ${cell('ko', w.ko)}
-        <button class="ex-btn" id="exbtn-${w.id}" onclick="toggleEx(${w.id})" aria-label="예문 보기">💬</button>
         <button class="spk" onclick="playClip('w', ${w.id})" aria-label="단어 발음">🔊</button>
       </div>
-      <div class="ex-row" id="ex-${w.id}">
-        <div class="ex-en cell${exBlindEn}" onclick="peek(this)"><span>${esc(w.ex)}</span></div>
-        <div class="ex-ko cell${exBlindKo}" onclick="peek(this)"><span>${esc(w.exko || '')}</span></div>
+      <div class="ex-row">
+        <div class="ex-en cell${blindEn ? ' blinded' : ''}" onclick="peek(this)"><span>${esc(w.ex)}</span></div>
+        <div class="ex-ko cell${blindKo ? ' blinded' : ''}" onclick="peek(this)"><span>${esc(w.exko || '')}</span></div>
         <button class="spk sm" onclick="playClip('e', ${w.id})" aria-label="예문 발음">🔊</button>
       </div>`;
     });
