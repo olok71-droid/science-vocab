@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐼 중국어 첫걸음</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fff5f5; --card:#ffffff; --accent:#e23a3a; --accent2:#ff8a8a;
+    --gold:#f6b73c; --green:#3ecfb2; --blue:#60c4f8;
+    --text:#3a1f1f; --muted:#cf9a9a; --shadow:rgba(226,58,58,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Nunito','Noto Sans KR',sans-serif; min-height:100vh; padding:0 0 70px;
+    background-image:radial-gradient(circle at 15% 12%,rgba(226,58,58,0.10) 0%,transparent 50%),
+                     radial-gradient(circle at 85% 85%,rgba(246,183,60,0.12) 0%,transparent 50%);
+  }
+  header{text-align:center; padding:28px 20px 14px;}
+  .back{position:absolute; left:14px; top:18px; text-decoration:none; color:var(--accent);
+    font-weight:800; font-size:14px; background:#fff; padding:6px 12px; border-radius:20px; box-shadow:0 2px 10px var(--shadow);}
+  .emo{display:inline-block; background:#fff; border-radius:50%; width:74px; height:74px; line-height:74px;
+    font-size:42px; box-shadow:0 4px 18px var(--shadow); margin-bottom:10px;}
+  header h1{font-size:26px; font-weight:900; margin-bottom:4px;}
+  header h1 .y{color:var(--accent);}
+  header .tagline{font-size:13px; color:var(--muted); font-weight:700;}
+  .container{max-width:720px; margin:0 auto; padding:0 14px;}
+
+  .tabs{display:flex; gap:6px; background:#fff; padding:6px; border-radius:16px;
+    box-shadow:0 2px 12px var(--shadow); margin-bottom:16px; position:sticky; top:8px; z-index:20;}
+  .tab-btn{flex:1; border:none; background:transparent; padding:10px 4px; border-radius:11px;
+    font-family:inherit; font-weight:800; font-size:13.5px; color:var(--muted); cursor:pointer; transition:all .18s;}
+  .tab-btn.active{background:var(--accent); color:#fff; box-shadow:0 3px 10px var(--shadow);}
+  .tab-panel{display:none;} .tab-panel.active{display:block;}
+
+  .topic-filter{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;}
+  .topic-chip{border:none; background:#fff; color:var(--accent); font-family:inherit; font-weight:800;
+    font-size:13px; padding:7px 13px; border-radius:20px; cursor:pointer; box-shadow:0 2px 8px var(--shadow); transition:all .15s;}
+  .topic-chip.active{background:var(--accent); color:#fff;}
+
+  .topic-head{font-size:15px; font-weight:900; color:var(--accent); margin:18px 4px 10px; display:flex; align-items:center; gap:8px;}
+  .topic-head::before{content:'🀄';}
+  .topic-head .cnt{font-size:12px; color:var(--muted); font-weight:700;}
+
+  /* 단어 카드 — 한자 크게, 탭하면 소리 */
+  .ccard{background:var(--card); border-radius:18px; padding:14px 16px; margin-bottom:10px;
+    box-shadow:0 2px 10px var(--shadow); border:2px solid rgba(226,58,58,0.10);
+    display:flex; align-items:center; gap:14px; cursor:pointer; transition:all .12s;}
+  .ccard:active{transform:scale(0.98);}
+  .ccard.playing{border-color:var(--accent); background:#fff0f0;}
+  .ccard .hz{font-family:'Noto Sans SC','Noto Sans KR',sans-serif; font-size:38px; font-weight:900;
+    color:var(--text); line-height:1; min-width:64px; text-align:center;}
+  .ccard .mid{flex:1;}
+  .ccard .py{font-size:18px; font-weight:800; color:var(--accent); letter-spacing:.3px;}
+  .ccard .ko{font-size:14px; color:#8a6a6a; font-weight:700; margin-top:3px;}
+  .ccard .spk{border:none; background:var(--accent); color:#fff; width:46px; height:46px; border-radius:50%;
+    font-size:22px; cursor:pointer; flex-shrink:0; box-shadow:0 3px 10px var(--shadow);}
+
+  .hint{background:#fff; border-radius:14px; padding:12px 15px; margin-bottom:14px; font-size:13px;
+    color:#8a6a6a; font-weight:700; box-shadow:0 2px 8px var(--shadow); line-height:1.5;}
+  .hint b{color:var(--accent);}
+
+  /* 듣기 퀴즈 */
+  .quiz-setup{text-align:center; padding:14px 0;}
+  .quiz-setup p{color:var(--muted); font-weight:700; font-size:14px; margin-bottom:14px; line-height:1.6;}
+  .big-btn{border:none; background:var(--accent); color:#fff; font-family:inherit; font-weight:800;
+    font-size:16px; padding:13px 30px; border-radius:14px; cursor:pointer; box-shadow:0 4px 14px var(--shadow); transition:all .15s;}
+  .big-btn:hover{transform:translateY(-2px);} .big-btn.alt{background:#fff; color:var(--accent); border:2px solid rgba(226,58,58,0.3);}
+  .quiz-stats{display:flex; justify-content:center; gap:18px; margin-bottom:16px; font-weight:800; font-size:14px;}
+  .quiz-stats .ok{color:var(--green);} .quiz-stats .no{color:var(--accent);} .quiz-stats .rem{color:var(--muted);}
+  .q-card{background:#fff; border-radius:18px; padding:24px 18px; box-shadow:0 4px 16px var(--shadow);
+    border:2px solid rgba(226,58,58,0.12); text-align:center; margin-bottom:14px;}
+  .q-play{border:none; background:var(--accent); color:#fff; width:90px; height:90px; border-radius:50%;
+    font-size:42px; cursor:pointer; box-shadow:0 6px 18px var(--shadow); margin-bottom:8px;}
+  .q-ask{font-size:15px; font-weight:800; color:var(--muted); margin:10px 0 16px;}
+  .q-choices{display:flex; flex-direction:column; gap:9px;}
+  .choice{border:2px solid rgba(226,58,58,0.18); background:#fff; color:var(--text); font-family:inherit;
+    font-weight:800; font-size:17px; padding:14px; border-radius:14px; cursor:pointer; transition:all .12s;}
+  .choice:hover{border-color:var(--accent);}
+  .choice.correct{background:rgba(62,207,178,0.15); border-color:var(--green); color:var(--green);}
+  .choice.wrong{background:rgba(226,58,58,0.1); border-color:var(--accent); color:var(--accent);}
+  .choice:disabled{cursor:default;}
+  .q-reveal{margin-top:14px; min-height:24px;}
+  .q-reveal .hz{font-family:'Noto Sans SC','Noto Sans KR',sans-serif; font-size:30px; font-weight:900;}
+  .q-reveal .py{font-size:17px; color:var(--accent); font-weight:800;}
+
+  /* 유튜브 */
+  .yt-list{display:flex; flex-direction:column; gap:10px;}
+  .yt-link{display:flex; align-items:center; gap:12px; background:#fff; border-radius:16px; padding:15px 16px;
+    text-decoration:none; color:var(--text); box-shadow:0 2px 10px var(--shadow);
+    border:2px solid rgba(226,58,58,0.1); font-weight:800; font-size:15px; transition:all .15s;}
+  .yt-link:hover{transform:translateY(-2px); border-color:var(--accent);}
+  .yt-link .pic{font-size:24px;}
+  .yt-link .go{margin-left:auto; background:var(--accent); color:#fff; font-size:12px; font-weight:800;
+    padding:6px 12px; border-radius:20px;}
+
+  footer{text-align:center; padding:24px; color:var(--muted); font-size:11px;}
+  footer span{color:var(--accent);}
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html">← 메인</a>
+<header>
+  <div class="emo">🐼</div>
+  <h1><span class="y">중국어</span> 첫걸음</h1>
+  <p class="tagline">한 글자씩 듣고 따라 말해요 🎧 · 처음 배우는 친구를 위해</p>
+</header>
+
+<div class="container">
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="learn">🐼 듣고 배우기</button>
+    <button class="tab-btn" data-tab="quiz">🎧 듣기 퀴즈</button>
+    <button class="tab-btn" data-tab="yt">▶️ 유튜브</button>
+  </div>
+
+  <!-- 듣고 배우기 -->
+  <div class="tab-panel active" id="tab-learn">
+    <div class="hint">👆 <b>카드를 누르면 소리</b>가 나요. 한자 아래 <b>병음</b>(소리 적은 것)을 보고 <b>여러 번 듣고 따라 말하기</b>! 처음엔 <b>성조</b>(소리 높낮이)부터 들어봐요.</div>
+    <div class="topic-filter" id="topic-filter"></div>
+    <div id="learn-list"></div>
+  </div>
+
+  <!-- 듣기 퀴즈 -->
+  <div class="tab-panel" id="tab-quiz">
+    <div class="topic-filter" id="quiz-topic-filter"></div>
+    <div class="quiz-setup" id="quiz-setup">
+      <p>🔊 소리를 듣고, <b>무슨 뜻인지</b> 골라요.<br>위에서 주제를 고르면 그 주제만 나와요.</p>
+      <button class="big-btn" onclick="startQuiz()">▶︎ 듣기 퀴즈 시작</button>
+    </div>
+    <div id="quiz-area" style="display:none;">
+      <div class="quiz-stats">
+        <span class="ok">⭕ <span id="q-ok">0</span></span>
+        <span class="no">❌ <span id="q-no">0</span></span>
+        <span class="rem">남음 <span id="q-rem">0</span></span>
+      </div>
+      <div class="q-card">
+        <button class="q-play" id="q-play" aria-label="소리 듣기">🔊</button>
+        <div class="q-ask">이 소리는 무슨 뜻일까요?</div>
+        <div class="q-choices" id="q-choices"></div>
+        <div class="q-reveal" id="q-reveal"></div>
+        <div style="margin-top:14px;"><button class="big-btn" id="q-next" style="display:none;" onclick="nextQuiz()">다음 ▶︎</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 유튜브 -->
+  <div class="tab-panel" id="tab-yt">
+    <div class="hint">📺 유아·초보용 중국어 영상 모음이에요. 누르면 유튜브에서 열려요. (소리를 많이 듣는 게 제일 중요해요!)</div>
+    <div class="yt-list" id="yt-list"></div>
+  </div>
+
+</div>
+
+<footer>🐼 <span>중국어 첫걸음</span> · 듣고 따라 말하기</footer>
+
+<script>
+const DATA = [{"t": "성조 (소리 높낮이)", "hz": "妈", "py": "mā", "ko": "엄마 — 1성(높고 평평) ─", "id": 0}, {"t": "성조 (소리 높낮이)", "hz": "麻", "py": "má", "ko": "마(저림) — 2성(올라감) ╱", "id": 1}, {"t": "성조 (소리 높낮이)", "hz": "马", "py": "mǎ", "ko": "말 — 3성(내렸다 올림) ╲╱", "id": 2}, {"t": "성조 (소리 높낮이)", "hz": "骂", "py": "mà", "ko": "혼내다 — 4성(뚝 떨어짐) ╲", "id": 3}, {"t": "인사말", "hz": "你好", "py": "nǐ hǎo", "ko": "안녕하세요", "id": 4}, {"t": "인사말", "hz": "谢谢", "py": "xièxie", "ko": "고맙습니다", "id": 5}, {"t": "인사말", "hz": "再见", "py": "zàijiàn", "ko": "안녕히 가세요", "id": 6}, {"t": "인사말", "hz": "对不起", "py": "duìbuqǐ", "ko": "미안해요", "id": 7}, {"t": "인사말", "hz": "我爱你", "py": "wǒ ài nǐ", "ko": "사랑해요", "id": 8}, {"t": "인사말", "hz": "老师好", "py": "lǎoshī hǎo", "ko": "선생님 안녕하세요", "id": 9}, {"t": "숫자 1~10", "hz": "一", "py": "yī", "ko": "1 (하나)", "id": 10}, {"t": "숫자 1~10", "hz": "二", "py": "èr", "ko": "2 (둘)", "id": 11}, {"t": "숫자 1~10", "hz": "三", "py": "sān", "ko": "3 (셋)", "id": 12}, {"t": "숫자 1~10", "hz": "四", "py": "sì", "ko": "4 (넷)", "id": 13}, {"t": "숫자 1~10", "hz": "五", "py": "wǔ", "ko": "5 (다섯)", "id": 14}, {"t": "숫자 1~10", "hz": "六", "py": "liù", "ko": "6 (여섯)", "id": 15}, {"t": "숫자 1~10", "hz": "七", "py": "qī", "ko": "7 (일곱)", "id": 16}, {"t": "숫자 1~10", "hz": "八", "py": "bā", "ko": "8 (여덟)", "id": 17}, {"t": "숫자 1~10", "hz": "九", "py": "jiǔ", "ko": "9 (아홉)", "id": 18}, {"t": "숫자 1~10", "hz": "十", "py": "shí", "ko": "10 (열)", "id": 19}, {"t": "색깔", "hz": "红色", "py": "hóngsè", "ko": "빨강", "id": 20}, {"t": "색깔", "hz": "蓝色", "py": "lánsè", "ko": "파랑", "id": 21}, {"t": "색깔", "hz": "黄色", "py": "huángsè", "ko": "노랑", "id": 22}, {"t": "색깔", "hz": "绿色", "py": "lǜsè", "ko": "초록", "id": 23}, {"t": "색깔", "hz": "黑色", "py": "hēisè", "ko": "검정", "id": 24}, {"t": "색깔", "hz": "白色", "py": "báisè", "ko": "하양", "id": 25}, {"t": "색깔", "hz": "粉色", "py": "fěnsè", "ko": "분홍", "id": 26}, {"t": "가족", "hz": "爸爸", "py": "bàba", "ko": "아빠", "id": 27}, {"t": "가족", "hz": "妈妈", "py": "māma", "ko": "엄마", "id": 28}, {"t": "가족", "hz": "哥哥", "py": "gēge", "ko": "형·오빠", "id": 29}, {"t": "가족", "hz": "姐姐", "py": "jiějie", "ko": "누나·언니", "id": 30}, {"t": "가족", "hz": "弟弟", "py": "dìdi", "ko": "남동생", "id": 31}, {"t": "가족", "hz": "妹妹", "py": "mèimei", "ko": "여동생", "id": 32}, {"t": "가족", "hz": "我", "py": "wǒ", "ko": "나", "id": 33}, {"t": "동물", "hz": "猫", "py": "māo", "ko": "고양이", "id": 34}, {"t": "동물", "hz": "狗", "py": "gǒu", "ko": "강아지", "id": 35}, {"t": "동물", "hz": "兔子", "py": "tùzi", "ko": "토끼", "id": 36}, {"t": "동물", "hz": "鸟", "py": "niǎo", "ko": "새", "id": 37}, {"t": "동물", "hz": "鱼", "py": "yú", "ko": "물고기", "id": 38}, {"t": "동물", "hz": "熊猫", "py": "xióngmāo", "ko": "판다", "id": 39}, {"t": "동물", "hz": "大象", "py": "dàxiàng", "ko": "코끼리", "id": 40}, {"t": "음식", "hz": "米饭", "py": "mǐfàn", "ko": "밥", "id": 41}, {"t": "음식", "hz": "水", "py": "shuǐ", "ko": "물", "id": 42}, {"t": "음식", "hz": "牛奶", "py": "niúnǎi", "ko": "우유", "id": 43}, {"t": "음식", "hz": "苹果", "py": "píngguǒ", "ko": "사과", "id": 44}, {"t": "음식", "hz": "面包", "py": "miànbāo", "ko": "빵", "id": 45}, {"t": "음식", "hz": "鸡蛋", "py": "jīdàn", "ko": "계란", "id": 46}, {"t": "음식", "hz": "糖果", "py": "tángguǒ", "ko": "사탕", "id": 47}, {"t": "몸", "hz": "头", "py": "tóu", "ko": "머리", "id": 48}, {"t": "몸", "hz": "眼睛", "py": "yǎnjing", "ko": "눈", "id": 49}, {"t": "몸", "hz": "鼻子", "py": "bízi", "ko": "코", "id": 50}, {"t": "몸", "hz": "嘴", "py": "zuǐ", "ko": "입", "id": 51}, {"t": "몸", "hz": "耳朵", "py": "ěrduo", "ko": "귀", "id": 52}, {"t": "몸", "hz": "手", "py": "shǒu", "ko": "손", "id": 53}, {"t": "몸", "hz": "脚", "py": "jiǎo", "ko": "발", "id": 54}, {"t": "기초 표현", "hz": "是", "py": "shì", "ko": "응, 맞아요", "id": 55}, {"t": "기초 표현", "hz": "不是", "py": "búshì", "ko": "아니에요", "id": 56}, {"t": "기초 표현", "hz": "好", "py": "hǎo", "ko": "좋아요", "id": 57}, {"t": "기초 표현", "hz": "我饿了", "py": "wǒ è le", "ko": "배고파요", "id": 58}, {"t": "기초 표현", "hz": "我要这个", "py": "wǒ yào zhège", "ko": "이거 주세요", "id": 59}, {"t": "기초 표현", "hz": "这是什么", "py": "zhè shì shénme", "ko": "이게 뭐예요?", "id": 60}];
+const TOPICS = ["성조 (소리 높낮이)", "인사말", "숫자 1~10", "색깔", "가족", "동물", "음식", "몸", "기초 표현"];
+const YT = [{"label": "🐼 宝宝巴士 (BabyBus 중국어 동요)", "q": "宝宝巴士 中文 儿歌"}, {"label": "🎵 병음 노래 (拼音歌)", "q": "拼音歌 儿童 拼音 学习"}, {"label": "🔢 숫자 노래 (1~10)", "q": "中文 数字歌 一到十 儿童"}, {"label": "🌈 색깔 노래", "q": "颜色歌 中文 儿童 颜色"}, {"label": "🐯 两只老虎 (두 마리 호랑이)", "q": "两只老虎 儿歌"}, {"label": "⭐ 小星星 (반짝반짝 작은 별)", "q": "小星星 中文 儿歌"}, {"label": "👶 유아 중국어 첫걸음", "q": "유아 중국어 동요 기초 따라하기"}, {"label": "🍎 일상 단어 (동물·음식·가족)", "q": "幼儿 中文 单词 动物 食物 家人"}];
+
+// ── 발음: 미리 받은 mp3 재생 (audio/chinese/c{id}.mp3), 안 되면 폰 음성 보조 ──
+let _audio = null, _playingEl = null;
+function playClip(id, el){
+  const d = DATA[id];
+  if (_playingEl) _playingEl.classList.remove('playing');
+  if (el){ el.classList.add('playing'); _playingEl = el; }
+  const fb = () => { if (d) fallbackSpeak(d.hz); };
+  try{
+    if (_audio){ _audio.pause(); _audio = null; }
+    const a = new Audio('audio/chinese/c' + id + '.mp3');
+    a.onerror = fb;
+    a.onended = () => { if (el) el.classList.remove('playing'); };
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(fb);
+  }catch(e){ fb(); }
+}
+let _voices = [];
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis){ loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l||'').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.85;
+  const zh = _voices.filter(v => normLang(v.lang).startsWith('zh'));
+  const local = zh.filter(v => v.localService);
+  const pool = local.length ? local : zh;
+  const v = pool.find(x => normLang(x.lang).startsWith('zh-cn')) || pool[0];
+  if (v){ u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'zh-CN'; }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  setTimeout(() => { try{ window.speechSynthesis.resume(); }catch(e){} }, 80);
+}
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ── 탭 ──
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+
+// ── 듣고 배우기 ──
+let learnTopic = 'all';
+function renderLearn(){
+  const wrap = document.getElementById('learn-list');
+  let html = '';
+  TOPICS.forEach(tp => {
+    if (learnTopic !== 'all' && learnTopic !== tp) return;
+    const items = DATA.filter(d => d.t === tp);
+    html += `<div class="topic-head">${esc(tp)} <span class="cnt">· ${items.length}개</span></div>`;
+    items.forEach(d => {
+      html += `<div class="ccard" onclick="playClip(${d.id}, this)">
+        <div class="hz">${esc(d.hz)}</div>
+        <div class="mid">
+          <div class="py">${esc(d.py)}</div>
+          <div class="ko">${esc(d.ko)}</div>
+        </div>
+        <button class="spk" onclick="event.stopPropagation(); playClip(${d.id}, this.closest('.ccard'))" aria-label="발음">🔊</button>
+      </div>`;
+    });
+  });
+  wrap.innerHTML = html;
+}
+function buildTopicFilter(containerId, onClick){
+  const c = document.getElementById(containerId);
+  let html = `<button class="topic-chip active" data-tp="all">전체</button>`;
+  TOPICS.forEach(tp => html += `<button class="topic-chip" data-tp="${esc(tp)}">${esc(tp)}</button>`);
+  c.innerHTML = html;
+  c.querySelectorAll('.topic-chip').forEach(b => b.addEventListener('click', () => {
+    c.querySelectorAll('.topic-chip').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    onClick(b.dataset.tp);
+  }));
+}
+buildTopicFilter('topic-filter', tp => { learnTopic = tp; renderLearn(); });
+buildTopicFilter('quiz-topic-filter', tp => { quizTopic = tp; });
+renderLearn();
+
+// ── 듣기 퀴즈 (소리 듣고 뜻 고르기) ──
+let quizTopic = 'all';
+const quiz = { pool:[], cur:null, ok:0, no:0, answered:false };
+function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+function startQuiz(){
+  const subset = DATA.filter(d => quizTopic === 'all' || d.t === quizTopic);
+  if (subset.length < 3){ alert('이 주제는 문제가 너무 적어요. 다른 주제나 전체를 골라요!'); return; }
+  quiz.pool = shuffle(subset); quiz.ok = 0; quiz.no = 0;
+  document.getElementById('quiz-setup').style.display = 'none';
+  document.getElementById('quiz-area').style.display = 'block';
+  updateQuizStats(); nextQuiz();
+}
+function nextQuiz(){
+  if (quiz.pool.length === 0){ finishQuiz(); return; }
+  quiz.cur = quiz.pool.shift(); quiz.answered = false;
+  const d = quiz.cur;
+  document.getElementById('q-reveal').innerHTML = '';
+  document.getElementById('q-next').style.display = 'none';
+  // 보기 3개: 정답 + 같은류 오답 2개
+  const others = shuffle(DATA.filter(x => x.id !== d.id)).slice(0, 2);
+  const choices = shuffle([d, ...others]);
+  const cwrap = document.getElementById('q-choices');
+  cwrap.innerHTML = choices.map(c =>
+    `<button class="choice" onclick="answerQuiz(${c.id}, this)">${esc(c.ko)}</button>`).join('');
+  document.getElementById('q-play').onclick = () => playClip(d.id);
+  updateQuizStats();
+  setTimeout(() => playClip(d.id), 350);  // 문제 나오면 자동으로 한 번 들려주기
+}
+function answerQuiz(chosenId, el){
+  if (quiz.answered) return;
+  quiz.answered = true;
+  const d = quiz.cur;
+  const correct = chosenId === d.id;
+  document.querySelectorAll('.choice').forEach(b => b.disabled = true);
+  if (correct){ quiz.ok++; el.classList.add('correct'); }
+  else {
+    quiz.no++; el.classList.add('wrong');
+    document.querySelectorAll('.choice').forEach(b => {
+      if (b.textContent === d.ko) b.classList.add('correct');
+    });
+  }
+  document.getElementById('q-reveal').innerHTML =
+    `<span class="hz">${esc(d.hz)}</span> &nbsp; <span class="py">${esc(d.py)}</span><br>` +
+    `<span style="color:#8a6a6a;font-weight:700;">${esc(d.ko)}</span>`;
+  document.getElementById('q-next').style.display = '';
+  playClip(d.id);
+  updateQuizStats();
+}
+function finishQuiz(){
+  const total = quiz.ok + quiz.no;
+  document.getElementById('quiz-area').innerHTML =
+    `<div class="q-card">
+       <div style="font-size:46px;margin-bottom:8px;">🎉</div>
+       <div style="font-size:22px;font-weight:900;color:var(--accent);margin-bottom:6px;">잘했어요!</div>
+       <div style="font-size:18px;font-weight:800;color:var(--green);">맞은 개수 ${quiz.ok} / ${total}</div>
+       <div style="margin-top:16px;"><button class="big-btn" onclick="resetQuiz()">다시 하기 🔁</button></div>
+     </div>`;
+}
+function resetQuiz(){ location.reload(); }
+function updateQuizStats(){
+  document.getElementById('q-ok').textContent = quiz.ok;
+  document.getElementById('q-no').textContent = quiz.no;
+  const rem = quiz.pool.length + (quiz.cur && !quiz.answered ? 1 : 0);
+  document.getElementById('q-rem').textContent = rem;
+}
+
+// ── 유튜브 ──
+document.getElementById('yt-list').innerHTML = YT.map(v =>
+  `<a class="yt-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent(v.q)}">
+     <span class="pic">▶️</span><span>${esc(v.label)}</span><span class="go">보기</span>
+   </a>`).join('');
+</script>
+
+<!-- SW-AUTO-START -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      reg.addEventListener('updatefound', function() {
+        var newSW = reg.installing; if (!newSW) return;
+        newSW.addEventListener('statechange', function() {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) newSW.postMessage({type:'SKIP_WAITING'});
+        });
+      });
+      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+    }).catch(function(e) {});
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (reloaded) return; reloaded = true; window.location.reload();
+    });
+  });
+}
+</script>
+<!-- SW-AUTO-END -->
+</body>
+</html>
