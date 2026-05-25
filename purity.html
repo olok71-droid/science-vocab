@@ -840,13 +840,18 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 function speak(text) {
   if (!window.speechSynthesis) return;
   const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'en-GB'; u.rate = 0.9;
-  // en-GB 보이스 우선 선택
-  const voices = window.speechSynthesis.getVoices();
-  const gb = voices.find(v => v.lang === 'en-GB');
-  if (gb) u.voice = gb;
+  u.rate = 0.9;
+  // 'en_GB'(밑줄)·'en-GB'(붙임표) 둘 다 인식, 로컬(기기 내장) 목소리 우선
+  function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+  const voices = window.speechSynthesis.getVoices() || [];
+  const en = voices.filter(v => normLang(v.lang).startsWith('en'));
+  const local = en.filter(v => v.localService);
+  const pool = local.length ? local : en;
+  const pick = pool.find(v => normLang(v.lang)==='en-gb') || pool.find(v => normLang(v.lang)==='en-us') || pool[0];
+  if (pick) { u.voice = pick; u.lang = normLang(pick.lang); } else { u.lang = 'en-GB'; }
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
+  setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
 }
 
 // 단어장: 필터 + 검색 통합
