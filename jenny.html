@@ -314,16 +314,18 @@ DATA.forEach((w, i) => { w.id = i; });   // 음성 파일 이름과 맞추기
 // (단어=w번호.mp3, 예문=e번호.mp3) 파일을 못 틀면 폰 내장 음성으로 보조.
 function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
 let _audio = null;
-function playClip(kind, id, fallbackTextRaw) {
+function playClip(kind, id) {
+  const w = DATA[id];
+  const fb = () => { if (w) fallbackSpeak(cleanText(kind === 'e' ? w.ex : w.en)); };
   try {
     if (_audio) { _audio.pause(); _audio = null; }
     const a = new Audio('audio/jenny/' + kind + id + '.mp3');
-    a.onerror = () => fallbackSpeak(cleanText(fallbackTextRaw));
+    a.onerror = fb;
     _audio = a;
     const p = a.play();
-    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(fallbackTextRaw)));
+    if (p && p.catch) p.catch(fb);
   } catch (e) {
-    fallbackSpeak(cleanText(fallbackTextRaw));
+    fb();
   }
 }
 // 보조: 폰 내장 음성 (인터넷 안 될 때 등)
@@ -380,11 +382,11 @@ function renderVocab() {
             <div class="wcard-en">${esc(w.en)}</div>
             <div class="wcard-ko">${esc(w.ko)}</div>
           </div>
-          <button class="spk" onclick="playClip('w', ${w.id}, ${JSON.stringify(w.en)})" aria-label="단어 발음">🔊</button>
+          <button class="spk" onclick="playClip('w', ${w.id})" aria-label="단어 발음">🔊</button>
         </div>
         <div class="wcard-ex">
           <span class="txt">"${esc(w.ex)}"</span>
-          <button class="spk sm" onclick="playClip('e', ${w.id}, ${JSON.stringify(w.ex)})" aria-label="예문 발음">🔊</button>
+          <button class="spk sm" onclick="playClip('e', ${w.id})" aria-label="예문 발음">🔊</button>
         </div>
       </div>`;
     });
@@ -494,9 +496,9 @@ function checkAnswer() {
       '<span class="ans">' + esc(w.en) + '</span><br>' +
       '<span class="ans-ko">' + esc(w.ko) + '</span>';
   }
-  playClip('w', w.id, w.en);
+  playClip('w', w.id);
   document.getElementById('t-actions').innerHTML =
-    `<button class="big-btn" onclick="playClip('w', ${w.id}, ${JSON.stringify(w.en)})">🔊 다시 듣기</button>
+    `<button class="big-btn" onclick="playClip('w', ${w.id})">🔊 다시 듣기</button>
      <button class="big-btn" onclick="nextQ()">다음 ▶︎</button>`;
   updateStats();
 }
@@ -511,9 +513,9 @@ function revealAnswer() {
   document.getElementById('t-fb').innerHTML =
     '<span class="ans">' + esc(w.en) + '</span><br>' +
     '<span class="ans-ko">' + esc(w.ko) + '</span>';
-  playClip('w', w.id, w.en);
+  playClip('w', w.id);
   document.getElementById('t-actions').innerHTML =
-    `<button class="big-btn" onclick="playClip('w', ${w.id}, ${JSON.stringify(w.en)})">🔊 다시 듣기</button>
+    `<button class="big-btn" onclick="playClip('w', ${w.id})">🔊 다시 듣기</button>
      <button class="big-btn" onclick="nextQ()">다음 ▶︎</button>`;
   updateStats();
 }
