@@ -23,9 +23,11 @@
 <p>아래 버튼을 눌러보세요. 무슨 일이 일어나는지 아래 칸에 글자로 나와요.<br>
 이 화면을 캡쳐해서 보내주시면 원인을 찾을 수 있어요.</p>
 
-<button onclick="test1()">① 기본 소리 테스트</button>
-<button class="alt" onclick="test2()">② 목소리 지정해서</button>
-<button class="alt" onclick="listVoices()">③ 목소리 목록 새로고침</button>
+<button onclick="beep()">🔔 삐~ 소리 테스트 (먼저!)</button>
+<button onclick="test1()">① 기본 음성</button>
+<button class="alt" onclick="test2()">② 음성(목소리 지정)</button>
+<button class="alt" onclick="test3()">③ 음성(lang만)</button>
+<button class="alt" onclick="listVoices()">④ 목소리 목록</button>
 
 <div id="log">여기에 결과가 나와요…</div>
 <div id="voices"></div>
@@ -71,11 +73,41 @@ function speakWith(u) {
   }
 }
 
+// 🔔 전자음 — 음성 엔진과 무관하게 폰 스피커로 소리가 나는지 확인
+function beep() {
+  clearLog();
+  log('🔔 삐~ 소리 재생 시도… (이게 들리면 폰 소리는 정상)');
+  try {
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    const ctx = new Ctx();
+    if (ctx.state === 'suspended') ctx.resume();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine'; osc.frequency.value = 660;
+    gain.gain.value = 0.2;
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.6);
+    osc.onended = () => log('🔔 삐~ 소리 끝. 들렸나요?', 'ok');
+  } catch (e) {
+    log('❌ 삐 소리 오류: ' + e.message, 'err');
+  }
+}
+
 function test1() {
   clearLog();
-  log('① 기본 테스트 시작…');
+  log('① 기본 음성 테스트…');
   const u = new SpeechSynthesisUtterance('Hello, this is a sound test. One, two, three.');
   u.rate = 0.9;
+  speakWith(u);
+}
+
+// lang만 지정하고 목소리는 강제하지 않음 (안드로이드 기본 엔진에 맡김)
+function test3() {
+  clearLog();
+  log('③ lang만 지정(en-GB), 목소리 강제 안 함…');
+  const u = new SpeechSynthesisUtterance('Testing with language only. Apple, banana, cat.');
+  u.lang = 'en-GB'; u.rate = 0.9;
   speakWith(u);
 }
 
