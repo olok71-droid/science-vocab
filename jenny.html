@@ -307,28 +307,23 @@ const DATA = [
 ];
 
 const DAYS = [1,2,3,4,5,6,7];
+DATA.forEach((w, i) => { w.id = i; });   // 음성 파일 이름과 맞추기
 
 // ─── 발음 ───
-// 방식: 폰 읽어주기(TTS)가 기기마다 안 되는 경우가 많아서,
-//       진짜 음성 파일(Google 번역 발음)을 오디오로 직접 재생한다.
-//       referer를 빼야 차단(404)되지 않음. 실패하면 폰 내장 음성으로 보조.
+// 미리 받아둔 음성 파일(audio/jenny/)을 우리 사이트 안에서 직접 재생 → 어디서나 확실히 됨.
+// (단어=w번호.mp3, 예문=e번호.mp3) 파일을 못 틀면 폰 내장 음성으로 보조.
+function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
 let _audio = null;
-function speak(text) {
-  const clean = text.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim();
-  if (!clean) return;
+function playClip(kind, id, fallbackTextRaw) {
   try {
     if (_audio) { _audio.pause(); _audio = null; }
-    const url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en-GB&client=tw-ob&q='
-                + encodeURIComponent(clean.slice(0, 190));
-    const a = new Audio();
-    a.referrerPolicy = 'no-referrer';   // 핵심: referer 없어야 Google이 허용
-    a.src = url;
-    a.onerror = () => fallbackSpeak(clean);
+    const a = new Audio('audio/jenny/' + kind + id + '.mp3');
+    a.onerror = () => fallbackSpeak(cleanText(fallbackTextRaw));
     _audio = a;
     const p = a.play();
-    if (p && p.catch) p.catch(() => fallbackSpeak(clean));
+    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(fallbackTextRaw)));
   } catch (e) {
-    fallbackSpeak(clean);
+    fallbackSpeak(cleanText(fallbackTextRaw));
   }
 }
 // 보조: 폰 내장 음성 (인터넷 안 될 때 등)
@@ -385,11 +380,11 @@ function renderVocab() {
             <div class="wcard-en">${esc(w.en)}</div>
             <div class="wcard-ko">${esc(w.ko)}</div>
           </div>
-          <button class="spk" onclick="speak(${JSON.stringify(w.en)})" aria-label="단어 발음">🔊</button>
+          <button class="spk" onclick="playClip('w', ${w.id}, ${JSON.stringify(w.en)})" aria-label="단어 발음">🔊</button>
         </div>
         <div class="wcard-ex">
           <span class="txt">"${esc(w.ex)}"</span>
-          <button class="spk sm" onclick="speak(${JSON.stringify(w.ex)})" aria-label="예문 발음">🔊</button>
+          <button class="spk sm" onclick="playClip('e', ${w.id}, ${JSON.stringify(w.ex)})" aria-label="예문 발음">🔊</button>
         </div>
       </div>`;
     });
@@ -499,9 +494,9 @@ function checkAnswer() {
       '<span class="ans">' + esc(w.en) + '</span><br>' +
       '<span class="ans-ko">' + esc(w.ko) + '</span>';
   }
-  speak(w.en);
+  playClip('w', w.id, w.en);
   document.getElementById('t-actions').innerHTML =
-    `<button class="big-btn" onclick="speak(${JSON.stringify(w.en)})">🔊 다시 듣기</button>
+    `<button class="big-btn" onclick="playClip('w', ${w.id}, ${JSON.stringify(w.en)})">🔊 다시 듣기</button>
      <button class="big-btn" onclick="nextQ()">다음 ▶︎</button>`;
   updateStats();
 }
@@ -516,9 +511,9 @@ function revealAnswer() {
   document.getElementById('t-fb').innerHTML =
     '<span class="ans">' + esc(w.en) + '</span><br>' +
     '<span class="ans-ko">' + esc(w.ko) + '</span>';
-  speak(w.en);
+  playClip('w', w.id, w.en);
   document.getElementById('t-actions').innerHTML =
-    `<button class="big-btn" onclick="speak(${JSON.stringify(w.en)})">🔊 다시 듣기</button>
+    `<button class="big-btn" onclick="playClip('w', ${w.id}, ${JSON.stringify(w.en)})">🔊 다시 듣기</button>
      <button class="big-btn" onclick="nextQ()">다음 ▶︎</button>`;
   updateStats();
 }

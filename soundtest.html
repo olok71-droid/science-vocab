@@ -102,11 +102,8 @@ function realVoice() {
   log('🔊 진짜 발음 재생 시도… (인터넷 필요, 폰 기능과 무관)');
   try {
     if (_audio) { _audio.pause(); _audio = null; }
-    const url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en-GB&client=tw-ob&q='
-              + encodeURIComponent('Hello, this is a real voice test. Practical, handy, habit.');
-    const a = new Audio();
-    a.referrerPolicy = 'no-referrer';
-    a.src = url;
+    // 사이트 안에 미리 받아둔 발음 파일 (Jenny "Practical")
+    const a = new Audio('audio/jenny/w0.mp3');
     a.oncanplay = () => log('오디오 준비됨, 재생 시작', 'info');
     a.onplaying = () => log('▶︎ 재생 중! 영어가 들리면 성공!', 'ok');
     a.onended   = () => log('■ 재생 끝.', 'info');
