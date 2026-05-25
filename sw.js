@@ -2,7 +2,7 @@
 // 빌드 버전: v20260525-010354
 // 새 버전이 push되면 자동으로 클라이언트 새로고침.
 
-const CACHE_VERSION = 'v20260525-sciaudio';
+const CACHE_VERSION = 'v20260525-sciaudio2';
 const CACHE_NAME = 'amy-study-' + CACHE_VERSION;
 const CORE_FILES = ["./", "biology.html", "chemistry.html", "ecosystems.html", "atoms.html", "forces.html", "atmosphere.html", "motion.html", "pressure.html", "purity.html", "eal.html", "history.html", "geo_population.html", "geo_migration.html", "jenny.html", "index.html"];
 
