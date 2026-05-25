@@ -86,27 +86,58 @@
   .day-head::before { content:'📅'; }
   .day-head .cnt { font-size:12px; color:var(--muted); font-weight:700; }
 
-  /* 단어 카드 */
-  .wcard {
-    background:var(--card); border-radius:16px; padding:14px 16px; margin-bottom:9px;
-    box-shadow:0 2px 10px var(--shadow); border:2px solid rgba(246,166,35,0.1);
+  /* 블라인드 버튼 줄 */
+  .blind-bar { display:flex; gap:6px; margin-bottom:12px; }
+  .blind-btn {
+    flex:1; border:2px solid rgba(246,166,35,0.25); background:#fff; color:var(--muted);
+    font-family:inherit; font-weight:800; font-size:13px; padding:9px 4px; border-radius:11px;
+    cursor:pointer; transition:all .15s;
   }
-  .wcard.hidden { display:none; }
-  .wcard-top { display:flex; align-items:center; gap:10px; }
-  .wcard-en { font-size:17px; font-weight:800; color:var(--text); flex:1; line-height:1.3; }
-  .wcard-ko { font-size:14px; color:var(--accent); font-weight:700; margin-top:3px; }
+  .blind-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+  /* 단어 줄 (좌 영어 | 우 한글) */
+  .wrow {
+    display:flex; align-items:center; gap:8px;
+    background:var(--card); border-radius:13px; padding:11px 12px; margin-bottom:7px;
+    box-shadow:0 1px 6px var(--shadow); border:1.5px solid rgba(246,166,35,0.1);
+  }
+  .wrow.hidden { display:none; }
+  .w-en { flex:1.05; font-size:16px; font-weight:800; color:var(--text); line-height:1.25; min-width:0; }
+  .w-ko { flex:1; font-size:14px; color:var(--accent); font-weight:700; line-height:1.25; min-width:0; }
   .spk {
     border:none; background:rgba(246,166,35,0.12); color:var(--accent);
-    width:36px; height:36px; border-radius:50%; font-size:17px; cursor:pointer; flex-shrink:0;
+    width:34px; height:34px; border-radius:50%; font-size:16px; cursor:pointer; flex-shrink:0;
     transition:all .15s;
   }
   .spk:hover { background:var(--accent); color:#fff; }
-  .wcard-ex {
-    display:flex; align-items:center; gap:8px; margin-top:9px; padding-top:9px;
-    border-top:1px dashed rgba(246,166,35,0.22);
+  .spk.sm { width:28px; height:28px; font-size:13px; }
+  .ex-btn {
+    border:none; background:transparent; color:var(--muted); font-size:15px;
+    cursor:pointer; flex-shrink:0; width:26px;
   }
-  .wcard-ex .txt { flex:1; font-size:13.5px; color:#7a6a4a; font-style:italic; line-height:1.4; }
-  .spk.sm { width:30px; height:30px; font-size:14px; }
+  .ex-btn.on { color:var(--accent); }
+
+  /* 블라인드(가림) — 글자 숨기고 톡 누르면 잠깐 보임 */
+  .cell { position:relative; cursor:default; }
+  .cell.blinded { cursor:pointer; }
+  .cell.blinded > span { filter:blur(6px); opacity:0.45; user-select:none; }
+  .cell.blinded::after {
+    content:'👀'; position:absolute; right:2px; top:50%; transform:translateY(-50%);
+    font-size:12px; opacity:0.5;
+  }
+  .cell.blinded.peek > span { filter:none; opacity:1; }
+  .cell.blinded.peek::after { content:''; }
+
+  /* 예문 펼침 줄 */
+  .ex-row {
+    display:none; align-items:center; gap:8px;
+    margin:-3px 0 9px 8px; padding:9px 12px;
+    background:rgba(246,166,35,0.06); border-radius:11px;
+    border-left:3px solid rgba(246,166,35,0.4);
+  }
+  .ex-row.open { display:flex; }
+  .ex-en { flex:1.05; font-size:13.5px; color:#6a5a3a; font-style:italic; line-height:1.35; min-width:0; }
+  .ex-ko { flex:1; font-size:12.5px; color:var(--muted); font-weight:600; line-height:1.35; min-width:0; }
 
   /* 테스트 */
   .test-setup { text-align:center; padding:10px 0 4px; }
@@ -178,6 +209,11 @@
 
   <!-- 단어장 -->
   <div class="tab-panel active" id="tab-vocab">
+    <div class="blind-bar">
+      <button class="blind-btn active" data-blind="none" onclick="setBlind('none')">👁 다 보기</button>
+      <button class="blind-btn" data-blind="en" onclick="setBlind('en')">🇬🇧 영어 가림</button>
+      <button class="blind-btn" data-blind="ko" onclick="setBlind('ko')">🇰🇷 한글 가림</button>
+    </div>
     <input class="search" id="search" placeholder="🔍 영어 또는 한글 검색…">
     <div class="day-filter" id="day-filter"></div>
     <div id="vocab-list"></div>
@@ -216,94 +252,94 @@
 // ─── 데이터 (phrase - May) ───
 const DATA = [
   // Day 1
-  {d:1, en:"Practical", ko:"실용적인, 현실적인", ex:"This bag is very practical."},
-  {d:1, en:"Handy", ko:"편리한, 유용한", ex:"This little tool is really handy."},
-  {d:1, en:"Come in handy", ko:"유용하게 쓰이다", ex:"This umbrella will come in handy."},
-  {d:1, en:"License plate", ko:"자동차 번호판", ex:"I couldn't read the license plate."},
-  {d:1, en:"Cram", ko:"벼락치기로 공부하다", ex:"I had to cram all night."},
-  {d:1, en:"Cram for the test", ko:"시험 벼락치기를 하다", ex:"She is cramming for the test."},
-  {d:1, en:"Extend", ko:"연장하다, 늘리다", ex:"Can I extend the deadline?"},
-  {d:1, en:"Resist", ko:"저항하다, 참다", ex:"I can't resist chocolate."},
-  {d:1, en:"Temptation / tempting", ko:"유혹 / 유혹적인", ex:"The cake looks so tempting."},
-  {d:1, en:"In the first place", ko:"애초에", ex:"Why did you come here in the first place?"},
-  {d:1, en:"Blurry", ko:"흐릿한, 뿌연", ex:"The photo is a bit blurry."},
+  {d:1, en:"Practical", ko:"실용적인, 현실적인", ex:"This bag is very practical.", exko:"이 가방은 아주 실용적이야."},
+  {d:1, en:"Handy", ko:"편리한, 유용한", ex:"This little tool is really handy.", exko:"이 작은 도구 정말 편리해."},
+  {d:1, en:"Come in handy", ko:"유용하게 쓰이다", ex:"This umbrella will come in handy.", exko:"이 우산 유용하게 쓰일 거야."},
+  {d:1, en:"License plate", ko:"자동차 번호판", ex:"I couldn't read the license plate.", exko:"번호판을 못 읽었어."},
+  {d:1, en:"Cram", ko:"벼락치기로 공부하다", ex:"I had to cram all night.", exko:"밤새 벼락치기 해야 했어."},
+  {d:1, en:"Cram for the test", ko:"시험 벼락치기를 하다", ex:"She is cramming for the test.", exko:"걔는 시험 벼락치기 중이야."},
+  {d:1, en:"Extend", ko:"연장하다, 늘리다", ex:"Can I extend the deadline?", exko:"마감을 연장할 수 있을까요?"},
+  {d:1, en:"Resist", ko:"저항하다, 참다", ex:"I can't resist chocolate.", exko:"초콜릿은 못 참겠어."},
+  {d:1, en:"Temptation / tempting", ko:"유혹 / 유혹적인", ex:"The cake looks so tempting.", exko:"그 케이크 너무 먹음직스러워."},
+  {d:1, en:"In the first place", ko:"애초에", ex:"Why did you come here in the first place?", exko:"애초에 여긴 왜 온 거야?"},
+  {d:1, en:"Blurry", ko:"흐릿한, 뿌연", ex:"The photo is a bit blurry.", exko:"사진이 좀 흐릿해."},
 
   // Day 2
-  {d:2, en:"Rely on / reliable", ko:"~에 의존하다 / 믿을 만한", ex:"You can rely on me. He is reliable."},
-  {d:2, en:"Relatively", ko:"상대적으로, 비교적", ex:"It's relatively cheap."},
-  {d:2, en:"Do the right thing", ko:"옳은 일을 하다", ex:"Always try to do the right thing."},
-  {d:2, en:"Over and over", ko:"반복해서, 계속", ex:"She read the book over and over."},
-  {d:2, en:"Attractive / attraction", ko:"매력적인 / 매력, 명소", ex:"The city has many attractions."},
-  {d:2, en:"Drag attention", ko:"시선을 끌다", ex:"The bright sign drags attention."},
-  {d:2, en:"~ oriented", ko:"~ 지향적인", ex:"He is very goal-oriented."},
-  {d:2, en:"~ related", ko:"~ 관련된", ex:"It's a health-related issue."},
-  {d:2, en:"~ based", ko:"~ 기반의", ex:"It's a web-based app."},
-  {d:2, en:"Habit", ko:"습관, 버릇", ex:"Reading is a good habit."},
+  {d:2, en:"Rely on / reliable", ko:"~에 의존하다 / 믿을 만한", ex:"You can rely on me. He is reliable.", exko:"날 믿어도 돼. 그는 믿을 만해."},
+  {d:2, en:"Relatively", ko:"상대적으로, 비교적", ex:"It's relatively cheap.", exko:"그건 비교적 싸."},
+  {d:2, en:"Do the right thing", ko:"옳은 일을 하다", ex:"Always try to do the right thing.", exko:"항상 옳은 일을 하려고 해."},
+  {d:2, en:"Over and over", ko:"반복해서, 계속", ex:"She read the book over and over.", exko:"걔는 그 책을 읽고 또 읽었어."},
+  {d:2, en:"Attractive / attraction", ko:"매력적인 / 매력, 명소", ex:"The city has many attractions.", exko:"그 도시엔 명소가 많아."},
+  {d:2, en:"Drag attention", ko:"시선을 끌다", ex:"The bright sign drags attention.", exko:"밝은 간판이 시선을 끌어."},
+  {d:2, en:"~ oriented", ko:"~ 지향적인", ex:"He is very goal-oriented.", exko:"그는 굉장히 목표 지향적이야."},
+  {d:2, en:"~ related", ko:"~ 관련된", ex:"It's a health-related issue.", exko:"그건 건강 관련 문제야."},
+  {d:2, en:"~ based", ko:"~ 기반의", ex:"It's a web-based app.", exko:"그건 웹 기반 앱이야."},
+  {d:2, en:"Habit", ko:"습관, 버릇", ex:"Reading is a good habit.", exko:"독서는 좋은 습관이야."},
 
   // Day 3
-  {d:3, en:"Praise (someone) for ~", ko:"~로 칭찬하다", ex:"She praised him for his hard work."},
-  {d:3, en:"Receive praise for ~", ko:"~로 칭찬을 받다", ex:"He received praise for his effort."},
-  {d:3, en:"Tell off (scold)", ko:"야단치다, 혼내다", ex:"My mom told me off."},
-  {d:3, en:"Interpret / interpreter", ko:"통역하다 / 통역사", ex:"She works as an interpreter."},
-  {d:3, en:"Translate / translator", ko:"번역하다 / 번역가", ex:"Can you translate this for me?"},
-  {d:3, en:"Serve in the military", ko:"군 복무를 하다", ex:"He served in the military for two years."},
-  {d:3, en:"Finish one's military service", ko:"군 복무를 마치다", ex:"He just finished his military service."},
-  {d:3, en:"Pay off debt", ko:"빚을 갚다", ex:"I want to pay off my debt."},
-  {d:3, en:"Get a mortgage", ko:"주택담보대출을 받다", ex:"They got a mortgage for the house."},
-  {d:3, en:"Buy a lottery ticket", ko:"복권을 사다", ex:"I buy a lottery ticket every week."},
-  {d:3, en:"Win the lottery", ko:"복권에 당첨되다", ex:"What would you do if you won the lottery?"},
+  {d:3, en:"Praise (someone) for ~", ko:"~로 칭찬하다", ex:"She praised him for his hard work.", exko:"그녀는 그의 노고를 칭찬했어."},
+  {d:3, en:"Receive praise for ~", ko:"~로 칭찬을 받다", ex:"He received praise for his effort.", exko:"그는 노력으로 칭찬을 받았어."},
+  {d:3, en:"Tell off (scold)", ko:"야단치다, 혼내다", ex:"My mom told me off.", exko:"엄마가 나를 혼냈어."},
+  {d:3, en:"Interpret / interpreter", ko:"통역하다 / 통역사", ex:"She works as an interpreter.", exko:"그녀는 통역사로 일해."},
+  {d:3, en:"Translate / translator", ko:"번역하다 / 번역가", ex:"Can you translate this for me?", exko:"이거 번역해 줄 수 있어?"},
+  {d:3, en:"Serve in the military", ko:"군 복무를 하다", ex:"He served in the military for two years.", exko:"그는 2년간 군 복무를 했어."},
+  {d:3, en:"Finish one's military service", ko:"군 복무를 마치다", ex:"He just finished his military service.", exko:"그는 막 군 복무를 마쳤어."},
+  {d:3, en:"Pay off debt", ko:"빚을 갚다", ex:"I want to pay off my debt.", exko:"빚을 다 갚고 싶어."},
+  {d:3, en:"Get a mortgage", ko:"주택담보대출을 받다", ex:"They got a mortgage for the house.", exko:"그들은 집 담보대출을 받았어."},
+  {d:3, en:"Buy a lottery ticket", ko:"복권을 사다", ex:"I buy a lottery ticket every week.", exko:"난 매주 복권을 사."},
+  {d:3, en:"Win the lottery", ko:"복권에 당첨되다", ex:"What would you do if you won the lottery?", exko:"복권에 당첨되면 뭘 할 거야?"},
 
   // Day 4
-  {d:4, en:"A rip-off / rip off", ko:"바가지 / 바가지 씌우다", ex:"That price is a total rip-off."},
-  {d:4, en:"Mess up", ko:"망치다, 엉망으로 만들다", ex:"Don't mess it up again."},
-  {d:4, en:"Ruin", ko:"망치다, 파괴하다", ex:"The rain ruined our trip."},
-  {d:4, en:"Walk you out", ko:"배웅하다", ex:"Let me walk you out."},
-  {d:4, en:"Take out a loan", ko:"대출을 받다", ex:"She took out a loan for school."},
-  {d:4, en:"Take out insurance", ko:"보험에 가입하다", ex:"We took out insurance for the car."},
-  {d:4, en:"Go through", ko:"겪다, 통과하다", ex:"We went through a hard time."},
-  {d:4, en:"Work through", ko:"(어려움을) 헤쳐 나가다", ex:"Let's work through this problem together."},
-  {d:4, en:"Break through", ko:"돌파하다, 뚫고 나아가다", ex:"They finally broke through the wall."},
-  {d:4, en:"Social media", ko:"소셜 미디어", ex:"She spends hours on social media."},
+  {d:4, en:"A rip-off / rip off", ko:"바가지 / 바가지 씌우다", ex:"That price is a total rip-off.", exko:"그 가격 완전 바가지야."},
+  {d:4, en:"Mess up", ko:"망치다, 엉망으로 만들다", ex:"Don't mess it up again.", exko:"또 망치지 마."},
+  {d:4, en:"Ruin", ko:"망치다, 파괴하다", ex:"The rain ruined our trip.", exko:"비 때문에 여행을 망쳤어."},
+  {d:4, en:"Walk you out", ko:"배웅하다", ex:"Let me walk you out.", exko:"배웅해 줄게."},
+  {d:4, en:"Take out a loan", ko:"대출을 받다", ex:"She took out a loan for school.", exko:"그녀는 학비 대출을 받았어."},
+  {d:4, en:"Take out insurance", ko:"보험에 가입하다", ex:"We took out insurance for the car.", exko:"우리는 차 보험에 가입했어."},
+  {d:4, en:"Go through", ko:"겪다, 통과하다", ex:"We went through a hard time.", exko:"우리는 힘든 시기를 겪었어."},
+  {d:4, en:"Work through", ko:"(어려움을) 헤쳐 나가다", ex:"Let's work through this problem together.", exko:"이 문제를 같이 헤쳐 나가자."},
+  {d:4, en:"Break through", ko:"돌파하다, 뚫고 나아가다", ex:"They finally broke through the wall.", exko:"그들은 마침내 벽을 뚫었어."},
+  {d:4, en:"Social media", ko:"소셜 미디어", ex:"She spends hours on social media.", exko:"그녀는 소셜 미디어에 몇 시간을 써."},
 
   // Day 5
-  {d:5, en:"Realistic", ko:"현실적인", ex:"Let's be realistic about this."},
-  {d:5, en:"Practical", ko:"실용적인", ex:"It's a practical idea."},
-  {d:5, en:"Would kill for ~", ko:"~를 너무나 갖고 싶다", ex:"I would kill for a coffee right now."},
-  {d:5, en:"I would kill for your shape", ko:"네 몸매 정말 부럽다", ex:"Wow, I would kill for your shape!"},
-  {d:5, en:"Where did that come from?", ko:"그건 어디서 난 거야? / 갑자기 왜?", ex:"Where did that come from?"},
-  {d:5, en:"Rational", ko:"이성적인, 합리적인", ex:"He made a rational decision."},
-  {d:5, en:"Harden", ko:"단단해지다, 굳다", ex:"The clay will harden overnight."},
-  {d:5, en:"Soften", ko:"부드러워지다, 누그러지다", ex:"Soften the butter first."},
-  {d:5, en:"Strengthen", ko:"강화하다, 튼튼하게 하다", ex:"Exercise strengthens your muscles."},
-  {d:5, en:"Pay it forward", ko:"선행을 다른 사람에게 베풀다", ex:"She paid it forward by helping a stranger."},
-  {d:5, en:"Fasten", ko:"매다, 고정하다", ex:"Please fasten your seatbelt."},
+  {d:5, en:"Realistic", ko:"현실적인", ex:"Let's be realistic about this.", exko:"이건 현실적으로 생각하자."},
+  {d:5, en:"Practical", ko:"실용적인", ex:"It's a practical idea.", exko:"그건 실용적인 생각이야."},
+  {d:5, en:"Would kill for ~", ko:"~를 너무나 갖고 싶다", ex:"I would kill for a coffee right now.", exko:"지금 커피라면 뭐든 하겠어."},
+  {d:5, en:"I would kill for your shape", ko:"네 몸매 정말 부럽다", ex:"Wow, I would kill for your shape!", exko:"와, 네 몸매 정말 부러워!"},
+  {d:5, en:"Where did that come from?", ko:"그건 어디서 난 거야? / 갑자기 왜?", ex:"Where did that come from?", exko:"그건 갑자기 어디서 난 거야?"},
+  {d:5, en:"Rational", ko:"이성적인, 합리적인", ex:"He made a rational decision.", exko:"그는 이성적인 결정을 내렸어."},
+  {d:5, en:"Harden", ko:"단단해지다, 굳다", ex:"The clay will harden overnight.", exko:"점토는 하룻밤 새 굳을 거야."},
+  {d:5, en:"Soften", ko:"부드러워지다, 누그러지다", ex:"Soften the butter first.", exko:"버터를 먼저 부드럽게 해."},
+  {d:5, en:"Strengthen", ko:"강화하다, 튼튼하게 하다", ex:"Exercise strengthens your muscles.", exko:"운동은 근육을 튼튼하게 해."},
+  {d:5, en:"Pay it forward", ko:"선행을 다른 사람에게 베풀다", ex:"She paid it forward by helping a stranger.", exko:"그녀는 낯선 사람을 도우며 선행을 이어갔어."},
+  {d:5, en:"Fasten", ko:"매다, 고정하다", ex:"Please fasten your seatbelt.", exko:"안전벨트를 매 주세요."},
 
   // Day 6
-  {d:6, en:"Crush", ko:"반함, 짝사랑", ex:"I have a crush on him."},
-  {d:6, en:"Have a crush on someone", ko:"누군가에게 반하다", ex:"She has a crush on her classmate."},
-  {d:6, en:"Middle school crush", ko:"중학교 때 첫사랑", ex:"He was my middle school crush."},
-  {d:6, en:"Resist", ko:"저항하다, 참다", ex:"I couldn't resist the temptation."},
-  {d:6, en:"Replace", ko:"대체하다, 교체하다", ex:"Please replace the old battery."},
-  {d:6, en:"Insist", ko:"주장하다, 고집하다", ex:"He insisted on paying."},
-  {d:6, en:"Blow one's mind", ko:"깜짝 놀라게 하다", ex:"The movie blew my mind."},
-  {d:6, en:"Figure out", ko:"알아내다, 이해하다", ex:"I can't figure it out."},
-  {d:6, en:"Check out", ko:"확인하다 / (호텔) 체크아웃하다", ex:"Check out this new song!"},
-  {d:6, en:"Screw up", ko:"망치다, 실수하다", ex:"I really screwed up today."},
-  {d:6, en:"Daylight", ko:"햇빛, 낮", ex:"We arrived in daylight."},
-  {d:6, en:"Zone out", ko:"멍때리다, 딴생각하다", ex:"I zoned out during the class."},
+  {d:6, en:"Crush", ko:"반함, 짝사랑", ex:"I have a crush on him.", exko:"나 걔한테 반했어."},
+  {d:6, en:"Have a crush on someone", ko:"누군가에게 반하다", ex:"She has a crush on her classmate.", exko:"그녀는 반 친구를 좋아해."},
+  {d:6, en:"Middle school crush", ko:"중학교 때 첫사랑", ex:"He was my middle school crush.", exko:"걔는 내 중학교 때 첫사랑이었어."},
+  {d:6, en:"Resist", ko:"저항하다, 참다", ex:"I couldn't resist the temptation.", exko:"유혹을 못 참았어."},
+  {d:6, en:"Replace", ko:"대체하다, 교체하다", ex:"Please replace the old battery.", exko:"오래된 배터리를 교체해 주세요."},
+  {d:6, en:"Insist", ko:"주장하다, 고집하다", ex:"He insisted on paying.", exko:"그는 계산하겠다고 고집했어."},
+  {d:6, en:"Blow one's mind", ko:"깜짝 놀라게 하다", ex:"The movie blew my mind.", exko:"그 영화 정말 놀라웠어."},
+  {d:6, en:"Figure out", ko:"알아내다, 이해하다", ex:"I can't figure it out.", exko:"도무지 모르겠어."},
+  {d:6, en:"Check out", ko:"확인하다 / (호텔) 체크아웃하다", ex:"Check out this new song!", exko:"이 새 노래 한번 들어봐!"},
+  {d:6, en:"Screw up", ko:"망치다, 실수하다", ex:"I really screwed up today.", exko:"오늘 정말 일을 망쳤어."},
+  {d:6, en:"Daylight", ko:"햇빛, 낮", ex:"We arrived in daylight.", exko:"우리는 낮에 도착했어."},
+  {d:6, en:"Zone out", ko:"멍때리다, 딴생각하다", ex:"I zoned out during the class.", exko:"수업 중에 멍때렸어."},
 
   // Day 7
-  {d:7, en:"Bend", ko:"구부리다, 굽히다", ex:"Bend your knees a little."},
-  {d:7, en:"Stretch", ko:"늘이다, 스트레칭하다", ex:"Stretch before you run."},
-  {d:7, en:"LGBT people", ko:"성소수자", ex:"She supports LGBT people."},
-  {d:7, en:"Live up to", ko:"(기대에) 부응하다", ex:"The film lived up to my expectations."},
-  {d:7, en:"Twist", ko:"비틀다, 돌리다", ex:"Twist the cap to open it."},
-  {d:7, en:"Turn", ko:"돌다, 돌리다, 방향을 바꾸다", ex:"Turn to the left at the corner."},
-  {d:7, en:"Be addicted (to)", ko:"~에 중독되다", ex:"I'm addicted to coffee."},
-  {d:7, en:"Addict / addictive", ko:"중독자 / 중독성 있는", ex:"This game is so addictive."},
-  {d:7, en:"Lean back", ko:"뒤로 기대다", ex:"Lean back and relax."},
-  {d:7, en:"Flexible", ko:"유연한, 융통성 있는", ex:"My schedule is flexible."},
-  {d:7, en:"Inhale / exhale", ko:"숨을 들이쉬다 / 내쉬다", ex:"Inhale slowly, then exhale."},
+  {d:7, en:"Bend", ko:"구부리다, 굽히다", ex:"Bend your knees a little.", exko:"무릎을 살짝 굽혀."},
+  {d:7, en:"Stretch", ko:"늘이다, 스트레칭하다", ex:"Stretch before you run.", exko:"달리기 전에 스트레칭해."},
+  {d:7, en:"LGBT people", ko:"성소수자", ex:"She supports LGBT people.", exko:"그녀는 성소수자를 지지해."},
+  {d:7, en:"Live up to", ko:"(기대에) 부응하다", ex:"The film lived up to my expectations.", exko:"그 영화는 기대에 부응했어."},
+  {d:7, en:"Twist", ko:"비틀다, 돌리다", ex:"Twist the cap to open it.", exko:"뚜껑을 돌려서 열어."},
+  {d:7, en:"Turn", ko:"돌다, 돌리다, 방향을 바꾸다", ex:"Turn to the left at the corner.", exko:"모퉁이에서 왼쪽으로 돌아."},
+  {d:7, en:"Be addicted (to)", ko:"~에 중독되다", ex:"I'm addicted to coffee.", exko:"난 커피에 중독됐어."},
+  {d:7, en:"Addict / addictive", ko:"중독자 / 중독성 있는", ex:"This game is so addictive.", exko:"이 게임 너무 중독성 있어."},
+  {d:7, en:"Lean back", ko:"뒤로 기대다", ex:"Lean back and relax.", exko:"뒤로 기대고 편히 쉬어."},
+  {d:7, en:"Flexible", ko:"유연한, 융통성 있는", ex:"My schedule is flexible.", exko:"내 일정은 융통성 있어."},
+  {d:7, en:"Inhale / exhale", ko:"숨을 들이쉬다 / 내쉬다", ex:"Inhale slowly, then exhale.", exko:"천천히 들이쉬고, 내쉬어."},
 ];
 
 const DAYS = [1,2,3,4,5,6,7];
@@ -364,6 +400,33 @@ let query = '';
 
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+let blindMode = 'none';   // none | en | ko
+
+function setBlind(mode) {
+  blindMode = mode;
+  document.querySelectorAll('.blind-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.blind === mode));
+  renderVocab();
+}
+
+// 가려진 칸 톡 누르면 잠깐 보임
+function peek(el) {
+  if (el.classList.contains('blinded')) el.classList.toggle('peek');
+}
+
+function cell(side, text) {
+  const blinded = (blindMode === side) ? ' blinded' : '';
+  return `<div class="w-${side} cell${blinded}" onclick="peek(this)"><span>${esc(text)}</span></div>`;
+}
+
+function toggleEx(id) {
+  const row = document.getElementById('ex-' + id);
+  const btn = document.getElementById('exbtn-' + id);
+  if (!row) return;
+  const open = row.classList.toggle('open');
+  if (btn) btn.classList.toggle('on', open);
+}
+
 function renderVocab() {
   const wrap = document.getElementById('vocab-list');
   const q = query.toLowerCase().trim();
@@ -376,18 +439,18 @@ function renderVocab() {
     if (items.length === 0) return;
     html += `<div class="day-head">Day ${day} <span class="cnt">· ${items.length}개</span></div>`;
     items.forEach(w => {
-      html += `<div class="wcard">
-        <div class="wcard-top">
-          <div>
-            <div class="wcard-en">${esc(w.en)}</div>
-            <div class="wcard-ko">${esc(w.ko)}</div>
-          </div>
-          <button class="spk" onclick="playClip('w', ${w.id})" aria-label="단어 발음">🔊</button>
-        </div>
-        <div class="wcard-ex">
-          <span class="txt">"${esc(w.ex)}"</span>
-          <button class="spk sm" onclick="playClip('e', ${w.id})" aria-label="예문 발음">🔊</button>
-        </div>
+      const exBlindEn = (blindMode === 'en') ? ' blinded' : '';
+      const exBlindKo = (blindMode === 'ko') ? ' blinded' : '';
+      html += `<div class="wrow">
+        ${cell('en', w.en)}
+        ${cell('ko', w.ko)}
+        <button class="ex-btn" id="exbtn-${w.id}" onclick="toggleEx(${w.id})" aria-label="예문 보기">💬</button>
+        <button class="spk" onclick="playClip('w', ${w.id})" aria-label="단어 발음">🔊</button>
+      </div>
+      <div class="ex-row" id="ex-${w.id}">
+        <div class="ex-en cell${exBlindEn}" onclick="peek(this)"><span>${esc(w.ex)}</span></div>
+        <div class="ex-ko cell${exBlindKo}" onclick="peek(this)"><span>${esc(w.exko || '')}</span></div>
+        <button class="spk sm" onclick="playClip('e', ${w.id})" aria-label="예문 발음">🔊</button>
       </div>`;
     });
   });
