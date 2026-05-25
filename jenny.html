@@ -133,16 +133,27 @@
   .q-day { font-size:12px; font-weight:800; color:var(--muted); margin-bottom:8px; }
   .q-ko { font-size:24px; font-weight:900; color:var(--text); margin-bottom:6px; line-height:1.3; }
   .q-sub { font-size:13px; color:var(--muted); font-weight:700; }
-  .opts { display:flex; flex-direction:column; gap:9px; margin-top:6px; }
-  .opt {
-    border:2px solid rgba(246,166,35,0.18); background:#fff; color:var(--text);
-    font-family:inherit; font-weight:700; font-size:15.5px; padding:13px; border-radius:13px;
-    cursor:pointer; text-align:center; transition:all .12s;
+
+  /* 타이핑 시험 */
+  .sp-hint {
+    font-family:'Courier New',monospace; letter-spacing:2px; font-size:18px;
+    color:var(--muted); font-weight:800; margin:12px 0 14px; line-height:1.5;
   }
-  .opt:hover:not(.locked) { border-color:var(--accent); background:rgba(246,166,35,0.05); }
-  .opt.correct { background:var(--green); color:#fff; border-color:var(--green); }
-  .opt.wrong   { background:var(--red); color:#fff; border-color:var(--red); }
-  .opt.locked { cursor:default; }
+  .sp-input {
+    width:100%; border:2px solid rgba(246,166,35,0.3); border-radius:13px;
+    padding:14px; font-family:inherit; font-size:18px; text-align:center;
+    color:var(--text); background:#fff; outline:none; transition:all .12s;
+  }
+  .sp-input:focus { border-color:var(--accent); }
+  .sp-input.ok { border-color:var(--green); background:rgba(62,207,178,0.08); }
+  .sp-input.no { border-color:var(--red); background:rgba(255,122,122,0.08); }
+  .sp-input:disabled { opacity:1; }
+  .sp-feedback { min-height:26px; margin:12px 0; font-weight:800; font-size:16px; line-height:1.4; }
+  .sp-feedback .good { color:var(--green); }
+  .sp-feedback .bad  { color:var(--red); }
+  .sp-feedback .ans  { color:var(--accent); font-size:19px; }
+  .sp-feedback .ans-ko { color:var(--muted); font-size:13px; font-weight:700; }
+  .sp-actions { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
   .next-row { text-align:center; margin-top:6px; }
 
   footer { text-align:center; padding:24px; color:var(--muted); font-size:11px; }
@@ -176,7 +187,7 @@
   <div class="tab-panel" id="tab-test">
     <div class="day-filter" id="test-day-filter"></div>
     <div class="test-setup" id="test-setup">
-      <p>한글 뜻을 보고 알맞은 영어를 골라요.<br>위에서 Day를 고르면 그 날만 시험봐요.</p>
+      <p>한글 뜻을 보고 🗣️ 입으로 말한 다음,<br>영어로 직접 타이핑해서 확인해요.<br>위에서 Day를 고르면 그 날만 시험봐요.</p>
       <button class="big-btn" onclick="startTest()">▶︎ 테스트 시작</button>
     </div>
     <div id="test-area" style="display:none;">
@@ -185,8 +196,15 @@
         <span class="no">❌ <span id="t-no">0</span></span>
         <span class="rem">남음 <span id="t-rem">0</span></span>
       </div>
-      <div class="q-card" id="q-card"></div>
-      <div class="next-row" id="next-row"></div>
+      <div class="q-card">
+        <div class="q-day" id="t-day">Day 1</div>
+        <div class="q-ko" id="t-ko"></div>
+        <div class="sp-hint" id="t-hint"></div>
+        <input class="sp-input" id="t-input" type="text" autocomplete="off" autocapitalize="off"
+               autocorrect="off" spellcheck="false" placeholder="영어로 입력…">
+        <div class="sp-feedback" id="t-fb"></div>
+        <div class="sp-actions" id="t-actions"></div>
+      </div>
     </div>
   </div>
 
@@ -372,11 +390,36 @@ buildDayFilter('test-day-filter', d => { testDay = d; });
 document.getElementById('search').addEventListener('input', e => { query = e.target.value; renderVocab(); });
 renderVocab();
 
-// ─── 테스트 (객관식) ───
+// ─── 테스트 (타이핑) ───
 let testDay = 'all';
-const test = { pool:[], cur:null, ok:0, no:0, locked:false };
+const test = { pool:[], cur:null, ok:0, no:0, answered:false };
 
 function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+// 채점용 정규화: 소문자, ~ 제거, 영숫자/공백만, 공백 정리
+function norm(s){
+  return s.toLowerCase().replace(/~/g,'').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim();
+}
+// 정답 후보들 (슬래시로 나뉜 것, 괄호 안 빼고/넣고 모두 인정)
+function acceptedAnswers(en){
+  const set = new Set();
+  const add = s => { const n = norm(s); if (n) set.add(n); };
+  en.split('/').forEach(part => { add(part); add(part.replace(/\(.*?\)/g,'')); });
+  add(en); add(en.replace(/\(.*?\)/g,''));
+  return set;
+}
+// 글자수 힌트: 각 단어 첫 글자만 보여주고 나머지는 _
+function makeHint(s){
+  return s.split(' ').map(word => {
+    if (!/[A-Za-z]/.test(word)) return word;     // ~ , / 등은 그대로
+    let shown = false, out = '';
+    for (const ch of word){
+      if (/[A-Za-z]/.test(ch)){ out += shown ? '_' : ch; shown = true; }
+      else out += ch;
+    }
+    return out;
+  }).join(' ');
+}
 
 function startTest() {
   const subset = DATA.filter(w => testDay === 'all' || w.d === testDay);
@@ -389,63 +432,97 @@ function startTest() {
 }
 
 function nextQ() {
-  document.getElementById('next-row').innerHTML = '';
-  test.locked = false;
   if (test.pool.length === 0) { finishTest(); return; }
   test.cur = test.pool.shift();
+  test.answered = false;
   const w = test.cur;
-  // 오답 보기 3개 (같은 단어 제외, 전체 풀에서)
-  const others = shuffle(DATA.filter(x => x.en !== w.en)).slice(0,3);
-  const opts = shuffle([w, ...others]);
-  let optHtml = '';
-  opts.forEach(o => {
-    optHtml += `<button class="opt" onclick="answer(this, ${o.en === w.en})">${esc(o.en)}</button>`;
-  });
-  document.getElementById('q-card').innerHTML = `
-    <div class="q-day">Day ${w.d}</div>
-    <div class="q-ko">${esc(w.ko)}</div>
-    <div class="q-sub">알맞은 영어 표현을 고르세요</div>
-    <div class="opts">${optHtml}</div>`;
+  document.getElementById('t-day').textContent = 'Day ' + w.d;
+  document.getElementById('t-ko').textContent = w.ko;
+  document.getElementById('t-hint').textContent = makeHint(w.en);
+  document.getElementById('t-fb').innerHTML = '';
+  const input = document.getElementById('t-input');
+  input.value = ''; input.disabled = false;
+  input.className = 'sp-input';
+  input.placeholder = '영어로 입력…';
+  document.getElementById('t-actions').innerHTML =
+    `<button class="big-btn" onclick="checkAnswer()">확인 ✓</button>
+     <button class="big-btn alt" onclick="revealAnswer()">모르겠어요 👀</button>`;
+  updateStats();
+  setTimeout(() => input.focus(), 80);
+}
+
+function checkAnswer() {
+  if (test.answered) return;
+  const w = test.cur;
+  const input = document.getElementById('t-input');
+  const userVal = norm(input.value);
+  if (!userVal) { input.focus(); return; }
+  const correct = acceptedAnswers(w.en).has(userVal);
+  test.answered = true;
+  input.disabled = true;
+  if (correct) {
+    test.ok++;
+    input.classList.add('ok');
+    document.getElementById('t-fb').innerHTML = '<span class="good">정답이에요! 🎉</span>';
+  } else {
+    test.no++;
+    input.classList.add('no');
+    document.getElementById('t-fb').innerHTML =
+      '<span class="bad">아쉬워요! 정답 👉</span><br>' +
+      '<span class="ans">' + esc(w.en) + '</span><br>' +
+      '<span class="ans-ko">' + esc(w.ko) + '</span>';
+  }
+  speak(w.en);
+  document.getElementById('t-actions').innerHTML =
+    `<button class="big-btn" onclick="speak(${JSON.stringify(w.en)})">🔊 다시 듣기</button>
+     <button class="big-btn" onclick="nextQ()">다음 ▶︎</button>`;
   updateStats();
 }
 
-function answer(btn, isCorrect) {
-  if (test.locked) return;
-  test.locked = true;
+function revealAnswer() {
+  if (test.answered) return;
   const w = test.cur;
-  document.querySelectorAll('#q-card .opt').forEach(o => {
-    o.classList.add('locked');
-    if (o.textContent === w.en) o.classList.add('correct');
-  });
-  if (isCorrect) { test.ok++; speak(w.en); }
-  else { btn.classList.add('wrong'); test.no++; speak(w.en); }
+  const input = document.getElementById('t-input');
+  test.answered = true;
+  test.no++;
+  input.value = w.en; input.disabled = true; input.classList.add('no');
+  document.getElementById('t-fb').innerHTML =
+    '<span class="ans">' + esc(w.en) + '</span><br>' +
+    '<span class="ans-ko">' + esc(w.ko) + '</span>';
+  speak(w.en);
+  document.getElementById('t-actions').innerHTML =
+    `<button class="big-btn" onclick="speak(${JSON.stringify(w.en)})">🔊 다시 듣기</button>
+     <button class="big-btn" onclick="nextQ()">다음 ▶︎</button>`;
   updateStats();
-  document.getElementById('next-row').innerHTML =
-    `<button class="big-btn" onclick="nextQ()">다음 ▶︎</button>`;
 }
 
 function finishTest() {
   const total = test.ok + test.no;
-  document.getElementById('q-card').innerHTML = `
-    <div class="q-ko">🎉 끝!</div>
-    <div class="q-sub" style="font-size:16px;margin-top:10px;">
-      맞은 개수 <b style="color:var(--green)">${test.ok}</b> / ${total}
-    </div>`;
-  document.getElementById('next-row').innerHTML =
-    `<button class="big-btn" onclick="startTest()">다시 풀기 🔁</button>
-     <button class="big-btn alt" style="margin-left:8px;" onclick="resetTest()">날짜 다시 고르기</button>`;
+  document.getElementById('t-day').textContent = '';
+  document.getElementById('t-ko').textContent = '🎉 끝!';
+  document.getElementById('t-hint').textContent = '';
+  document.getElementById('t-input').style.display = 'none';
+  document.getElementById('t-fb').innerHTML =
+    '<span class="good" style="font-size:18px;">맞은 개수 ' + test.ok + ' / ' + total + '</span>';
+  document.getElementById('t-actions').innerHTML =
+    `<button class="big-btn" onclick="resetTest()">다시 시작 🔁</button>`;
 }
 
 function resetTest() {
+  document.getElementById('t-input').style.display = '';
   document.getElementById('test-area').style.display = 'none';
   document.getElementById('test-setup').style.display = 'block';
 }
 
+// 엔터로 확인/다음
+document.getElementById('t-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); if (!test.answered) checkAnswer(); }
+});
+
 function updateStats() {
   document.getElementById('t-ok').textContent = test.ok;
   document.getElementById('t-no').textContent = test.no;
-  // 남음 = 아직 풀지 않은 문제 (현재 문제가 아직 안 풀렸으면 포함)
-  const remaining = test.pool.length + (test.cur && !test.locked ? 1 : 0);
+  const remaining = test.pool.length + (test.cur && !test.answered ? 1 : 0);
   document.getElementById('t-rem').textContent = remaining;
 }
 </script>
