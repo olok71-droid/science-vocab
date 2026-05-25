@@ -308,39 +308,45 @@ const DATA = [
 
 const DAYS = [1,2,3,4,5,6,7];
 
-// ─── 발음 (영어 목소리 자동 선택) ───
+// ─── 발음 ───
+// 방식: 폰 읽어주기(TTS)가 기기마다 안 되는 경우가 많아서,
+//       진짜 음성 파일(Google 번역 발음)을 오디오로 직접 재생한다.
+//       referer를 빼야 차단(404)되지 않음. 실패하면 폰 내장 음성으로 보조.
+let _audio = null;
+function speak(text) {
+  const clean = text.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim();
+  if (!clean) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en-GB&client=tw-ob&q='
+                + encodeURIComponent(clean.slice(0, 190));
+    const a = new Audio();
+    a.referrerPolicy = 'no-referrer';   // 핵심: referer 없어야 Google이 허용
+    a.src = url;
+    a.onerror = () => fallbackSpeak(clean);
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(() => fallbackSpeak(clean));
+  } catch (e) {
+    fallbackSpeak(clean);
+  }
+}
+// 보조: 폰 내장 음성 (인터넷 안 될 때 등)
 let _voices = [];
-function loadVoices() {
-  if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || [];
-}
-if (window.speechSynthesis) {
-  loadVoices();
-  window.speechSynthesis.onvoiceschanged = loadVoices;
-}
-// 'en_GB'(밑줄)·'en-GB'(붙임표) 둘 다 → 'en-gb'로 통일
-function normLang(l){ return (l || '').replace(/_/g, '-').toLowerCase(); }
-function pickVoice() {
-  if (!_voices.length) loadVoices();
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis) { loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9;
   const en = _voices.filter(v => normLang(v.lang).startsWith('en'));
-  if (!en.length) return null;
-  // 로컬(기기 내장) 목소리 우선 — 네트워크 목소리는 일부 브라우저에서 소리 안 남
   const local = en.filter(v => v.localService);
   const pool = local.length ? local : en;
-  return pool.find(v => normLang(v.lang) === 'en-gb')
-      || pool.find(v => normLang(v.lang) === 'en-us')
-      || pool[0];
-}
-function speak(text) {
-  if (!window.speechSynthesis) return;
-  // "/", "~" 등은 빼고 깔끔하게 읽기
-  const clean = text.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim();
-  const u = new SpeechSynthesisUtterance(clean);
-  u.rate = 0.9;
-  const v = pickVoice();
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
   if (v) { u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'en-GB'; }
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
-  // 크롬에서 멈춤(stuck) 상태 방지
   setTimeout(() => { try { window.speechSynthesis.resume(); } catch(e){} }, 80);
 }
 

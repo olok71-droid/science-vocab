@@ -23,9 +23,10 @@
 <p>아래 버튼을 눌러보세요. 무슨 일이 일어나는지 아래 칸에 글자로 나와요.<br>
 이 화면을 캡쳐해서 보내주시면 원인을 찾을 수 있어요.</p>
 
-<button onclick="beep()">🔔 삐~ 소리 테스트 (먼저!)</button>
-<button onclick="test1()">① 기본 음성</button>
-<button class="alt" onclick="test2()">② 음성(목소리 지정)</button>
+<button onclick="realVoice()" style="background:#3ecfb2;width:100%;font-size:20px;">🔊 진짜 발음 테스트 (이거 눌러보세요!)</button>
+<br>
+<button onclick="beep()">🔔 삐~ 소리</button>
+<button class="alt" onclick="test1()">① 기본 음성</button>
 <button class="alt" onclick="test3()">③ 음성(lang만)</button>
 <button class="alt" onclick="listVoices()">④ 목소리 목록</button>
 
@@ -91,6 +92,30 @@ function beep() {
     osc.onended = () => log('🔔 삐~ 소리 끝. 들렸나요?', 'ok');
   } catch (e) {
     log('❌ 삐 소리 오류: ' + e.message, 'err');
+  }
+}
+
+// 🔊 진짜 음성 파일(Google 번역 발음) 재생 — 폰 읽어주기 기능과 무관
+let _audio = null;
+function realVoice() {
+  clearLog();
+  log('🔊 진짜 발음 재생 시도… (인터넷 필요, 폰 기능과 무관)');
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en-GB&client=tw-ob&q='
+              + encodeURIComponent('Hello, this is a real voice test. Practical, handy, habit.');
+    const a = new Audio();
+    a.referrerPolicy = 'no-referrer';
+    a.src = url;
+    a.oncanplay = () => log('오디오 준비됨, 재생 시작', 'info');
+    a.onplaying = () => log('▶︎ 재생 중! 영어가 들리면 성공!', 'ok');
+    a.onended   = () => log('■ 재생 끝.', 'info');
+    a.onerror   = () => log('❌ 오디오 로드 실패 (인터넷/차단 확인)', 'err');
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(err => log('❌ 재생 거부: ' + err.message, 'err'));
+  } catch (e) {
+    log('❌ 예외: ' + e.message, 'err');
   }
 }
 
