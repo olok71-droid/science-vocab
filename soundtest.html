@@ -79,17 +79,21 @@ function test1() {
   speakWith(u);
 }
 
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
 function test2() {
   clearLog();
-  log('② 목소리 지정 테스트…');
+  log('② 목소리 지정 테스트(로컬 우선)…');
   const vs = window.speechSynthesis.getVoices();
-  const v = vs.find(x => x.lang === 'en-GB') || vs.find(x => x.lang === 'en-US')
-         || vs.find(x => x.lang && x.lang.toLowerCase().startsWith('en'));
+  const en = vs.filter(x => normLang(x.lang).startsWith('en'));
+  const local = en.filter(x => x.localService);
+  const pool = local.length ? local : en;
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
   const u = new SpeechSynthesisUtterance('This is a test with a chosen voice.');
   u.rate = 0.9;
-  if (v) { u.voice = v; u.lang = v.lang; log('선택된 목소리: ' + v.name + ' [' + v.lang + ']', 'info'); }
+  if (v) { u.voice = v; u.lang = normLang(v.lang); log('선택된 목소리: ' + v.name + ' [' + v.lang + ']' + (v.localService?' (로컬)':' (네트워크)'), 'info'); }
   else log('영어 목소리를 못 찾음 → 기본 목소리로 시도', 'err');
   speakWith(u);
+  setTimeout(() => { try { window.speechSynthesis.resume(); } catch(e){} }, 80);
 }
 
 setTimeout(listVoices, 300);
