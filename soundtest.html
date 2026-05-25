@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔊 소리 테스트</title>
+<style>
+  body { font-family: system-ui, sans-serif; background:#fffbf2; color:#4a3a1f;
+         max-width:560px; margin:0 auto; padding:24px 16px 60px; line-height:1.5; }
+  h1 { font-size:22px; }
+  button { font-size:18px; font-weight:800; padding:16px 22px; border:none; border-radius:14px;
+           background:#f6a623; color:#fff; cursor:pointer; margin:6px 6px 6px 0; }
+  button.alt { background:#fff; color:#f6a623; border:2px solid #f6a623; }
+  #log { background:#fff; border:2px solid #eee; border-radius:12px; padding:14px;
+         margin-top:18px; font-family:monospace; font-size:13px; white-space:pre-wrap;
+         word-break:break-all; min-height:120px; }
+  .ok { color:#1a9e7e; } .err { color:#d33; } .info { color:#777; }
+  #voices { font-size:12px; color:#555; margin-top:14px; }
+</style>
+</head>
+<body>
+<h1>🔊 소리 테스트</h1>
+<p>아래 버튼을 눌러보세요. 무슨 일이 일어나는지 아래 칸에 글자로 나와요.<br>
+이 화면을 캡쳐해서 보내주시면 원인을 찾을 수 있어요.</p>
+
+<button onclick="test1()">① 기본 소리 테스트</button>
+<button class="alt" onclick="test2()">② 목소리 지정해서</button>
+<button class="alt" onclick="listVoices()">③ 목소리 목록 새로고침</button>
+
+<div id="log">여기에 결과가 나와요…</div>
+<div id="voices"></div>
+
+<script>
+const logEl = document.getElementById('log');
+function log(msg, cls) {
+  const t = new Date().toLocaleTimeString();
+  logEl.innerHTML += `\n[${t}] <span class="${cls||''}">${msg}</span>`;
+}
+function clearLog(){ logEl.innerHTML = ''; }
+
+if (!('speechSynthesis' in window)) {
+  log('❌ 이 브라우저는 speechSynthesis(음성)를 지원하지 않습니다.', 'err');
+} else {
+  log('✅ speechSynthesis 지원됨.', 'ok');
+}
+
+function listVoices() {
+  const vs = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+  log('목소리 개수: ' + vs.length, vs.length ? 'ok' : 'err');
+  const en = vs.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+  document.getElementById('voices').innerHTML =
+    '<b>영어 목소리(' + en.length + '개):</b><br>' +
+    (en.map(v => v.name + ' [' + v.lang + ']' + (v.localService ? ' (로컬)' : ' (네트워크)')).join('<br>') || '없음') +
+    '<br><br><b>전체 목소리(' + vs.length + '개):</b><br>' +
+    (vs.map(v => v.name + ' [' + v.lang + ']').join('<br>') || '없음');
+}
+if (window.speechSynthesis) {
+  window.speechSynthesis.onvoiceschanged = () => { log('목소리 목록 로딩됨(onvoiceschanged).', 'info'); listVoices(); };
+}
+
+function speakWith(u) {
+  u.onstart = () => log('▶︎ onstart — 말하기 시작! (소리가 안 들리면 볼륨/미디어음량 확인)', 'ok');
+  u.onend   = () => log('■ onend — 말하기 끝.', 'info');
+  u.onerror = (e) => log('❌ onerror: ' + (e.error || '알수없음'), 'err');
+  try {
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(u);
+    log('speak() 호출함. lang=' + u.lang + ', voice=' + (u.voice ? u.voice.name : '(기본)'), 'info');
+  } catch (err) {
+    log('❌ 예외: ' + err.message, 'err');
+  }
+}
+
+function test1() {
+  clearLog();
+  log('① 기본 테스트 시작…');
+  const u = new SpeechSynthesisUtterance('Hello, this is a sound test. One, two, three.');
+  u.rate = 0.9;
+  speakWith(u);
+}
+
+function test2() {
+  clearLog();
+  log('② 목소리 지정 테스트…');
+  const vs = window.speechSynthesis.getVoices();
+  const v = vs.find(x => x.lang === 'en-GB') || vs.find(x => x.lang === 'en-US')
+         || vs.find(x => x.lang && x.lang.toLowerCase().startsWith('en'));
+  const u = new SpeechSynthesisUtterance('This is a test with a chosen voice.');
+  u.rate = 0.9;
+  if (v) { u.voice = v; u.lang = v.lang; log('선택된 목소리: ' + v.name + ' [' + v.lang + ']', 'info'); }
+  else log('영어 목소리를 못 찾음 → 기본 목소리로 시도', 'err');
+  speakWith(u);
+}
+
+setTimeout(listVoices, 300);
+</script>
+</body>
+</html>
