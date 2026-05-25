@@ -269,6 +269,22 @@ header {
 footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
+
+/* === 단어장 좌(영어)|우(한글) + 가림 (2026-05-25) === */
+.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
+.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
+.vcard-en{grid-column:1;grid-row:2;}
+.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
+.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
+.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
+.dh-btns{display:flex;gap:5px;flex-shrink:0;}
+.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);
+  font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;
+  cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
+#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
+.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
 </style>
 </head>
 <body>
@@ -318,14 +334,14 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
-      <button class="filter-btn active" data-cat="all" onclick="filterCards("all")">전체 All</button>
-      <button class="filter-btn" data-cat="organ" onclick="filterCards("organ")">💧 기본 Basics</button>
-      <button class="filter-btn" data-cat="process" onclick="filterCards("process")">📊 농도 Concentration</button>
-      <button class="filter-btn" data-cat="gas" onclick="filterCards("gas")">💎 용해도 Solubility</button>
-      <button class="filter-btn" data-cat="blood" onclick="filterCards("blood")">🧪 실험 Experiment</button>
+      <button class="filter-btn active" data-cat="all" onclick='filterCards("all")'>전체 All</button>
+      <button class="filter-btn" data-cat="organ" onclick='filterCards("organ")'>💧 기본 Basics</button>
+      <button class="filter-btn" data-cat="process" onclick='filterCards("process")'>📊 농도 Concentration</button>
+      <button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>💎 용해도 Solubility</button>
+      <button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>🧪 실험 Experiment</button>
     </div>
   </div>
-<div class="section-header" data-cat="organ"><h2>💧 기본 Basics</h2><div class="section-line"></div></div>
+<div class="section-header" data-cat="organ"><h2>💧 기본 Basics</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="organ">
   <div class="vcard-left">
@@ -424,7 +440,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="process"><h2>📊 농도 Concentration</h2><div class="section-line"></div></div>
+<div class="section-header" data-cat="process"><h2>📊 농도 Concentration</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="process">
   <div class="vcard-left">
@@ -499,7 +515,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="gas"><h2>💎 용해도 Solubility</h2><div class="section-line"></div></div>
+<div class="section-header" data-cat="gas"><h2>💎 용해도 Solubility</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="gas">
   <div class="vcard-left">
@@ -550,7 +566,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="blood"><h2>🧪 실험 Experiment</h2><div class="section-line"></div></div>
+<div class="section-header" data-cat="blood"><h2>🧪 실험 Experiment</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="blood">
   <div class="vcard-left">
@@ -1387,6 +1403,22 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+</script>
+<script>
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b=\"en\"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b=\"ko\"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
 </script>
 </body>
 </html>
