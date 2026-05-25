@@ -76,8 +76,9 @@
     font-size:42px; cursor:pointer; box-shadow:0 6px 18px var(--shadow); margin-bottom:8px;}
   .q-ask{font-size:15px; font-weight:800; color:var(--muted); margin:10px 0 16px;}
   .q-choices{display:flex; flex-direction:column; gap:9px;}
-  .choice{border:2px solid rgba(226,58,58,0.18); background:#fff; color:var(--text); font-family:inherit;
-    font-weight:800; font-size:17px; padding:14px; border-radius:14px; cursor:pointer; transition:all .12s;}
+  .choice{border:2px solid rgba(226,58,58,0.18); background:#fff; color:var(--text);
+    font-family:'Noto Sans SC','Noto Sans KR',sans-serif;
+    font-weight:900; font-size:26px; padding:16px; border-radius:14px; cursor:pointer; transition:all .12s;}
   .choice:hover{border-color:var(--accent);}
   .choice.correct{background:rgba(62,207,178,0.15); border-color:var(--green); color:var(--green);}
   .choice.wrong{background:rgba(226,58,58,0.1); border-color:var(--accent); color:var(--accent);}
@@ -139,7 +140,7 @@
       </div>
       <div class="q-card">
         <button class="q-play" id="q-play" aria-label="소리 듣기">🔊</button>
-        <div class="q-ask">이 소리는 무슨 뜻일까요?</div>
+        <div class="q-ask">🔊 잘 듣고, 알맞은 글자를 고르세요</div>
         <div class="q-choices" id="q-choices"></div>
         <div class="q-reveal" id="q-reveal"></div>
         <div style="margin-top:14px;"><button class="big-btn" id="q-next" style="display:none;" onclick="nextQuiz()">다음 ▶︎</button></div>
@@ -266,12 +267,14 @@ function nextQuiz(){
   const d = quiz.cur;
   document.getElementById('q-reveal').innerHTML = '';
   document.getElementById('q-next').style.display = 'none';
-  // 보기 3개: 정답 + 같은류 오답 2개
-  const others = shuffle(DATA.filter(x => x.id !== d.id)).slice(0, 2);
+  // 소리 듣고 '한자/병음'을 고르기. 오답은 같은 주제에서 우선 뽑아 헷갈리게.
+  let others = shuffle(DATA.filter(x => x.id !== d.id && x.t === d.t)).slice(0, 2);
+  if (others.length < 2)
+    others = others.concat(shuffle(DATA.filter(x => x.id !== d.id && x.t !== d.t)).slice(0, 2 - others.length));
   const choices = shuffle([d, ...others]);
   const cwrap = document.getElementById('q-choices');
   cwrap.innerHTML = choices.map(c =>
-    `<button class="choice" onclick="answerQuiz(${c.id}, this)">${esc(c.ko)}</button>`).join('');
+    `<button class="choice" data-id="${c.id}" onclick="answerQuiz(${c.id}, this)">${esc(c.hz)}</button>`).join('');
   document.getElementById('q-play').onclick = () => playClip(d.id);
   updateQuizStats();
   setTimeout(() => playClip(d.id), 350);  // 문제 나오면 자동으로 한 번 들려주기
@@ -286,7 +289,7 @@ function answerQuiz(chosenId, el){
   else {
     quiz.no++; el.classList.add('wrong');
     document.querySelectorAll('.choice').forEach(b => {
-      if (b.textContent === d.ko) b.classList.add('correct');
+      if (b.dataset.id == d.id) b.classList.add('correct');
     });
   }
   document.getElementById('q-reveal').innerHTML =
