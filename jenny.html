@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💛 Jenny 영어공부</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fffbf2;
+    --card: #ffffff;
+    --accent: #f6a623;
+    --accent2: #ffcc5c;
+    --green: #3ecfb2;
+    --red: #ff7a7a;
+    --purple: #a78bfa;
+    --blue: #60c4f8;
+    --text: #4a3a1f;
+    --muted: #c2a878;
+    --shadow: rgba(246,166,35,0.14);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito','Noto Sans KR',sans-serif;
+    min-height: 100vh;
+    padding: 0 0 60px;
+    background-image: radial-gradient(circle at 15% 12%, rgba(246,166,35,0.13) 0%, transparent 50%),
+                      radial-gradient(circle at 85% 85%, rgba(255,204,92,0.13) 0%, transparent 50%);
+  }
+  header { text-align:center; padding: 30px 20px 18px; }
+  .back {
+    position: absolute; left: 14px; top: 18px;
+    text-decoration:none; color: var(--accent); font-weight:800; font-size:14px;
+    background:#fff; padding:6px 12px; border-radius:20px;
+    box-shadow:0 2px 10px var(--shadow);
+  }
+  .emo {
+    display:inline-block; background:#fff; border-radius:50%;
+    width:72px; height:72px; line-height:72px; font-size:40px;
+    box-shadow:0 4px 18px var(--shadow); margin-bottom:10px;
+  }
+  header h1 { font-size:26px; font-weight:900; margin-bottom:4px; letter-spacing:-0.5px; }
+  header h1 .y { color: var(--accent); }
+  header .tagline { font-size:13px; color:var(--muted); font-weight:700; }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 14px; }
+
+  /* 탭 */
+  .tabs {
+    display:flex; gap:6px; background:#fff; padding:6px; border-radius:16px;
+    box-shadow:0 2px 12px var(--shadow); margin-bottom:16px; position:sticky; top:8px; z-index:20;
+  }
+  .tab-btn {
+    flex:1; border:none; background:transparent; padding:10px 4px; border-radius:11px;
+    font-family:inherit; font-weight:800; font-size:14px; color:var(--muted); cursor:pointer;
+    transition:all .18s;
+  }
+  .tab-btn.active { background:var(--accent); color:#fff; box-shadow:0 3px 10px var(--shadow); }
+
+  .tab-panel { display:none; }
+  .tab-panel.active { display:block; }
+
+  /* Day 필터 */
+  .day-filter { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+  .day-chip {
+    border:none; background:#fff; color:var(--accent); font-family:inherit;
+    font-weight:800; font-size:13px; padding:7px 13px; border-radius:20px; cursor:pointer;
+    box-shadow:0 2px 8px var(--shadow); border:2px solid transparent; transition:all .15s;
+  }
+  .day-chip.active { background:var(--accent); color:#fff; }
+
+  .search {
+    width:100%; border:2px solid rgba(246,166,35,0.2); border-radius:14px;
+    padding:11px 14px; font-family:inherit; font-size:15px; color:var(--text);
+    margin-bottom:14px; background:#fff; outline:none;
+  }
+  .search:focus { border-color:var(--accent); }
+
+  /* Day 섹션 */
+  .day-head {
+    font-size:15px; font-weight:900; color:var(--accent); margin:18px 4px 10px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .day-head::before { content:'📅'; }
+  .day-head .cnt { font-size:12px; color:var(--muted); font-weight:700; }
+
+  /* 단어 카드 */
+  .wcard {
+    background:var(--card); border-radius:16px; padding:14px 16px; margin-bottom:9px;
+    box-shadow:0 2px 10px var(--shadow); border:2px solid rgba(246,166,35,0.1);
+  }
+  .wcard.hidden { display:none; }
+  .wcard-top { display:flex; align-items:center; gap:10px; }
+  .wcard-en { font-size:17px; font-weight:800; color:var(--text); flex:1; line-height:1.3; }
+  .wcard-ko { font-size:14px; color:var(--accent); font-weight:700; margin-top:3px; }
+  .spk {
+    border:none; background:rgba(246,166,35,0.12); color:var(--accent);
+    width:36px; height:36px; border-radius:50%; font-size:17px; cursor:pointer; flex-shrink:0;
+    transition:all .15s;
+  }
+  .spk:hover { background:var(--accent); color:#fff; }
+  .wcard-ex {
+    display:flex; align-items:center; gap:8px; margin-top:9px; padding-top:9px;
+    border-top:1px dashed rgba(246,166,35,0.22);
+  }
+  .wcard-ex .txt { flex:1; font-size:13.5px; color:#7a6a4a; font-style:italic; line-height:1.4; }
+  .spk.sm { width:30px; height:30px; font-size:14px; }
+
+  /* 테스트 */
+  .test-setup { text-align:center; padding:10px 0 4px; }
+  .test-setup p { color:var(--muted); font-weight:700; font-size:14px; margin-bottom:14px; }
+  .big-btn {
+    border:none; background:var(--accent); color:#fff; font-family:inherit; font-weight:800;
+    font-size:16px; padding:13px 30px; border-radius:14px; cursor:pointer;
+    box-shadow:0 4px 14px var(--shadow); transition:all .15s;
+  }
+  .big-btn:hover { transform:translateY(-2px); }
+  .big-btn.alt { background:#fff; color:var(--accent); border:2px solid rgba(246,166,35,0.3); }
+
+  .test-stats {
+    display:flex; justify-content:center; gap:18px; margin-bottom:16px; font-weight:800; font-size:14px;
+  }
+  .test-stats .ok { color:var(--green); }
+  .test-stats .no { color:var(--red); }
+  .test-stats .rem { color:var(--muted); }
+
+  .q-card {
+    background:#fff; border-radius:18px; padding:22px 18px; box-shadow:0 4px 16px var(--shadow);
+    border:2px solid rgba(246,166,35,0.12); text-align:center; margin-bottom:14px;
+  }
+  .q-day { font-size:12px; font-weight:800; color:var(--muted); margin-bottom:8px; }
+  .q-ko { font-size:24px; font-weight:900; color:var(--text); margin-bottom:6px; line-height:1.3; }
+  .q-sub { font-size:13px; color:var(--muted); font-weight:700; }
+  .opts { display:flex; flex-direction:column; gap:9px; margin-top:6px; }
+  .opt {
+    border:2px solid rgba(246,166,35,0.18); background:#fff; color:var(--text);
+    font-family:inherit; font-weight:700; font-size:15.5px; padding:13px; border-radius:13px;
+    cursor:pointer; text-align:center; transition:all .12s;
+  }
+  .opt:hover:not(.locked) { border-color:var(--accent); background:rgba(246,166,35,0.05); }
+  .opt.correct { background:var(--green); color:#fff; border-color:var(--green); }
+  .opt.wrong   { background:var(--red); color:#fff; border-color:var(--red); }
+  .opt.locked { cursor:default; }
+  .next-row { text-align:center; margin-top:6px; }
+
+  footer { text-align:center; padding:24px; color:var(--muted); font-size:11px; }
+  footer span { color:var(--accent); }
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html">← 메인</a>
+<header>
+  <div class="emo">💛</div>
+  <h1><span class="y">Jenny</span> 영어공부</h1>
+  <p class="tagline">phrase - May · Day 1–7 · 듣고 따라 말해요 🎧</p>
+</header>
+
+<div class="container">
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn" data-tab="test">✅ 테스트</button>
+  </div>
+
+  <!-- 단어장 -->
+  <div class="tab-panel active" id="tab-vocab">
+    <input class="search" id="search" placeholder="🔍 영어 또는 한글 검색…">
+    <div class="day-filter" id="day-filter"></div>
+    <div id="vocab-list"></div>
+  </div>
+
+  <!-- 테스트 -->
+  <div class="tab-panel" id="tab-test">
+    <div class="day-filter" id="test-day-filter"></div>
+    <div class="test-setup" id="test-setup">
+      <p>한글 뜻을 보고 알맞은 영어를 골라요.<br>위에서 Day를 고르면 그 날만 시험봐요.</p>
+      <button class="big-btn" onclick="startTest()">▶︎ 테스트 시작</button>
+    </div>
+    <div id="test-area" style="display:none;">
+      <div class="test-stats">
+        <span class="ok">⭕ <span id="t-ok">0</span></span>
+        <span class="no">❌ <span id="t-no">0</span></span>
+        <span class="rem">남음 <span id="t-rem">0</span></span>
+      </div>
+      <div class="q-card" id="q-card"></div>
+      <div class="next-row" id="next-row"></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>💛 <span>Jenny 영어공부</span> · phrase - May</footer>
+
+<script>
+// ─── 데이터 (phrase - May) ───
+const DATA = [
+  // Day 1
+  {d:1, en:"Practical", ko:"실용적인, 현실적인", ex:"This bag is very practical."},
+  {d:1, en:"Handy", ko:"편리한, 유용한", ex:"This little tool is really handy."},
+  {d:1, en:"Come in handy", ko:"유용하게 쓰이다", ex:"This umbrella will come in handy."},
+  {d:1, en:"License plate", ko:"자동차 번호판", ex:"I couldn't read the license plate."},
+  {d:1, en:"Cram", ko:"벼락치기로 공부하다", ex:"I had to cram all night."},
+  {d:1, en:"Cram for the test", ko:"시험 벼락치기를 하다", ex:"She is cramming for the test."},
+  {d:1, en:"Extend", ko:"연장하다, 늘리다", ex:"Can I extend the deadline?"},
+  {d:1, en:"Resist", ko:"저항하다, 참다", ex:"I can't resist chocolate."},
+  {d:1, en:"Temptation / tempting", ko:"유혹 / 유혹적인", ex:"The cake looks so tempting."},
+  {d:1, en:"In the first place", ko:"애초에", ex:"Why did you come here in the first place?"},
+  {d:1, en:"Blurry", ko:"흐릿한, 뿌연", ex:"The photo is a bit blurry."},
+
+  // Day 2
+  {d:2, en:"Rely on / reliable", ko:"~에 의존하다 / 믿을 만한", ex:"You can rely on me. He is reliable."},
+  {d:2, en:"Relatively", ko:"상대적으로, 비교적", ex:"It's relatively cheap."},
+  {d:2, en:"Do the right thing", ko:"옳은 일을 하다", ex:"Always try to do the right thing."},
+  {d:2, en:"Over and over", ko:"반복해서, 계속", ex:"She read the book over and over."},
+  {d:2, en:"Attractive / attraction", ko:"매력적인 / 매력, 명소", ex:"The city has many attractions."},
+  {d:2, en:"Drag attention", ko:"시선을 끌다", ex:"The bright sign drags attention."},
+  {d:2, en:"~ oriented", ko:"~ 지향적인", ex:"He is very goal-oriented."},
+  {d:2, en:"~ related", ko:"~ 관련된", ex:"It's a health-related issue."},
+  {d:2, en:"~ based", ko:"~ 기반의", ex:"It's a web-based app."},
+  {d:2, en:"Habit", ko:"습관, 버릇", ex:"Reading is a good habit."},
+
+  // Day 3
+  {d:3, en:"Praise (someone) for ~", ko:"~로 칭찬하다", ex:"She praised him for his hard work."},
+  {d:3, en:"Receive praise for ~", ko:"~로 칭찬을 받다", ex:"He received praise for his effort."},
+  {d:3, en:"Tell off (scold)", ko:"야단치다, 혼내다", ex:"My mom told me off."},
+  {d:3, en:"Interpret / interpreter", ko:"통역하다 / 통역사", ex:"She works as an interpreter."},
+  {d:3, en:"Translate / translator", ko:"번역하다 / 번역가", ex:"Can you translate this for me?"},
+  {d:3, en:"Serve in the military", ko:"군 복무를 하다", ex:"He served in the military for two years."},
+  {d:3, en:"Finish one's military service", ko:"군 복무를 마치다", ex:"He just finished his military service."},
+  {d:3, en:"Pay off debt", ko:"빚을 갚다", ex:"I want to pay off my debt."},
+  {d:3, en:"Get a mortgage", ko:"주택담보대출을 받다", ex:"They got a mortgage for the house."},
+  {d:3, en:"Buy a lottery ticket", ko:"복권을 사다", ex:"I buy a lottery ticket every week."},
+  {d:3, en:"Win the lottery", ko:"복권에 당첨되다", ex:"What would you do if you won the lottery?"},
+
+  // Day 4
+  {d:4, en:"A rip-off / rip off", ko:"바가지 / 바가지 씌우다", ex:"That price is a total rip-off."},
+  {d:4, en:"Mess up", ko:"망치다, 엉망으로 만들다", ex:"Don't mess it up again."},
+  {d:4, en:"Ruin", ko:"망치다, 파괴하다", ex:"The rain ruined our trip."},
+  {d:4, en:"Walk you out", ko:"배웅하다", ex:"Let me walk you out."},
+  {d:4, en:"Take out a loan", ko:"대출을 받다", ex:"She took out a loan for school."},
+  {d:4, en:"Take out insurance", ko:"보험에 가입하다", ex:"We took out insurance for the car."},
+  {d:4, en:"Go through", ko:"겪다, 통과하다", ex:"We went through a hard time."},
+  {d:4, en:"Work through", ko:"(어려움을) 헤쳐 나가다", ex:"Let's work through this problem together."},
+  {d:4, en:"Break through", ko:"돌파하다, 뚫고 나아가다", ex:"They finally broke through the wall."},
+  {d:4, en:"Social media", ko:"소셜 미디어", ex:"She spends hours on social media."},
+
+  // Day 5
+  {d:5, en:"Realistic", ko:"현실적인", ex:"Let's be realistic about this."},
+  {d:5, en:"Practical", ko:"실용적인", ex:"It's a practical idea."},
+  {d:5, en:"Would kill for ~", ko:"~를 너무나 갖고 싶다", ex:"I would kill for a coffee right now."},
+  {d:5, en:"I would kill for your shape", ko:"네 몸매 정말 부럽다", ex:"Wow, I would kill for your shape!"},
+  {d:5, en:"Where did that come from?", ko:"그건 어디서 난 거야? / 갑자기 왜?", ex:"Where did that come from?"},
+  {d:5, en:"Rational", ko:"이성적인, 합리적인", ex:"He made a rational decision."},
+  {d:5, en:"Harden", ko:"단단해지다, 굳다", ex:"The clay will harden overnight."},
+  {d:5, en:"Soften", ko:"부드러워지다, 누그러지다", ex:"Soften the butter first."},
+  {d:5, en:"Strengthen", ko:"강화하다, 튼튼하게 하다", ex:"Exercise strengthens your muscles."},
+  {d:5, en:"Pay it forward", ko:"선행을 다른 사람에게 베풀다", ex:"She paid it forward by helping a stranger."},
+  {d:5, en:"Fasten", ko:"매다, 고정하다", ex:"Please fasten your seatbelt."},
+
+  // Day 6
+  {d:6, en:"Crush", ko:"반함, 짝사랑", ex:"I have a crush on him."},
+  {d:6, en:"Have a crush on someone", ko:"누군가에게 반하다", ex:"She has a crush on her classmate."},
+  {d:6, en:"Middle school crush", ko:"중학교 때 첫사랑", ex:"He was my middle school crush."},
+  {d:6, en:"Resist", ko:"저항하다, 참다", ex:"I couldn't resist the temptation."},
+  {d:6, en:"Replace", ko:"대체하다, 교체하다", ex:"Please replace the old battery."},
+  {d:6, en:"Insist", ko:"주장하다, 고집하다", ex:"He insisted on paying."},
+  {d:6, en:"Blow one's mind", ko:"깜짝 놀라게 하다", ex:"The movie blew my mind."},
+  {d:6, en:"Figure out", ko:"알아내다, 이해하다", ex:"I can't figure it out."},
+  {d:6, en:"Check out", ko:"확인하다 / (호텔) 체크아웃하다", ex:"Check out this new song!"},
+  {d:6, en:"Screw up", ko:"망치다, 실수하다", ex:"I really screwed up today."},
+  {d:6, en:"Daylight", ko:"햇빛, 낮", ex:"We arrived in daylight."},
+  {d:6, en:"Zone out", ko:"멍때리다, 딴생각하다", ex:"I zoned out during the class."},
+
+  // Day 7
+  {d:7, en:"Bend", ko:"구부리다, 굽히다", ex:"Bend your knees a little."},
+  {d:7, en:"Stretch", ko:"늘이다, 스트레칭하다", ex:"Stretch before you run."},
+  {d:7, en:"LGBT people", ko:"성소수자", ex:"She supports LGBT people."},
+  {d:7, en:"Live up to", ko:"(기대에) 부응하다", ex:"The film lived up to my expectations."},
+  {d:7, en:"Twist", ko:"비틀다, 돌리다", ex:"Twist the cap to open it."},
+  {d:7, en:"Turn", ko:"돌다, 돌리다, 방향을 바꾸다", ex:"Turn to the left at the corner."},
+  {d:7, en:"Be addicted (to)", ko:"~에 중독되다", ex:"I'm addicted to coffee."},
+  {d:7, en:"Addict / addictive", ko:"중독자 / 중독성 있는", ex:"This game is so addictive."},
+  {d:7, en:"Lean back", ko:"뒤로 기대다", ex:"Lean back and relax."},
+  {d:7, en:"Flexible", ko:"유연한, 융통성 있는", ex:"My schedule is flexible."},
+  {d:7, en:"Inhale / exhale", ko:"숨을 들이쉬다 / 내쉬다", ex:"Inhale slowly, then exhale."},
+];
+
+const DAYS = [1,2,3,4,5,6,7];
+
+// ─── 발음 (en-US, AMY와 동일 방식) ───
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  // "/", "~" 등은 빼고 깔끔하게 읽기
+  const clean = text.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim();
+  const u = new SpeechSynthesisUtterance(clean);
+  u.lang = 'en-US'; u.rate = 0.9;
+  const voices = window.speechSynthesis.getVoices();
+  const v = voices.find(x => x.lang === 'en-US') || voices.find(x => x.lang && x.lang.startsWith('en'));
+  if (v) u.voice = v;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = () => {};
+
+// ─── 탭 ───
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+
+// ─── 단어장 렌더 ───
+let vocabDay = 'all';
+let query = '';
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function renderVocab() {
+  const wrap = document.getElementById('vocab-list');
+  const q = query.toLowerCase().trim();
+  let html = '';
+  DAYS.forEach(day => {
+    if (vocabDay !== 'all' && vocabDay !== day) return;
+    const items = DATA.filter(w => w.d === day && (
+      !q || w.en.toLowerCase().includes(q) || w.ko.toLowerCase().includes(q) || w.ex.toLowerCase().includes(q)
+    ));
+    if (items.length === 0) return;
+    html += `<div class="day-head">Day ${day} <span class="cnt">· ${items.length}개</span></div>`;
+    items.forEach(w => {
+      html += `<div class="wcard">
+        <div class="wcard-top">
+          <div>
+            <div class="wcard-en">${esc(w.en)}</div>
+            <div class="wcard-ko">${esc(w.ko)}</div>
+          </div>
+          <button class="spk" onclick="speak(${JSON.stringify(w.en)})" aria-label="단어 발음">🔊</button>
+        </div>
+        <div class="wcard-ex">
+          <span class="txt">"${esc(w.ex)}"</span>
+          <button class="spk sm" onclick="speak(${JSON.stringify(w.ex)})" aria-label="예문 발음">🔊</button>
+        </div>
+      </div>`;
+    });
+  });
+  if (!html) html = `<p style="text-align:center;color:var(--muted);font-weight:700;padding:30px 0;">검색 결과가 없어요 🐣</p>`;
+  wrap.innerHTML = html;
+}
+
+// Day 필터 버튼 생성
+function buildDayFilter(containerId, onClick) {
+  const c = document.getElementById(containerId);
+  let html = `<button class="day-chip active" data-day="all">전체</button>`;
+  DAYS.forEach(d => html += `<button class="day-chip" data-day="${d}">Day ${d}</button>`);
+  c.innerHTML = html;
+  c.querySelectorAll('.day-chip').forEach(b => b.addEventListener('click', () => {
+    c.querySelectorAll('.day-chip').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    onClick(b.dataset.day === 'all' ? 'all' : parseInt(b.dataset.day));
+  }));
+}
+
+buildDayFilter('day-filter', d => { vocabDay = d; renderVocab(); });
+buildDayFilter('test-day-filter', d => { testDay = d; });
+
+document.getElementById('search').addEventListener('input', e => { query = e.target.value; renderVocab(); });
+renderVocab();
+
+// ─── 테스트 (객관식) ───
+let testDay = 'all';
+const test = { pool:[], cur:null, ok:0, no:0, locked:false };
+
+function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+function startTest() {
+  const subset = DATA.filter(w => testDay === 'all' || w.d === testDay);
+  test.pool = shuffle(subset);
+  test.ok = 0; test.no = 0;
+  document.getElementById('test-setup').style.display = 'none';
+  document.getElementById('test-area').style.display = 'block';
+  updateStats();
+  nextQ();
+}
+
+function nextQ() {
+  document.getElementById('next-row').innerHTML = '';
+  test.locked = false;
+  if (test.pool.length === 0) { finishTest(); return; }
+  test.cur = test.pool.shift();
+  const w = test.cur;
+  // 오답 보기 3개 (같은 단어 제외, 전체 풀에서)
+  const others = shuffle(DATA.filter(x => x.en !== w.en)).slice(0,3);
+  const opts = shuffle([w, ...others]);
+  let optHtml = '';
+  opts.forEach(o => {
+    optHtml += `<button class="opt" onclick="answer(this, ${o.en === w.en})">${esc(o.en)}</button>`;
+  });
+  document.getElementById('q-card').innerHTML = `
+    <div class="q-day">Day ${w.d}</div>
+    <div class="q-ko">${esc(w.ko)}</div>
+    <div class="q-sub">알맞은 영어 표현을 고르세요</div>
+    <div class="opts">${optHtml}</div>`;
+  updateStats();
+}
+
+function answer(btn, isCorrect) {
+  if (test.locked) return;
+  test.locked = true;
+  const w = test.cur;
+  document.querySelectorAll('#q-card .opt').forEach(o => {
+    o.classList.add('locked');
+    if (o.textContent === w.en) o.classList.add('correct');
+  });
+  if (isCorrect) { test.ok++; speak(w.en); }
+  else { btn.classList.add('wrong'); test.no++; speak(w.en); }
+  updateStats();
+  document.getElementById('next-row').innerHTML =
+    `<button class="big-btn" onclick="nextQ()">다음 ▶︎</button>`;
+}
+
+function finishTest() {
+  const total = test.ok + test.no;
+  document.getElementById('q-card').innerHTML = `
+    <div class="q-ko">🎉 끝!</div>
+    <div class="q-sub" style="font-size:16px;margin-top:10px;">
+      맞은 개수 <b style="color:var(--green)">${test.ok}</b> / ${total}
+    </div>`;
+  document.getElementById('next-row').innerHTML =
+    `<button class="big-btn" onclick="startTest()">다시 풀기 🔁</button>
+     <button class="big-btn alt" style="margin-left:8px;" onclick="resetTest()">날짜 다시 고르기</button>`;
+}
+
+function resetTest() {
+  document.getElementById('test-area').style.display = 'none';
+  document.getElementById('test-setup').style.display = 'block';
+}
+
+function updateStats() {
+  document.getElementById('t-ok').textContent = test.ok;
+  document.getElementById('t-no').textContent = test.no;
+  // 남음 = 아직 풀지 않은 문제 (현재 문제가 아직 안 풀렸으면 포함)
+  const remaining = test.pool.length + (test.cur && !test.locked ? 1 : 0);
+  document.getElementById('t-rem').textContent = remaining;
+}
+</script>
+
+<!-- SW-AUTO-START -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      reg.addEventListener('updatefound', function() {
+        var newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', function() {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+            newSW.postMessage({type: 'SKIP_WAITING'});
+          }
+        });
+      });
+      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+    }).catch(function(e) {});
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (reloaded) return;
+      reloaded = true;
+      window.location.reload();
+    });
+  });
+}
+</script>
+<!-- SW-AUTO-END -->
+</body>
+</html>
