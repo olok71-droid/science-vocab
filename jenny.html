@@ -89,6 +89,8 @@
     cursor:pointer; transition:all .15s; white-space:nowrap;
   }
   .blind-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .play-all-btn { color:var(--green); border-color:rgba(62,207,178,0.45); }
+  .play-all-btn.active { background:var(--red); color:#fff; border-color:var(--red); }
 
   /* 단어 줄 (좌 영어 | 우 한글) */
   .wrow {
@@ -454,14 +456,69 @@ function cell(side, text) {
   return `<div class="w-${side} cell${isBlind ? ' blinded' : ''}" onclick="peek(this)"><span>${esc(text)}</span></div>`;
 }
 
-function blindButtons() {
+function blindButtons(day) {
   return `<span class="dh-btns">
+    <button class="blind-btn play-all-btn" onclick="playDay(${day}, this)">▶ 듣기</button>
     <button class="blind-btn${blindEn ? ' active' : ''}" onclick="toggleBlind('en')">🇬🇧 영어가림</button>
     <button class="blind-btn${blindKo ? ' active' : ''}" onclick="toggleBlind('ko')">🇰🇷 한글가림</button>
   </span>`;
 }
 
+// ─── Day 단어 쭉 듣기 (한국어 뜻 → 영어 순서) ───
+let _seq = null;   // 재생 중인 시퀀스 {token, btn}
+
+function stopSeq() {
+  if (_seq) _seq.token = -1;            // 진행 중 콜백 무효화
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(b => {
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+
+function playFile(src, token, done) {
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = () => { if (_seq && _seq.token === token) done(); };
+    a.onerror = () => { if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(() => { if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+
+let _seqToken = 0;
+function playDay(day, btn) {
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;              // 이미 재생 중이던 버튼 → 멈춤
+  const q = query.toLowerCase().trim();
+  const items = DATA.filter(w => w.d === day && (
+    !q || w.en.toLowerCase().includes(q) || w.ko.toLowerCase().includes(q) || w.ex.toLowerCase().includes(q)
+  ));
+  if (!items.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = () => {
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= items.length) { stopSeq(); return; }
+    const w = items[idx];
+    playFile('audio/jenny/k' + w.id + '.mp3', token, () => {   // ① 한국어 뜻
+      playFile('audio/jenny/w' + w.id + '.mp3', token, () => {  // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                               // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
 function renderVocab() {
+  stopSeq();   // 목록 다시 그릴 땐 재생 멈춤
   const wrap = document.getElementById('vocab-list');
   const q = query.toLowerCase().trim();
   let html = '';
@@ -471,7 +528,7 @@ function renderVocab() {
       !q || w.en.toLowerCase().includes(q) || w.ko.toLowerCase().includes(q) || w.ex.toLowerCase().includes(q)
     ));
     if (items.length === 0) return;
-    html += `<div class="day-head"><span class="dh-title">📅 Day ${day} <span class="cnt">· ${items.length}개</span></span>${blindButtons()}</div>`;
+    html += `<div class="day-head"><span class="dh-title">📅 Day ${day} <span class="cnt">· ${items.length}개</span></span>${blindButtons(day)}</div>`;
     items.forEach(w => {
       html += `<div class="wrow">
         ${cell('en', w.en)}
