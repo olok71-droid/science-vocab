@@ -338,7 +338,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
       <button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>📈 그래프 Graphs</button>
     </div>
   </div>
-<div class="section-header" data-cat="organ"><h2>🚀 속도 Speed</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection("organ", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="organ"><h2>🚀 속도 Speed</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection('organ', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="organ">
   <div class="vcard-left">
@@ -413,7 +413,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="process"><h2>📏 평균·순간 Avg/Inst</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection("process", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="process"><h2>📏 평균·순간 Avg/Inst</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="process">
   <div class="vcard-left">
@@ -488,7 +488,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="blood"><h2>📈 그래프 Graphs</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection("blood", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="blood"><h2>📈 그래프 Graphs</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection('blood', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="blood">
   <div class="vcard-left">
@@ -781,7 +781,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8P Speed & Motion 속도와 운동 · science-vocab · <span style="opacity:.5">v20260527-161558</span></footer>
+<footer>8P Speed & Motion 속도와 운동 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Write the equation for SPEED and state two common units.", "marks": 2, "sample_answer": "<p class='en'>Equation: <b>Speed = Distance ÷ Time</b>.</p><p class='ko'>공식: <b>속도 = 거리 ÷ 시간</b>.</p><p class='en'>Common units: <b>metres per second (m/s)</b> and <b>kilometres per hour (km/h)</b>.</p><p class='ko'>흔한 단위: <b>m/s</b>와 <b>km/h</b>.</p>", "mark_points": ["Speed = distance ÷ time", "Two valid units"], "ko_hint": "공식 + 단위 2개."}, {"q": "A runner travels 400 metres in 50 seconds. Calculate their average speed.", "marks": 2, "sample_answer": "<p class='en'>Speed = Distance ÷ Time = 400 ÷ 50 = <b>8 m/s</b>.</p><p class='ko'>속도 = 거리 ÷ 시간 = 400 ÷ 50 = <b>8 m/s</b>.</p>", "mark_points": ["Correct equation used", "Correct answer: 8 m/s (with unit)"], "ko_hint": "단위까지 적기 (8 m/s)."}, {"q": "Explain the difference between AVERAGE speed and INSTANTANEOUS speed.", "marks": 2, "sample_answer": "<p class='en'><b>Average speed</b> is the total distance travelled divided by the total time taken over a whole journey.</p><p class='ko'><b>평균 속도</b>는 여행 전체에서의 총 거리 ÷ 총 시간입니다.</p><p class='en'><b>Instantaneous speed</b> is the speed at a single moment in time, e.g. what a car's speedometer shows right now.</p><p class='ko'><b>순간 속도</b>는 어느 한 순간의 속도입니다 (예: 자동차 속도계가 지금 보여주는 값).</p>", "mark_points": ["Average = total distance / total time", "Instantaneous = speed at one moment"], "ko_hint": "평균(전체) vs 순간(한 순간)."}, {"q": "Describe what each of these features on a DISTANCE-TIME GRAPH tells you about the motion: (a) a flat (horizontal) line, (b) a steep straight line, (c) a curved line.", "marks": 3, "sample_answer": "<p class='en'>(a) A <b>flat line</b> means the object is <b>stationary</b> (not moving) — distance is not changing.</p><p class='ko'>(a) <b>평평한 선</b>: 물체가 <b>정지</b>해 있음 — 거리가 변하지 않음.</p><p class='en'>(b) A <b>steep straight line</b> means the object is moving at a <b>constant, fast speed</b>.</p><p class='ko'>(b) <b>가파른 직선</b>: <b>일정하고 빠른 속도</b>로 움직임.</p><p class='en'>(c) A <b>curved line</b> means the speed is <b>changing</b> (the object is accelerating or decelerating).</p><p class='ko'>(c) <b>곡선</b>: 속도가 <b>변하고 있음</b> (가속 또는 감속).</p>", "mark_points": ["Flat line = stationary", "Steep straight line = constant fast speed", "Curved line = changing speed"], "ko_hint": "수평선=정지, 직선=등속, 곡선=속도 변함."}, {"q": "On a distance-time graph, the line goes from (0 s, 0 m) to (20 s, 100 m) in a straight line. Calculate the speed shown by this line.", "marks": 2, "sample_answer": "<p class='en'>Speed = gradient = change in distance ÷ change in time = (100 − 0) ÷ (20 − 0) = 100 ÷ 20 = <b>5 m/s</b>.</p><p class='ko'>속도 = 기울기 = 거리 변화 ÷ 시간 변화 = (100−0) ÷ (20−0) = <b>5 m/s</b>.</p>", "mark_points": ["Uses gradient correctly", "Correct answer: 5 m/s"], "ko_hint": "기울기 = 거리÷시간 = 5 m/s."}];
