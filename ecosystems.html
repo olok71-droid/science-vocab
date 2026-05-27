@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0d1b2a">
+<meta name="theme-color" content="#d6f5ec">
 <title>8J Ecosystems 생태계</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0d1b2a;
-  --card: #162032;
-  --card2: #1c2d42;
-  --accent: #38bdf8;
-  --green: #4ade80;
-  --yellow: #fbbf24;
-  --pink: #f472b6;
-  --orange: #fb923c;
-  --purple: #c084fc;
-  --text: #e2f0ff;
-  --muted: #6b9ab8;
-  --border: rgba(56,189,248,0.12);
+  --bg: #e3f2ee;
+  --card: #ffffff;
+  --card2: #eef3fb;
+  --accent: #0d9488;
+  --green: #16a34a;
+  --yellow: #c97a06;
+  --pink: #db2777;
+  --orange: #ea580c;
+  --purple: #6d5dfc;
+  --text: #243b6b;
+  --strong: #16223f;
+  --muted: #6b7a99;
+  --border: rgba(36,59,107,0.12);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
@@ -27,14 +28,13 @@ body {
   color: var(--text);
   font-family: 'Nunito','Noto Sans KR',sans-serif;
   min-height: 100vh;
-  background-image:
-    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+  background-image: linear-gradient(150deg, #d6f5ec 0%, #dceff0 32%, #e4e9fb 70%, #e7e2fb 100%);
+  background-attachment: fixed;
 }
 
 /* HEADER */
 header {
-  background: rgba(22,32,50,0.95);
+  background: rgba(255,255,255,0.82);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 14px 18px;
@@ -43,26 +43,26 @@ header {
 }
 .header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
   display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
+  border-radius: 50%; background: rgba(20,184,166,0.08); text-decoration: none; flex-shrink:0; }
 .header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
 .header-text { flex: 1; min-width:0; }
-.header-title { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+.header-title { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
 /* Claude 묻기 / 채점 버튼 (헤더) */
 .header-actions { display: flex; gap: 6px; flex-shrink: 0; }
-.btn-claude { background: rgba(192,132,252,0.14); border: 1.5px solid rgba(192,132,252,0.4);
+.btn-claude { background: rgba(109,93,252,0.14); border: 1.5px solid rgba(109,93,252,0.4);
   color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   font-family: inherit; white-space: nowrap; cursor: pointer; }
-.btn-claude:hover { background: rgba(192,132,252,0.25); transform: scale(1.04); }
-.btn-claude.grade { background: rgba(96,196,248,0.12); border-color: rgba(96,196,248,0.4); color: #60c4f8; }
-.btn-claude.grade:hover { background: rgba(96,196,248,0.24); }
+.btn-claude:hover { background: rgba(109,93,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(13,148,136,0.12); border-color: rgba(13,148,136,0.4); color: #0d9488; }
+.btn-claude.grade:hover { background: rgba(13,148,136,0.24); }
 
 /* HERO */
 .hero { text-align: center; padding: 28px 20px 18px; }
-.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: var(--strong); letter-spacing: -0.5px; }
 .hero h1 span { color: var(--accent); }
 .hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
@@ -77,14 +77,14 @@ header {
 .eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
 .eq-label.aerobic { color: var(--green); }
 .eq-label.anaerobic { color: var(--orange); }
-.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+.eq-formula { font-size: 13px; font-weight: 700; color: var(--strong); line-height: 1.5; }
 
 /* TABS */
 .tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
 .tabs { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
 .tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
   font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
-.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
+.tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
 
@@ -101,11 +101,11 @@ header {
 .spell-stats b { color: var(--accent); }
 .spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
 .spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
-.spell-ko { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-ko { font-size: 22px; font-weight: 900; color: var(--strong); margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
 .spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
 .spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
 .spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
-.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: #fff;
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: var(--strong);
   padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
   letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
 .spell-input:focus { border-color: var(--accent); }
@@ -121,15 +121,15 @@ header {
   font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
 .spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
 .spell-btn-show:hover { background: rgba(251,191,36,0.22); }
-.spell-btn-next { background: rgba(56,189,248,0.14); border-color: rgba(56,189,248,0.4); color: var(--accent); }
-.spell-btn-next:hover { background: rgba(56,189,248,0.24); }
+.spell-btn-next { background: rgba(20,184,166,0.14); border-color: rgba(20,184,166,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(20,184,166,0.24); }
 .spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
   color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
 .spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
   color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
-.spell-answer-banner b { color: #fff; font-size: 16px; letter-spacing: 1px; }
+.spell-answer-banner b { color: var(--strong); font-size: 16px; letter-spacing: 1px; }
 
 /* SECTION HEADERS (vocab filter) */
 .filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
@@ -138,7 +138,7 @@ header {
 .filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
   border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
   font-family: inherit; transition: all 0.2s; white-space: nowrap; }
-.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+.filter-btn.active, .filter-btn:hover { background: rgba(20,184,166,0.12); border-color: var(--accent); color: var(--accent); }
 
 .section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
 .section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
@@ -150,16 +150,16 @@ header {
 /* VOCAB CARD */
 .vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
   display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
-.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
+.vcard:hover { border-color: rgba(20,184,166,0.3); transform: translateY(-1px); }
 .vcard-left { min-width: 0; }
 .vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
 .vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
-.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-organ  { background: rgba(20,184,166,0.12); color: var(--accent); }
 .cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
 .cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
-.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+.cat-gas    { background: rgba(109,93,252,0.12); color: var(--purple); }
 
-.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.vcard-en { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px; }
 .vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
 .vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
@@ -173,8 +173,8 @@ header {
 .vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
 .vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
 .dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.blind-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
@@ -186,13 +186,13 @@ header {
 .mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
 .mem-info{color:var(--muted);font-weight:800;}
 .mem-info b{color:#22c55e;}
-.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.mem-toggle-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
+.btn-speak { background: rgba(20,184,166,0.1); border: 1.5px solid rgba(20,184,166,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
-.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+.btn-speak:hover { background: rgba(20,184,166,0.2); transform: scale(1.05); }
 
 .btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
   color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
@@ -205,32 +205,32 @@ header {
 .chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
 .chapter-head .ch-icon { font-size: 22px; }
 .chapter-head .ch-text { flex: 1; min-width: 0; }
-.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: var(--strong); margin: 0; }
 .chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
-.btn-pdf { background: rgba(192,132,252,0.12); border: 1.5px solid rgba(192,132,252,0.35);
+.btn-pdf { background: rgba(109,93,252,0.12); border: 1.5px solid rgba(109,93,252,0.35);
   color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   flex-shrink: 0; font-family: inherit; white-space: nowrap; }
-.btn-pdf:hover { background: rgba(192,132,252,0.22); border-color: var(--purple); transform: scale(1.03); }
+.btn-pdf:hover { background: rgba(109,93,252,0.22); border-color: var(--purple); transform: scale(1.03); }
 .notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
-.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(20,184,166,0.06); }
 .note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
 .note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
 .note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
-.note-body b { color: #fff; }
+.note-body b { color: var(--strong); }
 /* 영어 문단 */
 .note-body p.en { color: var(--text); margin-bottom: 3px; }
 /* 한국어 문단 (영어 바로 아래 짝) */
-.note-body p.ko { color: #8ab4ce; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+.note-body p.ko { color: #5b7089; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
   border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
 .note-body p.ko:last-child { margin-bottom: 0; }
 .note-body ul.en { margin: 4px 0 4px 20px; }
-.note-body ul.ko { margin: 0 0 12px 20px; color: #8ab4ce; font-size: 13px; padding-left: 8px;
+.note-body ul.ko { margin: 0 0 12px 20px; color: #5b7089; font-size: 13px; padding-left: 8px;
   border-left: 2.5px solid rgba(140,180,200,0.25); }
 .note-body ul li { margin-bottom: 3px; }
 .note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
 .note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
-.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(20,184,166,0.06); }
 .note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
   margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
   object-fit: contain; }
@@ -246,8 +246,8 @@ header {
 .q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
 .q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
   display: flex; justify-content: space-between; align-items: center; }
-.q-num .q-marks { background: rgba(192,132,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
-.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
+.q-num .q-marks { background: rgba(109,93,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: var(--strong); line-height: 1.5; margin-bottom: 14px; }
 .q-answer-input {
   width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
   padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
@@ -262,21 +262,21 @@ header {
 
 .q-model {
   display: none;
-  margin-top: 14px; padding: 14px 14px; background: rgba(56,189,248,0.06);
-  border: 1.5px solid rgba(56,189,248,0.25); border-radius: 10px;
+  margin-top: 14px; padding: 14px 14px; background: rgba(20,184,166,0.06);
+  border: 1.5px solid rgba(20,184,166,0.25); border-radius: 10px;
 }
 .q-model.show { display: block; }
 .q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
 .q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
-.q-model .model-text b { color: #fff; }
+.q-model .model-text b { color: var(--strong); }
 .q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
   padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
 .q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
 .q-model .points ul { margin-left: 16px; }
 .q-model .points li { margin-bottom: 3px; line-height: 1.45; }
 .q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
-  color: #5d809a; font-size: 12px; line-height: 1.5;
-  background: rgba(255,255,255,0.02); border-radius: 4px; }
+  color: #51698a; font-size: 12px; line-height: 1.5;
+  background: rgba(36,59,107,0.05); border-radius: 4px; }
 
 .q-self-rate { display: none; margin-top: 12px; gap: 6px; }
 .q-self-rate.show { display: flex; }
@@ -1139,7 +1139,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8J Ecosystems 생태계 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
+<footer>8J Ecosystems 생태계 · science-vocab · <span style="opacity:.5">v20260527-164640</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Define an ECOSYSTEM and explain the difference between an ecosystem and a habitat.", "marks": 3, "sample_answer": "<p class='en'>An <b>ecosystem</b> is all the <b>living and non-living things</b> in an area and how they interact.</p><p class='ko'><b>생태계</b>는 한 지역의 모든 <b>생물과 무생물</b>, 그리고 그들이 어떻게 상호작용하는지를 말합니다.</p><p class='en'>A <b>habitat</b> is just the <b>specific place</b> where an organism lives.</p><p class='ko'><b>서식지</b>는 한 생물이 사는 <b>특정 장소</b>만을 가리킵니다.</p><p class='en'>So a habitat is part of an ecosystem — the ecosystem also includes the other organisms and the non-living surroundings.</p><p class='ko'>즉 서식지는 생태계의 일부 — 생태계는 다른 생물들과 무생물 환경까지 포함합니다.</p>", "mark_points": ["Definition of ecosystem (living + non-living + interactions)", "Definition of habitat (place where organism lives)", "Explains the difference clearly"], "ko_hint": "ecosystem 정의 + habitat 정의 + 차이 비교."}, {"q": "In a food chain or food web, what does an ARROW mean? Use an example.", "marks": 2, "sample_answer": "<p class='en'>An arrow shows the direction of <b>energy flow</b> — it always points from the prey to the predator (or from the food to the eater).</p><p class='ko'>화살표는 <b>에너지 흐름</b>의 방향을 가리킵니다 — 항상 먹잇감에서 포식자 쪽 (또는 음식에서 먹는 쪽).</p><p class='en'>For example: <b>grass → rabbit → fox</b> means the rabbit eats the grass and the fox eats the rabbit.</p><p class='ko'>예: <b>풀 → 토끼 → 여우</b>는 토끼가 풀을, 여우가 토끼를 먹는다는 뜻입니다.</p>", "mark_points": ["Arrow = direction of energy flow (prey → predator)", "Correct example using arrow direction"], "ko_hint": "화살표 의미 + 예시."}, {"q": "Explain THREE adaptations that help a cactus survive in the desert.", "marks": 3, "sample_answer": "<p class='en'>1) The <b>thick stem</b> stores water for use during dry periods.</p><p class='ko'>1) <b>두꺼운 줄기</b>는 건기에 쓸 물을 저장합니다.</p><p class='en'>2) <b>Spines</b> instead of leaves have a much smaller surface area, reducing water loss by evaporation.</p><p class='ko'>2) 잎 대신 <b>가시</b>는 표면적이 훨씬 작아 증발로 인한 수분 손실을 줄입니다.</p><p class='en'>3) <b>Deep or wide roots</b> help collect as much water as possible when it does rain.</p><p class='ko'>3) <b>깊거나 넓은 뿌리</b>로 비가 올 때 최대한 많은 물을 모읍니다.</p>", "mark_points": ["Thick stem stores water", "Spines reduce water loss", "Deep/wide roots collect water"], "ko_hint": "선인장 3가지 적응: 줄기·가시·뿌리."}, {"q": "Explain why INVASIVE species are often so successful when they are introduced to a new area, and give one harmful effect they have.", "marks": 3, "sample_answer": "<p class='en'>Invasive species are often successful because they have <b>no natural predators</b> in the new area to control their numbers.</p><p class='ko'>침입종은 새 지역에 개체수를 조절할 <b>천적이 없어서</b> 잘 퍼집니다.</p><p class='en'>They may also <b>compete strongly</b> with native species for food and habitat.</p><p class='ko'>또한 토착종과 먹이·서식지를 두고 <b>강하게 경쟁</b>합니다.</p><p class='en'>One harmful effect is that they cause native populations to decline — sometimes to extinction.</p><p class='ko'>해로운 영향 한 가지: 토착 개체군이 감소하고, 때로는 멸종에 이르게 합니다.</p>", "mark_points": ["No natural predators in the new area", "Out-compete native species (food/habitat)", "One harmful effect (decline, extinction, disease)"], "ko_hint": "성공 이유(천적 없음) + 해로운 영향 1개."}, {"q": "Explain how BIOACCUMULATION causes top predators (e.g. eagles) to be most affected by pesticides.", "marks": 4, "sample_answer": "<p class='en'>Pesticides do not break down in the body, so they <b>build up</b> over time in any organism that takes them in.</p><p class='ko'>농약은 몸 안에서 분해되지 않아 시간이 갈수록 생물 안에 <b>쌓입니다</b>.</p><p class='en'>At each <b>trophic level</b>, an animal eats many smaller organisms below it, so the toxin <b>concentrates</b> further.</p><p class='ko'>각 <b>영양 단계</b>에서 동물은 자기보다 많은 수의 하위 생물을 먹기 때문에 독소가 더 <b>농축</b>됩니다.</p><p class='en'>Example: small fish eats lots of plankton; big fish eats many small fish; an eagle eats many big fish.</p><p class='ko'>예: 작은 물고기는 많은 플랑크톤을, 큰 물고기는 많은 작은 물고기를, 독수리는 많은 큰 물고기를 먹습니다.</p><p class='en'>The eagle (the <b>top predator</b>) ends up with the highest concentration of pesticide, which can make it ill or unable to reproduce.</p><p class='ko'>독수리(<b>최상위 포식자</b>)는 가장 높은 농도의 농약을 받게 되어 병들거나 번식하지 못합니다.</p>", "mark_points": ["Pesticides don't break down (persist in body)", "Each trophic level adds to concentration", "Example showing magnification", "Top predator most affected"], "ko_hint": "분해 안 됨 + 단계마다 농축 + 예시 + 최상위 포식자가 가장 큰 영향."}, {"q": "Why was the insecticide DDT BANNED in most countries?", "marks": 3, "sample_answer": "<p class='en'>DDT was very effective at killing insects but it <b>bioaccumulated</b> in animals further up the food chain.</p><p class='ko'>DDT는 곤충 살상에 매우 효과적이었지만 먹이사슬 위쪽 동물에 <b>생물 농축</b>되었습니다.</p><p class='en'>In birds, the build-up of DDT caused their <b>eggshells to become too thin</b>, so the eggs cracked before hatching.</p><p class='ko'>새의 경우, DDT가 쌓이면서 <b>알껍데기가 너무 얇아져</b> 부화 전에 깨졌습니다.</p><p class='en'>Bird populations such as eagles and falcons crashed, so DDT was banned in the 1970s.</p><p class='ko'>독수리·송골매 같은 새 개체수가 급감하여 DDT는 1970년대에 금지되었습니다.</p>", "mark_points": ["DDT bioaccumulated in birds", "Caused eggshells to become too thin", "Bird populations declined → ban"], "ko_hint": "생물 농축 → 알껍데기 얇아짐 → 새 개체수 감소 → 금지."}];

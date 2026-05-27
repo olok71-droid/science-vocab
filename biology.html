@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0d1b2a">
+<meta name="theme-color" content="#d6f5ec">
 <title>8B Respiration 호흡</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0d1b2a;
-  --card: #162032;
-  --card2: #1c2d42;
-  --accent: #38bdf8;
-  --green: #4ade80;
-  --yellow: #fbbf24;
-  --pink: #f472b6;
-  --orange: #fb923c;
-  --purple: #c084fc;
-  --text: #e2f0ff;
-  --muted: #6b9ab8;
-  --border: rgba(56,189,248,0.12);
+  --bg: #e3f2ee;
+  --card: #ffffff;
+  --card2: #eef3fb;
+  --accent: #0d9488;
+  --green: #16a34a;
+  --yellow: #c97a06;
+  --pink: #db2777;
+  --orange: #ea580c;
+  --purple: #6d5dfc;
+  --text: #243b6b;
+  --strong: #16223f;
+  --muted: #6b7a99;
+  --border: rgba(36,59,107,0.12);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
@@ -27,14 +28,13 @@ body {
   color: var(--text);
   font-family: 'Nunito','Noto Sans KR',sans-serif;
   min-height: 100vh;
-  background-image:
-    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+  background-image: linear-gradient(150deg, #d6f5ec 0%, #dceff0 32%, #e4e9fb 70%, #e7e2fb 100%);
+  background-attachment: fixed;
 }
 
 /* HEADER */
 header {
-  background: rgba(22,32,50,0.95);
+  background: rgba(255,255,255,0.82);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 14px 18px;
@@ -43,26 +43,26 @@ header {
 }
 .header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
   display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
+  border-radius: 50%; background: rgba(20,184,166,0.08); text-decoration: none; flex-shrink:0; }
 .header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
 .header-text { flex: 1; min-width:0; }
-.header-title { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+.header-title { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
 /* Claude 묻기 / 채점 버튼 (헤더) */
 .header-actions { display: flex; gap: 6px; flex-shrink: 0; }
-.btn-claude { background: rgba(192,132,252,0.14); border: 1.5px solid rgba(192,132,252,0.4);
+.btn-claude { background: rgba(109,93,252,0.14); border: 1.5px solid rgba(109,93,252,0.4);
   color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   font-family: inherit; white-space: nowrap; cursor: pointer; }
-.btn-claude:hover { background: rgba(192,132,252,0.25); transform: scale(1.04); }
-.btn-claude.grade { background: rgba(96,196,248,0.12); border-color: rgba(96,196,248,0.4); color: #60c4f8; }
-.btn-claude.grade:hover { background: rgba(96,196,248,0.24); }
+.btn-claude:hover { background: rgba(109,93,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(13,148,136,0.12); border-color: rgba(13,148,136,0.4); color: #0d9488; }
+.btn-claude.grade:hover { background: rgba(13,148,136,0.24); }
 
 /* HERO */
 .hero { text-align: center; padding: 28px 20px 18px; }
-.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: var(--strong); letter-spacing: -0.5px; }
 .hero h1 span { color: var(--accent); }
 .hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
@@ -77,14 +77,14 @@ header {
 .eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
 .eq-label.aerobic { color: var(--green); }
 .eq-label.anaerobic { color: var(--orange); }
-.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+.eq-formula { font-size: 13px; font-weight: 700; color: var(--strong); line-height: 1.5; }
 
 /* TABS */
 .tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
 .tabs { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
 .tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
   font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
-.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
+.tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
 
@@ -101,11 +101,11 @@ header {
 .spell-stats b { color: var(--accent); }
 .spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
 .spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
-.spell-ko { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-ko { font-size: 22px; font-weight: 900; color: var(--strong); margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
 .spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
 .spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
 .spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
-.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: #fff;
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: var(--strong);
   padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
   letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
 .spell-input:focus { border-color: var(--accent); }
@@ -121,15 +121,15 @@ header {
   font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
 .spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
 .spell-btn-show:hover { background: rgba(251,191,36,0.22); }
-.spell-btn-next { background: rgba(56,189,248,0.14); border-color: rgba(56,189,248,0.4); color: var(--accent); }
-.spell-btn-next:hover { background: rgba(56,189,248,0.24); }
+.spell-btn-next { background: rgba(20,184,166,0.14); border-color: rgba(20,184,166,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(20,184,166,0.24); }
 .spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
   color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
 .spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
   color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
-.spell-answer-banner b { color: #fff; font-size: 16px; letter-spacing: 1px; }
+.spell-answer-banner b { color: var(--strong); font-size: 16px; letter-spacing: 1px; }
 
 /* SECTION HEADERS (vocab filter) */
 .filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
@@ -138,7 +138,7 @@ header {
 .filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
   border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
   font-family: inherit; transition: all 0.2s; white-space: nowrap; }
-.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+.filter-btn.active, .filter-btn:hover { background: rgba(20,184,166,0.12); border-color: var(--accent); color: var(--accent); }
 
 .section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
 .section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
@@ -150,16 +150,16 @@ header {
 /* VOCAB CARD */
 .vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
   display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
-.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
+.vcard:hover { border-color: rgba(20,184,166,0.3); transform: translateY(-1px); }
 .vcard-left { min-width: 0; }
 .vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
 .vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
-.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-organ  { background: rgba(20,184,166,0.12); color: var(--accent); }
 .cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
 .cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
-.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+.cat-gas    { background: rgba(109,93,252,0.12); color: var(--purple); }
 
-.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.vcard-en { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px; }
 .vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
 .vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
@@ -173,8 +173,8 @@ header {
 .vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
 .vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
 .dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.blind-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
@@ -186,13 +186,13 @@ header {
 .mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
 .mem-info{color:var(--muted);font-weight:800;}
 .mem-info b{color:#22c55e;}
-.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.mem-toggle-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
+.btn-speak { background: rgba(20,184,166,0.1); border: 1.5px solid rgba(20,184,166,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
-.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+.btn-speak:hover { background: rgba(20,184,166,0.2); transform: scale(1.05); }
 
 .btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
   color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
@@ -205,32 +205,32 @@ header {
 .chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
 .chapter-head .ch-icon { font-size: 22px; }
 .chapter-head .ch-text { flex: 1; min-width: 0; }
-.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: var(--strong); margin: 0; }
 .chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
-.btn-pdf { background: rgba(192,132,252,0.12); border: 1.5px solid rgba(192,132,252,0.35);
+.btn-pdf { background: rgba(109,93,252,0.12); border: 1.5px solid rgba(109,93,252,0.35);
   color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   flex-shrink: 0; font-family: inherit; white-space: nowrap; }
-.btn-pdf:hover { background: rgba(192,132,252,0.22); border-color: var(--purple); transform: scale(1.03); }
+.btn-pdf:hover { background: rgba(109,93,252,0.22); border-color: var(--purple); transform: scale(1.03); }
 .notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
-.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(20,184,166,0.06); }
 .note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
 .note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
 .note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
-.note-body b { color: #fff; }
+.note-body b { color: var(--strong); }
 /* 영어 문단 */
 .note-body p.en { color: var(--text); margin-bottom: 3px; }
 /* 한국어 문단 (영어 바로 아래 짝) */
-.note-body p.ko { color: #8ab4ce; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+.note-body p.ko { color: #5b7089; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
   border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
 .note-body p.ko:last-child { margin-bottom: 0; }
 .note-body ul.en { margin: 4px 0 4px 20px; }
-.note-body ul.ko { margin: 0 0 12px 20px; color: #8ab4ce; font-size: 13px; padding-left: 8px;
+.note-body ul.ko { margin: 0 0 12px 20px; color: #5b7089; font-size: 13px; padding-left: 8px;
   border-left: 2.5px solid rgba(140,180,200,0.25); }
 .note-body ul li { margin-bottom: 3px; }
 .note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
 .note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
-.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(20,184,166,0.06); }
 .note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
   margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
   object-fit: contain; }
@@ -246,8 +246,8 @@ header {
 .q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
 .q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
   display: flex; justify-content: space-between; align-items: center; }
-.q-num .q-marks { background: rgba(192,132,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
-.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
+.q-num .q-marks { background: rgba(109,93,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: var(--strong); line-height: 1.5; margin-bottom: 14px; }
 .q-answer-input {
   width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
   padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
@@ -262,21 +262,21 @@ header {
 
 .q-model {
   display: none;
-  margin-top: 14px; padding: 14px 14px; background: rgba(56,189,248,0.06);
-  border: 1.5px solid rgba(56,189,248,0.25); border-radius: 10px;
+  margin-top: 14px; padding: 14px 14px; background: rgba(20,184,166,0.06);
+  border: 1.5px solid rgba(20,184,166,0.25); border-radius: 10px;
 }
 .q-model.show { display: block; }
 .q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
 .q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
-.q-model .model-text b { color: #fff; }
+.q-model .model-text b { color: var(--strong); }
 .q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
   padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
 .q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
 .q-model .points ul { margin-left: 16px; }
 .q-model .points li { margin-bottom: 3px; line-height: 1.45; }
 .q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
-  color: #5d809a; font-size: 12px; line-height: 1.5;
-  background: rgba(255,255,255,0.02); border-radius: 4px; }
+  color: #51698a; font-size: 12px; line-height: 1.5;
+  background: rgba(36,59,107,0.05); border-radius: 4px; }
 
 .q-self-rate { display: none; margin-top: 12px; gap: 6px; }
 .q-self-rate.show { display: flex; }
@@ -1517,7 +1517,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8B Respiration 호흡 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
+<footer>8B Respiration 호흡 · science-vocab · <span style="opacity:.5">v20260527-164640</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Describe the path that an oxygen molecule takes from outside the body until it reaches the blood.", "marks": 4, "sample_answer": "<p class='en'>The oxygen molecule enters through the <b>nose</b> or <b>mouth</b>.</p><p class='ko'>산소 분자는 <b>코</b>나 <b>입</b>으로 들어옵니다.</p><p class='en'>It travels down the <b>trachea</b>, which is kept open by rings of cartilage.</p><p class='ko'>연골 고리로 열려 있는 <b>기관</b>을 따라 내려갑니다.</p><p class='en'>The trachea divides into two <b>bronchi</b>, then into smaller <b>bronchioles</b>.</p><p class='ko'>기관은 두 개의 <b>기관지</b>로 갈라지고, 더 작은 <b>세기관지</b>로 나뉩니다.</p><p class='en'>The bronchioles end in tiny air sacs called <b>alveoli</b>, where oxygen <b>diffuses</b> into the blood capillaries.</p><p class='ko'>세기관지는 작은 공기 주머니인 <b>폐포</b>로 끝나고, 거기서 산소는 모세혈관 안의 혈액으로 <b>확산</b>됩니다.</p>", "mark_points": ["Entry: nose / mouth (코 또는 입)", "Order: trachea → bronchi → bronchioles → alveoli (4개 관 순서)", "Diffusion at alveoli (폐포에서 확산)", "Mentions blood / capillaries (혈액·모세혈관 언급)"], "ko_hint": "입구 + 4관 순서 + 확산 + 혈액 — 모두 영어로!"}, {"q": "Explain the difference between BREATHING and RESPIRATION.", "marks": 3, "sample_answer": "<p class='en'><b>Breathing</b> (ventilation) is the <b>physical movement</b> of air into and out of the lungs, caused by the diaphragm and intercostal muscles.</p><p class='ko'><b>호흡 운동(breathing)</b>은 횡격막과 늑간근이 일으키는 공기의 <b>물리적 움직임</b>입니다.</p><p class='en'><b>Respiration</b> is a <b>chemical reaction</b> in cells where glucose reacts with oxygen to release energy.</p><p class='ko'><b>세포 호흡(respiration)</b>은 세포에서 포도당이 산소와 반응해 에너지를 내는 <b>화학 반응</b>입니다.</p><p class='en'>They are not the same — breathing is a movement, while respiration is a chemical process.</p><p class='ko'>둘은 같지 않습니다 — Breathing은 움직임, Respiration은 화학 과정입니다.</p>", "mark_points": ["Breathing = physical movement of air", "Respiration = chemical reaction in cells", "States clearly that they are different"], "ko_hint": "Breathing = 물리적 움직임 / Respiration = 화학 반응."}, {"q": "Describe what happens to the diaphragm and intercostal muscles when you BREATHE IN, and explain how this causes air to enter the lungs.", "marks": 4, "sample_answer": "<p class='en'>The <b>intercostal muscles contract</b> and pull the ribcage <b>up and out</b>.</p><p class='ko'><b>늑간근이 수축</b>해서 흉곽을 <b>위·바깥쪽</b>으로 끌어올립니다.</p><p class='en'>The <b>diaphragm contracts</b> and flattens, moving <b>downwards</b>.</p><p class='ko'><b>횡격막이 수축</b>해서 평평해지며 <b>아래로</b> 내려옵니다.</p><p class='en'>This <b>increases</b> the volume of the chest cavity and <b>decreases</b> the pressure inside the lungs.</p><p class='ko'>이렇게 하면 흉강 부피가 <b>커지고</b> 폐 안 압력이 <b>낮아집니다</b>.</p><p class='en'>Air flows <b>into</b> the lungs (from high outside pressure to low inside pressure).</p><p class='ko'>공기는 압력이 높은 바깥에서 낮은 폐 안쪽으로 <b>들어옵니다</b>.</p>", "mark_points": ["Intercostal muscles contract → ribcage up/out", "Diaphragm contracts and flattens (down)", "Volume increases / pressure decreases", "Air moves in due to pressure difference"], "ko_hint": "근육 수축 → 부피 ↑ → 압력 ↓ → 공기 in."}, {"q": "Explain THREE ways in which the alveoli are adapted for efficient gas exchange.", "marks": 3, "sample_answer": "<p class='en'>1) The walls are only <b>one cell thick</b>, giving a very short diffusion distance.</p><p class='ko'>1) 벽이 <b>세포 한 층</b>이라 확산 거리가 매우 짧습니다.</p><p class='en'>2) The alveoli give a very <b>large surface area</b> (about 600 million alveoli) so a lot of gas exchange can happen at once.</p><p class='ko'>2) 폐포가 약 6억 개라 <b>표면적이 매우 넓어</b> 많은 기체 교환이 동시에 가능합니다.</p><p class='en'>3) Each alveolus is surrounded by <b>many capillaries</b>, giving a good blood supply (also accept moist surface).</p><p class='ko'>3) 각 폐포는 <b>많은 모세혈관</b>으로 둘러싸여 혈액 공급이 충분합니다 (촉촉한 표면도 정답).</p>", "mark_points": ["Thin walls (one cell thick) → short diffusion distance", "Large surface area", "Many capillaries / good blood supply (or moist surface)"], "ko_hint": "얇은 벽, 넓은 표면적, 모세혈관 많음 (또는 촉촉한 표면) 중 3가지."}, {"q": "Compare the composition of inhaled and exhaled air, and explain WHY the differences exist.", "marks": 4, "sample_answer": "<p class='en'>Inhaled air has about <b>21% oxygen</b> and <b>0.04% carbon dioxide</b>.</p><p class='ko'>들숨에는 <b>산소 21%</b>, <b>이산화탄소 0.04%</b>가 있습니다.</p><p class='en'>Exhaled air has less oxygen (about <b>16%</b>) and much more carbon dioxide (about <b>4%</b>) and water vapour.</p><p class='ko'>날숨에는 산소가 줄어들고(<b>16%</b>), 이산화탄소(<b>4%</b>)와 수증기가 늘어납니다.</p><p class='en'>This is because cells use up oxygen and produce carbon dioxide and water during <b>aerobic respiration</b>.</p><p class='ko'>세포가 <b>유산소 호흡</b> 중 산소를 쓰고 이산화탄소·물을 만들기 때문입니다.</p><p class='en'>Nitrogen is the same (78%) because our body does not use it.</p><p class='ko'>질소는 우리 몸이 쓰지 않아 78%로 같습니다.</p>", "mark_points": ["Inhaled has more O₂", "Exhaled has more CO₂ (+ water vapour)", "Explanation: aerobic respiration", "Nitrogen stays the same"], "ko_hint": "들숨/날숨 가스 비율 + 세포호흡으로 설명."}, {"q": "Define DIFFUSION and explain its role in gas exchange at the alveoli.", "marks": 3, "sample_answer": "<p class='en'><b>Diffusion</b> is the net movement of particles from a region of <b>higher concentration</b> to a region of <b>lower concentration</b>.</p><p class='ko'><b>확산</b>은 입자가 농도가 <b>높은 곳에서 낮은 곳</b>으로 이동하는 것입니다.</p><p class='en'>At the alveoli, oxygen <b>diffuses from the alveolus into the blood</b> because oxygen is higher in the air.</p><p class='ko'>폐포에서 산소는 공기 쪽이 높으므로 <b>폐포 → 혈액</b>으로 확산됩니다.</p><p class='en'>Carbon dioxide <b>diffuses from the blood into the alveolus</b> because CO₂ is higher in the blood.</p><p class='ko'>이산화탄소는 혈액 쪽이 높으므로 <b>혈액 → 폐포</b>로 확산됩니다.</p>", "mark_points": ["Correct definition: high → low concentration", "O₂: alveolus → blood", "CO₂: blood → alveolus"], "ko_hint": "정의 + O₂·CO₂의 이동 방향."}, {"q": "Write the word equation for AEROBIC RESPIRATION and state where in the cell it takes place.", "marks": 2, "sample_answer": "<p class='en'>Word equation: <b>Glucose + Oxygen → Carbon dioxide + Water + Energy</b>.</p><p class='ko'>단어 방정식: <b>포도당 + 산소 → 이산화탄소 + 물 + 에너지</b>.</p><p class='en'>Aerobic respiration takes place inside the <b>mitochondria</b> of cells.</p><p class='ko'>유산소 호흡은 세포 안 <b>미토콘드리아</b>에서 일어납니다.</p>", "mark_points": ["Correct word equation (all four terms)", "Mentions mitochondria"], "ko_hint": "식 4개 단어 + 미토콘드리아."}, {"q": "Explain why ANAEROBIC respiration happens during intense exercise, and what oxygen debt is.", "marks": 4, "sample_answer": "<p class='en'>During <b>intense exercise</b>, muscle cells need energy very quickly.</p><p class='ko'><b>격렬한 운동</b> 때 근육 세포는 에너지가 매우 빨리 필요합니다.</p><p class='en'>The heart and lungs cannot deliver enough <b>oxygen</b> in time, so cells switch to <b>anaerobic respiration</b>.</p><p class='ko'>심장·폐가 <b>산소</b>를 충분히 빨리 보내지 못해 세포는 <b>무산소 호흡</b>으로 전환합니다.</p><p class='en'>This produces <b>lactic acid</b>, which builds up in the muscles and causes pain.</p><p class='ko'>이때 <b>젖산</b>이 만들어져 근육에 쌓이고 통증을 일으킵니다.</p><p class='en'>After exercise, extra oxygen (the <b>oxygen debt</b>) is needed to break down the lactic acid.</p><p class='ko'>운동 후에는 젖산을 분해할 추가 산소(<b>산소 빚</b>)가 필요합니다.</p>", "mark_points": ["O₂ demand > O₂ supply", "Produces lactic acid", "Oxygen debt = extra O₂ after exercise", "Debt is used to break down lactic acid"], "ko_hint": "산소 부족 → 무산소 호흡 → 젖산 → 산소 빚."}, {"q": "Describe the chemical test for carbon dioxide and the positive result.", "marks": 2, "sample_answer": "<p class='en'>Bubble the gas through <b>limewater</b>.</p><p class='ko'>기체를 <b>석회수</b>에 통과시킵니다.</p><p class='en'>If CO₂ is present, the limewater turns from <b>clear to cloudy (milky)</b>.</p><p class='ko'>이산화탄소가 있다면 석회수가 <b>투명 → 우유빛 흐림</b>으로 변합니다.</p>", "mark_points": ["Limewater used", "Clear → cloudy/milky change"], "ko_hint": "석회수 + 투명에서 우유빛으로."}, {"q": "Describe the structure of a RED BLOOD CELL and explain how each feature helps it carry oxygen.", "marks": 4, "sample_answer": "<p class='en'>Red blood cells are <b>biconcave</b> (dipped on both sides), giving a <b>large surface area</b> for fast oxygen diffusion.</p><p class='ko'>적혈구는 <b>양쪽이 오목</b>한 모양으로 산소 확산을 위한 <b>표면적이 큽니다</b>.</p><p class='en'>They have <b>no nucleus</b>, leaving more room inside to carry oxygen.</p><p class='ko'><b>핵이 없어서</b> 산소를 운반할 공간이 더 많습니다.</p><p class='en'>They are packed with <b>haemoglobin</b>, a red protein that binds to oxygen.</p><p class='ko'>산소와 결합하는 빨간 단백질 <b>헤모글로빈</b>이 가득 차 있습니다.</p><p class='en'>Haemoglobin binds oxygen in the lungs and releases it where it is needed.</p><p class='ko'>헤모글로빈은 폐에서 산소와 결합하고 필요한 곳에서 풀어줍니다.</p>", "mark_points": ["Biconcave shape → large surface area", "No nucleus → more space for oxygen", "Contains haemoglobin", "Haemoglobin binds and releases oxygen"], "ko_hint": "양쪽 오목 + 핵 없음 + 헤모글로빈 + 결합·방출."}, {"q": "Name the FOUR components of blood and briefly state the function of each.", "marks": 4, "sample_answer": "<p class='en'>1) <b>Plasma</b> — yellowish liquid that transports cells, glucose, CO₂ and wastes around the body.</p><p class='ko'>1) <b>혈장</b> — 노란 액체로 세포·당·이산화탄소·노폐물을 운반합니다.</p><p class='en'>2) <b>Red blood cells</b> — carry oxygen using haemoglobin.</p><p class='ko'>2) <b>적혈구</b> — 헤모글로빈으로 산소를 운반합니다.</p><p class='en'>3) <b>White blood cells</b> — fight pathogens and protect the body from disease.</p><p class='ko'>3) <b>백혈구</b> — 병원체와 싸워 몸을 보호합니다.</p><p class='en'>4) <b>Platelets</b> — help blood to clot and form scabs over wounds.</p><p class='ko'>4) <b>혈소판</b> — 혈액 응고를 돕고 상처에 딱지를 만듭니다.</p>", "mark_points": ["Plasma — transport", "Red blood cells — carry oxygen", "White blood cells — fight pathogens", "Platelets — clotting / scabs"], "ko_hint": "혈장·적혈구·백혈구·혈소판 + 각 기능."}, {"q": "Describe how PHAGOCYTES and LYMPHOCYTES work together to defend the body against pathogens.", "marks": 4, "sample_answer": "<p class='en'><b>Phagocytes</b> are white blood cells that <b>engulf and digest</b> pathogens — this is called <b>phagocytosis</b>.</p><p class='ko'><b>식세포</b>는 병원체를 <b>둘러싸 삼키고 분해</b>하는 백혈구입니다 — <b>식작용</b>이라 합니다.</p><p class='en'><b>Lymphocytes</b> produce <b>antibodies</b>, special proteins that stick to specific pathogens.</p><p class='ko'><b>림프구</b>는 특정 병원체에 붙는 <b>항체</b>(특수 단백질)를 만듭니다.</p><p class='en'>The antibodies <b>clump pathogens together</b> and mark them.</p><p class='ko'>항체는 병원체를 <b>뭉치게 하고</b> 표시합니다.</p><p class='en'>This makes it easier for phagocytes to find and destroy the pathogens.</p><p class='ko'>그래서 식세포가 병원체를 더 쉽게 찾아 파괴할 수 있습니다.</p>", "mark_points": ["Phagocytes engulf/destroy (phagocytosis)", "Lymphocytes produce antibodies", "Antibodies clump or mark pathogens", "Helps phagocytes find/destroy them"], "ko_hint": "식세포(직접 잡아먹음) + 림프구(항체로 표시) → 협력."}];

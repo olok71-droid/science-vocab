@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0d1b2a">
+<meta name="theme-color" content="#d6f5ec">
 <title>8C Solutions 용해와 용액</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0d1b2a;
-  --card: #162032;
-  --card2: #1c2d42;
-  --accent: #38bdf8;
-  --green: #4ade80;
-  --yellow: #fbbf24;
-  --pink: #f472b6;
-  --orange: #fb923c;
-  --purple: #c084fc;
-  --text: #e2f0ff;
-  --muted: #6b9ab8;
-  --border: rgba(56,189,248,0.12);
+  --bg: #e3f2ee;
+  --card: #ffffff;
+  --card2: #eef3fb;
+  --accent: #0d9488;
+  --green: #16a34a;
+  --yellow: #c97a06;
+  --pink: #db2777;
+  --orange: #ea580c;
+  --purple: #6d5dfc;
+  --text: #243b6b;
+  --strong: #16223f;
+  --muted: #6b7a99;
+  --border: rgba(36,59,107,0.12);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
@@ -27,14 +28,13 @@ body {
   color: var(--text);
   font-family: 'Nunito','Noto Sans KR',sans-serif;
   min-height: 100vh;
-  background-image:
-    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+  background-image: linear-gradient(150deg, #d6f5ec 0%, #dceff0 32%, #e4e9fb 70%, #e7e2fb 100%);
+  background-attachment: fixed;
 }
 
 /* HEADER */
 header {
-  background: rgba(22,32,50,0.95);
+  background: rgba(255,255,255,0.82);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 14px 18px;
@@ -43,26 +43,26 @@ header {
 }
 .header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
   display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
+  border-radius: 50%; background: rgba(20,184,166,0.08); text-decoration: none; flex-shrink:0; }
 .header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
 .header-text { flex: 1; min-width:0; }
-.header-title { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+.header-title { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
 /* Claude 묻기 / 채점 버튼 (헤더) */
 .header-actions { display: flex; gap: 6px; flex-shrink: 0; }
-.btn-claude { background: rgba(192,132,252,0.14); border: 1.5px solid rgba(192,132,252,0.4);
+.btn-claude { background: rgba(109,93,252,0.14); border: 1.5px solid rgba(109,93,252,0.4);
   color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   font-family: inherit; white-space: nowrap; cursor: pointer; }
-.btn-claude:hover { background: rgba(192,132,252,0.25); transform: scale(1.04); }
-.btn-claude.grade { background: rgba(96,196,248,0.12); border-color: rgba(96,196,248,0.4); color: #60c4f8; }
-.btn-claude.grade:hover { background: rgba(96,196,248,0.24); }
+.btn-claude:hover { background: rgba(109,93,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(13,148,136,0.12); border-color: rgba(13,148,136,0.4); color: #0d9488; }
+.btn-claude.grade:hover { background: rgba(13,148,136,0.24); }
 
 /* HERO */
 .hero { text-align: center; padding: 28px 20px 18px; }
-.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: var(--strong); letter-spacing: -0.5px; }
 .hero h1 span { color: var(--accent); }
 .hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
@@ -77,14 +77,14 @@ header {
 .eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
 .eq-label.aerobic { color: var(--green); }
 .eq-label.anaerobic { color: var(--orange); }
-.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+.eq-formula { font-size: 13px; font-weight: 700; color: var(--strong); line-height: 1.5; }
 
 /* TABS */
 .tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
 .tabs { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
 .tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
   font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
-.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
+.tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
 
@@ -101,11 +101,11 @@ header {
 .spell-stats b { color: var(--accent); }
 .spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
 .spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
-.spell-ko { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-ko { font-size: 22px; font-weight: 900; color: var(--strong); margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
 .spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
 .spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
 .spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
-.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: #fff;
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: var(--strong);
   padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
   letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
 .spell-input:focus { border-color: var(--accent); }
@@ -121,15 +121,15 @@ header {
   font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
 .spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
 .spell-btn-show:hover { background: rgba(251,191,36,0.22); }
-.spell-btn-next { background: rgba(56,189,248,0.14); border-color: rgba(56,189,248,0.4); color: var(--accent); }
-.spell-btn-next:hover { background: rgba(56,189,248,0.24); }
+.spell-btn-next { background: rgba(20,184,166,0.14); border-color: rgba(20,184,166,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(20,184,166,0.24); }
 .spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
   color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
 .spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
   color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
-.spell-answer-banner b { color: #fff; font-size: 16px; letter-spacing: 1px; }
+.spell-answer-banner b { color: var(--strong); font-size: 16px; letter-spacing: 1px; }
 
 /* SECTION HEADERS (vocab filter) */
 .filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
@@ -138,7 +138,7 @@ header {
 .filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
   border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
   font-family: inherit; transition: all 0.2s; white-space: nowrap; }
-.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+.filter-btn.active, .filter-btn:hover { background: rgba(20,184,166,0.12); border-color: var(--accent); color: var(--accent); }
 
 .section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
 .section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
@@ -150,16 +150,16 @@ header {
 /* VOCAB CARD */
 .vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
   display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
-.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
+.vcard:hover { border-color: rgba(20,184,166,0.3); transform: translateY(-1px); }
 .vcard-left { min-width: 0; }
 .vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
 .vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
-.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-organ  { background: rgba(20,184,166,0.12); color: var(--accent); }
 .cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
 .cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
-.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+.cat-gas    { background: rgba(109,93,252,0.12); color: var(--purple); }
 
-.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.vcard-en { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px; }
 .vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
 .vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
@@ -173,8 +173,8 @@ header {
 .vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
 .vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
 .dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.blind-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
@@ -186,13 +186,13 @@ header {
 .mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
 .mem-info{color:var(--muted);font-weight:800;}
 .mem-info b{color:#22c55e;}
-.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.mem-toggle-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
+.btn-speak { background: rgba(20,184,166,0.1); border: 1.5px solid rgba(20,184,166,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
-.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+.btn-speak:hover { background: rgba(20,184,166,0.2); transform: scale(1.05); }
 
 .btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
   color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
@@ -205,32 +205,32 @@ header {
 .chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
 .chapter-head .ch-icon { font-size: 22px; }
 .chapter-head .ch-text { flex: 1; min-width: 0; }
-.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: var(--strong); margin: 0; }
 .chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
-.btn-pdf { background: rgba(192,132,252,0.12); border: 1.5px solid rgba(192,132,252,0.35);
+.btn-pdf { background: rgba(109,93,252,0.12); border: 1.5px solid rgba(109,93,252,0.35);
   color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   flex-shrink: 0; font-family: inherit; white-space: nowrap; }
-.btn-pdf:hover { background: rgba(192,132,252,0.22); border-color: var(--purple); transform: scale(1.03); }
+.btn-pdf:hover { background: rgba(109,93,252,0.22); border-color: var(--purple); transform: scale(1.03); }
 .notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
-.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(20,184,166,0.06); }
 .note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
 .note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
 .note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
-.note-body b { color: #fff; }
+.note-body b { color: var(--strong); }
 /* 영어 문단 */
 .note-body p.en { color: var(--text); margin-bottom: 3px; }
 /* 한국어 문단 (영어 바로 아래 짝) */
-.note-body p.ko { color: #8ab4ce; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+.note-body p.ko { color: #5b7089; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
   border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
 .note-body p.ko:last-child { margin-bottom: 0; }
 .note-body ul.en { margin: 4px 0 4px 20px; }
-.note-body ul.ko { margin: 0 0 12px 20px; color: #8ab4ce; font-size: 13px; padding-left: 8px;
+.note-body ul.ko { margin: 0 0 12px 20px; color: #5b7089; font-size: 13px; padding-left: 8px;
   border-left: 2.5px solid rgba(140,180,200,0.25); }
 .note-body ul li { margin-bottom: 3px; }
 .note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
 .note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
-.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(20,184,166,0.06); }
 .note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
   margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
   object-fit: contain; }
@@ -246,8 +246,8 @@ header {
 .q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
 .q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
   display: flex; justify-content: space-between; align-items: center; }
-.q-num .q-marks { background: rgba(192,132,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
-.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
+.q-num .q-marks { background: rgba(109,93,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: var(--strong); line-height: 1.5; margin-bottom: 14px; }
 .q-answer-input {
   width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
   padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
@@ -262,21 +262,21 @@ header {
 
 .q-model {
   display: none;
-  margin-top: 14px; padding: 14px 14px; background: rgba(56,189,248,0.06);
-  border: 1.5px solid rgba(56,189,248,0.25); border-radius: 10px;
+  margin-top: 14px; padding: 14px 14px; background: rgba(20,184,166,0.06);
+  border: 1.5px solid rgba(20,184,166,0.25); border-radius: 10px;
 }
 .q-model.show { display: block; }
 .q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
 .q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
-.q-model .model-text b { color: #fff; }
+.q-model .model-text b { color: var(--strong); }
 .q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
   padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
 .q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
 .q-model .points ul { margin-left: 16px; }
 .q-model .points li { margin-bottom: 3px; line-height: 1.45; }
 .q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
-  color: #5d809a; font-size: 12px; line-height: 1.5;
-  background: rgba(255,255,255,0.02); border-radius: 4px; }
+  color: #51698a; font-size: 12px; line-height: 1.5;
+  background: rgba(36,59,107,0.05); border-radius: 4px; }
 
 .q-self-rate { display: none; margin-top: 12px; gap: 6px; }
 .q-self-rate.show { display: flex; }
@@ -1153,7 +1153,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8C Solutions 용해와 용액 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
+<footer>8C Solutions 용해와 용액 · science-vocab · <span style="opacity:.5">v20260527-164640</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Explain what happens to sugar particles when sugar dissolves in water. Why does the sugar 'disappear'?", "marks": 3, "sample_answer": "<p class='en'>The sugar particles <b>break up and spread out</b> evenly between the water particles.</p><p class='ko'>설탕 입자가 <b>흩어져서</b> 물 입자 사이에 골고루 퍼집니다.</p><p class='en'>The sugar does <b>not disappear</b> — it is still there, but each particle is too small to see.</p><p class='ko'>설탕은 <b>사라지는 게 아닙니다</b> — 그대로 있지만 각 입자가 너무 작아 보이지 않을 뿐입니다.</p><p class='en'>You can still taste the sweetness everywhere in the cup, which proves the sugar is still there.</p><p class='ko'>컵 어디서나 단맛이 나는 것이 설탕이 그대로 있다는 증거입니다.</p>", "mark_points": ["Particles spread out evenly through the solvent", "Sugar does NOT disappear (just spread out)", "Evidence (e.g. still tastes sweet)"], "ko_hint": "입자가 흩어진다 + 사라지지 않는다 + 증거(단맛)."}, {"q": "Define SOLUTE, SOLVENT and SOLUTION. Give an example for each.", "marks": 3, "sample_answer": "<p class='en'>The <b>solute</b> is the substance being dissolved — for example, <b>sugar</b>.</p><p class='ko'><b>용질(solute)</b>은 녹는 물질입니다 — 예: <b>설탕</b>.</p><p class='en'>The <b>solvent</b> is the liquid that dissolves the solute — for example, <b>water</b>.</p><p class='ko'><b>용매(solvent)</b>는 용질을 녹이는 액체입니다 — 예: <b>물</b>.</p><p class='en'>The <b>solution</b> is the mixture formed — for example, <b>sugar water</b>.</p><p class='ko'><b>용액(solution)</b>은 만들어진 혼합물입니다 — 예: <b>설탕물</b>.</p>", "mark_points": ["Solute = thing being dissolved (with example)", "Solvent = liquid doing the dissolving (with example)", "Solution = the mixture formed (with example)"], "ko_hint": "세 단어 정의 + 예시 각 1개씩."}, {"q": "A student dissolves 9 g of sugar in 146 g of water. What is the mass of the solution? Explain using the principle of CONSERVATION OF MASS.", "marks": 3, "sample_answer": "<p class='en'>The mass of the solution is <b>9 + 146 = 155 g</b>.</p><p class='ko'>용액의 질량은 <b>9 + 146 = 155g</b> 입니다.</p><p class='en'>Mass is <b>conserved</b> — no mass is lost during dissolving.</p><p class='ko'>질량은 <b>보존</b>됩니다 — 용해 중 질량이 사라지지 않습니다.</p><p class='en'>The sugar particles are still present in the solution, just spread out between the water particles.</p><p class='ko'>설탕 입자는 용액 안에 그대로 있고, 물 입자 사이에 흩어져 있을 뿐입니다.</p>", "mark_points": ["Correct answer: 155 g", "States mass is conserved", "Explains particles are still present, just spread out"], "ko_hint": "155g + 질량 보존 + 입자는 그대로 있음."}, {"q": "Explain the difference between DISSOLVING and MELTING.", "marks": 3, "sample_answer": "<p class='en'><b>Dissolving</b> is when a <b>solute spreads through a solvent</b> (a liquid). Two substances are needed.</p><p class='ko'><b>Dissolving(용해)</b>는 <b>용질이 용매(액체)에 흩어지는</b> 것입니다. 두 물질이 필요합니다.</p><p class='en'><b>Melting</b> is when a <b>solid changes to a liquid</b> because it is heated. Only one substance is involved.</p><p class='ko'><b>Melting(녹음·용융)</b>은 가열로 <b>고체가 액체로 상태 변화</b>하는 것입니다. 한 물질만 관여합니다.</p><p class='en'>Example: sugar in water = dissolving; ice → water = melting.</p><p class='ko'>예: 설탕이 물에 = dissolving; 얼음 → 물 = melting.</p>", "mark_points": ["Dissolving = solute spreads through solvent (2 substances)", "Melting = solid → liquid by heating (1 substance, state change)", "Clear example for each"], "ko_hint": "둘은 완전 다름! 정의 + 예시."}, {"q": "Use the particle model to explain the difference between a CONCENTRATED and a DILUTE solution.", "marks": 3, "sample_answer": "<p class='en'>In a <b>concentrated</b> solution, there are <b>many solute particles</b> in a given volume of solvent.</p><p class='ko'><b>진한(concentrated)</b> 용액에는 정해진 부피의 용매 안에 <b>많은 용질 입자</b>가 있습니다.</p><p class='en'>In a <b>dilute</b> solution, there are <b>fewer solute particles</b> in the same volume of solvent.</p><p class='ko'><b>묽은(dilute)</b> 용액에는 같은 부피의 용매 안에 <b>적은 용질 입자</b>가 있습니다.</p><p class='en'>If you drew them as particle diagrams (same-size boxes), the concentrated one would have many more dots inside.</p><p class='ko'>같은 크기 상자로 입자 그림을 그리면, 진한 용액에 점이 훨씬 많이 그려집니다.</p>", "mark_points": ["Concentrated = many solute particles in same volume", "Dilute = few solute particles in same volume", "Uses particle model / particle diagram comparison"], "ko_hint": "같은 부피 비교 + 입자 수 차이로 설명."}, {"q": "Describe TWO ways to make a dilute solution MORE concentrated.", "marks": 2, "sample_answer": "<p class='en'>1) Add <b>more solute</b> (e.g. more sugar) to the solution.</p><p class='ko'>1) 용액에 <b>용질을 더 넣습니다</b> (예: 설탕 추가).</p><p class='en'>2) <b>Evaporate</b> some of the solvent (e.g. heat the water so some turns to vapour).</p><p class='ko'>2) 용매 일부를 <b>증발시킵니다</b> (예: 물을 가열해 일부를 수증기로).</p>", "mark_points": ["Add more solute", "Evaporate the solvent"], "ko_hint": "용질 추가 또는 용매 증발."}, {"q": "What is meant by a SATURATED solution? Describe what happens if you add even more solute to a saturated solution.", "marks": 3, "sample_answer": "<p class='en'>A <b>saturated solution</b> is one that cannot dissolve <b>any more solute</b> at that temperature.</p><p class='ko'><b>포화 용액</b>은 그 온도에서 <b>더 이상 용질을 녹일 수 없는</b> 용액입니다.</p><p class='en'>If you add more solute, it will <b>not dissolve</b>.</p><p class='ko'>더 많은 용질을 넣어도 <b>녹지 않습니다</b>.</p><p class='en'>The extra solute will sink and sit at the <b>bottom of the container</b> as undissolved solid.</p><p class='ko'>여분의 용질은 <b>그릇 바닥에</b> 가라앉아 녹지 않은 고체로 남습니다.</p>", "mark_points": ["Defines saturated correctly (no more can dissolve)", "Extra solute does NOT dissolve", "Extra solute settles at the bottom"], "ko_hint": "정의 + 더 안 녹음 + 가라앉음."}, {"q": "Define SOLUBILITY, including its units.", "marks": 2, "sample_answer": "<p class='en'><b>Solubility</b> is the <b>maximum mass of solute</b> that can dissolve in a fixed amount of solvent at a particular temperature.</p><p class='ko'><b>용해도</b>는 특정 온도에서 일정한 용매에 녹을 수 있는 <b>용질의 최대 질량</b>입니다.</p><p class='en'>It is usually measured in <b>grams of solute per 100 g of water</b> (g/100g).</p><p class='ko'>보통 <b>물 100g당 녹는 용질의 g수</b>(g/100g)로 표시합니다.</p>", "mark_points": ["Max solute that can dissolve at a given temperature", "Units: grams per 100 g of water (or equivalent)"], "ko_hint": "정의 + 단위(g per 100 g water)."}, {"q": "Describe how to plan a fair test to investigate how the TYPE of solute affects the solubility in water. Name the independent, dependent and control variables.", "marks": 4, "sample_answer": "<p class='en'>The <b>independent variable</b> is the <b>type of solute</b> (e.g. sugar, salt, chalk).</p><p class='ko'><b>독립변수</b>는 <b>용질의 종류</b> (예: 설탕, 소금, 분필가루).</p><p class='en'>The <b>dependent variable</b> is the <b>amount of solute that dissolves</b> (e.g. number of spatulas).</p><p class='ko'><b>종속변수</b>는 <b>녹은 용질의 양</b> (예: 스푼 수).</p><p class='en'>The <b>control variables</b> include the volume of water, the temperature, the size of each spatula, and the stirring time.</p><p class='ko'><b>통제변수</b>: 물의 부피, 온도, 스푼 크기, 젓는 시간 등.</p><p class='en'>Method: use the same volume of water at the same temperature, add one spatula of solute at a time and stir, count how many dissolve before the solution becomes saturated.</p><p class='ko'>방법: 같은 온도·부피의 물에 용질을 한 스푼씩 넣고 저으면서 포화될 때까지 몇 스푼이 녹는지 셉니다.</p>", "mark_points": ["IV: type of solute", "DV: amount/spatulas that dissolve", "CVs: volume of water, temperature, spatula size, stirring (any 2)", "Sensible method description"], "ko_hint": "IV/DV/CV 3개 + 방법."}, {"q": "Explain how INCREASING TEMPERATURE affects the solubility of most solids in water. Use the particle model.", "marks": 3, "sample_answer": "<p class='en'>When the water is heated, water particles gain more <b>kinetic energy</b> and move faster.</p><p class='ko'>물을 가열하면 물 입자가 <b>운동 에너지</b>를 더 얻어 더 빨리 움직입니다.</p><p class='en'>Faster water particles can break up the solute particles more easily and spread them out.</p><p class='ko'>빠르게 움직이는 물 입자는 용질 입자를 더 쉽게 흩어 놓습니다.</p><p class='en'>So <b>more solute can dissolve</b> at higher temperatures — solubility increases.</p><p class='ko'>그래서 온도가 높을수록 <b>더 많은 용질이 녹습니다</b> — 용해도가 증가합니다.</p>", "mark_points": ["Higher temperature → more kinetic energy", "Particles move faster", "More solute dissolves / solubility increases"], "ko_hint": "운동에너지 ↑ → 입자 움직임 ↑ → 용해도 ↑."}];

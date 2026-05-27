@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0d1b2a">
+<meta name="theme-color" content="#d6f5ec">
 <title>8E Atoms & Particles 원자와 입자 운동</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0d1b2a;
-  --card: #162032;
-  --card2: #1c2d42;
-  --accent: #38bdf8;
-  --green: #4ade80;
-  --yellow: #fbbf24;
-  --pink: #f472b6;
-  --orange: #fb923c;
-  --purple: #c084fc;
-  --text: #e2f0ff;
-  --muted: #6b9ab8;
-  --border: rgba(56,189,248,0.12);
+  --bg: #e3f2ee;
+  --card: #ffffff;
+  --card2: #eef3fb;
+  --accent: #0d9488;
+  --green: #16a34a;
+  --yellow: #c97a06;
+  --pink: #db2777;
+  --orange: #ea580c;
+  --purple: #6d5dfc;
+  --text: #243b6b;
+  --strong: #16223f;
+  --muted: #6b7a99;
+  --border: rgba(36,59,107,0.12);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
@@ -27,14 +28,13 @@ body {
   color: var(--text);
   font-family: 'Nunito','Noto Sans KR',sans-serif;
   min-height: 100vh;
-  background-image:
-    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+  background-image: linear-gradient(150deg, #d6f5ec 0%, #dceff0 32%, #e4e9fb 70%, #e7e2fb 100%);
+  background-attachment: fixed;
 }
 
 /* HEADER */
 header {
-  background: rgba(22,32,50,0.95);
+  background: rgba(255,255,255,0.82);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 14px 18px;
@@ -43,26 +43,26 @@ header {
 }
 .header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
   display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
+  border-radius: 50%; background: rgba(20,184,166,0.08); text-decoration: none; flex-shrink:0; }
 .header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
 .header-text { flex: 1; min-width:0; }
-.header-title { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+.header-title { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
 /* Claude 묻기 / 채점 버튼 (헤더) */
 .header-actions { display: flex; gap: 6px; flex-shrink: 0; }
-.btn-claude { background: rgba(192,132,252,0.14); border: 1.5px solid rgba(192,132,252,0.4);
+.btn-claude { background: rgba(109,93,252,0.14); border: 1.5px solid rgba(109,93,252,0.4);
   color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   font-family: inherit; white-space: nowrap; cursor: pointer; }
-.btn-claude:hover { background: rgba(192,132,252,0.25); transform: scale(1.04); }
-.btn-claude.grade { background: rgba(96,196,248,0.12); border-color: rgba(96,196,248,0.4); color: #60c4f8; }
-.btn-claude.grade:hover { background: rgba(96,196,248,0.24); }
+.btn-claude:hover { background: rgba(109,93,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(13,148,136,0.12); border-color: rgba(13,148,136,0.4); color: #0d9488; }
+.btn-claude.grade:hover { background: rgba(13,148,136,0.24); }
 
 /* HERO */
 .hero { text-align: center; padding: 28px 20px 18px; }
-.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: var(--strong); letter-spacing: -0.5px; }
 .hero h1 span { color: var(--accent); }
 .hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
@@ -77,14 +77,14 @@ header {
 .eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
 .eq-label.aerobic { color: var(--green); }
 .eq-label.anaerobic { color: var(--orange); }
-.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+.eq-formula { font-size: 13px; font-weight: 700; color: var(--strong); line-height: 1.5; }
 
 /* TABS */
 .tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
 .tabs { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
 .tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
   font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
-.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
+.tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
 
@@ -101,11 +101,11 @@ header {
 .spell-stats b { color: var(--accent); }
 .spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
 .spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
-.spell-ko { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-ko { font-size: 22px; font-weight: 900; color: var(--strong); margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
 .spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
 .spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
 .spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
-.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: #fff;
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: var(--strong);
   padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
   letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
 .spell-input:focus { border-color: var(--accent); }
@@ -121,15 +121,15 @@ header {
   font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
 .spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
 .spell-btn-show:hover { background: rgba(251,191,36,0.22); }
-.spell-btn-next { background: rgba(56,189,248,0.14); border-color: rgba(56,189,248,0.4); color: var(--accent); }
-.spell-btn-next:hover { background: rgba(56,189,248,0.24); }
+.spell-btn-next { background: rgba(20,184,166,0.14); border-color: rgba(20,184,166,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(20,184,166,0.24); }
 .spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
   color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
 .spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
   color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
-.spell-answer-banner b { color: #fff; font-size: 16px; letter-spacing: 1px; }
+.spell-answer-banner b { color: var(--strong); font-size: 16px; letter-spacing: 1px; }
 
 /* SECTION HEADERS (vocab filter) */
 .filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
@@ -138,7 +138,7 @@ header {
 .filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
   border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
   font-family: inherit; transition: all 0.2s; white-space: nowrap; }
-.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+.filter-btn.active, .filter-btn:hover { background: rgba(20,184,166,0.12); border-color: var(--accent); color: var(--accent); }
 
 .section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
 .section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
@@ -150,16 +150,16 @@ header {
 /* VOCAB CARD */
 .vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
   display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
-.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
+.vcard:hover { border-color: rgba(20,184,166,0.3); transform: translateY(-1px); }
 .vcard-left { min-width: 0; }
 .vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
 .vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
-.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-organ  { background: rgba(20,184,166,0.12); color: var(--accent); }
 .cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
 .cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
-.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+.cat-gas    { background: rgba(109,93,252,0.12); color: var(--purple); }
 
-.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.vcard-en { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px; }
 .vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
 .vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
@@ -173,8 +173,8 @@ header {
 .vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
 .vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
 .dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.blind-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
@@ -186,13 +186,13 @@ header {
 .mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
 .mem-info{color:var(--muted);font-weight:800;}
 .mem-info b{color:#22c55e;}
-.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.mem-toggle-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
+.btn-speak { background: rgba(20,184,166,0.1); border: 1.5px solid rgba(20,184,166,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
-.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+.btn-speak:hover { background: rgba(20,184,166,0.2); transform: scale(1.05); }
 
 .btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
   color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
@@ -205,32 +205,32 @@ header {
 .chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
 .chapter-head .ch-icon { font-size: 22px; }
 .chapter-head .ch-text { flex: 1; min-width: 0; }
-.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: var(--strong); margin: 0; }
 .chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
-.btn-pdf { background: rgba(192,132,252,0.12); border: 1.5px solid rgba(192,132,252,0.35);
+.btn-pdf { background: rgba(109,93,252,0.12); border: 1.5px solid rgba(109,93,252,0.35);
   color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   flex-shrink: 0; font-family: inherit; white-space: nowrap; }
-.btn-pdf:hover { background: rgba(192,132,252,0.22); border-color: var(--purple); transform: scale(1.03); }
+.btn-pdf:hover { background: rgba(109,93,252,0.22); border-color: var(--purple); transform: scale(1.03); }
 .notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
-.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(20,184,166,0.06); }
 .note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
 .note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
 .note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
-.note-body b { color: #fff; }
+.note-body b { color: var(--strong); }
 /* 영어 문단 */
 .note-body p.en { color: var(--text); margin-bottom: 3px; }
 /* 한국어 문단 (영어 바로 아래 짝) */
-.note-body p.ko { color: #8ab4ce; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+.note-body p.ko { color: #5b7089; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
   border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
 .note-body p.ko:last-child { margin-bottom: 0; }
 .note-body ul.en { margin: 4px 0 4px 20px; }
-.note-body ul.ko { margin: 0 0 12px 20px; color: #8ab4ce; font-size: 13px; padding-left: 8px;
+.note-body ul.ko { margin: 0 0 12px 20px; color: #5b7089; font-size: 13px; padding-left: 8px;
   border-left: 2.5px solid rgba(140,180,200,0.25); }
 .note-body ul li { margin-bottom: 3px; }
 .note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
 .note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
-.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(20,184,166,0.06); }
 .note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
   margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
   object-fit: contain; }
@@ -246,8 +246,8 @@ header {
 .q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
 .q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
   display: flex; justify-content: space-between; align-items: center; }
-.q-num .q-marks { background: rgba(192,132,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
-.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
+.q-num .q-marks { background: rgba(109,93,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: var(--strong); line-height: 1.5; margin-bottom: 14px; }
 .q-answer-input {
   width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
   padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
@@ -262,21 +262,21 @@ header {
 
 .q-model {
   display: none;
-  margin-top: 14px; padding: 14px 14px; background: rgba(56,189,248,0.06);
-  border: 1.5px solid rgba(56,189,248,0.25); border-radius: 10px;
+  margin-top: 14px; padding: 14px 14px; background: rgba(20,184,166,0.06);
+  border: 1.5px solid rgba(20,184,166,0.25); border-radius: 10px;
 }
 .q-model.show { display: block; }
 .q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
 .q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
-.q-model .model-text b { color: #fff; }
+.q-model .model-text b { color: var(--strong); }
 .q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
   padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
 .q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
 .q-model .points ul { margin-left: 16px; }
 .q-model .points li { margin-bottom: 3px; line-height: 1.45; }
 .q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
-  color: #5d809a; font-size: 12px; line-height: 1.5;
-  background: rgba(255,255,255,0.02); border-radius: 4px; }
+  color: #51698a; font-size: 12px; line-height: 1.5;
+  background: rgba(36,59,107,0.05); border-radius: 4px; }
 
 .q-self-rate { display: none; margin-top: 12px; gap: 6px; }
 .q-self-rate.show { display: flex; }
@@ -1034,7 +1034,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8E Atoms & Particles 원자와 입자 운동 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
+<footer>8E Atoms & Particles 원자와 입자 운동 · science-vocab · <span style="opacity:.5">v20260527-164640</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Describe the three subatomic particles in an atom — including their charge, mass and location.", "marks": 3, "sample_answer": "<p class='en'>The <b>proton</b> has a <b>positive (+1)</b> charge, a mass of 1 and is found in the <b>nucleus</b>.</p><p class='ko'><b>양성자</b>는 <b>(+1)</b> 전하, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>neutron</b> has <b>no charge (0)</b>, a mass of 1 and is also in the <b>nucleus</b>.</p><p class='ko'><b>중성자</b>는 <b>전하 없음(0)</b>, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>electron</b> has a <b>negative (-1)</b> charge, almost zero mass, and orbits the nucleus in <b>electron shells</b>.</p><p class='ko'><b>전자</b>는 <b>(-1)</b> 전하, 질량 거의 0, <b>전자 껍질</b>을 따라 핵 주위를 돕니다.</p>", "mark_points": ["Proton: +1, mass 1, in nucleus", "Neutron: 0 charge, mass 1, in nucleus", "Electron: -1, mass ≈0, in shells"], "ko_hint": "3 입자 각각 — 전하 + 질량 + 위치."}, {"q": "An atom of carbon has 6 protons and 6 neutrons. State its atomic number and its mass number.", "marks": 2, "sample_answer": "<p class='en'>The <b>atomic number</b> equals the number of protons: <b>6</b>.</p><p class='ko'><b>원자번호</b>는 양성자 개수와 같으므로 <b>6</b>.</p><p class='en'>The <b>mass number</b> equals protons + neutrons: 6 + 6 = <b>12</b>.</p><p class='ko'><b>질량수</b>는 양성자+중성자이므로 6+6 = <b>12</b>.</p>", "mark_points": ["Atomic number = 6", "Mass number = 12"], "ko_hint": "원자번호 = 양성자 수, 질량수 = 양성자+중성자."}, {"q": "Why is an atom electrically NEUTRAL overall?", "marks": 2, "sample_answer": "<p class='en'>An atom has the <b>same number</b> of protons (+1 each) and electrons (-1 each).</p><p class='ko'>원자는 양성자(각 +1)와 전자(각 -1)의 <b>개수가 같습니다</b>.</p><p class='en'>The positive and negative charges cancel out, so the total charge is zero — the atom is neutral.</p><p class='ko'>양·음 전하가 상쇄되어 총 전하가 0 — 원자는 중성입니다.</p>", "mark_points": ["Equal numbers of protons (+) and electrons (-)", "Charges cancel → total charge = 0"], "ko_hint": "양성자=전자 개수 → 전하 상쇄."}, {"q": "Describe Rutherford's gold foil experiment and explain what it revealed about the structure of the atom.", "marks": 4, "sample_answer": "<p class='en'>Rutherford fired tiny <b>positive particles</b> (alpha particles) at a very thin sheet of <b>gold foil</b>.</p><p class='ko'>러더퍼드는 매우 얇은 <b>금박</b>에 작은 <b>양전하 입자</b>(알파 입자)들을 쏘았습니다.</p><p class='en'>Most particles passed <b>straight through</b>, but a few <b>bounced back</b> at large angles.</p><p class='ko'>대부분의 입자는 <b>곧장 통과</b>했지만, 몇 개는 큰 각도로 <b>튕겨 돌아왔습니다</b>.</p><p class='en'>This showed that the atom is <b>mostly empty space</b>, but contains a <b>tiny dense positive nucleus</b> in the centre.</p><p class='ko'>이것은 원자가 <b>대부분 빈 공간</b>이지만 중심에 <b>작고 밀도 높은 양전하 핵</b>이 있다는 것을 보여주었습니다.</p><p class='en'>The positive nucleus repelled the positive alpha particles, causing some to bounce back.</p><p class='ko'>양전하 핵이 양전하 알파 입자를 밀어내서 일부가 튕겨 돌아온 것입니다.</p>", "mark_points": ["Method: fired particles at thin gold foil", "Most passed through", "A few bounced back", "Conclusion: small dense positive nucleus + mostly empty space"], "ko_hint": "방법 + 관찰(대부분 통과, 일부 튕김) + 결론(핵 발견)."}, {"q": "Use the particle model to explain why GAS PRESSURE INCREASES when a gas in a sealed container is heated.", "marks": 4, "sample_answer": "<p class='en'>When the gas is heated, the particles gain <b>kinetic energy</b> and move faster.</p><p class='ko'>가열되면 기체 입자는 <b>운동 에너지</b>를 얻어 더 빠르게 움직입니다.</p><p class='en'>The particles collide with the container walls <b>more frequently</b>.</p><p class='ko'>입자가 용기 벽에 <b>더 자주</b> 부딪칩니다.</p><p class='en'>The collisions are also <b>more forceful</b> because the particles move faster.</p><p class='ko'>입자가 더 빠르므로 충돌이 <b>더 강력</b>합니다.</p><p class='en'>So the total force on the walls increases — meaning the <b>pressure increases</b>.</p><p class='ko'>벽에 가해지는 힘이 커지므로 <b>압력이 증가</b>합니다.</p>", "mark_points": ["Particles gain kinetic energy / move faster", "Collide with walls more frequently", "Collide with more force", "Pressure increases"], "ko_hint": "운동에너지↑ → 충돌 잦고 강해짐 → 압력↑."}, {"q": "Define DIFFUSION and explain why diffusion is faster at higher temperatures.", "marks": 3, "sample_answer": "<p class='en'><b>Diffusion</b> is the net movement of particles from a region of <b>high concentration</b> to a region of <b>low concentration</b>.</p><p class='ko'><b>확산</b>은 입자가 농도가 <b>높은 곳</b>에서 <b>낮은 곳</b>으로 이동하는 것입니다.</p><p class='en'>At higher temperatures, the particles have more <b>kinetic energy</b> and move faster.</p><p class='ko'>온도가 높을수록 입자는 <b>운동 에너지</b>가 커서 더 빠르게 움직입니다.</p><p class='en'>Faster-moving particles spread through the area more quickly, so diffusion happens faster.</p><p class='ko'>빠른 입자가 더 빨리 퍼지므로 확산도 빨라집니다.</p>", "mark_points": ["Defines diffusion correctly", "Higher temp → more kinetic energy", "Particles move faster → faster diffusion"], "ko_hint": "정의 + 운동에너지 + 빠르게 퍼짐."}];

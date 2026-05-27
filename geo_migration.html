@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0d1b2a">
+<meta name="theme-color" content="#d6f5ec">
 <title>Y8 Geography Migration 이주</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0d1b2a;
-  --card: #162032;
-  --card2: #1c2d42;
-  --accent: #38bdf8;
-  --green: #4ade80;
-  --yellow: #fbbf24;
-  --pink: #f472b6;
-  --orange: #fb923c;
-  --purple: #c084fc;
-  --text: #e2f0ff;
-  --muted: #6b9ab8;
-  --border: rgba(56,189,248,0.12);
+  --bg: #e3f2ee;
+  --card: #ffffff;
+  --card2: #eef3fb;
+  --accent: #0d9488;
+  --green: #16a34a;
+  --yellow: #c97a06;
+  --pink: #db2777;
+  --orange: #ea580c;
+  --purple: #6d5dfc;
+  --text: #243b6b;
+  --strong: #16223f;
+  --muted: #6b7a99;
+  --border: rgba(36,59,107,0.12);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
@@ -27,14 +28,13 @@ body {
   color: var(--text);
   font-family: 'Nunito','Noto Sans KR',sans-serif;
   min-height: 100vh;
-  background-image:
-    radial-gradient(ellipse at 20% 10%, rgba(56,189,248,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 90%, rgba(192,132,252,0.05) 0%, transparent 50%);
+  background-image: linear-gradient(150deg, #d6f5ec 0%, #dceff0 32%, #e4e9fb 70%, #e7e2fb 100%);
+  background-attachment: fixed;
 }
 
 /* HEADER */
 header {
-  background: rgba(22,32,50,0.95);
+  background: rgba(255,255,255,0.82);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 14px 18px;
@@ -43,26 +43,26 @@ header {
 }
 .header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
   display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 50%; background: rgba(56,189,248,0.08); text-decoration: none; flex-shrink:0; }
+  border-radius: 50%; background: rgba(20,184,166,0.08); text-decoration: none; flex-shrink:0; }
 .header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
 .header-text { flex: 1; min-width:0; }
-.header-title { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px;
+.header-title { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
 
 /* Claude 묻기 / 채점 버튼 (헤더) */
 .header-actions { display: flex; gap: 6px; flex-shrink: 0; }
-.btn-claude { background: rgba(192,132,252,0.14); border: 1.5px solid rgba(192,132,252,0.4);
+.btn-claude { background: rgba(109,93,252,0.14); border: 1.5px solid rgba(109,93,252,0.4);
   color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   font-family: inherit; white-space: nowrap; cursor: pointer; }
-.btn-claude:hover { background: rgba(192,132,252,0.25); transform: scale(1.04); }
-.btn-claude.grade { background: rgba(96,196,248,0.12); border-color: rgba(96,196,248,0.4); color: #60c4f8; }
-.btn-claude.grade:hover { background: rgba(96,196,248,0.24); }
+.btn-claude:hover { background: rgba(109,93,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(13,148,136,0.12); border-color: rgba(13,148,136,0.4); color: #0d9488; }
+.btn-claude.grade:hover { background: rgba(13,148,136,0.24); }
 
 /* HERO */
 .hero { text-align: center; padding: 28px 20px 18px; }
-.hero h1 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: var(--strong); letter-spacing: -0.5px; }
 .hero h1 span { color: var(--accent); }
 .hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
@@ -77,14 +77,14 @@ header {
 .eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
 .eq-label.aerobic { color: var(--green); }
 .eq-label.anaerobic { color: var(--orange); }
-.eq-formula { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.5; }
+.eq-formula { font-size: 13px; font-weight: 700; color: var(--strong); line-height: 1.5; }
 
 /* TABS */
 .tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
 .tabs { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
 .tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
   font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
-.tab-btn.active { background: rgba(56,189,248,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(56,189,248,0.3); }
+.tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
 
@@ -101,11 +101,11 @@ header {
 .spell-stats b { color: var(--accent); }
 .spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
 .spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
-.spell-ko { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-ko { font-size: 22px; font-weight: 900; color: var(--strong); margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
 .spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
 .spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
 .spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
-.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: #fff;
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: var(--strong);
   padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
   letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
 .spell-input:focus { border-color: var(--accent); }
@@ -121,15 +121,15 @@ header {
   font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
 .spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
 .spell-btn-show:hover { background: rgba(251,191,36,0.22); }
-.spell-btn-next { background: rgba(56,189,248,0.14); border-color: rgba(56,189,248,0.4); color: var(--accent); }
-.spell-btn-next:hover { background: rgba(56,189,248,0.24); }
+.spell-btn-next { background: rgba(20,184,166,0.14); border-color: rgba(20,184,166,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(20,184,166,0.24); }
 .spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
   color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
 .spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
   color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
   text-align: center; margin-bottom: 12px; }
-.spell-answer-banner b { color: #fff; font-size: 16px; letter-spacing: 1px; }
+.spell-answer-banner b { color: var(--strong); font-size: 16px; letter-spacing: 1px; }
 
 /* SECTION HEADERS (vocab filter) */
 .filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
@@ -138,7 +138,7 @@ header {
 .filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
   border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
   font-family: inherit; transition: all 0.2s; white-space: nowrap; }
-.filter-btn.active, .filter-btn:hover { background: rgba(56,189,248,0.12); border-color: var(--accent); color: var(--accent); }
+.filter-btn.active, .filter-btn:hover { background: rgba(20,184,166,0.12); border-color: var(--accent); color: var(--accent); }
 
 .section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
 .section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
@@ -150,16 +150,16 @@ header {
 /* VOCAB CARD */
 .vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
   display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
-.vcard:hover { border-color: rgba(56,189,248,0.3); transform: translateY(-1px); }
+.vcard:hover { border-color: rgba(20,184,166,0.3); transform: translateY(-1px); }
 .vcard-left { min-width: 0; }
 .vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
 .vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
-.cat-organ  { background: rgba(56,189,248,0.12); color: var(--accent); }
+.cat-organ  { background: rgba(20,184,166,0.12); color: var(--accent); }
 .cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
 .cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
-.cat-gas    { background: rgba(192,132,252,0.12); color: var(--purple); }
+.cat-gas    { background: rgba(109,93,252,0.12); color: var(--purple); }
 
-.vcard-en { font-size: 16px; font-weight: 900; color: #fff; letter-spacing: -0.3px; }
+.vcard-en { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px; }
 .vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
 .vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
@@ -173,8 +173,8 @@ header {
 .vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
 .vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
 .dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.blind-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
@@ -186,13 +186,13 @@ header {
 .mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
 .mem-info{color:var(--muted);font-weight:800;}
 .mem-info b{color:#22c55e;}
-.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
-.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+.mem-toggle-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-.btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
+.btn-speak { background: rgba(20,184,166,0.1); border: 1.5px solid rgba(20,184,166,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
-.btn-speak:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
+.btn-speak:hover { background: rgba(20,184,166,0.2); transform: scale(1.05); }
 
 .btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
   color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
@@ -205,32 +205,32 @@ header {
 .chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
 .chapter-head .ch-icon { font-size: 22px; }
 .chapter-head .ch-text { flex: 1; min-width: 0; }
-.chapter-head h2 { font-size: 15px; font-weight: 900; color: #fff; margin: 0; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: var(--strong); margin: 0; }
 .chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
-.btn-pdf { background: rgba(192,132,252,0.12); border: 1.5px solid rgba(192,132,252,0.35);
+.btn-pdf { background: rgba(109,93,252,0.12); border: 1.5px solid rgba(109,93,252,0.35);
   color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
   flex-shrink: 0; font-family: inherit; white-space: nowrap; }
-.btn-pdf:hover { background: rgba(192,132,252,0.22); border-color: var(--purple); transform: scale(1.03); }
+.btn-pdf:hover { background: rgba(109,93,252,0.22); border-color: var(--purple); transform: scale(1.03); }
 .notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
-.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(56,189,248,0.06); }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(20,184,166,0.06); }
 .note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
 .note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
 .note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
-.note-body b { color: #fff; }
+.note-body b { color: var(--strong); }
 /* 영어 문단 */
 .note-body p.en { color: var(--text); margin-bottom: 3px; }
 /* 한국어 문단 (영어 바로 아래 짝) */
-.note-body p.ko { color: #8ab4ce; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+.note-body p.ko { color: #5b7089; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
   border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
 .note-body p.ko:last-child { margin-bottom: 0; }
 .note-body ul.en { margin: 4px 0 4px 20px; }
-.note-body ul.ko { margin: 0 0 12px 20px; color: #8ab4ce; font-size: 13px; padding-left: 8px;
+.note-body ul.ko { margin: 0 0 12px 20px; color: #5b7089; font-size: 13px; padding-left: 8px;
   border-left: 2.5px solid rgba(140,180,200,0.25); }
 .note-body ul li { margin-bottom: 3px; }
 .note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
 .note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
-.note-body th { color: var(--accent); font-weight: 800; background: rgba(56,189,248,0.06); }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(20,184,166,0.06); }
 .note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
   margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
   object-fit: contain; }
@@ -246,8 +246,8 @@ header {
 .q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
 .q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
   display: flex; justify-content: space-between; align-items: center; }
-.q-num .q-marks { background: rgba(192,132,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
-.q-text { font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 14px; }
+.q-num .q-marks { background: rgba(109,93,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: var(--strong); line-height: 1.5; margin-bottom: 14px; }
 .q-answer-input {
   width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
   padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
@@ -262,21 +262,21 @@ header {
 
 .q-model {
   display: none;
-  margin-top: 14px; padding: 14px 14px; background: rgba(56,189,248,0.06);
-  border: 1.5px solid rgba(56,189,248,0.25); border-radius: 10px;
+  margin-top: 14px; padding: 14px 14px; background: rgba(20,184,166,0.06);
+  border: 1.5px solid rgba(20,184,166,0.25); border-radius: 10px;
 }
 .q-model.show { display: block; }
 .q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
 .q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
-.q-model .model-text b { color: #fff; }
+.q-model .model-text b { color: var(--strong); }
 .q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
   padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
 .q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
 .q-model .points ul { margin-left: 16px; }
 .q-model .points li { margin-bottom: 3px; line-height: 1.45; }
 .q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
-  color: #5d809a; font-size: 12px; line-height: 1.5;
-  background: rgba(255,255,255,0.02); border-radius: 4px; }
+  color: #51698a; font-size: 12px; line-height: 1.5;
+  background: rgba(36,59,107,0.05); border-radius: 4px; }
 
 .q-self-rate { display: none; margin-top: 12px; gap: 6px; }
 .q-self-rate.show { display: flex; }
@@ -1161,7 +1161,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Y8 Geography Migration 이주 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
+<footer>Y8 Geography Migration 이주 · science-vocab · <span style="opacity:.5">v20260527-164640</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Explain TWO PUSH factors and TWO PULL factors in the Mexico → USA case study (Enrique Canchola, Lesson 6).", "marks": 4, "sample_answer": "<p class='en'><b>Push factors (from Mexico):</b></p><p class='ko'><b>밀어내는 요인 (멕시코에서):</b></p><p class='en'>1. Very low wages — only <b>$2 per hour</b> in Mexico.</p><p class='ko'>1. 매우 낮은 임금 — 멕시코 시급 <b>$2</b>.</p><p class='en'>2. Rising unemployment in Zacatecas + 5% of Mexico's population is undernourished.</p><p class='ko'>2. 사카테카스 실업률 상승 + 멕시코 인구 5% 영양 부족.</p><p class='en'><b>Pull factors (to USA):</b></p><p class='ko'><b>끌어당기는 요인 (미국으로):</b></p><p class='en'>1. Higher wages — <b>$8 per hour</b> in California (4× more).</p><p class='ko'>1. 높은 임금 — 캘리포니아 시급 <b>$8</b> (4배).</p><p class='en'>2. Better access to <b>healthcare and education</b> (US government spends more) and ability to <b>send remittances</b> home.</p><p class='ko'>2. <b>의료·교육</b> 접근성 좋음 (미국 정부 지출 더 많음) + 고향에 <b>송금</b> 가능.</p>", "mark_points": ["Push: low wage ($2/hour Mexico)", "Push: unemployment / undernourishment", "Pull: higher wage ($8/hour California)", "Pull: better healthcare / education / remittances"], "ko_hint": "Push 2개 + Pull 2개. 숫자 인용 가산."}, {"q": "Decide who Malaysia should allow in and JUSTIFY your choice using evidence from Lesson 7 case studies (Marek/Anna, Nayeem/Ushma, Mustafa/Modqtar, Claudine). Use PEEL.", "marks": 5, "sample_answer": "<p class='en'><b>P:</b> Malaysia should prioritise allowing in <b>Nayeem and Ushma</b> (the Afghan asylum-seeking family) and <b>Claudine</b> (the French skilled worker).</p><p class='ko'><b>P:</b> 말레이시아는 <b>Nayeem과 Ushma</b>(아프간 망명 가족)와 <b>Claudine</b>(프랑스 기술 인력)을 우선 받아야 합니다.</p><p class='en'><b>E:</b> Nayeem and Ushma are a <b>doctor and a trained nurse</b> fleeing the Taliban; their children are at risk of losing education. Claudine is a <b>computer programmer</b> working for a global company in Kuala Lumpur.</p><p class='ko'><b>E:</b> Nayeem은 <b>의사</b>, Ushma는 <b>훈련된 간호사</b>, 탈레반을 피해 망명; 자녀들이 교육 박탈 위기. Claudine은 쿠알라룸푸르의 글로벌 회사에서 일하는 <b>컴퓨터 프로그래머</b>.</p><p class='en'><b>E (explain):</b> The Afghan family <b>needs protection</b> (asylum is a human right) and their medical skills would benefit Malaysia's healthcare system. Claudine brings <b>economic value</b> and contributes to Malaysia's modern, international workforce.</p><p class='ko'><b>E (설명):</b> 아프간 가족은 <b>보호가 필요</b> (망명은 인권), 의료 기술은 말레이시아 의료에 도움. Claudine은 <b>경제적 가치</b>와 국제적 노동력에 기여.</p><p class='en'><b>L:</b> This balances both <b>humanitarian need</b> and <b>economic benefit</b> — two strong reasons why Malaysia should welcome them.</p><p class='ko'><b>L:</b> 이는 <b>인도적 필요</b>와 <b>경제적 이익</b>의 균형 — 말레이시아가 받아들여야 할 두 가지 강력한 이유.</p>", "mark_points": ["Clear choice (named case studies)", "Evidence from text (doctor/nurse/programmer)", "Explanation of WHY (asylum / skills)", "Link / conclusion that balances reasons", "Uses PEEL structure"], "ko_hint": "선택 + 텍스트 근거 + 이유 + PEEL 구조."}, {"q": "Explain TWO advantages and TWO disadvantages of China's One Child Policy (use statements from Lesson 9-2 worksheet).", "marks": 4, "sample_answer": "<p class='en'><b>Advantages (A):</b></p><p class='ko'><b>장점 (A):</b></p><p class='en'>1. Population growth slowed → '<b>more food and jobs for the population</b>'. About 400 million fewer people were born.</p><p class='ko'>1. 인구 증가 둔화 → '<b>인구를 위한 더 많은 음식과 일자리</b>'. 약 4억 명 덜 태어남.</p><p class='en'>2. '<b>Higher wages, better schools and health care</b>' as resources spread across fewer people.</p><p class='ko'>2. 적은 인구에 자원이 분배되어 '<b>더 높은 임금, 더 나은 학교와 의료</b>'.</p><p class='en'><b>Disadvantages (D):</b></p><p class='ko'><b>단점 (D):</b></p><p class='en'>1. '<b>Distorted gender balance</b>' — about 60 million more men than women in China.</p><p class='ko'>1. '<b>왜곡된 성비</b>' — 중국에 남성이 여성보다 약 6000만 명 더 많음.</p><p class='en'>2. '<b>Women forced to have abortions of children up to 9 months</b>' / '<b>Private lives were controlled by officers</b>' — serious human rights issues.</p><p class='ko'>2. '<b>임신 9개월까지의 강제 낙태</b>' / '<b>공무원에 의한 사생활 통제</b>' — 심각한 인권 문제.</p>", "mark_points": ["Advantage 1: population growth slowed / more food", "Advantage 2: higher wages / better healthcare / 400 million fewer people", "Disadvantage 1: distorted gender balance / 60 million more men", "Disadvantage 2: forced abortions / human rights violations"], "ko_hint": "장점 2 + 단점 2, Lesson 9-2 진술 인용."}, {"q": "Explain the DIFFERENCE between OVERPOPULATION and OVERCONSUMPTION using examples (from Lesson 10).", "marks": 4, "sample_answer": "<p class='en'><b>Overpopulation</b> means '<b>more people than the Earth can support</b>'. Effects include less food, more waste, and overcrowding in cities.</p><p class='ko'><b>과인구</b>는 '<b>지구가 지탱할 수 있는 것보다 많은 사람</b>'을 의미. 결과: 음식 부족, 쓰레기 증가, 도시 과밀.</p><p class='en'><b>Overconsumption</b> means '<b>using too many resources</b>' (water, energy). Effects include <b>climate change</b> and <b>loss of nature</b> (habitats and species disappearing).</p><p class='ko'><b>과소비</b>는 '<b>너무 많은 자원 사용</b>' (물·에너지). 결과: <b>기후 변화</b>와 <b>자연 손실</b> (서식지·종 소실).</p><p class='en'>The key difference: <b>overpopulation focuses on the NUMBER of people</b>, while <b>overconsumption focuses on HOW MUCH each person uses</b>. A rich country with fewer people can still cause more environmental damage than a poor country with more people, because of overconsumption.</p><p class='ko'>핵심 차이: <b>과인구는 사람의 수</b>에 초점, <b>과소비는 각 사람이 얼마나 쓰는지</b>에 초점. 적은 인구의 부유한 나라가 많은 인구의 가난한 나라보다 더 큰 환경 피해를 일으킬 수 있음 (과소비 때문).</p>", "mark_points": ["Overpopulation = too many people for the Earth", "Effects of overpopulation (less food / more waste / overcrowding)", "Overconsumption = using too many resources per person", "Effects of overconsumption (climate change / habitat loss)"], "ko_hint": "두 정의 + 각 효과 + 핵심 차이 (수 vs 1인당 사용량)."}, {"q": "Lesson 9 video quiz (Q3): 'What UNINTENDED CONSEQUENCE has arisen from the one-child policy in China?' (a) Increased birth rates (b) More women than men (c) A shrinking workforce (d) Decreased literacy rates", "marks": 1, "sample_answer": "<p class='en'>Answer: <b>(c) A shrinking workforce</b>.</p><p class='ko'>정답: <b>(c) 노동력 축소</b>.</p><p class='en'>Explanation: Decades of one-child families means there are now fewer young adults entering work, while the elderly population grows. This is the opposite of what the policy intended (which was to manage population).</p><p class='ko'>설명: 수십 년간 한 자녀 가정으로 지금 일터에 들어오는 젊은이가 줄고 노인 인구는 증가. 정책 의도(인구 관리)와 반대.</p>", "mark_points": ["(c) A shrinking workforce"], "ko_hint": "정답 (c). 의도하지 않은 결과 = 노동력 축소."}, {"q": "List FOUR things you (a young person) can do to help reduce overpopulation OR overconsumption problems (from Lesson 10).", "marks": 4, "sample_answer": "<p class='en'>From Lesson 10 'What We Can Do':</p><p class='ko'>Lesson 10의 '우리가 할 수 있는 것':</p><p class='en'>1. <b>Reduce, Reuse, Recycle</b> — cut down on waste and use things again.</p><p class='ko'>1. <b>줄이고·재사용·재활용</b> — 쓰레기를 줄이고 재사용.</p><p class='en'>2. <b>Save Energy</b> — turn off lights and unplug devices when not in use.</p><p class='ko'>2. <b>에너지 절약</b> — 사용하지 않을 때 전등 끄고 플러그 뽑기.</p><p class='en'>3. <b>Use Less Water</b> — take shorter showers and fix leaks.</p><p class='ko'>3. <b>물 적게 쓰기</b> — 짧은 샤워와 누수 수리.</p><p class='en'>4. <b>Educate Others</b> — talk to friends and family about these issues so more people act.</p><p class='ko'>4. <b>다른 사람 교육</b> — 친구·가족과 이 문제에 대해 이야기.</p>", "mark_points": ["Reduce/Reuse/Recycle", "Save energy (turn off lights / unplug)", "Use less water (short showers / fix leaks)", "Educate others (talk to friends/family)"], "ko_hint": "4가지 Lesson 10 그대로."}];
