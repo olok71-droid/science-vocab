@@ -178,6 +178,16 @@ header {
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
 
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
@@ -329,6 +339,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -350,6 +365,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Speed")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -362,6 +378,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Distance")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -374,6 +391,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Time")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -386,6 +404,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Velocity")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -398,6 +417,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Metres per second (m/s)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -410,6 +430,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Kilometres per hour (km/h)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -425,6 +446,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Average speed")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -437,6 +459,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Instantaneous speed")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -449,6 +472,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Constant speed")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -461,6 +485,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Stationary")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -473,6 +498,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Acceleration")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -485,6 +511,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Deceleration")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -500,6 +527,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Distance-time graph")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -512,6 +540,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Gradient")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -524,6 +553,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Horizontal line")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -536,6 +566,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Curve")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -781,11 +812,12 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8P Speed & Motion 속도와 운동 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
+<footer>8P Speed & Motion 속도와 운동 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Write the equation for SPEED and state two common units.", "marks": 2, "sample_answer": "<p class='en'>Equation: <b>Speed = Distance ÷ Time</b>.</p><p class='ko'>공식: <b>속도 = 거리 ÷ 시간</b>.</p><p class='en'>Common units: <b>metres per second (m/s)</b> and <b>kilometres per hour (km/h)</b>.</p><p class='ko'>흔한 단위: <b>m/s</b>와 <b>km/h</b>.</p>", "mark_points": ["Speed = distance ÷ time", "Two valid units"], "ko_hint": "공식 + 단위 2개."}, {"q": "A runner travels 400 metres in 50 seconds. Calculate their average speed.", "marks": 2, "sample_answer": "<p class='en'>Speed = Distance ÷ Time = 400 ÷ 50 = <b>8 m/s</b>.</p><p class='ko'>속도 = 거리 ÷ 시간 = 400 ÷ 50 = <b>8 m/s</b>.</p>", "mark_points": ["Correct equation used", "Correct answer: 8 m/s (with unit)"], "ko_hint": "단위까지 적기 (8 m/s)."}, {"q": "Explain the difference between AVERAGE speed and INSTANTANEOUS speed.", "marks": 2, "sample_answer": "<p class='en'><b>Average speed</b> is the total distance travelled divided by the total time taken over a whole journey.</p><p class='ko'><b>평균 속도</b>는 여행 전체에서의 총 거리 ÷ 총 시간입니다.</p><p class='en'><b>Instantaneous speed</b> is the speed at a single moment in time, e.g. what a car's speedometer shows right now.</p><p class='ko'><b>순간 속도</b>는 어느 한 순간의 속도입니다 (예: 자동차 속도계가 지금 보여주는 값).</p>", "mark_points": ["Average = total distance / total time", "Instantaneous = speed at one moment"], "ko_hint": "평균(전체) vs 순간(한 순간)."}, {"q": "Describe what each of these features on a DISTANCE-TIME GRAPH tells you about the motion: (a) a flat (horizontal) line, (b) a steep straight line, (c) a curved line.", "marks": 3, "sample_answer": "<p class='en'>(a) A <b>flat line</b> means the object is <b>stationary</b> (not moving) — distance is not changing.</p><p class='ko'>(a) <b>평평한 선</b>: 물체가 <b>정지</b>해 있음 — 거리가 변하지 않음.</p><p class='en'>(b) A <b>steep straight line</b> means the object is moving at a <b>constant, fast speed</b>.</p><p class='ko'>(b) <b>가파른 직선</b>: <b>일정하고 빠른 속도</b>로 움직임.</p><p class='en'>(c) A <b>curved line</b> means the speed is <b>changing</b> (the object is accelerating or decelerating).</p><p class='ko'>(c) <b>곡선</b>: 속도가 <b>변하고 있음</b> (가속 또는 감속).</p>", "mark_points": ["Flat line = stationary", "Steep straight line = constant fast speed", "Curved line = changing speed"], "ko_hint": "수평선=정지, 직선=등속, 곡선=속도 변함."}, {"q": "On a distance-time graph, the line goes from (0 s, 0 m) to (20 s, 100 m) in a straight line. Calculate the speed shown by this line.", "marks": 2, "sample_answer": "<p class='en'>Speed = gradient = change in distance ÷ change in time = (100 − 0) ÷ (20 − 0) = 100 ÷ 20 = <b>5 m/s</b>.</p><p class='ko'>속도 = 기울기 = 거리 변화 ÷ 시간 변화 = (100−0) ÷ (20−0) = <b>5 m/s</b>.</p>", "mark_points": ["Uses gradient correctly", "Correct answer: 5 m/s"], "ko_hint": "기울기 = 거리÷시간 = 5 m/s."}];
 const VOCAB_DATA = [{"en": "Speed", "ko": "속도", "def_en": "Distance travelled per unit of time. Speed = distance ÷ time.", "cat": "organ"}, {"en": "Distance", "ko": "거리", "def_en": "How far an object has travelled.", "cat": "organ"}, {"en": "Time", "ko": "시간", "def_en": "How long an object has been moving.", "cat": "organ"}, {"en": "Velocity", "ko": "속도(방향 포함)", "def_en": "Speed in a particular direction (a vector).", "cat": "organ"}, {"en": "Metres per second (m/s)", "ko": "초속(m/s)", "def_en": "SI unit of speed.", "cat": "organ"}, {"en": "Kilometres per hour (km/h)", "ko": "시속(km/h)", "def_en": "Common unit of speed for vehicles.", "cat": "organ"}, {"en": "Average speed", "ko": "평균 속도", "def_en": "Total distance ÷ total time over a journey.", "cat": "process"}, {"en": "Instantaneous speed", "ko": "순간 속도", "def_en": "Speed at a single moment in time.", "cat": "process"}, {"en": "Constant speed", "ko": "일정한 속도", "def_en": "Speed that doesn't change over time.", "cat": "process"}, {"en": "Stationary", "ko": "정지", "def_en": "Not moving; speed = 0.", "cat": "process"}, {"en": "Acceleration", "ko": "가속", "def_en": "Speed is increasing.", "cat": "process"}, {"en": "Deceleration", "ko": "감속", "def_en": "Speed is decreasing.", "cat": "process"}, {"en": "Distance-time graph", "ko": "거리-시간 그래프", "def_en": "Shows distance (y-axis) against time (x-axis).", "cat": "blood"}, {"en": "Gradient", "ko": "기울기", "def_en": "The steepness of a line on a graph; on a distance-time graph, gradient = speed.", "cat": "blood"}, {"en": "Horizontal line", "ko": "수평선", "def_en": "On a distance-time graph, a horizontal line means stationary.", "cat": "blood"}, {"en": "Curve", "ko": "곡선", "def_en": "On a distance-time graph, a curve means speed is changing.", "cat": "blood"}];
+const UNIT_ID = "motion";
 const UNIT_TITLE = "8P Speed & Motion 속도와 운동";
 const UNIT_TOPICS = ["1. What is Speed?", "2. Distance-Time Graphs"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
@@ -893,6 +925,7 @@ function playSection(cat, btn){
   const words = [];
   document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
     if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
     const en = (c.querySelector('.vcard-en') || {}).textContent;
     if (en) words.push(en.trim());
   });
@@ -913,6 +946,44 @@ function playSection(cat, btn){
     });
   };
   playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
 }
 
 // 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
@@ -946,7 +1017,8 @@ function applyVocabFilter() {
     const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
     const catOk = (currentCat === 'all' || cat === currentCat);
     const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
-    const show = catOk && qOk;
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
     c.classList.toggle('hidden', !show);
     if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
@@ -965,6 +1037,7 @@ function filterCards(cat) {
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
 });
 
 // ─── 단어시험 (Spelling Test) ───

@@ -178,6 +178,16 @@ header {
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
 
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
@@ -329,6 +339,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -351,6 +366,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Solute")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -363,6 +379,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Solvent")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -375,6 +392,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Solution")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -387,6 +405,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Dissolving")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -399,6 +418,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Soluble")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -411,6 +431,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Insoluble")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -423,6 +444,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Mixture")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -435,6 +457,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Particle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -450,6 +473,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Concentration")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -462,6 +486,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Concentrated")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -474,6 +499,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Dilute")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -486,6 +512,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Dissolve")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -498,6 +525,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Melting")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -510,6 +538,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Mass conservation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -525,6 +554,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Solubility")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -537,6 +567,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Saturated")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -549,6 +580,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Unsaturated")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -561,6 +593,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Evaporate")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -576,6 +609,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Temperature")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -588,6 +622,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Independent variable")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -600,6 +635,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Dependent variable")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -612,6 +648,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Control variable")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -624,6 +661,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Fair test")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -636,6 +674,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Hypothesis")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -1114,11 +1153,12 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8C Solutions 용해와 용액 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
+<footer>8C Solutions 용해와 용액 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Explain what happens to sugar particles when sugar dissolves in water. Why does the sugar 'disappear'?", "marks": 3, "sample_answer": "<p class='en'>The sugar particles <b>break up and spread out</b> evenly between the water particles.</p><p class='ko'>설탕 입자가 <b>흩어져서</b> 물 입자 사이에 골고루 퍼집니다.</p><p class='en'>The sugar does <b>not disappear</b> — it is still there, but each particle is too small to see.</p><p class='ko'>설탕은 <b>사라지는 게 아닙니다</b> — 그대로 있지만 각 입자가 너무 작아 보이지 않을 뿐입니다.</p><p class='en'>You can still taste the sweetness everywhere in the cup, which proves the sugar is still there.</p><p class='ko'>컵 어디서나 단맛이 나는 것이 설탕이 그대로 있다는 증거입니다.</p>", "mark_points": ["Particles spread out evenly through the solvent", "Sugar does NOT disappear (just spread out)", "Evidence (e.g. still tastes sweet)"], "ko_hint": "입자가 흩어진다 + 사라지지 않는다 + 증거(단맛)."}, {"q": "Define SOLUTE, SOLVENT and SOLUTION. Give an example for each.", "marks": 3, "sample_answer": "<p class='en'>The <b>solute</b> is the substance being dissolved — for example, <b>sugar</b>.</p><p class='ko'><b>용질(solute)</b>은 녹는 물질입니다 — 예: <b>설탕</b>.</p><p class='en'>The <b>solvent</b> is the liquid that dissolves the solute — for example, <b>water</b>.</p><p class='ko'><b>용매(solvent)</b>는 용질을 녹이는 액체입니다 — 예: <b>물</b>.</p><p class='en'>The <b>solution</b> is the mixture formed — for example, <b>sugar water</b>.</p><p class='ko'><b>용액(solution)</b>은 만들어진 혼합물입니다 — 예: <b>설탕물</b>.</p>", "mark_points": ["Solute = thing being dissolved (with example)", "Solvent = liquid doing the dissolving (with example)", "Solution = the mixture formed (with example)"], "ko_hint": "세 단어 정의 + 예시 각 1개씩."}, {"q": "A student dissolves 9 g of sugar in 146 g of water. What is the mass of the solution? Explain using the principle of CONSERVATION OF MASS.", "marks": 3, "sample_answer": "<p class='en'>The mass of the solution is <b>9 + 146 = 155 g</b>.</p><p class='ko'>용액의 질량은 <b>9 + 146 = 155g</b> 입니다.</p><p class='en'>Mass is <b>conserved</b> — no mass is lost during dissolving.</p><p class='ko'>질량은 <b>보존</b>됩니다 — 용해 중 질량이 사라지지 않습니다.</p><p class='en'>The sugar particles are still present in the solution, just spread out between the water particles.</p><p class='ko'>설탕 입자는 용액 안에 그대로 있고, 물 입자 사이에 흩어져 있을 뿐입니다.</p>", "mark_points": ["Correct answer: 155 g", "States mass is conserved", "Explains particles are still present, just spread out"], "ko_hint": "155g + 질량 보존 + 입자는 그대로 있음."}, {"q": "Explain the difference between DISSOLVING and MELTING.", "marks": 3, "sample_answer": "<p class='en'><b>Dissolving</b> is when a <b>solute spreads through a solvent</b> (a liquid). Two substances are needed.</p><p class='ko'><b>Dissolving(용해)</b>는 <b>용질이 용매(액체)에 흩어지는</b> 것입니다. 두 물질이 필요합니다.</p><p class='en'><b>Melting</b> is when a <b>solid changes to a liquid</b> because it is heated. Only one substance is involved.</p><p class='ko'><b>Melting(녹음·용융)</b>은 가열로 <b>고체가 액체로 상태 변화</b>하는 것입니다. 한 물질만 관여합니다.</p><p class='en'>Example: sugar in water = dissolving; ice → water = melting.</p><p class='ko'>예: 설탕이 물에 = dissolving; 얼음 → 물 = melting.</p>", "mark_points": ["Dissolving = solute spreads through solvent (2 substances)", "Melting = solid → liquid by heating (1 substance, state change)", "Clear example for each"], "ko_hint": "둘은 완전 다름! 정의 + 예시."}, {"q": "Use the particle model to explain the difference between a CONCENTRATED and a DILUTE solution.", "marks": 3, "sample_answer": "<p class='en'>In a <b>concentrated</b> solution, there are <b>many solute particles</b> in a given volume of solvent.</p><p class='ko'><b>진한(concentrated)</b> 용액에는 정해진 부피의 용매 안에 <b>많은 용질 입자</b>가 있습니다.</p><p class='en'>In a <b>dilute</b> solution, there are <b>fewer solute particles</b> in the same volume of solvent.</p><p class='ko'><b>묽은(dilute)</b> 용액에는 같은 부피의 용매 안에 <b>적은 용질 입자</b>가 있습니다.</p><p class='en'>If you drew them as particle diagrams (same-size boxes), the concentrated one would have many more dots inside.</p><p class='ko'>같은 크기 상자로 입자 그림을 그리면, 진한 용액에 점이 훨씬 많이 그려집니다.</p>", "mark_points": ["Concentrated = many solute particles in same volume", "Dilute = few solute particles in same volume", "Uses particle model / particle diagram comparison"], "ko_hint": "같은 부피 비교 + 입자 수 차이로 설명."}, {"q": "Describe TWO ways to make a dilute solution MORE concentrated.", "marks": 2, "sample_answer": "<p class='en'>1) Add <b>more solute</b> (e.g. more sugar) to the solution.</p><p class='ko'>1) 용액에 <b>용질을 더 넣습니다</b> (예: 설탕 추가).</p><p class='en'>2) <b>Evaporate</b> some of the solvent (e.g. heat the water so some turns to vapour).</p><p class='ko'>2) 용매 일부를 <b>증발시킵니다</b> (예: 물을 가열해 일부를 수증기로).</p>", "mark_points": ["Add more solute", "Evaporate the solvent"], "ko_hint": "용질 추가 또는 용매 증발."}, {"q": "What is meant by a SATURATED solution? Describe what happens if you add even more solute to a saturated solution.", "marks": 3, "sample_answer": "<p class='en'>A <b>saturated solution</b> is one that cannot dissolve <b>any more solute</b> at that temperature.</p><p class='ko'><b>포화 용액</b>은 그 온도에서 <b>더 이상 용질을 녹일 수 없는</b> 용액입니다.</p><p class='en'>If you add more solute, it will <b>not dissolve</b>.</p><p class='ko'>더 많은 용질을 넣어도 <b>녹지 않습니다</b>.</p><p class='en'>The extra solute will sink and sit at the <b>bottom of the container</b> as undissolved solid.</p><p class='ko'>여분의 용질은 <b>그릇 바닥에</b> 가라앉아 녹지 않은 고체로 남습니다.</p>", "mark_points": ["Defines saturated correctly (no more can dissolve)", "Extra solute does NOT dissolve", "Extra solute settles at the bottom"], "ko_hint": "정의 + 더 안 녹음 + 가라앉음."}, {"q": "Define SOLUBILITY, including its units.", "marks": 2, "sample_answer": "<p class='en'><b>Solubility</b> is the <b>maximum mass of solute</b> that can dissolve in a fixed amount of solvent at a particular temperature.</p><p class='ko'><b>용해도</b>는 특정 온도에서 일정한 용매에 녹을 수 있는 <b>용질의 최대 질량</b>입니다.</p><p class='en'>It is usually measured in <b>grams of solute per 100 g of water</b> (g/100g).</p><p class='ko'>보통 <b>물 100g당 녹는 용질의 g수</b>(g/100g)로 표시합니다.</p>", "mark_points": ["Max solute that can dissolve at a given temperature", "Units: grams per 100 g of water (or equivalent)"], "ko_hint": "정의 + 단위(g per 100 g water)."}, {"q": "Describe how to plan a fair test to investigate how the TYPE of solute affects the solubility in water. Name the independent, dependent and control variables.", "marks": 4, "sample_answer": "<p class='en'>The <b>independent variable</b> is the <b>type of solute</b> (e.g. sugar, salt, chalk).</p><p class='ko'><b>독립변수</b>는 <b>용질의 종류</b> (예: 설탕, 소금, 분필가루).</p><p class='en'>The <b>dependent variable</b> is the <b>amount of solute that dissolves</b> (e.g. number of spatulas).</p><p class='ko'><b>종속변수</b>는 <b>녹은 용질의 양</b> (예: 스푼 수).</p><p class='en'>The <b>control variables</b> include the volume of water, the temperature, the size of each spatula, and the stirring time.</p><p class='ko'><b>통제변수</b>: 물의 부피, 온도, 스푼 크기, 젓는 시간 등.</p><p class='en'>Method: use the same volume of water at the same temperature, add one spatula of solute at a time and stir, count how many dissolve before the solution becomes saturated.</p><p class='ko'>방법: 같은 온도·부피의 물에 용질을 한 스푼씩 넣고 저으면서 포화될 때까지 몇 스푼이 녹는지 셉니다.</p>", "mark_points": ["IV: type of solute", "DV: amount/spatulas that dissolve", "CVs: volume of water, temperature, spatula size, stirring (any 2)", "Sensible method description"], "ko_hint": "IV/DV/CV 3개 + 방법."}, {"q": "Explain how INCREASING TEMPERATURE affects the solubility of most solids in water. Use the particle model.", "marks": 3, "sample_answer": "<p class='en'>When the water is heated, water particles gain more <b>kinetic energy</b> and move faster.</p><p class='ko'>물을 가열하면 물 입자가 <b>운동 에너지</b>를 더 얻어 더 빨리 움직입니다.</p><p class='en'>Faster water particles can break up the solute particles more easily and spread them out.</p><p class='ko'>빠르게 움직이는 물 입자는 용질 입자를 더 쉽게 흩어 놓습니다.</p><p class='en'>So <b>more solute can dissolve</b> at higher temperatures — solubility increases.</p><p class='ko'>그래서 온도가 높을수록 <b>더 많은 용질이 녹습니다</b> — 용해도가 증가합니다.</p>", "mark_points": ["Higher temperature → more kinetic energy", "Particles move faster", "More solute dissolves / solubility increases"], "ko_hint": "운동에너지 ↑ → 입자 움직임 ↑ → 용해도 ↑."}];
 const VOCAB_DATA = [{"en": "Solute", "ko": "용질", "def_en": "The substance being dissolved (usually a solid like sugar or salt).", "cat": "organ"}, {"en": "Solvent", "ko": "용매", "def_en": "The liquid that dissolves the solute (often water).", "cat": "organ"}, {"en": "Solution", "ko": "용액", "def_en": "The mixture formed when a solute dissolves in a solvent.", "cat": "organ"}, {"en": "Dissolving", "ko": "용해", "def_en": "When a solute breaks up into particles and spreads through a solvent.", "cat": "organ"}, {"en": "Soluble", "ko": "녹는 (가용성)", "def_en": "A substance that can dissolve in a given solvent.", "cat": "organ"}, {"en": "Insoluble", "ko": "안 녹는 (불용성)", "def_en": "A substance that does not dissolve in a given solvent.", "cat": "organ"}, {"en": "Mixture", "ko": "혼합물", "def_en": "Two or more substances mixed but not chemically joined.", "cat": "organ"}, {"en": "Particle", "ko": "입자", "def_en": "Tiny piece of a substance (atom, molecule, ion).", "cat": "organ"}, {"en": "Concentration", "ko": "농도", "def_en": "Amount of solute dissolved in a given amount of solvent.", "cat": "process"}, {"en": "Concentrated", "ko": "진한", "def_en": "A solution with a relatively large amount of solute.", "cat": "process"}, {"en": "Dilute", "ko": "묽은", "def_en": "A solution with a relatively small amount of solute.", "cat": "process"}, {"en": "Dissolve", "ko": "녹다 (동사)", "def_en": "(verb) To break up and spread evenly through a solvent.", "cat": "process"}, {"en": "Melting", "ko": "녹음 (용융)", "def_en": "Change of state from solid to liquid due to heating.", "cat": "process"}, {"en": "Mass conservation", "ko": "질량 보존", "def_en": "Total mass stays the same before and after dissolving.", "cat": "process"}, {"en": "Solubility", "ko": "용해도", "def_en": "Max amount of solute that can dissolve in a given amount of solvent at a set temperature.", "cat": "gas"}, {"en": "Saturated", "ko": "포화", "def_en": "A solution that cannot dissolve any more solute at that temperature.", "cat": "gas"}, {"en": "Unsaturated", "ko": "불포화", "def_en": "A solution that can still dissolve more solute.", "cat": "gas"}, {"en": "Evaporate", "ko": "증발하다", "def_en": "To change from liquid to gas (e.g. water turns to vapour).", "cat": "gas"}, {"en": "Temperature", "ko": "온도", "def_en": "How hot or cold something is.", "cat": "blood"}, {"en": "Independent variable", "ko": "독립변수", "def_en": "The variable you deliberately change in an experiment.", "cat": "blood"}, {"en": "Dependent variable", "ko": "종속변수", "def_en": "The variable you measure as a result.", "cat": "blood"}, {"en": "Control variable", "ko": "통제변수", "def_en": "Variables kept the same to keep the test fair.", "cat": "blood"}, {"en": "Fair test", "ko": "공정 실험", "def_en": "An experiment in which only one variable is changed at a time.", "cat": "blood"}, {"en": "Hypothesis", "ko": "가설", "def_en": "A predicted answer to a scientific question that can be tested.", "cat": "blood"}];
+const UNIT_ID = "chemistry";
 const UNIT_TITLE = "8C Solutions 용해와 용액";
 const UNIT_TOPICS = ["1. Dissolving and the Particle Model", "2. Concentration of Solutions", "3. Solubility in Water", "4. Solubility and Temperature"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
@@ -1226,6 +1266,7 @@ function playSection(cat, btn){
   const words = [];
   document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
     if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
     const en = (c.querySelector('.vcard-en') || {}).textContent;
     if (en) words.push(en.trim());
   });
@@ -1246,6 +1287,44 @@ function playSection(cat, btn){
     });
   };
   playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
 }
 
 // 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
@@ -1279,7 +1358,8 @@ function applyVocabFilter() {
     const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
     const catOk = (currentCat === 'all' || cat === currentCat);
     const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
-    const show = catOk && qOk;
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
     c.classList.toggle('hidden', !show);
     if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
@@ -1298,6 +1378,7 @@ function filterCards(cat) {
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
 });
 
 // ─── 단어시험 (Spelling Test) ───

@@ -178,6 +178,16 @@ header {
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
 
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
@@ -329,6 +339,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -351,6 +366,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Atom")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -363,6 +379,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Element")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -375,6 +392,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Compound")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -387,6 +405,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Molecule")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -399,6 +418,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Nucleus")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -411,6 +431,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Proton")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -423,6 +444,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Neutron")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -435,6 +457,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Electron")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -447,6 +470,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Electron shell")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -459,6 +483,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Atomic number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -471,6 +496,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Mass number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -483,6 +509,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Periodic table")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -498,6 +525,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Dalton model")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -510,6 +538,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Plum pudding model")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -522,6 +551,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Nuclear model")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -534,6 +564,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Bohr model")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -549,6 +580,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Particle model")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -561,6 +593,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Diffusion")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -573,6 +606,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Brownian motion")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -585,6 +619,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Kinetic energy")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -600,6 +635,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Gas pressure")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -612,6 +648,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Pressure formula")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -624,6 +661,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Collision")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -636,6 +674,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Volume")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -995,11 +1034,12 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8E Atoms & Particles 원자와 입자 운동 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
+<footer>8E Atoms & Particles 원자와 입자 운동 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Describe the three subatomic particles in an atom — including their charge, mass and location.", "marks": 3, "sample_answer": "<p class='en'>The <b>proton</b> has a <b>positive (+1)</b> charge, a mass of 1 and is found in the <b>nucleus</b>.</p><p class='ko'><b>양성자</b>는 <b>(+1)</b> 전하, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>neutron</b> has <b>no charge (0)</b>, a mass of 1 and is also in the <b>nucleus</b>.</p><p class='ko'><b>중성자</b>는 <b>전하 없음(0)</b>, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>electron</b> has a <b>negative (-1)</b> charge, almost zero mass, and orbits the nucleus in <b>electron shells</b>.</p><p class='ko'><b>전자</b>는 <b>(-1)</b> 전하, 질량 거의 0, <b>전자 껍질</b>을 따라 핵 주위를 돕니다.</p>", "mark_points": ["Proton: +1, mass 1, in nucleus", "Neutron: 0 charge, mass 1, in nucleus", "Electron: -1, mass ≈0, in shells"], "ko_hint": "3 입자 각각 — 전하 + 질량 + 위치."}, {"q": "An atom of carbon has 6 protons and 6 neutrons. State its atomic number and its mass number.", "marks": 2, "sample_answer": "<p class='en'>The <b>atomic number</b> equals the number of protons: <b>6</b>.</p><p class='ko'><b>원자번호</b>는 양성자 개수와 같으므로 <b>6</b>.</p><p class='en'>The <b>mass number</b> equals protons + neutrons: 6 + 6 = <b>12</b>.</p><p class='ko'><b>질량수</b>는 양성자+중성자이므로 6+6 = <b>12</b>.</p>", "mark_points": ["Atomic number = 6", "Mass number = 12"], "ko_hint": "원자번호 = 양성자 수, 질량수 = 양성자+중성자."}, {"q": "Why is an atom electrically NEUTRAL overall?", "marks": 2, "sample_answer": "<p class='en'>An atom has the <b>same number</b> of protons (+1 each) and electrons (-1 each).</p><p class='ko'>원자는 양성자(각 +1)와 전자(각 -1)의 <b>개수가 같습니다</b>.</p><p class='en'>The positive and negative charges cancel out, so the total charge is zero — the atom is neutral.</p><p class='ko'>양·음 전하가 상쇄되어 총 전하가 0 — 원자는 중성입니다.</p>", "mark_points": ["Equal numbers of protons (+) and electrons (-)", "Charges cancel → total charge = 0"], "ko_hint": "양성자=전자 개수 → 전하 상쇄."}, {"q": "Describe Rutherford's gold foil experiment and explain what it revealed about the structure of the atom.", "marks": 4, "sample_answer": "<p class='en'>Rutherford fired tiny <b>positive particles</b> (alpha particles) at a very thin sheet of <b>gold foil</b>.</p><p class='ko'>러더퍼드는 매우 얇은 <b>금박</b>에 작은 <b>양전하 입자</b>(알파 입자)들을 쏘았습니다.</p><p class='en'>Most particles passed <b>straight through</b>, but a few <b>bounced back</b> at large angles.</p><p class='ko'>대부분의 입자는 <b>곧장 통과</b>했지만, 몇 개는 큰 각도로 <b>튕겨 돌아왔습니다</b>.</p><p class='en'>This showed that the atom is <b>mostly empty space</b>, but contains a <b>tiny dense positive nucleus</b> in the centre.</p><p class='ko'>이것은 원자가 <b>대부분 빈 공간</b>이지만 중심에 <b>작고 밀도 높은 양전하 핵</b>이 있다는 것을 보여주었습니다.</p><p class='en'>The positive nucleus repelled the positive alpha particles, causing some to bounce back.</p><p class='ko'>양전하 핵이 양전하 알파 입자를 밀어내서 일부가 튕겨 돌아온 것입니다.</p>", "mark_points": ["Method: fired particles at thin gold foil", "Most passed through", "A few bounced back", "Conclusion: small dense positive nucleus + mostly empty space"], "ko_hint": "방법 + 관찰(대부분 통과, 일부 튕김) + 결론(핵 발견)."}, {"q": "Use the particle model to explain why GAS PRESSURE INCREASES when a gas in a sealed container is heated.", "marks": 4, "sample_answer": "<p class='en'>When the gas is heated, the particles gain <b>kinetic energy</b> and move faster.</p><p class='ko'>가열되면 기체 입자는 <b>운동 에너지</b>를 얻어 더 빠르게 움직입니다.</p><p class='en'>The particles collide with the container walls <b>more frequently</b>.</p><p class='ko'>입자가 용기 벽에 <b>더 자주</b> 부딪칩니다.</p><p class='en'>The collisions are also <b>more forceful</b> because the particles move faster.</p><p class='ko'>입자가 더 빠르므로 충돌이 <b>더 강력</b>합니다.</p><p class='en'>So the total force on the walls increases — meaning the <b>pressure increases</b>.</p><p class='ko'>벽에 가해지는 힘이 커지므로 <b>압력이 증가</b>합니다.</p>", "mark_points": ["Particles gain kinetic energy / move faster", "Collide with walls more frequently", "Collide with more force", "Pressure increases"], "ko_hint": "운동에너지↑ → 충돌 잦고 강해짐 → 압력↑."}, {"q": "Define DIFFUSION and explain why diffusion is faster at higher temperatures.", "marks": 3, "sample_answer": "<p class='en'><b>Diffusion</b> is the net movement of particles from a region of <b>high concentration</b> to a region of <b>low concentration</b>.</p><p class='ko'><b>확산</b>은 입자가 농도가 <b>높은 곳</b>에서 <b>낮은 곳</b>으로 이동하는 것입니다.</p><p class='en'>At higher temperatures, the particles have more <b>kinetic energy</b> and move faster.</p><p class='ko'>온도가 높을수록 입자는 <b>운동 에너지</b>가 커서 더 빠르게 움직입니다.</p><p class='en'>Faster-moving particles spread through the area more quickly, so diffusion happens faster.</p><p class='ko'>빠른 입자가 더 빨리 퍼지므로 확산도 빨라집니다.</p>", "mark_points": ["Defines diffusion correctly", "Higher temp → more kinetic energy", "Particles move faster → faster diffusion"], "ko_hint": "정의 + 운동에너지 + 빠르게 퍼짐."}];
 const VOCAB_DATA = [{"en": "Atom", "ko": "원자", "def_en": "The smallest particle of an element with that element's properties.", "cat": "organ"}, {"en": "Element", "ko": "원소", "def_en": "A substance made of only one type of atom.", "cat": "organ"}, {"en": "Compound", "ko": "화합물", "def_en": "Two or more elements chemically joined.", "cat": "organ"}, {"en": "Molecule", "ko": "분자", "def_en": "Two or more atoms chemically bonded together.", "cat": "organ"}, {"en": "Nucleus", "ko": "원자핵", "def_en": "The dense centre of an atom containing protons and neutrons.", "cat": "organ"}, {"en": "Proton", "ko": "양성자", "def_en": "Positively charged particle in the nucleus.", "cat": "organ"}, {"en": "Neutron", "ko": "중성자", "def_en": "Neutral particle (no charge) in the nucleus.", "cat": "organ"}, {"en": "Electron", "ko": "전자", "def_en": "Negatively charged particle that orbits the nucleus in shells.", "cat": "organ"}, {"en": "Electron shell", "ko": "전자 껍질", "def_en": "An energy level where electrons orbit the nucleus.", "cat": "organ"}, {"en": "Atomic number", "ko": "원자번호", "def_en": "Number of protons in an atom's nucleus.", "cat": "organ"}, {"en": "Mass number", "ko": "질량수", "def_en": "Total number of protons + neutrons.", "cat": "organ"}, {"en": "Periodic table", "ko": "주기율표", "def_en": "Table of all known elements organised by atomic number.", "cat": "organ"}, {"en": "Dalton model", "ko": "돌턴 모델", "def_en": "1803 — atoms are tiny indivisible solid spheres.", "cat": "process"}, {"en": "Plum pudding model", "ko": "건포도 푸딩 모델", "def_en": "Thomson (1897) — positive 'dough' with electrons inside.", "cat": "process"}, {"en": "Nuclear model", "ko": "원자핵 모델", "def_en": "Rutherford (1909) — small dense positive nucleus, mostly empty space.", "cat": "process"}, {"en": "Bohr model", "ko": "보어 모델", "def_en": "Bohr (1913) — electrons orbit in fixed shells.", "cat": "process"}, {"en": "Particle model", "ko": "입자 모델", "def_en": "Idea that all matter is made of tiny moving particles.", "cat": "gas"}, {"en": "Diffusion", "ko": "확산", "def_en": "Net movement of particles from high to low concentration.", "cat": "gas"}, {"en": "Brownian motion", "ko": "브라운 운동", "def_en": "Random jiggling of small particles caused by collisions with gas molecules.", "cat": "gas"}, {"en": "Kinetic energy", "ko": "운동 에너지", "def_en": "Energy of moving particles; higher temperature = more kinetic energy.", "cat": "gas"}, {"en": "Gas pressure", "ko": "기체 압력", "def_en": "Force per unit area from gas particles colliding with walls.", "cat": "blood"}, {"en": "Pressure formula", "ko": "압력 공식", "def_en": "Pressure = Force ÷ Area; unit: Pascal (Pa).", "cat": "blood"}, {"en": "Collision", "ko": "충돌", "def_en": "When particles hit each other or hit container walls.", "cat": "blood"}, {"en": "Volume", "ko": "부피", "def_en": "The space something takes up.", "cat": "blood"}];
+const UNIT_ID = "atoms";
 const UNIT_TITLE = "8E Atoms & Particles 원자와 입자 운동";
 const UNIT_TOPICS = ["1. Structure of the Atom", "2. History of Atomic Models", "3. The Particle Model & Diffusion", "4. Gas Pressure"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
@@ -1107,6 +1147,7 @@ function playSection(cat, btn){
   const words = [];
   document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
     if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
     const en = (c.querySelector('.vcard-en') || {}).textContent;
     if (en) words.push(en.trim());
   });
@@ -1127,6 +1168,44 @@ function playSection(cat, btn){
     });
   };
   playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
 }
 
 // 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
@@ -1160,7 +1239,8 @@ function applyVocabFilter() {
     const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
     const catOk = (currentCat === 'all' || cat === currentCat);
     const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
-    const show = catOk && qOk;
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
     c.classList.toggle('hidden', !show);
     if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
@@ -1179,6 +1259,7 @@ function filterCards(cat) {
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
 });
 
 // ─── 단어시험 (Spelling Test) ───

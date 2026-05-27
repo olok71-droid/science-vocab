@@ -178,6 +178,16 @@ header {
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
 
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
@@ -329,6 +339,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -351,6 +366,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Atmosphere")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -363,6 +379,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Nitrogen (N\u2082)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -375,6 +392,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Oxygen (O\u2082)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -387,6 +405,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Carbon dioxide (CO\u2082)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -399,6 +418,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Argon (Ar)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -411,6 +431,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Water vapour")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -423,6 +444,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Photosynthesis")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -438,6 +460,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Greenhouse effect")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -450,6 +473,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Greenhouse gas")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -462,6 +486,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Methane (CH\u2084)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -474,6 +499,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Infrared radiation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -486,6 +512,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Enhanced greenhouse effect")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -501,6 +528,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Global warming")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -513,6 +541,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Climate change")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -525,6 +554,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Fossil fuels")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -537,6 +567,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Deforestation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -549,6 +580,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Renewable energy")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -564,6 +596,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Weather")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -576,6 +609,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Climate")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -588,6 +622,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Sea level rise")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -600,6 +635,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Extreme weather")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -876,11 +912,12 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8C Atmosphere & Climate 대기와 기후 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
+<footer>8C Atmosphere & Climate 대기와 기후 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "State the approximate percentages of the four main gases in today's atmosphere.", "marks": 4, "sample_answer": "<p class='en'><b>Nitrogen (N₂)</b>: about <b>78%</b>.</p><p class='ko'><b>질소</b>: 약 <b>78%</b>.</p><p class='en'><b>Oxygen (O₂)</b>: about <b>21%</b>.</p><p class='ko'><b>산소</b>: 약 <b>21%</b>.</p><p class='en'><b>Argon (Ar)</b>: about <b>0.9%</b>.</p><p class='ko'><b>아르곤</b>: 약 <b>0.9%</b>.</p><p class='en'><b>Carbon dioxide (CO₂)</b>: about <b>0.04%</b>.</p><p class='ko'><b>이산화탄소</b>: 약 <b>0.04%</b>.</p>", "mark_points": ["N₂ ≈ 78%", "O₂ ≈ 21%", "Ar ≈ 0.9%", "CO₂ ≈ 0.04%"], "ko_hint": "4개 기체 + 비율."}, {"q": "Explain how the greenhouse effect keeps the Earth warm enough for life.", "marks": 4, "sample_answer": "<p class='en'>Sunlight passes through the atmosphere and warms the Earth's surface.</p><p class='ko'>햇빛이 대기를 통과해 지구 표면을 데웁니다.</p><p class='en'>The Earth re-emits energy as <b>infrared radiation (heat)</b>.</p><p class='ko'>지구는 그 에너지를 <b>적외선(열)</b>으로 다시 방출합니다.</p><p class='en'><b>Greenhouse gases</b> in the atmosphere (CO₂, methane, water vapour) <b>absorb</b> this infrared radiation.</p><p class='ko'>대기 안 <b>온실 가스</b>(CO₂·메탄·수증기)가 이 적외선을 <b>흡수</b>합니다.</p><p class='en'>The trapped heat keeps the Earth warm enough for life — without it the Earth would be far too cold.</p><p class='ko'>가둔 열로 지구가 생명체가 살 만큼 따뜻해집니다 — 없으면 너무 춥습니다.</p>", "mark_points": ["Sun warms Earth's surface", "Earth re-emits as infrared / heat", "Greenhouse gases absorb the heat", "Heat is trapped → warm enough for life"], "ko_hint": "햇빛 → 지표 따뜻 → 적외선 방출 → 온실가스가 흡수 → 열 가둠."}, {"q": "Explain how human activities are causing global warming.", "marks": 3, "sample_answer": "<p class='en'>Humans burn <b>fossil fuels</b> (coal, oil, gas) for energy, which releases large amounts of <b>CO₂</b> into the atmosphere.</p><p class='ko'>인간은 에너지를 위해 <b>화석 연료</b>(석탄·석유·가스)를 태우며, 이는 많은 <b>CO₂</b>를 대기로 방출합니다.</p><p class='en'><b>Deforestation</b> removes trees that would otherwise absorb CO₂.</p><p class='ko'><b>삼림 파괴</b>는 CO₂를 흡수할 나무를 없앱니다.</p><p class='en'>The extra CO₂ traps more heat in the atmosphere, raising the Earth's temperature — this is called the <b>enhanced greenhouse effect</b>.</p><p class='ko'>늘어난 CO₂가 대기 안 열을 더 많이 가둬 지구 온도가 상승하며, 이를 <b>강화된 온실 효과</b>라 합니다.</p>", "mark_points": ["Burning fossil fuels releases CO₂", "Deforestation reduces CO₂ absorption", "Extra CO₂ traps more heat (enhanced greenhouse effect)"], "ko_hint": "화석 연료 + 삼림 파괴 → CO₂↑ → 온실효과 강화."}, {"q": "Describe THREE impacts of climate change on the Earth.", "marks": 3, "sample_answer": "<p class='en'>1) <b>Melting ice caps and glaciers</b> cause <b>sea levels to rise</b>, flooding low-lying areas.</p><p class='ko'>1) <b>빙하가 녹아 해수면이 상승</b>하여 저지대가 침수됩니다.</p><p class='en'>2) More frequent <b>extreme weather events</b> — storms, floods, droughts, heatwaves.</p><p class='ko'>2) <b>극단적 기상 현상</b>(폭풍·홍수·가뭄·폭염)이 잦아집니다.</p><p class='en'>3) <b>Habitat loss</b> for species like polar bears and coral reefs, leading to declines or extinction.</p><p class='ko'>3) 북극곰·산호초 같은 생물의 <b>서식지가 사라져</b> 개체수 감소나 멸종으로 이어집니다.</p>", "mark_points": ["Sea level rise / melting ice", "Extreme weather", "Habitat loss / impact on ecosystems"], "ko_hint": "3가지 영향 (해수면, 기상, 생태계 등)."}, {"q": "Explain the difference between WEATHER and CLIMATE.", "marks": 2, "sample_answer": "<p class='en'><b>Weather</b> is the <b>short-term</b> state of the atmosphere — what it's like outside today, this week.</p><p class='ko'><b>날씨</b>는 <b>단기간</b> 대기 상태입니다 — 오늘·이번 주 바깥 상태.</p><p class='en'><b>Climate</b> is the <b>long-term average</b> weather pattern of a region, measured over decades or centuries.</p><p class='ko'><b>기후</b>는 지역의 <b>장기간 평균</b> 날씨 패턴입니다 (수십~수백 년).</p>", "mark_points": ["Weather = short-term atmosphere state", "Climate = long-term average pattern"], "ko_hint": "날씨 = 단기, 기후 = 장기."}];
 const VOCAB_DATA = [{"en": "Atmosphere", "ko": "대기", "def_en": "Layer of gases surrounding the Earth, held by gravity.", "cat": "organ"}, {"en": "Nitrogen (N₂)", "ko": "질소", "def_en": "About 78% of the atmosphere; unreactive.", "cat": "organ"}, {"en": "Oxygen (O₂)", "ko": "산소", "def_en": "About 21% of the atmosphere; needed for respiration and burning.", "cat": "organ"}, {"en": "Carbon dioxide (CO₂)", "ko": "이산화탄소", "def_en": "0.04% of the atmosphere; key greenhouse gas.", "cat": "organ"}, {"en": "Argon (Ar)", "ko": "아르곤", "def_en": "Noble gas, about 0.9% of the atmosphere.", "cat": "organ"}, {"en": "Water vapour", "ko": "수증기", "def_en": "Gaseous water; the most abundant greenhouse gas.", "cat": "organ"}, {"en": "Photosynthesis", "ko": "광합성", "def_en": "Plants make food using CO₂ + water + sunlight; releases oxygen.", "cat": "organ"}, {"en": "Greenhouse effect", "ko": "온실 효과", "def_en": "Greenhouse gases trap heat in the atmosphere, keeping Earth warm.", "cat": "process"}, {"en": "Greenhouse gas", "ko": "온실 가스", "def_en": "Gas that absorbs infrared radiation (heat); e.g. CO₂, CH₄, H₂O.", "cat": "process"}, {"en": "Methane (CH₄)", "ko": "메탄", "def_en": "Greenhouse gas from livestock, rice fields, landfills.", "cat": "process"}, {"en": "Infrared radiation", "ko": "적외선", "def_en": "Heat radiation emitted by warm objects.", "cat": "process"}, {"en": "Enhanced greenhouse effect", "ko": "강화된 온실 효과", "def_en": "Extra warming caused by extra greenhouse gases from human activity.", "cat": "process"}, {"en": "Global warming", "ko": "지구 온난화", "def_en": "Long-term rise in Earth's average temperature.", "cat": "blood"}, {"en": "Climate change", "ko": "기후 변화", "def_en": "Long-term changes in global weather patterns.", "cat": "blood"}, {"en": "Fossil fuels", "ko": "화석 연료", "def_en": "Coal, oil and natural gas; release CO₂ when burned.", "cat": "blood"}, {"en": "Deforestation", "ko": "삼림 파괴", "def_en": "Cutting down large areas of trees.", "cat": "blood"}, {"en": "Renewable energy", "ko": "재생 에너지", "def_en": "Energy from sources that don't run out (solar, wind, hydro).", "cat": "blood"}, {"en": "Weather", "ko": "날씨", "def_en": "Short-term state of the atmosphere (today, this week).", "cat": "gas"}, {"en": "Climate", "ko": "기후", "def_en": "Long-term average weather pattern of a region.", "cat": "gas"}, {"en": "Sea level rise", "ko": "해수면 상승", "def_en": "Increase in average sea level due to melting ice and warming water.", "cat": "gas"}, {"en": "Extreme weather", "ko": "극단적 기상", "def_en": "Unusually severe storms, floods, droughts or heatwaves.", "cat": "gas"}];
+const UNIT_ID = "atmosphere";
 const UNIT_TITLE = "8C Atmosphere & Climate 대기와 기후";
 const UNIT_TOPICS = ["1. Earth's Atmosphere", "2. The Greenhouse Effect", "3. Global Warming & Climate Change"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
@@ -988,6 +1025,7 @@ function playSection(cat, btn){
   const words = [];
   document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
     if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
     const en = (c.querySelector('.vcard-en') || {}).textContent;
     if (en) words.push(en.trim());
   });
@@ -1008,6 +1046,44 @@ function playSection(cat, btn){
     });
   };
   playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
 }
 
 // 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
@@ -1041,7 +1117,8 @@ function applyVocabFilter() {
     const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
     const catOk = (currentCat === 'all' || cat === currentCat);
     const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
-    const show = catOk && qOk;
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
     c.classList.toggle('hidden', !show);
     if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
@@ -1060,6 +1137,7 @@ function filterCards(cat) {
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
 });
 
 // ─── 단어시험 (Spelling Test) ───

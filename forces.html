@@ -178,6 +178,16 @@ header {
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
 
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
@@ -329,6 +339,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -351,6 +366,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Force")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -363,6 +379,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Newton (N)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -375,6 +392,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Newton meter")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -387,6 +405,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Contact force")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -399,6 +418,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Non-contact force")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -411,6 +431,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Gravity")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -423,6 +444,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Weight")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -435,6 +457,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Mass")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -447,6 +470,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Friction")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -459,6 +483,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Air resistance")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -471,6 +496,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Upthrust")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -483,6 +509,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Tension")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -498,6 +525,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Balanced forces")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -510,6 +538,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Unbalanced forces")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -522,6 +551,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Resultant force")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -534,6 +564,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Acceleration")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -549,6 +580,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Moment")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -561,6 +593,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Pivot")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -573,6 +606,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Lever")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -585,6 +619,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Principle of moments")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -600,6 +635,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Clockwise")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -612,6 +648,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Anticlockwise")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -624,6 +661,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Newton-metre (Nm)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -966,11 +1004,12 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8P Forces & Moments 힘과 회전력 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
+<footer>8P Forces & Moments 힘과 회전력 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Define a FORCE and state its unit.", "marks": 2, "sample_answer": "<p class='en'>A <b>force</b> is a <b>push or a pull</b> on an object.</p><p class='ko'><b>힘</b>은 물체에 가해지는 <b>밀거나 당기는</b> 작용입니다.</p><p class='en'>Force is measured in <b>newtons (N)</b>.</p><p class='ko'>힘의 단위는 <b>뉴턴(N)</b>입니다.</p>", "mark_points": ["Force = push or pull", "Unit = newton (N)"], "ko_hint": "정의 + 단위."}, {"q": "Explain the difference between BALANCED and UNBALANCED forces, and describe what each does to an object's motion.", "marks": 4, "sample_answer": "<p class='en'>Forces are <b>balanced</b> when they are equal in size but opposite in direction; the <b>resultant force is zero</b>.</p><p class='ko'>힘이 <b>평형</b>이라는 것은 크기가 같고 방향이 반대일 때이며, <b>합력이 0</b>입니다.</p><p class='en'>When forces are balanced, an object stays still, or keeps moving at the <b>same speed in a straight line</b>.</p><p class='ko'>평형력일 때 물체는 멈춰 있거나 <b>일정한 속도로 직선 운동</b>을 합니다.</p><p class='en'>Forces are <b>unbalanced</b> when they are not equal; the resultant force is <b>not zero</b>.</p><p class='ko'><b>불평형</b>은 힘이 같지 않을 때이며, 합력이 <b>0이 아닙니다</b>.</p><p class='en'>Unbalanced forces cause the object to <b>speed up, slow down, or change direction</b>.</p><p class='ko'>불평형력은 물체를 <b>가속·감속하거나 방향을 바꿉니다</b>.</p>", "mark_points": ["Balanced: equal & opposite, resultant = 0", "Balanced effect: stays still / constant velocity", "Unbalanced: resultant ≠ 0", "Unbalanced effect: speed/direction changes"], "ko_hint": "정의 + 운동에 미치는 효과 (둘 다)."}, {"q": "Two forces act on a box: 8 N pulling right and 3 N pulling left. Calculate the RESULTANT force and state its direction.", "marks": 2, "sample_answer": "<p class='en'>The forces are in opposite directions, so we subtract: <b>8 N − 3 N = 5 N</b>.</p><p class='ko'>힘이 반대 방향이므로 빼줍니다: <b>8N − 3N = 5N</b>.</p><p class='en'>The resultant force is <b>5 N to the right</b> (because the bigger force was pulling right).</p><p class='ko'>합력은 <b>오른쪽 5N</b>입니다 (더 큰 힘이 오른쪽이었기 때문).</p>", "mark_points": ["Correct calculation (5 N)", "Correct direction (right)"], "ko_hint": "크기 + 방향 둘 다."}, {"q": "Explain the difference between MASS and WEIGHT.", "marks": 3, "sample_answer": "<p class='en'><b>Mass</b> is the amount of <b>matter</b> in an object, measured in <b>kilograms (kg)</b>.</p><p class='ko'><b>질량</b>은 물체에 들어있는 <b>물질의 양</b>이며, 단위는 <b>킬로그램(kg)</b>입니다.</p><p class='en'><b>Weight</b> is the <b>force of gravity</b> on the object's mass, measured in <b>newtons (N)</b>.</p><p class='ko'><b>무게</b>는 물체의 질량에 작용하는 <b>중력의 힘</b>이며, 단위는 <b>뉴턴(N)</b>입니다.</p><p class='en'>Mass is the same everywhere, but weight changes depending on gravity (e.g. less on the Moon).</p><p class='ko'>질량은 어디에서나 같지만, 무게는 중력에 따라 달라집니다 (달에서는 더 작음).</p>", "mark_points": ["Mass = amount of matter (kg)", "Weight = force of gravity (N)", "Mass constant, weight varies with gravity"], "ko_hint": "질량(kg) vs 무게(N) + 어디서 어떻게 변하는지."}, {"q": "Write the formula for a MOMENT and explain why a longer spanner makes it easier to undo a tight nut.", "marks": 3, "sample_answer": "<p class='en'>Formula: <b>Moment = Force × perpendicular distance from the pivot</b>.</p><p class='ko'>공식: <b>모멘트 = 힘 × 축에서의 수직 거리</b>.</p><p class='en'>A longer spanner gives a <b>greater distance</b> from the pivot (the nut), so the same effort force produces a <b>bigger moment</b>.</p><p class='ko'>긴 스패너는 축(너트)에서 <b>거리가 더 멀어</b>, 같은 힘으로도 <b>더 큰 모멘트</b>를 만듭니다.</p><p class='en'>A bigger moment makes it easier to turn the tight nut.</p><p class='ko'>모멘트가 클수록 빡빡한 너트를 더 쉽게 돌릴 수 있습니다.</p>", "mark_points": ["Correct formula: Moment = Force × distance", "Longer spanner = larger distance", "Same force gives bigger moment → easier to turn"], "ko_hint": "공식 + 거리↑ → 모멘트↑ → 더 쉬움."}, {"q": "State the principle of moments and use it to explain how a small child can balance a heavier adult on a seesaw.", "marks": 3, "sample_answer": "<p class='en'>The <b>principle of moments</b>: when an object is balanced, the <b>clockwise moments equal the anticlockwise moments</b> around the pivot.</p><p class='ko'><b>모멘트의 원리</b>: 균형 잡힌 물체에서는 축 주위 <b>시계방향 모멘트 = 반시계방향 모멘트</b>입니다.</p><p class='en'>The small child sits <b>further from the pivot</b>, giving them a large distance.</p><p class='ko'>작은 아이가 <b>축에서 멀리 앉으면</b> 거리가 큽니다.</p><p class='en'>The adult's larger weight at a smaller distance can be balanced by the child's smaller weight at a larger distance (Force × distance is equal on both sides).</p><p class='ko'>어른은 무게가 크지만 거리가 작고, 아이는 무게가 작지만 거리가 커서 양쪽의 힘×거리가 같아져 균형이 잡힙니다.</p>", "mark_points": ["States principle correctly", "Child sits further from pivot", "Force × distance equal on both sides"], "ko_hint": "원리 + 아이가 멀리 앉음 + 양쪽 모멘트 같음."}];
 const VOCAB_DATA = [{"en": "Force", "ko": "힘", "def_en": "A push or pull on an object, measured in newtons (N).", "cat": "organ"}, {"en": "Newton (N)", "ko": "뉴턴", "def_en": "The SI unit of force.", "cat": "organ"}, {"en": "Newton meter", "ko": "뉴턴 미터", "def_en": "A spring balance used to measure force.", "cat": "organ"}, {"en": "Contact force", "ko": "접촉력", "def_en": "A force that needs objects to touch (e.g. friction).", "cat": "organ"}, {"en": "Non-contact force", "ko": "비접촉력", "def_en": "A force that acts at a distance (e.g. gravity, magnetism).", "cat": "organ"}, {"en": "Gravity", "ko": "중력", "def_en": "A non-contact force that pulls objects with mass towards each other.", "cat": "organ"}, {"en": "Weight", "ko": "무게", "def_en": "The pull of gravity on an object's mass; measured in newtons.", "cat": "organ"}, {"en": "Mass", "ko": "질량", "def_en": "The amount of matter in an object; measured in kg.", "cat": "organ"}, {"en": "Friction", "ko": "마찰력", "def_en": "Contact force acting opposite to motion between surfaces.", "cat": "organ"}, {"en": "Air resistance", "ko": "공기 저항", "def_en": "Friction between an object and the air it moves through.", "cat": "organ"}, {"en": "Upthrust", "ko": "부력", "def_en": "Upward force from a fluid on an object placed in it.", "cat": "organ"}, {"en": "Tension", "ko": "장력", "def_en": "Force in a stretched rope, string or spring.", "cat": "organ"}, {"en": "Balanced forces", "ko": "평형력", "def_en": "Equal forces acting in opposite directions; resultant = 0.", "cat": "process"}, {"en": "Unbalanced forces", "ko": "불평형력", "def_en": "Forces that don't cancel; resultant force changes motion.", "cat": "process"}, {"en": "Resultant force", "ko": "합력", "def_en": "Single force equal to the sum of all forces acting on an object.", "cat": "process"}, {"en": "Acceleration", "ko": "가속도", "def_en": "Change in velocity over time (speeding up, slowing down, or changing direction).", "cat": "process"}, {"en": "Moment", "ko": "모멘트", "def_en": "Turning effect of a force around a pivot; Moment = Force × distance.", "cat": "gas"}, {"en": "Pivot", "ko": "축 (회전 중심)", "def_en": "The fixed point that a lever turns around.", "cat": "gas"}, {"en": "Lever", "ko": "지렛대", "def_en": "A bar that turns around a pivot to lift a load with less force.", "cat": "gas"}, {"en": "Principle of moments", "ko": "모멘트의 원리", "def_en": "For balance: clockwise moments = anticlockwise moments.", "cat": "gas"}, {"en": "Clockwise", "ko": "시계방향", "def_en": "Turning in the same direction as clock hands.", "cat": "blood"}, {"en": "Anticlockwise", "ko": "반시계방향", "def_en": "Turning in the opposite direction to clock hands.", "cat": "blood"}, {"en": "Newton-metre (Nm)", "ko": "뉴턴미터", "def_en": "Unit of moment.", "cat": "blood"}];
+const UNIT_ID = "forces";
 const UNIT_TITLE = "8P Forces & Moments 힘과 회전력";
 const UNIT_TOPICS = ["1. What is a Force?", "2. Balanced vs Unbalanced Forces", "3. Forces in Action", "4. Moments (Turning Forces)"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
@@ -1078,6 +1117,7 @@ function playSection(cat, btn){
   const words = [];
   document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
     if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
     const en = (c.querySelector('.vcard-en') || {}).textContent;
     if (en) words.push(en.trim());
   });
@@ -1098,6 +1138,44 @@ function playSection(cat, btn){
     });
   };
   playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
 }
 
 // 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
@@ -1131,7 +1209,8 @@ function applyVocabFilter() {
     const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
     const catOk = (currentCat === 'all' || cat === currentCat);
     const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
-    const show = catOk && qOk;
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
     c.classList.toggle('hidden', !show);
     if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
@@ -1150,6 +1229,7 @@ function filterCards(cat) {
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
 });
 
 // ─── 단어시험 (Spelling Test) ───

@@ -178,6 +178,16 @@ header {
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
 
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
@@ -330,6 +340,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -352,6 +367,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Population")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -364,6 +380,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Demographics")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -376,6 +393,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Birth rate")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -388,6 +406,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Death rate")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -400,6 +419,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Fertility rate")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -412,6 +432,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Life expectancy")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -424,6 +445,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Infant Mortality Rate (IMR)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -436,6 +458,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Literacy rate")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -448,6 +471,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Population growth")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -460,6 +484,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("8 Billion")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -475,6 +500,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Population pyramid")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -487,6 +513,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Age chart")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -499,6 +526,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Pre-reproductive group")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -511,6 +539,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Reproductive group")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -523,6 +552,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Post-reproductive group")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -535,6 +565,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Expanding pyramid")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -547,6 +578,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Contracting pyramid")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -559,6 +591,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Stable pyramid")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -574,6 +607,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Demographic Transition Model (DTM)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -586,6 +620,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Stage 1 (High Stationary)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -598,6 +633,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Stage 2 (Early Expanding)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -610,6 +646,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Stage 3 (Late Expanding)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -622,6 +659,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Stage 4 (Low Stationary)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -634,6 +672,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Stage 5 (Declining)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -649,6 +688,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("HIC (High Income Country)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -661,6 +701,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("LIC (Low Income Country)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -673,6 +714,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Aging population")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -685,6 +727,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Infant mortality")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -697,6 +740,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Calorie intake")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -709,6 +753,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Contraception")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -1039,11 +1084,12 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Y8 Geography Population 인구 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
+<footer>Y8 Geography Population 인구 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "List and briefly explain the 5 STAGES of the DEMOGRAPHIC TRANSITION MODEL (DTM).", "marks": 5, "sample_answer": "<p class='en'><b>Stage 1 (High Stationary):</b> High birth rate + high death rate → population stays low. Pre-industrial societies.</p><p class='ko'><b>1단계:</b> 높은 출생률·높은 사망률 → 인구 낮게 유지. 산업화 이전.</p><p class='en'><b>Stage 2 (Early Expanding):</b> High birth rate, but death rate falls (medicine, food) → rapid population growth. Many LICs.</p><p class='ko'><b>2단계:</b> 높은 출생률, 사망률 하락 → 인구 급증. 많은 LIC.</p><p class='en'><b>Stage 3 (Late Expanding):</b> Death rate stays low, birth rate starts to fall → growth slows.</p><p class='ko'><b>3단계:</b> 사망률 낮게 유지, 출생률 하락 시작 → 증가 둔화.</p><p class='en'><b>Stage 4 (Low Stationary):</b> Low birth + low death → high stable population. Most HICs (UK, USA).</p><p class='ko'><b>4단계:</b> 낮은 출생·사망 → 안정된 높은 인구. 대부분 HIC.</p><p class='en'><b>Stage 5 (Declining):</b> Birth rate below death rate → population shrinks. Japan, Germany.</p><p class='ko'><b>5단계:</b> 출생률<사망률 → 인구 감소. 일본·독일.</p>", "mark_points": ["Stage 1: high birth + high death", "Stage 2: death falls, rapid growth", "Stage 3: birth falls, growth slows", "Stage 4: low birth + low death, stable", "Stage 5: birth < death, declining"], "ko_hint": "각 단계 1점 = 5점."}, {"q": "Compare Japan and Afghanistan's FERTILITY RATES using a full PEEL paragraph. (Based on Lesson 4 & 5a)", "marks": 4, "sample_answer": "<p class='en'><b>P:</b> Japan and Afghanistan are very different when it comes to their fertility rates.</p><p class='ko'><b>P:</b> 일본과 아프가니스탄은 출산율이 매우 다릅니다.</p><p class='en'><b>E (data):</b> In Japan, a highly developed country, the average woman has about <b>1.3 children</b>. In Afghanistan, the rate is much higher at around <b>4.6 children per woman</b>.</p><p class='ko'><b>E (자료):</b> 고소득국 일본은 여성당 약 <b>1.3명</b>, 아프가니스탄은 <b>4.6명</b>.</p><p class='en'><b>E (explain):</b> In Japan, women focus on education and careers, and the country has excellent healthcare. In Afghanistan, widespread poverty, less access to education and healthcare (especially for women), cultural traditions, and high infant mortality lead families to have more children.</p><p class='ko'><b>E (설명):</b> 일본 여성은 교육·경력에 집중, 우수한 의료. 아프가니스탄은 빈곤·교육·의료 부족, 문화·높은 영아사망률로 많은 자녀를 낳음.</p><p class='en'><b>L:</b> These differences have big effects: Japan's low birth rate causes an <b>aging population</b> with fewer workers; Afghanistan's high birth rate <b>adds to poverty</b> and slows progress.</p><p class='ko'><b>L:</b> 이 차이는 큰 영향: 일본 = 고령화·노동자 부족, 아프가니스탄 = 빈곤 가중·발전 둔화.</p>", "mark_points": ["Point with clear comparison", "Evidence with specific numbers (1.3 vs 4.6)", "Explanation of WHY (education, healthcare, poverty, culture)", "Link to consequences (aging vs poverty)"], "ko_hint": "PEEL 4단계 + 숫자 (1.3 vs 4.6) + 원인 + 결과."}, {"q": "What is a POPULATION PYRAMID? Describe the THREE main shapes and what each means.", "marks": 3, "sample_answer": "<p class='en'>A <b>population pyramid</b> is a graph showing the <b>age and sex structure</b> of a population (left = male, right = female; bottom = young, top = old).</p><p class='ko'><b>인구 피라미드</b>는 인구의 <b>연령·성별 구조</b>를 보여주는 그래프 (왼쪽=남, 오른쪽=여, 아래=어린, 위=노인).</p><p class='en'>1. <b>Expanding</b> (wide base, narrow top) — fast-growing population, high birth rate (many LICs in DTM Stage 2).</p><p class='ko'>1. <b>확장형</b> (밑 넓고 위 좁음) — 빠른 인구 증가, 높은 출생률 (DTM 2단계 LIC).</p><p class='en'>2. <b>Stable</b> (more even bars) — stable population, balanced birth and death rates (HICs in DTM Stage 4).</p><p class='ko'>2. <b>안정형</b> (위아래 비슷) — 안정된 인구, 출생·사망 균형 (DTM 4단계 HIC).</p><p class='en'>3. <b>Contracting</b> (narrow base) — declining population, low birth rate (e.g. Japan, Germany — DTM Stage 5).</p><p class='ko'>3. <b>축소형</b> (밑 좁음) — 감소하는 인구, 낮은 출생률 (예: 일본·독일 — DTM 5단계).</p>", "mark_points": ["Defines pyramid (age + sex structure)", "Expanding = wide base, fast growth", "Stable = balanced; Contracting = narrow base, declining"], "ko_hint": "정의 + 3가지 모양과 의미."}, {"q": "Quiz from Lesson 9 (China One Child Policy video quiz, Q3 PDF): 'What unintended consequence has arisen from the one-child policy in China?' (a) Increased birth rates (b) More women than men (c) A shrinking workforce (d) Decreased literacy rates", "marks": 1, "sample_answer": "<p class='en'>Answer: <b>(c) A shrinking workforce</b>.</p><p class='ko'>정답: <b>(c) 노동력 축소</b>.</p><p class='en'>Explanation: The one-child policy meant fewer babies were born for decades, so the number of working-age adults is now decreasing while the elderly population grows.</p><p class='ko'>설명: 한 자녀 정책으로 수십 년간 출생이 줄어 노동 가능 성인 수가 줄고 노인 인구는 증가.</p>", "mark_points": ["(c) A shrinking workforce"], "ko_hint": "정답은 (c). 출생 감소 → 노동력 감소."}, {"q": "A country has a population pyramid with a VERY WIDE BASE and a very narrow top. (a) Which DTM stage is it most likely in? (b) What 3 things does this tell you about the country?", "marks": 4, "sample_answer": "<p class='en'>(a) <b>Stage 2 (Early Expanding)</b> of the DTM.</p><p class='ko'>(a) DTM <b>2단계 (초기 확장)</b>.</p><p class='en'>(b) Three things:</p><p class='ko'>(b) 3가지:</p><p class='en'>1. <b>High birth rate</b> — many young children at the base.</p><p class='ko'>1. <b>높은 출생률</b> — 밑에 어린 자녀가 많음.</p><p class='en'>2. <b>Short life expectancy / high death rate among older people</b> — narrow top means few old people.</p><p class='ko'>2. <b>짧은 기대수명 / 노인 사망률 높음</b> — 위가 좁음.</p><p class='en'>3. Probably a <b>low-income country (LIC)</b> still developing, like many African nations.</p><p class='ko'>3. 아직 발전 중인 <b>저소득국(LIC)</b>일 가능성 (많은 아프리카 국가들처럼).</p>", "mark_points": ["DTM Stage 2", "High birth rate", "Low life expectancy / high death rate of older people", "Likely LIC / developing country"], "ko_hint": "DTM 단계 + 출생률·사망률·소득수준 3가지."}, {"q": "Look at the HIC Wales vs LIC Congo data (from class model 20250917). Wales: life expectancy 78, IMR 3.6, literacy 99%. Congo: life expectancy 61, IMR 27.6, literacy 77%. What do these numbers SUGGEST about each country?", "marks": 4, "sample_answer": "<p class='en'>Wales (HIC): <b>High life expectancy</b> (78) <b>indicates</b> good healthcare and lifestyle. <b>Very low IMR</b> (3.6) <b>suggests</b> excellent maternal and infant care. <b>Almost universal literacy</b> (99%) <b>implies</b> strong education systems.</p><p class='ko'>웨일스(HIC): 높은 기대수명(78)은 좋은 의료·생활을 <b>나타냄</b>. 매우 낮은 영아사망률(3.6)은 우수한 산모·영아 케어를 <b>시사</b>. 거의 100% 문해율(99%)은 강한 교육 시스템을 <b>함축</b>.</p><p class='en'>Congo (LIC): <b>Much shorter life expectancy</b> (61) <b>suggests</b> weaker healthcare and possibly disease/conflict. <b>High IMR</b> (27.6) <b>indicates</b> many babies die before age 1 — sign of poverty. <b>Lower literacy</b> (77%) <b>implies</b> limited access to education.</p><p class='ko'>콩고(LIC): 훨씬 짧은 기대수명(61)은 약한 의료·질병/갈등 가능성. 높은 영아사망률(27.6)은 1세 전 사망이 많음 — 빈곤의 신호. 낮은 문해율(77%)은 교육 접근 제한.</p>", "mark_points": ["Wales: high life expectancy = good healthcare", "Wales: low IMR + high literacy = development", "Congo: low life expectancy + high IMR = poverty/weak healthcare", "Uses suggests/indicates/implies vocabulary"], "ko_hint": "HIC vs LIC 차이 + suggests/indicates/implies 사용."}];
 const VOCAB_DATA = [{"en": "Population", "ko": "인구", "def_en": "The total number of people living in a place.", "cat": "organ"}, {"en": "Demographics", "ko": "인구통계", "def_en": "Statistical data about a population (age, sex, etc.).", "cat": "organ"}, {"en": "Birth rate", "ko": "출생률", "def_en": "Number of live births per 1000 people per year.", "cat": "organ"}, {"en": "Death rate", "ko": "사망률", "def_en": "Number of deaths per 1000 people per year.", "cat": "organ"}, {"en": "Fertility rate", "ko": "출산율", "def_en": "Average number of children a woman has in her lifetime.", "cat": "organ"}, {"en": "Life expectancy", "ko": "기대수명", "def_en": "Average age people are expected to live to.", "cat": "organ"}, {"en": "Infant Mortality Rate (IMR)", "ko": "영아 사망률", "def_en": "Deaths of babies under 1 year per 1000 live births.", "cat": "organ"}, {"en": "Literacy rate", "ko": "문해율", "def_en": "Percentage of adults who can read and write.", "cat": "organ"}, {"en": "Population growth", "ko": "인구 증가", "def_en": "Increase in the number of people in an area.", "cat": "organ"}, {"en": "8 Billion", "ko": "80억", "def_en": "Current world population (8,000,000,000+).", "cat": "organ"}, {"en": "Population pyramid", "ko": "인구 피라미드", "def_en": "Graph showing age and sex structure of a population.", "cat": "process"}, {"en": "Age chart", "ko": "연령 차트", "def_en": "Another name for an age structure graph.", "cat": "process"}, {"en": "Pre-reproductive group", "ko": "생식 전 집단", "def_en": "Ages 0-14 (cannot yet have children).", "cat": "process"}, {"en": "Reproductive group", "ko": "생식 가능 집단", "def_en": "Ages 15-64 (can have children, working age).", "cat": "process"}, {"en": "Post-reproductive group", "ko": "생식 후 집단", "def_en": "Ages 65+ (older population).", "cat": "process"}, {"en": "Expanding pyramid", "ko": "확장형 피라미드", "def_en": "Wide base, narrow top — fast-growing population.", "cat": "process"}, {"en": "Contracting pyramid", "ko": "축소형 피라미드", "def_en": "Narrow base — population shrinking.", "cat": "process"}, {"en": "Stable pyramid", "ko": "안정형 피라미드", "def_en": "Similar bars top to bottom — stable population.", "cat": "process"}, {"en": "Demographic Transition Model (DTM)", "ko": "인구 변천 모델", "def_en": "Model showing how birth and death rates change as countries develop.", "cat": "blood"}, {"en": "Stage 1 (High Stationary)", "ko": "1단계 (고정체기)", "def_en": "High birth + high death → low stable population. Pre-industrial.", "cat": "blood"}, {"en": "Stage 2 (Early Expanding)", "ko": "2단계 (초기 확장)", "def_en": "Death rate falls (better medicine/food) → rapid population growth.", "cat": "blood"}, {"en": "Stage 3 (Late Expanding)", "ko": "3단계 (후기 확장)", "def_en": "Birth rate starts falling (contraception, education) → growth slows.", "cat": "blood"}, {"en": "Stage 4 (Low Stationary)", "ko": "4단계 (저고정기)", "def_en": "Low birth + low death → high stable population. Most HICs.", "cat": "blood"}, {"en": "Stage 5 (Declining)", "ko": "5단계 (감소)", "def_en": "Birth rate below death rate → population shrinks. Japan, Germany.", "cat": "blood"}, {"en": "HIC (High Income Country)", "ko": "고소득국", "def_en": "Wealthy, developed country (e.g. Wales, Japan, USA).", "cat": "gas"}, {"en": "LIC (Low Income Country)", "ko": "저소득국", "def_en": "Poorer, developing country (e.g. Congo, Afghanistan).", "cat": "gas"}, {"en": "Aging population", "ko": "고령화 인구", "def_en": "Population with a high proportion of older people.", "cat": "gas"}, {"en": "Infant mortality", "ko": "영아 사망", "def_en": "Death of babies under 1 year old.", "cat": "gas"}, {"en": "Calorie intake", "ko": "칼로리 섭취량", "def_en": "Average daily food energy consumed.", "cat": "gas"}, {"en": "Contraception", "ko": "피임", "def_en": "Methods used to prevent pregnancy.", "cat": "gas"}];
+const UNIT_ID = "geo_population";
 const UNIT_TITLE = "Y8 Geography Population 인구";
 const UNIT_TOPICS = ["1. 8 Billion and Counting (Lesson 1)", "2. Population Demographics & Pyramids (Lesson 2)", "3. The Demographic Transition Model (Lesson 3)", "4. Comparing Countries — PEEL (Lessons 4 & 5)"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
@@ -1151,6 +1197,7 @@ function playSection(cat, btn){
   const words = [];
   document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
     if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
     const en = (c.querySelector('.vcard-en') || {}).textContent;
     if (en) words.push(en.trim());
   });
@@ -1171,6 +1218,44 @@ function playSection(cat, btn){
     });
   };
   playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
 }
 
 // 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
@@ -1204,7 +1289,8 @@ function applyVocabFilter() {
     const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
     const catOk = (currentCat === 'all' || cat === currentCat);
     const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
-    const show = catOk && qOk;
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
     c.classList.toggle('hidden', !show);
     if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
@@ -1223,6 +1309,7 @@ function filterCards(cat) {
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
 });
 
 // ─── 단어시험 (Spelling Test) ───

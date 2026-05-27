@@ -178,6 +178,16 @@ header {
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
 
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
@@ -329,6 +339,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -351,6 +366,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Pure substance")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -363,6 +379,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Impure substance")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -375,6 +392,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Mixture")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -387,6 +405,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Element")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -399,6 +418,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Compound")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -411,6 +431,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Distilled water")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -426,6 +447,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Melting point")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -438,6 +460,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Boiling point")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -450,6 +473,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Sharp melting point")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -462,6 +486,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Melting range")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -474,6 +499,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Impurity")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -489,6 +515,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Percentage purity")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -501,6 +528,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Carat")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -513,6 +541,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Alloy")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -528,6 +557,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Distillation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -540,6 +570,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Filtration")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -804,11 +835,12 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8C Purity 순물질과 불순물 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
+<footer>8C Purity 순물질과 불순물 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Explain what is meant by a PURE substance in chemistry, and give two examples.", "marks": 3, "sample_answer": "<p class='en'>In chemistry, a <b>pure substance</b> is one made of <b>only one type of particle</b> — either a single element or a single compound.</p><p class='ko'>화학에서 <b>순물질</b>은 <b>한 종류의 입자</b>로만 이루어진 것 — 한 원소 또는 한 화합물입니다.</p><p class='en'>Examples include <b>distilled water</b>, <b>oxygen gas</b>, <b>pure gold</b>, and <b>sodium chloride</b> (table salt).</p><p class='ko'>예: <b>증류수</b>, <b>산소 기체</b>, <b>순금</b>, <b>염화나트륨</b>(소금).</p>", "mark_points": ["Defines pure = one type of particle only", "Two valid examples"], "ko_hint": "정의 + 예시 2개."}, {"q": "Describe how you could use MELTING POINT to test whether a sample of substance is pure.", "marks": 3, "sample_answer": "<p class='en'>Heat the sample gently and measure the temperature at which it melts.</p><p class='ko'>시료를 천천히 가열하면서 녹는 온도를 측정합니다.</p><p class='en'>If the substance is <b>pure</b>, it will melt at a <b>single, sharp temperature</b> (e.g. pure ice at exactly 0 °C).</p><p class='ko'><b>순물질</b>이면 <b>한 점</b>에서 녹습니다 (예: 순얼음 정확히 0°C).</p><p class='en'>If the substance is a <b>mixture (impure)</b>, it will melt over a <b>range of temperatures</b>, not at one sharp point.</p><p class='ko'><b>혼합물(불순)</b>이면 <b>일정 범위</b>에서 녹습니다 — 한 점이 아닙니다.</p>", "mark_points": ["Measure the melting temperature", "Pure = single sharp melting point", "Impure = melts over a range"], "ko_hint": "녹는 온도 측정 + 순물질은 한 점, 불순은 범위."}, {"q": "Explain why salt is sprinkled on icy roads in winter, using your knowledge of impurities and melting points.", "marks": 3, "sample_answer": "<p class='en'>Pure ice has a melting point of exactly <b>0 °C</b>.</p><p class='ko'>순수한 얼음의 녹는점은 정확히 <b>0°C</b>입니다.</p><p class='en'>Adding salt (an <b>impurity</b>) to the ice <b>lowers its melting point</b>.</p><p class='ko'>얼음에 소금(<b>불순물</b>)을 더하면 녹는점이 <b>낮아집니다</b>.</p><p class='en'>This means the ice can melt at temperatures <b>below 0 °C</b>, making roads safer.</p><p class='ko'>그래서 0°C 이하에서도 얼음이 녹아 도로가 안전해집니다.</p>", "mark_points": ["Pure ice melts at 0 °C", "Salt is an impurity that lowers melting point", "Ice melts below 0 °C → safer roads"], "ko_hint": "불순물 → 녹는점 낮춤 → 0°C 이하에서도 녹음."}, {"q": "A sample of 50 g of gold jewellery contains 37.5 g of pure gold. Calculate the percentage purity of the gold.", "marks": 2, "sample_answer": "<p class='en'>% Purity = (mass of pure substance ÷ total mass) × 100 = (37.5 ÷ 50) × 100 = <b>75%</b>.</p><p class='ko'>순도 = (순물질 ÷ 전체) × 100 = (37.5 ÷ 50) × 100 = <b>75%</b>.</p>", "mark_points": ["Uses correct formula", "Correct answer: 75%"], "ko_hint": "(37.5÷50)×100 = 75%."}, {"q": "Why is it important for medicines to be very PURE?", "marks": 2, "sample_answer": "<p class='en'>Medicines must be pure so that they give the <b>correct, predictable effect</b> in the body.</p><p class='ko'>의약품은 몸에 <b>정확하고 예측 가능한 효과</b>를 내려면 순수해야 합니다.</p><p class='en'>Any <b>impurities</b> could cause <b>harmful side effects</b> or change how the medicine works.</p><p class='ko'>어떤 <b>불순물</b>이든 <b>해로운 부작용</b>을 일으키거나 약효를 바꿀 수 있습니다.</p>", "mark_points": ["Pure = predictable correct effect", "Impurities can cause side effects / harm"], "ko_hint": "정확한 효과 + 부작용 방지."}];
 const VOCAB_DATA = [{"en": "Pure substance", "ko": "순물질", "def_en": "Made of only one type of element or one type of compound.", "cat": "organ"}, {"en": "Impure substance", "ko": "불순물", "def_en": "A mixture — contains more than one type of particle.", "cat": "organ"}, {"en": "Mixture", "ko": "혼합물", "def_en": "Two or more substances physically mixed but not chemically joined.", "cat": "organ"}, {"en": "Element", "ko": "원소", "def_en": "A substance made of only one type of atom.", "cat": "organ"}, {"en": "Compound", "ko": "화합물", "def_en": "Two or more elements chemically joined.", "cat": "organ"}, {"en": "Distilled water", "ko": "증류수", "def_en": "Pure water with all impurities removed by distillation.", "cat": "organ"}, {"en": "Melting point", "ko": "녹는점", "def_en": "Temperature at which a solid melts to a liquid.", "cat": "process"}, {"en": "Boiling point", "ko": "끓는점", "def_en": "Temperature at which a liquid boils and becomes a gas.", "cat": "process"}, {"en": "Sharp melting point", "ko": "명확한 녹는점", "def_en": "Pure substances melt at one exact temperature.", "cat": "process"}, {"en": "Melting range", "ko": "녹는 범위", "def_en": "Impure substances melt over a range of temperatures.", "cat": "process"}, {"en": "Impurity", "ko": "불순물", "def_en": "Anything mixed in with a pure substance.", "cat": "process"}, {"en": "Percentage purity", "ko": "순도 (%)", "def_en": "(mass of pure substance ÷ total mass) × 100.", "cat": "blood"}, {"en": "Carat", "ko": "캐럿", "def_en": "Unit for measuring gold purity; pure gold = 24 carat.", "cat": "blood"}, {"en": "Alloy", "ko": "합금", "def_en": "A mixture of a metal with other metals (or carbon).", "cat": "blood"}, {"en": "Distillation", "ko": "증류", "def_en": "Separating a liquid mixture by boiling and condensing.", "cat": "gas"}, {"en": "Filtration", "ko": "여과", "def_en": "Separating insoluble solids from a liquid using filter paper.", "cat": "gas"}];
+const UNIT_ID = "purity";
 const UNIT_TITLE = "8C Purity 순물질과 불순물";
 const UNIT_TOPICS = ["1. Pure vs Impure Substances", "2. Testing for Purity", "3. Calculating Purity"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
@@ -916,6 +948,7 @@ function playSection(cat, btn){
   const words = [];
   document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
     if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
     const en = (c.querySelector('.vcard-en') || {}).textContent;
     if (en) words.push(en.trim());
   });
@@ -936,6 +969,44 @@ function playSection(cat, btn){
     });
   };
   playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
 }
 
 // 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
@@ -969,7 +1040,8 @@ function applyVocabFilter() {
     const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
     const catOk = (currentCat === 'all' || cat === currentCat);
     const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
-    const show = catOk && qOk;
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
     c.classList.toggle('hidden', !show);
     if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
@@ -988,6 +1060,7 @@ function filterCards(cat) {
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
 });
 
 // ─── 단어시험 (Spelling Test) ───

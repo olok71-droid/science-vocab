@@ -178,6 +178,16 @@ header {
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
 
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
@@ -330,6 +340,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -352,6 +367,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Transatlantic Slave Trade")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -364,6 +380,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Middle Passage")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -376,6 +393,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Slave Auctions")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -388,6 +406,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Plantation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -400,6 +419,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Abolition")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -412,6 +432,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Abolitionists")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -424,6 +445,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Triangle Trade")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -436,6 +458,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Enslaved Person")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -448,6 +471,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Resistance")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -460,6 +484,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Human Rights")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -475,6 +500,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Primary source")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -487,6 +513,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Secondary source")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -499,6 +526,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Eyewitness account")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -511,6 +539,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Historian")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -523,6 +552,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Inference")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -535,6 +565,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Significant")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -547,6 +578,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Suggests")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -559,6 +591,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Indicates")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -571,6 +604,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Implies")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -583,6 +617,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Short-term")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -595,6 +630,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Long-term")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -607,6 +643,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Consequence")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -619,6 +656,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Impact")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -631,6 +669,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("PEEL paragraph")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -643,6 +682,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("On balance")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -658,6 +698,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Modern Slavery")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -670,6 +711,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Bonded Labour / Debt Bondage")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -682,6 +724,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Descent-based slavery")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -694,6 +737,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Forced Labour")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -706,6 +750,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Child Slavery")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -718,6 +763,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Domestic Workers")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -730,6 +776,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Marital Slavery")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -742,6 +789,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Trafficked")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -754,6 +802,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Snakehead gangs")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -766,6 +815,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Gangmaster")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -781,6 +831,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Industrialisation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -793,6 +844,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Urbanisation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -805,6 +857,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Empire")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -817,6 +870,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Imperialism")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -829,6 +883,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Colony")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -841,6 +896,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Colonisation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -853,6 +909,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Reform")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -865,6 +922,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Reformers")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -877,6 +935,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("widespread")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -889,6 +948,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("gradual")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -901,6 +961,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("rapid")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -913,6 +974,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("transformative")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -925,6 +987,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("brutal")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -937,6 +1000,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("inhumane")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -949,6 +1013,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("exploitative")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -961,6 +1026,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("courageous")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -1366,11 +1432,12 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Y8 History 역사 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
+<footer>Y8 History 역사 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Define the THREE STAGES of the Triangle Trade. (From Vocabulary Summary topic words)", "marks": 3, "sample_answer": "<p class='en'><b>Stage 1 (Europe → Africa):</b> Ships from Europe carried manufactured goods (cloth, guns, alcohol) to West Africa, exchanged for enslaved people.</p><p class='ko'><b>1단계 (유럽 → 아프리카):</b> 유럽 배가 공산품(천·총·술)을 서아프리카로 운반하고 노예와 교환.</p><p class='en'><b>Stage 2 — the Middle Passage (Africa → Americas):</b> Enslaved Africans were transported across the Atlantic in horrific conditions on overcrowded ships.</p><p class='ko'><b>2단계 — Middle Passage (아프리카 → 미주):</b> 노예가 끔찍한 환경의 과적된 배로 대서양 횡단.</p><p class='en'><b>Stage 3 (Americas → Europe):</b> Ships returned with plantation goods — sugar, cotton, tobacco, coffee — to be sold in Europe.</p><p class='ko'><b>3단계 (미주 → 유럽):</b> 배는 플랜테이션 생산물(설탕·면화·담배·커피)을 유럽으로 운반.</p>", "mark_points": ["Stage 1: Europe → Africa (manufactured goods)", "Stage 2: Africa → Americas (enslaved people / Middle Passage)", "Stage 3: Americas → Europe (sugar / cotton / tobacco / plantation goods)"], "ko_hint": "유럽→아프리카(공산품), 아프리카→미주(노예/Middle Passage), 미주→유럽(설탕·면화·담배)."}, {"q": "Describe the FIVE TYPES of modern slavery (from Lesson 10 PDF).", "marks": 5, "sample_answer": "<p class='en'>1. <b>Bonded Labour / Debt Bondage</b> — working to repay a loan, often for life.</p><p class='ko'>1. <b>채무 노예</b> — 대출을 갚기 위해 일함, 종종 평생.</p><p class='en'>2. <b>Forced Labour</b> — any labour against one's own will (~25 million people worldwide).</p><p class='ko'>2. <b>강제 노동</b> — 의지에 반하는 모든 노동 (전 세계 약 2500만 명).</p><p class='en'>3. <b>Child Slavery</b> — about 1 in 4 slaves are children, used for labour, domestic work, armed conflict, sexual abuse.</p><p class='ko'>3. <b>아동 노예</b> — 노예의 약 1/4이 아동, 노동·가사·전투·성착취에 동원.</p><p class='en'>4. <b>Live-in Migrant / Domestic Workers</b> — confined to private homes, isolated from workplace protections.</p><p class='ko'>4. <b>가사 노동자</b> — 가정집에 갇혀 직장 보호로부터 고립.</p><p class='en'>5. <b>Marital Slavery</b> — forced marriage where one person controls or 'owns' the other.</p><p class='ko'>5. <b>혼인 노예</b> — 한 사람이 다른 사람을 통제·소유하는 강제 결혼.</p>", "mark_points": ["Bonded labour / debt bondage", "Forced labour", "Child slavery", "Domestic / live-in migrant workers", "Marital slavery / forced marriage"], "ko_hint": "5종류 각 1점: bonded, forced, child, domestic, marital."}, {"q": "Write a PEEL paragraph using the sentence starters from the Vocabulary Summary to answer: 'The Middle Passage was the most brutal stage of the Triangle Trade.' Do you agree?", "marks": 4, "sample_answer": "<p class='en'><b>Point:</b> The main reason the Middle Passage was the most brutal stage was the inhumane treatment of enslaved Africans during the journey.</p><p class='ko'><b>Point:</b> Middle Passage가 가장 잔혹한 단계였던 주된 이유는 항해 중 노예가 된 아프리카인에 대한 비인간적 처우였습니다.</p><p class='en'><b>Evidence:</b> For example, eyewitness accounts (primary sources) show that enslaved people were chained together below deck for weeks, with very little food, water or sanitation.</p><p class='ko'><b>Evidence:</b> 예를 들어 목격자 진술(1차 사료)은 노예가 갑판 아래 몇 주 동안 사슬에 묶여 있었고, 음식·물·위생이 거의 없었음을 보여줍니다.</p><p class='en'><b>Explain:</b> This means that many enslaved people did not survive the journey and the conditions were designed purely to maximise profit, treating humans as cargo.</p><p class='ko'><b>Explain:</b> 이는 많은 노예가 항해를 살아남지 못했고, 환경이 오직 이윤 극대화를 위해 설계되어 인간을 화물로 취급했음을 의미합니다.</p><p class='en'><b>Link:</b> This matters because the Middle Passage shows the most extreme example of how the slave trade dehumanised people, which is why it is remembered as the most brutal stage today.</p><p class='ko'><b>Link:</b> 이것이 중요한 이유는 Middle Passage가 노예 무역이 인간을 비인간화한 가장 극단적 예시이기 때문입니다. 그래서 오늘날 가장 잔혹한 단계로 기억됩니다.</p>", "mark_points": ["Clear POINT using 'The main reason for X was…'", "EVIDENCE using 'For example, the source shows…'", "EXPLAIN using 'This means that…'", "LINK using 'This matters because…'"], "ko_hint": "4단계 다 사용 + Vocab Summary의 starter 그대로."}, {"q": "Read this case study extract and answer: 'Adina was put on a plane to the UK, collected by a man at the airport, taken to a house and locked in a kitchen. For the next two years, Adina was forced to live in this one room.' What TYPE of modern slavery is this, and what TWO pieces of evidence in the extract support your answer?", "marks": 3, "sample_answer": "<p class='en'>This is <b>Live-in Migrant / Domestic Slavery</b> (also acceptable: Forced Labour, Child / young person slavery as she was 16).</p><p class='ko'>이것은 <b>가사 노동자(Live-in Migrant/Domestic) 노예제</b>입니다 (혹은 Forced Labour, 16세니까 Child Slavery로도 인정).</p><p class='en'>Evidence 1: She was '<b>locked in a kitchen</b>' — she was confined to a private home and isolated from protection.</p><p class='ko'>근거 1: '<b>부엌에 갇혔다</b>' — 가정집에 갇혀 보호로부터 고립.</p><p class='en'>Evidence 2: She was '<b>forced to live in this one room</b> for two years' — she had no freedom to leave, which is the key feature of slavery.</p><p class='ko'>근거 2: '<b>2년간 한 방에 강제로 살았다</b>' — 떠날 자유가 없음, 노예제의 핵심 특징.</p>", "mark_points": ["Correctly names type (domestic / live-in migrant / forced labour)", "Evidence 1: locked in kitchen / confined to private home", "Evidence 2: forced to live for 2 years / no freedom to leave"], "ko_hint": "타입 1개 + 텍스트에서 근거 2개 인용."}, {"q": "Explain how the Triangle Trade had BOTH short-term AND long-term impacts. Use the cause-effect words and conclusion phrases from the Vocabulary Summary.", "marks": 4, "sample_answer": "<p class='en'><b>In the short-term</b>, the Triangle Trade led to enormous suffering for the millions of enslaved Africans who endured the brutal Middle Passage and were forced to work on plantations.</p><p class='ko'><b>단기적으로</b>, 삼각 무역은 잔혹한 Middle Passage를 견디고 플랜테이션에서 강제 노동한 수백만 명의 노예가 된 아프리카인에게 엄청난 고통을 주었습니다.</p><p class='en'><b>As a result</b>, European countries (especially Britain) became extremely wealthy from sugar, cotton and tobacco profits, which <b>contributed to</b> the Industrial Revolution.</p><p class='ko'><b>결과적으로</b> 유럽 국가들(특히 영국)이 설탕·면화·담배 이윤으로 매우 부유해졌고, 이것이 산업혁명에 <b>기여했습니다</b>.</p><p class='en'><b>In the long-term</b>, the trade caused widespread racial inequality and trauma that still affects communities today. African societies also suffered long-term population loss and economic damage.</p><p class='ko'><b>장기적으로</b>, 이 무역은 광범위한 인종 불평등과 트라우마를 일으켜 오늘날 공동체에도 영향을 미칩니다. 아프리카 사회도 장기적 인구 감소와 경제 피해를 입었습니다.</p><p class='en'><b>Overall</b>, the consequences of the Triangle Trade were both immediate (suffering, profit) and long-lasting (inequality, economic impact).</p><p class='ko'><b>전체적으로</b>, 삼각 무역의 결과는 즉각적(고통·이윤)이면서 동시에 장기적(불평등·경제 영향)이었습니다.</p>", "mark_points": ["Identifies clear short-term impact (suffering / profit)", "Identifies clear long-term impact (inequality / economic damage / trauma)", "Uses cause-effect words (led to / contributed to / as a result)", "Uses concluding phrase (overall / in conclusion)"], "ko_hint": "단기+장기 영향 + 인과 어휘 + 결론 어휘."}, {"q": "Vocabulary task: Match each KEY TOPIC WORD to its meaning (from Vocabulary Summary). 1. Plantation · 2. Abolitionists · 3. Triangle Trade · 4. Middle Passage · 5. Resistance. Meanings (a-e): (a) Ways enslaved people fought back. (b) Large farm where enslaved people were forced to work. (c) Horrific sea journey from Africa to the Americas. (d) Trading system linking Europe, Africa, and the Americas. (e) People who campaigned to end slavery.", "marks": 5, "sample_answer": "<p class='en'>1 → (b) Plantation<br>2 → (e) Abolitionists<br>3 → (d) Triangle Trade<br>4 → (c) Middle Passage<br>5 → (a) Resistance</p><p class='ko'>1=b, 2=e, 3=d, 4=c, 5=a (Vocabulary Summary의 정확한 정의)</p>", "mark_points": ["1-b", "2-e", "3-d", "4-c", "5-a"], "ko_hint": "각 1점 = 5점."}];
 const VOCAB_DATA = [{"en": "Transatlantic Slave Trade", "ko": "대서양 노예 무역", "def_en": "Forced movement of enslaved Africans to the Americas.", "cat": "organ"}, {"en": "Middle Passage", "ko": "중간 항로", "def_en": "Horrific sea journey enslaved Africans endured (Africa → Americas).", "cat": "organ"}, {"en": "Slave Auctions", "ko": "노예 경매", "def_en": "Places where enslaved people were sold.", "cat": "organ"}, {"en": "Plantation", "ko": "대농장 (플랜테이션)", "def_en": "Large farm where enslaved people were forced to work.", "cat": "organ"}, {"en": "Abolition", "ko": "노예제 폐지", "def_en": "Ending slavery.", "cat": "organ"}, {"en": "Abolitionists", "ko": "폐지론자", "def_en": "People who campaigned to end slavery.", "cat": "organ"}, {"en": "Triangle Trade", "ko": "삼각 무역", "def_en": "Trading system linking Europe, Africa, and the Americas.", "cat": "organ"}, {"en": "Enslaved Person", "ko": "노예가 된 사람", "def_en": "Person with no freedom or rights.", "cat": "organ"}, {"en": "Resistance", "ko": "저항", "def_en": "Ways enslaved people fought back (rebellion, escape).", "cat": "organ"}, {"en": "Human Rights", "ko": "인권", "def_en": "Freedoms and rights every person deserves.", "cat": "organ"}, {"en": "Modern Slavery", "ko": "현대 노예제", "def_en": "Exploitation and forced labour today.", "cat": "blood"}, {"en": "Bonded Labour / Debt Bondage", "ko": "채무 노예", "def_en": "Person works to repay a loan, often for life.", "cat": "blood"}, {"en": "Descent-based slavery", "ko": "세습 노예", "def_en": "Debt passed to partner or children if a slave dies.", "cat": "blood"}, {"en": "Forced Labour", "ko": "강제 노동", "def_en": "Labour done against one's own will. ~25 million people worldwide.", "cat": "blood"}, {"en": "Child Slavery", "ko": "아동 노예", "def_en": "About 1 in 4 slaves are children worldwide.", "cat": "blood"}, {"en": "Domestic Workers", "ko": "가사 노동자", "def_en": "Slaves confined to private homes (cleaning, cooking, childcare).", "cat": "blood"}, {"en": "Marital Slavery", "ko": "혼인 노예 / 강제 결혼", "def_en": "Forced marriage where one person controls or 'owns' the other.", "cat": "blood"}, {"en": "Trafficked", "ko": "인신매매된", "def_en": "Moved illegally for exploitation.", "cat": "blood"}, {"en": "Snakehead gangs", "ko": "스네이크헤드 갱", "def_en": "Chinese traffickers who smuggle people for high fees (e.g. £20,000).", "cat": "blood"}, {"en": "Gangmaster", "ko": "갱마스터", "def_en": "Boss who controls and exploits forced labourers.", "cat": "blood"}, {"en": "Industrialisation", "ko": "산업화", "def_en": "Growth of factories and machines.", "cat": "gas"}, {"en": "Urbanisation", "ko": "도시화", "def_en": "Growth of towns and cities.", "cat": "gas"}, {"en": "Empire", "ko": "제국", "def_en": "One country controlling others.", "cat": "gas"}, {"en": "Imperialism", "ko": "제국주의", "def_en": "Policy of extending a country's power by controlling others.", "cat": "gas"}, {"en": "Colony", "ko": "식민지", "def_en": "Land ruled by an empire.", "cat": "gas"}, {"en": "Colonisation", "ko": "식민지화", "def_en": "Act of one country taking control of another.", "cat": "gas"}, {"en": "Reform", "ko": "개혁", "def_en": "Change made to improve something.", "cat": "gas"}, {"en": "Reformers", "ko": "개혁가", "def_en": "People who create change.", "cat": "gas"}, {"en": "Primary source", "ko": "1차 사료", "def_en": "Original document from the time being studied (eyewitness account).", "cat": "process"}, {"en": "Secondary source", "ko": "2차 사료", "def_en": "Information by historians or textbooks based on primary sources.", "cat": "process"}, {"en": "Eyewitness account", "ko": "목격자 진술", "def_en": "Report from someone who saw the event.", "cat": "process"}, {"en": "Historian", "ko": "역사가", "def_en": "Person who studies and writes about history.", "cat": "process"}, {"en": "Inference", "ko": "추론", "def_en": "Working out a meaning that is not stated directly.", "cat": "process"}, {"en": "Significant", "ko": "중요한", "def_en": "Important; noticeable.", "cat": "process"}, {"en": "Suggests", "ko": "시사하다", "def_en": "(in analysis) Shows or hints at something.", "cat": "process"}, {"en": "Indicates", "ko": "나타내다", "def_en": "Shows clearly; points to.", "cat": "process"}, {"en": "Implies", "ko": "함축하다", "def_en": "Suggests without saying directly.", "cat": "process"}, {"en": "Short-term", "ko": "단기적", "def_en": "Lasting only a short time.", "cat": "process"}, {"en": "Long-term", "ko": "장기적", "def_en": "Lasting a long time.", "cat": "process"}, {"en": "Consequence", "ko": "결과", "def_en": "Result of an event or action.", "cat": "process"}, {"en": "Impact", "ko": "영향", "def_en": "Effect on something or someone.", "cat": "process"}, {"en": "PEEL paragraph", "ko": "PEEL 단락", "def_en": "Point + Evidence + Explain + Link paragraph structure.", "cat": "process"}, {"en": "On balance", "ko": "종합해보면", "def_en": "After considering all sides.", "cat": "process"}, {"en": "widespread", "ko": "광범위한", "def_en": "Found in many places; common.", "cat": "gas"}, {"en": "gradual", "ko": "점진적인", "def_en": "Happening slowly over time.", "cat": "gas"}, {"en": "rapid", "ko": "빠른", "def_en": "Happening very quickly.", "cat": "gas"}, {"en": "transformative", "ko": "변혁적인", "def_en": "Causing big changes.", "cat": "gas"}, {"en": "brutal", "ko": "잔인한", "def_en": "Very cruel and violent.", "cat": "gas"}, {"en": "inhumane", "ko": "비인간적인", "def_en": "Lacking pity, cruel.", "cat": "gas"}, {"en": "exploitative", "ko": "착취적인", "def_en": "Taking unfair advantage of others.", "cat": "gas"}, {"en": "courageous", "ko": "용감한", "def_en": "Brave in the face of danger.", "cat": "gas"}];
+const UNIT_ID = "history";
 const UNIT_TITLE = "Y8 History 역사";
 const UNIT_TOPICS = ["1. Age of Discovery (CA1 주제)", "2. Triangle Trade & Middle Passage", "3. Modern Slavery — 5 Types & Real Cases", "4. PEEL Writing & Source Skills (CA1 양식)"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
@@ -1478,6 +1545,7 @@ function playSection(cat, btn){
   const words = [];
   document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
     if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
     const en = (c.querySelector('.vcard-en') || {}).textContent;
     if (en) words.push(en.trim());
   });
@@ -1498,6 +1566,44 @@ function playSection(cat, btn){
     });
   };
   playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
 }
 
 // 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
@@ -1531,7 +1637,8 @@ function applyVocabFilter() {
     const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
     const catOk = (currentCat === 'all' || cat === currentCat);
     const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
-    const show = catOk && qOk;
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
     c.classList.toggle('hidden', !show);
     if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
@@ -1550,6 +1657,7 @@ function filterCards(cat) {
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
 });
 
 // ─── 단어시험 (Spelling Test) ───

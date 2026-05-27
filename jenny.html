@@ -109,6 +109,19 @@
   .spk:hover { background:var(--accent); color:#fff; }
   .spk.sm { width:28px; height:28px; font-size:13px; }
 
+  /* 외움 체크 */
+  .btn-mem { border:1.5px solid rgba(148,163,184,0.45); background:transparent; width:34px; height:34px;
+    border-radius:50%; font-size:16px; cursor:pointer; flex-shrink:0; line-height:1; padding:0; transition:all .15s; }
+  .btn-mem.on { background:rgba(34,197,94,0.18); border-color:#22c55e; }
+  .wrow.memorized { opacity:.5; }
+  .wrow.memorized .w-en > span { text-decoration:line-through; }
+  .mem-bar { display:flex; align-items:center; gap:8px; margin-bottom:12px; flex-wrap:wrap; font-size:12px; }
+  .mem-info { color:var(--muted); font-weight:800; }
+  .mem-info b { color:#22c55e; }
+  .mem-toggle-btn { border:1.5px solid rgba(246,166,35,0.4); background:transparent; color:var(--muted);
+    font-family:inherit; font-weight:800; font-size:11px; padding:4px 10px; border-radius:13px; cursor:pointer; white-space:nowrap; }
+  .mem-toggle-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+
   /* 블라인드(가림) — 글자 숨기고 톡 누르면 잠깐 보임 */
   .cell { position:relative; cursor:default; }
   .cell.blinded { cursor:pointer; }
@@ -249,6 +262,11 @@
   <!-- 단어장 -->
   <div class="tab-panel active" id="tab-vocab">
     <input class="search" id="search" placeholder="🔍 영어 또는 한글 검색…">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
     <div class="day-filter" id="day-filter"></div>
     <div id="vocab-list"></div>
   </div>
@@ -437,6 +455,27 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 let vocabDay = 'all';
 let query = '';
 
+// ─── 외움 체크 (localStorage 저장, 전체듣기에서 제외) ───
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem('memv_jenny') || '[]')); } catch(e){}
+let memHidden = false;
+function saveMem(){ try { localStorage.setItem('memv_jenny', JSON.stringify([...memSet])); } catch(e){} }
+function toggleMem(id){
+  if (memSet.has(id)) memSet.delete(id); else memSet.add(id);
+  saveMem(); renderVocab();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if (b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  renderVocab();
+}
+function resetMem(){
+  if (!memSet.size) return;
+  if (!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); renderVocab();
+}
+
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 let blindEn = false, blindKo = false;   // 각각 켜기/끄기 토글
@@ -497,7 +536,7 @@ function playDay(day, btn) {
   const q = query.toLowerCase().trim();
   const items = DATA.filter(w => w.d === day && (
     !q || w.en.toLowerCase().includes(q) || w.ko.toLowerCase().includes(q) || w.ex.toLowerCase().includes(q)
-  ));
+  ) && !memSet.has(w.id));   // 외운 단어는 빼고 재생
   if (!items.length) return;
   btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
   const token = ++_seqToken;
@@ -526,14 +565,16 @@ function renderVocab() {
     if (vocabDay !== 'all' && vocabDay !== day) return;
     const items = DATA.filter(w => w.d === day && (
       !q || w.en.toLowerCase().includes(q) || w.ko.toLowerCase().includes(q) || w.ex.toLowerCase().includes(q)
-    ));
+    ) && !(memHidden && memSet.has(w.id)));
     if (items.length === 0) return;
     html += `<div class="day-head"><span class="dh-title">📅 Day ${day} <span class="cnt">· ${items.length}개</span></span>${blindButtons(day)}</div>`;
     items.forEach(w => {
-      html += `<div class="wrow">
+      const mem = memSet.has(w.id);
+      html += `<div class="wrow${mem ? ' memorized' : ''}">
         ${cell('en', w.en)}
         ${cell('ko', w.ko)}
         <button class="spk" onclick="playClip('w', ${w.id})" aria-label="단어 발음">🔊</button>
+        <button class="btn-mem${mem ? ' on' : ''}" onclick="toggleMem(${w.id})" title="외웠으면 체크 (전체듣기에서 빠짐)">${mem ? '✅' : '🧠'}</button>
       </div>
       <div class="ex-row">
         <div class="ex-en cell${blindEn ? ' blinded' : ''}" onclick="peek(this)"><span>${esc(w.ex)}</span></div>
@@ -544,6 +585,8 @@ function renderVocab() {
   });
   if (!html) html = `<p style="text-align:center;color:var(--muted);font-weight:700;padding:30px 0;">검색 결과가 없어요 🐣</p>`;
   wrap.innerHTML = html;
+  const mc = document.getElementById('mem-count');
+  if (mc) mc.textContent = memSet.size;
 }
 
 // Day 필터 버튼 생성

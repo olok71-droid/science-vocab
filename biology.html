@@ -178,6 +178,16 @@ header {
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
 
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
@@ -330,6 +340,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -352,6 +367,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Respiratory system")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -364,6 +380,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Nasal cavity")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -376,6 +393,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Trachea")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -388,6 +406,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Bronchus")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -400,6 +419,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Bronchioles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -412,6 +432,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Alveoli")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -424,6 +445,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Diaphragm")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -436,6 +458,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Intercostal muscles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -448,6 +471,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Ribcage")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -460,6 +484,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Mitochondria")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -472,6 +497,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Goblet cells")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -484,6 +510,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Ciliated cells")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="organ">
@@ -496,6 +523,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Cartilage")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -511,6 +539,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Breathing / Ventilation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -523,6 +552,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Inhalation / Inspiration")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -535,6 +565,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Exhalation / Expiration")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -547,6 +578,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Gas exchange")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -559,6 +591,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Diffusion")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -571,6 +604,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Aerobic respiration")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -583,6 +617,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Anaerobic respiration")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -595,6 +630,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Glucose")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -607,6 +643,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Lactic acid")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -619,6 +656,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Oxygen debt")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -631,6 +669,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Vital capacity")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -643,6 +682,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Spirometer")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="process">
@@ -655,6 +695,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Limewater test")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -670,6 +711,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Red blood cell")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -682,6 +724,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Haemoglobin")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -694,6 +737,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Plasma")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -706,6 +750,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Platelets")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -718,6 +763,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("White blood cell")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -730,6 +776,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Phagocyte")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -742,6 +789,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Lymphocyte")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -754,6 +802,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Antibody")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -766,6 +815,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Pathogen")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -778,6 +828,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Bone marrow")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="blood">
@@ -790,6 +841,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Capillary")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -805,6 +857,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Oxygen (O\u2082)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -817,6 +870,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Carbon dioxide (CO\u2082)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -829,6 +883,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Nitrogen (N\u2082)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 <div class="vcard" data-cat="gas">
@@ -841,6 +896,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Water vapour")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
 </div>
@@ -1461,11 +1517,12 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8B Respiration 호흡 · science-vocab · <span style="opacity:.5">v20260527-161943</span></footer>
+<footer>8B Respiration 호흡 · science-vocab · <span style="opacity:.5">v20260527-163857</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Describe the path that an oxygen molecule takes from outside the body until it reaches the blood.", "marks": 4, "sample_answer": "<p class='en'>The oxygen molecule enters through the <b>nose</b> or <b>mouth</b>.</p><p class='ko'>산소 분자는 <b>코</b>나 <b>입</b>으로 들어옵니다.</p><p class='en'>It travels down the <b>trachea</b>, which is kept open by rings of cartilage.</p><p class='ko'>연골 고리로 열려 있는 <b>기관</b>을 따라 내려갑니다.</p><p class='en'>The trachea divides into two <b>bronchi</b>, then into smaller <b>bronchioles</b>.</p><p class='ko'>기관은 두 개의 <b>기관지</b>로 갈라지고, 더 작은 <b>세기관지</b>로 나뉩니다.</p><p class='en'>The bronchioles end in tiny air sacs called <b>alveoli</b>, where oxygen <b>diffuses</b> into the blood capillaries.</p><p class='ko'>세기관지는 작은 공기 주머니인 <b>폐포</b>로 끝나고, 거기서 산소는 모세혈관 안의 혈액으로 <b>확산</b>됩니다.</p>", "mark_points": ["Entry: nose / mouth (코 또는 입)", "Order: trachea → bronchi → bronchioles → alveoli (4개 관 순서)", "Diffusion at alveoli (폐포에서 확산)", "Mentions blood / capillaries (혈액·모세혈관 언급)"], "ko_hint": "입구 + 4관 순서 + 확산 + 혈액 — 모두 영어로!"}, {"q": "Explain the difference between BREATHING and RESPIRATION.", "marks": 3, "sample_answer": "<p class='en'><b>Breathing</b> (ventilation) is the <b>physical movement</b> of air into and out of the lungs, caused by the diaphragm and intercostal muscles.</p><p class='ko'><b>호흡 운동(breathing)</b>은 횡격막과 늑간근이 일으키는 공기의 <b>물리적 움직임</b>입니다.</p><p class='en'><b>Respiration</b> is a <b>chemical reaction</b> in cells where glucose reacts with oxygen to release energy.</p><p class='ko'><b>세포 호흡(respiration)</b>은 세포에서 포도당이 산소와 반응해 에너지를 내는 <b>화학 반응</b>입니다.</p><p class='en'>They are not the same — breathing is a movement, while respiration is a chemical process.</p><p class='ko'>둘은 같지 않습니다 — Breathing은 움직임, Respiration은 화학 과정입니다.</p>", "mark_points": ["Breathing = physical movement of air", "Respiration = chemical reaction in cells", "States clearly that they are different"], "ko_hint": "Breathing = 물리적 움직임 / Respiration = 화학 반응."}, {"q": "Describe what happens to the diaphragm and intercostal muscles when you BREATHE IN, and explain how this causes air to enter the lungs.", "marks": 4, "sample_answer": "<p class='en'>The <b>intercostal muscles contract</b> and pull the ribcage <b>up and out</b>.</p><p class='ko'><b>늑간근이 수축</b>해서 흉곽을 <b>위·바깥쪽</b>으로 끌어올립니다.</p><p class='en'>The <b>diaphragm contracts</b> and flattens, moving <b>downwards</b>.</p><p class='ko'><b>횡격막이 수축</b>해서 평평해지며 <b>아래로</b> 내려옵니다.</p><p class='en'>This <b>increases</b> the volume of the chest cavity and <b>decreases</b> the pressure inside the lungs.</p><p class='ko'>이렇게 하면 흉강 부피가 <b>커지고</b> 폐 안 압력이 <b>낮아집니다</b>.</p><p class='en'>Air flows <b>into</b> the lungs (from high outside pressure to low inside pressure).</p><p class='ko'>공기는 압력이 높은 바깥에서 낮은 폐 안쪽으로 <b>들어옵니다</b>.</p>", "mark_points": ["Intercostal muscles contract → ribcage up/out", "Diaphragm contracts and flattens (down)", "Volume increases / pressure decreases", "Air moves in due to pressure difference"], "ko_hint": "근육 수축 → 부피 ↑ → 압력 ↓ → 공기 in."}, {"q": "Explain THREE ways in which the alveoli are adapted for efficient gas exchange.", "marks": 3, "sample_answer": "<p class='en'>1) The walls are only <b>one cell thick</b>, giving a very short diffusion distance.</p><p class='ko'>1) 벽이 <b>세포 한 층</b>이라 확산 거리가 매우 짧습니다.</p><p class='en'>2) The alveoli give a very <b>large surface area</b> (about 600 million alveoli) so a lot of gas exchange can happen at once.</p><p class='ko'>2) 폐포가 약 6억 개라 <b>표면적이 매우 넓어</b> 많은 기체 교환이 동시에 가능합니다.</p><p class='en'>3) Each alveolus is surrounded by <b>many capillaries</b>, giving a good blood supply (also accept moist surface).</p><p class='ko'>3) 각 폐포는 <b>많은 모세혈관</b>으로 둘러싸여 혈액 공급이 충분합니다 (촉촉한 표면도 정답).</p>", "mark_points": ["Thin walls (one cell thick) → short diffusion distance", "Large surface area", "Many capillaries / good blood supply (or moist surface)"], "ko_hint": "얇은 벽, 넓은 표면적, 모세혈관 많음 (또는 촉촉한 표면) 중 3가지."}, {"q": "Compare the composition of inhaled and exhaled air, and explain WHY the differences exist.", "marks": 4, "sample_answer": "<p class='en'>Inhaled air has about <b>21% oxygen</b> and <b>0.04% carbon dioxide</b>.</p><p class='ko'>들숨에는 <b>산소 21%</b>, <b>이산화탄소 0.04%</b>가 있습니다.</p><p class='en'>Exhaled air has less oxygen (about <b>16%</b>) and much more carbon dioxide (about <b>4%</b>) and water vapour.</p><p class='ko'>날숨에는 산소가 줄어들고(<b>16%</b>), 이산화탄소(<b>4%</b>)와 수증기가 늘어납니다.</p><p class='en'>This is because cells use up oxygen and produce carbon dioxide and water during <b>aerobic respiration</b>.</p><p class='ko'>세포가 <b>유산소 호흡</b> 중 산소를 쓰고 이산화탄소·물을 만들기 때문입니다.</p><p class='en'>Nitrogen is the same (78%) because our body does not use it.</p><p class='ko'>질소는 우리 몸이 쓰지 않아 78%로 같습니다.</p>", "mark_points": ["Inhaled has more O₂", "Exhaled has more CO₂ (+ water vapour)", "Explanation: aerobic respiration", "Nitrogen stays the same"], "ko_hint": "들숨/날숨 가스 비율 + 세포호흡으로 설명."}, {"q": "Define DIFFUSION and explain its role in gas exchange at the alveoli.", "marks": 3, "sample_answer": "<p class='en'><b>Diffusion</b> is the net movement of particles from a region of <b>higher concentration</b> to a region of <b>lower concentration</b>.</p><p class='ko'><b>확산</b>은 입자가 농도가 <b>높은 곳에서 낮은 곳</b>으로 이동하는 것입니다.</p><p class='en'>At the alveoli, oxygen <b>diffuses from the alveolus into the blood</b> because oxygen is higher in the air.</p><p class='ko'>폐포에서 산소는 공기 쪽이 높으므로 <b>폐포 → 혈액</b>으로 확산됩니다.</p><p class='en'>Carbon dioxide <b>diffuses from the blood into the alveolus</b> because CO₂ is higher in the blood.</p><p class='ko'>이산화탄소는 혈액 쪽이 높으므로 <b>혈액 → 폐포</b>로 확산됩니다.</p>", "mark_points": ["Correct definition: high → low concentration", "O₂: alveolus → blood", "CO₂: blood → alveolus"], "ko_hint": "정의 + O₂·CO₂의 이동 방향."}, {"q": "Write the word equation for AEROBIC RESPIRATION and state where in the cell it takes place.", "marks": 2, "sample_answer": "<p class='en'>Word equation: <b>Glucose + Oxygen → Carbon dioxide + Water + Energy</b>.</p><p class='ko'>단어 방정식: <b>포도당 + 산소 → 이산화탄소 + 물 + 에너지</b>.</p><p class='en'>Aerobic respiration takes place inside the <b>mitochondria</b> of cells.</p><p class='ko'>유산소 호흡은 세포 안 <b>미토콘드리아</b>에서 일어납니다.</p>", "mark_points": ["Correct word equation (all four terms)", "Mentions mitochondria"], "ko_hint": "식 4개 단어 + 미토콘드리아."}, {"q": "Explain why ANAEROBIC respiration happens during intense exercise, and what oxygen debt is.", "marks": 4, "sample_answer": "<p class='en'>During <b>intense exercise</b>, muscle cells need energy very quickly.</p><p class='ko'><b>격렬한 운동</b> 때 근육 세포는 에너지가 매우 빨리 필요합니다.</p><p class='en'>The heart and lungs cannot deliver enough <b>oxygen</b> in time, so cells switch to <b>anaerobic respiration</b>.</p><p class='ko'>심장·폐가 <b>산소</b>를 충분히 빨리 보내지 못해 세포는 <b>무산소 호흡</b>으로 전환합니다.</p><p class='en'>This produces <b>lactic acid</b>, which builds up in the muscles and causes pain.</p><p class='ko'>이때 <b>젖산</b>이 만들어져 근육에 쌓이고 통증을 일으킵니다.</p><p class='en'>After exercise, extra oxygen (the <b>oxygen debt</b>) is needed to break down the lactic acid.</p><p class='ko'>운동 후에는 젖산을 분해할 추가 산소(<b>산소 빚</b>)가 필요합니다.</p>", "mark_points": ["O₂ demand > O₂ supply", "Produces lactic acid", "Oxygen debt = extra O₂ after exercise", "Debt is used to break down lactic acid"], "ko_hint": "산소 부족 → 무산소 호흡 → 젖산 → 산소 빚."}, {"q": "Describe the chemical test for carbon dioxide and the positive result.", "marks": 2, "sample_answer": "<p class='en'>Bubble the gas through <b>limewater</b>.</p><p class='ko'>기체를 <b>석회수</b>에 통과시킵니다.</p><p class='en'>If CO₂ is present, the limewater turns from <b>clear to cloudy (milky)</b>.</p><p class='ko'>이산화탄소가 있다면 석회수가 <b>투명 → 우유빛 흐림</b>으로 변합니다.</p>", "mark_points": ["Limewater used", "Clear → cloudy/milky change"], "ko_hint": "석회수 + 투명에서 우유빛으로."}, {"q": "Describe the structure of a RED BLOOD CELL and explain how each feature helps it carry oxygen.", "marks": 4, "sample_answer": "<p class='en'>Red blood cells are <b>biconcave</b> (dipped on both sides), giving a <b>large surface area</b> for fast oxygen diffusion.</p><p class='ko'>적혈구는 <b>양쪽이 오목</b>한 모양으로 산소 확산을 위한 <b>표면적이 큽니다</b>.</p><p class='en'>They have <b>no nucleus</b>, leaving more room inside to carry oxygen.</p><p class='ko'><b>핵이 없어서</b> 산소를 운반할 공간이 더 많습니다.</p><p class='en'>They are packed with <b>haemoglobin</b>, a red protein that binds to oxygen.</p><p class='ko'>산소와 결합하는 빨간 단백질 <b>헤모글로빈</b>이 가득 차 있습니다.</p><p class='en'>Haemoglobin binds oxygen in the lungs and releases it where it is needed.</p><p class='ko'>헤모글로빈은 폐에서 산소와 결합하고 필요한 곳에서 풀어줍니다.</p>", "mark_points": ["Biconcave shape → large surface area", "No nucleus → more space for oxygen", "Contains haemoglobin", "Haemoglobin binds and releases oxygen"], "ko_hint": "양쪽 오목 + 핵 없음 + 헤모글로빈 + 결합·방출."}, {"q": "Name the FOUR components of blood and briefly state the function of each.", "marks": 4, "sample_answer": "<p class='en'>1) <b>Plasma</b> — yellowish liquid that transports cells, glucose, CO₂ and wastes around the body.</p><p class='ko'>1) <b>혈장</b> — 노란 액체로 세포·당·이산화탄소·노폐물을 운반합니다.</p><p class='en'>2) <b>Red blood cells</b> — carry oxygen using haemoglobin.</p><p class='ko'>2) <b>적혈구</b> — 헤모글로빈으로 산소를 운반합니다.</p><p class='en'>3) <b>White blood cells</b> — fight pathogens and protect the body from disease.</p><p class='ko'>3) <b>백혈구</b> — 병원체와 싸워 몸을 보호합니다.</p><p class='en'>4) <b>Platelets</b> — help blood to clot and form scabs over wounds.</p><p class='ko'>4) <b>혈소판</b> — 혈액 응고를 돕고 상처에 딱지를 만듭니다.</p>", "mark_points": ["Plasma — transport", "Red blood cells — carry oxygen", "White blood cells — fight pathogens", "Platelets — clotting / scabs"], "ko_hint": "혈장·적혈구·백혈구·혈소판 + 각 기능."}, {"q": "Describe how PHAGOCYTES and LYMPHOCYTES work together to defend the body against pathogens.", "marks": 4, "sample_answer": "<p class='en'><b>Phagocytes</b> are white blood cells that <b>engulf and digest</b> pathogens — this is called <b>phagocytosis</b>.</p><p class='ko'><b>식세포</b>는 병원체를 <b>둘러싸 삼키고 분해</b>하는 백혈구입니다 — <b>식작용</b>이라 합니다.</p><p class='en'><b>Lymphocytes</b> produce <b>antibodies</b>, special proteins that stick to specific pathogens.</p><p class='ko'><b>림프구</b>는 특정 병원체에 붙는 <b>항체</b>(특수 단백질)를 만듭니다.</p><p class='en'>The antibodies <b>clump pathogens together</b> and mark them.</p><p class='ko'>항체는 병원체를 <b>뭉치게 하고</b> 표시합니다.</p><p class='en'>This makes it easier for phagocytes to find and destroy the pathogens.</p><p class='ko'>그래서 식세포가 병원체를 더 쉽게 찾아 파괴할 수 있습니다.</p>", "mark_points": ["Phagocytes engulf/destroy (phagocytosis)", "Lymphocytes produce antibodies", "Antibodies clump or mark pathogens", "Helps phagocytes find/destroy them"], "ko_hint": "식세포(직접 잡아먹음) + 림프구(항체로 표시) → 협력."}];
 const VOCAB_DATA = [{"en": "Respiratory system", "ko": "호흡계", "def_en": "The organs involved in breathing and gas exchange.", "cat": "organ"}, {"en": "Nasal cavity", "ko": "비강", "def_en": "Space inside the nose that warms, moistens and filters air.", "cat": "organ"}, {"en": "Trachea", "ko": "기관", "def_en": "The windpipe — a tube from the throat to the lungs, kept open by cartilage rings.", "cat": "organ"}, {"en": "Bronchus", "ko": "기관지", "def_en": "One of two tubes that branch from the trachea into each lung (plural: bronchi).", "cat": "organ"}, {"en": "Bronchioles", "ko": "세기관지", "def_en": "Smaller tubes that branch off the bronchi inside the lungs.", "cat": "organ"}, {"en": "Alveoli", "ko": "폐포", "def_en": "Tiny air sacs where gas exchange takes place (singular: alveolus).", "cat": "organ"}, {"en": "Diaphragm", "ko": "횡격막", "def_en": "Dome-shaped muscle below the lungs; contracts and flattens when inhaling.", "cat": "organ"}, {"en": "Intercostal muscles", "ko": "늑간근", "def_en": "Muscles between the ribs that move the ribcage during breathing.", "cat": "organ"}, {"en": "Ribcage", "ko": "흉곽", "def_en": "The bony cage of ribs that protects the lungs and heart.", "cat": "organ"}, {"en": "Mitochondria", "ko": "미토콘드리아", "def_en": "Organelle inside cells where aerobic respiration releases energy.", "cat": "organ"}, {"en": "Goblet cells", "ko": "술잔세포", "def_en": "Cells in the airway lining that produce mucus to trap dust and pathogens.", "cat": "organ"}, {"en": "Ciliated cells", "ko": "섬모세포", "def_en": "Cells with tiny hairs (cilia) that sweep mucus up towards the mouth.", "cat": "organ"}, {"en": "Cartilage", "ko": "연골", "def_en": "Strong flexible tissue; rings of cartilage hold the trachea open.", "cat": "organ"}, {"en": "Breathing / Ventilation", "ko": "호흡 운동 / 환기", "def_en": "The physical movement of air into and out of the lungs.", "cat": "process"}, {"en": "Inhalation / Inspiration", "ko": "흡기 (들숨)", "def_en": "Breathing in: diaphragm contracts and flattens, ribcage moves up and out, air enters.", "cat": "process"}, {"en": "Exhalation / Expiration", "ko": "호기 (날숨)", "def_en": "Breathing out: diaphragm relaxes (returns to dome shape), ribcage moves down and in, air leaves.", "cat": "process"}, {"en": "Gas exchange", "ko": "기체 교환", "def_en": "Oxygen moves alveoli → blood; carbon dioxide moves blood → alveoli, by diffusion.", "cat": "process"}, {"en": "Diffusion", "ko": "확산", "def_en": "Net movement of particles from high to low concentration.", "cat": "process"}, {"en": "Aerobic respiration", "ko": "유산소 호흡", "def_en": "Glucose + Oxygen → CO₂ + Water + Energy. Needs oxygen; releases lots of energy.", "cat": "process"}, {"en": "Anaerobic respiration", "ko": "무산소 호흡", "def_en": "Glucose → Lactic acid + Energy. Without oxygen; releases less energy.", "cat": "process"}, {"en": "Glucose", "ko": "포도당", "def_en": "A sugar used as fuel in respiration. Formula C₆H₁₂O₆.", "cat": "process"}, {"en": "Lactic acid", "ko": "젖산", "def_en": "Waste product of anaerobic respiration; causes muscle fatigue.", "cat": "process"}, {"en": "Oxygen debt", "ko": "산소 빚", "def_en": "Extra oxygen needed after exercise to break down the lactic acid that built up.", "cat": "process"}, {"en": "Vital capacity", "ko": "폐활량", "def_en": "Maximum volume of air you can breathe in and out in one breath.", "cat": "process"}, {"en": "Spirometer", "ko": "폐활량계", "def_en": "A device used to measure vital capacity.", "cat": "process"}, {"en": "Limewater test", "ko": "석회수 검사", "def_en": "Limewater turns from clear to cloudy when CO₂ is bubbled through it.", "cat": "process"}, {"en": "Red blood cell", "ko": "적혈구", "def_en": "Biconcave cell without a nucleus; carries oxygen using haemoglobin.", "cat": "blood"}, {"en": "Haemoglobin", "ko": "헤모글로빈", "def_en": "Red protein in red blood cells that binds reversibly to oxygen.", "cat": "blood"}, {"en": "Plasma", "ko": "혈장", "def_en": "Yellowish liquid part of blood; transports cells, glucose and CO₂.", "cat": "blood"}, {"en": "Platelets", "ko": "혈소판", "def_en": "Tiny blood fragments that form clots and scabs at wounds.", "cat": "blood"}, {"en": "White blood cell", "ko": "백혈구", "def_en": "Cell of the immune system that fights pathogens.", "cat": "blood"}, {"en": "Phagocyte", "ko": "식세포", "def_en": "White blood cell that surrounds, engulfs and destroys pathogens (phagocytosis).", "cat": "blood"}, {"en": "Lymphocyte", "ko": "림프구", "def_en": "White blood cell that produces antibodies to fight pathogens.", "cat": "blood"}, {"en": "Antibody", "ko": "항체", "def_en": "Protein made by lymphocytes that sticks to pathogens and marks them.", "cat": "blood"}, {"en": "Pathogen", "ko": "병원체", "def_en": "Microorganism (e.g. bacteria, virus) that causes disease.", "cat": "blood"}, {"en": "Bone marrow", "ko": "골수", "def_en": "Soft tissue inside bones where blood cells are produced.", "cat": "blood"}, {"en": "Capillary", "ko": "모세혈관", "def_en": "The smallest blood vessel; surrounds alveoli for gas exchange.", "cat": "blood"}, {"en": "Oxygen (O₂)", "ko": "산소", "def_en": "Gas needed for aerobic respiration; about 21% of the air.", "cat": "gas"}, {"en": "Carbon dioxide (CO₂)", "ko": "이산화탄소", "def_en": "Waste gas from respiration; turns limewater cloudy.", "cat": "gas"}, {"en": "Nitrogen (N₂)", "ko": "질소", "def_en": "About 78% of the air; not used in respiration.", "cat": "gas"}, {"en": "Water vapour", "ko": "수증기", "def_en": "Gas form of water; more is found in exhaled air than inhaled air.", "cat": "gas"}];
+const UNIT_ID = "biology";
 const UNIT_TITLE = "8B Respiration 호흡";
 const UNIT_TOPICS = ["1. The Respiratory System", "2. Breathing (Ventilation)", "3. Gas Exchange", "4. Aerobic Respiration", "5. Anaerobic Respiration", "6. Blood"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
@@ -1573,6 +1630,7 @@ function playSection(cat, btn){
   const words = [];
   document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
     if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
     const en = (c.querySelector('.vcard-en') || {}).textContent;
     if (en) words.push(en.trim());
   });
@@ -1593,6 +1651,44 @@ function playSection(cat, btn){
     });
   };
   playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
 }
 
 // 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
@@ -1626,7 +1722,8 @@ function applyVocabFilter() {
     const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
     const catOk = (currentCat === 'all' || cat === currentCat);
     const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
-    const show = catOk && qOk;
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
     c.classList.toggle('hidden', !show);
     if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
   });
@@ -1645,6 +1742,7 @@ function filterCards(cat) {
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
 });
 
 // ─── 단어시험 (Spelling Test) ───
