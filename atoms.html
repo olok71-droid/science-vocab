@@ -165,6 +165,20 @@ header {
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
 .vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
 
+/* 단어장 좌(영어)|우(한글) + 가림 */
+.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
+.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
+.vcard-en{grid-column:1;grid-row:2;}
+.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
+.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
+.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
+.dh-btns{display:flex;gap:5px;flex-shrink:0;}
+.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
+#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
+.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
@@ -269,22 +283,6 @@ header {
 footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
-
-/* === 단어장 좌(영어)|우(한글) + 가림 (2026-05-25) === */
-.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
-.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
-.vcard-en{grid-column:1;grid-row:2;}
-.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
-.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
-.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
-.dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);
-  font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;
-  cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
-#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
-#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
-.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
 </style>
 </head>
 <body>
@@ -341,7 +339,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
       <button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>📊 압력 Pressure</button>
     </div>
   </div>
-<div class="section-header" data-cat="organ"><h2>⚛️ 원자 Atom</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="organ"><h2>⚛️ 원자 Atom</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection("organ", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="organ">
   <div class="vcard-left">
@@ -488,7 +486,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="process"><h2>📜 모델 Models</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="process"><h2>📜 모델 Models</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection("process", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="process">
   <div class="vcard-left">
@@ -539,7 +537,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="gas"><h2>💨 입자 Particles</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="gas"><h2>💨 입자 Particles</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="gas" onclick="playSection("gas", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="gas">
   <div class="vcard-left">
@@ -590,7 +588,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="blood"><h2>📊 압력 Pressure</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="blood"><h2>📊 압력 Pressure</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection("blood", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="blood">
   <div class="vcard-left">
@@ -997,7 +995,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8E Atoms & Particles 원자와 입자 운동 · science-vocab · <span style="opacity:.5">v20260524-184616</span></footer>
+<footer>8E Atoms & Particles 원자와 입자 운동 · science-vocab · <span style="opacity:.5">v20260527-161558</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Describe the three subatomic particles in an atom — including their charge, mass and location.", "marks": 3, "sample_answer": "<p class='en'>The <b>proton</b> has a <b>positive (+1)</b> charge, a mass of 1 and is found in the <b>nucleus</b>.</p><p class='ko'><b>양성자</b>는 <b>(+1)</b> 전하, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>neutron</b> has <b>no charge (0)</b>, a mass of 1 and is also in the <b>nucleus</b>.</p><p class='ko'><b>중성자</b>는 <b>전하 없음(0)</b>, 질량 1, <b>원자핵</b>에 있습니다.</p><p class='en'>The <b>electron</b> has a <b>negative (-1)</b> charge, almost zero mass, and orbits the nucleus in <b>electron shells</b>.</p><p class='ko'><b>전자</b>는 <b>(-1)</b> 전하, 질량 거의 0, <b>전자 껍질</b>을 따라 핵 주위를 돕니다.</p>", "mark_points": ["Proton: +1, mass 1, in nucleus", "Neutron: 0 charge, mass 1, in nucleus", "Electron: -1, mass ≈0, in shells"], "ko_hint": "3 입자 각각 — 전하 + 질량 + 위치."}, {"q": "An atom of carbon has 6 protons and 6 neutrons. State its atomic number and its mass number.", "marks": 2, "sample_answer": "<p class='en'>The <b>atomic number</b> equals the number of protons: <b>6</b>.</p><p class='ko'><b>원자번호</b>는 양성자 개수와 같으므로 <b>6</b>.</p><p class='en'>The <b>mass number</b> equals protons + neutrons: 6 + 6 = <b>12</b>.</p><p class='ko'><b>질량수</b>는 양성자+중성자이므로 6+6 = <b>12</b>.</p>", "mark_points": ["Atomic number = 6", "Mass number = 12"], "ko_hint": "원자번호 = 양성자 수, 질량수 = 양성자+중성자."}, {"q": "Why is an atom electrically NEUTRAL overall?", "marks": 2, "sample_answer": "<p class='en'>An atom has the <b>same number</b> of protons (+1 each) and electrons (-1 each).</p><p class='ko'>원자는 양성자(각 +1)와 전자(각 -1)의 <b>개수가 같습니다</b>.</p><p class='en'>The positive and negative charges cancel out, so the total charge is zero — the atom is neutral.</p><p class='ko'>양·음 전하가 상쇄되어 총 전하가 0 — 원자는 중성입니다.</p>", "mark_points": ["Equal numbers of protons (+) and electrons (-)", "Charges cancel → total charge = 0"], "ko_hint": "양성자=전자 개수 → 전하 상쇄."}, {"q": "Describe Rutherford's gold foil experiment and explain what it revealed about the structure of the atom.", "marks": 4, "sample_answer": "<p class='en'>Rutherford fired tiny <b>positive particles</b> (alpha particles) at a very thin sheet of <b>gold foil</b>.</p><p class='ko'>러더퍼드는 매우 얇은 <b>금박</b>에 작은 <b>양전하 입자</b>(알파 입자)들을 쏘았습니다.</p><p class='en'>Most particles passed <b>straight through</b>, but a few <b>bounced back</b> at large angles.</p><p class='ko'>대부분의 입자는 <b>곧장 통과</b>했지만, 몇 개는 큰 각도로 <b>튕겨 돌아왔습니다</b>.</p><p class='en'>This showed that the atom is <b>mostly empty space</b>, but contains a <b>tiny dense positive nucleus</b> in the centre.</p><p class='ko'>이것은 원자가 <b>대부분 빈 공간</b>이지만 중심에 <b>작고 밀도 높은 양전하 핵</b>이 있다는 것을 보여주었습니다.</p><p class='en'>The positive nucleus repelled the positive alpha particles, causing some to bounce back.</p><p class='ko'>양전하 핵이 양전하 알파 입자를 밀어내서 일부가 튕겨 돌아온 것입니다.</p>", "mark_points": ["Method: fired particles at thin gold foil", "Most passed through", "A few bounced back", "Conclusion: small dense positive nucleus + mostly empty space"], "ko_hint": "방법 + 관찰(대부분 통과, 일부 튕김) + 결론(핵 발견)."}, {"q": "Use the particle model to explain why GAS PRESSURE INCREASES when a gas in a sealed container is heated.", "marks": 4, "sample_answer": "<p class='en'>When the gas is heated, the particles gain <b>kinetic energy</b> and move faster.</p><p class='ko'>가열되면 기체 입자는 <b>운동 에너지</b>를 얻어 더 빠르게 움직입니다.</p><p class='en'>The particles collide with the container walls <b>more frequently</b>.</p><p class='ko'>입자가 용기 벽에 <b>더 자주</b> 부딪칩니다.</p><p class='en'>The collisions are also <b>more forceful</b> because the particles move faster.</p><p class='ko'>입자가 더 빠르므로 충돌이 <b>더 강력</b>합니다.</p><p class='en'>So the total force on the walls increases — meaning the <b>pressure increases</b>.</p><p class='ko'>벽에 가해지는 힘이 커지므로 <b>압력이 증가</b>합니다.</p>", "mark_points": ["Particles gain kinetic energy / move faster", "Collide with walls more frequently", "Collide with more force", "Pressure increases"], "ko_hint": "운동에너지↑ → 충돌 잦고 강해짐 → 압력↑."}, {"q": "Define DIFFUSION and explain why diffusion is faster at higher temperatures.", "marks": 3, "sample_answer": "<p class='en'><b>Diffusion</b> is the net movement of particles from a region of <b>high concentration</b> to a region of <b>low concentration</b>.</p><p class='ko'><b>확산</b>은 입자가 농도가 <b>높은 곳</b>에서 <b>낮은 곳</b>으로 이동하는 것입니다.</p><p class='en'>At higher temperatures, the particles have more <b>kinetic energy</b> and move faster.</p><p class='ko'>온도가 높을수록 입자는 <b>운동 에너지</b>가 커서 더 빠르게 움직입니다.</p><p class='en'>Faster-moving particles spread through the area more quickly, so diffusion happens faster.</p><p class='ko'>빠른 입자가 더 빨리 퍼지므로 확산도 빨라집니다.</p>", "mark_points": ["Defines diffusion correctly", "Higher temp → more kinetic energy", "Particles move faster → faster diffusion"], "ko_hint": "정의 + 운동에너지 + 빠르게 퍼짐."}];
@@ -1039,6 +1037,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top: 0, behavior: 'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
     if (btn.dataset.tab === 'spelling' && !spellState.started) startSpelling();
   });
 });
@@ -1076,11 +1075,81 @@ function fallbackSpeak(text){
   setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
 }
 
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = function(){ if (_seq && _seq.token === token) done(); };
+    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { stopSeq(); return; }
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
 // 단어장: 필터 + 검색 통합
 let currentCat = 'all';
 let currentQuery = '';
 
 function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
   const q = currentQuery.toLowerCase().trim();
   let visibleByCat = {};
   document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
@@ -1284,22 +1353,6 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-</script>
-<script>
-// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
-var blindEn=false, blindKo=false;
-function toggleBlind(side){
-  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
-  var v=document.getElementById('tab-vocab');
-  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
-  document.querySelectorAll('.blind-btn[data-b=\"en\"]').forEach(function(b){b.classList.toggle('active',blindEn);});
-  document.querySelectorAll('.blind-btn[data-b=\"ko\"]').forEach(function(b){b.classList.toggle('active',blindKo);});
-  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
-}
-document.addEventListener('click',function(e){
-  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
-  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
-});
 </script>
 </body>
 </html>

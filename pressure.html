@@ -165,6 +165,20 @@ header {
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
 .vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
 
+/* 단어장 좌(영어)|우(한글) + 가림 */
+.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
+.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
+.vcard-en{grid-column:1;grid-row:2;}
+.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
+.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
+.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
+.dh-btns{display:flex;gap:5px;flex-shrink:0;}
+.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
+#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
+.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
@@ -269,22 +283,6 @@ header {
 footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
-
-/* === 단어장 좌(영어)|우(한글) + 가림 (2026-05-25) === */
-.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
-.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
-.vcard-en{grid-column:1;grid-row:2;}
-.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
-.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
-.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
-.dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);
-  font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;
-  cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
-#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
-#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
-.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
 </style>
 </head>
 <body>
@@ -341,7 +339,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
       <button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>💨 기체 Gases</button>
     </div>
   </div>
-<div class="section-header" data-cat="organ"><h2>🧱 고체 Solids</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="organ"><h2>🧱 고체 Solids</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection("organ", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="organ">
   <div class="vcard-left">
@@ -404,7 +402,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="process"><h2>🔑 응용 Applications</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="process"><h2>🔑 응용 Applications</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection("process", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="process">
   <div class="vcard-left">
@@ -443,7 +441,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="blood"><h2>💧 유체 Fluids</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="blood"><h2>💧 유체 Fluids</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection("blood", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="blood">
   <div class="vcard-left">
@@ -494,7 +492,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="gas"><h2>💨 기체 Gases</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="gas"><h2>💨 기체 Gases</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="gas" onclick="playSection("gas", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="gas">
   <div class="vcard-left">
@@ -798,7 +796,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8P Pressure 압력 · science-vocab · <span style="opacity:.5">v20260524-190358</span></footer>
+<footer>8P Pressure 압력 · science-vocab · <span style="opacity:.5">v20260527-161558</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Write the equation for PRESSURE and state its unit.", "marks": 2, "sample_answer": "<p class='en'>Equation: <b>Pressure = Force ÷ Area</b>.</p><p class='ko'>공식: <b>압력 = 힘 ÷ 면적</b>.</p><p class='en'>Unit: <b>Pascal (Pa)</b>, which equals N/m² (newtons per square metre).</p><p class='ko'>단위: <b>파스칼(Pa)</b> = N/m² (제곱미터당 뉴턴).</p>", "mark_points": ["P = F ÷ A", "Unit: Pascal (or N/m²)"], "ko_hint": "공식 + 단위."}, {"q": "Explain why a sharp knife cuts better than a blunt one, using the idea of pressure.", "marks": 3, "sample_answer": "<p class='en'>A sharp knife has a <b>very small contact area</b> at the edge.</p><p class='ko'>날카로운 칼은 칼날 부분의 <b>접촉 면적이 매우 작습니다</b>.</p><p class='en'>When you push down with a force, the <b>same force</b> is spread over a much smaller area.</p><p class='ko'>같은 힘으로 누르면 그 힘이 훨씬 <b>작은 면적</b>에 집중됩니다.</p><p class='en'>Pressure = Force ÷ Area, so a smaller area gives a much <b>higher pressure</b>, making it easier to cut through.</p><p class='ko'>압력 = 힘 ÷ 면적이므로 면적이 작을수록 <b>압력이 훨씬 커서</b> 잘 잘립니다.</p>", "mark_points": ["Sharp knife = small edge area", "Same force ÷ small area = high pressure", "High pressure cuts easily"], "ko_hint": "작은 면적 → 높은 압력 → 잘 잘림."}, {"q": "A box weighs 200 N and stands on the ground covering an area of 0.5 m². Calculate the pressure exerted by the box on the ground.", "marks": 2, "sample_answer": "<p class='en'>Pressure = Force ÷ Area = 200 ÷ 0.5 = <b>400 Pa</b>.</p><p class='ko'>압력 = 힘 ÷ 면적 = 200 ÷ 0.5 = <b>400 Pa</b>.</p>", "mark_points": ["Uses P = F/A correctly", "Correct answer: 400 Pa (with unit)"], "ko_hint": "200÷0.5 = 400 Pa, 단위 포함."}, {"q": "Explain why pressure in a liquid INCREASES with depth.", "marks": 3, "sample_answer": "<p class='en'>The deeper you go in a liquid, the more liquid is <b>above you</b>.</p><p class='ko'>액체 속에서 깊이 내려갈수록 <b>위에 있는 액체</b>의 양이 많아집니다.</p><p class='en'>This extra liquid has <b>weight</b>, which pushes down on you.</p><p class='ko'>이 추가 액체는 <b>무게</b>가 있어 아래로 내리누릅니다.</p><p class='en'>So the <b>force per area (pressure) increases</b> with depth.</p><p class='ko'>그래서 <b>단위 면적당 힘(압력)이 깊이에 따라 증가</b>합니다.</p>", "mark_points": ["More liquid above at greater depth", "Liquid has weight pushing down", "More weight → more pressure"], "ko_hint": "위 액체 무게 ↑ → 압력 ↑."}, {"q": "Use the particle model to explain why heating a sealed container of gas INCREASES its pressure.", "marks": 4, "sample_answer": "<p class='en'>When the gas is heated, the particles gain <b>kinetic energy</b> and move faster.</p><p class='ko'>가열되면 기체 입자가 <b>운동 에너지</b>를 얻어 더 빠르게 움직입니다.</p><p class='en'>They collide with the container walls <b>more frequently</b>.</p><p class='ko'>벽에 <b>더 자주</b> 부딪칩니다.</p><p class='en'>They also hit the walls with <b>greater force</b>.</p><p class='ko'>벽을 <b>더 큰 힘</b>으로 칩니다.</p><p class='en'>The total force on the walls increases, so the <b>pressure increases</b>.</p><p class='ko'>벽에 가해지는 총 힘이 커지므로 <b>압력이 증가</b>합니다.</p>", "mark_points": ["Heat → particles gain KE / move faster", "Collide with walls more often", "Collide with more force", "Pressure increases"], "ko_hint": "온도 ↑ → KE ↑ → 충돌 자주·강하게 → 압력 ↑."}];
@@ -840,6 +838,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top: 0, behavior: 'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
     if (btn.dataset.tab === 'spelling' && !spellState.started) startSpelling();
   });
 });
@@ -877,11 +876,81 @@ function fallbackSpeak(text){
   setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
 }
 
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = function(){ if (_seq && _seq.token === token) done(); };
+    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { stopSeq(); return; }
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
 // 단어장: 필터 + 검색 통합
 let currentCat = 'all';
 let currentQuery = '';
 
 function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
   const q = currentQuery.toLowerCase().trim();
   let visibleByCat = {};
   document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
@@ -1085,22 +1154,6 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-</script>
-<script>
-// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
-var blindEn=false, blindKo=false;
-function toggleBlind(side){
-  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
-  var v=document.getElementById('tab-vocab');
-  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
-  document.querySelectorAll('.blind-btn[data-b=\"en\"]').forEach(function(b){b.classList.toggle('active',blindEn);});
-  document.querySelectorAll('.blind-btn[data-b=\"ko\"]').forEach(function(b){b.classList.toggle('active',blindKo);});
-  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
-}
-document.addEventListener('click',function(e){
-  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
-  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
-});
 </script>
 </body>
 </html>

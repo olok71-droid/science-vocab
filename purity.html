@@ -165,6 +165,20 @@ header {
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
 .vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
 
+/* 단어장 좌(영어)|우(한글) + 가림 */
+.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
+.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
+.vcard-en{grid-column:1;grid-row:2;}
+.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
+.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
+.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
+.dh-btns{display:flex;gap:5px;flex-shrink:0;}
+.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
+#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
+.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
@@ -269,22 +283,6 @@ header {
 footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
-
-/* === 단어장 좌(영어)|우(한글) + 가림 (2026-05-25) === */
-.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
-.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
-.vcard-en{grid-column:1;grid-row:2;}
-.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
-.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
-.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
-.dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);
-  font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;
-  cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
-#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
-#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
-.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
 </style>
 </head>
 <body>
@@ -341,7 +339,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
       <button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>🔬 분리 Separating</button>
     </div>
   </div>
-<div class="section-header" data-cat="organ"><h2>💎 순물질 Pure</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="organ"><h2>💎 순물질 Pure</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection("organ", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="organ">
   <div class="vcard-left">
@@ -416,7 +414,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="process"><h2>🌡️ 녹는점 Melting</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="process"><h2>🌡️ 녹는점 Melting</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection("process", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="process">
   <div class="vcard-left">
@@ -479,7 +477,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="blood"><h2>💯 순도 % Purity</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="blood"><h2>💯 순도 % Purity</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection("blood", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="blood">
   <div class="vcard-left">
@@ -518,7 +516,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="gas"><h2>🔬 분리 Separating</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="gas"><h2>🔬 분리 Separating</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="gas" onclick="playSection("gas", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="gas">
   <div class="vcard-left">
@@ -806,7 +804,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8C Purity 순물질과 불순물 · science-vocab · <span style="opacity:.5">v20260524-190358</span></footer>
+<footer>8C Purity 순물질과 불순물 · science-vocab · <span style="opacity:.5">v20260527-161558</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Explain what is meant by a PURE substance in chemistry, and give two examples.", "marks": 3, "sample_answer": "<p class='en'>In chemistry, a <b>pure substance</b> is one made of <b>only one type of particle</b> — either a single element or a single compound.</p><p class='ko'>화학에서 <b>순물질</b>은 <b>한 종류의 입자</b>로만 이루어진 것 — 한 원소 또는 한 화합물입니다.</p><p class='en'>Examples include <b>distilled water</b>, <b>oxygen gas</b>, <b>pure gold</b>, and <b>sodium chloride</b> (table salt).</p><p class='ko'>예: <b>증류수</b>, <b>산소 기체</b>, <b>순금</b>, <b>염화나트륨</b>(소금).</p>", "mark_points": ["Defines pure = one type of particle only", "Two valid examples"], "ko_hint": "정의 + 예시 2개."}, {"q": "Describe how you could use MELTING POINT to test whether a sample of substance is pure.", "marks": 3, "sample_answer": "<p class='en'>Heat the sample gently and measure the temperature at which it melts.</p><p class='ko'>시료를 천천히 가열하면서 녹는 온도를 측정합니다.</p><p class='en'>If the substance is <b>pure</b>, it will melt at a <b>single, sharp temperature</b> (e.g. pure ice at exactly 0 °C).</p><p class='ko'><b>순물질</b>이면 <b>한 점</b>에서 녹습니다 (예: 순얼음 정확히 0°C).</p><p class='en'>If the substance is a <b>mixture (impure)</b>, it will melt over a <b>range of temperatures</b>, not at one sharp point.</p><p class='ko'><b>혼합물(불순)</b>이면 <b>일정 범위</b>에서 녹습니다 — 한 점이 아닙니다.</p>", "mark_points": ["Measure the melting temperature", "Pure = single sharp melting point", "Impure = melts over a range"], "ko_hint": "녹는 온도 측정 + 순물질은 한 점, 불순은 범위."}, {"q": "Explain why salt is sprinkled on icy roads in winter, using your knowledge of impurities and melting points.", "marks": 3, "sample_answer": "<p class='en'>Pure ice has a melting point of exactly <b>0 °C</b>.</p><p class='ko'>순수한 얼음의 녹는점은 정확히 <b>0°C</b>입니다.</p><p class='en'>Adding salt (an <b>impurity</b>) to the ice <b>lowers its melting point</b>.</p><p class='ko'>얼음에 소금(<b>불순물</b>)을 더하면 녹는점이 <b>낮아집니다</b>.</p><p class='en'>This means the ice can melt at temperatures <b>below 0 °C</b>, making roads safer.</p><p class='ko'>그래서 0°C 이하에서도 얼음이 녹아 도로가 안전해집니다.</p>", "mark_points": ["Pure ice melts at 0 °C", "Salt is an impurity that lowers melting point", "Ice melts below 0 °C → safer roads"], "ko_hint": "불순물 → 녹는점 낮춤 → 0°C 이하에서도 녹음."}, {"q": "A sample of 50 g of gold jewellery contains 37.5 g of pure gold. Calculate the percentage purity of the gold.", "marks": 2, "sample_answer": "<p class='en'>% Purity = (mass of pure substance ÷ total mass) × 100 = (37.5 ÷ 50) × 100 = <b>75%</b>.</p><p class='ko'>순도 = (순물질 ÷ 전체) × 100 = (37.5 ÷ 50) × 100 = <b>75%</b>.</p>", "mark_points": ["Uses correct formula", "Correct answer: 75%"], "ko_hint": "(37.5÷50)×100 = 75%."}, {"q": "Why is it important for medicines to be very PURE?", "marks": 2, "sample_answer": "<p class='en'>Medicines must be pure so that they give the <b>correct, predictable effect</b> in the body.</p><p class='ko'>의약품은 몸에 <b>정확하고 예측 가능한 효과</b>를 내려면 순수해야 합니다.</p><p class='en'>Any <b>impurities</b> could cause <b>harmful side effects</b> or change how the medicine works.</p><p class='ko'>어떤 <b>불순물</b>이든 <b>해로운 부작용</b>을 일으키거나 약효를 바꿀 수 있습니다.</p>", "mark_points": ["Pure = predictable correct effect", "Impurities can cause side effects / harm"], "ko_hint": "정확한 효과 + 부작용 방지."}];
@@ -848,6 +846,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top: 0, behavior: 'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
     if (btn.dataset.tab === 'spelling' && !spellState.started) startSpelling();
   });
 });
@@ -885,11 +884,81 @@ function fallbackSpeak(text){
   setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
 }
 
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = function(){ if (_seq && _seq.token === token) done(); };
+    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { stopSeq(); return; }
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
 // 단어장: 필터 + 검색 통합
 let currentCat = 'all';
 let currentQuery = '';
 
 function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
   const q = currentQuery.toLowerCase().trim();
   let visibleByCat = {};
   document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
@@ -1093,22 +1162,6 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-</script>
-<script>
-// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
-var blindEn=false, blindKo=false;
-function toggleBlind(side){
-  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
-  var v=document.getElementById('tab-vocab');
-  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
-  document.querySelectorAll('.blind-btn[data-b=\"en\"]').forEach(function(b){b.classList.toggle('active',blindEn);});
-  document.querySelectorAll('.blind-btn[data-b=\"ko\"]').forEach(function(b){b.classList.toggle('active',blindKo);});
-  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
-}
-document.addEventListener('click',function(e){
-  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
-  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
-});
 </script>
 </body>
 </html>

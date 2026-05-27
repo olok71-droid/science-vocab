@@ -165,6 +165,20 @@ header {
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
 .vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
 
+/* 단어장 좌(영어)|우(한글) + 가림 */
+.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
+.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
+.vcard-en{grid-column:1;grid-row:2;}
+.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
+.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
+.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
+.dh-btns{display:flex;gap:5px;flex-shrink:0;}
+.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
+#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
+.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
@@ -269,22 +283,6 @@ header {
 footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
-
-/* === 단어장 좌(영어)|우(한글) + 가림 (2026-05-25) === */
-.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
-.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
-.vcard-en{grid-column:1;grid-row:2;}
-.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
-.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
-.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
-.dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);
-  font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;
-  cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
-#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
-#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
-.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
 </style>
 </head>
 <body>
@@ -341,7 +339,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
       <button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>🔄 회전 Turning</button>
     </div>
   </div>
-<div class="section-header" data-cat="organ"><h2>💪 힘 Forces</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="organ"><h2>💪 힘 Forces</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection("organ", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="organ">
   <div class="vcard-left">
@@ -488,7 +486,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="process"><h2>⚖️ 합력 Resultant</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="process"><h2>⚖️ 합력 Resultant</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection("process", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="process">
   <div class="vcard-left">
@@ -539,7 +537,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="gas"><h2>🔧 모멘트 Moments</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="gas"><h2>🔧 모멘트 Moments</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="gas" onclick="playSection("gas", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="gas">
   <div class="vcard-left">
@@ -590,7 +588,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="blood"><h2>🔄 회전 Turning</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="blood"><h2>🔄 회전 Turning</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection("blood", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="blood">
   <div class="vcard-left">
@@ -968,7 +966,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8P Forces & Moments 힘과 회전력 · science-vocab · <span style="opacity:.5">v20260524-184616</span></footer>
+<footer>8P Forces & Moments 힘과 회전력 · science-vocab · <span style="opacity:.5">v20260527-161558</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Define a FORCE and state its unit.", "marks": 2, "sample_answer": "<p class='en'>A <b>force</b> is a <b>push or a pull</b> on an object.</p><p class='ko'><b>힘</b>은 물체에 가해지는 <b>밀거나 당기는</b> 작용입니다.</p><p class='en'>Force is measured in <b>newtons (N)</b>.</p><p class='ko'>힘의 단위는 <b>뉴턴(N)</b>입니다.</p>", "mark_points": ["Force = push or pull", "Unit = newton (N)"], "ko_hint": "정의 + 단위."}, {"q": "Explain the difference between BALANCED and UNBALANCED forces, and describe what each does to an object's motion.", "marks": 4, "sample_answer": "<p class='en'>Forces are <b>balanced</b> when they are equal in size but opposite in direction; the <b>resultant force is zero</b>.</p><p class='ko'>힘이 <b>평형</b>이라는 것은 크기가 같고 방향이 반대일 때이며, <b>합력이 0</b>입니다.</p><p class='en'>When forces are balanced, an object stays still, or keeps moving at the <b>same speed in a straight line</b>.</p><p class='ko'>평형력일 때 물체는 멈춰 있거나 <b>일정한 속도로 직선 운동</b>을 합니다.</p><p class='en'>Forces are <b>unbalanced</b> when they are not equal; the resultant force is <b>not zero</b>.</p><p class='ko'><b>불평형</b>은 힘이 같지 않을 때이며, 합력이 <b>0이 아닙니다</b>.</p><p class='en'>Unbalanced forces cause the object to <b>speed up, slow down, or change direction</b>.</p><p class='ko'>불평형력은 물체를 <b>가속·감속하거나 방향을 바꿉니다</b>.</p>", "mark_points": ["Balanced: equal & opposite, resultant = 0", "Balanced effect: stays still / constant velocity", "Unbalanced: resultant ≠ 0", "Unbalanced effect: speed/direction changes"], "ko_hint": "정의 + 운동에 미치는 효과 (둘 다)."}, {"q": "Two forces act on a box: 8 N pulling right and 3 N pulling left. Calculate the RESULTANT force and state its direction.", "marks": 2, "sample_answer": "<p class='en'>The forces are in opposite directions, so we subtract: <b>8 N − 3 N = 5 N</b>.</p><p class='ko'>힘이 반대 방향이므로 빼줍니다: <b>8N − 3N = 5N</b>.</p><p class='en'>The resultant force is <b>5 N to the right</b> (because the bigger force was pulling right).</p><p class='ko'>합력은 <b>오른쪽 5N</b>입니다 (더 큰 힘이 오른쪽이었기 때문).</p>", "mark_points": ["Correct calculation (5 N)", "Correct direction (right)"], "ko_hint": "크기 + 방향 둘 다."}, {"q": "Explain the difference between MASS and WEIGHT.", "marks": 3, "sample_answer": "<p class='en'><b>Mass</b> is the amount of <b>matter</b> in an object, measured in <b>kilograms (kg)</b>.</p><p class='ko'><b>질량</b>은 물체에 들어있는 <b>물질의 양</b>이며, 단위는 <b>킬로그램(kg)</b>입니다.</p><p class='en'><b>Weight</b> is the <b>force of gravity</b> on the object's mass, measured in <b>newtons (N)</b>.</p><p class='ko'><b>무게</b>는 물체의 질량에 작용하는 <b>중력의 힘</b>이며, 단위는 <b>뉴턴(N)</b>입니다.</p><p class='en'>Mass is the same everywhere, but weight changes depending on gravity (e.g. less on the Moon).</p><p class='ko'>질량은 어디에서나 같지만, 무게는 중력에 따라 달라집니다 (달에서는 더 작음).</p>", "mark_points": ["Mass = amount of matter (kg)", "Weight = force of gravity (N)", "Mass constant, weight varies with gravity"], "ko_hint": "질량(kg) vs 무게(N) + 어디서 어떻게 변하는지."}, {"q": "Write the formula for a MOMENT and explain why a longer spanner makes it easier to undo a tight nut.", "marks": 3, "sample_answer": "<p class='en'>Formula: <b>Moment = Force × perpendicular distance from the pivot</b>.</p><p class='ko'>공식: <b>모멘트 = 힘 × 축에서의 수직 거리</b>.</p><p class='en'>A longer spanner gives a <b>greater distance</b> from the pivot (the nut), so the same effort force produces a <b>bigger moment</b>.</p><p class='ko'>긴 스패너는 축(너트)에서 <b>거리가 더 멀어</b>, 같은 힘으로도 <b>더 큰 모멘트</b>를 만듭니다.</p><p class='en'>A bigger moment makes it easier to turn the tight nut.</p><p class='ko'>모멘트가 클수록 빡빡한 너트를 더 쉽게 돌릴 수 있습니다.</p>", "mark_points": ["Correct formula: Moment = Force × distance", "Longer spanner = larger distance", "Same force gives bigger moment → easier to turn"], "ko_hint": "공식 + 거리↑ → 모멘트↑ → 더 쉬움."}, {"q": "State the principle of moments and use it to explain how a small child can balance a heavier adult on a seesaw.", "marks": 3, "sample_answer": "<p class='en'>The <b>principle of moments</b>: when an object is balanced, the <b>clockwise moments equal the anticlockwise moments</b> around the pivot.</p><p class='ko'><b>모멘트의 원리</b>: 균형 잡힌 물체에서는 축 주위 <b>시계방향 모멘트 = 반시계방향 모멘트</b>입니다.</p><p class='en'>The small child sits <b>further from the pivot</b>, giving them a large distance.</p><p class='ko'>작은 아이가 <b>축에서 멀리 앉으면</b> 거리가 큽니다.</p><p class='en'>The adult's larger weight at a smaller distance can be balanced by the child's smaller weight at a larger distance (Force × distance is equal on both sides).</p><p class='ko'>어른은 무게가 크지만 거리가 작고, 아이는 무게가 작지만 거리가 커서 양쪽의 힘×거리가 같아져 균형이 잡힙니다.</p>", "mark_points": ["States principle correctly", "Child sits further from pivot", "Force × distance equal on both sides"], "ko_hint": "원리 + 아이가 멀리 앉음 + 양쪽 모멘트 같음."}];
@@ -1010,6 +1008,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top: 0, behavior: 'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
     if (btn.dataset.tab === 'spelling' && !spellState.started) startSpelling();
   });
 });
@@ -1047,11 +1046,81 @@ function fallbackSpeak(text){
   setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
 }
 
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = function(){ if (_seq && _seq.token === token) done(); };
+    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { stopSeq(); return; }
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
 // 단어장: 필터 + 검색 통합
 let currentCat = 'all';
 let currentQuery = '';
 
 function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
   const q = currentQuery.toLowerCase().trim();
   let visibleByCat = {};
   document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
@@ -1255,22 +1324,6 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-</script>
-<script>
-// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
-var blindEn=false, blindKo=false;
-function toggleBlind(side){
-  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
-  var v=document.getElementById('tab-vocab');
-  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
-  document.querySelectorAll('.blind-btn[data-b=\"en\"]').forEach(function(b){b.classList.toggle('active',blindEn);});
-  document.querySelectorAll('.blind-btn[data-b=\"ko\"]').forEach(function(b){b.classList.toggle('active',blindKo);});
-  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
-}
-document.addEventListener('click',function(e){
-  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
-  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
-});
 </script>
 </body>
 </html>

@@ -165,6 +165,20 @@ header {
 .vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
 .vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
 
+/* 단어장 좌(영어)|우(한글) + 가림 */
+.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
+.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
+.vcard-en{grid-column:1;grid-row:2;}
+.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
+.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
+.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
+.dh-btns{display:flex;gap:5px;flex-shrink:0;}
+.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
+#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
+#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
+.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+
 .btn-speak { background: rgba(56,189,248,0.1); border: 1.5px solid rgba(56,189,248,0.25);
   color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
   cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
@@ -269,22 +283,6 @@ header {
 footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
-
-/* === 단어장 좌(영어)|우(한글) + 가림 (2026-05-25) === */
-.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
-.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
-.vcard-en{grid-column:1;grid-row:2;}
-.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
-.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
-.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
-.dh-btns{display:flex;gap:5px;flex-shrink:0;}
-.blind-btn{border:1.5px solid rgba(56,189,248,0.35);background:transparent;color:var(--muted);
-  font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;
-  cursor:pointer;white-space:nowrap;}
-.blind-btn.active{background:var(--accent);color:#0d1b2a;border-color:var(--accent);}
-#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
-#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
-.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
 </style>
 </head>
 <body>
@@ -341,7 +339,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
       <button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>🌤️ 기상 Weather</button>
     </div>
   </div>
-<div class="section-header" data-cat="organ"><h2>🌍 대기 Atmosphere</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="organ"><h2>🌍 대기 Atmosphere</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection("organ", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="organ">
   <div class="vcard-left">
@@ -428,7 +426,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="process"><h2>🌡️ 온실효과 Greenhouse</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="process"><h2>🌡️ 온실효과 Greenhouse</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection("process", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="process">
   <div class="vcard-left">
@@ -491,7 +489,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="blood"><h2>🔥 온난화 Warming</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="blood"><h2>🔥 온난화 Warming</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection("blood", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="blood">
   <div class="vcard-left">
@@ -554,7 +552,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="gas"><h2>🌤️ 기상 Weather</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="gas"><h2>🌤️ 기상 Weather</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="gas" onclick="playSection("gas", this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="gas">
   <div class="vcard-left">
@@ -878,7 +876,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>8C Atmosphere & Climate 대기와 기후 · science-vocab · <span style="opacity:.5">v20260524-190358</span></footer>
+<footer>8C Atmosphere & Climate 대기와 기후 · science-vocab · <span style="opacity:.5">v20260527-161558</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "State the approximate percentages of the four main gases in today's atmosphere.", "marks": 4, "sample_answer": "<p class='en'><b>Nitrogen (N₂)</b>: about <b>78%</b>.</p><p class='ko'><b>질소</b>: 약 <b>78%</b>.</p><p class='en'><b>Oxygen (O₂)</b>: about <b>21%</b>.</p><p class='ko'><b>산소</b>: 약 <b>21%</b>.</p><p class='en'><b>Argon (Ar)</b>: about <b>0.9%</b>.</p><p class='ko'><b>아르곤</b>: 약 <b>0.9%</b>.</p><p class='en'><b>Carbon dioxide (CO₂)</b>: about <b>0.04%</b>.</p><p class='ko'><b>이산화탄소</b>: 약 <b>0.04%</b>.</p>", "mark_points": ["N₂ ≈ 78%", "O₂ ≈ 21%", "Ar ≈ 0.9%", "CO₂ ≈ 0.04%"], "ko_hint": "4개 기체 + 비율."}, {"q": "Explain how the greenhouse effect keeps the Earth warm enough for life.", "marks": 4, "sample_answer": "<p class='en'>Sunlight passes through the atmosphere and warms the Earth's surface.</p><p class='ko'>햇빛이 대기를 통과해 지구 표면을 데웁니다.</p><p class='en'>The Earth re-emits energy as <b>infrared radiation (heat)</b>.</p><p class='ko'>지구는 그 에너지를 <b>적외선(열)</b>으로 다시 방출합니다.</p><p class='en'><b>Greenhouse gases</b> in the atmosphere (CO₂, methane, water vapour) <b>absorb</b> this infrared radiation.</p><p class='ko'>대기 안 <b>온실 가스</b>(CO₂·메탄·수증기)가 이 적외선을 <b>흡수</b>합니다.</p><p class='en'>The trapped heat keeps the Earth warm enough for life — without it the Earth would be far too cold.</p><p class='ko'>가둔 열로 지구가 생명체가 살 만큼 따뜻해집니다 — 없으면 너무 춥습니다.</p>", "mark_points": ["Sun warms Earth's surface", "Earth re-emits as infrared / heat", "Greenhouse gases absorb the heat", "Heat is trapped → warm enough for life"], "ko_hint": "햇빛 → 지표 따뜻 → 적외선 방출 → 온실가스가 흡수 → 열 가둠."}, {"q": "Explain how human activities are causing global warming.", "marks": 3, "sample_answer": "<p class='en'>Humans burn <b>fossil fuels</b> (coal, oil, gas) for energy, which releases large amounts of <b>CO₂</b> into the atmosphere.</p><p class='ko'>인간은 에너지를 위해 <b>화석 연료</b>(석탄·석유·가스)를 태우며, 이는 많은 <b>CO₂</b>를 대기로 방출합니다.</p><p class='en'><b>Deforestation</b> removes trees that would otherwise absorb CO₂.</p><p class='ko'><b>삼림 파괴</b>는 CO₂를 흡수할 나무를 없앱니다.</p><p class='en'>The extra CO₂ traps more heat in the atmosphere, raising the Earth's temperature — this is called the <b>enhanced greenhouse effect</b>.</p><p class='ko'>늘어난 CO₂가 대기 안 열을 더 많이 가둬 지구 온도가 상승하며, 이를 <b>강화된 온실 효과</b>라 합니다.</p>", "mark_points": ["Burning fossil fuels releases CO₂", "Deforestation reduces CO₂ absorption", "Extra CO₂ traps more heat (enhanced greenhouse effect)"], "ko_hint": "화석 연료 + 삼림 파괴 → CO₂↑ → 온실효과 강화."}, {"q": "Describe THREE impacts of climate change on the Earth.", "marks": 3, "sample_answer": "<p class='en'>1) <b>Melting ice caps and glaciers</b> cause <b>sea levels to rise</b>, flooding low-lying areas.</p><p class='ko'>1) <b>빙하가 녹아 해수면이 상승</b>하여 저지대가 침수됩니다.</p><p class='en'>2) More frequent <b>extreme weather events</b> — storms, floods, droughts, heatwaves.</p><p class='ko'>2) <b>극단적 기상 현상</b>(폭풍·홍수·가뭄·폭염)이 잦아집니다.</p><p class='en'>3) <b>Habitat loss</b> for species like polar bears and coral reefs, leading to declines or extinction.</p><p class='ko'>3) 북극곰·산호초 같은 생물의 <b>서식지가 사라져</b> 개체수 감소나 멸종으로 이어집니다.</p>", "mark_points": ["Sea level rise / melting ice", "Extreme weather", "Habitat loss / impact on ecosystems"], "ko_hint": "3가지 영향 (해수면, 기상, 생태계 등)."}, {"q": "Explain the difference between WEATHER and CLIMATE.", "marks": 2, "sample_answer": "<p class='en'><b>Weather</b> is the <b>short-term</b> state of the atmosphere — what it's like outside today, this week.</p><p class='ko'><b>날씨</b>는 <b>단기간</b> 대기 상태입니다 — 오늘·이번 주 바깥 상태.</p><p class='en'><b>Climate</b> is the <b>long-term average</b> weather pattern of a region, measured over decades or centuries.</p><p class='ko'><b>기후</b>는 지역의 <b>장기간 평균</b> 날씨 패턴입니다 (수십~수백 년).</p>", "mark_points": ["Weather = short-term atmosphere state", "Climate = long-term average pattern"], "ko_hint": "날씨 = 단기, 기후 = 장기."}];
@@ -920,6 +918,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top: 0, behavior: 'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
     if (btn.dataset.tab === 'spelling' && !spellState.started) startSpelling();
   });
 });
@@ -957,11 +956,81 @@ function fallbackSpeak(text){
   setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
 }
 
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = function(){ if (_seq && _seq.token === token) done(); };
+    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { stopSeq(); return; }
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
 // 단어장: 필터 + 검색 통합
 let currentCat = 'all';
 let currentQuery = '';
 
 function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
   const q = currentQuery.toLowerCase().trim();
   let visibleByCat = {};
   document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
@@ -1165,22 +1234,6 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-</script>
-<script>
-// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
-var blindEn=false, blindKo=false;
-function toggleBlind(side){
-  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
-  var v=document.getElementById('tab-vocab');
-  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
-  document.querySelectorAll('.blind-btn[data-b=\"en\"]').forEach(function(b){b.classList.toggle('active',blindEn);});
-  document.querySelectorAll('.blind-btn[data-b=\"ko\"]').forEach(function(b){b.classList.toggle('active',blindKo);});
-  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
-}
-document.addEventListener('click',function(e){
-  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
-  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
-});
 </script>
 </body>
 </html>
