@@ -862,6 +862,166 @@ const PHRASE_SETS = [
       {ko:"난 그 사람이랑 결혼할 줄 알았어.", en:"I thought I would marry him."},
     ],
   },
+  {
+    title: "before / after (~전에 / ~후에)",
+    concept:
+      "<span class='ctitle'>📌 before / after 쓰는 법</span>" +
+      "'~전에 / ~후에'는 뒤에 무엇이 오느냐로 나뉘어요.<br>" +
+      "• <b>+ 명사·시간</b>: <b>before 10</b> / <b>after class</b> 처럼 명사를 바로 붙여요.<br>" +
+      "• <b>+ 주어+동사</b>: <b>before I eat</b> / <b>after she left</b> 처럼 문장을 붙여요. (after 뒤는 보통 과거)<br>" +
+      "• <b>기간을 앞에</b>: <b>an hour before bed</b>, <b>20 minutes after I reported it</b> (얼마나 전·후인지).<br>" +
+      "• <b>축약(reducing)</b>: 주어가 같으면 <code>before/after + 동사ing</code> 로 줄여요. before I go → <b>before going</b>.",
+    items: [
+      // 명사·시간 + before
+      {ko:"나는 너를 10시 반 전에는 만날 수 없어.", en:"I can't meet you before 10:30."},
+      {ko:"이거 10시 전에 끝내놔.", en:"Finish this before 10."},
+      {ko:"나 수업 전에 숙제 다 했어.", en:"I finished my homework before class."},
+      {ko:"난 아침을 잘 안 먹어. 10시 전엔 아무것도 안 먹어.", en:"I don't really eat breakfast; I don't eat anything before 10."},
+      {ko:"영화 시작 전에 팝콘을 다 먹어버렸어.", en:"I ate all the popcorn before the movie started."},
+      {ko:"영화 전에 만나서 점심 먹을래요?", en:"Do you want to meet for lunch before the movie?"},
+      // 명사·시간 + after
+      {ko:"나는 너를 10시 반 후에 만날 수 있어.", en:"I can meet you after 10:30."},
+      {ko:"이거 10시 이후에 끝나.", en:"This finishes after 10."},
+      {ko:"난 수업 끝나고 바로 숙제해. 넌 안 그래?", en:"I do my homework right after class. Don't you?"},
+      {ko:"난 12시 이후엔 커피 안 마셔. 잠을 못 자거든.", en:"I don't drink coffee after 12; I can't sleep."},
+      {ko:"영화 본 후에 우리는 넥스트젠에 갔어.", en:"After the movie, we went to NextGen."},
+      {ko:"영화 보고 나서 같이 저녁 먹을래요?", en:"Do you want to have dinner together after the movie?"},
+      // before + 주어+동사
+      {ko:"나는 먹기 전에 항상 손을 씻어.", en:"I always wash my hands before I eat."},
+      {ko:"나 미용실 가기 전에 머리 감아야 해?", en:"Do I have to wash my hair before I go to the hair salon?"},
+      {ko:"난 지금 콘도를 고르기 전에 열 군데 넘게 봤어.", en:"I visited more than 10 condos before I chose this one."},
+      {ko:"그녀는 아이를 낳기 전엔 날씬했어.", en:"She was in shape before she gave birth."},
+      {ko:"넌 등록하기 전에 배치고사를 봐야 해.", en:"You have to take a placement test before you enroll."},
+      // after + 주어+동사
+      {ko:"난 먹고 나면 너무 졸려.", en:"I get so sleepy after I eat."},
+      {ko:"나 여기서 밥 먹고 나서 배탈 났어.", en:"I had an upset stomach after I ate here."},
+      {ko:"그녀는 약을 먹고 나서 잠들었어.", en:"She fell asleep after she took the medicine."},
+      {ko:"난 아이를 낳고 나서 살이 쪘어.", en:"I gained weight after I gave birth."},
+      {ko:"난 애들 학교에 데려다주고 나서 장 보러 가.", en:"I go grocery shopping after I drop the kids off at school."},
+      {ko:"너 숙제 다 한 다음에 TV 봐도 돼.", en:"You can watch TV after you finish your homework."},
+      // 기간 + before / after
+      {ko:"그는 자기 한 시간 전에 책을 읽어.", en:"He reads a book an hour before bed."},
+      {ko:"난 새 식당에 가기 전날엔 항상 리뷰를 읽어.", en:"I always read reviews the day before I go to a new restaurant."},
+      {ko:"난 그녀가 도착하기 5분 전에 공항에 도착했어.", en:"I got to the airport five minutes before she arrived."},
+      {ko:"그녀의 비행기는 내 것보다 한 시간 뒤야.", en:"Her flight is an hour after mine."},
+      {ko:"경찰은 내가 신고하고 20분 후에 왔어.", en:"The police came 20 minutes after I reported it."},
+      {ko:"그녀는 신청하고 6일 뒤에 학생 비자를 받았대.", en:"She got her study permit six days after she applied."},
+      {ko:"내가 빨래 널자마자 비가 오기 시작했어.", en:"It started raining right after I hung out the laundry."},
+      // 틀린 문장 고치기 (시제·어순)
+      {ko:"그녀는 너무 많이 마시고 나서 기절했어.", en:"She blacked out after she drank too much."},
+      {ko:"그는 음주운전을 하고 나서 사라졌어.", en:"He disappeared after he drove drunk."},
+      {ko:"그들은 집주인이 돈을 안 갚자 그를 고소했어.", en:"They sued their landlord after he refused to pay them back."},
+      {ko:"내가 두리안을 먹고 나서 아들이 설사를 했어.", en:"My son had diarrhea after I ate durian."},
+      {ko:"그는 범죄를 저지르고 일주일 뒤에 잡혔어.", en:"He got caught a week after he committed the crime."},
+      {ko:"내 보험사는 내가 청구하고 하루 뒤에 돈을 줬어.", en:"My insurance paid me a day after I made a claim."},
+      {ko:"우리는 아침 다 먹고 나서 출발할 거야.", en:"We will leave after we finish breakfast."},
+      // 축약 (before/after + V-ing)
+      {ko:"자기 전에 양치하세요?", en:"Do you brush your teeth before going to bed?"},
+      {ko:"난 여기 오기 전에 뭐 좀 먹어.", en:"I eat something before coming here."},
+      {ko:"시험 보기 전에 공부해야 해.", en:"You should study before taking a test."},
+      {ko:"수업 끝나고 나면 피곤해요?", en:"Do you feel tired after finishing class?"},
+      {ko:"난 운동하기 전엔 안 먹어.", en:"I don't eat before working out."},
+      {ko:"술 마시고 나면 알딸딸해져요?", en:"Do you feel tipsy after drinking?"},
+      // 영작
+      {ko:"난 이사 나가고 일주일 뒤에 보증금을 돌려받았어요.", en:"I got my deposit back a week after I moved out."},
+      {ko:"우리는 이 학교로 정하기 전에 IGB 스쿨 투어를 다녀왔어요.", en:"We went on a tour of IGB before we decided on this school."},
+      {ko:"넌 밥 먹기 전에 양치해, 아니면 먹고 나서 해?", en:"Do you brush your teeth before meals or after meals?"},
+      {ko:"너 일본에 목요일에 간다고 했지? 우린 너 가고 이틀 뒤에 떠나.", en:"You said you're going to Japan on Thursday, right? We leave two days after you go."},
+      {ko:"엄마 한국 가시고 나면 만나자.", en:"Let's meet after Mom goes to Korea."},
+      {ko:"나 너 오기 10분 전에 왔어.", en:"I got here 10 minutes before you came."},
+      // 인터뷰
+      {ko:"너 자기 전에 핸드폰 확인해?", en:"Do you check your phone before bed?"},
+      {ko:"그녀는 자기 전에 항상 핸드폰을 확인해.", en:"She always checks her phone before bed."},
+      {ko:"먹고 나면 졸려요?", en:"Do you feel sleepy after eating?"},
+      {ko:"애들 내려주고 나서 뭐 해요?", en:"What do you do after you drop your kids off at school?"},
+      {ko:"뭔가 사거나 해보기 전에 항상 리뷰를 확인해요?", en:"Do you always check reviews before you buy or try something new?"},
+      {ko:"지금 콘도 계약하기 전에 콘도를 몇 군데나 봤어요?", en:"How many condos did you look at before you signed up for your current one?"},
+    ],
+  },
+  {
+    title: "의문사 + do you think (네 생각엔 ~?)",
+    concept:
+      "<span class='ctitle'>📌 의문사 + do you think + 주어 + 동사</span>" +
+      "'네 생각엔 ~인 것 같아?'는 <b>의문사 + do you think + 주어 + 동사</b> 순서예요.<br>" +
+      "• <b>Why do you think she left?</b> (O) — Why do you think <s>did she leave</s>? (X) → 뒤는 평서문 어순!<br>" +
+      "• 주어를 묻는 의문사(who·what·which)면 do you think 뒤에 바로 동사: <b>Who do you think will win?</b><br>" +
+      "• 예·아니오 질문은 <b>Do you think + 주어 + 동사?</b> (Do you think it's worth it?)<br>" +
+      "• 부드럽게 물을 땐 <b>I wonder / I want to know / Do you know + if·의문사 + 주어 + 동사</b> 도 써요.",
+    items: [
+      // 기본 의문문
+      {ko:"너 어디야?", en:"Where are you?"},
+      {ko:"오늘 며칠이야?", en:"What's the date today?"},
+      {ko:"언제 여기 왔어?", en:"When did you come here?"},
+      {ko:"언제 전화했었어?", en:"When did you call?"},
+      {ko:"왜 이사 가려고?", en:"Why are you moving?"},
+      // 도입표현 (I wonder / I want to know / Do you know)
+      {ko:"난 그녀가 조호바루에 있는 학교로 옮길지 궁금해.", en:"I wonder if she will transfer to a school in Johor Bahru."},
+      {ko:"우리 애들이 영어를 유창하게 하는 데 얼마나 걸릴지 궁금해.", en:"I want to know how long it will take for my kids to become fluent in English."},
+      {ko:"그녀가 언제 시간 되는지 알아?", en:"Do you know when she's free?"},
+      {ko:"내가 얼마를 보내야 하는지 알려줘.", en:"Let me know how much I should send."},
+      {ko:"난 그녀들이 어디 사람인지 알고 싶어.", en:"I want to know where they are from."},
+      // who·what·which 가 주어
+      {ko:"누가 이길 것 같아?", en:"Who do you think will win?"},
+      {ko:"이게 뭔 것 같아?", en:"What do you think this is?"},
+      {ko:"어떤 게 더 나은 것 같아?", en:"Which one do you think is better?"},
+      // 의문사 + do you think + 주어 + 동사
+      {ko:"너 생각엔 그녀가 왜 떠난 것 같아?", en:"Why do you think she left?"},
+      {ko:"너 생각엔 네가 뭐라도 되는 줄 알아?", en:"Who do you think you are?"},
+      {ko:"저 여자 몇 살인 것 같아?", en:"How old do you think she is?"},
+      {ko:"저 여자 어느 나라 사람인 것 같아?", en:"Where do you think she is from?"},
+      // Do you think S+V vs 의문사+do you think
+      {ko:"너 생각엔 송혜교가 예뻐?", en:"Do you think Song Hye-kyo is pretty?"},
+      {ko:"너 생각엔 어느 국제학교가 좋아?", en:"Which international school do you think is good?"},
+      {ko:"너 생각엔 누가 더 예뻐?", en:"Who do you think is prettier?"},
+      {ko:"너 생각엔 누가 너한테 전화한 것 같아?", en:"Who do you think called you?"},
+      {ko:"그 사람 생각엔 누가 팀 리더가 될 것 같대?", en:"Who does he think will be the team leader?"},
+      {ko:"너 생각엔 그녀가 왜 결석한 것 같아?", en:"Why do you think she was absent?"},
+      {ko:"너 생각엔 이 일이 왜 일어난 것 같아?", en:"Why do you think this happened?"},
+      {ko:"너 생각엔 그가 어디 간 것 같아?", en:"Where do you think he went?"},
+      {ko:"너 생각엔 그들이 누구를 고른 것 같아?", en:"Who do you think they chose?"},
+      {ko:"어떤 식당이 갈 만한 것 같아?", en:"Which restaurant do you think is worth going to?"},
+      {ko:"너 생각엔 운전면허를 따야 할 것 같아?", en:"Do you think I should get a driver's license?"},
+      {ko:"너 생각엔 이게 왜 중요한 것 같아?", en:"Why do you think this is important?"},
+      // 틀린 문장 고치기 (do you think 어순)
+      {ko:"너 생각엔 그가 왜 그만뒀을 것 같아?", en:"Why do you think he quit?"},
+      {ko:"너 생각엔 그녀가 지금 어디 있는 것 같아?", en:"Where do you think she is now?"},
+      {ko:"너 생각엔 그가 뭘 원하는 것 같아?", en:"What do you think he wants?"},
+      {ko:"너 생각엔 그녀가 왜 화났던 것 같아?", en:"Why do you think she was upset?"},
+      {ko:"너 생각엔 그들이 누구인 것 같아?", en:"Who do you think they are?"},
+      {ko:"너 생각엔 우리가 그걸 어떻게 해결할 수 있을 것 같아?", en:"How do you think we can solve it?"},
+      {ko:"너 생각엔 그들이 언제 도착할 것 같아?", en:"When do you think they will arrive?"},
+      // do you think 로 바꾸기
+      {ko:"너 생각엔 영어가 왜 중요한 것 같아?", en:"Why do you think English is important?"},
+      {ko:"너 생각엔 저 남자가 누구인 것 같아?", en:"Who do you think that man is?"},
+      {ko:"너 생각엔 그녀가 왜 운 것 같아?", en:"Why do you think she cried?"},
+      {ko:"너 생각엔 그들이 어디 가는 것 같아?", en:"Where do you think they are going?"},
+      {ko:"너 생각엔 그가 무슨 뜻으로 한 말 같아?", en:"What do you think he means?"},
+      {ko:"너 생각엔 회의가 왜 취소된 것 같아?", en:"Why do you think the meeting was canceled?"},
+      {ko:"너 생각엔 우리가 이 문제를 어떻게 고칠 수 있을 것 같아?", en:"How do you think we can fix this problem?"},
+      {ko:"너 생각엔 그녀가 언제 돌아올 것 같아?", en:"When do you think she will come back?"},
+      {ko:"너 생각엔 그녀가 어디 사는 것 같아?", en:"Where do you think she lives?"},
+      {ko:"너 생각엔 그가 누구인 것 같아?", en:"Who do you think he is?"},
+      {ko:"너 생각엔 그가 뭘 좋아하는 것 같아?", en:"What do you think he likes?"},
+      {ko:"너 생각엔 수업이 언제 끝날 것 같아?", en:"When do you think the class will finish?"},
+      {ko:"너 생각엔 그녀가 왜 화난 것 같아?", en:"Why do you think she is upset?"},
+      // 영작
+      {ko:"너 생각엔 몽키아라에서 제일 맛있는 식당이 어디야?", en:"Which restaurant do you think is the best in Mont Kiara?"},
+      {ko:"몽키아라에서 제일 맛있는 식당이 어딘지 말해줄래?", en:"Can you tell me which restaurant is the best in Mont Kiara?"},
+      {ko:"너 생각엔 이게 맞는 답인 것 같아?", en:"Do you think this is the right answer?"},
+      {ko:"난 이게 맞는 답인지 잘 모르겠어.", en:"I'm not sure if this is the right answer."},
+      {ko:"너 생각엔 어떤 게 제일 나은 선택인 것 같아?", en:"Which do you think is the best option?"},
+      {ko:"너 생각엔 어떤 게 나한테 잘 어울리는 것 같아?", en:"Which one do you think looks good on me?"},
+      {ko:"너 생각엔 그녀가 왜 그 옵션을 고려 안 하는 것 같아?", en:"Why do you think she isn't considering that option?"},
+      {ko:"너 생각엔 그가 너한테 왜 거짓말한 것 같아?", en:"Why do you think he lied to you?"},
+      {ko:"너 생각엔 그들이 지금 뭐 하고 있는 것 같아?", en:"What do you think they are doing right now?"},
+      {ko:"너 생각엔 그들이 왜 이혼한 것 같아?", en:"Why do you think they got divorced?"},
+      // 인터뷰
+      {ko:"너 생각엔 사람들이 왜 한 달씩 말레이시아에 오는 것 같아? 그럴 만한 가치가 있을까?", en:"Why do you think people come to Malaysia for a month? Do you think it's worth it?"},
+      {ko:"너 생각엔 누가 너를 제일 많이 닮은 것 같아?", en:"Who do you think takes after you the most?"},
+      {ko:"너 생각엔 한국행 항공권을 언제 사는 게 제일 싼 것 같아?", en:"When do you think is the cheapest time to buy flights to Korea?"},
+      {ko:"너 생각엔 어느 K마트가 제일 신선한 것 같아?", en:"Which K-mart do you think is the freshest?"},
+    ],
+  },
 ];
 
 let phraseBlind = true;     // 처음엔 영어를 가려둠 (한글 보고 말하기)
