@@ -247,6 +247,35 @@
 
   footer { text-align:center; padding:24px; color:var(--muted); font-size:11px; }
   footer span { color:var(--accent); }
+
+  /* 📷 새 자료 올리기 (우하단 떠있는 버튼) */
+  .upload-fab {
+    position:fixed; right:16px; bottom:16px; z-index:50;
+    width:56px; height:56px; border-radius:50%; border:none; cursor:pointer;
+    background:var(--accent); color:#fff; font-size:24px;
+    box-shadow:0 4px 16px rgba(246,166,35,0.45);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .upload-fab:active { transform:scale(0.94); }
+  .upload-overlay {
+    position:fixed; inset:0; z-index:60; display:none;
+    background:rgba(74,58,31,0.45);
+    align-items:center; justify-content:center; padding:24px;
+  }
+  .upload-overlay.show { display:flex; }
+  .upload-box {
+    background:#fff; border-radius:20px; padding:28px 24px; max-width:340px; width:100%;
+    text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.18);
+  }
+  .upload-box .big-emoji { font-size:40px; margin-bottom:10px; }
+  .upload-box h3 { font-size:18px; font-weight:900; margin-bottom:8px; color:var(--text); }
+  .upload-box p { font-size:14px; color:var(--muted); font-weight:700; line-height:1.5; margin-bottom:6px; }
+  .upload-box .upload-status { min-height:22px; font-size:14px; font-weight:800; color:var(--accent); }
+  .upload-box .upload-close {
+    margin-top:14px; border:none; cursor:pointer; border-radius:14px;
+    background:var(--accent); color:#fff; font-family:inherit;
+    font-weight:800; font-size:15px; padding:10px 26px;
+  }
 </style>
 </head>
 <body>
@@ -312,6 +341,19 @@
 </div>
 
 <footer>💛 <span>Jenny 영어공부</span> · phrase - May</footer>
+
+<!-- 📷 새 학습자료(사진) 올리기 -->
+<button class="upload-fab" onclick="document.getElementById('upload-input').click()" title="새 학습자료 사진 올리기">📷</button>
+<input type="file" id="upload-input" accept="image/*" multiple style="display:none" onchange="uploadPhotos(this.files)">
+<div class="upload-overlay" id="upload-overlay">
+  <div class="upload-box">
+    <div class="big-emoji" id="upload-emoji">📤</div>
+    <h3 id="upload-title">사진 보내는 중…</h3>
+    <p id="upload-desc">잠시만 기다려 주세요.</p>
+    <div class="upload-status" id="upload-status"></div>
+    <button class="upload-close" id="upload-close" style="display:none" onclick="closeUpload()">확인</button>
+  </div>
+</div>
 
 <script>
 // ─── 데이터 (phrase - May) ───
@@ -1019,6 +1061,69 @@ function updateStats() {
   document.getElementById('t-no').textContent = test.no;
   const remaining = test.pool.length + (test.cur && !test.answered ? 1 : 0);
   document.getElementById('t-rem').textContent = remaining;
+}
+
+// ─── 📷 새 학습자료(사진) 올리기 ───
+const UPLOAD_URL = 'https://jenny-upload.olok7171.workers.dev/up';
+const UPLOAD_KEY = '918b5e413563a5abbca2ebf3';
+
+function showUpload(emoji, title, desc, status, done) {
+  document.getElementById('upload-emoji').textContent = emoji;
+  document.getElementById('upload-title').textContent = title;
+  document.getElementById('upload-desc').textContent = desc;
+  document.getElementById('upload-status').textContent = status || '';
+  document.getElementById('upload-close').style.display = done ? 'inline-block' : 'none';
+  document.getElementById('upload-overlay').classList.add('show');
+}
+function closeUpload() {
+  document.getElementById('upload-overlay').classList.remove('show');
+  document.getElementById('upload-input').value = '';
+}
+
+// 큰 사진은 가로세로 최대 2000px JPEG로 줄여서 전송 (8MB 제한 대비)
+function shrinkImage(file) {
+  return new Promise(resolve => {
+    if (file.size < 3 * 1024 * 1024) { resolve(file); return; } // 3MB 미만은 그대로
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const max = 2000;
+      let w = img.naturalWidth, h = img.naturalHeight;
+      if (w > max || h > max) { const r = Math.min(max / w, max / h); w = Math.round(w * r); h = Math.round(h * r); }
+      const c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      c.toBlob(b => resolve(b || file), 'image/jpeg', 0.88);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
+    img.src = url;
+  });
+}
+
+async function uploadPhotos(files) {
+  if (!files || !files.length) return;
+  const list = Array.from(files);
+  showUpload('📤', '사진 보내는 중…', '잠시만 기다려 주세요.', '0 / ' + list.length);
+  let sent = 0, failed = 0;
+  for (const f of list) {
+    try {
+      const blob = await shrinkImage(f);
+      const res = await fetch(UPLOAD_URL + '?name=' + encodeURIComponent(f.name || 'photo.jpg'), {
+        method: 'POST',
+        headers: { 'X-Key': UPLOAD_KEY, 'Content-Type': blob.type || 'image/jpeg' },
+        body: blob,
+      });
+      const j = await res.json();
+      if (j.ok) sent++; else failed++;
+    } catch (e) { failed++; }
+    document.getElementById('upload-status').textContent = (sent + failed) + ' / ' + list.length;
+  }
+  if (failed === 0) {
+    showUpload('✅', '다 보냈어요!', '맥 컴퓨터가 곧 사진을 읽고 새 학습 내용을 자동으로 만들어요. 보통 몇 분 걸려요. 끝나면 앱을 새로고침하면 보여요.', sent + '장 전송 완료', true);
+  } else {
+    showUpload('⚠️', '일부 실패', '성공 ' + sent + '장, 실패 ' + failed + '장. 인터넷 연결을 확인하고 실패한 사진만 다시 올려 주세요.', '', true);
+  }
 }
 </script>
 
