@@ -1042,8 +1042,27 @@ function speakPhrase(si, i){
 
 function togglePhraseBlind(){ phraseBlind = !phraseBlind; renderPhrases(); }
 
+function playPhraseAll(si, btn) {
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;
+  const items = PHRASE_SETS[si].items;
+  if (!items.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = () => {
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= items.length) { stopSeq(); return; }
+    const next = () => { idx++; setTimeout(playOne, 350); };
+    playFile('audio/jenny_phrase/p' + si + '_' + idx + '.mp3', token, next);
+  };
+  playOne();
+}
+
 function openTopic(i){ currentTopic = i; renderPhrases(); window.scrollTo({top:0, behavior:'smooth'}); }
-function closeTopic(){ currentTopic = null; renderPhrases(); window.scrollTo({top:0, behavior:'smooth'}); }
+function closeTopic(){ stopSeq(); currentTopic = null; renderPhrases(); window.scrollTo({top:0, behavior:'smooth'}); }
 
 function renderPhrases(){
   const wrap = document.getElementById('phrase-list');
@@ -1066,6 +1085,7 @@ function renderPhrases(){
   const si = currentTopic, set = PHRASE_SETS[si];
   let html = `<button class="topic-back" onclick="closeTopic()">← 주제 목록</button>
     <div class="phrase-bar">
+      <button class="blind-btn play-all-btn" onclick="playPhraseAll(${si}, this)">▶ 듣기</button>
       <button class="blind-btn${phraseBlind ? ' active' : ''}" onclick="togglePhraseBlind()">🇬🇧 ${phraseBlind ? '영어 가림' : '영어 보임'}</button>
     </div>
     <div class="pset">
