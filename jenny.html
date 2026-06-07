@@ -668,7 +668,7 @@ function playDay(m, day, btn) {
   let idx = 0;
   const playOne = () => {
     if (!_seq || _seq.token !== token) return;
-    if (idx >= items.length) { stopSeq(); return; }
+    if (idx >= items.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
     const w = items[idx];
     playFile('audio/jenny/k' + w.id + '.mp3', token, () => {   // ① 한국어 뜻
       playFile('audio/jenny/w' + w.id + '.mp3', token, () => {  // ② 영어 단어
@@ -1054,7 +1054,7 @@ function playPhraseAll(si, btn) {
   let idx = 0;
   const playOne = () => {
     if (!_seq || _seq.token !== token) return;
-    if (idx >= items.length) { stopSeq(); return; }
+    if (idx >= items.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
     const next = () => { idx++; setTimeout(playOne, 350); };
     playFile('audio/jenny_phrase/p' + si + '_' + idx + '.mp3', token, next);
   };
