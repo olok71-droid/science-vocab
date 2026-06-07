@@ -588,10 +588,11 @@ function toggleMem(id){
   if (memSet.has(id)) memSet.delete(id); else memSet.add(id);
   saveMem(); renderVocab();
 }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
 function toggleHideMem(){
   memHidden = !memHidden;
   const b = document.getElementById('mem-hide-btn');
-  if (b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  if (b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
   renderVocab();
 }
 function resetMem(){
@@ -720,6 +721,7 @@ function renderVocab() {
   wrap.innerHTML = html;
   const mc = document.getElementById('mem-count');
   if (mc) mc.textContent = memSet.size;
+  memBtnLabel();
 }
 
 // Day 필터 버튼 생성

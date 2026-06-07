@@ -142,6 +142,7 @@ header {
 
 .section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
 .section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+.sec-count { color: var(--accent); font-weight: 900; margin-left: 4px; }
 .section-line { flex: 1; height: 1px; background: var(--border); }
 
 /* CARDS WRAP */
@@ -340,6 +341,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
     <div class="mem-bar">
+      <span class="mem-info">📚 전체 <b id="total-count">0</b>개</span>
       <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
       <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
       <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
@@ -1273,7 +1275,9 @@ try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } cat
 let memHidden = false;
 function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
 function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
-function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
+function annotateCounts(){ let total=0; document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; total+=n; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=total; }
 function setMemUI(c){
   const on = memSet.has(cardSlug(c));
   c.classList.toggle('memorized', on);
@@ -1294,7 +1298,7 @@ function toggleMem(btn){
 function toggleHideMem(){
   memHidden = !memHidden;
   const b = document.getElementById('mem-hide-btn');
-  if(b){ b.classList.toggle('active', memHidden); b.textContent = memHidden ? '외운 단어 보기' : '외운 단어 숨기기'; }
+  if(b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
   applyVocabFilter();
 }
 function resetMem(){
@@ -1360,6 +1364,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('vocab-search');
   if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
   applyMemStates();   // 저장된 외움 표시 복원
+  annotateCounts();   // 단원별·전체 단어 수 표시
 });
 
 // ─── 단어시험 (Spelling Test) ───
