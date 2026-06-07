@@ -105,6 +105,7 @@
     box-shadow:0 1px 6px var(--shadow); border:1.5px solid rgba(246,166,35,0.1);
   }
   .wrow.hidden { display:none; }
+  .wnum { flex:0 0 auto; font-size:11px; font-weight:900; color:var(--accent); opacity:.6; min-width:30px; }
   .w-en { flex:1.05; font-size:16px; font-weight:800; color:var(--text); line-height:1.25; min-width:0; }
   .w-ko { flex:1; font-size:14px; color:var(--accent); font-weight:700; line-height:1.25; min-width:0; }
   .spk {
@@ -686,6 +687,7 @@ function renderVocab() {
   const wrap = document.getElementById('vocab-list');
   const q = query.toLowerCase().trim();
   let html = '';
+  let vnum = 0;   // 단어 앞 번호 (현재 보이는 목록 기준 1번~)
   MONTHS.forEach(mo => {
     if (vocabMonth !== 'all' && vocabMonth !== mo.m) return;
     let monthHasContent = false;
@@ -700,7 +702,9 @@ function renderVocab() {
       monthHtml += `<div class="day-head"><span class="dh-title">📅 Day ${day} <span class="cnt">· ${items.length}개</span></span>${blindButtons(mo.m, day)}</div>`;
       items.forEach(w => {
         const mem = memSet.has(w.id);
+        vnum++;
         monthHtml += `<div class="wrow${mem ? ' memorized' : ''}">
+          <span class="wnum">${vnum}번</span>
           ${cell('en', w.en)}
           ${cell('ko', w.ko)}
           <button class="spk" onclick="playClip('w', ${w.id})" aria-label="단어 발음">🔊</button>
