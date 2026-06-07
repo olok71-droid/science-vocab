@@ -126,6 +126,23 @@
     margin: 4px 0 24px;
   }
 
+  /* 학년 탭 */
+  .year-tabs { display:flex; gap:8px; margin-bottom:22px; }
+  .year-tab { flex:1; padding:11px 0; border-radius:14px; font-family:inherit;
+    font-size:15px; font-weight:900; cursor:pointer; background:#fff; color:var(--muted);
+    border:2px solid rgba(62,207,178,0.15); transition:all .2s; }
+  .year-tab.active { background:var(--accent); color:#fff; border-color:var(--accent);
+    box-shadow:0 4px 14px var(--shadow); }
+  .year-pane { display:none; }
+  .year-pane.active { display:block; }
+  /* 영역(strand) 태그 — 9학년 과학 단원명에 */
+  .strand-tag { display:inline-block; font-size:10px; font-weight:800; padding:2px 8px;
+    border-radius:8px; margin-bottom:2px; width:fit-content; }
+  .strand-bio   { background:rgba(62,207,178,0.14); color:#16a085; }
+  .strand-chem  { background:rgba(167,139,250,0.16); color:#7c5cf0; }
+  .strand-phys  { background:rgba(255,170,60,0.18);  color:#e08a00; }
+  .strand-earth { background:rgba(96,196,248,0.16);  color:#2a8fd0; }
+
   footer {
     text-align: center; padding: 20px;
     color: var(--muted); font-size: 11px;
@@ -189,6 +206,13 @@
 </header>
 
 <div class="container">
+
+  <div class="year-tabs">
+    <button class="year-tab active" data-year="year8" onclick="showYear('year8')">📘 8학년</button>
+    <button class="year-tab" data-year="year9" onclick="showYear('year9')">📗 9학년</button>
+  </div>
+
+  <div class="year-pane active" id="year8">
 
   <!-- Science -->
   <div class="subject-section">
@@ -419,6 +443,143 @@
     </div>
   </div>
 
+  </div><!-- /year8 -->
+
+  <div class="year-pane" id="year9">
+
+    <!-- Science (Year 9) -->
+    <div class="subject-section">
+      <div class="subject-label">
+        <span class="icon">🔬</span>
+        <span class="name-en">Science</span>
+        <span class="name-ko">과학 · Year 9</span>
+      </div>
+      <div class="units-grid">
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">💧</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-bio">🧬 Biology 생물</div>
+          <div class="unit-name-en">Water and life</div>
+          <div class="unit-name-ko">물과 생명</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🌱</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-bio">🧬 Biology 생물</div>
+          <div class="unit-name-en">Photosynthesis</div>
+          <div class="unit-name-ko">광합성</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🧬</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-bio">🧬 Biology 생물</div>
+          <div class="unit-name-en">Genetics</div>
+          <div class="unit-name-ko">유전</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🤰</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-bio">🧬 Biology 생물</div>
+          <div class="unit-name-en">Care in fetal development</div>
+          <div class="unit-name-ko">태아 발달과 돌봄</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🦤</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-bio">🧬 Biology 생물</div>
+          <div class="unit-name-en">Environmental change &amp; extinction</div>
+          <div class="unit-name-ko">환경 변화와 멸종</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">📋</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">The periodic table</div>
+          <div class="unit-name-ko">주기율표</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🔗</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">Bonds and structures</div>
+          <div class="unit-name-ko">결합과 구조</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🧊</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">Density</div>
+          <div class="unit-name-ko">밀도</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🔄</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">Displacement reactions</div>
+          <div class="unit-name-ko">치환 반응</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🧂</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">Preparing common salts</div>
+          <div class="unit-name-ko">염 만들기</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">⏱️</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">Rates of reaction</div>
+          <div class="unit-name-ko">반응 속도</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">⚡</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-phys">🔆 Physics 물리</div>
+          <div class="unit-name-en">Energy</div>
+          <div class="unit-name-ko">에너지</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🌊</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-phys">🔆 Physics 물리</div>
+          <div class="unit-name-en">Waves</div>
+          <div class="unit-name-ko">파동</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🔌</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-phys">🔆 Physics 물리</div>
+          <div class="unit-name-en">Electrical circuits</div>
+          <div class="unit-name-ko">전기 회로</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🌍</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-earth">🌌 Earth &amp; Space 지구·우주</div>
+          <div class="unit-name-en">Planet Earth</div>
+          <div class="unit-name-ko">지구</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">♻️</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-earth">🌌 Earth &amp; Space 지구·우주</div>
+          <div class="unit-name-en">Cycles on Earth</div>
+          <div class="unit-name-ko">지구의 순환</div>
+        </a>
+
+        <a class="unit-card coming" href="#">
+          <div class="unit-top"><span class="unit-icon">🌌</span><span class="badge badge-soon">준비중</span></div>
+          <div class="strand-tag strand-earth">🌌 Earth &amp; Space 지구·우주</div>
+          <div class="unit-name-en">Earth in space</div>
+          <div class="unit-name-ko">우주 속 지구</div>
+        </a>
+
+      </div>
+    </div>
+
+  </div><!-- /year9 -->
+
   <div class="divider"></div>
 
   <!-- 중국어 첫걸음 -->
@@ -473,7 +634,7 @@
 
 </div>
 
-<footer>🐱 <span>AMY Study App</span> · SJI International School Malaysia · Year 8</footer>
+<footer>🐱 <span>AMY Study App</span> · SJI International School Malaysia · Year 8 · 9</footer>
 
 <!-- 우측 floating AI 도구 -->
 <div class="fab-stack">
@@ -519,6 +680,14 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
 
 
 
+
+<script>
+function showYear(y){
+  document.querySelectorAll('.year-pane').forEach(p=>p.classList.toggle('active', p.id===y));
+  document.querySelectorAll('.year-tab').forEach(t=>t.classList.toggle('active', t.dataset.year===y));
+  window.scrollTo({top:0});
+}
+</script>
 
 <!-- SW-AUTO-START -->
 
