@@ -37,16 +37,17 @@
   }
 
   .cat-wrap {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center; justify-content: center;
     background: white;
     border-radius: 50%;
-    width: 80px; height: 80px;
-    line-height: 80px;
-    font-size: 48px;
+    width: 96px; height: 96px;
     box-shadow: 0 4px 20px rgba(62,207,178,0.2);
     margin-bottom: 14px;
     animation: bounce 2.2s ease-in-out infinite;
+    overflow: hidden;
   }
+  .cat-wrap img { width: 84px; height: 84px; object-fit: contain; }
   @keyframes bounce {
     0%,100% { transform: translateY(0); }
     50%      { transform: translateY(-9px); }
@@ -200,7 +201,7 @@
 <body>
 
 <header>
-  <div class="cat-wrap">🐱</div>
+  <div class="cat-wrap"><img src="assets/amy-cat.png" alt="AMY 고양이"></div>
   <h1><span class="amy">AMY</span> <span class="study">Study App</span> ✨</h1>
   <p class="tagline">공부하자냥~ · Let's study! 🐾</p>
 </header>
