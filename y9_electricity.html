@@ -467,6 +467,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Fuse</div>
+    <div class="vcard-ko">퓨즈</div>
+    <div class="vcard-def">A safety component that melts if too much current flows.</div>
+    <div class="vcard-def-ko">전류가 너무 흐르면 녹는 안전 부품.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Fuse")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="process"><h2>⚡ 전류·전압 Current & voltage</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -563,6 +575,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Current splits")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Potential difference</div>
+    <div class="vcard-ko">전위차(=전압)</div>
+    <div class="vcard-def">Another name for voltage; the energy given per unit charge.</div>
+    <div class="vcard-def-ko">전압의 다른 이름. 전하당 주는 에너지.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Potential difference")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -851,7 +875,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">24</span> 남음</div>
+      <div>📚 <span id="sp-remaining">26</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -870,11 +894,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Electricity 전기 · science-vocab · <span style="opacity:.5">v20260608-001318</span></footer>
+<footer>Electricity 전기 · science-vocab · <span style="opacity:.5">v20260608-203058</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Give one <b>advantage</b> of a parallel circuit over a series circuit.", "marks": 1, "sample_answer": "If one bulb breaks, the others stay on (each branch works on its own).", "mark_points": ["one breaks, others stay on (1)"], "ko_hint": "하나 끊겨도 나머지는 켜짐."}, {"q": "In a <b>parallel circuit</b>, what happens to the <b>current</b> and the <b>voltage</b>?", "marks": 2, "sample_answer": "The current splits between the branches, but the voltage is the same across each branch.", "mark_points": ["current splits between branches (1)", "voltage same across each branch (1)"], "ko_hint": "전류 나뉨, 전압 같음."}, {"q": "How is an <b>ammeter</b> connected, and how is a <b>voltmeter</b> connected?", "marks": 2, "sample_answer": "An ammeter is connected in series; a voltmeter is connected in parallel.", "mark_points": ["ammeter in series (1)", "voltmeter in parallel (1)"], "ko_hint": "전류계=직렬, 전압계=병렬."}, {"q": "Write the equation linking <b>resistance, voltage and current</b>.", "marks": 1, "sample_answer": "Resistance = voltage ÷ current.", "mark_points": ["R = V / I (1)"], "ko_hint": "저항 = 전압 ÷ 전류."}, {"q": "If resistance <b>increases</b> at the same voltage, what happens to the <b>current</b>?", "marks": 1, "sample_answer": "The current decreases (gets smaller).", "mark_points": ["current decreases (1)"], "ko_hint": "저항↑ → 전류↓."}];
-const VOCAB_DATA = [{"en": "Circuit", "ko": "회로", "def_en": "A complete loop that an electric current can flow around.", "cat": "organ"}, {"en": "Series circuit", "ko": "직렬 회로", "def_en": "A circuit where components are connected in a single loop.", "cat": "organ"}, {"en": "Parallel circuit", "ko": "병렬 회로", "def_en": "A circuit with separate branches for the current.", "cat": "organ"}, {"en": "Branch", "ko": "갈래(가지)", "def_en": "One of the separate paths in a parallel circuit.", "cat": "organ"}, {"en": "Component", "ko": "부품(소자)", "def_en": "A part of a circuit, e.g. a bulb, cell or switch.", "cat": "organ"}, {"en": "Cell", "ko": "전지(셀)", "def_en": "A single source of electrical energy; several make a battery.", "cat": "organ"}, {"en": "Battery", "ko": "전지(배터리)", "def_en": "Two or more cells joined together.", "cat": "organ"}, {"en": "Switch", "ko": "스위치", "def_en": "A component that opens or closes a circuit.", "cat": "organ"}, {"en": "Bulb (lamp)", "ko": "전구", "def_en": "A component that gives out light when current flows.", "cat": "organ"}, {"en": "Current", "ko": "전류", "def_en": "The flow of electric charge, measured in amperes (A).", "cat": "process"}, {"en": "Voltage", "ko": "전압", "def_en": "The push that drives current around a circuit, measured in volts (V).", "cat": "process"}, {"en": "Ammeter", "ko": "전류계", "def_en": "A meter for measuring current; connected in series.", "cat": "process"}, {"en": "Voltmeter", "ko": "전압계", "def_en": "A meter for measuring voltage; connected in parallel.", "cat": "process"}, {"en": "Ampere (amp)", "ko": "암페어(A)", "def_en": "The unit of electric current.", "cat": "process"}, {"en": "Volt", "ko": "볼트(V)", "def_en": "The unit of voltage.", "cat": "process"}, {"en": "Charge", "ko": "전하", "def_en": "A property of particles that makes current; carried by electrons.", "cat": "process"}, {"en": "Current splits", "ko": "전류가 나뉨", "def_en": "In parallel, the current divides between the branches.", "cat": "process"}, {"en": "Resistance", "ko": "저항", "def_en": "How much a component opposes the flow of current (voltage ÷ current).", "cat": "blood"}, {"en": "Ohm (Ω)", "ko": "옴(Ω)", "def_en": "The unit of resistance.", "cat": "blood"}, {"en": "Resistor", "ko": "저항기", "def_en": "A component made to provide a set resistance.", "cat": "blood"}, {"en": "Conductor", "ko": "도체", "def_en": "A material that lets current flow easily (e.g. metal).", "cat": "blood"}, {"en": "Insulator", "ko": "절연체", "def_en": "A material that does not let current flow (e.g. plastic).", "cat": "blood"}, {"en": "Ohm's law", "ko": "옴의 법칙", "def_en": "Voltage = current × resistance.", "cat": "blood"}, {"en": "Filament", "ko": "필라멘트", "def_en": "The thin wire in a bulb that glows and has resistance.", "cat": "blood"}];
+const VOCAB_DATA = [{"en": "Circuit", "ko": "회로", "def_en": "A complete loop that an electric current can flow around.", "cat": "organ"}, {"en": "Series circuit", "ko": "직렬 회로", "def_en": "A circuit where components are connected in a single loop.", "cat": "organ"}, {"en": "Parallel circuit", "ko": "병렬 회로", "def_en": "A circuit with separate branches for the current.", "cat": "organ"}, {"en": "Branch", "ko": "갈래(가지)", "def_en": "One of the separate paths in a parallel circuit.", "cat": "organ"}, {"en": "Component", "ko": "부품(소자)", "def_en": "A part of a circuit, e.g. a bulb, cell or switch.", "cat": "organ"}, {"en": "Cell", "ko": "전지(셀)", "def_en": "A single source of electrical energy; several make a battery.", "cat": "organ"}, {"en": "Battery", "ko": "전지(배터리)", "def_en": "Two or more cells joined together.", "cat": "organ"}, {"en": "Switch", "ko": "스위치", "def_en": "A component that opens or closes a circuit.", "cat": "organ"}, {"en": "Bulb (lamp)", "ko": "전구", "def_en": "A component that gives out light when current flows.", "cat": "organ"}, {"en": "Current", "ko": "전류", "def_en": "The flow of electric charge, measured in amperes (A).", "cat": "process"}, {"en": "Voltage", "ko": "전압", "def_en": "The push that drives current around a circuit, measured in volts (V).", "cat": "process"}, {"en": "Ammeter", "ko": "전류계", "def_en": "A meter for measuring current; connected in series.", "cat": "process"}, {"en": "Voltmeter", "ko": "전압계", "def_en": "A meter for measuring voltage; connected in parallel.", "cat": "process"}, {"en": "Ampere (amp)", "ko": "암페어(A)", "def_en": "The unit of electric current.", "cat": "process"}, {"en": "Volt", "ko": "볼트(V)", "def_en": "The unit of voltage.", "cat": "process"}, {"en": "Charge", "ko": "전하", "def_en": "A property of particles that makes current; carried by electrons.", "cat": "process"}, {"en": "Current splits", "ko": "전류가 나뉨", "def_en": "In parallel, the current divides between the branches.", "cat": "process"}, {"en": "Resistance", "ko": "저항", "def_en": "How much a component opposes the flow of current (voltage ÷ current).", "cat": "blood"}, {"en": "Ohm (Ω)", "ko": "옴(Ω)", "def_en": "The unit of resistance.", "cat": "blood"}, {"en": "Resistor", "ko": "저항기", "def_en": "A component made to provide a set resistance.", "cat": "blood"}, {"en": "Conductor", "ko": "도체", "def_en": "A material that lets current flow easily (e.g. metal).", "cat": "blood"}, {"en": "Insulator", "ko": "절연체", "def_en": "A material that does not let current flow (e.g. plastic).", "cat": "blood"}, {"en": "Ohm's law", "ko": "옴의 법칙", "def_en": "Voltage = current × resistance.", "cat": "blood"}, {"en": "Filament", "ko": "필라멘트", "def_en": "The thin wire in a bulb that glows and has resistance.", "cat": "blood"}, {"en": "Potential difference", "ko": "전위차(=전압)", "def_en": "Another name for voltage; the energy given per unit charge.", "cat": "process"}, {"en": "Fuse", "ko": "퓨즈", "def_en": "A safety component that melts if too much current flows.", "cat": "organ"}];
 const UNIT_ID = "y9_electricity";
 const UNIT_TITLE = "Electricity 전기";
 const UNIT_TOPICS = ["9.1 Parallel circuits", "9.2 Current and voltage in parallel circuits", "9.3 Resistance"];

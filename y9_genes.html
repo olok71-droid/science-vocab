@@ -531,6 +531,42 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Allele</div>
+    <div class="vcard-ko">대립유전자</div>
+    <div class="vcard-def">A different version of the same gene.</div>
+    <div class="vcard-def-ko">같은 유전자의 서로 다른 형태.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Allele")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Dominant</div>
+    <div class="vcard-ko">우성</div>
+    <div class="vcard-def">An allele that shows even if only one copy is present.</div>
+    <div class="vcard-def-ko">하나만 있어도 나타나는 대립유전자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Dominant")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Recessive</div>
+    <div class="vcard-ko">열성</div>
+    <div class="vcard-def">An allele that shows only when both copies are present.</div>
+    <div class="vcard-def-ko">두 개 다 있어야 나타나는 대립유전자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Recessive")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="blood"><h2>🦋 변이 Variation</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection('blood', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -702,6 +738,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Generation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Selective breeding</div>
+    <div class="vcard-ko">선택적 교배(육종)</div>
+    <div class="vcard-def">Choosing parents with wanted features to breed offspring.</div>
+    <div class="vcard-def-ko">원하는 형질의 부모를 골라 자손을 얻는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Selective breeding")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -923,7 +971,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">28</span> 남음</div>
+      <div>📚 <span id="sp-remaining">32</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -942,11 +990,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Genes and inheritance 유전자와 유전 · science-vocab · <span style="opacity:.5">v20260608-001318</span></footer>
+<footer>Genes and inheritance 유전자와 유전 · science-vocab · <span style="opacity:.5">v20260608-203058</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Put these in order from largest to smallest: <b>gene, chromosome, DNA base, nucleus</b>.", "marks": 2, "sample_answer": "Nucleus → chromosome → gene → DNA base.", "mark_points": ["nucleus then chromosome (1)", "gene then base (1)"], "ko_hint": "핵 > 염색체 > 유전자 > 염기."}, {"q": "What is a <b>gene</b>?", "marks": 1, "sample_answer": "A short section of DNA that codes for one feature.", "mark_points": ["section of DNA coding for a feature (1)"], "ko_hint": "한 특징을 정하는 DNA의 짧은 부분."}, {"q": "Why is a child <b>similar but not identical</b> to its parents?", "marks": 2, "sample_answer": "At fertilisation it inherits a mix of genes from both the mother and the father, so it shows a combination of their features.", "mark_points": ["genes from both parents (1)", "mix/combination → not identical (1)"], "ko_hint": "양쪽 부모 유전자 섞임."}, {"q": "Give one example of <b>environmental</b> variation.", "marks": 1, "sample_answer": "A scar, a suntan, or a learned language (caused by surroundings, not genes).", "mark_points": ["valid environmental example (1)"], "ko_hint": "흉터·피부 그을림 등."}, {"q": "Explain <b>natural selection</b> in your own words.", "marks": 3, "sample_answer": "There is variation in a species. Organisms with helpful adaptations are more likely to survive and reproduce, so they pass on their genes. Over many generations the species changes (evolves).", "mark_points": ["variation exists (1)", "best adapted survive & reproduce (1)", "pass on genes → evolution (1)"], "ko_hint": "변이→적자 생존·번식→유전자 전달→진화."}];
-const VOCAB_DATA = [{"en": "DNA", "ko": "DNA", "def_en": "The molecule that carries genetic information in all living things.", "cat": "organ"}, {"en": "Gene", "ko": "유전자", "def_en": "A short section of DNA that codes for one feature.", "cat": "organ"}, {"en": "Chromosome", "ko": "염색체", "def_en": "A long thread of DNA found in the nucleus.", "cat": "organ"}, {"en": "Nucleus", "ko": "핵", "def_en": "The part of a cell that contains the chromosomes.", "cat": "organ"}, {"en": "Genetic information", "ko": "유전 정보", "def_en": "The instructions carried by DNA for building an organism.", "cat": "organ"}, {"en": "Genome", "ko": "유전체(게놈)", "def_en": "All the DNA of an organism.", "cat": "organ"}, {"en": "Base", "ko": "염기", "def_en": "One of the chemical units (A, T, C, G) that make up DNA.", "cat": "organ"}, {"en": "Gamete", "ko": "생식세포(배우자)", "def_en": "A sex cell — sperm or egg — with half the normal chromosomes.", "cat": "process"}, {"en": "Sperm", "ko": "정자", "def_en": "The male gamete.", "cat": "process"}, {"en": "Egg (ovum)", "ko": "난자", "def_en": "The female gamete.", "cat": "process"}, {"en": "Fertilisation", "ko": "수정", "def_en": "When a sperm and egg join to form a new cell.", "cat": "process"}, {"en": "Inheritance", "ko": "유전", "def_en": "The passing of genes from parents to offspring.", "cat": "process"}, {"en": "Offspring", "ko": "자손", "def_en": "The young produced by parents.", "cat": "process"}, {"en": "Inherited characteristic", "ko": "유전 형질", "def_en": "A feature passed from parents through genes, e.g. eye colour.", "cat": "process"}, {"en": "Variation", "ko": "변이", "def_en": "The differences between individuals of the same species.", "cat": "blood"}, {"en": "Genetic variation", "ko": "유전적 변이", "def_en": "Variation caused by differences in genes.", "cat": "blood"}, {"en": "Environmental variation", "ko": "환경적 변이", "def_en": "Variation caused by the surroundings, e.g. a scar.", "cat": "blood"}, {"en": "Continuous variation", "ko": "연속 변이", "def_en": "Variation with a range of values, e.g. height.", "cat": "blood"}, {"en": "Discontinuous variation", "ko": "불연속 변이", "def_en": "Variation in separate groups, e.g. blood type.", "cat": "blood"}, {"en": "Mutation", "ko": "돌연변이", "def_en": "A random change in DNA that can create new variation.", "cat": "blood"}, {"en": "Species", "ko": "종", "def_en": "A group of similar organisms that can breed together.", "cat": "blood"}, {"en": "Natural selection", "ko": "자연 선택", "def_en": "Organisms best suited to their environment survive and reproduce.", "cat": "gas"}, {"en": "Adaptation", "ko": "적응", "def_en": "A feature that helps an organism survive in its environment.", "cat": "gas"}, {"en": "Survival of the fittest", "ko": "적자생존", "def_en": "The best-adapted organisms are most likely to survive.", "cat": "gas"}, {"en": "Reproduce", "ko": "번식하다", "def_en": "To produce offspring.", "cat": "gas"}, {"en": "Evolution", "ko": "진화", "def_en": "The gradual change in a species over many generations.", "cat": "gas"}, {"en": "Extinct", "ko": "멸종한", "def_en": "When a species has died out completely.", "cat": "gas"}, {"en": "Generation", "ko": "세대", "def_en": "One step in a line of parents and offspring.", "cat": "gas"}];
+const VOCAB_DATA = [{"en": "DNA", "ko": "DNA", "def_en": "The molecule that carries genetic information in all living things.", "cat": "organ"}, {"en": "Gene", "ko": "유전자", "def_en": "A short section of DNA that codes for one feature.", "cat": "organ"}, {"en": "Chromosome", "ko": "염색체", "def_en": "A long thread of DNA found in the nucleus.", "cat": "organ"}, {"en": "Nucleus", "ko": "핵", "def_en": "The part of a cell that contains the chromosomes.", "cat": "organ"}, {"en": "Genetic information", "ko": "유전 정보", "def_en": "The instructions carried by DNA for building an organism.", "cat": "organ"}, {"en": "Genome", "ko": "유전체(게놈)", "def_en": "All the DNA of an organism.", "cat": "organ"}, {"en": "Base", "ko": "염기", "def_en": "One of the chemical units (A, T, C, G) that make up DNA.", "cat": "organ"}, {"en": "Gamete", "ko": "생식세포(배우자)", "def_en": "A sex cell — sperm or egg — with half the normal chromosomes.", "cat": "process"}, {"en": "Sperm", "ko": "정자", "def_en": "The male gamete.", "cat": "process"}, {"en": "Egg (ovum)", "ko": "난자", "def_en": "The female gamete.", "cat": "process"}, {"en": "Fertilisation", "ko": "수정", "def_en": "When a sperm and egg join to form a new cell.", "cat": "process"}, {"en": "Inheritance", "ko": "유전", "def_en": "The passing of genes from parents to offspring.", "cat": "process"}, {"en": "Offspring", "ko": "자손", "def_en": "The young produced by parents.", "cat": "process"}, {"en": "Inherited characteristic", "ko": "유전 형질", "def_en": "A feature passed from parents through genes, e.g. eye colour.", "cat": "process"}, {"en": "Variation", "ko": "변이", "def_en": "The differences between individuals of the same species.", "cat": "blood"}, {"en": "Genetic variation", "ko": "유전적 변이", "def_en": "Variation caused by differences in genes.", "cat": "blood"}, {"en": "Environmental variation", "ko": "환경적 변이", "def_en": "Variation caused by the surroundings, e.g. a scar.", "cat": "blood"}, {"en": "Continuous variation", "ko": "연속 변이", "def_en": "Variation with a range of values, e.g. height.", "cat": "blood"}, {"en": "Discontinuous variation", "ko": "불연속 변이", "def_en": "Variation in separate groups, e.g. blood type.", "cat": "blood"}, {"en": "Mutation", "ko": "돌연변이", "def_en": "A random change in DNA that can create new variation.", "cat": "blood"}, {"en": "Species", "ko": "종", "def_en": "A group of similar organisms that can breed together.", "cat": "blood"}, {"en": "Natural selection", "ko": "자연 선택", "def_en": "Organisms best suited to their environment survive and reproduce.", "cat": "gas"}, {"en": "Adaptation", "ko": "적응", "def_en": "A feature that helps an organism survive in its environment.", "cat": "gas"}, {"en": "Survival of the fittest", "ko": "적자생존", "def_en": "The best-adapted organisms are most likely to survive.", "cat": "gas"}, {"en": "Reproduce", "ko": "번식하다", "def_en": "To produce offspring.", "cat": "gas"}, {"en": "Evolution", "ko": "진화", "def_en": "The gradual change in a species over many generations.", "cat": "gas"}, {"en": "Extinct", "ko": "멸종한", "def_en": "When a species has died out completely.", "cat": "gas"}, {"en": "Generation", "ko": "세대", "def_en": "One step in a line of parents and offspring.", "cat": "gas"}, {"en": "Allele", "ko": "대립유전자", "def_en": "A different version of the same gene.", "cat": "process"}, {"en": "Dominant", "ko": "우성", "def_en": "An allele that shows even if only one copy is present.", "cat": "process"}, {"en": "Recessive", "ko": "열성", "def_en": "An allele that shows only when both copies are present.", "cat": "process"}, {"en": "Selective breeding", "ko": "선택적 교배(육종)", "def_en": "Choosing parents with wanted features to breed offspring.", "cat": "gas"}];
 const UNIT_ID = "y9_genes";
 const UNIT_TITLE = "Genes and inheritance 유전자와 유전";
 const UNIT_TOPICS = ["7.1 Chromosomes, genes and DNA", "7.2 Gametes and inheritance", "7.3 Variation", "7.4 Natural selection"];

@@ -504,6 +504,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Electron arrangement</div>
+    <div class="vcard-ko">전자 배치</div>
+    <div class="vcard-def">How electrons are arranged in shells, e.g. 2,8,1.</div>
+    <div class="vcard-def-ko">전자가 껍질에 배열된 모습(예: 2,8,1).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Electron arrangement")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="process"><h2>📋 족별 경향 Group trends</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -687,6 +699,30 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Stable")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Mixture</div>
+    <div class="vcard-ko">혼합물</div>
+    <div class="vcard-def">Two or more substances that are not chemically joined.</div>
+    <div class="vcard-def-ko">화학적으로 결합하지 않고 섞인 둘 이상의 물질.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Mixture")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Electrostatic attraction</div>
+    <div class="vcard-ko">정전기적 인력</div>
+    <div class="vcard-def">The pull between opposite charges that holds ions together.</div>
+    <div class="vcard-def-ko">반대 전하 사이의 끌림. 이온을 묶어줌.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Electrostatic attraction")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -1004,7 +1040,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">34</span> 남음</div>
+      <div>📚 <span id="sp-remaining">37</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -1023,11 +1059,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Properties of materials 물질의 성질 · science-vocab · <span style="opacity:.5">v20260608-001318</span></footer>
+<footer>Properties of materials 물질의 성질 · science-vocab · <span style="opacity:.5">v20260608-203058</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Name the <b>three particles</b> in an atom and their charges.", "marks": 3, "sample_answer": "Protons (positive), neutrons (no charge) and electrons (negative).", "mark_points": ["proton positive (1)", "neutron no charge (1)", "electron negative (1)"], "ko_hint": "양성자(+), 중성자(전하없음), 전자(−)."}, {"q": "What does the <b>atomic number</b> tell you?", "marks": 1, "sample_answer": "The number of protons in an atom.", "mark_points": ["number of protons (1)"], "ko_hint": "양성자 수."}, {"q": "Explain why <b>Group 0 (noble gases)</b> are unreactive.", "marks": 2, "sample_answer": "They have a full outer electron shell, so they are stable and do not need to gain, lose or share electrons.", "mark_points": ["full outer shell (1)", "stable / no need to react (1)"], "ko_hint": "전자껍질이 꽉 참 → 안정 → 반응 안 함."}, {"q": "Describe the difference between an <b>ionic bond</b> and a <b>covalent bond</b>.", "marks": 2, "sample_answer": "In an ionic bond electrons are transferred from one atom to another. In a covalent bond electrons are shared between atoms.", "mark_points": ["ionic = electrons transferred (1)", "covalent = electrons shared (1)"], "ko_hint": "이온=전자 이동, 공유=전자 공유."}, {"q": "Why do <b>giant structures</b> have high melting points?", "marks": 2, "sample_answer": "They have many strong bonds between the atoms or ions, so a lot of energy is needed to break them.", "mark_points": ["many strong bonds (1)", "lots of energy needed to break (1)"], "ko_hint": "강한 결합 많음 → 끊는 데 에너지 많이 필요."}];
-const VOCAB_DATA = [{"en": "Atom", "ko": "원자", "def_en": "The smallest particle of an element.", "cat": "organ"}, {"en": "Proton", "ko": "양성자", "def_en": "A positive particle in the nucleus.", "cat": "organ"}, {"en": "Neutron", "ko": "중성자", "def_en": "A particle in the nucleus with no charge.", "cat": "organ"}, {"en": "Electron", "ko": "전자", "def_en": "A negative particle that moves in shells around the nucleus.", "cat": "organ"}, {"en": "Nucleus", "ko": "원자핵", "def_en": "The tiny central part of an atom containing protons and neutrons.", "cat": "organ"}, {"en": "Electron shell", "ko": "전자껍질", "def_en": "A region around the nucleus where electrons are found.", "cat": "organ"}, {"en": "Atomic number", "ko": "원자번호", "def_en": "The number of protons in an atom.", "cat": "organ"}, {"en": "Mass number", "ko": "질량수", "def_en": "The total number of protons and neutrons.", "cat": "organ"}, {"en": "Element", "ko": "원소", "def_en": "A substance made of only one type of atom.", "cat": "organ"}, {"en": "Periodic table", "ko": "주기율표", "def_en": "A table of all the elements arranged by atomic number.", "cat": "organ"}, {"en": "Group", "ko": "족", "def_en": "A vertical column in the Periodic Table; elements with similar properties.", "cat": "organ"}, {"en": "Period", "ko": "주기", "def_en": "A horizontal row in the Periodic Table.", "cat": "organ"}, {"en": "Alkali metals", "ko": "알칼리 금속(1족)", "def_en": "Group 1 metals; very reactive and get more reactive down the group.", "cat": "process"}, {"en": "Halogens", "ko": "할로젠(7족)", "def_en": "Group 7 non-metals; reactive and get less reactive down the group.", "cat": "process"}, {"en": "Noble gases", "ko": "비활성 기체(0족)", "def_en": "Group 0 gases; very unreactive because they have full outer shells.", "cat": "process"}, {"en": "Reactivity", "ko": "반응성", "def_en": "How easily a substance takes part in chemical reactions.", "cat": "process"}, {"en": "Metal", "ko": "금속", "def_en": "An element that is shiny, conducts electricity and is usually on the left of the table.", "cat": "process"}, {"en": "Non-metal", "ko": "비금속", "def_en": "An element that is usually a poor conductor, on the right of the table.", "cat": "process"}, {"en": "Trend", "ko": "경향성", "def_en": "A pattern in properties as you go across or down the table.", "cat": "process"}, {"en": "Compound", "ko": "화합물", "def_en": "A substance of two or more elements chemically joined.", "cat": "blood"}, {"en": "Chemical bond", "ko": "화학 결합", "def_en": "A strong force that holds atoms together.", "cat": "blood"}, {"en": "Ion", "ko": "이온", "def_en": "A charged atom formed by losing or gaining electrons.", "cat": "blood"}, {"en": "Ionic bond", "ko": "이온 결합", "def_en": "A bond formed when electrons are transferred between atoms.", "cat": "blood"}, {"en": "Covalent bond", "ko": "공유 결합", "def_en": "A bond formed when atoms share electrons.", "cat": "blood"}, {"en": "Molecule", "ko": "분자", "def_en": "Two or more atoms joined by covalent bonds.", "cat": "blood"}, {"en": "Electron transfer", "ko": "전자 이동", "def_en": "Moving electrons from one atom to another to form ions.", "cat": "blood"}, {"en": "Stable", "ko": "안정한", "def_en": "Having a full outer electron shell, so unlikely to react.", "cat": "blood"}, {"en": "Simple molecular structure", "ko": "단순 분자 구조", "def_en": "Small molecules with weak forces between them; low melting points.", "cat": "gas"}, {"en": "Giant structure", "ko": "거대 구조", "def_en": "A huge network of many atoms or ions bonded together.", "cat": "gas"}, {"en": "Giant ionic lattice", "ko": "거대 이온 결정", "def_en": "A regular 3D arrangement of ions held by ionic bonds.", "cat": "gas"}, {"en": "Giant covalent structure", "ko": "거대 공유 구조", "def_en": "A network of atoms joined by covalent bonds, e.g. diamond, graphite.", "cat": "gas"}, {"en": "Melting point", "ko": "녹는점", "def_en": "The temperature at which a solid turns to liquid.", "cat": "gas"}, {"en": "Conductivity", "ko": "전도성", "def_en": "How well a substance lets electricity or heat pass through.", "cat": "gas"}, {"en": "Property", "ko": "성질", "def_en": "A feature of a substance, e.g. melting point or conductivity.", "cat": "gas"}];
+const VOCAB_DATA = [{"en": "Atom", "ko": "원자", "def_en": "The smallest particle of an element.", "cat": "organ"}, {"en": "Proton", "ko": "양성자", "def_en": "A positive particle in the nucleus.", "cat": "organ"}, {"en": "Neutron", "ko": "중성자", "def_en": "A particle in the nucleus with no charge.", "cat": "organ"}, {"en": "Electron", "ko": "전자", "def_en": "A negative particle that moves in shells around the nucleus.", "cat": "organ"}, {"en": "Nucleus", "ko": "원자핵", "def_en": "The tiny central part of an atom containing protons and neutrons.", "cat": "organ"}, {"en": "Electron shell", "ko": "전자껍질", "def_en": "A region around the nucleus where electrons are found.", "cat": "organ"}, {"en": "Atomic number", "ko": "원자번호", "def_en": "The number of protons in an atom.", "cat": "organ"}, {"en": "Mass number", "ko": "질량수", "def_en": "The total number of protons and neutrons.", "cat": "organ"}, {"en": "Element", "ko": "원소", "def_en": "A substance made of only one type of atom.", "cat": "organ"}, {"en": "Periodic table", "ko": "주기율표", "def_en": "A table of all the elements arranged by atomic number.", "cat": "organ"}, {"en": "Group", "ko": "족", "def_en": "A vertical column in the Periodic Table; elements with similar properties.", "cat": "organ"}, {"en": "Period", "ko": "주기", "def_en": "A horizontal row in the Periodic Table.", "cat": "organ"}, {"en": "Alkali metals", "ko": "알칼리 금속(1족)", "def_en": "Group 1 metals; very reactive and get more reactive down the group.", "cat": "process"}, {"en": "Halogens", "ko": "할로젠(7족)", "def_en": "Group 7 non-metals; reactive and get less reactive down the group.", "cat": "process"}, {"en": "Noble gases", "ko": "비활성 기체(0족)", "def_en": "Group 0 gases; very unreactive because they have full outer shells.", "cat": "process"}, {"en": "Reactivity", "ko": "반응성", "def_en": "How easily a substance takes part in chemical reactions.", "cat": "process"}, {"en": "Metal", "ko": "금속", "def_en": "An element that is shiny, conducts electricity and is usually on the left of the table.", "cat": "process"}, {"en": "Non-metal", "ko": "비금속", "def_en": "An element that is usually a poor conductor, on the right of the table.", "cat": "process"}, {"en": "Trend", "ko": "경향성", "def_en": "A pattern in properties as you go across or down the table.", "cat": "process"}, {"en": "Compound", "ko": "화합물", "def_en": "A substance of two or more elements chemically joined.", "cat": "blood"}, {"en": "Chemical bond", "ko": "화학 결합", "def_en": "A strong force that holds atoms together.", "cat": "blood"}, {"en": "Ion", "ko": "이온", "def_en": "A charged atom formed by losing or gaining electrons.", "cat": "blood"}, {"en": "Ionic bond", "ko": "이온 결합", "def_en": "A bond formed when electrons are transferred between atoms.", "cat": "blood"}, {"en": "Covalent bond", "ko": "공유 결합", "def_en": "A bond formed when atoms share electrons.", "cat": "blood"}, {"en": "Molecule", "ko": "분자", "def_en": "Two or more atoms joined by covalent bonds.", "cat": "blood"}, {"en": "Electron transfer", "ko": "전자 이동", "def_en": "Moving electrons from one atom to another to form ions.", "cat": "blood"}, {"en": "Stable", "ko": "안정한", "def_en": "Having a full outer electron shell, so unlikely to react.", "cat": "blood"}, {"en": "Simple molecular structure", "ko": "단순 분자 구조", "def_en": "Small molecules with weak forces between them; low melting points.", "cat": "gas"}, {"en": "Giant structure", "ko": "거대 구조", "def_en": "A huge network of many atoms or ions bonded together.", "cat": "gas"}, {"en": "Giant ionic lattice", "ko": "거대 이온 결정", "def_en": "A regular 3D arrangement of ions held by ionic bonds.", "cat": "gas"}, {"en": "Giant covalent structure", "ko": "거대 공유 구조", "def_en": "A network of atoms joined by covalent bonds, e.g. diamond, graphite.", "cat": "gas"}, {"en": "Melting point", "ko": "녹는점", "def_en": "The temperature at which a solid turns to liquid.", "cat": "gas"}, {"en": "Conductivity", "ko": "전도성", "def_en": "How well a substance lets electricity or heat pass through.", "cat": "gas"}, {"en": "Property", "ko": "성질", "def_en": "A feature of a substance, e.g. melting point or conductivity.", "cat": "gas"}, {"en": "Mixture", "ko": "혼합물", "def_en": "Two or more substances that are not chemically joined.", "cat": "blood"}, {"en": "Electron arrangement", "ko": "전자 배치", "def_en": "How electrons are arranged in shells, e.g. 2,8,1.", "cat": "organ"}, {"en": "Electrostatic attraction", "ko": "정전기적 인력", "def_en": "The pull between opposite charges that holds ions together.", "cat": "blood"}];
 const UNIT_ID = "y9_materials";
 const UNIT_TITLE = "Properties of materials 물질의 성질";
 const UNIT_TOPICS = ["2.1 Atomic structure & the Periodic Table", "2.2 Trends in Groups", "2.3 Why elements react", "2.4 Simple and giant structures"];

@@ -495,6 +495,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Specific heat capacity</div>
+    <div class="vcard-ko">비열</div>
+    <div class="vcard-def">The energy needed to raise 1 kg of a substance by 1°C.</div>
+    <div class="vcard-def-ko">어떤 물질 1 kg을 1℃ 올리는 데 필요한 에너지.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Specific heat capacity")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="blood"><h2>♻️ 에너지 보존 Conservation</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection('blood', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -579,6 +591,30 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Joule")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Gravitational potential energy</div>
+    <div class="vcard-ko">위치 에너지(중력)</div>
+    <div class="vcard-def">Energy stored in an object because of its height.</div>
+    <div class="vcard-def-ko">높이 때문에 물체에 저장되는 에너지.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Gravitational potential energy")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Chemical energy</div>
+    <div class="vcard-ko">화학 에너지</div>
+    <div class="vcard-def">Energy stored in fuels, food and batteries.</div>
+    <div class="vcard-def-ko">연료·음식·전지에 저장된 에너지.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Chemical energy")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -899,7 +935,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">26</span> 남음</div>
+      <div>📚 <span id="sp-remaining">29</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -918,11 +954,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Forces and energy 힘과 에너지 · science-vocab · <span style="opacity:.5">v20260608-001318</span></footer>
+<footer>Forces and energy 힘과 에너지 · science-vocab · <span style="opacity:.5">v20260608-203058</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Write the equation for <b>density</b>.", "marks": 1, "sample_answer": "Density = mass ÷ volume.", "mark_points": ["density = mass / volume (1)"], "ko_hint": "밀도 = 질량 ÷ 부피."}, {"q": "An object is <b>less dense</b> than water. What will it do, and why?", "marks": 2, "sample_answer": "It will float, because it is less dense than the water.", "mark_points": ["floats (1)", "because less dense than water (1)"], "ko_hint": "물보다 밀도 작음 → 뜸."}, {"q": "Explain the difference between <b>heat</b> and <b>temperature</b>.", "marks": 2, "sample_answer": "Temperature is how hot something is; thermal energy (heat) is the total energy of all the particles, so a larger object can have more heat at the same temperature.", "mark_points": ["temperature = how hot (1)", "heat = total particle energy (1)"], "ko_hint": "온도=얼마나 뜨거운지, 열=입자 에너지 총합."}, {"q": "State the <b>conservation of energy</b>.", "marks": 1, "sample_answer": "Energy cannot be created or destroyed, only transferred or stored.", "mark_points": ["not created/destroyed, only transferred (1)"], "ko_hint": "에너지는 생기거나 사라지지 않고 이동만."}, {"q": "Name the <b>three ways</b> thermal energy is transferred.", "marks": 3, "sample_answer": "Conduction, convection and radiation.", "mark_points": ["conduction (1)", "convection (1)", "radiation (1)"], "ko_hint": "전도·대류·복사."}];
-const VOCAB_DATA = [{"en": "Density", "ko": "밀도", "def_en": "The mass per unit volume of a substance (mass ÷ volume).", "cat": "organ"}, {"en": "Mass", "ko": "질량", "def_en": "The amount of matter in an object, measured in grams or kilograms.", "cat": "organ"}, {"en": "Volume", "ko": "부피", "def_en": "The amount of space an object takes up.", "cat": "organ"}, {"en": "Float", "ko": "뜨다", "def_en": "To stay on top of a liquid because it is less dense than the liquid.", "cat": "organ"}, {"en": "Sink", "ko": "가라앉다", "def_en": "To go under because it is more dense than the liquid.", "cat": "organ"}, {"en": "Displacement (volume)", "ko": "부피 측정(밀어낸 물)", "def_en": "Finding the volume of an object by the water it pushes aside.", "cat": "organ"}, {"en": "Temperature", "ko": "온도", "def_en": "How hot or cold something is, measured in °C.", "cat": "process"}, {"en": "Thermal energy", "ko": "열에너지", "def_en": "The total kinetic energy of all the particles in an object.", "cat": "process"}, {"en": "Heat", "ko": "열", "def_en": "Thermal energy that moves from a hotter to a cooler object.", "cat": "process"}, {"en": "Particle", "ko": "입자", "def_en": "A tiny piece of matter; particles move faster when hotter.", "cat": "process"}, {"en": "Thermometer", "ko": "온도계", "def_en": "An instrument used to measure temperature.", "cat": "process"}, {"en": "Energy", "ko": "에너지", "def_en": "The ability to do work or cause change; measured in joules.", "cat": "blood"}, {"en": "Conservation of energy", "ko": "에너지 보존", "def_en": "Energy cannot be created or destroyed, only transferred or stored.", "cat": "blood"}, {"en": "Energy transfer", "ko": "에너지 이동(전환)", "def_en": "Moving energy from one store to another.", "cat": "blood"}, {"en": "Energy store", "ko": "에너지 저장소", "def_en": "A way energy is held, e.g. kinetic, thermal, chemical.", "cat": "blood"}, {"en": "Kinetic energy", "ko": "운동에너지", "def_en": "The energy of a moving object.", "cat": "blood"}, {"en": "Wasted energy", "ko": "버려지는 에너지", "def_en": "Energy transferred to less useful forms, often as heat.", "cat": "blood"}, {"en": "Joule", "ko": "줄(J)", "def_en": "The unit of energy.", "cat": "blood"}, {"en": "Conduction", "ko": "전도", "def_en": "The transfer of thermal energy through a solid by vibrating particles.", "cat": "gas"}, {"en": "Convection", "ko": "대류", "def_en": "The transfer of thermal energy in liquids and gases by moving particles.", "cat": "gas"}, {"en": "Radiation", "ko": "복사", "def_en": "The transfer of thermal energy as waves; needs no particles.", "cat": "gas"}, {"en": "Conductor", "ko": "전도체(잘 통함)", "def_en": "A material that lets thermal energy pass through easily (e.g. metal).", "cat": "gas"}, {"en": "Insulator", "ko": "절연체(잘 안 통함)", "def_en": "A material that does not let thermal energy pass easily.", "cat": "gas"}, {"en": "Convection current", "ko": "대류 흐름", "def_en": "A circular movement of warm and cool fluid.", "cat": "gas"}, {"en": "Evaporation", "ko": "증발", "def_en": "When the fastest particles leave a liquid's surface, cooling it.", "cat": "gas"}, {"en": "Cooling", "ko": "냉각", "def_en": "A fall in temperature as thermal energy is lost.", "cat": "gas"}];
+const VOCAB_DATA = [{"en": "Density", "ko": "밀도", "def_en": "The mass per unit volume of a substance (mass ÷ volume).", "cat": "organ"}, {"en": "Mass", "ko": "질량", "def_en": "The amount of matter in an object, measured in grams or kilograms.", "cat": "organ"}, {"en": "Volume", "ko": "부피", "def_en": "The amount of space an object takes up.", "cat": "organ"}, {"en": "Float", "ko": "뜨다", "def_en": "To stay on top of a liquid because it is less dense than the liquid.", "cat": "organ"}, {"en": "Sink", "ko": "가라앉다", "def_en": "To go under because it is more dense than the liquid.", "cat": "organ"}, {"en": "Displacement (volume)", "ko": "부피 측정(밀어낸 물)", "def_en": "Finding the volume of an object by the water it pushes aside.", "cat": "organ"}, {"en": "Temperature", "ko": "온도", "def_en": "How hot or cold something is, measured in °C.", "cat": "process"}, {"en": "Thermal energy", "ko": "열에너지", "def_en": "The total kinetic energy of all the particles in an object.", "cat": "process"}, {"en": "Heat", "ko": "열", "def_en": "Thermal energy that moves from a hotter to a cooler object.", "cat": "process"}, {"en": "Particle", "ko": "입자", "def_en": "A tiny piece of matter; particles move faster when hotter.", "cat": "process"}, {"en": "Thermometer", "ko": "온도계", "def_en": "An instrument used to measure temperature.", "cat": "process"}, {"en": "Energy", "ko": "에너지", "def_en": "The ability to do work or cause change; measured in joules.", "cat": "blood"}, {"en": "Conservation of energy", "ko": "에너지 보존", "def_en": "Energy cannot be created or destroyed, only transferred or stored.", "cat": "blood"}, {"en": "Energy transfer", "ko": "에너지 이동(전환)", "def_en": "Moving energy from one store to another.", "cat": "blood"}, {"en": "Energy store", "ko": "에너지 저장소", "def_en": "A way energy is held, e.g. kinetic, thermal, chemical.", "cat": "blood"}, {"en": "Kinetic energy", "ko": "운동에너지", "def_en": "The energy of a moving object.", "cat": "blood"}, {"en": "Wasted energy", "ko": "버려지는 에너지", "def_en": "Energy transferred to less useful forms, often as heat.", "cat": "blood"}, {"en": "Joule", "ko": "줄(J)", "def_en": "The unit of energy.", "cat": "blood"}, {"en": "Conduction", "ko": "전도", "def_en": "The transfer of thermal energy through a solid by vibrating particles.", "cat": "gas"}, {"en": "Convection", "ko": "대류", "def_en": "The transfer of thermal energy in liquids and gases by moving particles.", "cat": "gas"}, {"en": "Radiation", "ko": "복사", "def_en": "The transfer of thermal energy as waves; needs no particles.", "cat": "gas"}, {"en": "Conductor", "ko": "전도체(잘 통함)", "def_en": "A material that lets thermal energy pass through easily (e.g. metal).", "cat": "gas"}, {"en": "Insulator", "ko": "절연체(잘 안 통함)", "def_en": "A material that does not let thermal energy pass easily.", "cat": "gas"}, {"en": "Convection current", "ko": "대류 흐름", "def_en": "A circular movement of warm and cool fluid.", "cat": "gas"}, {"en": "Evaporation", "ko": "증발", "def_en": "When the fastest particles leave a liquid's surface, cooling it.", "cat": "gas"}, {"en": "Cooling", "ko": "냉각", "def_en": "A fall in temperature as thermal energy is lost.", "cat": "gas"}, {"en": "Gravitational potential energy", "ko": "위치 에너지(중력)", "def_en": "Energy stored in an object because of its height.", "cat": "blood"}, {"en": "Chemical energy", "ko": "화학 에너지", "def_en": "Energy stored in fuels, food and batteries.", "cat": "blood"}, {"en": "Specific heat capacity", "ko": "비열", "def_en": "The energy needed to raise 1 kg of a substance by 1°C.", "cat": "process"}];
 const UNIT_ID = "y9_forces_energy";
 const UNIT_TITLE = "Forces and energy 힘과 에너지";
 const UNIT_TOPICS = ["3.1 Density", "3.2 Heat and temperature", "3.3 Conservation of energy", "3.4-3.6 Transferring thermal energy"];

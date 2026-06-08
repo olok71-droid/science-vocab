@@ -456,6 +456,42 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Independent variable</div>
+    <div class="vcard-ko">독립 변인</div>
+    <div class="vcard-def">The variable you change in an experiment.</div>
+    <div class="vcard-def-ko">실험에서 바꾸는 변인.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Independent variable")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Dependent variable</div>
+    <div class="vcard-ko">종속 변인</div>
+    <div class="vcard-def">The variable you measure in an experiment.</div>
+    <div class="vcard-def-ko">실험에서 측정하는 변인.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Dependent variable")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Control variable</div>
+    <div class="vcard-ko">통제 변인</div>
+    <div class="vcard-def">A variable you keep the same to make it a fair test.</div>
+    <div class="vcard-def-ko">공정한 실험을 위해 같게 유지하는 변인.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Control variable")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="process"><h2>🧱 표면적 Surface area</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -875,7 +911,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">24</span> 남음</div>
+      <div>📚 <span id="sp-remaining">27</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -894,11 +930,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Rates of reaction 반응 속도 · science-vocab · <span style="opacity:.5">v20260608-001318</span></footer>
+<footer>Rates of reaction 반응 속도 · science-vocab · <span style="opacity:.5">v20260608-203058</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Give <b>two ways</b> to measure the rate of a reaction that makes a gas.", "marks": 2, "sample_answer": "Measure the volume of gas made over time (gas syringe), or measure the loss in mass over time.", "mark_points": ["volume of gas / time (1)", "loss in mass / time (1)"], "ko_hint": "기체 부피 측정, 질량 감소 측정."}, {"q": "Explain why a <b>powder</b> reacts faster than a large <b>lump</b>.", "marks": 2, "sample_answer": "A powder has a larger surface area, so there are more collisions per second and the reaction is faster.", "mark_points": ["larger surface area (1)", "more collisions → faster (1)"], "ko_hint": "표면적↑ → 충돌↑ → 빠름."}, {"q": "Why does a <b>higher temperature</b> speed up a reaction?", "marks": 2, "sample_answer": "Particles move faster, so they collide more often and with more energy.", "mark_points": ["particles move faster → collide more often (1)", "collide with more energy (1)"], "ko_hint": "입자 빨라짐 → 충돌 잦고 세짐."}, {"q": "Using <b>collision theory</b>, explain why a higher <b>concentration</b> gives a faster rate.", "marks": 2, "sample_answer": "There are more reactant particles in the same volume, so collisions happen more often per second.", "mark_points": ["more particles in same volume (1)", "more frequent collisions (1)"], "ko_hint": "같은 부피에 입자↑ → 충돌 잦음."}, {"q": "What is a <b>catalyst</b>?", "marks": 1, "sample_answer": "A substance that speeds up a reaction without being used up.", "mark_points": ["speeds up reaction, not used up (1)"], "ko_hint": "소모 없이 반응 빠르게."}];
-const VOCAB_DATA = [{"en": "Rate of reaction", "ko": "반응 속도", "def_en": "How fast reactants change into products.", "cat": "organ"}, {"en": "Reactant", "ko": "반응물", "def_en": "A substance present at the start of a reaction.", "cat": "organ"}, {"en": "Product", "ko": "생성물", "def_en": "A substance made in a reaction.", "cat": "organ"}, {"en": "Gas syringe", "ko": "기체 주사기", "def_en": "Apparatus used to measure the volume of gas produced.", "cat": "organ"}, {"en": "Volume of gas", "ko": "기체 부피", "def_en": "The amount of gas made, used to follow a reaction's rate.", "cat": "organ"}, {"en": "Mass change", "ko": "질량 변화", "def_en": "The fall in mass as gas escapes, used to measure rate.", "cat": "organ"}, {"en": "Stopwatch", "ko": "초시계", "def_en": "A timer used to measure how long a reaction takes.", "cat": "organ"}, {"en": "Graph", "ko": "그래프", "def_en": "A chart showing how the amount of product changes with time.", "cat": "organ"}, {"en": "Surface area", "ko": "표면적", "def_en": "The total area of the outside of a solid; larger area = faster reaction.", "cat": "process"}, {"en": "Powder", "ko": "가루", "def_en": "A solid broken into tiny pieces with a large surface area.", "cat": "process"}, {"en": "Lump", "ko": "덩어리", "def_en": "A large solid piece with a small surface area.", "cat": "process"}, {"en": "Collision", "ko": "충돌", "def_en": "When particles hit each other; needed for a reaction.", "cat": "process"}, {"en": "Collision theory", "ko": "충돌 이론", "def_en": "The idea that reactions happen when particles collide with enough energy.", "cat": "process"}, {"en": "Temperature", "ko": "온도", "def_en": "How hot the reaction mixture is; higher temperature = faster rate.", "cat": "blood"}, {"en": "Kinetic energy", "ko": "운동에너지", "def_en": "The energy of moving particles; greater when hotter.", "cat": "blood"}, {"en": "Faster particles", "ko": "더 빠른 입자", "def_en": "Particles that move quickly and collide more often.", "cat": "blood"}, {"en": "Frequency of collisions", "ko": "충돌 빈도", "def_en": "How often particles collide per second.", "cat": "blood"}, {"en": "Activation energy", "ko": "활성화 에너지", "def_en": "The minimum energy particles need to react when they collide.", "cat": "blood"}, {"en": "Concentration", "ko": "농도", "def_en": "How much solute is dissolved in a given volume; higher = faster rate.", "cat": "gas"}, {"en": "Concentrated", "ko": "진한(고농도)", "def_en": "Having a lot of solute particles in the solution.", "cat": "gas"}, {"en": "Dilute", "ko": "묽은(저농도)", "def_en": "Having few solute particles in the solution.", "cat": "gas"}, {"en": "Catalyst", "ko": "촉매", "def_en": "A substance that speeds up a reaction without being used up.", "cat": "gas"}, {"en": "Variable", "ko": "변인", "def_en": "A factor that can change in an experiment.", "cat": "gas"}, {"en": "Fair test", "ko": "공정한 실험", "def_en": "An experiment where only one variable is changed at a time.", "cat": "gas"}];
+const VOCAB_DATA = [{"en": "Rate of reaction", "ko": "반응 속도", "def_en": "How fast reactants change into products.", "cat": "organ"}, {"en": "Reactant", "ko": "반응물", "def_en": "A substance present at the start of a reaction.", "cat": "organ"}, {"en": "Product", "ko": "생성물", "def_en": "A substance made in a reaction.", "cat": "organ"}, {"en": "Gas syringe", "ko": "기체 주사기", "def_en": "Apparatus used to measure the volume of gas produced.", "cat": "organ"}, {"en": "Volume of gas", "ko": "기체 부피", "def_en": "The amount of gas made, used to follow a reaction's rate.", "cat": "organ"}, {"en": "Mass change", "ko": "질량 변화", "def_en": "The fall in mass as gas escapes, used to measure rate.", "cat": "organ"}, {"en": "Stopwatch", "ko": "초시계", "def_en": "A timer used to measure how long a reaction takes.", "cat": "organ"}, {"en": "Graph", "ko": "그래프", "def_en": "A chart showing how the amount of product changes with time.", "cat": "organ"}, {"en": "Surface area", "ko": "표면적", "def_en": "The total area of the outside of a solid; larger area = faster reaction.", "cat": "process"}, {"en": "Powder", "ko": "가루", "def_en": "A solid broken into tiny pieces with a large surface area.", "cat": "process"}, {"en": "Lump", "ko": "덩어리", "def_en": "A large solid piece with a small surface area.", "cat": "process"}, {"en": "Collision", "ko": "충돌", "def_en": "When particles hit each other; needed for a reaction.", "cat": "process"}, {"en": "Collision theory", "ko": "충돌 이론", "def_en": "The idea that reactions happen when particles collide with enough energy.", "cat": "process"}, {"en": "Temperature", "ko": "온도", "def_en": "How hot the reaction mixture is; higher temperature = faster rate.", "cat": "blood"}, {"en": "Kinetic energy", "ko": "운동에너지", "def_en": "The energy of moving particles; greater when hotter.", "cat": "blood"}, {"en": "Faster particles", "ko": "더 빠른 입자", "def_en": "Particles that move quickly and collide more often.", "cat": "blood"}, {"en": "Frequency of collisions", "ko": "충돌 빈도", "def_en": "How often particles collide per second.", "cat": "blood"}, {"en": "Activation energy", "ko": "활성화 에너지", "def_en": "The minimum energy particles need to react when they collide.", "cat": "blood"}, {"en": "Concentration", "ko": "농도", "def_en": "How much solute is dissolved in a given volume; higher = faster rate.", "cat": "gas"}, {"en": "Concentrated", "ko": "진한(고농도)", "def_en": "Having a lot of solute particles in the solution.", "cat": "gas"}, {"en": "Dilute", "ko": "묽은(저농도)", "def_en": "Having few solute particles in the solution.", "cat": "gas"}, {"en": "Catalyst", "ko": "촉매", "def_en": "A substance that speeds up a reaction without being used up.", "cat": "gas"}, {"en": "Variable", "ko": "변인", "def_en": "A factor that can change in an experiment.", "cat": "gas"}, {"en": "Fair test", "ko": "공정한 실험", "def_en": "An experiment where only one variable is changed at a time.", "cat": "gas"}, {"en": "Independent variable", "ko": "독립 변인", "def_en": "The variable you change in an experiment.", "cat": "organ"}, {"en": "Dependent variable", "ko": "종속 변인", "def_en": "The variable you measure in an experiment.", "cat": "organ"}, {"en": "Control variable", "ko": "통제 변인", "def_en": "A variable you keep the same to make it a fair test.", "cat": "organ"}];
 const UNIT_ID = "y9_rates";
 const UNIT_TITLE = "Rates of reaction 반응 속도";
 const UNIT_TOPICS = ["8.1 Measuring rates of reaction", "8.2 Surface area and rate", "8.3 Temperature and rate", "8.4 Concentration and rate"];

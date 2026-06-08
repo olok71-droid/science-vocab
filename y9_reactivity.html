@@ -444,6 +444,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Rusting</div>
+    <div class="vcard-ko">녹슮(부식)</div>
+    <div class="vcard-def">The corrosion of iron when it reacts with oxygen and water.</div>
+    <div class="vcard-def-ko">철이 산소·물과 반응해 녹스는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Rusting")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="process"><h2>🔄 치환 Displacement</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -615,6 +627,30 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Crystallisation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">pH scale</div>
+    <div class="vcard-ko">pH 척도</div>
+    <div class="vcard-def">A scale from 0 to 14 showing how acidic or alkaline something is.</div>
+    <div class="vcard-def-ko">0~14로 산성·알칼리성 정도를 나타내는 척도.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("pH scale")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Indicator</div>
+    <div class="vcard-ko">지시약</div>
+    <div class="vcard-def">A substance that changes colour to show acid or alkali.</div>
+    <div class="vcard-def-ko">색이 변해 산·알칼리를 알려주는 물질.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Indicator")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -911,7 +947,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">27</span> 남음</div>
+      <div>📚 <span id="sp-remaining">30</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -930,11 +966,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Reactivity 반응성 · science-vocab · <span style="opacity:.5">v20260608-001318</span></footer>
+<footer>Reactivity 반응성 · science-vocab · <span style="opacity:.5">v20260608-203058</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "What is a <b>displacement reaction</b>?", "marks": 2, "sample_answer": "A reaction where a more reactive element takes the place of a less reactive element in a compound.", "mark_points": ["more reactive takes place of (1)", "less reactive element in a compound (1)"], "ko_hint": "반응성 큰 원소가 작은 원소 자리 차지."}, {"q": "Complete: Acid + Metal → ____ + ____.", "marks": 2, "sample_answer": "Acid + metal → salt + hydrogen.", "mark_points": ["salt (1)", "hydrogen (1)"], "ko_hint": "염 + 수소."}, {"q": "What is <b>neutralisation</b>?", "marks": 2, "sample_answer": "The reaction of an acid with a base, which makes a salt and water.", "mark_points": ["acid + base (1)", "makes salt + water (1)"], "ko_hint": "산+염기 → 염+물."}, {"q": "Explain why <b>mass is conserved</b> in a chemical reaction.", "marks": 2, "sample_answer": "Atoms are only rearranged in a reaction; none are created or destroyed, so the total mass stays the same.", "mark_points": ["atoms only rearranged (1)", "none made/lost → mass same (1)"], "ko_hint": "원자 재배열만, 생성·소멸 없음 → 질량 그대로."}, {"q": "How do you test for <b>hydrogen</b> gas?", "marks": 1, "sample_answer": "A lighted splint makes a squeaky pop.", "mark_points": ["squeaky pop with lit splint (1)"], "ko_hint": "불씨 → 퍽 소리."}];
-const VOCAB_DATA = [{"en": "Reactivity series", "ko": "반응성 서열", "def_en": "A list of metals in order of how reactive they are.", "cat": "organ"}, {"en": "Reactive", "ko": "반응성이 큰", "def_en": "Takes part in chemical reactions easily.", "cat": "organ"}, {"en": "Unreactive", "ko": "반응성이 작은", "def_en": "Does not react easily.", "cat": "organ"}, {"en": "Metal oxide", "ko": "금속 산화물", "def_en": "A compound of a metal and oxygen.", "cat": "organ"}, {"en": "Oxidation", "ko": "산화", "def_en": "A reaction in which a substance gains oxygen.", "cat": "organ"}, {"en": "Corrosion", "ko": "부식", "def_en": "When a metal is slowly damaged by reacting with its surroundings (e.g. rusting).", "cat": "organ"}, {"en": "Ore", "ko": "광석", "def_en": "A rock that contains enough metal to be worth extracting.", "cat": "organ"}, {"en": "Displacement reaction", "ko": "치환 반응", "def_en": "A reaction where a more reactive element takes the place of a less reactive one.", "cat": "process"}, {"en": "More reactive", "ko": "더 반응성 큰", "def_en": "Higher up the reactivity series; displaces metals below it.", "cat": "process"}, {"en": "Less reactive", "ko": "덜 반응성인", "def_en": "Lower in the reactivity series; can be displaced.", "cat": "process"}, {"en": "Extraction", "ko": "추출(제련)", "def_en": "Getting a metal out of its ore, often by displacement or heating.", "cat": "process"}, {"en": "Reaction", "ko": "반응", "def_en": "A change where substances turn into new substances.", "cat": "process"}, {"en": "Salt", "ko": "염", "def_en": "A compound formed when an acid reacts with a metal, base or carbonate.", "cat": "blood"}, {"en": "Acid", "ko": "산", "def_en": "A substance with a pH below 7 that reacts with metals and bases.", "cat": "blood"}, {"en": "Base", "ko": "염기", "def_en": "A substance that neutralises an acid.", "cat": "blood"}, {"en": "Alkali", "ko": "알칼리", "def_en": "A base that dissolves in water (pH above 7).", "cat": "blood"}, {"en": "Neutralisation", "ko": "중화", "def_en": "The reaction of an acid with a base to make a salt and water.", "cat": "blood"}, {"en": "Carbonate", "ko": "탄산염", "def_en": "A compound that reacts with acid to make a salt, water and carbon dioxide.", "cat": "blood"}, {"en": "Hydrogen", "ko": "수소", "def_en": "The gas made when an acid reacts with a metal; pops with a lit splint.", "cat": "blood"}, {"en": "Soluble", "ko": "잘 녹는", "def_en": "Able to dissolve in a solvent such as water.", "cat": "blood"}, {"en": "Crystallisation", "ko": "결정화", "def_en": "Making solid crystals of a salt by evaporating the solution.", "cat": "blood"}, {"en": "Conservation of mass", "ko": "질량 보존", "def_en": "The total mass stays the same in a reaction because atoms are not made or lost.", "cat": "gas"}, {"en": "Reactant", "ko": "반응물", "def_en": "A substance present at the start of a reaction.", "cat": "gas"}, {"en": "Product", "ko": "생성물", "def_en": "A substance made in a reaction.", "cat": "gas"}, {"en": "Balanced equation", "ko": "균형 반응식", "def_en": "An equation with equal numbers of each atom on both sides.", "cat": "gas"}, {"en": "Rearranging atoms", "ko": "원자 재배열", "def_en": "In a reaction, the same atoms join up in new ways.", "cat": "gas"}, {"en": "Chemical formula", "ko": "화학식", "def_en": "Symbols showing the atoms in a substance, e.g. H₂O.", "cat": "gas"}];
+const VOCAB_DATA = [{"en": "Reactivity series", "ko": "반응성 서열", "def_en": "A list of metals in order of how reactive they are.", "cat": "organ"}, {"en": "Reactive", "ko": "반응성이 큰", "def_en": "Takes part in chemical reactions easily.", "cat": "organ"}, {"en": "Unreactive", "ko": "반응성이 작은", "def_en": "Does not react easily.", "cat": "organ"}, {"en": "Metal oxide", "ko": "금속 산화물", "def_en": "A compound of a metal and oxygen.", "cat": "organ"}, {"en": "Oxidation", "ko": "산화", "def_en": "A reaction in which a substance gains oxygen.", "cat": "organ"}, {"en": "Corrosion", "ko": "부식", "def_en": "When a metal is slowly damaged by reacting with its surroundings (e.g. rusting).", "cat": "organ"}, {"en": "Ore", "ko": "광석", "def_en": "A rock that contains enough metal to be worth extracting.", "cat": "organ"}, {"en": "Displacement reaction", "ko": "치환 반응", "def_en": "A reaction where a more reactive element takes the place of a less reactive one.", "cat": "process"}, {"en": "More reactive", "ko": "더 반응성 큰", "def_en": "Higher up the reactivity series; displaces metals below it.", "cat": "process"}, {"en": "Less reactive", "ko": "덜 반응성인", "def_en": "Lower in the reactivity series; can be displaced.", "cat": "process"}, {"en": "Extraction", "ko": "추출(제련)", "def_en": "Getting a metal out of its ore, often by displacement or heating.", "cat": "process"}, {"en": "Reaction", "ko": "반응", "def_en": "A change where substances turn into new substances.", "cat": "process"}, {"en": "Salt", "ko": "염", "def_en": "A compound formed when an acid reacts with a metal, base or carbonate.", "cat": "blood"}, {"en": "Acid", "ko": "산", "def_en": "A substance with a pH below 7 that reacts with metals and bases.", "cat": "blood"}, {"en": "Base", "ko": "염기", "def_en": "A substance that neutralises an acid.", "cat": "blood"}, {"en": "Alkali", "ko": "알칼리", "def_en": "A base that dissolves in water (pH above 7).", "cat": "blood"}, {"en": "Neutralisation", "ko": "중화", "def_en": "The reaction of an acid with a base to make a salt and water.", "cat": "blood"}, {"en": "Carbonate", "ko": "탄산염", "def_en": "A compound that reacts with acid to make a salt, water and carbon dioxide.", "cat": "blood"}, {"en": "Hydrogen", "ko": "수소", "def_en": "The gas made when an acid reacts with a metal; pops with a lit splint.", "cat": "blood"}, {"en": "Soluble", "ko": "잘 녹는", "def_en": "Able to dissolve in a solvent such as water.", "cat": "blood"}, {"en": "Crystallisation", "ko": "결정화", "def_en": "Making solid crystals of a salt by evaporating the solution.", "cat": "blood"}, {"en": "Conservation of mass", "ko": "질량 보존", "def_en": "The total mass stays the same in a reaction because atoms are not made or lost.", "cat": "gas"}, {"en": "Reactant", "ko": "반응물", "def_en": "A substance present at the start of a reaction.", "cat": "gas"}, {"en": "Product", "ko": "생성물", "def_en": "A substance made in a reaction.", "cat": "gas"}, {"en": "Balanced equation", "ko": "균형 반응식", "def_en": "An equation with equal numbers of each atom on both sides.", "cat": "gas"}, {"en": "Rearranging atoms", "ko": "원자 재배열", "def_en": "In a reaction, the same atoms join up in new ways.", "cat": "gas"}, {"en": "Chemical formula", "ko": "화학식", "def_en": "Symbols showing the atoms in a substance, e.g. H₂O.", "cat": "gas"}, {"en": "pH scale", "ko": "pH 척도", "def_en": "A scale from 0 to 14 showing how acidic or alkaline something is.", "cat": "blood"}, {"en": "Indicator", "ko": "지시약", "def_en": "A substance that changes colour to show acid or alkali.", "cat": "blood"}, {"en": "Rusting", "ko": "녹슮(부식)", "def_en": "The corrosion of iron when it reacts with oxygen and water.", "cat": "organ"}];
 const UNIT_ID = "y9_reactivity";
 const UNIT_TITLE = "Reactivity 반응성";
 const UNIT_TOPICS = ["5.1-5.2 Reactivity & displacement", "5.1 Displacement reactions", "5.3-5.4 Salts", "5.5 Rearranging atoms"];
