@@ -456,6 +456,30 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Alternate angles</div>
+    <div class="vcard-ko">엇각</div>
+    <div class="vcard-def">Equal angles on opposite sides of a line crossing parallels (Z-shape).</div>
+    <div class="vcard-def-ko">평행선을 가로지를 때 반대쪽의 같은 각(Z자).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Alternate angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Corresponding angles</div>
+    <div class="vcard-ko">동위각</div>
+    <div class="vcard-def">Equal angles in the same position where a line crosses parallels (F-shape).</div>
+    <div class="vcard-def-ko">평행선을 가로지를 때 같은 위치의 같은 각(F자).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Corresponding angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="process"><h2>🔺 다각형 Polygons</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -540,6 +564,42 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Quadrilateral")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Scalene triangle</div>
+    <div class="vcard-ko">부등변삼각형</div>
+    <div class="vcard-def">A triangle with all sides and angles different.</div>
+    <div class="vcard-def-ko">세 변·세 각이 모두 다른 삼각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Scalene triangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Parallelogram</div>
+    <div class="vcard-ko">평행사변형</div>
+    <div class="vcard-def">A quadrilateral with two pairs of parallel sides.</div>
+    <div class="vcard-def-ko">두 쌍의 변이 평행한 사각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Parallelogram")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Trapezium</div>
+    <div class="vcard-ko">사다리꼴</div>
+    <div class="vcard-def">A quadrilateral with exactly one pair of parallel sides.</div>
+    <div class="vcard-def-ko">한 쌍의 변만 평행한 사각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Trapezium")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -922,7 +982,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">28</span> 남음</div>
+      <div>📚 <span id="sp-remaining">33</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -941,11 +1001,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Geometry 기하(도형) · science-vocab · <span style="opacity:.5">v20260608-171155</span></footer>
+<footer>Geometry 기하(도형) · science-vocab · <span style="opacity:.5">v20260608-202457</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Name angles: (a) less than 90°, (b) between 90° and 180°.", "marks": 2, "sample_answer": "(a) acute, (b) obtuse.", "mark_points": ["acute (1)", "obtuse (1)"], "ko_hint": "예각, 둔각."}, {"q": "What is the difference between the <b>radius</b> and the <b>diameter</b>?", "marks": 2, "sample_answer": "The radius is from the centre to the edge; the diameter goes across through the centre and is twice the radius.", "mark_points": ["radius = centre to edge (1)", "diameter = across, 2× radius (1)"], "ko_hint": "반지름=중심→가장자리, 지름=가로지름(2배)."}, {"q": "Explain <b>congruent</b> vs <b>similar</b> shapes.", "marks": 2, "sample_answer": "Congruent shapes are the same shape and size; similar shapes are the same shape but a different size.", "mark_points": ["congruent = same shape & size (1)", "similar = same shape, different size (1)"], "ko_hint": "합동=같음, 닮음=모양만 같음."}, {"q": "What is the sum of <b>interior angles</b> of a triangle?", "marks": 1, "sample_answer": "180°.", "mark_points": ["180° (1)"], "ko_hint": "180°."}, {"q": "What is a <b>bearing</b>?", "marks": 1, "sample_answer": "An angle measured clockwise from north, written with three figures.", "mark_points": ["clockwise from north, 3 figures (1)"], "ko_hint": "북쪽 기준 시계방향 각(세 자리)."}];
-const VOCAB_DATA = [{"en": "Acute angle", "ko": "예각", "def_en": "An angle less than 90°.", "cat": "organ"}, {"en": "Right angle", "ko": "직각", "def_en": "An angle of exactly 90°.", "cat": "organ"}, {"en": "Obtuse angle", "ko": "둔각", "def_en": "An angle between 90° and 180°.", "cat": "organ"}, {"en": "Reflex angle", "ko": "우각", "def_en": "An angle greater than 180°.", "cat": "organ"}, {"en": "Parallel", "ko": "평행한", "def_en": "Lines that stay the same distance apart and never meet.", "cat": "organ"}, {"en": "Perpendicular", "ko": "수직의", "def_en": "Lines that meet at a right angle (90°).", "cat": "organ"}, {"en": "Vertex", "ko": "꼭짓점", "def_en": "A corner point where lines meet.", "cat": "organ"}, {"en": "Bisect", "ko": "이등분하다", "def_en": "To cut exactly in half.", "cat": "organ"}, {"en": "Polygon", "ko": "다각형", "def_en": "A 2D shape with straight sides.", "cat": "process"}, {"en": "Regular polygon", "ko": "정다각형", "def_en": "A polygon with all sides and angles equal.", "cat": "process"}, {"en": "Interior angle", "ko": "내각", "def_en": "An angle inside a polygon.", "cat": "process"}, {"en": "Exterior angle", "ko": "외각", "def_en": "The angle between a side and the extension of the next side.", "cat": "process"}, {"en": "Equilateral triangle", "ko": "정삼각형", "def_en": "A triangle with all sides and angles equal.", "cat": "process"}, {"en": "Isosceles triangle", "ko": "이등변삼각형", "def_en": "A triangle with two equal sides.", "cat": "process"}, {"en": "Quadrilateral", "ko": "사각형", "def_en": "A four-sided polygon.", "cat": "process"}, {"en": "Radius", "ko": "반지름", "def_en": "The distance from the centre of a circle to its edge.", "cat": "blood"}, {"en": "Diameter", "ko": "지름", "def_en": "A line across a circle through the centre (= 2 × radius).", "cat": "blood"}, {"en": "Circumference", "ko": "원주(둘레)", "def_en": "The distance all the way around a circle.", "cat": "blood"}, {"en": "Chord", "ko": "현", "def_en": "A straight line joining two points on a circle.", "cat": "blood"}, {"en": "Arc", "ko": "호", "def_en": "Part of the circumference of a circle.", "cat": "blood"}, {"en": "Sector", "ko": "부채꼴", "def_en": "A 'pie slice' part of a circle between two radii.", "cat": "blood"}, {"en": "Tangent", "ko": "접선", "def_en": "A line that touches a circle at one point.", "cat": "blood"}, {"en": "Congruent", "ko": "합동인", "def_en": "Exactly the same shape and size.", "cat": "gas"}, {"en": "Similar", "ko": "닮은", "def_en": "The same shape but a different size.", "cat": "gas"}, {"en": "Scale factor", "ko": "닮음비(배율)", "def_en": "The number that enlarges or reduces a shape.", "cat": "gas"}, {"en": "Bearing", "ko": "방위(각)", "def_en": "An angle measured clockwise from north, written with 3 figures.", "cat": "gas"}, {"en": "Construction", "ko": "작도", "def_en": "Drawing shapes accurately with compasses and a ruler.", "cat": "gas"}, {"en": "Symmetry", "ko": "대칭", "def_en": "When a shape looks the same after reflection or rotation.", "cat": "gas"}];
+const VOCAB_DATA = [{"en": "Acute angle", "ko": "예각", "def_en": "An angle less than 90°.", "cat": "organ"}, {"en": "Right angle", "ko": "직각", "def_en": "An angle of exactly 90°.", "cat": "organ"}, {"en": "Obtuse angle", "ko": "둔각", "def_en": "An angle between 90° and 180°.", "cat": "organ"}, {"en": "Reflex angle", "ko": "우각", "def_en": "An angle greater than 180°.", "cat": "organ"}, {"en": "Parallel", "ko": "평행한", "def_en": "Lines that stay the same distance apart and never meet.", "cat": "organ"}, {"en": "Perpendicular", "ko": "수직의", "def_en": "Lines that meet at a right angle (90°).", "cat": "organ"}, {"en": "Vertex", "ko": "꼭짓점", "def_en": "A corner point where lines meet.", "cat": "organ"}, {"en": "Bisect", "ko": "이등분하다", "def_en": "To cut exactly in half.", "cat": "organ"}, {"en": "Polygon", "ko": "다각형", "def_en": "A 2D shape with straight sides.", "cat": "process"}, {"en": "Regular polygon", "ko": "정다각형", "def_en": "A polygon with all sides and angles equal.", "cat": "process"}, {"en": "Interior angle", "ko": "내각", "def_en": "An angle inside a polygon.", "cat": "process"}, {"en": "Exterior angle", "ko": "외각", "def_en": "The angle between a side and the extension of the next side.", "cat": "process"}, {"en": "Equilateral triangle", "ko": "정삼각형", "def_en": "A triangle with all sides and angles equal.", "cat": "process"}, {"en": "Isosceles triangle", "ko": "이등변삼각형", "def_en": "A triangle with two equal sides.", "cat": "process"}, {"en": "Quadrilateral", "ko": "사각형", "def_en": "A four-sided polygon.", "cat": "process"}, {"en": "Radius", "ko": "반지름", "def_en": "The distance from the centre of a circle to its edge.", "cat": "blood"}, {"en": "Diameter", "ko": "지름", "def_en": "A line across a circle through the centre (= 2 × radius).", "cat": "blood"}, {"en": "Circumference", "ko": "원주(둘레)", "def_en": "The distance all the way around a circle.", "cat": "blood"}, {"en": "Chord", "ko": "현", "def_en": "A straight line joining two points on a circle.", "cat": "blood"}, {"en": "Arc", "ko": "호", "def_en": "Part of the circumference of a circle.", "cat": "blood"}, {"en": "Sector", "ko": "부채꼴", "def_en": "A 'pie slice' part of a circle between two radii.", "cat": "blood"}, {"en": "Tangent", "ko": "접선", "def_en": "A line that touches a circle at one point.", "cat": "blood"}, {"en": "Congruent", "ko": "합동인", "def_en": "Exactly the same shape and size.", "cat": "gas"}, {"en": "Similar", "ko": "닮은", "def_en": "The same shape but a different size.", "cat": "gas"}, {"en": "Scale factor", "ko": "닮음비(배율)", "def_en": "The number that enlarges or reduces a shape.", "cat": "gas"}, {"en": "Bearing", "ko": "방위(각)", "def_en": "An angle measured clockwise from north, written with 3 figures.", "cat": "gas"}, {"en": "Construction", "ko": "작도", "def_en": "Drawing shapes accurately with compasses and a ruler.", "cat": "gas"}, {"en": "Symmetry", "ko": "대칭", "def_en": "When a shape looks the same after reflection or rotation.", "cat": "gas"}, {"en": "Scalene triangle", "ko": "부등변삼각형", "def_en": "A triangle with all sides and angles different.", "cat": "process"}, {"en": "Parallelogram", "ko": "평행사변형", "def_en": "A quadrilateral with two pairs of parallel sides.", "cat": "process"}, {"en": "Trapezium", "ko": "사다리꼴", "def_en": "A quadrilateral with exactly one pair of parallel sides.", "cat": "process"}, {"en": "Alternate angles", "ko": "엇각", "def_en": "Equal angles on opposite sides of a line crossing parallels (Z-shape).", "cat": "organ"}, {"en": "Corresponding angles", "ko": "동위각", "def_en": "Equal angles in the same position where a line crosses parallels (F-shape).", "cat": "organ"}];
 const UNIT_ID = "math_geometry";
 const UNIT_TITLE = "Geometry 기하(도형)";
 const UNIT_TOPICS = ["Angles & lines", "Triangles & polygons", "Circles", "Congruence, similarity & bearings"];

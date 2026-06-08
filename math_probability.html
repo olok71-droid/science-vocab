@@ -478,6 +478,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Favourable outcome</div>
+    <div class="vcard-ko">유리한 경우</div>
+    <div class="vcard-def">An outcome that counts as the event you want.</div>
+    <div class="vcard-def-ko">원하는 사건에 해당하는 경우.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Favourable outcome")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="process"><h2>🌳 계산 Calculating</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -768,7 +780,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">19</span> 남음</div>
+      <div>📚 <span id="sp-remaining">20</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -787,11 +799,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Probability 확률 · science-vocab · <span style="opacity:.5">v20260608-171155</span></footer>
+<footer>Probability 확률 · science-vocab · <span style="opacity:.5">v20260608-202457</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "What is the probability of an <b>impossible</b> event and a <b>certain</b> event?", "marks": 2, "sample_answer": "Impossible = 0, certain = 1.", "mark_points": ["impossible = 0 (1)", "certain = 1 (1)"], "ko_hint": "불가능=0, 확실=1."}, {"q": "Write the formula for <b>theoretical probability</b>.", "marks": 1, "sample_answer": "P = favourable outcomes ÷ total outcomes.", "mark_points": ["favourable ÷ total (1)"], "ko_hint": "유리한 경우 ÷ 전체 경우."}, {"q": "What does <b>mutually exclusive</b> mean?", "marks": 1, "sample_answer": "Events that cannot happen at the same time.", "mark_points": ["cannot happen together (1)"], "ko_hint": "동시에 못 일어남."}, {"q": "A fair dice is rolled. What is P(rolling a 4)?", "marks": 1, "sample_answer": "1/6.", "mark_points": ["1/6 (1)"], "ko_hint": "1/6."}, {"q": "What is <b>relative frequency</b>?", "marks": 1, "sample_answer": "The number of times an outcome happened divided by the number of trials.", "mark_points": ["times happened ÷ trials (1)"], "ko_hint": "결과 횟수 ÷ 시행 수."}];
-const VOCAB_DATA = [{"en": "Probability", "ko": "확률", "def_en": "How likely an event is, from 0 to 1.", "cat": "organ"}, {"en": "Outcome", "ko": "경우(결과)", "def_en": "One possible result of an experiment.", "cat": "organ"}, {"en": "Event", "ko": "사건", "def_en": "A set of outcomes you are interested in.", "cat": "organ"}, {"en": "Certain", "ko": "확실한(반드시)", "def_en": "Sure to happen; probability 1.", "cat": "organ"}, {"en": "Impossible", "ko": "불가능한", "def_en": "Cannot happen; probability 0.", "cat": "organ"}, {"en": "Likely", "ko": "가능성 높은", "def_en": "More than an even chance of happening.", "cat": "organ"}, {"en": "Unlikely", "ko": "가능성 낮은", "def_en": "Less than an even chance of happening.", "cat": "organ"}, {"en": "Even chance", "ko": "반반(50%)", "def_en": "A 50% chance; probability 0.5.", "cat": "organ"}, {"en": "Fair", "ko": "공정한", "def_en": "When every outcome is equally likely.", "cat": "organ"}, {"en": "Random", "ko": "무작위", "def_en": "Happening by chance, with no pattern.", "cat": "organ"}, {"en": "Theoretical probability", "ko": "이론 확률", "def_en": "Favourable outcomes ÷ total possible outcomes.", "cat": "process"}, {"en": "Experimental probability", "ko": "실험 확률", "def_en": "Probability found by doing trials (relative frequency).", "cat": "process"}, {"en": "Relative frequency", "ko": "상대도수", "def_en": "How often an outcome happened ÷ number of trials.", "cat": "process"}, {"en": "Trial", "ko": "시행", "def_en": "One go of an experiment.", "cat": "process"}, {"en": "Sample space", "ko": "표본공간(전체 경우)", "def_en": "The set of all possible outcomes.", "cat": "process"}, {"en": "Mutually exclusive", "ko": "배반사건", "def_en": "Events that cannot happen at the same time.", "cat": "process"}, {"en": "Independent events", "ko": "독립사건", "def_en": "Events where one does not affect the other.", "cat": "process"}, {"en": "Tree diagram", "ko": "나무그림(수형도)", "def_en": "A diagram showing the outcomes of combined events.", "cat": "process"}, {"en": "Expected frequency", "ko": "기댓값(예상 횟수)", "def_en": "Probability × number of trials.", "cat": "process"}];
+const VOCAB_DATA = [{"en": "Probability", "ko": "확률", "def_en": "How likely an event is, from 0 to 1.", "cat": "organ"}, {"en": "Outcome", "ko": "경우(결과)", "def_en": "One possible result of an experiment.", "cat": "organ"}, {"en": "Event", "ko": "사건", "def_en": "A set of outcomes you are interested in.", "cat": "organ"}, {"en": "Certain", "ko": "확실한(반드시)", "def_en": "Sure to happen; probability 1.", "cat": "organ"}, {"en": "Impossible", "ko": "불가능한", "def_en": "Cannot happen; probability 0.", "cat": "organ"}, {"en": "Likely", "ko": "가능성 높은", "def_en": "More than an even chance of happening.", "cat": "organ"}, {"en": "Unlikely", "ko": "가능성 낮은", "def_en": "Less than an even chance of happening.", "cat": "organ"}, {"en": "Even chance", "ko": "반반(50%)", "def_en": "A 50% chance; probability 0.5.", "cat": "organ"}, {"en": "Fair", "ko": "공정한", "def_en": "When every outcome is equally likely.", "cat": "organ"}, {"en": "Random", "ko": "무작위", "def_en": "Happening by chance, with no pattern.", "cat": "organ"}, {"en": "Theoretical probability", "ko": "이론 확률", "def_en": "Favourable outcomes ÷ total possible outcomes.", "cat": "process"}, {"en": "Experimental probability", "ko": "실험 확률", "def_en": "Probability found by doing trials (relative frequency).", "cat": "process"}, {"en": "Relative frequency", "ko": "상대도수", "def_en": "How often an outcome happened ÷ number of trials.", "cat": "process"}, {"en": "Trial", "ko": "시행", "def_en": "One go of an experiment.", "cat": "process"}, {"en": "Sample space", "ko": "표본공간(전체 경우)", "def_en": "The set of all possible outcomes.", "cat": "process"}, {"en": "Mutually exclusive", "ko": "배반사건", "def_en": "Events that cannot happen at the same time.", "cat": "process"}, {"en": "Independent events", "ko": "독립사건", "def_en": "Events where one does not affect the other.", "cat": "process"}, {"en": "Tree diagram", "ko": "나무그림(수형도)", "def_en": "A diagram showing the outcomes of combined events.", "cat": "process"}, {"en": "Expected frequency", "ko": "기댓값(예상 횟수)", "def_en": "Probability × number of trials.", "cat": "process"}, {"en": "Favourable outcome", "ko": "유리한 경우", "def_en": "An outcome that counts as the event you want.", "cat": "organ"}];
 const UNIT_ID = "math_probability";
 const UNIT_TITLE = "Probability 확률";
 const UNIT_TOPICS = ["Probability basics", "Calculating probability"];

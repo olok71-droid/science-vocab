@@ -480,6 +480,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Brackets</div>
+    <div class="vcard-ko">괄호</div>
+    <div class="vcard-def">Symbols ( ) that group terms; work them out first.</div>
+    <div class="vcard-def-ko">항을 묶는 ( ) 기호. 가장 먼저 계산.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Brackets")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="process"><h2>⚖️ 방정식 Equations</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -564,6 +576,30 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Formula")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Change the subject</div>
+    <div class="vcard-ko">식 변형(주어 바꾸기)</div>
+    <div class="vcard-def">Rearranging a formula to make a different letter the subject.</div>
+    <div class="vcard-def-ko">공식을 다시 정리해 다른 문자를 주어로 만드는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Change the subject")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Quadratic formula</div>
+    <div class="vcard-ko">근의 공식</div>
+    <div class="vcard-def">A formula that solves any quadratic equation.</div>
+    <div class="vcard-def-ko">모든 이차방정식을 푸는 공식.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Quadratic formula")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -932,7 +968,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">29</span> 남음</div>
+      <div>📚 <span id="sp-remaining">32</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -951,11 +987,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Algebra & graphs 대수와 그래프 · science-vocab · <span style="opacity:.5">v20260608-171155</span></footer>
+<footer>Algebra & graphs 대수와 그래프 · science-vocab · <span style="opacity:.5">v20260608-202457</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "In 5x − 3, what is the <b>coefficient</b> of x?", "marks": 1, "sample_answer": "5.", "mark_points": ["5 (1)"], "ko_hint": "계수 = 5."}, {"q": "What does it mean to <b>factorise</b>?", "marks": 1, "sample_answer": "To write an expression as a product of factors (put brackets back in).", "mark_points": ["write as product of factors / put brackets in (1)"], "ko_hint": "인수들의 곱으로 묶기."}, {"q": "In y = mx + c, what do <b>m</b> and <b>c</b> represent?", "marks": 2, "sample_answer": "m is the gradient and c is the y-intercept.", "mark_points": ["m = gradient (1)", "c = y-intercept (1)"], "ko_hint": "m=기울기, c=y절편."}, {"q": "What is an <b>inequality</b>?", "marks": 1, "sample_answer": "A statement using <, >, ≤ or ≥ instead of =.", "mark_points": ["uses <,>,≤,≥ (1)"], "ko_hint": "<,>,≤,≥ 사용."}, {"q": "What are <b>simultaneous equations</b>?", "marks": 1, "sample_answer": "Two equations solved together to find two unknowns.", "mark_points": ["two equations, two unknowns, solved together (1)"], "ko_hint": "함께 풀어 두 미지수."}];
-const VOCAB_DATA = [{"en": "Expression", "ko": "식", "def_en": "A group of terms with letters and numbers, e.g. 3x + 2.", "cat": "organ"}, {"en": "Term", "ko": "항", "def_en": "A single part of an expression separated by + or −.", "cat": "organ"}, {"en": "Coefficient", "ko": "계수", "def_en": "The number multiplying a letter, e.g. 3 in 3x.", "cat": "organ"}, {"en": "Variable", "ko": "변수(미지수)", "def_en": "A letter standing for an unknown number.", "cat": "organ"}, {"en": "Constant", "ko": "상수", "def_en": "A fixed number with no variable.", "cat": "organ"}, {"en": "Like terms", "ko": "동류항", "def_en": "Terms with the same letter and power that can be added.", "cat": "organ"}, {"en": "Expand", "ko": "전개하다", "def_en": "To multiply out and remove brackets.", "cat": "organ"}, {"en": "Factorise", "ko": "인수분해하다", "def_en": "To write an expression as a product of factors (put brackets in).", "cat": "organ"}, {"en": "Substitute", "ko": "대입하다", "def_en": "To replace a letter with a number.", "cat": "organ"}, {"en": "Simplify", "ko": "간단히 하다", "def_en": "To write an expression in its shortest form.", "cat": "organ"}, {"en": "Equation", "ko": "방정식", "def_en": "A statement that two expressions are equal, with an = sign.", "cat": "process"}, {"en": "Solve", "ko": "풀다", "def_en": "To find the value of the unknown.", "cat": "process"}, {"en": "Solution (root)", "ko": "해(근)", "def_en": "The value that makes an equation true.", "cat": "process"}, {"en": "Linear equation", "ko": "일차방정식", "def_en": "An equation with no powers higher than 1.", "cat": "process"}, {"en": "Quadratic equation", "ko": "이차방정식", "def_en": "An equation with an x² term.", "cat": "process"}, {"en": "Simultaneous equations", "ko": "연립방정식", "def_en": "Two equations solved together to find two unknowns.", "cat": "process"}, {"en": "Formula", "ko": "공식", "def_en": "A rule connecting variables, e.g. A = l × w.", "cat": "process"}, {"en": "Inequality", "ko": "부등식", "def_en": "A statement using <, >, ≤ or ≥.", "cat": "blood"}, {"en": "Sequence", "ko": "수열", "def_en": "A list of numbers that follow a rule.", "cat": "blood"}, {"en": "Term (of a sequence)", "ko": "항(수열의)", "def_en": "One number in a sequence.", "cat": "blood"}, {"en": "nth term", "ko": "일반항(n번째 항)", "def_en": "A formula for any term in a sequence.", "cat": "blood"}, {"en": "Common difference", "ko": "공차", "def_en": "The fixed gap between terms in a linear sequence.", "cat": "blood"}, {"en": "Graph", "ko": "그래프", "def_en": "A diagram showing the relationship between variables.", "cat": "gas"}, {"en": "Coordinate", "ko": "좌표", "def_en": "A pair (x, y) giving a point's position.", "cat": "gas"}, {"en": "Gradient (slope)", "ko": "기울기", "def_en": "How steep a line is; change in y ÷ change in x.", "cat": "gas"}, {"en": "Intercept", "ko": "절편", "def_en": "Where a graph crosses an axis.", "cat": "gas"}, {"en": "Function", "ko": "함수", "def_en": "A rule that gives exactly one output for each input.", "cat": "gas"}, {"en": "Parabola", "ko": "포물선", "def_en": "The U-shaped curve of a quadratic graph.", "cat": "gas"}, {"en": "Axis", "ko": "축", "def_en": "A reference line (x-axis or y-axis) on a graph.", "cat": "gas"}];
+const VOCAB_DATA = [{"en": "Expression", "ko": "식", "def_en": "A group of terms with letters and numbers, e.g. 3x + 2.", "cat": "organ"}, {"en": "Term", "ko": "항", "def_en": "A single part of an expression separated by + or −.", "cat": "organ"}, {"en": "Coefficient", "ko": "계수", "def_en": "The number multiplying a letter, e.g. 3 in 3x.", "cat": "organ"}, {"en": "Variable", "ko": "변수(미지수)", "def_en": "A letter standing for an unknown number.", "cat": "organ"}, {"en": "Constant", "ko": "상수", "def_en": "A fixed number with no variable.", "cat": "organ"}, {"en": "Like terms", "ko": "동류항", "def_en": "Terms with the same letter and power that can be added.", "cat": "organ"}, {"en": "Expand", "ko": "전개하다", "def_en": "To multiply out and remove brackets.", "cat": "organ"}, {"en": "Factorise", "ko": "인수분해하다", "def_en": "To write an expression as a product of factors (put brackets in).", "cat": "organ"}, {"en": "Substitute", "ko": "대입하다", "def_en": "To replace a letter with a number.", "cat": "organ"}, {"en": "Simplify", "ko": "간단히 하다", "def_en": "To write an expression in its shortest form.", "cat": "organ"}, {"en": "Equation", "ko": "방정식", "def_en": "A statement that two expressions are equal, with an = sign.", "cat": "process"}, {"en": "Solve", "ko": "풀다", "def_en": "To find the value of the unknown.", "cat": "process"}, {"en": "Solution (root)", "ko": "해(근)", "def_en": "The value that makes an equation true.", "cat": "process"}, {"en": "Linear equation", "ko": "일차방정식", "def_en": "An equation with no powers higher than 1.", "cat": "process"}, {"en": "Quadratic equation", "ko": "이차방정식", "def_en": "An equation with an x² term.", "cat": "process"}, {"en": "Simultaneous equations", "ko": "연립방정식", "def_en": "Two equations solved together to find two unknowns.", "cat": "process"}, {"en": "Formula", "ko": "공식", "def_en": "A rule connecting variables, e.g. A = l × w.", "cat": "process"}, {"en": "Inequality", "ko": "부등식", "def_en": "A statement using <, >, ≤ or ≥.", "cat": "blood"}, {"en": "Sequence", "ko": "수열", "def_en": "A list of numbers that follow a rule.", "cat": "blood"}, {"en": "Term (of a sequence)", "ko": "항(수열의)", "def_en": "One number in a sequence.", "cat": "blood"}, {"en": "nth term", "ko": "일반항(n번째 항)", "def_en": "A formula for any term in a sequence.", "cat": "blood"}, {"en": "Common difference", "ko": "공차", "def_en": "The fixed gap between terms in a linear sequence.", "cat": "blood"}, {"en": "Graph", "ko": "그래프", "def_en": "A diagram showing the relationship between variables.", "cat": "gas"}, {"en": "Coordinate", "ko": "좌표", "def_en": "A pair (x, y) giving a point's position.", "cat": "gas"}, {"en": "Gradient (slope)", "ko": "기울기", "def_en": "How steep a line is; change in y ÷ change in x.", "cat": "gas"}, {"en": "Intercept", "ko": "절편", "def_en": "Where a graph crosses an axis.", "cat": "gas"}, {"en": "Function", "ko": "함수", "def_en": "A rule that gives exactly one output for each input.", "cat": "gas"}, {"en": "Parabola", "ko": "포물선", "def_en": "The U-shaped curve of a quadratic graph.", "cat": "gas"}, {"en": "Axis", "ko": "축", "def_en": "A reference line (x-axis or y-axis) on a graph.", "cat": "gas"}, {"en": "Brackets", "ko": "괄호", "def_en": "Symbols ( ) that group terms; work them out first.", "cat": "organ"}, {"en": "Change the subject", "ko": "식 변형(주어 바꾸기)", "def_en": "Rearranging a formula to make a different letter the subject.", "cat": "process"}, {"en": "Quadratic formula", "ko": "근의 공식", "def_en": "A formula that solves any quadratic equation.", "cat": "process"}];
 const UNIT_ID = "math_algebra";
 const UNIT_TITLE = "Algebra & graphs 대수와 그래프";
 const UNIT_TOPICS = ["Expressions", "Equations", "Inequalities & sequences", "Graphs & functions"];

@@ -606,6 +606,54 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Net</div>
+    <div class="vcard-ko">전개도</div>
+    <div class="vcard-def">A flat shape that folds up to make a 3D solid.</div>
+    <div class="vcard-def-ko">접으면 입체가 되는 펼친 그림.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Net")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Pyramid</div>
+    <div class="vcard-ko">각뿔</div>
+    <div class="vcard-def">A solid with a flat base and triangular faces meeting at a point.</div>
+    <div class="vcard-def-ko">밑면이 있고 삼각형 면이 한 점에서 만나는 입체.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Pyramid")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Cone</div>
+    <div class="vcard-ko">원뿔</div>
+    <div class="vcard-def">A solid with a circular base narrowing to a point.</div>
+    <div class="vcard-def-ko">원 밑면이 한 점으로 좁아지는 입체.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Cone")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Sphere</div>
+    <div class="vcard-ko">구</div>
+    <div class="vcard-def">A perfectly round solid, like a ball.</div>
+    <div class="vcard-def-ko">공처럼 완전히 둥근 입체.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sphere")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="gas"><h2>📐 단위 Units</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="gas" onclick="playSection('gas', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -872,7 +920,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">24</span> 남음</div>
+      <div>📚 <span id="sp-remaining">28</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -891,11 +939,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Mensuration 측정 · science-vocab · <span style="opacity:.5">v20260608-171155</span></footer>
+<footer>Mensuration 측정 · science-vocab · <span style="opacity:.5">v20260608-202457</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "What is the difference between <b>perimeter</b> and <b>area</b>?", "marks": 2, "sample_answer": "Perimeter is the distance around a shape; area is the amount of surface inside it.", "mark_points": ["perimeter = distance around (1)", "area = surface inside (1)"], "ko_hint": "둘레=가장자리 길이, 넓이=안쪽 표면."}, {"q": "Write the formula for the <b>area of a circle</b>.", "marks": 1, "sample_answer": "Area = πr².", "mark_points": ["πr² (1)"], "ko_hint": "πr²."}, {"q": "What is <b>volume</b> measured in?", "marks": 1, "sample_answer": "Cubic units, e.g. cm³.", "mark_points": ["cubic units / cm³ (1)"], "ko_hint": "세제곱 단위(cm³)."}, {"q": "Convert 2 metres into centimetres.", "marks": 1, "sample_answer": "200 cm.", "mark_points": ["200 cm (1)"], "ko_hint": "200 cm."}, {"q": "What is <b>surface area</b>?", "marks": 1, "sample_answer": "The total area of all the faces of a 3D shape.", "mark_points": ["total area of all faces (1)"], "ko_hint": "모든 면 넓이의 합."}];
-const VOCAB_DATA = [{"en": "Perimeter", "ko": "둘레", "def_en": "The total distance around the edge of a 2D shape.", "cat": "organ"}, {"en": "Area", "ko": "넓이", "def_en": "The amount of surface a shape covers, in square units.", "cat": "organ"}, {"en": "Length", "ko": "길이", "def_en": "How long something is.", "cat": "organ"}, {"en": "Width", "ko": "너비(폭)", "def_en": "How wide something is.", "cat": "organ"}, {"en": "Height", "ko": "높이", "def_en": "How tall something is.", "cat": "organ"}, {"en": "Square unit", "ko": "제곱 단위", "def_en": "A unit for area, e.g. cm².", "cat": "organ"}, {"en": "Pi (π)", "ko": "파이(π)", "def_en": "The ratio of a circle's circumference to its diameter, ≈ 3.14.", "cat": "process"}, {"en": "Circumference", "ko": "원주(둘레)", "def_en": "The distance around a circle (πd).", "cat": "process"}, {"en": "Area of a circle", "ko": "원의 넓이", "def_en": "πr², the surface inside a circle.", "cat": "process"}, {"en": "Arc length", "ko": "호의 길이", "def_en": "The length of part of a circle's circumference.", "cat": "process"}, {"en": "Sector area", "ko": "부채꼴 넓이", "def_en": "The area of a 'pie slice' of a circle.", "cat": "process"}, {"en": "Volume", "ko": "부피", "def_en": "The amount of space inside a 3D shape (cm³).", "cat": "blood"}, {"en": "Surface area", "ko": "겉넓이", "def_en": "The total area of all the faces of a 3D shape.", "cat": "blood"}, {"en": "Cuboid", "ko": "직육면체", "def_en": "A box shape with six rectangular faces.", "cat": "blood"}, {"en": "Cube", "ko": "정육면체", "def_en": "A box with six equal square faces.", "cat": "blood"}, {"en": "Prism", "ko": "각기둥", "def_en": "A 3D shape with the same cross-section throughout.", "cat": "blood"}, {"en": "Cylinder", "ko": "원기둥", "def_en": "A prism with a circular cross-section.", "cat": "blood"}, {"en": "Cross-section", "ko": "단면", "def_en": "The 2D shape made by cutting straight through a solid.", "cat": "blood"}, {"en": "Face", "ko": "면", "def_en": "A flat surface of a 3D shape.", "cat": "blood"}, {"en": "Edge", "ko": "모서리", "def_en": "A line where two faces meet.", "cat": "blood"}, {"en": "Capacity", "ko": "들이(용량)", "def_en": "The amount a container can hold (e.g. litres).", "cat": "gas"}, {"en": "Unit conversion", "ko": "단위 변환", "def_en": "Changing a measurement from one unit to another.", "cat": "gas"}, {"en": "Compound measure", "ko": "복합 단위", "def_en": "A measure made of two units, e.g. speed (km/h).", "cat": "gas"}, {"en": "Scale drawing", "ko": "축척 그림", "def_en": "A drawing where lengths are in proportion to real life.", "cat": "gas"}];
+const VOCAB_DATA = [{"en": "Perimeter", "ko": "둘레", "def_en": "The total distance around the edge of a 2D shape.", "cat": "organ"}, {"en": "Area", "ko": "넓이", "def_en": "The amount of surface a shape covers, in square units.", "cat": "organ"}, {"en": "Length", "ko": "길이", "def_en": "How long something is.", "cat": "organ"}, {"en": "Width", "ko": "너비(폭)", "def_en": "How wide something is.", "cat": "organ"}, {"en": "Height", "ko": "높이", "def_en": "How tall something is.", "cat": "organ"}, {"en": "Square unit", "ko": "제곱 단위", "def_en": "A unit for area, e.g. cm².", "cat": "organ"}, {"en": "Pi (π)", "ko": "파이(π)", "def_en": "The ratio of a circle's circumference to its diameter, ≈ 3.14.", "cat": "process"}, {"en": "Circumference", "ko": "원주(둘레)", "def_en": "The distance around a circle (πd).", "cat": "process"}, {"en": "Area of a circle", "ko": "원의 넓이", "def_en": "πr², the surface inside a circle.", "cat": "process"}, {"en": "Arc length", "ko": "호의 길이", "def_en": "The length of part of a circle's circumference.", "cat": "process"}, {"en": "Sector area", "ko": "부채꼴 넓이", "def_en": "The area of a 'pie slice' of a circle.", "cat": "process"}, {"en": "Volume", "ko": "부피", "def_en": "The amount of space inside a 3D shape (cm³).", "cat": "blood"}, {"en": "Surface area", "ko": "겉넓이", "def_en": "The total area of all the faces of a 3D shape.", "cat": "blood"}, {"en": "Cuboid", "ko": "직육면체", "def_en": "A box shape with six rectangular faces.", "cat": "blood"}, {"en": "Cube", "ko": "정육면체", "def_en": "A box with six equal square faces.", "cat": "blood"}, {"en": "Prism", "ko": "각기둥", "def_en": "A 3D shape with the same cross-section throughout.", "cat": "blood"}, {"en": "Cylinder", "ko": "원기둥", "def_en": "A prism with a circular cross-section.", "cat": "blood"}, {"en": "Cross-section", "ko": "단면", "def_en": "The 2D shape made by cutting straight through a solid.", "cat": "blood"}, {"en": "Face", "ko": "면", "def_en": "A flat surface of a 3D shape.", "cat": "blood"}, {"en": "Edge", "ko": "모서리", "def_en": "A line where two faces meet.", "cat": "blood"}, {"en": "Capacity", "ko": "들이(용량)", "def_en": "The amount a container can hold (e.g. litres).", "cat": "gas"}, {"en": "Unit conversion", "ko": "단위 변환", "def_en": "Changing a measurement from one unit to another.", "cat": "gas"}, {"en": "Compound measure", "ko": "복합 단위", "def_en": "A measure made of two units, e.g. speed (km/h).", "cat": "gas"}, {"en": "Scale drawing", "ko": "축척 그림", "def_en": "A drawing where lengths are in proportion to real life.", "cat": "gas"}, {"en": "Net", "ko": "전개도", "def_en": "A flat shape that folds up to make a 3D solid.", "cat": "blood"}, {"en": "Pyramid", "ko": "각뿔", "def_en": "A solid with a flat base and triangular faces meeting at a point.", "cat": "blood"}, {"en": "Cone", "ko": "원뿔", "def_en": "A solid with a circular base narrowing to a point.", "cat": "blood"}, {"en": "Sphere", "ko": "구", "def_en": "A perfectly round solid, like a ball.", "cat": "blood"}];
 const UNIT_ID = "math_mensuration";
 const UNIT_TITLE = "Mensuration 측정";
 const UNIT_TOPICS = ["Perimeter & area", "Circles", "Volume & surface area", "Units & measures"];

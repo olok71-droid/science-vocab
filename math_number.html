@@ -516,6 +516,30 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Negative number</div>
+    <div class="vcard-ko">음수</div>
+    <div class="vcard-def">A number less than zero, shown with a minus sign.</div>
+    <div class="vcard-def-ko">0보다 작은 수. 빼기 기호로 표시.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Negative number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Order of operations (BIDMAS)</div>
+    <div class="vcard-ko">연산 순서(BIDMAS)</div>
+    <div class="vcard-def">The order to calculate: Brackets, Indices, Division/Multiplication, Addition/Subtraction.</div>
+    <div class="vcard-def-ko">계산 순서: 괄호→지수→나눗셈·곱셈→덧셈·뺄셈.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Order of operations (BIDMAS)")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="process"><h2>➗ 분수·소수·% Fractions</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -624,6 +648,54 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Recurring decimal")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Reciprocal</div>
+    <div class="vcard-ko">역수</div>
+    <div class="vcard-def">1 divided by a number; for a fraction, swap the numerator and denominator (e.g. reciprocal of 2 is 1/2).</div>
+    <div class="vcard-def-ko">1을 그 수로 나눈 값. 분수는 분자·분모를 뒤집음(예: 2의 역수는 1/2).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Reciprocal")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Percentage change</div>
+    <div class="vcard-ko">백분율 증감</div>
+    <div class="vcard-def">How much something increases or decreases, as a percentage.</div>
+    <div class="vcard-def-ko">늘거나 준 정도를 백분율로 나타낸 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Percentage change")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Simple interest</div>
+    <div class="vcard-ko">단리</div>
+    <div class="vcard-def">Interest worked out only on the original amount.</div>
+    <div class="vcard-def-ko">처음 원금에만 붙는 이자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Simple interest")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Compound interest</div>
+    <div class="vcard-ko">복리</div>
+    <div class="vcard-def">Interest worked out on the amount including previous interest.</div>
+    <div class="vcard-def-ko">이전 이자까지 합한 금액에 붙는 이자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Compound interest")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -1006,7 +1078,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">35</span> 남음</div>
+      <div>📚 <span id="sp-remaining">41</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -1025,11 +1097,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Number 수 · science-vocab · <span style="opacity:.5">v20260608-171155</span></footer>
+<footer>Number 수 · science-vocab · <span style="opacity:.5">v20260608-202457</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "What is the difference between a <b>factor</b> and a <b>multiple</b>?", "marks": 2, "sample_answer": "A factor divides exactly into a number; a multiple is the number times an integer.", "mark_points": ["factor divides into (1)", "multiple is times table (1)"], "ko_hint": "약수=나누어떨어짐, 배수=곱한 수."}, {"q": "Name the top and bottom of a fraction.", "marks": 2, "sample_answer": "The top is the numerator and the bottom is the denominator.", "mark_points": ["numerator = top (1)", "denominator = bottom (1)"], "ko_hint": "분자=위, 분모=아래."}, {"q": "Write 4500 in <b>standard form</b>.", "marks": 1, "sample_answer": "4.5 × 10³.", "mark_points": ["4.5 × 10³ (1)"], "ko_hint": "4.5 × 10³."}, {"q": "Define a <b>prime number</b>.", "marks": 1, "sample_answer": "A number with exactly two factors: 1 and itself.", "mark_points": ["exactly two factors / 1 and itself (1)"], "ko_hint": "약수가 1과 자기자신뿐."}, {"q": "Explain <b>direct</b> vs <b>inverse</b> proportion.", "marks": 2, "sample_answer": "In direct proportion both quantities increase together; in inverse proportion one increases as the other decreases.", "mark_points": ["direct = both increase together (1)", "inverse = one up, other down (1)"], "ko_hint": "정비례=함께↑, 반비례=하나↑ 하나↓."}];
-const VOCAB_DATA = [{"en": "Integer", "ko": "정수", "def_en": "A whole number, positive, negative or zero.", "cat": "organ"}, {"en": "Natural number", "ko": "자연수", "def_en": "A counting number: 1, 2, 3, …", "cat": "organ"}, {"en": "Prime number", "ko": "소수", "def_en": "A number with exactly two factors: 1 and itself.", "cat": "organ"}, {"en": "Factor", "ko": "약수(인수)", "def_en": "A number that divides exactly into another.", "cat": "organ"}, {"en": "Multiple", "ko": "배수", "def_en": "The result of multiplying by a whole number.", "cat": "organ"}, {"en": "Highest common factor (HCF)", "ko": "최대공약수", "def_en": "The largest factor shared by two numbers.", "cat": "organ"}, {"en": "Lowest common multiple (LCM)", "ko": "최소공배수", "def_en": "The smallest multiple shared by two numbers.", "cat": "organ"}, {"en": "Prime factor", "ko": "소인수", "def_en": "A factor that is a prime number.", "cat": "organ"}, {"en": "Square number", "ko": "제곱수", "def_en": "A number made by multiplying an integer by itself, e.g. 9.", "cat": "organ"}, {"en": "Square root", "ko": "제곱근", "def_en": "A number that, squared, gives the original, e.g. √9 = 3.", "cat": "organ"}, {"en": "Cube number", "ko": "세제곱수", "def_en": "A number made by multiplying an integer by itself three times.", "cat": "organ"}, {"en": "Rational number", "ko": "유리수", "def_en": "A number that can be written as a fraction.", "cat": "organ"}, {"en": "Irrational number", "ko": "무리수", "def_en": "A number that cannot be written as a fraction, e.g. π.", "cat": "organ"}, {"en": "Fraction", "ko": "분수", "def_en": "A part of a whole, written as one number over another.", "cat": "process"}, {"en": "Numerator", "ko": "분자", "def_en": "The top number of a fraction.", "cat": "process"}, {"en": "Denominator", "ko": "분모", "def_en": "The bottom number of a fraction.", "cat": "process"}, {"en": "Decimal", "ko": "소수", "def_en": "A number with a decimal point, e.g. 0.75.", "cat": "process"}, {"en": "Percentage", "ko": "백분율", "def_en": "A fraction out of 100, shown with %.", "cat": "process"}, {"en": "Equivalent fraction", "ko": "동치분수", "def_en": "Fractions that have the same value, e.g. 1/2 = 2/4.", "cat": "process"}, {"en": "Mixed number", "ko": "대분수", "def_en": "A whole number and a fraction together, e.g. 2½.", "cat": "process"}, {"en": "Improper fraction", "ko": "가분수", "def_en": "A fraction where the numerator is bigger than the denominator.", "cat": "process"}, {"en": "Recurring decimal", "ko": "순환소수", "def_en": "A decimal with a digit or group that repeats forever.", "cat": "process"}, {"en": "Ratio", "ko": "비", "def_en": "A comparison of two or more amounts, e.g. 2:3.", "cat": "blood"}, {"en": "Proportion", "ko": "비율(비례)", "def_en": "A statement that two ratios are equal.", "cat": "blood"}, {"en": "Direct proportion", "ko": "정비례", "def_en": "When two quantities increase or decrease at the same rate.", "cat": "blood"}, {"en": "Inverse proportion", "ko": "반비례", "def_en": "When one quantity increases as the other decreases.", "cat": "blood"}, {"en": "Rate", "ko": "비율(율)", "def_en": "A ratio comparing two different units, e.g. km/h.", "cat": "blood"}, {"en": "Scale", "ko": "축척(비율)", "def_en": "The ratio between a drawing/map and real size.", "cat": "blood"}, {"en": "Index (power)", "ko": "지수(거듭제곱)", "def_en": "A small number showing how many times to multiply, e.g. 2³.", "cat": "gas"}, {"en": "Base", "ko": "밑", "def_en": "The number that is raised to a power.", "cat": "gas"}, {"en": "Standard form", "ko": "표준형(과학적 표기)", "def_en": "Writing a number as a × 10ⁿ where 1 ≤ a < 10.", "cat": "gas"}, {"en": "Significant figures", "ko": "유효숫자", "def_en": "The digits that carry meaning in a number's accuracy.", "cat": "gas"}, {"en": "Decimal place", "ko": "소수점 자릿수", "def_en": "The position of a digit after the decimal point.", "cat": "gas"}, {"en": "Rounding", "ko": "반올림", "def_en": "Writing a number to a given accuracy.", "cat": "gas"}, {"en": "Estimate", "ko": "어림(추정)", "def_en": "A rough answer found by rounding first.", "cat": "gas"}];
+const VOCAB_DATA = [{"en": "Integer", "ko": "정수", "def_en": "A whole number, positive, negative or zero.", "cat": "organ"}, {"en": "Natural number", "ko": "자연수", "def_en": "A counting number: 1, 2, 3, …", "cat": "organ"}, {"en": "Prime number", "ko": "소수", "def_en": "A number with exactly two factors: 1 and itself.", "cat": "organ"}, {"en": "Factor", "ko": "약수(인수)", "def_en": "A number that divides exactly into another.", "cat": "organ"}, {"en": "Multiple", "ko": "배수", "def_en": "The result of multiplying by a whole number.", "cat": "organ"}, {"en": "Highest common factor (HCF)", "ko": "최대공약수", "def_en": "The largest factor shared by two numbers.", "cat": "organ"}, {"en": "Lowest common multiple (LCM)", "ko": "최소공배수", "def_en": "The smallest multiple shared by two numbers.", "cat": "organ"}, {"en": "Prime factor", "ko": "소인수", "def_en": "A factor that is a prime number.", "cat": "organ"}, {"en": "Square number", "ko": "제곱수", "def_en": "A number made by multiplying an integer by itself, e.g. 9.", "cat": "organ"}, {"en": "Square root", "ko": "제곱근", "def_en": "A number that, squared, gives the original, e.g. √9 = 3.", "cat": "organ"}, {"en": "Cube number", "ko": "세제곱수", "def_en": "A number made by multiplying an integer by itself three times.", "cat": "organ"}, {"en": "Rational number", "ko": "유리수", "def_en": "A number that can be written as a fraction.", "cat": "organ"}, {"en": "Irrational number", "ko": "무리수", "def_en": "A number that cannot be written as a fraction, e.g. π.", "cat": "organ"}, {"en": "Fraction", "ko": "분수", "def_en": "A part of a whole, written as one number over another.", "cat": "process"}, {"en": "Numerator", "ko": "분자", "def_en": "The top number of a fraction.", "cat": "process"}, {"en": "Denominator", "ko": "분모", "def_en": "The bottom number of a fraction.", "cat": "process"}, {"en": "Decimal", "ko": "소수", "def_en": "A number with a decimal point, e.g. 0.75.", "cat": "process"}, {"en": "Percentage", "ko": "백분율", "def_en": "A fraction out of 100, shown with %.", "cat": "process"}, {"en": "Equivalent fraction", "ko": "동치분수", "def_en": "Fractions that have the same value, e.g. 1/2 = 2/4.", "cat": "process"}, {"en": "Mixed number", "ko": "대분수", "def_en": "A whole number and a fraction together, e.g. 2½.", "cat": "process"}, {"en": "Improper fraction", "ko": "가분수", "def_en": "A fraction where the numerator is bigger than the denominator.", "cat": "process"}, {"en": "Recurring decimal", "ko": "순환소수", "def_en": "A decimal with a digit or group that repeats forever.", "cat": "process"}, {"en": "Reciprocal", "ko": "역수", "def_en": "1 divided by a number; for a fraction, swap the numerator and denominator (e.g. reciprocal of 2 is 1/2).", "cat": "process"}, {"en": "Ratio", "ko": "비", "def_en": "A comparison of two or more amounts, e.g. 2:3.", "cat": "blood"}, {"en": "Proportion", "ko": "비율(비례)", "def_en": "A statement that two ratios are equal.", "cat": "blood"}, {"en": "Direct proportion", "ko": "정비례", "def_en": "When two quantities increase or decrease at the same rate.", "cat": "blood"}, {"en": "Inverse proportion", "ko": "반비례", "def_en": "When one quantity increases as the other decreases.", "cat": "blood"}, {"en": "Rate", "ko": "비율(율)", "def_en": "A ratio comparing two different units, e.g. km/h.", "cat": "blood"}, {"en": "Scale", "ko": "축척(비율)", "def_en": "The ratio between a drawing/map and real size.", "cat": "blood"}, {"en": "Index (power)", "ko": "지수(거듭제곱)", "def_en": "A small number showing how many times to multiply, e.g. 2³.", "cat": "gas"}, {"en": "Base", "ko": "밑", "def_en": "The number that is raised to a power.", "cat": "gas"}, {"en": "Standard form", "ko": "표준형(과학적 표기)", "def_en": "Writing a number as a × 10ⁿ where 1 ≤ a < 10.", "cat": "gas"}, {"en": "Significant figures", "ko": "유효숫자", "def_en": "The digits that carry meaning in a number's accuracy.", "cat": "gas"}, {"en": "Decimal place", "ko": "소수점 자릿수", "def_en": "The position of a digit after the decimal point.", "cat": "gas"}, {"en": "Rounding", "ko": "반올림", "def_en": "Writing a number to a given accuracy.", "cat": "gas"}, {"en": "Estimate", "ko": "어림(추정)", "def_en": "A rough answer found by rounding first.", "cat": "gas"}, {"en": "Negative number", "ko": "음수", "def_en": "A number less than zero, shown with a minus sign.", "cat": "organ"}, {"en": "Order of operations (BIDMAS)", "ko": "연산 순서(BIDMAS)", "def_en": "The order to calculate: Brackets, Indices, Division/Multiplication, Addition/Subtraction.", "cat": "organ"}, {"en": "Percentage change", "ko": "백분율 증감", "def_en": "How much something increases or decreases, as a percentage.", "cat": "process"}, {"en": "Simple interest", "ko": "단리", "def_en": "Interest worked out only on the original amount.", "cat": "process"}, {"en": "Compound interest", "ko": "복리", "def_en": "Interest worked out on the amount including previous interest.", "cat": "process"}];
 const UNIT_ID = "math_number";
 const UNIT_TITLE = "Number 수";
 const UNIT_TOPICS = ["Number types", "Fractions, decimals, %", "Ratio & proportion", "Indices & standard form"];

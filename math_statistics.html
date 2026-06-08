@@ -431,6 +431,30 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Discrete data</div>
+    <div class="vcard-ko">이산 자료</div>
+    <div class="vcard-def">Data that can only take certain values (usually counted).</div>
+    <div class="vcard-def-ko">특정 값만 가지는 자료(보통 셈).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Discrete data")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Continuous data</div>
+    <div class="vcard-ko">연속 자료</div>
+    <div class="vcard-def">Data that can take any value in a range (usually measured).</div>
+    <div class="vcard-def-ko">범위 안 어떤 값이든 가지는 자료(보통 측정).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Continuous data")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="process"><h2>📈 자료 표현 Charts</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -530,6 +554,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Modal class</div>
+    <div class="vcard-ko">최빈 계급</div>
+    <div class="vcard-def">The class interval with the highest frequency.</div>
+    <div class="vcard-def-ko">도수가 가장 큰 계급(구간).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Modal class")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
 </div>
 <div class="section-header" data-cat="blood"><h2>📉 산점도 Scatter</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection('blood', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
@@ -626,6 +662,18 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Interquartile range")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Outlier</div>
+    <div class="vcard-ko">이상치</div>
+    <div class="vcard-def">A value much larger or smaller than the rest of the data.</div>
+    <div class="vcard-def-ko">나머지 자료보다 훨씬 크거나 작은 값.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Outlier")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -827,7 +875,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">22</span> 남음</div>
+      <div>📚 <span id="sp-remaining">26</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -846,11 +894,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Statistics 통계 · science-vocab · <span style="opacity:.5">v20260608-171155</span></footer>
+<footer>Statistics 통계 · science-vocab · <span style="opacity:.5">v20260608-202457</span></footer>
 
 <script>
 const QUIZ_DATA = [{"q": "Define <b>mean</b>, <b>median</b> and <b>mode</b>.", "marks": 3, "sample_answer": "Mean = total ÷ number of values; median = middle value in order; mode = most common value.", "mark_points": ["mean = total ÷ count (1)", "median = middle (1)", "mode = most common (1)"], "ko_hint": "평균=합÷개수, 중앙값=가운데, 최빈값=최다."}, {"q": "How do you find the <b>range</b>?", "marks": 1, "sample_answer": "Largest value minus smallest value.", "mark_points": ["largest − smallest (1)"], "ko_hint": "최댓값 − 최솟값."}, {"q": "What does a <b>scatter diagram</b> show?", "marks": 1, "sample_answer": "The relationship between two variables.", "mark_points": ["relationship between two variables (1)"], "ko_hint": "두 변수의 관계."}, {"q": "Describe <b>positive correlation</b>.", "marks": 1, "sample_answer": "As one variable increases, the other also increases.", "mark_points": ["both increase together (1)"], "ko_hint": "하나 늘면 다른 것도 늚."}, {"q": "Find the median of: 3, 7, 4, 9, 5.", "marks": 1, "sample_answer": "Order: 3,4,5,7,9 → median = 5.", "mark_points": ["5 (1)"], "ko_hint": "순서대로 → 가운데 5."}];
-const VOCAB_DATA = [{"en": "Average", "ko": "평균값(대푯값)", "def_en": "A single value that represents a set of data.", "cat": "organ"}, {"en": "Mean", "ko": "평균", "def_en": "The total of the values divided by how many there are.", "cat": "organ"}, {"en": "Median", "ko": "중앙값", "def_en": "The middle value when data is put in order.", "cat": "organ"}, {"en": "Mode", "ko": "최빈값", "def_en": "The value that appears most often.", "cat": "organ"}, {"en": "Range", "ko": "범위", "def_en": "The largest value minus the smallest value.", "cat": "organ"}, {"en": "Data", "ko": "자료(데이터)", "def_en": "Information collected, often numbers.", "cat": "organ"}, {"en": "Frequency", "ko": "도수", "def_en": "How many times a value occurs.", "cat": "process"}, {"en": "Frequency table", "ko": "도수분포표", "def_en": "A table showing how often each value occurs.", "cat": "process"}, {"en": "Tally", "ko": "정(正)표시", "def_en": "Marks used to count data in groups of five.", "cat": "process"}, {"en": "Bar chart", "ko": "막대그래프", "def_en": "A chart using bars to show frequency.", "cat": "process"}, {"en": "Pictogram", "ko": "그림그래프", "def_en": "A chart using pictures to show data.", "cat": "process"}, {"en": "Pie chart", "ko": "원그래프", "def_en": "A circle divided into sectors to show proportions.", "cat": "process"}, {"en": "Line graph", "ko": "꺾은선그래프", "def_en": "A graph using lines to show change over time.", "cat": "process"}, {"en": "Grouped data", "ko": "묶은 자료(계급)", "def_en": "Data sorted into class intervals.", "cat": "process"}, {"en": "Scatter diagram", "ko": "산점도", "def_en": "A graph of points showing two variables together.", "cat": "blood"}, {"en": "Correlation", "ko": "상관관계", "def_en": "How two variables are related (positive, negative or none).", "cat": "blood"}, {"en": "Positive correlation", "ko": "양의 상관", "def_en": "As one variable increases, so does the other.", "cat": "blood"}, {"en": "Negative correlation", "ko": "음의 상관", "def_en": "As one variable increases, the other decreases.", "cat": "blood"}, {"en": "Line of best fit", "ko": "추세선", "def_en": "A straight line drawn through the trend of scatter points.", "cat": "blood"}, {"en": "Cumulative frequency", "ko": "누적도수", "def_en": "A running total of frequencies.", "cat": "blood"}, {"en": "Quartile", "ko": "사분위수", "def_en": "Values that divide ordered data into four equal parts.", "cat": "blood"}, {"en": "Interquartile range", "ko": "사분위범위(IQR)", "def_en": "Upper quartile minus lower quartile; the spread of the middle half.", "cat": "blood"}];
+const VOCAB_DATA = [{"en": "Average", "ko": "평균값(대푯값)", "def_en": "A single value that represents a set of data.", "cat": "organ"}, {"en": "Mean", "ko": "평균", "def_en": "The total of the values divided by how many there are.", "cat": "organ"}, {"en": "Median", "ko": "중앙값", "def_en": "The middle value when data is put in order.", "cat": "organ"}, {"en": "Mode", "ko": "최빈값", "def_en": "The value that appears most often.", "cat": "organ"}, {"en": "Range", "ko": "범위", "def_en": "The largest value minus the smallest value.", "cat": "organ"}, {"en": "Data", "ko": "자료(데이터)", "def_en": "Information collected, often numbers.", "cat": "organ"}, {"en": "Frequency", "ko": "도수", "def_en": "How many times a value occurs.", "cat": "process"}, {"en": "Frequency table", "ko": "도수분포표", "def_en": "A table showing how often each value occurs.", "cat": "process"}, {"en": "Tally", "ko": "정(正)표시", "def_en": "Marks used to count data in groups of five.", "cat": "process"}, {"en": "Bar chart", "ko": "막대그래프", "def_en": "A chart using bars to show frequency.", "cat": "process"}, {"en": "Pictogram", "ko": "그림그래프", "def_en": "A chart using pictures to show data.", "cat": "process"}, {"en": "Pie chart", "ko": "원그래프", "def_en": "A circle divided into sectors to show proportions.", "cat": "process"}, {"en": "Line graph", "ko": "꺾은선그래프", "def_en": "A graph using lines to show change over time.", "cat": "process"}, {"en": "Grouped data", "ko": "묶은 자료(계급)", "def_en": "Data sorted into class intervals.", "cat": "process"}, {"en": "Scatter diagram", "ko": "산점도", "def_en": "A graph of points showing two variables together.", "cat": "blood"}, {"en": "Correlation", "ko": "상관관계", "def_en": "How two variables are related (positive, negative or none).", "cat": "blood"}, {"en": "Positive correlation", "ko": "양의 상관", "def_en": "As one variable increases, so does the other.", "cat": "blood"}, {"en": "Negative correlation", "ko": "음의 상관", "def_en": "As one variable increases, the other decreases.", "cat": "blood"}, {"en": "Line of best fit", "ko": "추세선", "def_en": "A straight line drawn through the trend of scatter points.", "cat": "blood"}, {"en": "Cumulative frequency", "ko": "누적도수", "def_en": "A running total of frequencies.", "cat": "blood"}, {"en": "Quartile", "ko": "사분위수", "def_en": "Values that divide ordered data into four equal parts.", "cat": "blood"}, {"en": "Interquartile range", "ko": "사분위범위(IQR)", "def_en": "Upper quartile minus lower quartile; the spread of the middle half.", "cat": "blood"}, {"en": "Discrete data", "ko": "이산 자료", "def_en": "Data that can only take certain values (usually counted).", "cat": "organ"}, {"en": "Continuous data", "ko": "연속 자료", "def_en": "Data that can take any value in a range (usually measured).", "cat": "organ"}, {"en": "Modal class", "ko": "최빈 계급", "def_en": "The class interval with the highest frequency.", "cat": "process"}, {"en": "Outlier", "ko": "이상치", "def_en": "A value much larger or smaller than the rest of the data.", "cat": "blood"}];
 const UNIT_ID = "math_statistics";
 const UNIT_TITLE = "Statistics 통계";
 const UNIT_TOPICS = ["Averages", "Displaying data", "Scatter & spread"];
