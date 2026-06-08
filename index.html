@@ -210,11 +210,11 @@
 <div class="container">
 
   <div class="year-tabs">
-    <button class="year-tab active" data-year="year8" onclick="showYear('year8')">📘 8학년</button>
-    <button class="year-tab" data-year="year9" onclick="showYear('year9')">📗 9학년</button>
+    <button class="year-tab" data-year="year8" onclick="showYear('year8')">📘 8학년</button>
+    <button class="year-tab active" data-year="year9" onclick="showYear('year9')">📗 9학년</button>
   </div>
 
-  <div class="year-pane active" id="year8">
+  <div class="year-pane" id="year8">
 
   <!-- Science -->
   <div class="subject-section">
@@ -456,7 +456,7 @@
 
   </div><!-- /year8 -->
 
-  <div class="year-pane" id="year9">
+  <div class="year-pane active" id="year9">
 
     <!-- Science (Year 9) -->
     <div class="subject-section">
@@ -551,11 +551,9 @@
       </div>
     </div>
 
-  </div><!-- /year9 -->
+    <div class="divider"></div>
 
-  <div class="divider"></div>
-
-  <!-- 중국어 첫걸음 -->
+    <!-- 중국어 첫걸음 (9학년에 표시) -->
   <div class="subject-section">
     <div class="subject-label">
       <span class="icon">🐼</span>
@@ -604,6 +602,8 @@
       </a>
     </div>
   </div>
+
+  </div><!-- /year9 -->
 
 </div>
 
