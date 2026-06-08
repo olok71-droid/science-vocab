@@ -129,15 +129,6 @@
     margin: 4px 0 24px;
   }
 
-  /* 학년 탭 */
-  .year-tabs { display:flex; gap:8px; margin-bottom:22px; }
-  .year-tab { flex:1; padding:11px 0; border-radius:14px; font-family:inherit;
-    font-size:15px; font-weight:900; cursor:pointer; background:#fff; color:var(--muted);
-    border:2px solid rgba(62,207,178,0.15); transition:all .2s; }
-  .year-tab.active { background:var(--accent); color:#fff; border-color:var(--accent);
-    box-shadow:0 4px 14px var(--shadow); }
-  .year-pane { display:none; }
-  .year-pane.active { display:block; }
   /* 영역(strand) 태그 — 9학년 과학 단원명에 */
   .strand-tag { display:inline-block; font-size:10px; font-weight:800; padding:2px 8px;
     border-radius:8px; margin-bottom:2px; width:fit-content; }
@@ -146,6 +137,19 @@
   .strand-phys  { background:rgba(255,170,60,0.18);  color:#e08a00; }
   .strand-earth { background:rgba(96,196,248,0.16);  color:#2a8fd0; }
   .strand-math  { background:rgba(167,139,250,0.16); color:#7c5cf0; }
+
+  /* 정사각형 카테고리 버튼 */
+  .cat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(104px,1fr)); gap:10px; margin-bottom:26px; }
+  .cat-btn { aspect-ratio:1/1; border-radius:20px; border:2px solid rgba(62,207,178,0.18); background:#fff;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer;
+    font-family:inherit; color:var(--text); transition:all .2s; box-shadow:0 2px 12px var(--shadow); padding:8px; text-align:center; }
+  .cat-btn:hover { transform:translateY(-3px); border-color:rgba(62,207,178,0.5); }
+  .cat-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 6px 18px var(--shadow); }
+  .cat-btn .cat-emoji { font-size:32px; line-height:1; }
+  .cat-btn .cat-name { font-size:13px; font-weight:900; line-height:1.2; }
+  .cat-btn .cat-sub { font-size:10px; font-weight:700; opacity:.7; }
+  .cat-pane { display:none; }
+  .cat-pane.active { display:block; }
 
   footer {
     text-align: center; padding: 20px;
@@ -211,263 +215,52 @@
 
 <div class="container">
 
-  <div class="year-tabs">
-    <button class="year-tab" data-year="year8" onclick="showYear('year8')">📘 8학년</button>
-    <button class="year-tab active" data-year="year9" onclick="showYear('year9')">📗 9학년</button>
-    <button class="year-tab" data-year="math" onclick="showYear('math')">🔢 수학</button>
+  <div class="cat-grid">
+    <button class="cat-btn active" data-cat="y9sci" onclick="showCat('y9sci')">
+      <span class="cat-emoji">📗</span>
+      <span class="cat-name">9학년 과학</span>
+      <span class="cat-sub">Year 9 Science</span>
+    </button>
+    <button class="cat-btn" data-cat="y8sci" onclick="showCat('y8sci')">
+      <span class="cat-emoji">📘</span>
+      <span class="cat-name">8학년 과학</span>
+      <span class="cat-sub">Year 8 Science</span>
+    </button>
+    <button class="cat-btn" data-cat="math" onclick="showCat('math')">
+      <span class="cat-emoji">🔢</span>
+      <span class="cat-name">IGCSE 수학</span>
+      <span class="cat-sub">Maths 0580</span>
+    </button>
+    <button class="cat-btn" data-cat="eng" onclick="showCat('eng')">
+      <span class="cat-emoji">📖</span>
+      <span class="cat-name">영어 EAL</span>
+      <span class="cat-sub">English</span>
+    </button>
+    <button class="cat-btn" data-cat="geo" onclick="showCat('geo')">
+      <span class="cat-emoji">🌍</span>
+      <span class="cat-name">지리</span>
+      <span class="cat-sub">Geography</span>
+    </button>
+    <button class="cat-btn" data-cat="hist" onclick="showCat('hist')">
+      <span class="cat-emoji">🏛️</span>
+      <span class="cat-name">역사</span>
+      <span class="cat-sub">History</span>
+    </button>
+    <button class="cat-btn" data-cat="chin" onclick="showCat('chin')">
+      <span class="cat-emoji">🐼</span>
+      <span class="cat-name">중국어</span>
+      <span class="cat-sub">Chinese</span>
+    </button>
+    <button class="cat-btn" data-cat="jenny" onclick="showCat('jenny')">
+      <span class="cat-emoji">💛</span>
+      <span class="cat-name">제니 영어</span>
+      <span class="cat-sub">Jenny</span>
+    </button>
   </div>
 
-  <div class="year-pane" id="year8">
-
-  <!-- Science -->
-  <div class="subject-section">
-    <div class="subject-label">
-      <span class="icon">🔬</span>
-      <span class="name-en">Science</span>
-      <span class="name-ko">과학</span>
-    </div>
-    <div class="units-grid">
-
-      <a class="unit-card ready" href="biology.html">
-        <div class="unit-top">
-          <span class="unit-icon">🫁</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="strand-tag strand-bio">🧬 Biology 생물</div>
-        <div class="unit-name-en">8B1 Respiration</div>
-        <div class="unit-name-ko">호흡</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 41단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-
-      <a class="unit-card ready" href="ecosystems.html">
-        <div class="unit-top">
-          <span class="unit-icon">🌿</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="strand-tag strand-bio">🧬 Biology 생물</div>
-        <div class="unit-name-en">8J Ecosystems</div>
-        <div class="unit-name-ko">생태계</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 30단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-
-      <a class="unit-card ready" href="chemistry.html">
-        <div class="unit-top">
-          <span class="unit-icon">💧</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
-        <div class="unit-name-en">8C Solutions</div>
-        <div class="unit-name-ko">용액과 용해</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 24단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-
-      <a class="unit-card ready" href="atoms.html">
-        <div class="unit-top">
-          <span class="unit-icon">⚛️</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
-        <div class="unit-name-en">8E Atoms & Particles</div>
-        <div class="unit-name-ko">원자와 입자</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 24단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-
-      <a class="unit-card ready" href="purity.html">
-        <div class="unit-top">
-          <span class="unit-icon">💎</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
-        <div class="unit-name-en">8C Purity</div>
-        <div class="unit-name-ko">순물질·불순물</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 16단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-
-      <a class="unit-card ready" href="atmosphere.html">
-        <div class="unit-top">
-          <span class="unit-icon">🌍</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
-        <div class="unit-name-en">8C Atmosphere</div>
-        <div class="unit-name-ko">대기와 기후</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 21단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-
-      <a class="unit-card ready" href="forces.html">
-        <div class="unit-top">
-          <span class="unit-icon">🏃</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="strand-tag strand-phys">🔆 Physics 물리</div>
-        <div class="unit-name-en">8P Forces & Moments</div>
-        <div class="unit-name-ko">힘과 회전력</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 23단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-
-      <a class="unit-card ready" href="motion.html">
-        <div class="unit-top">
-          <span class="unit-icon">🏎️</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="strand-tag strand-phys">🔆 Physics 물리</div>
-        <div class="unit-name-en">8P Speed & Motion</div>
-        <div class="unit-name-ko">속도와 운동</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 16단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-
-      <a class="unit-card ready" href="pressure.html">
-        <div class="unit-top">
-          <span class="unit-icon">📊</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="strand-tag strand-phys">🔆 Physics 물리</div>
-        <div class="unit-name-en">8P Pressure</div>
-        <div class="unit-name-ko">압력</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 16단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- English (EAL) -->
-  <div class="subject-section">
-    <div class="subject-label">
-      <span class="icon">📖</span>
-      <span class="name-en">English (EAL)</span>
-      <span class="name-ko">영어</span>
-    </div>
-    <div class="units-grid">
-      <a class="unit-card ready" href="eal.html">
-        <div class="unit-top">
-          <span class="unit-icon">✏️</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="unit-name-en">EAL Y8 EoY Exam</div>
-        <div class="unit-name-ko">영어 기말 대비</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 113단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- Geography -->
-  <div class="subject-section">
-    <div class="subject-label">
-      <span class="icon">🌍</span>
-      <span class="name-en">Geography</span>
-      <span class="name-ko">지리</span>
-    </div>
-    <div class="units-grid">
-      <a class="unit-card ready" href="geo_population.html">
-        <div class="unit-top">
-          <span class="unit-icon">📊</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="unit-name-en">Y8 Population (CA1)</div>
-        <div class="unit-name-ko">인구·DTM·피라미드</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 30단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-      <a class="unit-card ready" href="geo_migration.html">
-        <div class="unit-top">
-          <span class="unit-icon">🌐</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="unit-name-en">Y8 Migration (CA2)</div>
-        <div class="unit-name-ko">이주·한자녀·과인구</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 31단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- History -->
-  <div class="subject-section">
-    <div class="subject-label">
-      <span class="icon">🏛️</span>
-      <span class="name-en">History</span>
-      <span class="name-ko">역사</span>
-    </div>
-    <div class="units-grid">
-      <a class="unit-card ready" href="history.html">
-        <div class="unit-top">
-          <span class="unit-icon">⛵</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="unit-name-en">Y8 Age of Discovery</div>
-        <div class="unit-name-ko">노예무역·PEEL</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 51단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">📝 노트</span>
-          <span class="menu-chip">✅ 퀴즈</span>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  </div><!-- /year8 -->
-
-  <div class="year-pane active" id="year9">
-
-    <!-- Science (Year 9) -->
+  <div class="cat-pane active" id="cat-y9sci">
     <div class="subject-section">
-      <div class="subject-label">
-        <span class="icon">🔬</span>
-        <span class="name-en">Science</span>
-        <span class="name-ko">과학 · Year 9 (Cambridge LS)</span>
-      </div>
+      <div class="subject-label"><span class="icon">📗</span><span class="name-en">9학년 과학</span><span class="name-ko">Year 9 Science</span></div>
       <div class="units-grid">
 
         <a class="unit-card ready" href="y9_photosynthesis.html">
@@ -517,7 +310,7 @@
 
         <a class="unit-card ready" href="y9_sound_space.html">
           <div class="unit-top"><span class="unit-icon">🌌</span><span class="badge badge-ready">완성 ✓</span></div>
-          <div class="strand-tag strand-earth">🌌 Sound & Space 소리·우주</div>
+          <div class="strand-tag strand-earth">🌌 Sound &amp; Space 소리·우주</div>
           <div class="unit-name-en">6. Sound and space</div>
           <div class="unit-name-ko">소리와 우주</div>
           <div class="u-topics">소리 세기·높낮이 · 간섭 · 달·성운 · 판 구조</div>
@@ -553,70 +346,92 @@
 
       </div>
     </div>
-
-    <div class="divider"></div>
-
-    <!-- 중국어 첫걸음 (9학년에 표시) -->
-  <div class="subject-section">
-    <div class="subject-label">
-      <span class="icon">🐼</span>
-      <span class="name-en">Chinese</span>
-      <span class="name-ko">중국어 첫걸음</span>
-    </div>
-    <div class="units-grid">
-      <a class="unit-card ready" href="chinese.html">
-        <div class="unit-top">
-          <span class="unit-icon">🀄</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="unit-name-en">First Steps</div>
-        <div class="unit-name-ko">듣고 배우는 기초</div>
-        <div class="unit-menu">
-          <span class="menu-chip">🐼 듣기</span>
-          <span class="menu-chip">🎧 퀴즈</span>
-          <span class="menu-chip">▶️ 유튜브</span>
-        </div>
-      </a>
-    </div>
   </div>
 
-  <div class="divider"></div>
-
-  <!-- Jenny 영어공부 (맨 아래) -->
-  <div class="subject-section">
-    <div class="subject-label">
-      <span class="icon">💛</span>
-      <span class="name-en">Jenny English</span>
-      <span class="name-ko">Jenny 영어공부</span>
-    </div>
-    <div class="units-grid">
-      <a class="unit-card ready" href="jenny.html">
-        <div class="unit-top">
-          <span class="unit-icon">🗣️</span>
-          <span class="badge badge-ready">완성 ✓</span>
-        </div>
-        <div class="unit-name-en">Phrase · May & June</div>
-        <div class="unit-name-ko">5·6월 Day 1–7 + 문장</div>
-        <div class="unit-menu"><span class="menu-chip count-chip">📖 132단어</span>
-          <span class="menu-chip">📖 단어장</span>
-          <span class="menu-chip">🔊 발음</span>
-          <span class="menu-chip">✅ 테스트</span>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  </div><!-- /year9 -->
-
-  <div class="year-pane" id="math">
-
-    <!-- Mathematics (IGCSE 0580) -->
+  <div class="cat-pane" id="cat-y8sci">
     <div class="subject-section">
-      <div class="subject-label">
-        <span class="icon">🔢</span>
-        <span class="name-en">Mathematics</span>
-        <span class="name-ko">수학 · IGCSE 0580 (주제별)</span>
+      <div class="subject-label"><span class="icon">📘</span><span class="name-en">8학년 과학</span><span class="name-ko">Year 8 Science</span></div>
+      <div class="units-grid">
+
+        <a class="unit-card ready" href="biology.html">
+          <div class="unit-top"><span class="unit-icon">🫁</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="strand-tag strand-bio">🧬 Biology 생물</div>
+          <div class="unit-name-en">8B1 Respiration</div>
+          <div class="unit-name-ko">호흡</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 41단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+        <a class="unit-card ready" href="ecosystems.html">
+          <div class="unit-top"><span class="unit-icon">🌿</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="strand-tag strand-bio">🧬 Biology 생물</div>
+          <div class="unit-name-en">8J Ecosystems</div>
+          <div class="unit-name-ko">생태계</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 30단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+        <a class="unit-card ready" href="chemistry.html">
+          <div class="unit-top"><span class="unit-icon">💧</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">8C Solutions</div>
+          <div class="unit-name-ko">용액과 용해</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 24단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+        <a class="unit-card ready" href="atoms.html">
+          <div class="unit-top"><span class="unit-icon">⚛️</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">8E Atoms &amp; Particles</div>
+          <div class="unit-name-ko">원자와 입자</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 24단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+        <a class="unit-card ready" href="purity.html">
+          <div class="unit-top"><span class="unit-icon">💎</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">8C Purity</div>
+          <div class="unit-name-ko">순물질·불순물</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 16단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+        <a class="unit-card ready" href="atmosphere.html">
+          <div class="unit-top"><span class="unit-icon">🌍</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="strand-tag strand-chem">⚗️ Chemistry 화학</div>
+          <div class="unit-name-en">8C Atmosphere</div>
+          <div class="unit-name-ko">대기와 기후</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 21단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+        <a class="unit-card ready" href="forces.html">
+          <div class="unit-top"><span class="unit-icon">🏃</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="strand-tag strand-phys">🔆 Physics 물리</div>
+          <div class="unit-name-en">8P Forces &amp; Moments</div>
+          <div class="unit-name-ko">힘과 회전력</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 23단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+        <a class="unit-card ready" href="motion.html">
+          <div class="unit-top"><span class="unit-icon">🏎️</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="strand-tag strand-phys">🔆 Physics 물리</div>
+          <div class="unit-name-en">8P Speed &amp; Motion</div>
+          <div class="unit-name-ko">속도와 운동</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 16단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+        <a class="unit-card ready" href="pressure.html">
+          <div class="unit-top"><span class="unit-icon">📊</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="strand-tag strand-phys">🔆 Physics 물리</div>
+          <div class="unit-name-en">8P Pressure</div>
+          <div class="unit-name-ko">압력</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 16단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
       </div>
+    </div>
+  </div>
+
+  <div class="cat-pane" id="cat-math">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">🔢</span><span class="name-en">IGCSE 수학</span><span class="name-ko">Maths 0580</span></div>
       <div class="units-grid">
 
         <a class="unit-card ready" href="math_number.html">
@@ -624,7 +439,7 @@
           <div class="strand-tag strand-math">🔢 IGCSE 0580 수학</div>
           <div class="unit-name-en">1. Number</div>
           <div class="unit-name-ko">수</div>
-          <div class="u-topics">수의 종류 · 분수·소수·% · 비·비율 · 지수·표준형</div>
+          <div class="u-topics">수의 종류 · 분수·소수·% · 비·비율 · 지수</div>
           <div class="unit-menu"><span class="menu-chip count-chip">📖 35단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
         </a>
 
@@ -693,8 +508,94 @@
 
       </div>
     </div>
+  </div>
 
-  </div><!-- /math -->
+  <div class="cat-pane" id="cat-eng">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">📖</span><span class="name-en">영어 EAL</span><span class="name-ko">English</span></div>
+      <div class="units-grid">
+
+        <a class="unit-card ready" href="eal.html">
+          <div class="unit-top"><span class="unit-icon">✏️</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="unit-name-en">EAL Y8 EoY Exam</div>
+          <div class="unit-name-ko">영어 기말 대비</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 113단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-pane" id="cat-geo">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">🌍</span><span class="name-en">지리</span><span class="name-ko">Geography</span></div>
+      <div class="units-grid">
+
+        <a class="unit-card ready" href="geo_population.html">
+          <div class="unit-top"><span class="unit-icon">📊</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="unit-name-en">Y8 Population (CA1)</div>
+          <div class="unit-name-ko">인구·DTM·피라미드</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 30단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+        <a class="unit-card ready" href="geo_migration.html">
+          <div class="unit-top"><span class="unit-icon">🌐</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="unit-name-en">Y8 Migration (CA2)</div>
+          <div class="unit-name-ko">이주·한자녀·과인구</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 31단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-pane" id="cat-hist">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">🏛️</span><span class="name-en">역사</span><span class="name-ko">History</span></div>
+      <div class="units-grid">
+
+        <a class="unit-card ready" href="history.html">
+          <div class="unit-top"><span class="unit-icon">⛵</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="unit-name-en">Y8 Age of Discovery</div>
+          <div class="unit-name-ko">노예무역·PEEL</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 51단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">📝 노트</span><span class="menu-chip">✅ 퀴즈</span></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-pane" id="cat-chin">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">🐼</span><span class="name-en">중국어</span><span class="name-ko">Chinese</span></div>
+      <div class="units-grid">
+
+        <a class="unit-card ready" href="chinese.html">
+          <div class="unit-top"><span class="unit-icon">🀄</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="unit-name-en">First Steps</div>
+          <div class="unit-name-ko">듣고 배우는 기초</div>
+          <div class="unit-menu"><span class="menu-chip">🐼 듣기</span><span class="menu-chip">🎧 퀴즈</span><span class="menu-chip">▶️ 유튜브</span></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-pane" id="cat-jenny">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">💛</span><span class="name-en">제니 영어</span><span class="name-ko">Jenny</span></div>
+      <div class="units-grid">
+
+        <a class="unit-card ready" href="jenny.html">
+          <div class="unit-top"><span class="unit-icon">🗣️</span><span class="badge badge-ready">완성 ✓</span></div>
+          <div class="unit-name-en">Phrase · May &amp; June</div>
+          <div class="unit-name-ko">5·6월 Day 1–7 + 문장</div>
+          <div class="unit-menu"><span class="menu-chip count-chip">📖 132단어</span><span class="menu-chip">📖 단어장</span><span class="menu-chip">🔊 발음</span><span class="menu-chip">✅ 테스트</span></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
 
 </div>
 
@@ -746,9 +647,9 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
 
 
 <script>
-function showYear(y){
-  document.querySelectorAll('.year-pane').forEach(p=>p.classList.toggle('active', p.id===y));
-  document.querySelectorAll('.year-tab').forEach(t=>t.classList.toggle('active', t.dataset.year===y));
+function showCat(id){
+  document.querySelectorAll('.cat-pane').forEach(p=>p.classList.toggle('active', p.id==='cat-'+id));
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active', b.dataset.cat===id));
   window.scrollTo({top:0});
 }
 </script>
