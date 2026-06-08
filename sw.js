@@ -2,7 +2,7 @@
 // 빌드 버전: v20260604-065736
 // 새 버전이 push되면 자동으로 클라이언트 새로고침.
 
-const CACHE_VERSION = 'v20260604-073917';
+const CACHE_VERSION = 'v20260609-072755';
 const CACHE_NAME = 'amy-study-' + CACHE_VERSION;
 const CORE_FILES = ["./", "biology.html", "chemistry.html", "ecosystems.html", "atoms.html", "forces.html", "atmosphere.html", "motion.html", "pressure.html", "purity.html", "eal.html", "history.html", "geo_population.html", "geo_migration.html", "index.html"];
 

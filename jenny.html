@@ -1028,6 +1028,77 @@ const PHRASE_SETS = [
       {ko:"너 생각엔 어느 K마트가 제일 신선한 것 같아?", en:"Which K-mart do you think is the freshest?"},
     ],
   },
+  {
+    title: "식당에서 주문하기 (Ordering Food)",
+    concept:
+      "<span class='ctitle'>📌 식당에서 쓰는 표현 한 묶음</span>" +
+      "입장 → 주문 → 추가·빼기·바꾸기 → 계산까지 순서대로예요. 핵심 패턴만 익히면 다 응용돼요.<br>" +
+      "• <b>Can I ~?</b> = 내가 받아도 될까요? (메뉴·물 등 <b>내가 받는 것</b>)<br>" +
+      "• <b>Can you ~?</b> = ~해 주실래요? (갖다주기·바꿔주기 등 <b>상대에게 부탁</b>)<br>" +
+      "• <b>Does it come with ~?</b> = 이거 ~랑 같이 나와요?<br>" +
+      "• <b>Is there ~ in it?</b> = 여기 ~ 들어가요?<br>" +
+      "• <b>leave out ~</b>(빼주세요) / <b>on the side</b>(따로) / <b>instead of ~</b>(~ 대신)<br>" +
+      "• <b>Is it possible to ~?</b> = ~할 수 있을까요? (정중한 요청)",
+    items: [
+      // 입장 & 자리
+      {ko:"네 명 자리 있나요?", en:"Can I have a table for four?"},
+      {ko:"다섯 명이에요. 어른 셋에 아이 둘이요.", en:"There are five of us — three adults and two kids."},
+      {ko:"얼마나 기다려야 해요?", en:"How long is the wait?"},
+      {ko:"제 앞에 몇 팀이나 있어요?", en:"How many parties are ahead of me?"},
+      {ko:"자리 준비되면 알려주실래요?", en:"Can you let me know when the table is ready?"},
+      {ko:"조용한 자리로 주실 수 있어요?", en:"Can we have a quiet table?"},
+      {ko:"저희 여기 앉아도 돼요?", en:"Can we sit here?"},
+      // 메뉴 & 주문 준비
+      {ko:"메뉴 좀 볼 수 있을까요?", en:"Can I see the menu?"},
+      {ko:"키즈 메뉴 있어요?", en:"Do you have a kids' menu?"},
+      {ko:"저희 아직 주문할 준비가 안 됐어요.", en:"We're not ready to order yet."},
+      {ko:"시간 조금만 더 주실래요?", en:"Can you give us a few more minutes?"},
+      {ko:"인기 메뉴 추천해 주실 수 있어요?", en:"Can you recommend something popular?"},
+      {ko:"이제 주문해도 될까요?", en:"Can I order now?"},
+      {ko:"저기요, 주문 받아주시겠어요?", en:"Excuse me, can you take my order?"},
+      // 주문하기
+      {ko:"저는 치킨 가라아게 주세요.", en:"Can I get the chicken karaage?"},
+      {ko:"이 아이는 매운 걸 못 먹어요.", en:"This child can't eat spicy food."},
+      {ko:"따뜻한 물 좀 주세요.", en:"Can I have some warm water?"},
+      {ko:"물 한 잔 주실래요?", en:"Can I get a glass of water?"},
+      {ko:"키즈 돈가스 두 개랑 돈가스 하나, 우동 하나 주세요.", en:"Can I get two kids' cutlets, one pork cutlet, and one udon?"},
+      {ko:"프렌치 토스트, 하와이안 피자, 토마토 수프, 알리오 올리오 주세요.", en:"Can I get the French toast, the Hawaiian pizza, the tomato soup, and the aglio olio?"},
+      // 추가 요청
+      {ko:"소스 좀 더 주세요.", en:"Can I get some more sauce?"},
+      {ko:"케첩 좀 더 주실래요?", en:"Can I get more ketchup?"},
+      {ko:"물 좀 더 갖다주실래요?", en:"Can you bring some more water?"},
+      {ko:"냅킨 좀 더 주시겠어요?", en:"Can you bring more napkins, please?"},
+      {ko:"치즈 추가해 주세요.", en:"Can I have extra cheese?"},
+      {ko:"앞접시 세 개 주실래요?", en:"Can we have three extra plates?"},
+      {ko:"새 포크 하나 갖다주실래요?", en:"Can you bring me a new fork?"},
+      {ko:"가위랑 국자 좀 주세요.", en:"Can you bring scissors and a ladle?"},
+      // 빼기 · 바꾸기 · 따로
+      {ko:"양파 빼주세요.", en:"Can you leave out the onions?"},
+      {ko:"여기 양파 들어가요?", en:"Is there onion in it?"},
+      {ko:"우동에 파 들어가요? 파는 빼주세요.", en:"Does the udon come with green onions? Please leave them out."},
+      {ko:"감자튀김을 샐러드로 바꿔주실래요?", en:"Can you switch the fries to a salad?"},
+      {ko:"소스는 따로 주세요.", en:"Can you put the sauce on the side?"},
+      {ko:"샐러드 드레싱은 따로 주세요.", en:"Can I have the salad dressing on the side?"},
+      {ko:"덜 맵게 해주실 수 있어요?", en:"Can you make it less spicy?"},
+      {ko:"덜 달게 해주세요.", en:"Can you make it less sweet?"},
+      // 나누기 · 곱빼기
+      {ko:"이거 두 접시로 나눠주실 수 있어요?", en:"Can you split this into two plates?"},
+      {ko:"우동을 두 개로 나눠주실 수 있을까요?", en:"Is it possible to split the udon into two?"},
+      {ko:"반으로 잘라주세요.", en:"Can you cut it in half?"},
+      {ko:"제 파스타 곱빼기로 주실 수 있어요?", en:"Can you make my pasta a large portion?"},
+      {ko:"감자튀김 대신 샐러드로 바꿀 수 있을까요?", en:"Is it possible to have a salad instead of the fries?"},
+      // 같이 나오는지 & 계산
+      {ko:"이거 감자튀김이랑 같이 나와요?", en:"Does it come with fries?"},
+      {ko:"프렌치 토스트에 토마토 수프 같이 나와요?", en:"Does the French toast come with tomato soup?"},
+      {ko:"이거 빵이랑 같이 나와요?", en:"Does it come with bread?"},
+      {ko:"추가 요금 있나요?", en:"Is there an extra charge?"},
+      {ko:"돈 더 내야 해요? 얼마예요?", en:"Do I have to pay extra? How much would it be?"},
+      // 끝맺음
+      {ko:"이게 다예요, 감사합니다.", en:"That's all, thank you."},
+      {ko:"지금은 이거면 됐어요.", en:"That's it for now."},
+      {ko:"메뉴는 가지고 있을게요.", en:"We'll keep the menu."},
+    ],
+  },
 ];
 
 let phraseBlind = true;     // 처음엔 영어를 가려둠 (한글 보고 말하기)
