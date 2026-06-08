@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>Geometry 기하(도형)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e3f2ee;
+  --card: #ffffff;
+  --card2: #eef3fb;
+  --accent: #0d9488;
+  --green: #16a34a;
+  --yellow: #c97a06;
+  --pink: #db2777;
+  --orange: #ea580c;
+  --purple: #6d5dfc;
+  --text: #243b6b;
+  --strong: #16223f;
+  --muted: #6b7a99;
+  --border: rgba(36,59,107,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito','Noto Sans KR',sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(150deg, #d6f5ec 0%, #dceff0 32%, #e4e9fb 70%, #e7e2fb 100%);
+  background-attachment: fixed;
+}
+
+/* HEADER */
+header {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 18px;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 10px;
+}
+.header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(20,184,166,0.08); text-decoration: none; flex-shrink:0; }
+.header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
+.header-text { flex: 1; min-width:0; }
+.header-title { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* Claude 묻기 / 채점 버튼 (헤더) */
+.header-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.btn-claude { background: rgba(109,93,252,0.14); border: 1.5px solid rgba(109,93,252,0.4);
+  color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  font-family: inherit; white-space: nowrap; cursor: pointer; }
+.btn-claude:hover { background: rgba(109,93,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(13,148,136,0.12); border-color: rgba(13,148,136,0.4); color: #0d9488; }
+.btn-claude.grade:hover { background: rgba(13,148,136,0.24); }
+
+/* HERO */
+.hero { text-align: center; padding: 28px 20px 18px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: var(--strong); letter-spacing: -0.5px; }
+.hero h1 span { color: var(--accent); }
+.hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.stat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 5px 12px; font-size: 11.5px; font-weight: 700; color: var(--accent); }
+
+/* EQUATION BOX */
+.eq-box { max-width: 720px; margin: 0 auto 24px; padding: 0 16px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width:480px){ .eq-box { grid-template-columns: 1fr; } }
+.eq-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.eq-label.aerobic { color: var(--green); }
+.eq-label.anaerobic { color: var(--orange); }
+.eq-formula { font-size: 13px; font-weight: 700; color: var(--strong); line-height: 1.5; }
+
+/* TABS */
+.tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
+  font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
+.tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* SEARCH BOX (단어장) */
+.search-wrap { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; }
+.search-input { width: 100%; background: var(--card); border: 1.5px solid var(--border); color: var(--text);
+  padding: 12px 16px; border-radius: 12px; font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.15s; }
+.search-input:focus { border-color: var(--accent); background: var(--card2); }
+.search-input::placeholder { color: var(--muted); }
+
+/* SPELLING TEST (탭 4) */
+.spell-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.spell-stats { display: flex; justify-content: space-between; align-items: center; padding: 10px 0 16px; font-size: 13px; color: var(--muted); font-weight: 700; }
+.spell-stats b { color: var(--accent); }
+.spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
+.spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
+.spell-ko { font-size: 22px; font-weight: 900; color: var(--strong); margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+.spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
+.spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: var(--strong);
+  padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
+  letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
+.spell-input:focus { border-color: var(--accent); }
+.spell-input.disabled { opacity: 0.6; pointer-events: none; }
+.spell-feedback { font-family: 'Courier New', monospace; font-size: 20px; letter-spacing: 3px;
+  text-align: center; padding: 10px; min-height: 42px; font-weight: 800; margin-bottom: 12px;
+  background: var(--card2); border-radius: 10px; border: 1px solid var(--border); }
+.spell-feedback .ok { color: var(--green); }
+.spell-feedback .bad { color: #ff6b6b; }
+.spell-feedback .miss { color: var(--muted); }
+.spell-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.spell-btn { padding: 12px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.spell-btn-show:hover { background: rgba(251,191,36,0.22); }
+.spell-btn-next { background: rgba(20,184,166,0.14); border-color: rgba(20,184,166,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(20,184,166,0.24); }
+.spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
+  color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
+  color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner b { color: var(--strong); font-size: 16px; letter-spacing: 1px; }
+
+/* SECTION HEADERS (vocab filter) */
+.filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
+.filter-wrap::-webkit-scrollbar { display: none; }
+.filter-tabs { display: flex; gap: 8px; white-space: nowrap; padding-bottom: 2px; }
+.filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
+  border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
+  font-family: inherit; transition: all 0.2s; white-space: nowrap; }
+.filter-btn.active, .filter-btn:hover { background: rgba(20,184,166,0.12); border-color: var(--accent); color: var(--accent); }
+
+.section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
+.section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+.sec-count { color: var(--accent); font-weight: 900; margin-left: 4px; }
+.vcard-num { grid-column: 1 / -1; font-size: 11px; font-weight: 900; color: var(--accent); opacity: 0.65; margin-bottom: 1px; }
+.section-line { flex: 1; height: 1px; background: var(--border); }
+
+/* CARDS WRAP */
+.cards-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+/* VOCAB CARD */
+.vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+  display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
+.vcard:hover { border-color: rgba(20,184,166,0.3); transform: translateY(-1px); }
+.vcard-left { min-width: 0; }
+.vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
+.cat-organ  { background: rgba(20,184,166,0.12); color: var(--accent); }
+.cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
+.cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
+.cat-gas    { background: rgba(109,93,252,0.12); color: var(--purple); }
+
+.vcard-en { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px; }
+.vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
+.vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
+
+/* 단어장 좌(영어)|우(한글) + 가림 */
+.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
+.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
+.vcard-en{grid-column:1;grid-row:2;}
+.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
+.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
+.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
+.dh-btns{display:flex;gap:5px;flex-shrink:0;}
+.blind-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
+#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
+.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+.btn-speak { background: rgba(20,184,166,0.1); border: 1.5px solid rgba(20,184,166,0.25);
+  color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
+.btn-speak:hover { background: rgba(20,184,166,0.2); transform: scale(1.05); }
+
+.btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
+  color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
+  cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; transition: all 0.15s; white-space: nowrap; font-family: inherit; }
+.btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
+.btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* NOTES (탭: 핵심노트) */
+.chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
+.chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.chapter-head .ch-icon { font-size: 22px; }
+.chapter-head .ch-text { flex: 1; min-width: 0; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: var(--strong); margin: 0; }
+.chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.btn-pdf { background: rgba(109,93,252,0.12); border: 1.5px solid rgba(109,93,252,0.35);
+  color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  flex-shrink: 0; font-family: inherit; white-space: nowrap; }
+.btn-pdf:hover { background: rgba(109,93,252,0.22); border-color: var(--purple); transform: scale(1.03); }
+.notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(20,184,166,0.06); }
+.note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
+.note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
+.note-body b { color: var(--strong); }
+/* 영어 문단 */
+.note-body p.en { color: var(--text); margin-bottom: 3px; }
+/* 한국어 문단 (영어 바로 아래 짝) */
+.note-body p.ko { color: #5b7089; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
+.note-body p.ko:last-child { margin-bottom: 0; }
+.note-body ul.en { margin: 4px 0 4px 20px; }
+.note-body ul.ko { margin: 0 0 12px 20px; color: #5b7089; font-size: 13px; padding-left: 8px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); }
+.note-body ul li { margin-bottom: 3px; }
+.note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
+.note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(20,184,166,0.06); }
+.note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
+  margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
+  object-fit: contain; }
+@media (max-width: 480px) {
+  .note-img { max-width: 100%; max-height: 180px; }
+}
+
+/* QUIZ (서술형 short-answer) */
+.quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.quiz-info { font-size: 12px; color: var(--muted); margin-bottom: 12px; text-align: center;
+  background: var(--card); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); line-height: 1.5; }
+.quiz-info b { color: var(--accent); }
+.q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
+.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center; }
+.q-num .q-marks { background: rgba(109,93,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: var(--strong); line-height: 1.5; margin-bottom: 14px; }
+.q-answer-input {
+  width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
+  padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
+  outline: none; resize: vertical; min-height: 70px; line-height: 1.5;
+}
+.q-answer-input:focus { border-color: var(--accent); }
+.q-show-row { display: flex; gap: 8px; margin-top: 10px; }
+.q-show-row button { flex: 1; padding: 10px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.q-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-btn-show:hover { background: rgba(251,191,36,0.22); }
+
+.q-model {
+  display: none;
+  margin-top: 14px; padding: 14px 14px; background: rgba(20,184,166,0.06);
+  border: 1.5px solid rgba(20,184,166,0.25); border-radius: 10px;
+}
+.q-model.show { display: block; }
+.q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
+.q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
+.q-model .model-text b { color: var(--strong); }
+.q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
+  padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
+.q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.q-model .points ul { margin-left: 16px; }
+.q-model .points li { margin-bottom: 3px; line-height: 1.45; }
+.q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
+  color: #51698a; font-size: 12px; line-height: 1.5;
+  background: rgba(36,59,107,0.05); border-radius: 4px; }
+
+.q-self-rate { display: none; margin-top: 12px; gap: 6px; }
+.q-self-rate.show { display: flex; }
+.q-self-rate button {
+  flex: 1; padding: 9px 4px; border-radius: 8px; font-weight: 800; font-family: inherit;
+  font-size: 12px; cursor: pointer; border: 1.5px solid; transition: all 0.15s;
+}
+.q-self-rate .rate-good { background: rgba(74,222,128,0.12); border-color: rgba(74,222,128,0.4); color: var(--green); }
+.q-self-rate .rate-mid { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-self-rate .rate-bad { background: rgba(244,114,182,0.12); border-color: rgba(244,114,182,0.4); color: var(--pink); }
+.q-self-rate .selected { transform: scale(1.04); border-width: 2px; }
+
+/* FOOTER */
+footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
+.vcard.hidden { display: none; }
+.section-header.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="header-back" href="index.html" aria-label="홈">←</a>
+  <div class="header-icon">📐</div>
+  <div class="header-text">
+    <div class="header-title">Geometry 기하(도형)</div>
+    <div class="header-sub">🔷 Maths IGCSE 0580 · 각·도형·원</div>
+  </div>
+  <div class="header-actions">
+    <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제집 채점">📷</a>
+    <a class="btn-claude" id="btn-ask" target="_blank" rel="noopener" href="#" title="이 단원에 대해 Claude에게 질문">💬 Claude</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>📐 <span>Geometry 기하(도형)</span></h1>
+  <p>Angles 각 · Polygons 다각형 · Circles 원 · Similarity 닮음</p>
+  <div class="stats-row">
+    <span class="stat-chip">📐 Angles</span>
+    <span class="stat-chip">🔺 Polygons</span>
+    <span class="stat-chip">⭕ Circles</span>
+    <span class="stat-chip">🔁 Congruence</span>
+    <span class="stat-chip">🧭 Bearings</span>
+  </div>
+</div>
+
+<div class="eq-box">
+  <div class="eq-card"><div class="eq-label aerobic">📐 Angles 각</div><div class="eq-formula">Angles on a straight line = 180°<br>Angles in a triangle = 180°</div></div>
+  <div class="eq-card"><div class="eq-label anaerobic">🔺 Polygon 다각형</div><div class="eq-formula">Interior angles sum = (n−2) × 180°</div></div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
+    <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
+    <button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
+  </div>
+</div>
+
+<!-- 단어장 -->
+<div class="tab-pane active" id="tab-vocab">
+  <div class="search-wrap">
+    <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
+    <div class="mem-bar">
+      <span class="mem-info">📚 전체 <b id="total-count">0</b>개</span>
+      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+    </div>
+  </div>
+  <div class="filter-wrap">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-cat="all" onclick='filterCards("all")'>전체 All</button>
+      <button class="filter-btn" data-cat="organ" onclick='filterCards("organ")'>📐 각·선 Angles & lines</button>
+      <button class="filter-btn" data-cat="process" onclick='filterCards("process")'>🔺 다각형 Polygons</button>
+      <button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>⭕ 원 Circles</button>
+      <button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>🔁 합동·닮음 Congruence</button>
+    </div>
+  </div>
+<div class="section-header" data-cat="organ"><h2>📐 각·선 Angles & lines</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection('organ', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Acute angle</div>
+    <div class="vcard-ko">예각</div>
+    <div class="vcard-def">An angle less than 90°.</div>
+    <div class="vcard-def-ko">90°보다 작은 각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Acute angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Right angle</div>
+    <div class="vcard-ko">직각</div>
+    <div class="vcard-def">An angle of exactly 90°.</div>
+    <div class="vcard-def-ko">정확히 90°인 각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Right angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Obtuse angle</div>
+    <div class="vcard-ko">둔각</div>
+    <div class="vcard-def">An angle between 90° and 180°.</div>
+    <div class="vcard-def-ko">90°와 180° 사이의 각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Obtuse angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Reflex angle</div>
+    <div class="vcard-ko">우각</div>
+    <div class="vcard-def">An angle greater than 180°.</div>
+    <div class="vcard-def-ko">180°보다 큰 각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Reflex angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Parallel</div>
+    <div class="vcard-ko">평행한</div>
+    <div class="vcard-def">Lines that stay the same distance apart and never meet.</div>
+    <div class="vcard-def-ko">간격이 일정해 만나지 않는 선.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Parallel")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Perpendicular</div>
+    <div class="vcard-ko">수직의</div>
+    <div class="vcard-def">Lines that meet at a right angle (90°).</div>
+    <div class="vcard-def-ko">90°로 만나는 선.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Perpendicular")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Vertex</div>
+    <div class="vcard-ko">꼭짓점</div>
+    <div class="vcard-def">A corner point where lines meet.</div>
+    <div class="vcard-def-ko">선이 만나는 모서리 점.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Vertex")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Bisect</div>
+    <div class="vcard-ko">이등분하다</div>
+    <div class="vcard-def">To cut exactly in half.</div>
+    <div class="vcard-def-ko">정확히 반으로 나누는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Bisect")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="process"><h2>🔺 다각형 Polygons</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Polygon</div>
+    <div class="vcard-ko">다각형</div>
+    <div class="vcard-def">A 2D shape with straight sides.</div>
+    <div class="vcard-def-ko">곧은 변으로 된 평면 도형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Polygon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Regular polygon</div>
+    <div class="vcard-ko">정다각형</div>
+    <div class="vcard-def">A polygon with all sides and angles equal.</div>
+    <div class="vcard-def-ko">변과 각이 모두 같은 다각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Regular polygon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Interior angle</div>
+    <div class="vcard-ko">내각</div>
+    <div class="vcard-def">An angle inside a polygon.</div>
+    <div class="vcard-def-ko">다각형 안쪽의 각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Interior angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Exterior angle</div>
+    <div class="vcard-ko">외각</div>
+    <div class="vcard-def">The angle between a side and the extension of the next side.</div>
+    <div class="vcard-def-ko">한 변과 다음 변의 연장선 사이의 각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Exterior angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Equilateral triangle</div>
+    <div class="vcard-ko">정삼각형</div>
+    <div class="vcard-def">A triangle with all sides and angles equal.</div>
+    <div class="vcard-def-ko">세 변과 세 각이 모두 같은 삼각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Equilateral triangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Isosceles triangle</div>
+    <div class="vcard-ko">이등변삼각형</div>
+    <div class="vcard-def">A triangle with two equal sides.</div>
+    <div class="vcard-def-ko">두 변이 같은 삼각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Isosceles triangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Quadrilateral</div>
+    <div class="vcard-ko">사각형</div>
+    <div class="vcard-def">A four-sided polygon.</div>
+    <div class="vcard-def-ko">네 변인 다각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Quadrilateral")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="blood"><h2>⭕ 원 Circles</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection('blood', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Radius</div>
+    <div class="vcard-ko">반지름</div>
+    <div class="vcard-def">The distance from the centre of a circle to its edge.</div>
+    <div class="vcard-def-ko">원 중심에서 가장자리까지의 거리.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Radius")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Diameter</div>
+    <div class="vcard-ko">지름</div>
+    <div class="vcard-def">A line across a circle through the centre (= 2 × radius).</div>
+    <div class="vcard-def-ko">중심을 지나 원을 가로지르는 선(=반지름×2).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Diameter")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Circumference</div>
+    <div class="vcard-ko">원주(둘레)</div>
+    <div class="vcard-def">The distance all the way around a circle.</div>
+    <div class="vcard-def-ko">원의 둘레 길이.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Circumference")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Chord</div>
+    <div class="vcard-ko">현</div>
+    <div class="vcard-def">A straight line joining two points on a circle.</div>
+    <div class="vcard-def-ko">원 위 두 점을 잇는 선분.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Chord")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Arc</div>
+    <div class="vcard-ko">호</div>
+    <div class="vcard-def">Part of the circumference of a circle.</div>
+    <div class="vcard-def-ko">원주의 일부.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Arc")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Sector</div>
+    <div class="vcard-ko">부채꼴</div>
+    <div class="vcard-def">A 'pie slice' part of a circle between two radii.</div>
+    <div class="vcard-def-ko">두 반지름 사이의 부채 모양 부분.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sector")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Tangent</div>
+    <div class="vcard-ko">접선</div>
+    <div class="vcard-def">A line that touches a circle at one point.</div>
+    <div class="vcard-def-ko">원에 한 점에서 닿는 선.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Tangent")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="gas"><h2>🔁 합동·닮음 Congruence</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="gas" onclick="playSection('gas', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Congruent</div>
+    <div class="vcard-ko">합동인</div>
+    <div class="vcard-def">Exactly the same shape and size.</div>
+    <div class="vcard-def-ko">모양과 크기가 완전히 같은.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Congruent")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Similar</div>
+    <div class="vcard-ko">닮은</div>
+    <div class="vcard-def">The same shape but a different size.</div>
+    <div class="vcard-def-ko">모양은 같고 크기가 다른.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Similar")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Scale factor</div>
+    <div class="vcard-ko">닮음비(배율)</div>
+    <div class="vcard-def">The number that enlarges or reduces a shape.</div>
+    <div class="vcard-def-ko">도형을 확대·축소하는 배수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Scale factor")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Bearing</div>
+    <div class="vcard-ko">방위(각)</div>
+    <div class="vcard-def">An angle measured clockwise from north, written with 3 figures.</div>
+    <div class="vcard-def-ko">북쪽에서 시계방향으로 잰 각(세 자리).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Bearing")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Construction</div>
+    <div class="vcard-ko">작도</div>
+    <div class="vcard-def">Drawing shapes accurately with compasses and a ruler.</div>
+    <div class="vcard-def-ko">컴퍼스와 자로 정확히 그리는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Construction")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Symmetry</div>
+    <div class="vcard-ko">대칭</div>
+    <div class="vcard-def">When a shape looks the same after reflection or rotation.</div>
+    <div class="vcard-def-ko">반사·회전해도 같아 보이는 성질.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Symmetry")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 핵심노트 -->
+<div class="tab-pane" id="tab-notes">
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📐</span>
+    <div class="ch-text">
+      <h2>Angles & lines</h2>
+      <span class="ch-sub">각과 선</span>
+    </div>
+    
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Types of angle (각의 종류)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>An <b>acute</b> angle is &lt;90°, a <b>right angle</b> is 90°, an <b>obtuse</b> angle is 90–180°, a <b>reflex</b> angle is &gt;180°.</p><p class='ko'><b>예각</b>은 90°미만, <b>직각</b>은 90°, <b>둔각</b>은 90~180°, <b>우각(reflex)</b>은 180°초과.</p><p class='en'><b>Parallel</b> lines never meet; <b>perpendicular</b> lines meet at 90°.</p><p class='ko'><b>평행선</b>은 만나지 않고, <b>수직선</b>은 90°로 만납니다.</p></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🔺</span>
+    <div class="ch-text">
+      <h2>Triangles & polygons</h2>
+      <span class="ch-sub">삼각형과 다각형</span>
+    </div>
+    
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Polygons (다각형)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>A <b>polygon</b> is a 2D shape with straight sides. A <b>regular polygon</b> has equal sides and angles. <b>Interior angles</b> are inside; <b>exterior angles</b> are outside.</p><p class='ko'><b>다각형</b>은 곧은 변으로 된 평면 도형입니다. <b>정다각형</b>은 변과 각이 모두 같습니다. <b>내각</b>은 안쪽, <b>외각</b>은 바깥쪽 각입니다.</p></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">⭕</span>
+    <div class="ch-text">
+      <h2>Circles</h2>
+      <span class="ch-sub">원</span>
+    </div>
+    
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Parts of a circle (원의 각 부분)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>The <b>radius</b> goes from centre to edge; the <b>diameter</b> goes across through the centre; the <b>circumference</b> is the distance around. A <b>chord</b>, <b>arc</b>, <b>sector</b> and <b>tangent</b> are other parts.</p><p class='ko'><b>반지름</b>은 중심에서 가장자리, <b>지름</b>은 중심을 지나 가로지름, <b>둘레(원주)</b>는 원 둘레 길이. <b>현·호·부채꼴·접선</b>도 원의 부분입니다.</p></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🔁</span>
+    <div class="ch-text">
+      <h2>Congruence, similarity & bearings</h2>
+      <span class="ch-sub">합동·닮음·방위</span>
+    </div>
+    
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Congruence & similarity (합동과 닮음)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'><b>Congruent</b> shapes are exactly the same size and shape. <b>Similar</b> shapes have the same shape but different size (a <b>scale factor</b> links them).</p><p class='ko'><b>합동</b>은 크기·모양이 완전히 같고, <b>닮음</b>은 모양은 같고 크기만 다릅니다(<b>닮음비</b>로 연결).</p><p class='en'>A <b>bearing</b> is an angle measured clockwise from north (3 figures).</p><p class='ko'><b>방위(bearing)</b>는 북쪽에서 시계방향으로 잰 각(세 자리)입니다.</p></div>
+  
+</div></div>
+</div>
+</div>
+
+<!-- 퀴즈 (서술형) -->
+<div class="tab-pane" id="tab-quiz">
+  <div class="quiz-wrap">
+    <div class="quiz-info">
+      📝 <b>Written-answer practice</b> · 시험 형식: 서술형<br>
+      답을 영어로 써본 다음 <b>Show model answer</b>를 눌러 비교하세요.
+    </div>
+    <div id="quiz-list"><div class="q-card" id="q-card-0">
+  <div class="q-num"><span>Question 1 of 5</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Name angles: (a) less than 90°, (b) between 90° and 180°.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(0)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">(a) acute, (b) obtuse.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>acute (1)</li>
+      <li>obtuse (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 예각, 둔각.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(0,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(0,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(0,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-1">
+  <div class="q-num"><span>Question 2 of 5</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">What is the difference between the <b>radius</b> and the <b>diameter</b>?</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(1)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">The radius is from the centre to the edge; the diameter goes across through the centre and is twice the radius.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>radius = centre to edge (1)</li>
+      <li>diameter = across, 2× radius (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 반지름=중심→가장자리, 지름=가로지름(2배).</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(1,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(1,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(1,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-2">
+  <div class="q-num"><span>Question 3 of 5</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Explain <b>congruent</b> vs <b>similar</b> shapes.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(2)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">Congruent shapes are the same shape and size; similar shapes are the same shape but a different size.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>congruent = same shape & size (1)</li>
+      <li>similar = same shape, different size (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 합동=같음, 닮음=모양만 같음.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(2,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(2,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(2,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-3">
+  <div class="q-num"><span>Question 4 of 5</span> <span class="q-marks">1 marks</span></div>
+  <div class="q-text">What is the sum of <b>interior angles</b> of a triangle?</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(3)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">180°.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>180° (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 180°.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(3,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(3,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(3,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-4">
+  <div class="q-num"><span>Question 5 of 5</span> <span class="q-marks">1 marks</span></div>
+  <div class="q-text">What is a <b>bearing</b>?</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(4)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">An angle measured clockwise from north, written with three figures.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>clockwise from north, 3 figures (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 북쪽 기준 시계방향 각(세 자리).</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(4,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(4,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(4,'bad')">😅 다시</button>
+  </div>
+</div></div>
+  </div>
+</div>
+
+<!-- 단어시험 -->
+<div class="tab-pane" id="tab-spelling">
+  <div class="spell-wrap">
+    <div class="spell-stats">
+      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
+      <div>📚 <span id="sp-remaining">28</span> 남음</div>
+    </div>
+    <div class="spell-card" id="spell-card">
+      <span class="spell-cat" id="sp-cat">CATEGORY</span>
+      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
+      <div class="spell-def" id="sp-def">English definition</div>
+      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
+      <div class="spell-feedback" id="sp-feedback"></div>
+      <div class="spell-input-row">
+        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
+      </div>
+      <div class="spell-buttons">
+        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
+        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>Geometry 기하(도형) · science-vocab · <span style="opacity:.5">v20260608-171155</span></footer>
+
+<script>
+const QUIZ_DATA = [{"q": "Name angles: (a) less than 90°, (b) between 90° and 180°.", "marks": 2, "sample_answer": "(a) acute, (b) obtuse.", "mark_points": ["acute (1)", "obtuse (1)"], "ko_hint": "예각, 둔각."}, {"q": "What is the difference between the <b>radius</b> and the <b>diameter</b>?", "marks": 2, "sample_answer": "The radius is from the centre to the edge; the diameter goes across through the centre and is twice the radius.", "mark_points": ["radius = centre to edge (1)", "diameter = across, 2× radius (1)"], "ko_hint": "반지름=중심→가장자리, 지름=가로지름(2배)."}, {"q": "Explain <b>congruent</b> vs <b>similar</b> shapes.", "marks": 2, "sample_answer": "Congruent shapes are the same shape and size; similar shapes are the same shape but a different size.", "mark_points": ["congruent = same shape & size (1)", "similar = same shape, different size (1)"], "ko_hint": "합동=같음, 닮음=모양만 같음."}, {"q": "What is the sum of <b>interior angles</b> of a triangle?", "marks": 1, "sample_answer": "180°.", "mark_points": ["180° (1)"], "ko_hint": "180°."}, {"q": "What is a <b>bearing</b>?", "marks": 1, "sample_answer": "An angle measured clockwise from north, written with three figures.", "mark_points": ["clockwise from north, 3 figures (1)"], "ko_hint": "북쪽 기준 시계방향 각(세 자리)."}];
+const VOCAB_DATA = [{"en": "Acute angle", "ko": "예각", "def_en": "An angle less than 90°.", "cat": "organ"}, {"en": "Right angle", "ko": "직각", "def_en": "An angle of exactly 90°.", "cat": "organ"}, {"en": "Obtuse angle", "ko": "둔각", "def_en": "An angle between 90° and 180°.", "cat": "organ"}, {"en": "Reflex angle", "ko": "우각", "def_en": "An angle greater than 180°.", "cat": "organ"}, {"en": "Parallel", "ko": "평행한", "def_en": "Lines that stay the same distance apart and never meet.", "cat": "organ"}, {"en": "Perpendicular", "ko": "수직의", "def_en": "Lines that meet at a right angle (90°).", "cat": "organ"}, {"en": "Vertex", "ko": "꼭짓점", "def_en": "A corner point where lines meet.", "cat": "organ"}, {"en": "Bisect", "ko": "이등분하다", "def_en": "To cut exactly in half.", "cat": "organ"}, {"en": "Polygon", "ko": "다각형", "def_en": "A 2D shape with straight sides.", "cat": "process"}, {"en": "Regular polygon", "ko": "정다각형", "def_en": "A polygon with all sides and angles equal.", "cat": "process"}, {"en": "Interior angle", "ko": "내각", "def_en": "An angle inside a polygon.", "cat": "process"}, {"en": "Exterior angle", "ko": "외각", "def_en": "The angle between a side and the extension of the next side.", "cat": "process"}, {"en": "Equilateral triangle", "ko": "정삼각형", "def_en": "A triangle with all sides and angles equal.", "cat": "process"}, {"en": "Isosceles triangle", "ko": "이등변삼각형", "def_en": "A triangle with two equal sides.", "cat": "process"}, {"en": "Quadrilateral", "ko": "사각형", "def_en": "A four-sided polygon.", "cat": "process"}, {"en": "Radius", "ko": "반지름", "def_en": "The distance from the centre of a circle to its edge.", "cat": "blood"}, {"en": "Diameter", "ko": "지름", "def_en": "A line across a circle through the centre (= 2 × radius).", "cat": "blood"}, {"en": "Circumference", "ko": "원주(둘레)", "def_en": "The distance all the way around a circle.", "cat": "blood"}, {"en": "Chord", "ko": "현", "def_en": "A straight line joining two points on a circle.", "cat": "blood"}, {"en": "Arc", "ko": "호", "def_en": "Part of the circumference of a circle.", "cat": "blood"}, {"en": "Sector", "ko": "부채꼴", "def_en": "A 'pie slice' part of a circle between two radii.", "cat": "blood"}, {"en": "Tangent", "ko": "접선", "def_en": "A line that touches a circle at one point.", "cat": "blood"}, {"en": "Congruent", "ko": "합동인", "def_en": "Exactly the same shape and size.", "cat": "gas"}, {"en": "Similar", "ko": "닮은", "def_en": "The same shape but a different size.", "cat": "gas"}, {"en": "Scale factor", "ko": "닮음비(배율)", "def_en": "The number that enlarges or reduces a shape.", "cat": "gas"}, {"en": "Bearing", "ko": "방위(각)", "def_en": "An angle measured clockwise from north, written with 3 figures.", "cat": "gas"}, {"en": "Construction", "ko": "작도", "def_en": "Drawing shapes accurately with compasses and a ruler.", "cat": "gas"}, {"en": "Symmetry", "ko": "대칭", "def_en": "When a shape looks the same after reflection or rotation.", "cat": "gas"}];
+const UNIT_ID = "math_geometry";
+const UNIT_TITLE = "Geometry 기하(도형)";
+const UNIT_TOPICS = ["Angles & lines", "Triangles & polygons", "Circles", "Congruence, similarity & bearings"];
+let qAnswered = new Array(QUIZ_DATA.length).fill(null);
+
+// ─── claude.ai 새 창 링크 ───
+(function setupClaudeLinks() {
+  var NL = String.fromCharCode(10);
+  var topicsList = UNIT_TOPICS.map(function(t, i) { return (i+1) + '. ' + t; }).join(NL);
+  var askMsg = "I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
+    "Current unit: " + UNIT_TITLE + NL +
+    "Topics:" + NL + topicsList + NL + NL +
+    "Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use - if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary." + NL + NL +
+    "질문 시작할게요:" + NL;
+  var gradeMsg = "I'm a Year 8 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
+    "Unit: " + UNIT_TITLE + NL +
+    "Topics: " + UNIT_TOPICS.join(' · ') + NL + NL +
+    "Please grade my worksheet. For each question:" + NL +
+    "- Read the problem and my answer (if any)." + NL +
+    "- Mark ✅ correct / ❌ wrong / ⚠️ partial." + NL +
+    "- Give the correct answer." + NL +
+    "- Explain mistakes in British English with a short Korean hint in parentheses for tough words." + NL + NL +
+    "End with a summary: total / correct / what to review next." + NL + NL +
+    "사진 첨부할게요!";
+  var ask = document.getElementById('btn-ask');
+  var grade = document.getElementById('btn-grade');
+  if (ask) ask.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
+  if (grade) grade.href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
+})();
+
+// 탭 전환
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
+    if (btn.dataset.tab === 'spelling' && !spellState.started) startSpelling();
+  });
+});
+
+// 발음
+// ─── 발음: 미리 받아둔 mp3(audio/sci/) 직접 재생, 못 틀면 폰 음성 보조 ───
+function slugify(t){ return t.replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
+let _audio = null;
+function speak(text) {
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
+    a.onerror = () => fallbackSpeak(cleanText(text));
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(text)));
+  } catch (e) { fallbackSpeak(cleanText(text)); }
+}
+let _voices = [];
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis) { loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9;
+  const en = _voices.filter(v => normLang(v.lang).startsWith('en'));
+  const local = en.filter(v => v.localService);
+  const pool = local.length ? local : en;
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
+  if (v) { u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'en-GB'; }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
+}
+
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = function(){ if (_seq && _seq.token === token) done(); };
+    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
+function annotateCounts(){ let total=0; document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; total+=n; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=total; }
+function numberVocab(){ let n=0; document.querySelectorAll('#tab-vocab .vcard').forEach(c => { n++; const L=c.querySelector('.vcard-left'); if(L && !L.querySelector('.vcard-num')){ const d=document.createElement('div'); d.className='vcard-num'; d.textContent=n+'번'; L.insertBefore(d, L.firstChild); } }); }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
+// 단어장: 필터 + 검색 통합
+let selectedCats = new Set();   // 비어있으면 전체. 여러 단원 다중선택
+let currentQuery = '';
+
+function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (selectedCats.size === 0 || selectedCats.has(cat));
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', !visibleByCat[target]);
+  });
+}
+
+function filterCards(cat) {
+  if (cat === 'all') { selectedCats.clear(); }
+  else { if (selectedCats.has(cat)) selectedCats.delete(cat); else selectedCats.add(cat); }
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if (b.dataset.cat === 'all') b.classList.toggle('active', selectedCats.size === 0);
+    else b.classList.toggle('active', selectedCats.has(b.dataset.cat));
+  });
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
+  annotateCounts();   // 단원별·전체 단어 수 표시
+  numberVocab();      // 단어 앞 고정 번호 (1번~)
+});
+
+// ─── 단어시험 (Spelling Test) ───
+const spellState = {
+  started: false,
+  pool: [],         // 남은 단어들
+  current: null,    // 현재 단어
+  correct: 0,
+  wrong: 0,
+  revealed: false,
+};
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startSpelling() {
+  spellState.started = true;
+  spellState.pool = shuffle(VOCAB_DATA);
+  spellState.correct = 0;
+  spellState.wrong = 0;
+  updateSpellStats();
+  nextWord();
+  setTimeout(() => document.getElementById('sp-input')?.focus(), 200);
+}
+
+function nextWord() {
+  if (spellState.pool.length === 0) {
+    // 다 끝나면 다시 섞기
+    spellState.pool = shuffle(VOCAB_DATA);
+  }
+  spellState.current = spellState.pool.shift();
+  spellState.revealed = false;
+  const w = spellState.current;
+  const catLabel = {organ:'🫁 Organ',process:'⚙️ Process',blood:'🩸 Blood',gas:'💨 Gas'}[w.cat] || w.cat;
+  const catEl = document.getElementById('sp-cat');
+  catEl.textContent = catLabel;
+  catEl.className = 'spell-cat cat-' + w.cat;
+  document.getElementById('sp-ko').textContent = w.ko;
+  document.getElementById('sp-def').textContent = w.def_en;
+  // 글자수 힌트 — 공백/특수문자는 그대로, 글자는 _로
+  const hint = w.en.split('').map(ch => /[A-Za-z0-9]/.test(ch) ? '_' : ch).join(' ');
+  document.getElementById('sp-hint').textContent = hint + '  (' + w.en.length + ')';
+  document.getElementById('sp-feedback').innerHTML = '';
+  const input = document.getElementById('sp-input');
+  input.value = '';
+  input.classList.remove('disabled');
+  input.disabled = false;
+  input.placeholder = w.en.length + ' chars · 영어로 입력…';
+  input.focus();
+  updateSpellStats();
+}
+
+function showAnswer() {
+  if (!spellState.current || spellState.revealed) return;
+  spellState.revealed = true;
+  const w = spellState.current;
+  document.getElementById('sp-feedback').innerHTML =
+    '<span class="ok">' + w.en + '</span>';
+  const input = document.getElementById('sp-input');
+  input.value = w.en;
+  input.classList.add('disabled');
+  input.disabled = true;
+  // 자동으로 발음
+  if (window.speechSynthesis) speak(w.en);
+}
+
+function updateSpellStats() {
+  document.getElementById('sp-correct').textContent = spellState.correct;
+  document.getElementById('sp-wrong').textContent = spellState.wrong;
+  document.getElementById('sp-remaining').textContent = spellState.pool.length;
+}
+
+function renderSpellFeedback(typed, target) {
+  // 글자별 색상 표시
+  let html = '';
+  for (let i = 0; i < target.length; i++) {
+    const t = typed[i];
+    const a = target[i];
+    if (t === undefined) {
+      html += '<span class="miss">' + (a === ' ' ? '&nbsp;' : '_') + '</span>';
+    } else if (t.toLowerCase() === a.toLowerCase()) {
+      html += '<span class="ok">' + a + '</span>';
+    } else {
+      html += '<span class="bad">' + t + '</span>';
+    }
+  }
+  return html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('sp-input');
+  if (!input) return;
+  input.addEventListener('input', () => {
+    if (!spellState.current || spellState.revealed) return;
+    const typed = input.value;
+    const target = spellState.current.en;
+    document.getElementById('sp-feedback').innerHTML = renderSpellFeedback(typed, target);
+    // 완전 일치 (대소문자 무시)
+    if (typed.toLowerCase() === target.toLowerCase()) {
+      spellState.correct++;
+      input.classList.add('disabled');
+      input.disabled = true;
+      document.getElementById('sp-feedback').innerHTML =
+        '<span class="ok">✓ ' + target + '</span>';
+      updateSpellStats();
+      // 0.9초 후 다음 단어
+      setTimeout(() => nextWord(), 900);
+    }
+  });
+  // Enter로 정답이 아니면 틀린 것 처리
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && spellState.current && !spellState.revealed) {
+      const typed = input.value.trim();
+      const target = spellState.current.en;
+      if (typed.toLowerCase() !== target.toLowerCase() && typed.length > 0) {
+        spellState.wrong++;
+        showAnswer();
+        updateSpellStats();
+      }
+    }
+  });
+});
+
+// 서술형 퀴즈: 모범 답안 보이기 + 자기 채점
+function showModel(qi) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  var model = card.querySelector('.q-model');
+  var rate = card.querySelector('.q-self-rate');
+  model.classList.add('show');
+  rate.classList.add('show');
+}
+
+function rateSelf(qi, level) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  card.querySelectorAll('.q-self-rate button').forEach(function(b) { b.classList.remove('selected'); });
+  card.querySelector('.q-self-rate .rate-' + level).classList.add('selected');
+}
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      // 새 SW 발견 시 즉시 적용 → 페이지 자동 새로고침
+      reg.addEventListener('updatefound', function() {
+        var newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', function() {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+            // 새 버전 준비됨 → 즉시 활성화 명령
+            newSW.postMessage({type: 'SKIP_WAITING'});
+          }
+        });
+      });
+      // 매 30분마다 새 버전 확인
+      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+    }).catch(function(e) { /* fail silently */ });
+    // 새 SW가 통제권 잡으면 페이지 자동 reload (한 번만)
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (reloaded) return;
+      reloaded = true;
+      window.location.reload();
+    });
+  });
+}
+</script>
+</body>
+</html>
