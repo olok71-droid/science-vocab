@@ -631,9 +631,11 @@ function blindButtons(m, day) {
 
 // ─── Day 단어 쭉 듣기 (한국어 뜻 → 영어 순서) ───
 let _seq = null;   // 재생 중인 시퀀스 {token, btn}
+let _thinkTimer = null;   // 문장 듣기: 한국어 후 '생각할 시간' 타이머
 
 function stopSeq() {
   if (_seq) _seq.token = -1;            // 진행 중 콜백 무효화
+  if (_thinkTimer) { clearTimeout(_thinkTimer); _thinkTimer = null; }   // 생각 중 쉼도 취소
   if (_audio) { _audio.pause(); _audio = null; }
   _seq = null;
   document.querySelectorAll('.play-all-btn').forEach(b => {
@@ -1119,6 +1121,7 @@ function speakPhrase(si, i){
 
 function togglePhraseBlind(){ phraseBlind = !phraseBlind; renderPhrases(); }
 
+const THINK_PAUSE = 3000;   // 한국어 들은 뒤 영어 나오기 전 '생각할 시간'(약 3초, 1·2·3)
 function playPhraseAll(si, btn) {
   const wasPlaying = btn.classList.contains('active');
   stopSeq();
@@ -1132,8 +1135,15 @@ function playPhraseAll(si, btn) {
   const playOne = () => {
     if (!_seq || _seq.token !== token) return;
     if (idx >= items.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
-    const next = () => { idx++; setTimeout(playOne, 350); };
-    playFile('audio/jenny_phrase/p' + si + '_' + idx + '.mp3', token, next);
+    playFile('audio/jenny_phrase/k' + si + '_' + idx + '.mp3', token, () => {   // ① 한국어 뜻
+      if (!_seq || _seq.token !== token) return;
+      _thinkTimer = setTimeout(() => {                                          // ② 생각할 시간(쉼)
+        playFile('audio/jenny_phrase/p' + si + '_' + idx + '.mp3', token, () => { // ③ 영어 문장
+          idx++;
+          setTimeout(playOne, 700);                                            // 문장 사이 쉼
+        });
+      }, THINK_PAUSE);
+    });
   };
   playOne();
 }
