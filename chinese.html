@@ -45,18 +45,20 @@
   .topic-head .cnt{font-size:12px; color:var(--muted); font-weight:700;}
 
   /* 단어 카드 — 한자 크게, 탭하면 소리 */
-  .ccard{background:var(--card); border-radius:18px; padding:14px 16px; margin-bottom:10px;
+  /* 카드: 중국어(위) → 병음(바로 아래) → 해석(아래), 세로로 쌓기 */
+  .ccard{background:var(--card); border-radius:18px; padding:16px 16px 14px; margin-bottom:10px;
     box-shadow:0 2px 10px var(--shadow); border:2px solid rgba(226,58,58,0.10);
-    display:flex; align-items:center; gap:14px; cursor:pointer; transition:all .12s;}
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:5px;
+    cursor:pointer; transition:all .12s; position:relative;}
   .ccard:active{transform:scale(0.98);}
   .ccard.playing{border-color:var(--accent); background:#fff0f0;}
-  .ccard .hz{font-family:'Noto Sans SC','Noto Sans KR',sans-serif; font-size:38px; font-weight:900;
-    color:var(--text); line-height:1; min-width:64px; text-align:center;}
-  .ccard .mid{flex:1;}
-  .ccard .py{font-size:18px; font-weight:800; color:var(--accent); letter-spacing:.3px;}
-  .ccard .ko{font-size:14px; color:#8a6a6a; font-weight:700; margin-top:3px;}
-  .ccard .spk{border:none; background:var(--accent); color:#fff; width:46px; height:46px; border-radius:50%;
-    font-size:22px; cursor:pointer; flex-shrink:0; box-shadow:0 3px 10px var(--shadow);}
+  .ccard .hz{font-family:'Noto Sans SC','Noto Sans KR',sans-serif; font-size:34px; font-weight:900;
+    color:var(--text); line-height:1.3; word-break:keep-all;}
+  .ccard .mid{width:100%;}
+  .ccard .py{font-size:17px; font-weight:800; color:var(--accent); letter-spacing:.3px; line-height:1.4;}
+  .ccard .ko{font-size:14px; color:#8a6a6a; font-weight:700; margin-top:4px; line-height:1.45;}
+  .ccard .spk{position:absolute; top:10px; right:12px; border:none; background:var(--accent); color:#fff;
+    width:40px; height:40px; border-radius:50%; font-size:19px; cursor:pointer; box-shadow:0 3px 10px var(--shadow);}
 
   .hint{background:#fff; border-radius:14px; padding:12px 15px; margin-bottom:14px; font-size:13px;
     color:#8a6a6a; font-weight:700; box-shadow:0 2px 8px var(--shadow); line-height:1.5;}
@@ -231,55 +233,75 @@ function fallbackSpeak(text){
   setTimeout(() => { try{ window.speechSynthesis.resume(); }catch(e){} }, 80);
 }
 
-// ── 전체 듣기 (보이는 카드를 순서대로 발음, 다시 누르면 멈춤) ──
-let _playAll = false, _paList = [], _paIdx = 0;
+// ── 전체 듣기 (기존 단어장과 동일: ①한국어 뜻 → ②생각할 시간 → ③중국어, 무한반복. 다시 누르면 멈춤) ──
+const THINK_PAUSE = 3000;   // 한국어 들은 뒤 중국어 나오기 전 '생각할 시간'(약 3초)
+let _seq = null, _seqToken = 0, _thinkTimer = null;
 function _paStop(){
-  _playAll = false; _paList = []; _paIdx = 0;
+  if (_seq) _seq.token = -1;                                   // 진행 중 콜백 무효화
+  if (_thinkTimer){ clearTimeout(_thinkTimer); _thinkTimer = null; }
   if (_audio){ try{ _audio.pause(); }catch(e){} _audio = null; }
   if (window.speechSynthesis) window.speechSynthesis.cancel();
+  _seq = null;
   document.querySelectorAll('.ccard.playing').forEach(e => e.classList.remove('playing'));
   const b = document.getElementById('play-all-btn');
   if (b){ b.textContent = '▶︎ 전체 듣기'; b.classList.remove('active'); }
 }
-function togglePlayAll(btn){
-  if (_playAll){ _paStop(); return; }
-  _paList = [...document.querySelectorAll('#learn-list .ccard')].map(el => ({ el, id: +el.getAttribute('data-id') }));
-  if (!_paList.length) return;
-  _playAll = true; _paIdx = 0;
-  btn.textContent = '⏹ 멈춤'; btn.classList.add('active');
-  _paStep();
+function _pickVoice(prefix, exact){
+  const m = _voices.filter(v => normLang(v.lang).startsWith(prefix));
+  const local = m.filter(v => v.localService); const pool = local.length ? local : m;
+  return (exact && pool.find(x => normLang(x.lang) === exact)) || pool[0] || null;
 }
-function _paSpeak(d, cb){
-  if (!window.speechSynthesis || !d){ cb(); return; }
-  const u = new SpeechSynthesisUtterance(d.hz);
+function _speak(text, lang, voice, token, cb){     // 폰 음성으로 읽기
+  if (!window.speechSynthesis){ cb(); return; }
+  const u = new SpeechSynthesisUtterance(text);
   u.rate = 0.85;
-  const zh = _voices.filter(v => normLang(v.lang).startsWith('zh'));
-  const local = zh.filter(v => v.localService);
-  const pool = local.length ? local : zh;
-  const v = pool.find(x => normLang(x.lang).startsWith('zh-cn')) || pool[0];
-  if (v){ u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'zh-CN'; }
-  u.onend = cb; u.onerror = cb;
+  if (voice){ u.voice = voice; u.lang = normLang(voice.lang); } else { u.lang = lang; }
+  u.onend = () => { if (_seq && _seq.token === token) cb(); };
+  u.onerror = () => { if (_seq && _seq.token === token) cb(); };
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
   setTimeout(() => { try{ window.speechSynthesis.resume(); }catch(e){} }, 80);
 }
-function _paStep(){
-  if (!_playAll || _paIdx >= _paList.length){ _paStop(); return; }
-  const { el, id } = _paList[_paIdx];
+function _playZh(id, token, cb){                   // 중국어: mp3 우선, 없으면 폰 음성
   const d = DATA[id];
-  document.querySelectorAll('.ccard.playing').forEach(e => e.classList.remove('playing'));
-  if (el){ el.classList.add('playing'); el.scrollIntoView({ block:'center', behavior:'smooth' }); }
-  let done = false;
-  const advance = () => { if (!_playAll || done) return; done = true; _paIdx++; setTimeout(_paStep, 500); };
   try{
     if (_audio){ try{ _audio.pause(); }catch(e){} _audio = null; }
     const a = new Audio('audio/chinese/c' + id + '.mp3');
-    a.onended = advance;
-    a.onerror = () => { if (done) return; _paSpeak(d, advance); };
+    a.onended = () => { if (_seq && _seq.token === token) cb(); };
+    a.onerror = () => { if (_seq && _seq.token === token) _speak(d.say || d.hz, 'zh-CN', _pickVoice('zh','zh-cn'), token, cb); };
     _audio = a;
     const p = a.play();
-    if (p && p.catch) p.catch(() => { if (done) return; _paSpeak(d, advance); });
-  }catch(e){ _paSpeak(d, advance); }
+    if (p && p.catch) p.catch(() => { if (_seq && _seq.token === token) _speak(d.say || d.hz, 'zh-CN', _pickVoice('zh','zh-cn'), token, cb); });
+  }catch(e){ _speak(d.say || d.hz, 'zh-CN', _pickVoice('zh','zh-cn'), token, cb); }
+}
+function togglePlayAll(btn){
+  const wasPlaying = btn.classList.contains('active');
+  _paStop();
+  if (wasPlaying) return;                          // 재생 중이던 버튼 → 멈춤
+  const list = [...document.querySelectorAll('#learn-list .ccard')].map(el => ({ el, id: +el.getAttribute('data-id') }));
+  if (!list.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token };
+  let idx = 0;
+  const playOne = () => {
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= list.length){ idx = 0; }            // 무한반복
+    const { el, id } = list[idx];
+    const d = DATA[id];
+    document.querySelectorAll('.ccard.playing').forEach(e => e.classList.remove('playing'));
+    if (el){ el.classList.add('playing'); el.scrollIntoView({ block:'center', behavior:'smooth' }); }
+    _speak(d.ko, 'ko-KR', _pickVoice('ko'), token, () => {        // ① 한국어 뜻
+      if (!_seq || _seq.token !== token) return;
+      _thinkTimer = setTimeout(() => {                            // ② 생각할 시간
+        _playZh(id, token, () => {                                // ③ 중국어
+          idx++;
+          setTimeout(playOne, 700);                               // 문장 사이 쉼
+        });
+      }, THINK_PAUSE);
+    });
+  };
+  playOne();
 }
 
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
