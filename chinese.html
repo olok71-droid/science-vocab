@@ -99,6 +99,25 @@
 
   footer{text-align:center; padding:24px; color:var(--muted); font-size:11px;}
   footer span{color:var(--accent);}
+
+  /* 📷 교재 사진 올리기 (우하단 떠있는 버튼) */
+  .upload-fab{position:fixed; right:16px; bottom:16px; z-index:50;
+    width:56px; height:56px; border-radius:50%; border:none; cursor:pointer;
+    background:var(--accent); color:#fff; font-size:24px;
+    box-shadow:0 4px 16px rgba(226,58,58,0.45);
+    display:flex; align-items:center; justify-content:center;}
+  .upload-fab:active{transform:scale(0.94);}
+  .upload-overlay{position:fixed; inset:0; z-index:60; display:none;
+    background:rgba(40,20,20,0.45); align-items:center; justify-content:center; padding:24px;}
+  .upload-overlay.show{display:flex;}
+  .upload-box{background:#fff; border-radius:20px; padding:28px 24px; max-width:340px; width:100%;
+    text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.18);}
+  .upload-box .big-emoji{font-size:40px; margin-bottom:10px;}
+  .upload-box h3{font-size:18px; font-weight:900; margin-bottom:8px; color:var(--text);}
+  .upload-box p{font-size:14px; color:var(--muted); font-weight:700; line-height:1.5; margin-bottom:6px;}
+  .upload-box .upload-status{min-height:22px; font-size:14px; font-weight:800; color:var(--accent);}
+  .upload-box .upload-close{margin-top:14px; border:none; cursor:pointer; border-radius:14px;
+    background:var(--accent); color:#fff; font-family:inherit; font-weight:800; font-size:15px; padding:10px 26px;}
 </style>
 </head>
 <body>
@@ -157,6 +176,19 @@
 </div>
 
 <footer>🐼 <span>중국어 첫걸음</span> · 듣고 따라 말하기</footer>
+
+<!-- 📷 교재 사진 올리기 (단어칸에 자동 등록) -->
+<button class="upload-fab" onclick="document.getElementById('upload-input').click()" title="중국어 교재 사진 올리기">📷</button>
+<input type="file" id="upload-input" accept="image/*" multiple style="display:none" onchange="uploadPhotos(this.files)">
+<div class="upload-overlay" id="upload-overlay">
+  <div class="upload-box">
+    <div class="big-emoji" id="upload-emoji">📤</div>
+    <h3 id="upload-title">사진 보내는 중…</h3>
+    <p id="upload-desc">잠시만 기다려 주세요.</p>
+    <div class="upload-status" id="upload-status"></div>
+    <button class="upload-close" id="upload-close" style="display:none" onclick="closeUpload()">확인</button>
+  </div>
+</div>
 
 <script>
 const DATA = [{"t": "성조 (소리 높낮이)", "hz": "妈", "py": "mā", "ko": "엄마 — 1성(높고 평평) ─", "id": 0}, {"t": "성조 (소리 높낮이)", "hz": "麻", "py": "má", "ko": "마(저림) — 2성(올라감) ╱", "id": 1}, {"t": "성조 (소리 높낮이)", "hz": "马", "py": "mǎ", "ko": "말 — 3성(내렸다 올림) ╲╱", "id": 2}, {"t": "성조 (소리 높낮이)", "hz": "骂", "py": "mà", "ko": "혼내다 — 4성(뚝 떨어짐) ╲", "id": 3}, {"t": "인사말", "hz": "你好", "py": "nǐ hǎo", "ko": "안녕하세요", "id": 4}, {"t": "인사말", "hz": "谢谢", "py": "xièxie", "ko": "고맙습니다", "id": 5}, {"t": "인사말", "hz": "再见", "py": "zàijiàn", "ko": "안녕히 가세요", "id": 6}, {"t": "인사말", "hz": "对不起", "py": "duìbuqǐ", "ko": "미안해요", "id": 7}, {"t": "인사말", "hz": "我爱你", "py": "wǒ ài nǐ", "ko": "사랑해요", "id": 8}, {"t": "인사말", "hz": "老师好", "py": "lǎoshī hǎo", "ko": "선생님 안녕하세요", "id": 9}, {"t": "숫자 1~10", "hz": "一", "py": "yī", "ko": "1 (하나)", "id": 10}, {"t": "숫자 1~10", "hz": "二", "py": "èr", "ko": "2 (둘)", "id": 11}, {"t": "숫자 1~10", "hz": "三", "py": "sān", "ko": "3 (셋)", "id": 12}, {"t": "숫자 1~10", "hz": "四", "py": "sì", "ko": "4 (넷)", "id": 13}, {"t": "숫자 1~10", "hz": "五", "py": "wǔ", "ko": "5 (다섯)", "id": 14}, {"t": "숫자 1~10", "hz": "六", "py": "liù", "ko": "6 (여섯)", "id": 15}, {"t": "숫자 1~10", "hz": "七", "py": "qī", "ko": "7 (일곱)", "id": 16}, {"t": "숫자 1~10", "hz": "八", "py": "bā", "ko": "8 (여덟)", "id": 17}, {"t": "숫자 1~10", "hz": "九", "py": "jiǔ", "ko": "9 (아홉)", "id": 18}, {"t": "숫자 1~10", "hz": "十", "py": "shí", "ko": "10 (열)", "id": 19}, {"t": "색깔", "hz": "红色", "py": "hóngsè", "ko": "빨강", "id": 20}, {"t": "색깔", "hz": "蓝色", "py": "lánsè", "ko": "파랑", "id": 21}, {"t": "색깔", "hz": "黄色", "py": "huángsè", "ko": "노랑", "id": 22}, {"t": "색깔", "hz": "绿色", "py": "lǜsè", "ko": "초록", "id": 23}, {"t": "색깔", "hz": "黑色", "py": "hēisè", "ko": "검정", "id": 24}, {"t": "색깔", "hz": "白色", "py": "báisè", "ko": "하양", "id": 25}, {"t": "색깔", "hz": "粉色", "py": "fěnsè", "ko": "분홍", "id": 26}, {"t": "가족", "hz": "爸爸", "py": "bàba", "ko": "아빠", "id": 27}, {"t": "가족", "hz": "妈妈", "py": "māma", "ko": "엄마", "id": 28}, {"t": "가족", "hz": "哥哥", "py": "gēge", "ko": "형·오빠", "id": 29}, {"t": "가족", "hz": "姐姐", "py": "jiějie", "ko": "누나·언니", "id": 30}, {"t": "가족", "hz": "弟弟", "py": "dìdi", "ko": "남동생", "id": 31}, {"t": "가족", "hz": "妹妹", "py": "mèimei", "ko": "여동생", "id": 32}, {"t": "가족", "hz": "我", "py": "wǒ", "ko": "나", "id": 33}, {"t": "동물", "hz": "猫", "py": "māo", "ko": "고양이", "id": 34}, {"t": "동물", "hz": "狗", "py": "gǒu", "ko": "강아지", "id": 35}, {"t": "동물", "hz": "兔子", "py": "tùzi", "ko": "토끼", "id": 36}, {"t": "동물", "hz": "鸟", "py": "niǎo", "ko": "새", "id": 37}, {"t": "동물", "hz": "鱼", "py": "yú", "ko": "물고기", "id": 38}, {"t": "동물", "hz": "熊猫", "py": "xióngmāo", "ko": "판다", "id": 39}, {"t": "동물", "hz": "大象", "py": "dàxiàng", "ko": "코끼리", "id": 40}, {"t": "음식", "hz": "米饭", "py": "mǐfàn", "ko": "밥", "id": 41}, {"t": "음식", "hz": "水", "py": "shuǐ", "ko": "물", "id": 42}, {"t": "음식", "hz": "牛奶", "py": "niúnǎi", "ko": "우유", "id": 43}, {"t": "음식", "hz": "苹果", "py": "píngguǒ", "ko": "사과", "id": 44}, {"t": "음식", "hz": "面包", "py": "miànbāo", "ko": "빵", "id": 45}, {"t": "음식", "hz": "鸡蛋", "py": "jīdàn", "ko": "계란", "id": 46}, {"t": "음식", "hz": "糖果", "py": "tángguǒ", "ko": "사탕", "id": 47}, {"t": "몸", "hz": "头", "py": "tóu", "ko": "머리", "id": 48}, {"t": "몸", "hz": "眼睛", "py": "yǎnjing", "ko": "눈", "id": 49}, {"t": "몸", "hz": "鼻子", "py": "bízi", "ko": "코", "id": 50}, {"t": "몸", "hz": "嘴", "py": "zuǐ", "ko": "입", "id": 51}, {"t": "몸", "hz": "耳朵", "py": "ěrduo", "ko": "귀", "id": 52}, {"t": "몸", "hz": "手", "py": "shǒu", "ko": "손", "id": 53}, {"t": "몸", "hz": "脚", "py": "jiǎo", "ko": "발", "id": 54}, {"t": "기초 표현", "hz": "是", "py": "shì", "ko": "응, 맞아요", "id": 55}, {"t": "기초 표현", "hz": "不是", "py": "búshì", "ko": "아니에요", "id": 56}, {"t": "기초 표현", "hz": "好", "py": "hǎo", "ko": "좋아요", "id": 57}, {"t": "기초 표현", "hz": "我饿了", "py": "wǒ è le", "ko": "배고파요", "id": 58}, {"t": "기초 표현", "hz": "我要这个", "py": "wǒ yào zhège", "ko": "이거 주세요", "id": 59}, {"t": "기초 표현", "hz": "这是什么", "py": "zhè shì shénme", "ko": "이게 뭐예요?", "id": 60}, {"t": "병음 기본 소리 (단운모)", "hz": "a", "py": "아 (啊)", "ko": "입을 크게 벌려 '아'", "say": "啊", "id": 61}, {"t": "병음 기본 소리 (단운모)", "hz": "o", "py": "오 (哦)", "ko": "입을 둥글게 '오~어'", "say": "哦", "id": 62}, {"t": "병음 기본 소리 (단운모)", "hz": "e", "py": "으어 (鹅)", "ko": "'으'와 '어' 사이 소리", "say": "鹅", "id": 63}, {"t": "병음 기본 소리 (단운모)", "hz": "i", "py": "이 (衣)", "ko": "입을 옆으로 '이'", "say": "衣", "id": 64}, {"t": "병음 기본 소리 (단운모)", "hz": "u", "py": "우 (乌)", "ko": "입을 오므려 '우'", "say": "乌", "id": 65}, {"t": "병음 기본 소리 (단운모)", "hz": "ü", "py": "위 (鱼)", "ko": "'이' 입모양으로 '위'", "say": "鱼", "id": 66}, {"t": "병음 성모 (자음)", "hz": "b", "py": "bo · 波", "ko": "'ㅃ~ㅂ' 약하게 '뽀어'", "say": "波", "id": 67}, {"t": "병음 성모 (자음)", "hz": "p", "py": "po · 坡", "ko": "'ㅍ' 바람 세게 '포어'", "say": "坡", "id": 68}, {"t": "병음 성모 (자음)", "hz": "m", "py": "mo · 摸", "ko": "'ㅁ' '모어'", "say": "摸", "id": 69}, {"t": "병음 성모 (자음)", "hz": "f", "py": "fo · 佛", "ko": "윗니로 아랫입술 물고 영어 f '포어'", "say": "佛", "id": 70}, {"t": "병음 성모 (자음)", "hz": "d", "py": "de · 得", "ko": "'ㄸ~ㄷ' '뜨어'", "say": "得", "id": 71}, {"t": "병음 성모 (자음)", "hz": "t", "py": "te · 特", "ko": "'ㅌ' '트어'", "say": "特", "id": 72}, {"t": "병음 성모 (자음)", "hz": "n", "py": "ne · 呢", "ko": "'ㄴ' '느어'", "say": "呢", "id": 73}, {"t": "병음 성모 (자음)", "hz": "l", "py": "le · 了", "ko": "'ㄹ' '르어'", "say": "了", "id": 74}, {"t": "병음 성모 (자음)", "hz": "g", "py": "ge · 哥", "ko": "'ㄲ~ㄱ' '끄어'", "say": "哥", "id": 75}, {"t": "병음 성모 (자음)", "hz": "k", "py": "ke · 棵", "ko": "'ㅋ' '크어'", "say": "棵", "id": 76}, {"t": "병음 성모 (자음)", "hz": "h", "py": "he · 喝", "ko": "'ㅎ' 목에서 '흐어'", "say": "喝", "id": 77}, {"t": "병음 성모 (자음)", "hz": "j", "py": "ji · 鸡", "ko": "'ㅈ' '지'", "say": "鸡", "id": 78}, {"t": "병음 성모 (자음)", "hz": "q", "py": "qi · 七", "ko": "'ㅊ' 강하게 '치'", "say": "七", "id": 79}, {"t": "병음 성모 (자음)", "hz": "x", "py": "xi · 西", "ko": "'ㅅ~ㅆ' '시'", "say": "西", "id": 80}, {"t": "병음 성모 (자음)", "hz": "zh", "py": "zhi · 知", "ko": "혀 말아서 'ㅈ' '즈r'", "say": "知", "id": 81}, {"t": "병음 성모 (자음)", "hz": "ch", "py": "chi · 吃", "ko": "혀 말아서 'ㅊ' '츠r'", "say": "吃", "id": 82}, {"t": "병음 성모 (자음)", "hz": "sh", "py": "shi · 十", "ko": "혀 말아서 'ㅅ' '스r'", "say": "十", "id": 83}, {"t": "병음 성모 (자음)", "hz": "r", "py": "ri · 日", "ko": "혀 말아서 영어 r '르r'", "say": "日", "id": 84}, {"t": "병음 성모 (자음)", "hz": "z", "py": "zi · 字", "ko": "'ㅉ' '쯔'", "say": "字", "id": 85}, {"t": "병음 성모 (자음)", "hz": "c", "py": "ci · 次", "ko": "'ㅊ' '츠'(혀 안 말고)", "say": "次", "id": 86}, {"t": "병음 성모 (자음)", "hz": "s", "py": "si · 四", "ko": "'ㅆ' '쓰'", "say": "四", "id": 87}, {"t": "병음 복운모 (이중모음)", "hz": "ai", "py": "ai · 爱", "ko": "'아이'", "say": "爱", "id": 88}, {"t": "병음 복운모 (이중모음)", "hz": "ei", "py": "ei · 诶", "ko": "'에이'", "say": "诶", "id": 89}, {"t": "병음 복운모 (이중모음)", "hz": "ao", "py": "ao · 奥", "ko": "'아오'", "say": "奥", "id": 90}, {"t": "병음 복운모 (이중모음)", "hz": "ou", "py": "ou · 欧", "ko": "'어우'", "say": "欧", "id": 91}, {"t": "병음 복운모 (이중모음)", "hz": "an", "py": "an · 安", "ko": "'안'", "say": "安", "id": 92}, {"t": "병음 복운모 (이중모음)", "hz": "en", "py": "en · 恩", "ko": "'언/으언'", "say": "恩", "id": 93}, {"t": "병음 복운모 (이중모음)", "hz": "ang", "py": "ang · 昂", "ko": "'앙'", "say": "昂", "id": 94}, {"t": "병음 복운모 (이중모음)", "hz": "er", "py": "er · 儿", "ko": "혀 살짝 말아 '얼'", "say": "儿", "id": 95}, {"t": "병음 복운모 (이중모음)", "hz": "ia", "py": "ia(ya) · 呀", "ko": "'야'", "say": "呀", "id": 96}, {"t": "병음 복운모 (이중모음)", "hz": "ie", "py": "ie(ye) · 耶", "ko": "'예'", "say": "耶", "id": 97}, {"t": "병음 복운모 (이중모음)", "hz": "iao", "py": "iao(yao) · 腰", "ko": "'야오'", "say": "腰", "id": 98}, {"t": "병음 복운모 (이중모음)", "hz": "iu", "py": "iu(you) · 优", "ko": "'여우/이우'", "say": "优", "id": 99}, {"t": "병음 복운모 (이중모음)", "hz": "ua", "py": "ua(wa) · 蛙", "ko": "'와'", "say": "蛙", "id": 100}, {"t": "병음 복운모 (이중모음)", "hz": "uo", "py": "uo(wo) · 我", "ko": "'워'", "say": "我", "id": 101}, {"t": "병음 복운모 (이중모음)", "hz": "uai", "py": "uai(wai) · 歪", "ko": "'와이'", "say": "歪", "id": 102}, {"t": "병음 복운모 (이중모음)", "hz": "ui", "py": "ui(wei) · 喂", "ko": "'웨이'", "say": "喂", "id": 103}, {"t": "병음 복운모 (이중모음)", "hz": "üe", "py": "üe(yue) · 月", "ko": "'위에'", "say": "月", "id": 104}, {"t": "병음 복운모 (이중모음)", "hz": "ün", "py": "ün(yun) · 云", "ko": "'윈'", "say": "云", "id": 105}];
@@ -322,6 +354,68 @@ document.getElementById('yt-list').innerHTML = YT.map(v =>
   `<a class="yt-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent(v.q)}">
      <span class="pic">▶️</span><span>${esc(v.label)}</span><span class="go">보기</span>
    </a>`).join('');
+</script>
+
+<!-- 📷 교재 사진 올리기 — 단어칸(중국어)으로 자동 등록 -->
+<script>
+const UPLOAD_URL = 'https://jenny-upload.olok7171.workers.dev/up';
+const UPLOAD_KEY = '918b5e413563a5abbca2ebf3';
+const UPLOAD_DEST = 'chinese';   // ★이 사진이 갈 곳(단어칸: 중국어). 워커·맥 폴러가 이 꼬리표로 분류
+function showUpload(emoji, title, desc, status, done){
+  document.getElementById('upload-emoji').textContent = emoji;
+  document.getElementById('upload-title').textContent = title;
+  document.getElementById('upload-desc').textContent = desc;
+  document.getElementById('upload-status').textContent = status || '';
+  document.getElementById('upload-close').style.display = done ? 'inline-block' : 'none';
+  document.getElementById('upload-overlay').classList.add('show');
+}
+function closeUpload(){
+  document.getElementById('upload-overlay').classList.remove('show');
+  document.getElementById('upload-input').value = '';
+}
+function shrinkImage(file){
+  return new Promise(resolve => {
+    if (file.size < 3 * 1024 * 1024){ resolve(file); return; }
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const max = 2000;
+      let w = img.naturalWidth, h = img.naturalHeight;
+      if (w > max || h > max){ const r = Math.min(max / w, max / h); w = Math.round(w * r); h = Math.round(h * r); }
+      const c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      c.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      c.toBlob(b => resolve(b || file), 'image/jpeg', 0.88);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
+    img.src = url;
+  });
+}
+async function uploadPhotos(files){
+  if (!files || !files.length) return;
+  const list = Array.from(files);
+  showUpload('📤', '사진 보내는 중…', '잠시만 기다려 주세요.', '0 / ' + list.length);
+  let sent = 0, failed = 0;
+  for (const f of list){
+    try {
+      const blob = await shrinkImage(f);
+      const res = await fetch(UPLOAD_URL + '?dest=' + UPLOAD_DEST + '&name=' + encodeURIComponent(f.name || 'photo.jpg'), {
+        method: 'POST',
+        headers: { 'X-Key': UPLOAD_KEY, 'Content-Type': blob.type || 'image/jpeg' },
+        body: blob,
+      });
+      const j = await res.json();
+      if (j.ok) sent++; else failed++;
+    } catch (e) { failed++; }
+    document.getElementById('upload-status').textContent = (sent + failed) + ' / ' + list.length;
+  }
+  if (failed === 0){
+    showUpload('✅', '다 보냈어요!', '맥 컴퓨터가 곧 사진을 읽고 새 중국어 단어를 단어칸에 자동으로 넣어요. 보통 몇 분 걸려요. 끝나면 앱을 새로고침하면 보여요.', sent + '장 전송 완료', true);
+  } else {
+    showUpload('⚠️', '일부 실패', '성공 ' + sent + '장, 실패 ' + failed + '장. 인터넷 연결을 확인하고 실패한 사진만 다시 올려 주세요.', '', true);
+  }
+}
 </script>
 
 <!-- SW-AUTO-START -->
