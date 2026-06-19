@@ -1,0 +1,51 @@
+Year 9 핵심노트 다이어그램 출처 (Wikimedia Commons) — 개인 학습용
+파일 / 출처 / 라이선스 / 저작자
+
+y9_genes__dna-gene-chromosome.png | File:Chromosome_DNA_Gene.svg | CC BY 4.0 | Thomas Shafee
+y9_genes__inheritance-punnett.png | File:Punnett_square_mendel_flowers.svg | CC0 | Madeleine Price Ball
+y9_genes__variation-bellcurve.png | File:Standard_deviation_diagram.svg | CC BY 2.5 | M. W. Toews
+y9_genes__natural-selection-finches.jpg | File:Darwin's_finches_by_Gould.jpg | Public Domain | John Gould
+
+y9_photosynthesis__overview.png | File:Simple_photosynthesis_overview.svg | CC BY-SA 4.0 | Daniel Mayer; Yerpo
+y9_photosynthesis__chloroplast.png | File:Chloroplast_structure.svg | CC BY-SA 3.0 | Kelvinsong
+y9_photosynthesis__limiting-factors.png | File:Carbon_assimilation_vs_irradiance.png | CC BY-SA 3.0 | Obsidian Soul
+y9_photosynthesis__carbon-cycle.jpg | File:Carbon_cycle-cute_diagram.jpeg | Public Domain | Kevin Saff
+y9_photosynthesis__coal-formation.png | File:Formation_of_coal.png | CC BY-SA 4.0 | Steven Earle
+y9_photosynthesis__greenhouse-effect.png | File:Greenhouse_effect_diagram.png | Public Domain | Alexchris
+y9_photosynthesis__human-activity.png | File:2017_Global_warming_attribution...png | CC BY-SA 4.0 | RCraig09
+
+y9_water_life__osmosis.png | File:Osmosis_diagram.svg | CC0 | KDS4444
+y9_water_life__turgid-flaccid.png | File:Turgor_pressure_on_plant_cells_diagram.svg | Public Domain | LadyOfHats
+y9_water_life__transpiration.png | File:Transpiration_Overview.svg | CC BY-SA 3.0 | Laurel Jules
+y9_water_life__stomata.png | File:Stoma_Opening_Closing.svg | CC BY-SA 3.0 | Lmackay2013
+y9_water_life__urinary-system.png | File:Urinary_system.svg | CC BY-SA 3.0 | Jordi March i Nogué
+y9_water_life__placenta.png | File:Placenta.svg | Public Domain | Henry Gray / Amada44
+y9_water_life__staying-healthy.png | File:Eatwell_Plate.svg | CC BY-SA 3.0 | Lionfish0
+
+y9_materials__atom-structure.png | File:Atom_diagram.png | GFDL / CC BY-SA 3.0 | Fastfission
+y9_materials__periodic-table.png | File:Simple_Periodic_Table_Chart-en.svg | Public Domain | Offnfopt
+y9_materials__group-trends.png | File:Periodic_trends.svg | CC0 | Mirek2
+y9_materials__bonding-ionic.png | File:IonicBondingRH11.png | CC BY-SA 3.0 | Rhannosh
+y9_materials__structure-lattice.png | File:Sodium_chloride_crystal.png | Public Domain | H Padleckas
+
+y9_rates__rate-vs-time.png | File:Concentration_profile...png | CC0 | Eduartea
+y9_rates__temperature.png | File:Reaction_Rate_Increase_with_Increasing_Temperature.png | CC BY-SA 3.0 | Brazosport College
+y9_rates__concentration.png | File:Orders_of_reaction.png | CC0 | Ewen
+
+y9_reactivity__reactivity-series.png | File:Reactivity_metals_in_dilute_sulfuric_acid.png | CC BY-SA 3.0 | Capaccio
+y9_reactivity__displacement.png | File:Single_displacement_reaction_example.png | Public Domain | Honeyhuyue
+y9_reactivity__making-salts.jpg | File:Neutralisation.jpg | CC BY-SA 4.0 | Dharmeshkumar Shah
+y9_reactivity__conservation-of-mass.png | File:Waage-_Massenerhaltung-Kerze_geschlossen.svg | CC0 | A.Spielhoff
+
+y9_electricity__series-parallel.png | File:Series_and_parallel_circuits.svg | CC BY-SA 3.0 | Xyzzy n; Carnby
+y9_electricity__current-voltage.png | File:Series_circuit_bulb_and_resistor_both_meters.png | CC BY-SA 4.0 | Paulgwilliamson
+y9_electricity__resistance-ohm.png | File:Ohms_law_voltage_source_(white_background).svg | CC BY-SA 3.0 | Gutten på Hemsen
+
+y9_forces_energy__density-triangle.png | File:Triangular_form...MASS_VOLUME_DENSITY.png | CC BY-SA 4.0 | BABA1020
+y9_forces_energy__energy-conservation-coaster.jpg | File:Roller_coaster_energy_conservation.jpg | CC BY-SA 3.0 | Guy vandegrift
+y9_forces_energy__heat-transfer-kettle.png | File:Kettle-convection-conduction-radiation.png | CC BY-SA 3.0 | P.wormer
+
+y9_sound_space__loudness_pitch.png | File:SoundWaveDiagFreqAmp.png | CC0 | justin evans
+y9_sound_space__giant_impact.png | File:Moon_-_Giant_Impact_Hypothesis_-_Simple_model.png | CC BY-SA 4.0 | Citronade
+y9_sound_space__star_lifecycle.jpg | File:Star_Life_Cycle_Chart.jpg | CC BY 4.0 | R.N. Bailey
+y9_sound_space__tectonic_plates.png | File:Tectonic_plates.png | Public Domain (USGS) | USGS
