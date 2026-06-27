@@ -198,10 +198,15 @@ const DATA = [{"t": "병음 성모 (자음)", "hz": "b", "py": "bo · 波", "ko"
 const TOPICS = ["병음 성모 (자음)", "병음 기본 소리 (단운모)", "병음 복운모 (이중모음)", "성조 (소리 높낮이)", "1과 · 안녕하세요 你好", "2과 · 잘 지내요? 你好吗", "3과 · 뭐 먹을래요? 你吃什么", "4과 · 얼마예요? 多少钱", "5과 · 어디 있어요? 在哪儿"];
 const YT = [{"label": "🐼 宝宝巴士 (BabyBus 중국어 동요)", "q": "宝宝巴士 中文 儿歌"}, {"label": "🎵 병음 노래 (拼音歌)", "q": "拼音歌 儿童 拼音 学习"}, {"label": "🔢 숫자 노래 (1~10)", "q": "中文 数字歌 一到十 儿童"}, {"label": "🌈 색깔 노래", "q": "颜色歌 中文 儿童 颜色"}, {"label": "🐯 两只老虎 (두 마리 호랑이)", "q": "两只老虎 儿歌"}, {"label": "⭐ 小星星 (반짝반짝 작은 별)", "q": "小星星 中文 儿歌"}, {"label": "👶 유아 중국어 첫걸음", "q": "유아 중국어 동요 기초 따라하기"}, {"label": "🍎 일상 단어 (동물·음식·가족)", "q": "幼儿 中文 单词 动物 食物 家人"}];
 
+// id로 항목 찾기 (id가 배열 위치와 다를 수 있으므로 반드시 이걸로 조회)
+const _byId = {}; DATA.forEach(d => { _byId[d.id] = d; });
+function byId(id){ return _byId[id]; }
+function isPron(d){ return !!(d && (d.say || (d.t||'').indexOf('병음') === 0 || (d.t||'').indexOf('성조') === 0)); }
+
 // ── 발음: 미리 받은 mp3 재생 (audio/chinese/c{id}.mp3), 안 되면 폰 음성 보조 ──
 let _audio = null, _playingEl = null;
 function playClip(id, el){
-  const d = DATA[id];
+  const d = byId(id);
   if (_playingEl) _playingEl.classList.remove('playing');
   if (el){ el.classList.add('playing'); _playingEl = el; }
   const fb = () => { if (d) fallbackSpeak(d.hz); };
@@ -263,7 +268,7 @@ function _speak(text, lang, voice, token, cb){     // 폰 음성으로 읽기
   setTimeout(() => { try{ window.speechSynthesis.resume(); }catch(e){} }, 80);
 }
 function _playZh(id, token, cb){                   // 중국어: mp3 우선, 없으면 폰 음성
-  const d = DATA[id];
+  const d = byId(id);
   try{
     if (_audio){ try{ _audio.pause(); }catch(e){} _audio = null; }
     const a = new Audio('audio/chinese/c' + id + '.mp3');
@@ -288,18 +293,20 @@ function togglePlayAll(btn){
     if (!_seq || _seq.token !== token) return;
     if (idx >= list.length){ idx = 0; }            // 무한반복
     const { el, id } = list[idx];
-    const d = DATA[id];
+    const d = byId(id);
     document.querySelectorAll('.ccard.playing').forEach(e => e.classList.remove('playing'));
     if (el){ el.classList.add('playing'); el.scrollIntoView({ block:'center', behavior:'smooth' }); }
-    _speak(d.ko, 'ko-KR', _pickVoice('ko'), token, () => {        // ① 한국어 뜻
-      if (!_seq || _seq.token !== token) return;
-      _thinkTimer = setTimeout(() => {                            // ② 생각할 시간
-        _playZh(id, token, () => {                                // ③ 중국어
-          idx++;
-          setTimeout(playOne, 700);                               // 문장 사이 쉼
-        });
-      }, THINK_PAUSE);
-    });
+    const _adv = () => { idx++; setTimeout(playOne, 700); };      // 다음 항목으로
+    if (isPron(d)){                                               // 발음(성모·운모·성조): 소리만
+      _playZh(id, token, _adv);
+    } else {
+      _speak(d.ko, 'ko-KR', _pickVoice('ko'), token, () => {      // ① 한국어 뜻
+        if (!_seq || _seq.token !== token) return;
+        _thinkTimer = setTimeout(() => {                          // ② 생각할 시간
+          _playZh(id, token, _adv);                               // ③ 중국어
+        }, THINK_PAUSE);
+      });
+    }
   };
   playOne();
 }
