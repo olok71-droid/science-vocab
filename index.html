@@ -7,17 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f0faf8;
+    --bg: #fafaf9;
     --card: #ffffff;
-    --accent: #3ecfb2;
-    --accent2: #7de8d5;
-    --green: #3ecfb2;
-    --yellow: #ffcc5c;
-    --purple: #a78bfa;
-    --blue: #60c4f8;
-    --text: #1f3d38;
-    --muted: #8abdb6;
-    --shadow: rgba(62,207,178,0.13);
+    --accent: #111111;
+    --accent2: #444444;
+    --green: #111111;
+    --yellow: #555555;
+    --purple: #111111;
+    --blue: #333333;
+    --text: #111111;
+    --muted: #6f6f6f;
+    --shadow: rgba(0,0,0,0.07);
+    --room: #111111;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
 
@@ -27,8 +28,7 @@
     font-family: 'Nunito','Noto Sans KR',sans-serif;
     min-height: 100vh;
     padding: 0 0 60px;
-    background-image: radial-gradient(circle at 15% 15%, rgba(62,207,178,0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 85% 80%, rgba(125,232,213,0.12) 0%, transparent 50%);
+    background-image: none;
   }
 
   header {
@@ -42,7 +42,7 @@
     background: white;
     border-radius: 50%;
     width: 96px; height: 96px;
-    box-shadow: 0 4px 20px rgba(62,207,178,0.2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
     margin-bottom: 14px;
     animation: bounce 2.2s ease-in-out infinite;
     overflow: hidden;
@@ -86,7 +86,7 @@
     background: var(--card);
     border-radius: 20px;
     padding: 16px;
-    border: 2px solid rgba(62,207,178,0.15);
+    border: 1.5px solid rgba(0,0,0,0.16);
     text-decoration: none;
     color: var(--text);
     transition: all 0.22s;
@@ -95,7 +95,7 @@
   }
   .unit-card.ready:hover {
     transform: translateY(-4px);
-    border-color: rgba(62,207,178,0.45);
+    border-color: #111111;
     box-shadow: 0 8px 28px var(--shadow);
   }
   .unit-card.coming {
@@ -109,8 +109,8 @@
     font-size: 10px; padding: 3px 9px;
     border-radius: 20px; font-weight: 800; letter-spacing: 0.3px;
   }
-  .badge-ready { background: rgba(62,207,178,0.15); color: var(--accent); }
-  .badge-soon  { background: rgba(138,189,182,0.15); color: var(--muted); }
+  .badge-ready { background: var(--accent); color: #fff; }
+  .badge-soon  { background: #fff; color: var(--muted); border: 1px solid rgba(0,0,0,0.20); }
 
   .unit-name-en { font-size: 14px; font-weight: 800; color: var(--text); line-height: 1.3; }
   .unit-name-ko { font-size: 12px; color: var(--muted); font-weight: 600; }
@@ -119,31 +119,31 @@
   .unit-menu { display:flex; gap:5px; flex-wrap:wrap; margin-top:4px; }
   .menu-chip {
     font-size: 11px; padding: 3px 8px; border-radius: 8px; font-weight: 700;
-    background: rgba(62,207,178,0.1); color: var(--accent);
+    background: rgba(0,0,0,0.07); color: var(--accent);
   }
   .count-chip { background: var(--accent); color: #fff; }
 
   .divider {
     height: 1.5px;
-    background: linear-gradient(to right, transparent, rgba(62,207,178,0.25), transparent);
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.14), transparent);
     margin: 4px 0 24px;
   }
 
   /* 영역(strand) 태그 — 9학년 과학 단원명에 */
   .strand-tag { display:inline-block; font-size:10px; font-weight:800; padding:2px 8px;
     border-radius:8px; margin-bottom:2px; width:fit-content; }
-  .strand-bio   { background:rgba(62,207,178,0.14); color:#16a085; }
-  .strand-chem  { background:rgba(167,139,250,0.16); color:#7c5cf0; }
-  .strand-phys  { background:rgba(255,170,60,0.18);  color:#e08a00; }
-  .strand-earth { background:rgba(96,196,248,0.16);  color:#2a8fd0; }
-  .strand-math  { background:rgba(167,139,250,0.16); color:#7c5cf0; }
+  .strand-bio { background:#ffffff; color:#111111; border:1px solid rgba(0,0,0,0.22); }
+  .strand-chem { background:#ffffff; color:#111111; border:1px solid rgba(0,0,0,0.22); }
+  .strand-phys { background:#ffffff; color:#111111; border:1px solid rgba(0,0,0,0.22); }
+  .strand-earth { background:#ffffff; color:#111111; border:1px solid rgba(0,0,0,0.22); }
+  .strand-math { background:#ffffff; color:#111111; border:1px solid rgba(0,0,0,0.22); }
 
   /* 정사각형 카테고리 버튼 */
   .cat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(104px,1fr)); gap:10px; margin-bottom:26px; }
-  .cat-btn { aspect-ratio:1/1; border-radius:20px; border:2px solid rgba(62,207,178,0.18); background:#fff;
+  .cat-btn { aspect-ratio:1/1; border-radius:20px; border:2px solid rgba(0,0,0,0.13); background:#fff;
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; cursor:pointer;
     font-family:inherit; color:var(--text); transition:all .2s; box-shadow:0 2px 12px var(--shadow); padding:8px; text-align:center; }
-  .cat-btn:hover { transform:translateY(-3px); border-color:rgba(62,207,178,0.5); }
+  .cat-btn:hover { transform:translateY(-3px); border-color:rgba(0,0,0,0.55); }
   .cat-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 6px 18px var(--shadow); }
   .cat-btn .cat-emoji { font-size:32px; line-height:1; }
   .cat-btn .cat-name { font-size:13px; font-weight:900; line-height:1.2; }
@@ -172,7 +172,7 @@
     border-radius: 50%;
     background: white;
     box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-    border: 2px solid rgba(167,139,250,0.35);
+    border: 2px solid rgba(0,0,0,0.18);
     display: flex; align-items: center; justify-content: center;
     font-size: 22px;
     text-decoration: none;
@@ -181,13 +181,13 @@
     position: relative;
   }
   .fab:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
-  .fab.grade { border-color: rgba(96,196,248,0.45); }
+  .fab.grade { border-color: rgba(0,0,0,0.30); }
   .fab-label {
     position: absolute;
     right: 60px;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(31,61,56,0.92);
+    background: rgba(17,17,17,0.92);
     color: white;
     padding: 5px 10px;
     border-radius: 8px;
@@ -208,7 +208,7 @@
   .tt-card {
     background: var(--card);
     border-radius: 20px;
-    border: 2px solid rgba(62,207,178,0.15);
+    border: 1.5px solid rgba(0,0,0,0.16);
     box-shadow: 0 2px 12px var(--shadow);
     overflow: hidden;
     margin-bottom: 26px;
@@ -219,8 +219,8 @@
   .tt-table col:not(.tt-c-time) { width: 124px; }
 
   .tt-table th, .tt-table td {
-    border-bottom: 1px solid rgba(62,207,178,0.14);
-    border-right: 1px solid rgba(62,207,178,0.14);
+    border-bottom: 1px solid rgba(0,0,0,0.10);
+    border-right: 1px solid rgba(0,0,0,0.10);
   }
   .tt-table th:last-child, .tt-table td:last-child { border-right: none; }
   .tt-table tr:last-child td { border-bottom: none; }
@@ -232,43 +232,43 @@
     padding: 9px 4px; text-align: center;
   }
   .tt-table thead th.tt-today { background: var(--accent); color: #fff; }
-  .tt-table thead th.tt-blank { background: rgba(62,207,178,0.06); }
+  .tt-table thead th.tt-blank { background: rgba(0,0,0,0.04); }
 
   .tt-table td.tt-time {
     position: sticky; left: 0; z-index: 1;
-    background: rgba(62,207,178,0.06);
+    background: rgba(0,0,0,0.04);
     font-size: 10px; font-weight: 800; color: var(--muted);
     text-align: center; padding: 6px 3px;
     white-space: pre-line; line-height: 1.35;
   }
 
   .tt-table td.tt-slot { padding: 6px; vertical-align: top; }
-  .tt-table td.tt-slot.tt-today { background: rgba(62,207,178,0.07); }
+  .tt-table td.tt-slot.tt-today { background: rgba(0,0,0,0.04); }
 
   .tt-pill {
-    background: rgba(62,207,178,0.1);
-    border: 1.5px solid rgba(62,207,178,0.22);
+    background: #ffffff;
+    border: 1.5px solid rgba(0,0,0,0.16);
     border-radius: 12px;
     padding: 7px 8px;
   }
   .tt-subject { font-size: 12px; font-weight: 900; color: var(--text); line-height: 1.25; }
   .tt-room {
     margin-top: 3px; font-size: 11.5px; font-weight: 900;
-    color: var(--purple);
+    color: var(--room);
   }
   .tt-teacher { margin-top: 3px; font-size: 9.5px; font-weight: 600; color: var(--muted); line-height: 1.25; }
 
   .tt-band td { padding: 0; }
   .tt-band-cell {
-    background: rgba(167,139,250,0.09);
+    background: rgba(0,0,0,0.045);
     text-align: center;
     padding: 9px 10px;
     font-size: 11.5px; font-weight: 800; color: var(--text);
   }
-  .tt-band-cell .tt-band-room { color: var(--purple); font-weight: 900; }
+  .tt-band-cell .tt-band-room { color: var(--room); font-weight: 900; }
   .tt-band-cell .tt-band-teacher { color: var(--muted); font-weight: 600; font-size: 10px; }
   .tt-band-cell.tt-free {
-    background: rgba(138,189,182,0.09);
+    background: rgba(0,0,0,0.09);
     color: var(--muted); font-weight: 800; letter-spacing: .04em; font-size: 10.5px;
   }
 </style>
