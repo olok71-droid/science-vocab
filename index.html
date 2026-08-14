@@ -210,8 +210,8 @@
   }
   .tt-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tt-table { border-collapse: collapse; width: 100%; }
-  .tt-table col.tt-c-time { width: 54px; }
-  .tt-table col:not(.tt-c-time) { width: 124px; }
+  .tt-table col.tt-c-time { width: 12.5%; }
+  .tt-table col:not(.tt-c-time) { width: 17.5%; }
 
   .tt-table th, .tt-table td {
     border-bottom: 1px solid rgba(0,0,0,0.10);
@@ -251,6 +251,40 @@
   }
   .tt-teacher { margin-top: 3px; font-size: 9.5px; font-weight: 600; color: var(--muted); line-height: 1.25; }
 
+  /* 넓게 보기 — 가로 스크롤하며 칸을 넉넉히 */
+  .tt-card.tt-wide .tt-table { min-width: 680px; }
+
+  /* 전환 버튼 */
+  .tt-bar {
+    display: flex; justify-content: flex-end;
+    padding: 8px 10px 0;
+  }
+  .tt-toggle {
+    font-family: inherit; cursor: pointer;
+    font-size: 11.5px; font-weight: 800; color: var(--text);
+    background: #fff; border: 1.5px solid var(--accent);
+    border-radius: 999px; padding: 5px 12px;
+  }
+
+  /* 좁게(기본) 모드에서만 글자를 줄여 5일이 화면에 다 들어가게 */
+  @media (max-width: 560px) {
+    .tt-card:not(.tt-wide) .tt-table thead th { font-size: 11px; padding: 7px 2px; }
+    .tt-card:not(.tt-wide) .tt-table td.tt-time { font-size: 9px; padding: 5px 1px; }
+    .tt-card:not(.tt-wide) .tt-table td.tt-slot { padding: 3px; }
+    .tt-card:not(.tt-wide) .tt-pill { padding: 5px 5px; border-radius: 9px; border-width: 1px; }
+    .tt-card:not(.tt-wide) .tt-subject { font-size: 10px; }
+    .tt-card:not(.tt-wide) .tt-room { font-size: 9.5px; margin-top: 2px; }
+    .tt-card:not(.tt-wide) .tt-teacher { font-size: 8px; margin-top: 2px; }
+    .tt-card:not(.tt-wide) .tt-band-cell { font-size: 10px; padding: 7px 6px; }
+    .tt-card:not(.tt-wide) .tt-band-cell .tt-band-teacher { font-size: 8.5px; }
+  }
+  @media (max-width: 400px) {
+    .tt-card:not(.tt-wide) .tt-table thead th { font-size: 10px; }
+    .tt-card:not(.tt-wide) .tt-subject { font-size: 9px; }
+    .tt-card:not(.tt-wide) .tt-room { font-size: 9px; }
+    .tt-card:not(.tt-wide) .tt-teacher { font-size: 7.5px; }
+  }
+
   .tt-band td { padding: 0; }
   .tt-band-cell {
     background: rgba(0,0,0,0.045);
@@ -275,7 +309,8 @@
 
 <div class="container">
 
-  <div class="tt-card">
+  <div class="tt-card" id="ttCard">
+    <div class="tt-bar"><button class="tt-toggle" id="ttToggle" type="button">넓게 보기</button></div>
     <div class="tt-scroll">
       <table class="tt-table" id="ttTable"></table>
     </div>
@@ -680,40 +715,40 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
     P1: { time:"08:00\n08:55", byDay:{
       monday:    ["English","H3-02","Garry Glanz"],
       tuesday:   ["Mandarin","H1-03","Ying Ying Tan"],
-      wednesday: ["Humanities","H4-02","Douglas Charles Lawrence"],
+      wednesday: ["Humanities","H4-02","Douglas Lawrence"],
       thursday:  ["Mathematics","H2-01","Ananthan Seluerajah"],
-      friday:    ["Design Technology","E4-01","Marc Douglas Mathyk"],
+      friday:    ["Design Technology","E4-01","Marc Mathyk"],
     }},
     P2: { time:"09:00\n09:55", byDay:{
-      monday:    ["LEDU","H4-05","Abram Michael De Leon"],
+      monday:    ["LEDU","H4-05","Abram De Leon"],
       tuesday:   ["Art","E4-06","Ai Leen Tan"],
       wednesday: ["Drama","A1-04","Heather Smith"],
-      thursday:  ["Physical Education","A1-03","Danielle Mary Anita Eileen Grego"],
-      friday:    ["Design Technology","E4-01","Marc Douglas Mathyk"],
+      thursday:  ["Physical Education","A1-03","Danielle Grego"],
+      friday:    ["Design Technology","E4-01","Marc Mathyk"],
     }},
     P3: { time:"10:55\n11:50", byDay:{
       monday:    ["Computer Science","A5-02","Mehraj Nowshath"],
       tuesday:   ["Music","A4-06","Barnaby Everett"],
-      wednesday: ["Science","H5-05","Kenneth Holman Phillips"],
-      thursday:  ["Science","H5-05","Kenneth Holman Phillips"],
-      friday:    ["EAL Support","H3-07","Thanushri Chantelle Naidu"],
+      wednesday: ["Science","H5-05","Kenneth Phillips"],
+      thursday:  ["Science","H5-05","Kenneth Phillips"],
+      friday:    ["EAL Support","H3-07","Thanushri Naidu"],
     }},
     P4: { time:"11:55\n12:50", byDay:{
       monday:    ["Mandarin","H1-03","Ying Ying Tan"],
       tuesday:   ["Mathematics","H2-01","Ananthan Seluerajah"],
-      wednesday: ["Physical Education","A1-03","Danielle Mary Anita Eileen Grego"],
+      wednesday: ["Physical Education","A1-03","Danielle Grego"],
       thursday:  ["English","H3-02","Garry Glanz"],
       friday:    ["Mathematics","H2-01","Ananthan Seluerajah"],
     }},
     P5: { time:"13:30\n14:25", byDay:{
-      monday:    ["Science","H5-05","Kenneth Holman Phillips"],
-      tuesday:   ["Humanities","H4-02","Douglas Charles Lawrence"],
+      monday:    ["Science","H5-05","Kenneth Phillips"],
+      tuesday:   ["Humanities","H4-02","Douglas Lawrence"],
       wednesday: ["Mathematics","H2-01","Ananthan Seluerajah"],
-      thursday:  ["EAL Support","H3-09","Thanushri Chantelle Naidu"],
-      friday:    ["Humanities","H4-02","Douglas Charles Lawrence"],
+      thursday:  ["EAL Support","H3-09","Thanushri Naidu"],
+      friday:    ["Humanities","H4-02","Douglas Lawrence"],
     }},
     P6: { time:"14:30\n15:25", byDay:{
-      monday:    ["Science","H5-05","Kenneth Holman Phillips"],
+      monday:    ["Science","H5-05","Kenneth Phillips"],
       tuesday:   ["English","H3-02","Garry Glanz"],
       wednesday: ["Mandarin","H1-03","Ying Ying Tan"],
       thursday:  ["PSHCE","H2-03","Ross McManus"],
@@ -722,7 +757,7 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
   };
 
   const BANDS = {
-    TUTOR: { time:"10:00\n10:30", label:"Tutor / Assembly", room:"H3-10", teacher:"David James Cassels" },
+    TUTOR: { time:"10:00\n10:30", label:"Tutor / Assembly", room:"H3-10", teacher:"David Cassels" },
     FREE1: { time:"10:30\n10:55", label:"FREE PERIOD" },
     FREE2: { time:"12:50\n13:25", label:"FREE PERIOD" },
   };
@@ -791,6 +826,15 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);
+
+  var card = document.getElementById("ttCard");
+  var toggle = document.getElementById("ttToggle");
+  if (card && toggle) {
+    toggle.addEventListener("click", function () {
+      var wide = card.classList.toggle("tt-wide");
+      toggle.textContent = wide ? "좁게 보기" : "넓게 보기";
+    });
+  }
 
   // 오늘 요일이 보이도록 가로 스크롤
   const idx = dayKeys.indexOf(todayKey);
