@@ -226,7 +226,6 @@
     font-size: 12.5px; font-weight: 900; color: var(--text);
     padding: 9px 4px; text-align: center;
   }
-  .tt-table thead th.tt-today { background: #fff; color: var(--text); box-shadow: inset 0 -3px 0 var(--accent); }
   .tt-table thead th.tt-blank { background: rgba(0,0,0,0.04); }
 
   .tt-table td.tt-time {
@@ -238,7 +237,6 @@
   }
 
   .tt-table td.tt-slot { padding: 6px; vertical-align: top; }
-  .tt-table td.tt-slot.tt-today { background: rgba(0,0,0,0.04); }
 
   .tt-pill {
     background: #ffffff;
@@ -671,11 +669,11 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
    매일 똑같은 Tutor/Assembly·FREE PERIOD는 한 줄로 합쳐 표시 */
 (function () {
   const DAYS = [
-    { key:"monday",    label:"Mon 월" },
-    { key:"tuesday",   label:"Tue 화" },
-    { key:"wednesday", label:"Wed 수" },
-    { key:"thursday",  label:"Thu 목" },
-    { key:"friday",    label:"Fri 금" },
+    { key:"monday",    label:"Mon" },
+    { key:"tuesday",   label:"Tue" },
+    { key:"wednesday", label:"Wed" },
+    { key:"thursday",  label:"Thu" },
+    { key:"friday",    label:"Fri" },
   ];
 
   const VARYING = {
@@ -746,7 +744,7 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
   const thead = document.createElement("thead");
   const headRow = document.createElement("tr");
   headRow.innerHTML = '<th class="tt-blank"></th>' +
-    DAYS.map(d => '<th class="' + (d.key === todayKey ? "tt-today" : "") + '">' + d.label + '</th>').join("");
+    DAYS.map(d => '<th>' + d.label + '</th>').join("");
   thead.appendChild(headRow);
   table.appendChild(thead);
 
@@ -780,7 +778,7 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
       DAYS.forEach(d => {
         const [subject, room, teacher] = p.byDay[d.key];
         const td = document.createElement("td");
-        td.className = "tt-slot" + (d.key === todayKey ? " tt-today" : "");
+        td.className = "tt-slot";
         td.innerHTML =
           '<div class="tt-pill">' +
             '<div class="tt-subject">' + esc(subject) + '</div>' +
