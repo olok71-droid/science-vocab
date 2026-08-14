@@ -32,8 +32,11 @@
   }
 
   header {
-    text-align: center;
-    padding: 48px 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 40px 20px 30px;
   }
 
   .cat-wrap {
@@ -41,21 +44,29 @@
     align-items: center; justify-content: center;
     background: white;
     border-radius: 50%;
-    width: 96px; height: 96px;
+    width: 92px; height: 92px;
+    flex: none;
     box-shadow: 0 4px 20px rgba(0,0,0,0.10);
-    margin-bottom: 14px;
     animation: bounce 2.2s ease-in-out infinite;
     overflow: hidden;
   }
-  .cat-wrap img { width: 84px; height: 84px; object-fit: contain; }
+  .cat-wrap img { width: 80px; height: 80px; object-fit: contain; }
   @keyframes bounce {
     0%,100% { transform: translateY(0); }
     50%      { transform: translateY(-9px); }
   }
 
   header h1 {
-    font-size: 32px; font-weight: 900;
-    margin-bottom: 6px; letter-spacing: -0.5px;
+    font-size: clamp(23px, 6.4vw, 32px);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+  }
+
+  @media (max-width: 420px) {
+    header { gap: 12px; padding: 28px 14px 22px; }
+    .cat-wrap { width: 68px; height: 68px; }
+    .cat-wrap img { width: 58px; height: 58px; }
   }
   .amy   { color: var(--accent); }
   .study { color: var(--purple); }
