@@ -878,7 +878,12 @@ Please act as my tutor for Year 8 Science (Biology, Chemistry, Physics) and any 
 function showCat(id){
   document.querySelectorAll('.cat-pane').forEach(p=>p.classList.toggle('active', p.id==='cat-'+id));
   document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active', b.dataset.cat===id));
-  window.scrollTo({top:0});
+  // 맨 위(시간표)로 튀어 올라가지 않게 — 과목 버튼 줄을 화면 맨 위에 두고 목차가 바로 아래 보이게
+  var grid = document.querySelector('.cat-grid');
+  if (grid) {
+    var y = grid.getBoundingClientRect().top + window.pageYOffset - 10;
+    window.scrollTo({top: y < 0 ? 0 : y});
+  }
 }
 </script>
 
