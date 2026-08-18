@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📅 Year 9 Curriculum 진도표 · AMY Study App</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf9; --card: #ffffff; --text: #111111; --muted: #6f6f6f;
+    --shadow: rgba(0,0,0,0.07); --line: rgba(0,0,0,0.16);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Nunito','Noto Sans KR',sans-serif; padding:0 0 70px; }
+
+  header { padding:28px 20px 18px; text-align:center; }
+  header h1 { font-size:clamp(21px,5.6vw,28px); font-weight:900; letter-spacing:-0.5px; line-height:1.2; }
+  header .sub { font-size:13px; color:var(--muted); font-weight:700; margin-top:7px; }
+
+  .container { max-width:720px; margin:0 auto; padding:0 16px; }
+
+  .home-link {
+    display:inline-flex; align-items:center; gap:6px; margin:0 0 16px 2px;
+    font-size:13px; font-weight:800; color:var(--text); text-decoration:none;
+    background:var(--card); border:1.5px solid var(--line); border-radius:999px; padding:7px 14px;
+  }
+
+  .notice { background:var(--card); border:1.5px solid var(--line); border-radius:20px; padding:16px 18px; margin-bottom:22px; box-shadow:0 2px 12px var(--shadow); }
+  .notice h3 { font-size:15px; font-weight:900; margin-bottom:8px; }
+  .notice li { font-size:12.5px; font-weight:600; line-height:1.65; margin-left:16px; color:var(--text); }
+
+  .subj-nav { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:24px; }
+  .subj-nav a {
+    font-size:12px; font-weight:800; text-decoration:none; color:var(--text);
+    background:var(--card); border:1.5px solid var(--line); border-radius:999px; padding:7px 12px;
+  }
+
+  .subject-section { margin-bottom:30px; scroll-margin-top:14px; }
+  .subject-label { display:flex; align-items:baseline; gap:9px; padding:0 4px; margin-bottom:11px; flex-wrap:wrap; }
+  .subject-label .icon { font-size:21px; }
+  .subject-label .name-en { font-size:17px; font-weight:900; }
+  .subject-label .name-ko { font-size:13px; font-weight:700; color:var(--muted); }
+  .teacher { font-size:11.5px; font-weight:700; color:var(--muted); width:100%; padding-left:4px; margin-top:-6px; margin-bottom:10px; }
+
+  .term-card {
+    background:var(--card); border:1.5px solid var(--line); border-radius:20px;
+    padding:15px 17px; margin-bottom:9px; box-shadow:0 2px 12px var(--shadow);
+  }
+  .term-tag {
+    display:inline-block; font-size:11px; font-weight:900; letter-spacing:0.3px;
+    border:1.5px solid var(--text); border-radius:999px; padding:3px 10px; margin-bottom:9px;
+  }
+  .unit-name-en { font-size:15px; font-weight:900; line-height:1.3; margin-top:9px; }
+  .unit-name-en:first-of-type { margin-top:0; }
+  .unit-name-ko { font-size:12.5px; font-weight:700; color:var(--muted); margin-top:2px; }
+  .u-body { font-size:12.5px; font-weight:600; line-height:1.65; margin-top:5px; }
+  .u-body b { font-weight:900; }
+  .src { font-size:10.5px; font-weight:700; color:var(--muted); padding-left:5px; margin-top:6px; }
+  .flag { border-left:4px solid var(--text); padding-left:11px; font-size:12px; font-weight:700; margin:9px 0 4px; }
+  table.rot { width:100%; border-collapse:collapse; margin-top:6px; }
+  table.rot th, table.rot td { border:1.5px solid var(--line); padding:7px 9px; font-size:12px; font-weight:700; text-align:left; }
+  table.rot th { width:118px; background:#f3f3f2; }
+  .missing-box { background:var(--card); border:1.5px dashed var(--text); border-radius:20px; padding:16px 18px; margin-bottom:24px; }
+  .missing-box h3 { font-size:14.5px; font-weight:900; margin-bottom:8px; }
+  .missing-box li { font-size:12.5px; font-weight:600; line-height:1.7; margin-left:16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📅 Year 9 Curriculum</h1>
+  <div class="sub">2026/27 전 과목 진도표 · SJI International</div>
+</header>
+
+<div class="container">
+  <a class="home-link" href="index.html">← AMY Study App 홈</a>
+
+  <div class="notice">
+    <h3>먼저 알아둘 것</h3>
+    <ul>
+      <li>시간표에 있는 과목은 14개인데, 학교가 진도표를 준 과목은 11개다. <b>Drama · EAL Support · PSHCE</b>는 학교가 진도표를 주지 않았다.</li>
+      <li>중국어는 <b>초급(Y9 Beginner)</b> 것만 실었다. 체육은 <b>9Y반</b> 순서다.</li>
+      <li>Computer Science는 학교가 "잠정안이라 바뀔 수 있음"이라고 적어 두었다.</li>
+    </ul>
+  </div>
+
+  <div class="subj-nav">
+    <a href="#eng">English</a><a href="#math">Maths</a><a href="#sci">Science</a><a href="#hum">Humanities</a>
+    <a href="#man">Mandarin</a><a href="#cs">Computer Sci</a><a href="#art">Art</a><a href="#dt">DT</a>
+    <a href="#mus">Music</a><a href="#pe">PE</a><a href="#ledu">LEDU</a>
+  </div>
+
+  <!-- ENGLISH -->
+  <div class="subject-section" id="eng">
+    <div class="subject-label"><span class="icon">📖</span><span class="name-en">English</span><span class="name-ko">영어</span></div>
+    <div class="teacher">Garry Glanz · H3-02</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">The Art of Storytelling — Narrative Fiction</div>
+      <div class="unit-name-ko">이야기의 기술 — 서사 소설</div>
+      <div class="u-body">19세기부터 현대까지 여러 작가의 단편소설 모음집을 읽는다. 시간 순서대로 쓴 이야기와 뒤섞어 쓴 이야기를 비교하고, 작가가 왜 그런 구조를 골랐는지 분석한다. 직접 여러 방식으로 이야기를 구성해 본다.</div>
+      <div class="unit-name-en">Make Your Voice Heard — Speech Writing <span style="font-weight:700;font-size:11.5px;color:var(--muted)">(Term 1~2)</span></div>
+      <div class="unit-name-ko">목소리를 내라 — 연설문 쓰기</div>
+      <div class="u-body">미디어를 읽는 법을 배운다. 의식적·무의식적 편견, 가짜뉴스, 선전을 다룬다. 직접 고른 주제로 연설문을 써서 반 앞에서 발표한다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">Prose Study — <i>Animal Farm</i></div>
+      <div class="unit-name-ko">소설 정독 — 동물농장</div>
+      <div class="u-body">이상적인 사회와 실제로 나타난 디스토피아의 충돌을 다룬다. 우화로 읽고 마지막에 문학 에세이를 쓴다. <b>IGCSE 산문 시험 대비</b>가 목적이다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">Drama — <i>An Inspector Calls</i></div>
+      <div class="unit-name-ko">희곡 — 이너스펙터 콜스</div>
+      <div class="u-body">IGCSE 지정 희곡이다. 평판과 책임 중 무엇이 더 중요한가를 다룬다. 직접 연기해 보고, 무대·조명·대사·지시문이 뜻을 만드는 방식을 배운다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">ALL YEAR</span>
+      <div class="unit-name-en">Vocabulary — "Remember, Spell, Define"</div>
+      <div class="unit-name-ko">어휘 (외우고 · 철자 쓰고 · 뜻 쓰기 숙제)</div>
+      <div class="u-body">1학기에는 묘사용 어휘, 이후에는 <i>Animal Farm</i>·<i>An Inspector Calls</i>에 나오는 시대 배경 어휘를 배운다.</div>
+    </div>
+    <div class="src">Y7-9 English Curriculum Overview 2026_27.pdf p.3</div>
+  </div>
+
+  <!-- MATHS -->
+  <div class="subject-section" id="math">
+    <div class="subject-label"><span class="icon">🔢</span><span class="name-en">Mathematics</span><span class="name-ko">수학</span></div>
+    <div class="teacher">Ananthan Seluerajah · H2-01</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1 · 6 chapters</span>
+      <div class="u-body">
+        <b>① Number and calculation</b> 수와 계산 — 지수와 표준형, 유리수·무리수, 근호 어림하기<br>
+        <b>② Expressions and formulae</b> 식과 공식 — 지수 법칙을 문자식에, 공식의 주어 바꾸기<br>
+        <b>③ Decimals, percentages and rounding</b> — 부등식과 상·하한, 복리 백분율(저축·이자)<br>
+        <b>④ Equations and inequalities</b> 방정식과 부등식 — 일차·연립방정식 풀이법 비교<br>
+        <b>⑤ Angles</b> 각 — 피타고라스 정리, 다각형 내각·외각, 방위각과 작도<br>
+        <b>⑥ Statistical investigations</b> 통계 조사 — 설문 설계, 자료 수집과 그래프 고르기
+      </div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2 · 5 chapters</span>
+      <div class="u-body">
+        <b>① Shapes and measurements</b> — 원의 넓이, 복합도형<br>
+        <b>② Fractions</b> 분수 — 분수·소수 혼합 계산, 약분<br>
+        <b>③ Sequences and functions</b> 수열과 함수 — 규칙 찾기, 역연산<br>
+        <b>④ Graphs</b> 그래프 — 일차·이차함수 표와 그래프<br>
+        <b>⑤ Ratio and proportion</b> 비와 비례 — 실생활·기하 디자인 속 비
+      </div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3 · 5 chapters</span>
+      <div class="u-body">
+        <b>① Probability</b> 확률 — 복원·비복원, 확률나무, 기대 도수<br>
+        <b>② Position and transformation</b> — 방위각·작도, 대칭·회전·평행이동, 확대<br>
+        <b>③ Volume, surface area and symmetry</b> — 입체 부피·겉넓이, 평면대칭<br>
+        <b>④ Interpreting and discussing results</b> — 묶은 자료의 평균, 지구온난화 사례 연구, 통계 탐구 전 과정<br>
+        <b>⑤ End of Year Exam Preparation</b> 학년말 시험 대비
+      </div>
+    </div>
+    <div class="src">Y7-9 Maths Curriculum Overview.pdf p.6~8 · 학기마다 수시·정기 평가가 따로 있다</div>
+  </div>
+
+  <!-- SCIENCE -->
+  <div class="subject-section" id="sci">
+    <div class="subject-label"><span class="icon">📗</span><span class="name-en">Science</span><span class="name-ko">과학</span></div>
+    <div class="teacher">Kenneth Phillips · H5-05 · 주 3회</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="u-body">
+        <b>Working Scientifically</b> 과학하는 방법 — 탐구 과정, 실험 방법과 안전, 표와 그래프, 자료 평가<br>
+        <b>9B1 Genes and Inheritance</b> 유전자와 유전 — 연속·불연속 변이, 염색체·유전자·DNA, 생식세포, 자연선택, 선택적 육종<br>
+        <b>9C1 Periodic Table</b> 주기율표 — 원자 구조, 족과 주기, 1·7·0족, 이온결합과 공유결합<br>
+        <b>9P1 Electrostatic and Electric Current</b> 정전기와 전류 — 회로 기호, 전류와 전압, 직렬·병렬 회로, 저항
+      </div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="u-body">
+        <b>9B2 Photosynthesis and Plant Growth</b> 광합성과 식물 성장 — 광합성, 잎, 제한 요인, 확산과 삼투, 뿌리, 증산작용, 무기양분<br>
+        <b>9C2 Reactivity</b> 반응성 — 금속·탄산염·산화물과 산, 반응성 서열, 치환 반응<br>
+        <b>9P2 Thermal Energy</b> 열에너지 — 에너지와 온도, 밀도, 전도·대류·복사, 증발
+      </div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="u-body">
+        <b>9B3 Sexual Reproduction in Flowering Plants</b> 꽃식물의 유성생식 — 꽃의 구조, 수분, 수정, 발아, 씨앗 퍼뜨리기<br>
+        <b>9C3 Rates of Reaction</b> 반응 속도 — 속도 측정, 표면적·온도·농도의 영향<br>
+        <b>9P4 Sound</b> 소리 — 파동, 소리와 에너지 전달, 세기와 높이, 소리 감지
+      </div>
+    </div>
+    <div class="src">Year 9 Science Curriculum Overview.pdf p.1~2 · 생물(B)·화학(C)·물리(P)를 한 학기에 같이 나간다</div>
+  </div>
+
+  <!-- HUMANITIES -->
+  <div class="subject-section" id="hum">
+    <div class="subject-label"><span class="icon">🌍</span><span class="name-en">Humanities</span><span class="name-ko">인문 (지리 + 역사)</span></div>
+    <div class="teacher">Douglas Lawrence · H4-02</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">1. Tectonic Hazards <span style="font-weight:700;font-size:11.5px;color:var(--muted)">Geography</span></div>
+      <div class="unit-name-ko">지각 재해 — 지진과 화산이 지역사회·환경에 주는 영향과 대비 전략</div>
+      <div class="unit-name-en">2. World War One <span style="font-weight:700;font-size:11.5px;color:var(--muted)">History</span></div>
+      <div class="unit-name-ko">제1차 세계대전 — 왜 '최초의 현대 전쟁'이라 부르는가</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">3. Climate Change <span style="font-weight:700;font-size:11.5px;color:var(--muted)">Geography</span></div>
+      <div class="unit-name-ko">기후변화 — 연결된 세계에서 어떻게 이해하고 대응할 것인가</div>
+      <div class="unit-name-en">4. The Holocaust <span style="font-weight:700;font-size:11.5px;color:var(--muted)">History</span></div>
+      <div class="unit-name-ko">홀로코스트 — 나치의 유대인 박해가 '최종 해결책'으로 이어진 과정</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">5. International Development <span style="font-weight:700;font-size:11.5px;color:var(--muted)">Geography</span></div>
+      <div class="unit-name-ko">국제 개발 — 선진국이란 무엇인가, 개발 격차를 지속가능하게 줄이기</div>
+      <div class="unit-name-en">6. World War Two <span style="font-weight:700;font-size:11.5px;color:var(--muted)">History</span></div>
+      <div class="unit-name-ko">제2차 세계대전 — 유럽과 아시아에 미친 영향</div>
+    </div>
+    <div class="src">Y7-9 Humanities Curriculum Overview.pdf p.1 (Year 9, 6개 단원)</div>
+  </div>
+
+  <!-- MANDARIN -->
+  <div class="subject-section" id="man">
+    <div class="subject-label"><span class="icon">🐼</span><span class="name-en">Mandarin — Beginner</span><span class="name-ko">중국어 초급반</span></div>
+    <div class="teacher">Ying Ying Tan · H1-03 · 주 3회</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">Unit 1: School Life &amp; Learning Chinese</div>
+      <div class="unit-name-ko">1단원 학교생활과 중국어 배우기</div>
+      <div class="u-body">我的新学校 새 학교 · 我每天都很忙 매일 일과와 시간표 · 参加中文夏令营 중국어 여름캠프 · 中文短期培训班 단기 어학과정 · 汉语学习 중국어 학습법<br>
+      <b>문법</b> 一…就 / 得(정도보어) / A比B / 只要…就 / 从…开始 / 每…都 / 既…又<br>
+      <b>어휘</b> 학교 시설과 길 안내, 과목과 방과후활동, 캠프 활동<br>
+      <b>쓰기·말하기</b> 펜팔에게 학교 소개 편지, 캠프 후기 발표</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">Unit 2: Healthy Life</div>
+      <div class="unit-name-ko">2단원 건강한 생활</div>
+      <div class="u-body">生病 아플 때 · 건강한 식사와 생활습관 · 운동 · 취미와 여가<br>
+      <b>문법</b> 给·把 / 就·才 / 越来越 / 地 / 不是…就是 / 除了…以外,…还<br>
+      <b>어휘</b> 몸 부위와 증상, 병원, 음식군, 운동과 헬스, 음악과 취미<br>
+      <b>쓰기·말하기</b> 병가 쪽지 쓰기, 건강한 식사 대 안 건강한 식사 토론</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">Unit 3: Environment &amp; Technology</div>
+      <div class="unit-name-ko">3단원 환경과 기술</div>
+      <div class="u-body">问路 길 묻기 · 环保周 환경보호 주간 · 善用电脑 컴퓨터 바르게 쓰기<br>
+      <b>어휘</b> 방향과 교통편, 오염·재활용·친환경 생활, 기기와 인터넷 안전<br>
+      <b>토론</b> 우리 동네와 세계의 환경 문제. 10학년 진입 준비 단계다.</div>
+    </div>
+    <div class="src">Y9 Mandarin Curriculum Overview.pdf p.1~2 (Beginner) · 중급·고급 진도표는 서정이 반이 아니라 뺐다</div>
+  </div>
+
+  <!-- COMPUTER SCIENCE -->
+  <div class="subject-section" id="cs">
+    <div class="subject-label"><span class="icon">💻</span><span class="name-en">Computer Science</span><span class="name-ko">컴퓨터 과학</span></div>
+    <div class="teacher">Mehraj Nowshath · A5-02</div>
+    <div class="flag">학교가 "아직 검토 중이라 바뀔 수 있는 잠정안"이라고 직접 적어 두었다.</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">Sequencing: Algorithms and flow charts (Flowol, Advanced)</div>
+      <div class="unit-name-ko">순서도와 알고리즘 — 실제 문제와 기계 동작을 컴퓨터로 모형화한다</div>
+      <div class="unit-name-en">Python Programming with Project</div>
+      <div class="unit-name-ko">파이썬 프로그래밍 — 8학년에 이어 반복문(loop)과 함수(function)를 배운다</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">Google Spreadsheet</div>
+      <div class="unit-name-ko">구글 스프레드시트 — 자료 정리·분석·시각화, 서식, 기본 수식과 함수, 정렬·필터, 차트</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">Database</div>
+      <div class="unit-name-ko">데이터베이스 — 자료형·필드·레코드·테이블, 쿼리 만들기, 파일 방식과 관계형 방식의 차이</div>
+      <div class="unit-name-en">Computer Network</div>
+      <div class="unit-name-ko">컴퓨터 네트워크 — 네트워크 종류, 장비, 데이터 전송 방식, 프로토콜</div>
+    </div>
+    <div class="src">Yr9 Computer Science Curriculum Overview 26-27.pdf p.1</div>
+  </div>
+
+  <!-- ART -->
+  <div class="subject-section" id="art">
+    <div class="subject-label"><span class="icon">🎨</span><span class="name-en">Art</span><span class="name-ko">미술</span></div>
+    <div class="teacher">Ai Leen Tan · E4-06</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">Comic Art</div>
+      <div class="unit-name-ko">만화 예술</div>
+      <div class="u-body">만화와 그래픽노블의 문화적 의미, 그림체·서사·상징이 뜻을 전하는 방식을 배운다. 만화가 한 명을 조사하고 직접 찍은 사진으로 작업해 <b>IGCSE 방식의 발표 보드</b>(주석 달린 작품 판)를 만든다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">Portrait</div>
+      <div class="unit-name-ko">인물화</div>
+      <div class="u-body">얼굴 비례와 구조, 눈·코·입 부분 연습, 명암과 하이라이트로 입체감 내기. 최종 결과물은 연필 초상화 한 점이다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">Artivism</div>
+      <div class="unit-name-ko">아티비즘 (예술 + 행동주의)</div>
+      <div class="u-body">예술로 사회·정치·환경 문제를 말한다. Ernest Zacharevic, Favianna Rodriguez를 사례로 보고 혼합매체·콜라주·판화를 실험한 뒤 <b>대형 벽화를 공동 제작</b>한다.</div>
+    </div>
+    <div class="src">Y7-13 Art Curriculum Overview.pdf p.2 (Y9 Art)</div>
+  </div>
+
+  <!-- DT -->
+  <div class="subject-section" id="dt">
+    <div class="subject-label"><span class="icon">🛠️</span><span class="name-en">Design Technology</span><span class="name-ko">디자인 기술</span></div>
+    <div class="teacher">Marc Mathyk · E4-01 · 금요일 2교시 연속</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1 ~ 2a</span>
+      <div class="unit-name-en">Product in a Tin (Intro to DT)</div>
+      <div class="unit-name-ko">깡통 속 제품 — DT 입문</div>
+      <div class="u-body">작업장 안전 교육, 디자인 과정 전체(과제 정의 → 조사 → 사양서), 아이디어 내고 발전시키기, 기초 도면과 표현 기법, 재료와 기본 제작 기술을 배워 작은 완성품을 만든다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2b ~ 3</span>
+      <div class="unit-name-en">Entrepreneur Project</div>
+      <div class="unit-name-ko">창업가 프로젝트</div>
+      <div class="u-body">학교 안의 <b>실제 고객</b> 한 명을 정해 인터뷰하고 필요를 파악한다. 과제 정의서와 사양서를 쓰고 모형·시제품을 거쳐 최종 제품을 만든다. 마지막에 사용자 테스트와 고객 피드백으로 평가한다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">ALL KS3 공통</span>
+      <div class="unit-name-en">Festival Branding Project <span style="font-weight:700;font-size:11.5px;color:var(--muted)">(Term 1)</span></div>
+      <div class="unit-name-ko">페스티벌 브랜딩 — 로고·색·서체로 브랜드 만들기, 포스터·티켓·굿즈 제작</div>
+      <div class="unit-name-en">DEC Awards <span style="font-weight:700;font-size:11.5px;color:var(--muted)">(Term 2~3)</span></div>
+      <div class="unit-name-ko">건설·공학 분야 진로 체험 프로그램</div>
+    </div>
+    <div class="src">Y7-13 Design Technology Curriculum Overview.pdf p.2</div>
+  </div>
+
+  <!-- MUSIC -->
+  <div class="subject-section" id="mus">
+    <div class="subject-label"><span class="icon">🎵</span><span class="name-en">Music</span><span class="name-ko">음악</span></div>
+    <div class="teacher">Barnaby Everett · A4-06</div>
+    <div class="flag">9학년 음악의 목표는 'IGCSE로 가는 준비 과정'이다. 매 수업 첫 5분은 악보 읽기 훈련(Theory Gym)으로 시작한다.</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">Music for Games &amp; Media (Motifs &amp; Sequencing)</div>
+      <div class="unit-name-ko">게임·미디어 음악 — 모티프와 시퀀싱</div>
+      <div class="u-body">Super Mario Bros, Zelda, Skyrim 같은 게임 음악을 연주한다. 개인별 파트 테스트를 녹음하고 전체 합주를 한다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">Roots of Rock &amp; Pop (Groove &amp; Improvisation)</div>
+      <div class="unit-name-ko">록과 팝의 뿌리 — 그루브와 즉흥연주</div>
+      <div class="u-body">Play That Funky Music, Beat It, Better Together 등을 연주한다. 'Live Lounge' 합주에서 각자 <b>즉흥 솔로</b>를 맡는다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">Musical Theatre Deep Dive (Creation &amp; Direction)</div>
+      <div class="unit-name-ko">뮤지컬 심화 — 창작과 연출</div>
+      <div class="u-body">DAW나 MuseScore로 뮤지컬 곡을 직접 쓰거나 편곡한다. Seasons of Love, Defying Gravity를 연주하며 연주 실력도 유지한다. <b>최종 작곡 포트폴리오를 제출</b>해 IGCSE 준비 상태를 점검한다.</div>
+    </div>
+    <div class="src">Y7-9 SJIIS Music Curriculum Overview.pdf p.3 (Year 9)</div>
+  </div>
+
+  <!-- PE -->
+  <div class="subject-section" id="pe">
+    <div class="subject-label"><span class="icon">⚽</span><span class="name-en">Physical Education</span><span class="name-ko">체육 · 9Y반</span></div>
+    <div class="teacher">Danielle Grego (9학년 학년부장 겸임) · A1-03</div>
+    <div class="term-card">
+      <span class="term-tag">ACTIVITIES · 9Y</span>
+      <table class="rot">
+        <tr><th>9/1 ~ 10/10</th><td>Badminton 배드민턴</td></tr>
+        <tr><th>10/13 ~ 11/28</th><td>Raft Building 뗏목 만들기</td></tr>
+        <tr><th>12/1 ~ 2/6</th><td>Tag Games 태그 게임</td></tr>
+        <tr><th>2/9 ~ 3/27</th><td>Synchronised Swimming 싱크로나이즈드 수영</td></tr>
+        <tr><th>4/13 ~ 5/15</th><td>Softball 소프트볼</td></tr>
+        <tr><th>5/18 ~ 6/19</th><td>Gymnastics 체조</td></tr>
+      </table>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">GAMES · 9학년 여학생</span>
+      <table class="rot">
+        <tr><th>9/1 ~ 10/10</th><td>Football 축구</td></tr>
+        <tr><th>10/13 ~ 11/28</th><td>Netball 네트볼</td></tr>
+        <tr><th>12/1 ~ 2/6</th><td>Athletics 육상</td></tr>
+        <tr><th>2/9 ~ 3/27</th><td>Volleyball 배구</td></tr>
+        <tr><th>4/13 ~ 5/15</th><td>Rounders 라운더스</td></tr>
+        <tr><th>5/18 ~ 6/19</th><td>Pickleball 피클볼</td></tr>
+      </table>
+    </div>
+    <div class="src">Y7-11 PE Curriculum Overview - 2026_27.pdf p.1~3 · Games 표에는 반 이름 대신 남/여/9M 세 갈래만 있다</div>
+  </div>
+
+  <!-- LEDU -->
+  <div class="subject-section" id="ledu">
+    <div class="subject-label"><span class="icon">🤝</span><span class="name-en">LEDU (Lasallian Education)</span><span class="name-ko">라살 교육 · 종교·인성</span></div>
+    <div class="teacher">Abram De Leon · H4-05</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">The Heart of Service: Nurturing Faith</div>
+      <div class="unit-name-ko">섬김의 마음 ① 믿음 키우기 — 믿음이 삶과 윤리적 선택을 어떻게 바꾸는가. 학교 수사(House Brothers)들을 만나 봉사의 삶을 듣는다.</div>
+      <div class="unit-name-en">The Heart of Service: Faith in Action</div>
+      <div class="unit-name-ko">섬김의 마음 ② 행동하는 믿음 — <b>'LEDU Talks: 나의 믿음 이야기'</b> 발표 과제를 준비해 반 앞에서 발표한다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">Becoming A Lasallian Team Player</div>
+      <div class="unit-name-ko">섬김의 마음 ③ 라살의 팀플레이어 되기 — 공동체란 무엇인가. '문화 만화경'에서 말레이시아·중국·인도·<b>한국</b>·일본·영국·이탈리아·호주 문화를 살펴본다.</div>
+      <div class="unit-name-en">Global Perspectives and Advocacy</div>
+      <div class="unit-name-ko">섬김의 마음 ④ 세계적 시각과 옹호 — 문화 포스터를 만들어 전시하고 '교실 밖에서 내가 할 역할'을 정리한다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">Lasallian Advocacy for Global Impact</div>
+      <div class="unit-name-ko">섬김의 마음 ⑤ 세계를 향한 실천</div>
+      <div class="u-body"><b>UN 지속가능발전목표(SDGs)</b>와 라살 정신을 연결한다. 목표 하나를 골라 사회 문제를 깊이 조사하고, 지역과 세계 차원의 해결책을 제안하는 캡스톤 과제를 한다.</div>
+    </div>
+    <div class="src">Y7-9 LEDU Curriculum Overview.pdf p.3~6 (Year 9)</div>
+  </div>
+
+  <div class="missing-box">
+    <h3>진도표가 오지 않은 과목 (시간표에는 있음)</h3>
+    <ul>
+      <li><b>Drama</b> 드라마 — Heather Smith · A1-04 · 수요일 2교시</li>
+      <li><b>EAL Support</b> 영어지원 — Thanushri Naidu · 목요일 5교시 · 금요일 3교시</li>
+      <li><b>PSHCE</b> 인성·건강·시민 교육 — Ross McManus · H2-03 · 목요일 6교시</li>
+    </ul>
+  </div>
+
+  <a class="home-link" href="index.html">← AMY Study App 홈</a>
+</div>
+
+</body>
+</html>
