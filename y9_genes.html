@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#d6f5ec">
-<title>Genes and inheritance 유전자와 유전</title>
+<title>🧬 9B1 Genes and inheritance 유전</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -296,426 +296,692 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
 </style>
+
+<style>
+/* 단원 전체 듣기 바 */
+.allplay { max-width: 980px; margin: 14px auto 0; padding: 0 16px; }
+.allplay-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 14px 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.allplay-btn { flex: 0 0 auto; background: var(--accent); color: #fff; border: none; cursor: pointer;
+  font-family: inherit; font-size: 15px; font-weight: 800; padding: 12px 18px; border-radius: 12px; }
+.allplay-btn.playing { background: var(--purple); }
+.allplay-txt { font-size: 13px; color: var(--text); font-weight: 600; line-height: 1.5; }
+.allplay-txt b { color: var(--accent); }
+.allplay-time { margin-left: auto; font-size: 13px; font-weight: 700; color: var(--text); }
+.allplay-range { width: 100%; accent-color: var(--accent); }
+/* 자료 탭 */
+.files-wrap { max-width: 980px; margin: 0 auto; padding: 4px 16px 40px; }
+.file-card { display: flex; align-items: center; gap: 14px; background: var(--card);
+  border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin-bottom: 10px;
+  text-decoration: none; color: inherit; }
+.file-ico { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center;
+  font-size: 13px; font-weight: 900; color: #fff; background: var(--accent); letter-spacing: .5px; }
+.file-ico.ppt { background: var(--purple); }
+.file-ico.link { background: var(--strong); }
+.file-name { font-size: 15px; font-weight: 800; color: var(--strong); }
+.file-desc { font-size: 13px; color: var(--text); margin-top: 3px; }
+.file-open { margin-left: auto; font-size: 13px; font-weight: 800; color: var(--accent); white-space: nowrap; }
+.files-head { font-size: 14px; font-weight: 800; color: var(--strong); margin: 18px 0 10px; }
+</style>
 </head>
 <body>
-
 <header>
   <a class="header-back" href="index.html" aria-label="홈">←</a>
   <div class="header-icon">🧬</div>
   <div class="header-text">
-    <div class="header-title">Genes and inheritance 유전자와 유전</div>
-    <div class="header-sub">🧬 Biology 생물 · Unit 7 · Year 9 · Cambridge Lower Secondary</div>
+    <div class="header-title">9B1 Genes and inheritance 유전</div>
+    <div class="header-sub">Year 9 Biology · Cambridge Lower Secondary · Mr Phillips</div>
   </div>
   <div class="header-actions">
     <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제집 채점">📷</a>
     <a class="btn-claude" id="btn-ask" target="_blank" rel="noopener" href="#" title="이 단원에 대해 Claude에게 질문">💬 Claude</a>
-    <a class="btn-claude" href="checkpoint.html" title="Cambridge Checkpoint 과학 기출문제">📄 기출</a>
   </div>
 </header>
 
 <div class="hero">
-  <h1>🧬 <span>Genes and inheritance 유전자와 유전</span></h1>
-  <p>DNA → Genes 유전자 → Gametes 생식세포 → Variation 변이 → Natural selection 자연 선택</p>
-  <div class="stats-row">
-    <span class="stat-chip">🧬 DNA</span>
-    <span class="stat-chip">🔬 Genes</span>
-    <span class="stat-chip">👶 Inheritance</span>
-    <span class="stat-chip">🦋 Variation</span>
-    <span class="stat-chip">🐦 Selection</span>
-  </div>
+  <h1>🧬 <span>9B1 Genes and inheritance 유전</span></h1>
+  <p>Chromosomes → genes → DNA → gametes → fertilisation → sex inheritance</p>
+  <div class="stats-row"><span class="stat-chip">🧬 Chromosomes</span><span class="stat-chip">🧵 Genes</span><span class="stat-chip">🌀 DNA</span><span class="stat-chip">🥚 Gametes</span><span class="stat-chip">👶 Inheritance</span></div>
 </div>
 
-
+<div class="eq-box">
+  <div class="eq-card"><div class="eq-label aerobic">🧬 사람의 염색체</div><div class="eq-formula">Body cell 46 = 23 + 23<br>Gamete 23 (한 세트)</div></div>
+  <div class="eq-card"><div class="eq-label anaerobic">👶 성 결정</div><div class="eq-formula">XX → girl · XY → boy<br>Egg = always X / Sperm = X or Y</div></div>
+</div>
 
 <div class="tabs-wrap">
   <div class="tabs">
     <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
     <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
+    <button class="tab-btn" data-tab="files">📄 자료</button>
     <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
     <button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
   </div>
 </div>
 
-<!-- 단어장 -->
+
 <div class="tab-pane active" id="tab-vocab">
+  <div class="allplay">
+    <div class="allplay-box">
+      <button class="allplay-btn" id="allplay-btn" onclick="toggleAllPlay()">▶ 단원 전체 듣기</button>
+      <div class="allplay-txt">한 번만 누르면 <b>이 단원 56개 단어를 처음부터 끝까지</b> 끊김 없이 들려준다.<br>화면을 꺼도, 다른 앱을 열어도 계속 재생된다.</div>
+      <div class="allplay-time" id="allplay-time">0:00</div>
+      <input class="allplay-range" id="allplay-range" type="range" min="0" max="1000" value="0" oninput="seekAllPlay(this.value)">
+      <audio id="allplay-audio" preload="none" src="audio/genes_all.mp3"></audio>
+    </div>
+  </div>
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
     <div class="mem-bar">
-      <span class="mem-info">📚 전체 <b id="total-count">0</b>개</span>
-      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
-      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
-      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
+      <span class="mem-info">🧠 외운 단어 <b id="mem-count">0</b>개</span>
+      <button class="mem-hide-btn" id="mem-hide-btn" onclick="toggleMemHide()">외운 단어 숨기기 (0)</button>
     </div>
+    <div class="total-line">총 <b id="total-count">0</b>개</div>
   </div>
-  <div class="filter-wrap">
-    <div class="filter-tabs">
-      <button class="filter-btn active" data-cat="all" onclick='filterCards("all")'>전체 All</button>
-      <button class="filter-btn" data-cat="organ" onclick='filterCards("organ")'>🧬 DNA·유전자 DNA & genes</button>
-      <button class="filter-btn" data-cat="process" onclick='filterCards("process")'>👶 생식·유전 Inheritance</button>
-      <button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>🦋 변이 Variation</button>
-      <button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>🐦 자연 선택 Selection</button>
-    </div>
-  </div>
-<div class="section-header" data-cat="organ"><h2>🧬 DNA·유전자 DNA & genes</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection('organ', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+
+<div class="section-header" data-cat="all"><h2>🧬 7단원 단어 전체 Genes and inheritance</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="all" onclick="playSection('all', this)">▶ 화면 켜고 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
-<div class="vcard" data-cat="organ">
-  <div class="vcard-left">
-    <div class="vcard-en">DNA</div>
-    <div class="vcard-ko">DNA</div>
-    <div class="vcard-def">The molecule that carries genetic information in all living things.</div>
-    <div class="vcard-def-ko">모든 생물의 유전 정보를 담은 분자.</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("DNA")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="organ">
-  <div class="vcard-left">
-    <div class="vcard-en">Gene</div>
-    <div class="vcard-ko">유전자</div>
-    <div class="vcard-def">A short section of DNA that codes for one feature.</div>
-    <div class="vcard-def-ko">한 가지 특징을 결정하는 DNA의 짧은 부분.</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Gene")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="organ">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Chromosome</div>
     <div class="vcard-ko">염색체</div>
-    <div class="vcard-def">A long thread of DNA found in the nucleus.</div>
-    <div class="vcard-def-ko">핵 속에 있는 긴 DNA 가닥.</div>
+    <div class="vcard-def">A thread-like structure in the nucleus of a cell that carries the genes.</div>
+    <div class="vcard-def-ko">세포 핵 속에 있는 실 모양 구조. 유전자를 담고 있다. 사람 세포에는 46개.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Chromosome")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="organ">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Nucleus</div>
     <div class="vcard-ko">핵</div>
-    <div class="vcard-def">The part of a cell that contains the chromosomes.</div>
-    <div class="vcard-def-ko">염색체가 들어있는 세포의 부분.</div>
+    <div class="vcard-def">The part of a cell that contains the chromosomes and controls the cell's activities.</div>
+    <div class="vcard-def-ko">염색체가 들어 있고 세포의 활동을 조절하는 부분.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Nucleus")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="organ">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
-    <div class="vcard-en">Genetic information</div>
-    <div class="vcard-ko">유전 정보</div>
-    <div class="vcard-def">The instructions carried by DNA for building an organism.</div>
-    <div class="vcard-def-ko">생물을 만드는, DNA가 담은 설명서.</div>
+    <div class="vcard-en">Gene</div>
+    <div class="vcard-ko">유전자</div>
+    <div class="vcard-def">A short length of DNA on a chromosome that helps to control one characteristic.</div>
+    <div class="vcard-def-ko">염색체 위의 짧은 DNA 조각. 한 가지 형질을 조절한다.</div>
   </div>
   <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Genetic information")'>🔊</button>
+    <button class="btn-speak" onclick='speak("Gene")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="organ">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
-    <div class="vcard-en">Genome</div>
-    <div class="vcard-ko">유전체(게놈)</div>
-    <div class="vcard-def">All the DNA of an organism.</div>
-    <div class="vcard-def-ko">한 생물의 모든 DNA.</div>
+    <div class="vcard-en">DNA</div>
+    <div class="vcard-ko">디엔에이</div>
+    <div class="vcard-def">The chemical substance that chromosomes and genes are made of.</div>
+    <div class="vcard-def-ko">염색체와 유전자를 이루는 화학 물질.</div>
   </div>
   <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Genome")'>🔊</button>
+    <button class="btn-speak" onclick='speak("DNA")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="organ">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
-    <div class="vcard-en">Base</div>
-    <div class="vcard-ko">염기</div>
-    <div class="vcard-def">One of the chemical units (A, T, C, G) that make up DNA.</div>
-    <div class="vcard-def-ko">DNA를 이루는 화학 단위(A·T·C·G).</div>
+    <div class="vcard-en">Double helix</div>
+    <div class="vcard-ko">이중나선</div>
+    <div class="vcard-def">The twisted-ladder shape of a DNA molecule.</div>
+    <div class="vcard-def-ko">꼬인 사다리 모양 — DNA 분자의 생김새.</div>
   </div>
   <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Base")'>🔊</button>
+    <button class="btn-speak" onclick='speak("Double helix")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-</div>
-<div class="section-header" data-cat="process"><h2>👶 생식·유전 Inheritance</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
-<div class="cards-wrap">
-<div class="vcard" data-cat="process">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
-    <div class="vcard-en">Gamete</div>
-    <div class="vcard-ko">생식세포(배우자)</div>
-    <div class="vcard-def">A sex cell — sperm or egg — with half the normal chromosomes.</div>
-    <div class="vcard-def-ko">정자나 난자. 보통의 절반 염색체를 가진 성세포.</div>
+    <div class="vcard-en">Molecule</div>
+    <div class="vcard-ko">분자</div>
+    <div class="vcard-def">A group of atoms joined together. Each chromosome is one very long DNA molecule.</div>
+    <div class="vcard-def-ko">원자가 결합한 덩어리. 염색체 하나 = 아주 긴 DNA 분자 하나.</div>
   </div>
   <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Gamete")'>🔊</button>
+    <button class="btn-speak" onclick='speak("Molecule")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="process">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
-    <div class="vcard-en">Sperm</div>
-    <div class="vcard-ko">정자</div>
-    <div class="vcard-def">The male gamete.</div>
-    <div class="vcard-def-ko">수컷(남성)의 생식세포.</div>
+    <div class="vcard-en">Characteristic</div>
+    <div class="vcard-ko">형질 (특징)</div>
+    <div class="vcard-def">A feature of an organism, such as eye colour, that genes help to control.</div>
+    <div class="vcard-def-ko">눈 색깔처럼 유전자가 조절하는 생물의 특징.</div>
   </div>
   <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Sperm")'>🔊</button>
+    <button class="btn-speak" onclick='speak("Characteristic")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="process">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
-    <div class="vcard-en">Egg (ovum)</div>
-    <div class="vcard-ko">난자</div>
-    <div class="vcard-def">The female gamete.</div>
-    <div class="vcard-def-ko">암컷(여성)의 생식세포.</div>
+    <div class="vcard-en">Cell division</div>
+    <div class="vcard-ko">세포분열</div>
+    <div class="vcard-def">When one cell divides into two. Chromosomes are only visible at this time.</div>
+    <div class="vcard-def-ko">세포 하나가 둘로 나뉘는 것. 이때만 염색체가 보인다.</div>
   </div>
   <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Egg (ovum)")'>🔊</button>
+    <button class="btn-speak" onclick='speak("Cell division")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="process">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
-    <div class="vcard-en">Fertilisation</div>
-    <div class="vcard-ko">수정</div>
-    <div class="vcard-def">When a sperm and egg join to form a new cell.</div>
-    <div class="vcard-def-ko">정자와 난자가 합쳐져 새 세포를 만드는 것.</div>
+    <div class="vcard-en">Stain</div>
+    <div class="vcard-ko">염색약</div>
+    <div class="vcard-def">A special dye used to colour chromosomes so that they can be seen.</div>
+    <div class="vcard-def-ko">염색체에 색을 입혀 보이게 하는 특수 염료.</div>
   </div>
   <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Fertilisation")'>🔊</button>
+    <button class="btn-speak" onclick='speak("Stain")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="process">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
-    <div class="vcard-en">Inheritance</div>
-    <div class="vcard-ko">유전</div>
-    <div class="vcard-def">The passing of genes from parents to offspring.</div>
-    <div class="vcard-def-ko">부모에서 자손으로 유전자가 전해지는 것.</div>
+    <div class="vcard-en">Light microscope</div>
+    <div class="vcard-ko">광학현미경</div>
+    <div class="vcard-def">A microscope that uses light. Chromosomes show up only when a cell is dividing.</div>
+    <div class="vcard-def-ko">빛을 쓰는 현미경. 분열 중일 때만 염색체가 보인다.</div>
   </div>
   <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Inheritance")'>🔊</button>
+    <button class="btn-speak" onclick='speak("Light microscope")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="process">
-  <div class="vcard-left">
-    <div class="vcard-en">Offspring</div>
-    <div class="vcard-ko">자손</div>
-    <div class="vcard-def">The young produced by parents.</div>
-    <div class="vcard-def-ko">부모가 낳은 새끼(자식).</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Offspring")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="process">
-  <div class="vcard-left">
-    <div class="vcard-en">Inherited characteristic</div>
-    <div class="vcard-ko">유전 형질</div>
-    <div class="vcard-def">A feature passed from parents through genes, e.g. eye colour.</div>
-    <div class="vcard-def-ko">유전자로 부모에게서 물려받은 특징(예: 눈 색).</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Inherited characteristic")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="process">
-  <div class="vcard-left">
-    <div class="vcard-en">Allele</div>
-    <div class="vcard-ko">대립유전자</div>
-    <div class="vcard-def">A different version of the same gene.</div>
-    <div class="vcard-def-ko">같은 유전자의 서로 다른 형태.</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Allele")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="process">
-  <div class="vcard-left">
-    <div class="vcard-en">Dominant</div>
-    <div class="vcard-ko">우성</div>
-    <div class="vcard-def">An allele that shows even if only one copy is present.</div>
-    <div class="vcard-def-ko">하나만 있어도 나타나는 대립유전자.</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Dominant")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="process">
-  <div class="vcard-left">
-    <div class="vcard-en">Recessive</div>
-    <div class="vcard-ko">열성</div>
-    <div class="vcard-def">An allele that shows only when both copies are present.</div>
-    <div class="vcard-def-ko">두 개 다 있어야 나타나는 대립유전자.</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Recessive")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-</div>
-<div class="section-header" data-cat="blood"><h2>🦋 변이 Variation</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection('blood', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
-<div class="cards-wrap">
-<div class="vcard" data-cat="blood">
-  <div class="vcard-left">
-    <div class="vcard-en">Variation</div>
-    <div class="vcard-ko">변이</div>
-    <div class="vcard-def">The differences between individuals of the same species.</div>
-    <div class="vcard-def-ko">같은 종의 개체들 사이의 차이.</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Variation")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="blood">
-  <div class="vcard-left">
-    <div class="vcard-en">Genetic variation</div>
-    <div class="vcard-ko">유전적 변이</div>
-    <div class="vcard-def">Variation caused by differences in genes.</div>
-    <div class="vcard-def-ko">유전자 차이로 생기는 변이.</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Genetic variation")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="blood">
-  <div class="vcard-left">
-    <div class="vcard-en">Environmental variation</div>
-    <div class="vcard-ko">환경적 변이</div>
-    <div class="vcard-def">Variation caused by the surroundings, e.g. a scar.</div>
-    <div class="vcard-def-ko">환경 때문에 생기는 변이(예: 흉터).</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Environmental variation")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="blood">
-  <div class="vcard-left">
-    <div class="vcard-en">Continuous variation</div>
-    <div class="vcard-ko">연속 변이</div>
-    <div class="vcard-def">Variation with a range of values, e.g. height.</div>
-    <div class="vcard-def-ko">값이 연속으로 이어지는 변이(예: 키).</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Continuous variation")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="blood">
-  <div class="vcard-left">
-    <div class="vcard-en">Discontinuous variation</div>
-    <div class="vcard-ko">불연속 변이</div>
-    <div class="vcard-def">Variation in separate groups, e.g. blood type.</div>
-    <div class="vcard-def-ko">구분된 묶음으로 나뉘는 변이(예: 혈액형).</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Discontinuous variation")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="blood">
-  <div class="vcard-left">
-    <div class="vcard-en">Mutation</div>
-    <div class="vcard-ko">돌연변이</div>
-    <div class="vcard-def">A random change in DNA that can create new variation.</div>
-    <div class="vcard-def-ko">새로운 변이를 만들 수 있는 DNA의 무작위 변화.</div>
-  </div>
-  <div class="vcard-right">
-    <button class="btn-speak" onclick='speak("Mutation")'>🔊</button>
-    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
-  </div>
-</div>
-<div class="vcard" data-cat="blood">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Species</div>
     <div class="vcard-ko">종</div>
-    <div class="vcard-def">A group of similar organisms that can breed together.</div>
-    <div class="vcard-def-ko">서로 번식할 수 있는 비슷한 생물 무리.</div>
+    <div class="vcard-def">A kind of organism. Different species have different numbers of chromosomes.</div>
+    <div class="vcard-def-ko">생물의 종류. 종마다 염색체 수가 다르다(사람 46, 초파리 8, 망고 40).</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Species")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Sequence</div>
+    <div class="vcard-ko">순서 (배열)</div>
+    <div class="vcard-def">The particular order in which the genes are arranged along a chromosome.</div>
+    <div class="vcard-def-ko">염색체를 따라 유전자가 놓인 순서.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sequence")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
 </div>
-<div class="section-header" data-cat="gas"><h2>🐦 자연 선택 Selection</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="gas" onclick="playSection('gas', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
-<div class="cards-wrap">
-<div class="vcard" data-cat="gas">
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Giant chromosome</div>
+    <div class="vcard-ko">거대염색체</div>
+    <div class="vcard-def">An especially thick chromosome, as found in fruit flies, that is easier to see.</div>
+    <div class="vcard-def-ko">초파리처럼 유난히 굵어 보기 쉬운 염색체.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Giant chromosome")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Eye colour</div>
+    <div class="vcard-ko">눈 색깔</div>
+    <div class="vcard-def">An example of a characteristic. Two genes on chromosome 15 help to determine it.</div>
+    <div class="vcard-def-ko">형질의 예. 15번 염색체의 두 유전자가 결정을 돕는다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Eye colour")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Version of a gene</div>
+    <div class="vcard-ko">유전자의 형태</div>
+    <div class="vcard-def">A different form of the same gene, giving for example blue eyes or brown eyes.</div>
+    <div class="vcard-def-ko">같은 유전자의 다른 형태. 파란 눈·갈색 눈처럼 결과가 달라진다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Version of a gene")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Gamete</div>
+    <div class="vcard-ko">생식세포</div>
+    <div class="vcard-def">A sex cell — a sperm cell or an egg cell — with only one set of chromosomes.</div>
+    <div class="vcard-def-ko">정자나 난자. 염색체를 한 세트(23개)만 가진다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Gamete")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Sperm cell</div>
+    <div class="vcard-ko">정자</div>
+    <div class="vcard-def">The male gamete. It is small, has a tail and swims vigorously.</div>
+    <div class="vcard-def-ko">남성 생식세포. 작고 꼬리가 있어 헤엄친다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sperm cell")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Egg cell</div>
+    <div class="vcard-ko">난자</div>
+    <div class="vcard-def">The female gamete. It is much bigger, cannot move by itself and holds food reserves.</div>
+    <div class="vcard-def-ko">여성 생식세포. 훨씬 크고 스스로 못 움직이며 양분을 담고 있다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Egg cell")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Specialised cell</div>
+    <div class="vcard-ko">특수화된 세포</div>
+    <div class="vcard-def">A cell that is adapted to carry out one particular function.</div>
+    <div class="vcard-def-ko">한 가지 일을 하도록 특별하게 만들어진 세포.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Specialised cell")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Tail</div>
+    <div class="vcard-ko">꼬리</div>
+    <div class="vcard-def">The part of a sperm cell that produces swimming movements.</div>
+    <div class="vcard-def-ko">정자가 헤엄치게 하는 부분.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Tail")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Cytoplasm</div>
+    <div class="vcard-ko">세포질</div>
+    <div class="vcard-def">The jelly-like part of a cell. In an egg cell it contains food reserves.</div>
+    <div class="vcard-def-ko">세포 속 젤리 같은 부분. 난자에서는 양분이 들어 있다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Cytoplasm")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Cell surface membrane</div>
+    <div class="vcard-ko">세포막</div>
+    <div class="vcard-def">The thin layer around the outside of a cell.</div>
+    <div class="vcard-def-ko">세포 바깥을 감싸는 얇은 막.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Cell surface membrane")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Food reserves</div>
+    <div class="vcard-ko">저장 양분</div>
+    <div class="vcard-def">Stored food inside the egg cell, which is why it is bigger than a sperm cell.</div>
+    <div class="vcard-def-ko">난자 안에 저장된 양분. 난자가 더 큰 이유.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Food reserves")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Scanning electron microscope</div>
+    <div class="vcard-ko">주사전자현미경</div>
+    <div class="vcard-def">A very powerful microscope used to photograph sperm cells and egg cells.</div>
+    <div class="vcard-def-ko">정자·난자 사진을 찍는 아주 강력한 현미경.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Scanning electron microscope")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Fertilisation</div>
+    <div class="vcard-ko">수정</div>
+    <div class="vcard-def">The joining of a sperm cell with an egg cell.</div>
+    <div class="vcard-def-ko">정자와 난자가 합쳐지는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Fertilisation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Fuse</div>
+    <div class="vcard-ko">융합하다</div>
+    <div class="vcard-def">To join together. At fertilisation the two nuclei fuse.</div>
+    <div class="vcard-def-ko">합쳐지다. 수정 때 두 핵이 하나로 합쳐진다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Fuse")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Zygote</div>
+    <div class="vcard-ko">접합자 (수정란)</div>
+    <div class="vcard-def">The new cell formed when the nuclei of a sperm cell and an egg cell join. It has 46 chromosomes.</div>
+    <div class="vcard-def-ko">정자 핵과 난자 핵이 합쳐져 생긴 새 세포. 염색체 46개.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Zygote")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Set of chromosomes</div>
+    <div class="vcard-ko">염색체 한 세트</div>
+    <div class="vcard-def">23 chromosomes. Body cells have two sets; gametes have only one set.</div>
+    <div class="vcard-def-ko">염색체 23개 묶음. 몸 세포는 두 세트, 생식세포는 한 세트.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Set of chromosomes")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Inheritance</div>
+    <div class="vcard-ko">유전</div>
+    <div class="vcard-def">Passing on DNA, as chromosomes containing genes, from parents to offspring.</div>
+    <div class="vcard-def-ko">부모에서 자손으로 DNA(유전자를 담은 염색체)를 물려주는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Inheritance")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Offspring</div>
+    <div class="vcard-ko">자손</div>
+    <div class="vcard-def">The young that are produced by parents.</div>
+    <div class="vcard-def-ko">부모가 낳은 새끼·자식.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Offspring")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Sex chromosomes</div>
+    <div class="vcard-ko">성염색체</div>
+    <div class="vcard-def">The pair of chromosomes that determine whether a person is male or female.</div>
+    <div class="vcard-def-ko">사람이 남성인지 여성인지 결정하는 염색체 한 쌍.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sex chromosomes")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">X chromosome</div>
+    <div class="vcard-ko">X염색체</div>
+    <div class="vcard-def">A sex chromosome. XX is female. Every egg cell contains one X chromosome.</div>
+    <div class="vcard-def-ko">성염색체. XX면 여성. 모든 난자는 X염색체 하나를 가진다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("X chromosome")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Y chromosome</div>
+    <div class="vcard-ko">Y염색체</div>
+    <div class="vcard-def">A much smaller sex chromosome. XY is male. Only sperm cells can carry it.</div>
+    <div class="vcard-def-ko">훨씬 작은 성염색체. XY면 남성. 정자만 가질 수 있다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Y chromosome")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Sex inheritance</div>
+    <div class="vcard-ko">성 유전</div>
+    <div class="vcard-def">How a baby inherits X or Y chromosomes from its parents, which decides its sex.</div>
+    <div class="vcard-def-ko">아기가 부모에게서 X나 Y염색체를 물려받아 성별이 정해지는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sex inheritance")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Determine</div>
+    <div class="vcard-ko">결정하다</div>
+    <div class="vcard-def">To decide or fix something. Genes determine characteristics such as eye colour.</div>
+    <div class="vcard-def-ko">무엇을 정하다. 유전자가 눈 색깔 같은 형질을 결정한다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Determine")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Genetic information</div>
+    <div class="vcard-ko">유전 정보</div>
+    <div class="vcard-def">The instructions carried by DNA for building an organism.</div>
+    <div class="vcard-def-ko">DNA가 담고 있는 '몸을 만드는 설명서'.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Genetic information")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Genome</div>
+    <div class="vcard-ko">유전체 (게놈)</div>
+    <div class="vcard-def">All the DNA of an organism.</div>
+    <div class="vcard-def-ko">한 생물이 가진 DNA 전체.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Genome")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Base</div>
+    <div class="vcard-ko">염기</div>
+    <div class="vcard-def">One of the chemical units (A, T, C, G) that make up DNA.</div>
+    <div class="vcard-def-ko">DNA를 이루는 화학 단위 (A·T·C·G).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Base")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Inherited characteristic</div>
+    <div class="vcard-ko">유전 형질</div>
+    <div class="vcard-def">A feature passed from parents through genes, for example eye colour.</div>
+    <div class="vcard-def-ko">유전자를 통해 부모에게서 물려받은 특징. 예: 눈 색깔.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Inherited characteristic")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Variation</div>
+    <div class="vcard-ko">변이</div>
+    <div class="vcard-def">The differences between individuals of the same species.</div>
+    <div class="vcard-def-ko">같은 종 안에서 개체들이 서로 다른 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Variation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Genetic variation</div>
+    <div class="vcard-ko">유전적 변이</div>
+    <div class="vcard-def">Variation caused by differences in genes.</div>
+    <div class="vcard-def-ko">유전자 차이 때문에 생기는 변이.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Genetic variation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Environmental variation</div>
+    <div class="vcard-ko">환경적 변이</div>
+    <div class="vcard-def">Variation caused by the surroundings, for example a scar.</div>
+    <div class="vcard-def-ko">환경 때문에 생기는 변이. 예: 흉터.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Environmental variation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Continuous variation</div>
+    <div class="vcard-ko">연속 변이</div>
+    <div class="vcard-def">Variation with a range of values, for example height.</div>
+    <div class="vcard-def-ko">값이 죽 이어지는 변이. 예: 키.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Continuous variation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Discontinuous variation</div>
+    <div class="vcard-ko">불연속 변이</div>
+    <div class="vcard-def">Variation in separate groups, for example blood type.</div>
+    <div class="vcard-def-ko">몇 개 무리로 딱 나뉘는 변이. 예: 혈액형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Discontinuous variation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Mutation</div>
+    <div class="vcard-ko">돌연변이</div>
+    <div class="vcard-def">A random change in DNA that can create new variation.</div>
+    <div class="vcard-def-ko">DNA에 우연히 생긴 변화. 새 변이를 만든다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Mutation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Natural selection</div>
     <div class="vcard-ko">자연 선택</div>
     <div class="vcard-def">Organisms best suited to their environment survive and reproduce.</div>
-    <div class="vcard-def-ko">환경에 가장 알맞은 생물이 살아남아 번식하는 것.</div>
+    <div class="vcard-def-ko">환경에 가장 잘 맞는 개체가 살아남아 번식하는 것.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Natural selection")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="gas">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Adaptation</div>
     <div class="vcard-ko">적응</div>
     <div class="vcard-def">A feature that helps an organism survive in its environment.</div>
-    <div class="vcard-def-ko">생물이 환경에서 살아남게 돕는 특징.</div>
+    <div class="vcard-def-ko">환경에서 살아남게 도와주는 특징.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Adaptation")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="gas">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Survival of the fittest</div>
     <div class="vcard-ko">적자생존</div>
     <div class="vcard-def">The best-adapted organisms are most likely to survive.</div>
-    <div class="vcard-def-ko">가장 잘 적응한 생물이 살아남기 쉬운 것.</div>
+    <div class="vcard-def-ko">가장 잘 적응한 개체가 살아남는다.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Survival of the fittest")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="gas">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Reproduce</div>
     <div class="vcard-ko">번식하다</div>
     <div class="vcard-def">To produce offspring.</div>
-    <div class="vcard-def-ko">자손을 낳는 것.</div>
+    <div class="vcard-def-ko">자손을 낳다.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Reproduce")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="gas">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Evolution</div>
     <div class="vcard-ko">진화</div>
     <div class="vcard-def">The gradual change in a species over many generations.</div>
-    <div class="vcard-def-ko">여러 세대에 걸쳐 종이 서서히 변하는 것.</div>
+    <div class="vcard-def-ko">여러 세대에 걸쳐 종이 서서히 바뀌는 것.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Evolution")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="gas">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Extinct</div>
     <div class="vcard-ko">멸종한</div>
@@ -727,24 +993,60 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="gas">
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Generation</div>
     <div class="vcard-ko">세대</div>
     <div class="vcard-def">One step in a line of parents and offspring.</div>
-    <div class="vcard-def-ko">부모-자손 이어짐의 한 단계.</div>
+    <div class="vcard-def-ko">부모에서 자손으로 이어지는 한 단계.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Generation")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
-<div class="vcard" data-cat="gas">
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Allele</div>
+    <div class="vcard-ko">대립유전자</div>
+    <div class="vcard-def">A different version of the same gene.</div>
+    <div class="vcard-def-ko">같은 유전자의 다른 형태.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Allele")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Dominant</div>
+    <div class="vcard-ko">우성</div>
+    <div class="vcard-def">An allele that shows even if only one copy is present.</div>
+    <div class="vcard-def-ko">하나만 있어도 겉으로 나타나는 대립유전자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Dominant")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Recessive</div>
+    <div class="vcard-ko">열성</div>
+    <div class="vcard-def">An allele that shows only when both copies are present.</div>
+    <div class="vcard-def-ko">두 개 다 있어야 나타나는 대립유전자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Recessive")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
   <div class="vcard-left">
     <div class="vcard-en">Selective breeding</div>
-    <div class="vcard-ko">선택적 교배(육종)</div>
+    <div class="vcard-ko">선택적 교배 (육종)</div>
     <div class="vcard-def">Choosing parents with wanted features to breed offspring.</div>
-    <div class="vcard-def-ko">원하는 형질의 부모를 골라 자손을 얻는 것.</div>
+    <div class="vcard-def-ko">원하는 특징을 가진 부모를 골라 새끼를 얻는 것.</div>
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Selective breeding")'>🔊</button>
@@ -753,45 +1055,67 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </div>
 </div>
 </div>
-
-<!-- 핵심노트 -->
 <div class="tab-pane" id="tab-notes">
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">🧬</span>
-    <div class="ch-text">
-      <h2>7.1 Chromosomes, genes and DNA</h2>
-      <span class="ch-sub">염색체·유전자·DNA</span>
-    </div>
-    
+    <div class="ch-text"><h2>1. Chromosomes, genes and DNA</h2><span class="ch-sub">7.1 염색체·유전자·DNA</span></div>
+    <a class="btn-pdf" href="pdfs/genes/7.1%20Chromosomes,%20genes%20and%20DNA.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
-  <div class="notes-list"><div class="note-card">
-  <div class="note-head">
-    <h3>DNA, genes and chromosomes (DNA·유전자·염색체)</h3>
-    <a class="btn-yt" href="https://www.youtube.com/watch?v=TQ_iCf8mzMA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeScienceLessons</a>
-  </div>
-  <div class="note-body"><p class='en'>Inside the <b>nucleus</b> of a cell are <b>chromosomes</b> made of <b>DNA</b>. A <b>gene</b> is a short section of DNA that codes for a feature.</p><p class='ko'>세포 <b>핵</b> 안에는 <b>DNA</b>로 된 <b>염색체</b>가 있습니다. <b>유전자</b>는 한 특징을 결정하는 DNA의 짧은 부분입니다.</p><p class='en'>Humans have <b>46 chromosomes</b> (23 pairs).</p><p class='ko'>사람은 <b>염색체 46개</b>(23쌍)를 가집니다.</p></div>
-  <img class="note-img" src="assets/diagrams/y9/y9_genes__dna-gene-chromosome.png" alt="" loading="lazy">
-</div></div>
+  <div class="notes-list">
+<div class="note-card">
+  <div class="note-head"><h3>What is a chromosome? (염색체란 무엇인가)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=IePMXxQ-KWY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Stated Clearly</a></div>
+  <div class="note-body"><p class='en'>The nucleus of every cell contains threads called <b>chromosomes</b>.</p><p class='ko'>모든 세포의 <b>핵</b> 안에는 <b>염색체</b>라고 부르는 실 모양 구조가 들어 있습니다.</p><p class='en'>Chromosomes were discovered in the <b>nineteenth century</b>, when microscopes first became powerful enough.</p><p class='ko'>염색체는 현미경이 충분히 강력해진 <b>19세기</b>에 처음 발견되었습니다.</p><p class='en'>Chromosomes only become visible with a light microscope <b>when a cell is dividing</b>, and they must be coloured with a <b>stain</b>.</p><p class='ko'>염색체는 <b>세포가 분열할 때만</b> 광학현미경으로 보이고, <b>염색약</b>으로 색을 입혀야 보입니다.</p><p class='en'>Different <b>species</b> have different numbers: humans have <b>46</b>, fruit flies have <b>8</b>, mango trees have <b>40</b>.</p><p class='ko'><b>종</b>마다 염색체 수가 다릅니다. 사람 <b>46개</b>, 초파리 <b>8개</b>, 망고나무 <b>40개</b>.</p><p class='en'>We have <b>two of each kind</b> of chromosome, and they are numbered by length — chromosome 1 is the longest.</p><p class='ko'>염색체는 종류마다 <b>두 개씩</b> 있고, 길이 순으로 번호를 붙입니다. 1번이 가장 깁니다.</p><p class='en'>Just before a cell divides, each chromosome <b>makes a copy of itself</b>, so it looks like a cross shape.</p><p class='ko'>세포가 분열하기 직전 각 염색체는 <b>자기 복사본</b>을 만들어서 십자 모양처럼 보입니다.</p></div>
 </div>
+<div class="note-card">
+  <div class="note-head"><h3>Genes (유전자)</h3></div>
+  <div class="note-body"><p class='en'>Each chromosome is made up of <b>hundreds of different genes</b>, arranged in a particular <b>sequence</b>.</p><p class='ko'>염색체 하나는 <b>수백 개의 유전자</b>로 이루어져 있고, 정해진 <b>순서</b>로 배열돼 있습니다.</p><p class='en'>Each gene helps to control <b>one particular characteristic</b> of the organism.</p><p class='ko'>각 유전자는 생물의 <b>한 가지 형질</b>을 조절하는 데 관여합니다.</p><p class='en'>Chromosome 1 has about <b>2000 genes</b>; the much shorter chromosome 15 has about <b>600</b>.</p><p class='ko'>1번 염색체에는 약 <b>2000개</b>, 훨씬 짧은 15번에는 약 <b>600개</b>의 유전자가 있습니다.</p><p class='en'>Two genes on chromosome 15 help to determine <b>eye colour</b>. Everyone has them in the same place, but there are <b>different versions</b> — that is why two sisters can have different eye colours.</p><p class='ko'>15번 염색체의 두 유전자가 <b>눈 색깔</b> 결정을 돕습니다. 위치는 모두 같지만 <b>형태가 달라서</b>, 자매라도 눈 색이 다를 수 있습니다.</p></div>
+</div>
+<div class="note-card">
+  <div class="note-head"><h3>DNA — the twisted ladder (DNA와 이중나선)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=fy2F8yFxqOI" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a></div>
+  <div class="note-body"><p class='en'>Chromosomes are made of a chemical substance called <b>DNA</b>. Each chromosome is <b>one enormously long DNA molecule</b>.</p><p class='ko'>염색체는 <b>DNA</b>라는 화학 물질로 되어 있습니다. 염색체 하나가 <b>아주 긴 DNA 분자 하나</b>입니다.</p><p class='en'>This means that <b>genes are also made of DNA</b>.</p><p class='ko'>그러므로 <b>유전자도 DNA로 되어 있습니다</b>.</p><p class='en'>A DNA molecule is shaped like a <b>twisted ladder</b>. This shape is called a <b>double helix</b>.</p><p class='ko'>DNA 분자는 <b>꼬인 사다리</b> 모양이며, 이 모양을 <b>이중나선</b>이라고 합니다.</p><p class='en'>One gene could be a length of DNA with about <b>2500 twists</b> — far too small to see with a microscope.</p><p class='ko'>유전자 하나는 약 <b>2500번 꼬인</b> DNA 길이 정도이며, 현미경으로 볼 수 없을 만큼 작습니다.</p><p class='en'>DNA was first discovered in the <b>1950s</b>. The DNA in a cell contains a <b>complete set of instructions</b> to make a working cell and a whole organism.</p><p class='ko'>DNA는 <b>1950년대</b>에 처음 발견됐습니다. 세포 속 DNA는 세포와 생물 전체를 만드는 <b>설명서 한 벌</b>을 담고 있습니다.</p></div>
+</div>
+<div class="note-card">
+  <div class="note-head"><h3>Chromosome vs gene vs DNA — 시험 단골 (Exam favourite)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=0obYR-nf45I" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>TED-Ed</a></div>
+  <div class="note-body"><p class='en'><b>Chromosome</b> = a long thread of DNA in the nucleus, carrying many genes.</p><p class='ko'><b>염색체</b> = 핵 속의 긴 DNA 실. 유전자를 많이 담고 있습니다.</p><p class='en'><b>Gene</b> = a short section of that DNA which controls one characteristic.</p><p class='ko'><b>유전자</b> = 그 DNA의 짧은 구간. 형질 하나를 조절합니다.</p><p class='en'><b>DNA</b> = the chemical that both of them are made of.</p><p class='ko'><b>DNA</b> = 그 둘을 이루는 화학 물질입니다.</p><p class='en'>Remember the order from big to small: <b>chromosome → gene → DNA</b>.</p><p class='ko'>큰 것부터 작은 것 순서로 외우세요. <b>염색체 → 유전자 → DNA</b>.</p></div>
+</div>
+</div></div>
 <div class="chapter-block">
   <div class="chapter-head">
-    <span class="ch-icon">👶</span>
-    <div class="ch-text">
-      <h2>7.2 Gametes and inheritance</h2>
-      <span class="ch-sub">생식세포와 유전</span>
-    </div>
-    
+    <span class="ch-icon">🧬</span>
+    <div class="ch-text"><h2>2. Gametes and inheritance</h2><span class="ch-sub">7.2 생식세포와 유전</span></div>
+    <a class="btn-pdf" href="pdfs/genes/7.2%20Gametes%20and%20inheritance.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
   </div>
-  <div class="notes-list"><div class="note-card">
-  <div class="note-head">
-    <h3>Inheritance (유전)</h3>
-    <a class="btn-yt" href="https://www.youtube.com/watch?v=BtPo9F-nkho" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a>
-  </div>
-  <div class="note-body"><p class='en'><b>Gametes</b> are sex cells: the <b>sperm</b> and the <b>egg</b>. At <b>fertilisation</b> they join, so the offspring gets <b>genes from both parents</b>.</p><p class='ko'><b>생식세포</b>는 성세포로 <b>정자</b>와 <b>난자</b>입니다. <b>수정</b> 때 둘이 합쳐져 자손은 <b>양쪽 부모의 유전자</b>를 받습니다.</p><p class='en'>This is why children are similar to, but not identical to, their parents — <b>inherited variation</b>.</p><p class='ko'>그래서 아이는 부모와 닮았지만 똑같지는 않습니다 — <b>유전적 변이</b>.</p></div>
-  <img class="note-img" src="assets/diagrams/y9/y9_genes__inheritance-punnett.png" alt="" loading="lazy">
-</div></div>
+  <div class="notes-list">
+<div class="note-card">
+  <div class="note-head"><h3>Gametes — sperm cells and egg cells (생식세포)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=kSVKUNCDcPk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a></div>
+  <div class="note-body"><p class='en'>Every human being began life as a <b>single cell</b>, formed when a <b>sperm cell</b> joined with an <b>egg cell</b>.</p><p class='ko'>모든 사람은 <b>정자</b>와 <b>난자</b>가 합쳐져 생긴 <b>세포 하나</b>에서 시작했습니다.</p><p class='en'>Sperm cells and egg cells are specialised cells known as <b>gametes</b>. A sperm cell is the <b>male</b> gamete; an egg cell is the <b>female</b> gamete.</p><p class='ko'>정자와 난자는 <b>생식세포</b>라 불리는 특수 세포입니다. 정자는 <b>남성</b>, 난자는 <b>여성</b> 생식세포입니다.</p><p class='en'>A sperm cell is <b>very small</b>, has a <b>tail</b> for swimming, only a small amount of cytoplasm, and a nucleus with <b>23 chromosomes</b>.</p><p class='ko'>정자는 <b>아주 작고</b> 헤엄치는 <b>꼬리</b>가 있으며, 세포질은 조금뿐이고 핵에 <b>염색체 23개</b>가 있습니다.</p><p class='en'>An egg cell is <b>much bigger</b> (about the size of a full stop), <b>cannot move by itself</b>, and its cytoplasm contains <b>food reserves</b>.</p><p class='ko'>난자는 <b>훨씬 크고</b>(마침표 크기 정도) <b>스스로 움직이지 못하며</b>, 세포질에 <b>저장 양분</b>이 들어 있습니다.</p><p class='en'>Both photographs in the book were taken with a <b>scanning electron microscope</b>.</p><p class='ko'>교과서의 두 사진 모두 <b>주사전자현미경</b>으로 찍은 것입니다.</p></div>
 </div>
+<div class="note-card">
+  <div class="note-head"><h3>Fertilisation and the zygote (수정과 접합자)</h3></div>
+  <div class="note-body"><p class='en'>Human body cells have <b>46</b> chromosomes — <b>two sets</b> of 23. But gametes have only <b>one set</b>.</p><p class='ko'>사람 몸 세포는 염색체 <b>46개</b>, 즉 23개짜리 <b>두 세트</b>입니다. 그런데 생식세포는 <b>한 세트</b>뿐입니다.</p><p class='en'>The joining of a sperm cell with an egg cell is called <b>fertilisation</b>.</p><p class='ko'>정자와 난자가 합쳐지는 것을 <b>수정</b>이라고 합니다.</p><p class='en'>The head of the sperm cell enters the egg cell, then the two nuclei <b>fuse together</b>.</p><p class='ko'>정자의 머리가 난자 안으로 들어간 뒤, 두 핵이 <b>하나로 합쳐집니다</b>.</p><p class='en'>The new cell that is formed is called a <b>zygote</b>, and it has <b>46 chromosomes</b> — 23 from each parent.</p><p class='ko'>이렇게 생긴 새 세포를 <b>접합자(수정란)</b>라 하며, 부모에게서 23개씩 받아 <b>염색체 46개</b>를 가집니다.</p><p class='en'>This single cell then divides over and over, eventually producing all the millions of cells in a human body.</p><p class='ko'>이 세포 하나가 계속 분열해서 결국 몸의 수백만 개 세포를 모두 만듭니다.</p></div>
+</div>
+<div class="note-card">
+  <div class="note-head"><h3>Boy or girl? (아들일까 딸일까)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=2fYm5gUgF9w" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Science with Ayazullah</a></div>
+  <div class="note-body"><p class='en'>The last pair of chromosomes are the <b>sex chromosomes</b>. They decide whether a person is male or female.</p><p class='ko'>마지막 한 쌍이 <b>성염색체</b>입니다. 남성인지 여성인지를 결정합니다.</p><p class='en'><b>XX = female.</b> <b>XY = male.</b> The Y chromosome is much <b>smaller</b> than the X chromosome.</p><p class='ko'><b>XX = 여성, XY = 남성.</b> Y염색체는 X염색체보다 훨씬 <b>작습니다</b>.</p><p class='en'><b>All egg cells contain one X chromosome.</b> But a sperm cell can carry <b>either an X or a Y</b>.</p><p class='ko'><b>모든 난자는 X염색체</b>를 가집니다. 하지만 정자는 <b>X 또는 Y</b> 중 하나를 가집니다.</p><p class='en'>If an <b>X-carrying sperm</b> fertilises the egg → zygote is <b>XX</b> → a <b>girl</b>. If a <b>Y-carrying sperm</b> does → <b>XY</b> → a <b>boy</b>.</p><p class='ko'><b>X를 가진 정자</b>가 수정하면 <b>XX</b> → <b>딸</b>. <b>Y를 가진 정자</b>면 <b>XY</b> → <b>아들</b>.</p><p class='en'>The chance of each is <b>about equal</b>, which is why roughly equal numbers of boys and girls are born.</p><p class='ko'>두 경우의 확률이 <b>거의 같기</b> 때문에 남아와 여아가 비슷한 수로 태어납니다.</p><p class='en'>So the baby's sex is decided by the <b>father's sperm</b>, not by the mother.</p><p class='ko'>따라서 아기의 성별은 어머니가 아니라 <b>아버지의 정자</b>가 결정합니다.</p></div>
+</div>
+<div class="note-card">
+  <div class="note-head"><h3>Inheritance (유전이란)</h3></div>
+  <div class="note-body"><p class='en'><b>Inheritance</b> means passing on DNA — as chromosomes containing genes — from <b>parents to offspring</b>.</p><p class='ko'><b>유전</b>은 유전자를 담은 염색체 형태로 DNA를 <b>부모에서 자손으로</b> 물려주는 것입니다.</p><p class='en'>A baby's sex is determined because it inherits X or Y chromosomes from its parents — we call this <b>sex inheritance</b>.</p><p class='ko'>아기의 성별은 부모에게서 X나 Y염색체를 물려받아 정해지며, 이를 <b>성 유전</b>이라 합니다.</p><p class='en'>All organisms also inherit <b>other features</b> from their parents, not only sex.</p><p class='ko'>생물은 성별뿐 아니라 <b>다른 특징들</b>도 부모에게서 물려받습니다.</p></div>
+</div>
+</div></div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🧬</span>
+    <div class="ch-text"><h2>3. Working like a scientist</h2><span class="ch-sub">탐구 — Shark attack investigation</span></div>
+    <a class="btn-pdf" href="pdfs/genes/D-Shark%20attack%20Investigation%20sheet.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
+  </div>
+  <div class="notes-list">
+<div class="note-card">
+  <div class="note-head"><h3>The scientific method (과학 탐구 방법)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=SMGRe824kak" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Teacher's Pet</a></div>
+  <div class="note-body"><p class='en'>A good investigation starts with a <b>question</b> and a <b>prediction (hypothesis)</b>.</p><p class='ko'>좋은 탐구는 <b>질문</b>과 <b>예측(가설)</b>에서 시작합니다.</p><p class='en'>Change only <b>one variable</b> at a time and keep the others the <b>same</b>, so the test is <b>fair</b>.</p><p class='ko'>한 번에 <b>변인 하나</b>만 바꾸고 나머지는 <b>똑같이</b> 두어야 <b>공정한 실험</b>이 됩니다.</p><p class='en'>Record the <b>results</b> in a clear table, then draw a <b>conclusion</b> and say how you could <b>improve</b> the method.</p><p class='ko'><b>결과</b>를 표에 또렷이 적고 <b>결론</b>을 내린 뒤, 방법을 어떻게 <b>개선</b>할지 씁니다.</p></div>
+</div>
+</div></div>
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">🦋</span>
@@ -810,6 +1134,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <img class="note-img" src="assets/diagrams/y9/y9_genes__variation-bellcurve.png" alt="" loading="lazy">
 </div></div>
 </div>
+
 <div class="chapter-block">
   <div class="chapter-head">
     <span class="ch-icon">🐦</span>
@@ -829,20 +1154,343 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </div></div>
 </div>
 </div>
-
-<!-- 퀴즈 (서술형) -->
+<div class="tab-pane" id="tab-files"><div class="files-wrap">
+<div class="files-head">📄 선생님이 올린 파일 (누르면 바로 열림)</div>
+<a class="file-card" href="pdfs/genes/7.1%20Chromosomes,%20genes%20and%20DNA.pdf" target="_blank" rel="noopener">
+  <div class="file-ico">PDF</div>
+  <div><div class="file-name">7.1 Chromosomes, genes and DNA</div><div class="file-desc">교과서 7.1 단원 — 염색체·유전자·DNA (4쪽)</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="pdfs/genes/7.2%20Gametes%20and%20inheritance.pdf" target="_blank" rel="noopener">
+  <div class="file-ico">PDF</div>
+  <div><div class="file-name">7.2 Gametes and inheritance</div><div class="file-desc">교과서 7.2 단원 — 생식세포·수정·성 결정 (6쪽)</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="pdfs/genes/B1.3%20Gametes.pdf" target="_blank" rel="noopener">
+  <div class="file-ico">PDF</div>
+  <div><div class="file-name">B1.3 Gametes</div><div class="file-desc">필립스 선생님 수업자료 — 생식세포</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="pdfs/genes/Genes,%20chromosomes-and-DNA.%20Y9.pdf" target="_blank" rel="noopener">
+  <div class="file-ico">PDF</div>
+  <div><div class="file-name">Genes, chromosomes and DNA (과제지)</div><div class="file-desc">과제 'label the chromosome' 문제지</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="pdfs/genes/Chromosome%20Structure%20Diagram%20Labeling%20Activity.pdf" target="_blank" rel="noopener">
+  <div class="file-ico">PDF</div>
+  <div><div class="file-name">Chromosome Structure Labeling</div><div class="file-desc">염색체 구조 그림에 이름 붙이기 활동지</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="pdfs/genes/D-Shark%20attack%20Investigation%20sheet.pdf" target="_blank" rel="noopener">
+  <div class="file-ico">PDF</div>
+  <div><div class="file-name">Shark attack — investigation</div><div class="file-desc">상어 공격 탐구 활동지 (과학 탐구방법)</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="pdfs/genes/Contents%20-%20Y9%20Book.pdf" target="_blank" rel="noopener">
+  <div class="file-ico">PDF</div>
+  <div><div class="file-name">Contents — Y9 Book</div><div class="file-desc">케임브리지 9학년 과학 교과서 목차</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="pdfs/genes/CLS%20Science%20Learners%20Book%209.pdf" target="_blank" rel="noopener">
+  <div class="file-ico">PDF</div>
+  <div><div class="file-name">CLS Science Learner's Book 9</div><div class="file-desc">케임브리지 9학년 과학 교과서 전체 (용량 큼 · 와이파이에서)</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="pdfs/genes/B1.2%20Chromosomes,%20genes%20and%20DNA.pptx" target="_blank" rel="noopener">
+  <div class="file-ico ppt">PPT</div>
+  <div><div class="file-name">B1.2 Chromosomes, genes and DNA</div><div class="file-desc">필립스 선생님 수업 슬라이드 (파워포인트)</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="pdfs/genes/Y9%20Introductory%20Lesson%20-%20KPH.pptx" target="_blank" rel="noopener">
+  <div class="file-ico ppt">PPT</div>
+  <div><div class="file-name">Y9 Introductory Lesson</div><div class="file-desc">9학년 과학 첫 수업 슬라이드 (파워포인트)</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<div class="files-head">🔗 링크 자료</div>
+<a class="file-card" href="https://wayground.com/join?c=Mv1R_umMtNpo7rML-SPh5thceUO8mknXGFa_hSiiRJOzN1cXiDX_uh88SjnjDg2Tb2dNXSxHWbt1JdI6vsS6KBsnT7cKjBQb4NUmR" target="_blank" rel="noopener">
+  <div class="file-ico link">WEB</div>
+  <div><div class="file-name">Wayground 퀴즈 — DNA chromosomes and genes Y9</div><div class="file-desc">선생님이 낸 과제 퀴즈 (옛 Quizizz)</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+<a class="file-card" href="https://docs.google.com/spreadsheets/d/1U6JitGTw-4Jg1O6QXpHeKfQROkMSRPa393EczBl9ohg/edit" target="_blank" rel="noopener">
+  <div class="file-ico link">WEB</div>
+  <div><div class="file-name">Y9 Year plan 26/27</div><div class="file-desc">26/27학년도 9학년 과학 연간 진도표</div></div>
+  <div class="file-open">열기 →</div>
+</a>
+</div></div>
 <div class="tab-pane" id="tab-quiz">
   <div class="quiz-wrap">
     <div class="quiz-info">
       📝 <b>Written-answer practice</b> · 시험 형식: 서술형<br>
       답을 영어로 써본 다음 <b>Show model answer</b>를 눌러 비교하세요.
     </div>
-    <div id="quiz-list"><div class="q-card" id="q-card-0">
-  <div class="q-num"><span>Question 1 of 5</span> <span class="q-marks">2 marks</span></div>
-  <div class="q-text">Put these in order from largest to smallest: <b>gene, chromosome, DNA base, nucleus</b>.</div>
+    <div id="quiz-list">
+<div class="q-card" id="q-card-0">
+  <div class="q-num"><span>Question 1 of 15</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Explain why we cannot usually see the chromosomes in a cell, even using a microscope.</div>
   <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
   <div class="q-show-row">
     <button class="q-btn-show" onclick="showModel(0)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>Chromosomes only become <b>visible</b> when a cell is <b>dividing</b>.</p><p class='ko'>염색체는 세포가 <b>분열할 때만</b> 보입니다.</p><p class='en'>At other times they are <b>too thin and spread out</b> to see.</p><p class='ko'>다른 때에는 <b>너무 가늘고 퍼져 있어</b> 보이지 않습니다.</p><p class='en'>They also have to be coloured with a special <b>stain</b> before they show up.</p><p class='ko'>또 특수 <b>염색약</b>으로 색을 입혀야 보입니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Only visible when the cell is dividing</li>
+      <li>Too thin / spread out otherwise</li>
+      <li>Need a stain to colour them</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 분열할 때만 + 너무 가늘다 + 염색약 필요.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(0,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(0,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(0,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-1">
+  <div class="q-num"><span>Question 2 of 15</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Explain the difference between a chromosome and a gene.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(1)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>A <b>chromosome</b> is a long thread of DNA found in the nucleus.</p><p class='ko'><b>염색체</b>는 핵 속에 있는 긴 DNA 실입니다.</p><p class='en'>A <b>gene</b> is a <b>short length of DNA</b> on that chromosome.</p><p class='ko'><b>유전자</b>는 그 염색체 위의 <b>짧은 DNA 구간</b>입니다.</p><p class='en'>Each chromosome contains <b>hundreds of genes</b>, and each gene controls one characteristic.</p><p class='ko'>염색체 하나에는 <b>수백 개 유전자</b>가 있고, 유전자 하나가 형질 하나를 조절합니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Chromosome = long DNA thread in nucleus</li>
+      <li>Gene = short length of DNA on it</li>
+      <li>One chromosome carries many genes</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 염색체=긴 실 / 유전자=그 위 짧은 구간 / 하나에 수백 개.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(1,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(1,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(1,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-2">
+  <div class="q-num"><span>Question 3 of 15</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Red blood cells do not contain a nucleus. Do you think they contain any chromosomes? Explain your answer.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(2)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'><b>No</b> — red blood cells do <b>not</b> contain chromosomes.</p><p class='ko'><b>아니요</b> — 적혈구에는 염색체가 <b>없습니다</b>.</p><p class='en'>Chromosomes are found <b>inside the nucleus</b>, and a red blood cell has no nucleus.</p><p class='ko'>염색체는 <b>핵 안에</b> 있는데, 적혈구에는 핵이 없기 때문입니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Answer: no</li>
+      <li>Because chromosomes are inside the nucleus</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 없다 + 염색체는 핵 안에 있으니까.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(2,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(2,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(2,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-3">
+  <div class="q-num"><span>Question 4 of 15</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Describe the shape of a DNA molecule and name it.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(3)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>A DNA molecule is shaped like a <b>twisted ladder</b>.</p><p class='ko'>DNA 분자는 <b>꼬인 사다리</b> 모양입니다.</p><p class='en'>This shape is called a <b>double helix</b>.</p><p class='ko'>이 모양을 <b>이중나선</b>이라고 부릅니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Twisted ladder shape</li>
+      <li>Called a double helix</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 꼬인 사다리 + 이중나선.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(3,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(3,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(3,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-4">
+  <div class="q-num"><span>Question 5 of 15</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">What is a gamete? Give the two human examples and say how many chromosomes each contains.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(4)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>A <b>gamete</b> is a <b>sex cell</b> with only <b>one set</b> of chromosomes.</p><p class='ko'><b>생식세포</b>는 염색체를 <b>한 세트</b>만 가진 <b>성세포</b>입니다.</p><p class='en'>In humans the gametes are the <b>sperm cell</b> (male) and the <b>egg cell</b> (female).</p><p class='ko'>사람의 생식세포는 <b>정자</b>(남성)와 <b>난자</b>(여성)입니다.</p><p class='en'>Each contains <b>23 chromosomes</b>.</p><p class='ko'>각각 <b>염색체 23개</b>를 가집니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Gamete = sex cell with one set</li>
+      <li>Sperm cell and egg cell</li>
+      <li>23 chromosomes each</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 한 세트 성세포 + 정자·난자 + 23개.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(4,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(4,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(4,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-5">
+  <div class="q-num"><span>Question 6 of 15</span> <span class="q-marks">4 marks</span></div>
+  <div class="q-text">Make a comparison of a sperm cell and an egg cell. Give at least three differences.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(5)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'><b>Size:</b> the sperm cell is very small; the egg cell is much bigger.</p><p class='ko'><b>크기:</b> 정자는 아주 작고 난자는 훨씬 큽니다.</p><p class='en'><b>Movement:</b> the sperm cell has a <b>tail</b> and swims; the egg cell <b>cannot move</b> by itself.</p><p class='ko'><b>움직임:</b> 정자는 <b>꼬리</b>로 헤엄치고, 난자는 <b>스스로 못 움직입니다</b>.</p><p class='en'><b>Cytoplasm:</b> the sperm cell has only a small amount; the egg cell has plenty, containing <b>food reserves</b>.</p><p class='ko'><b>세포질:</b> 정자는 조금뿐, 난자는 많고 <b>저장 양분</b>이 들어 있습니다.</p><p class='en'><b>Same:</b> both have a nucleus containing <b>23 chromosomes</b> and a cell surface membrane.</p><p class='ko'><b>같은 점:</b> 둘 다 <b>염색체 23개</b>가 든 핵과 세포막을 가집니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Size difference</li>
+      <li>Sperm has tail / swims, egg cannot move</li>
+      <li>Egg has food reserves in cytoplasm</li>
+      <li>Both have 23 chromosomes</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 크기 + 움직임(꼬리) + 양분 + 둘 다 23개.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(5,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(5,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(5,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-6">
+  <div class="q-num"><span>Question 7 of 15</span> <span class="q-marks">4 marks</span></div>
+  <div class="q-text">Explain what happens at fertilisation, and name the cell that is produced.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(6)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'>The <b>head of the sperm cell enters the egg cell</b>.</p><p class='ko'><b>정자의 머리가 난자 안으로 들어갑니다</b>.</p><p class='en'>The <b>nucleus of the sperm cell and the nucleus of the egg cell fuse together</b>.</p><p class='ko'><b>정자의 핵과 난자의 핵이 하나로 합쳐집니다</b>.</p><p class='en'>Each gamete brought <b>23 chromosomes</b>, so the new cell has <b>46</b>.</p><p class='ko'>생식세포가 각각 <b>23개</b>씩 가져와 새 세포는 <b>46개</b>가 됩니다.</p><p class='en'>The new cell is called a <b>zygote</b>.</p><p class='ko'>이 새 세포를 <b>접합자(수정란)</b>라고 합니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Sperm head enters egg</li>
+      <li>Nuclei fuse</li>
+      <li>23 + 23 = 46 chromosomes</li>
+      <li>New cell = zygote</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 머리 진입 + 핵 융합 + 23+23=46 + 접합자.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(6,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(6,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(6,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-7">
+  <div class="q-num"><span>Question 8 of 15</span> <span class="q-marks">4 marks</span></div>
+  <div class="q-text">Is it correct to say that the sex of a baby is determined by its father, not its mother? Explain your answer.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(7)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'><b>Yes, it is correct.</b></p><p class='ko'><b>맞습니다.</b></p><p class='en'><b>All egg cells</b> from the mother contain <b>one X chromosome</b>, so the mother can only give an X.</p><p class='ko'>어머니의 <b>모든 난자</b>는 <b>X염색체</b>를 가지므로 X만 줄 수 있습니다.</p><p class='en'><b>Sperm cells</b> can contain <b>either an X or a Y</b> chromosome.</p><p class='ko'><b>정자</b>는 <b>X 또는 Y</b>를 가질 수 있습니다.</p><p class='en'>So it is the father's sperm that decides whether the zygote is <b>XX (girl)</b> or <b>XY (boy)</b>.</p><p class='ko'>따라서 접합자가 <b>XX(딸)</b>인지 <b>XY(아들)</b>인지는 아버지의 정자가 결정합니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Yes</li>
+      <li>Eggs always carry X</li>
+      <li>Sperm carry X or Y</li>
+      <li>Therefore the sperm decides XX or XY</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 맞다 + 난자는 X만 + 정자는 X or Y + 그래서 아빠가 결정.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(7,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(7,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(7,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-8">
+  <div class="q-num"><span>Question 9 of 15</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Explain why the numbers of boy and girl babies born each year is approximately equal.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(8)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'><b>Half</b> of all sperm cells carry an <b>X</b> chromosome and <b>half</b> carry a <b>Y</b>.</p><p class='ko'>정자의 <b>절반</b>은 <b>X</b>, <b>절반</b>은 <b>Y</b>를 가집니다.</p><p class='en'>Every egg carries an X, so an X-sperm gives <b>XX</b> and a Y-sperm gives <b>XY</b>.</p><p class='ko'>난자는 모두 X이므로, X정자면 <b>XX</b>, Y정자면 <b>XY</b>가 됩니다.</p><p class='en'>Because the <b>chance of each is about equal</b>, roughly equal numbers of boys and girls are born.</p><p class='ko'>두 경우의 <b>확률이 거의 같아서</b> 남아와 여아가 비슷하게 태어납니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Half of sperm are X, half are Y</li>
+      <li>X-sperm → XX, Y-sperm → XY</li>
+      <li>Equal chance → equal numbers</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 정자 반반 + XX/XY + 확률이 같다.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(8,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(8,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(8,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-9">
+  <div class="q-num"><span>Question 10 of 15</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Define inheritance.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(9)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text"><p class='en'><b>Inheritance</b> means <b>passing on DNA</b> — as chromosomes containing genes — from <b>parents to offspring</b>.</p><p class='ko'><b>유전</b>은 유전자를 담은 염색체 형태로 <b>DNA를 부모에서 자손으로 물려주는</b> 것입니다.</p><p class='en'><b>Sex inheritance</b> is the term for inheriting the X or Y chromosomes that decide sex.</p><p class='ko'>성별을 정하는 X·Y염색체를 물려받는 것은 <b>성 유전</b>이라고 합니다.</p></div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>Passing DNA / chromosomes with genes</li>
+      <li>From parents to offspring</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 DNA(유전자 담은 염색체)를 부모→자손.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(9,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(9,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(9,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-10">
+  <div class="q-num"><span>Question 11 of 15</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Put these in order from largest to smallest: <b>gene, chromosome, DNA base, nucleus</b>.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(10)">👁️ Show model answer</button>
   </div>
   <div class="q-model">
     <h4>✅ Model answer</h4>
@@ -857,17 +1505,17 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <span class="ko-help">💡 핵 > 염색체 > 유전자 > 염기.</span>
   </div>
   <div class="q-self-rate">
-    <button class="rate-good" onclick="rateSelf(0,'good')">😎 잘함</button>
-    <button class="rate-mid" onclick="rateSelf(0,'mid')">🤔 부분</button>
-    <button class="rate-bad" onclick="rateSelf(0,'bad')">😅 다시</button>
+    <button class="rate-good" onclick="rateSelf(10,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(10,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(10,'bad')">😅 다시</button>
   </div>
 </div>
-<div class="q-card" id="q-card-1">
-  <div class="q-num"><span>Question 2 of 5</span> <span class="q-marks">1 marks</span></div>
+<div class="q-card" id="q-card-11">
+  <div class="q-num"><span>Question 12 of 15</span> <span class="q-marks">1 marks</span></div>
   <div class="q-text">What is a <b>gene</b>?</div>
   <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
   <div class="q-show-row">
-    <button class="q-btn-show" onclick="showModel(1)">👁️ Show model answer</button>
+    <button class="q-btn-show" onclick="showModel(11)">👁️ Show model answer</button>
   </div>
   <div class="q-model">
     <h4>✅ Model answer</h4>
@@ -881,17 +1529,17 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <span class="ko-help">💡 한 특징을 정하는 DNA의 짧은 부분.</span>
   </div>
   <div class="q-self-rate">
-    <button class="rate-good" onclick="rateSelf(1,'good')">😎 잘함</button>
-    <button class="rate-mid" onclick="rateSelf(1,'mid')">🤔 부분</button>
-    <button class="rate-bad" onclick="rateSelf(1,'bad')">😅 다시</button>
+    <button class="rate-good" onclick="rateSelf(11,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(11,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(11,'bad')">😅 다시</button>
   </div>
 </div>
-<div class="q-card" id="q-card-2">
-  <div class="q-num"><span>Question 3 of 5</span> <span class="q-marks">2 marks</span></div>
+<div class="q-card" id="q-card-12">
+  <div class="q-num"><span>Question 13 of 15</span> <span class="q-marks">2 marks</span></div>
   <div class="q-text">Why is a child <b>similar but not identical</b> to its parents?</div>
   <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
   <div class="q-show-row">
-    <button class="q-btn-show" onclick="showModel(2)">👁️ Show model answer</button>
+    <button class="q-btn-show" onclick="showModel(12)">👁️ Show model answer</button>
   </div>
   <div class="q-model">
     <h4>✅ Model answer</h4>
@@ -906,17 +1554,17 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <span class="ko-help">💡 양쪽 부모 유전자 섞임.</span>
   </div>
   <div class="q-self-rate">
-    <button class="rate-good" onclick="rateSelf(2,'good')">😎 잘함</button>
-    <button class="rate-mid" onclick="rateSelf(2,'mid')">🤔 부분</button>
-    <button class="rate-bad" onclick="rateSelf(2,'bad')">😅 다시</button>
+    <button class="rate-good" onclick="rateSelf(12,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(12,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(12,'bad')">😅 다시</button>
   </div>
 </div>
-<div class="q-card" id="q-card-3">
-  <div class="q-num"><span>Question 4 of 5</span> <span class="q-marks">1 marks</span></div>
+<div class="q-card" id="q-card-13">
+  <div class="q-num"><span>Question 14 of 15</span> <span class="q-marks">1 marks</span></div>
   <div class="q-text">Give one example of <b>environmental</b> variation.</div>
   <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
   <div class="q-show-row">
-    <button class="q-btn-show" onclick="showModel(3)">👁️ Show model answer</button>
+    <button class="q-btn-show" onclick="showModel(13)">👁️ Show model answer</button>
   </div>
   <div class="q-model">
     <h4>✅ Model answer</h4>
@@ -930,17 +1578,17 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <span class="ko-help">💡 흉터·피부 그을림 등.</span>
   </div>
   <div class="q-self-rate">
-    <button class="rate-good" onclick="rateSelf(3,'good')">😎 잘함</button>
-    <button class="rate-mid" onclick="rateSelf(3,'mid')">🤔 부분</button>
-    <button class="rate-bad" onclick="rateSelf(3,'bad')">😅 다시</button>
+    <button class="rate-good" onclick="rateSelf(13,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(13,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(13,'bad')">😅 다시</button>
   </div>
 </div>
-<div class="q-card" id="q-card-4">
-  <div class="q-num"><span>Question 5 of 5</span> <span class="q-marks">3 marks</span></div>
+<div class="q-card" id="q-card-14">
+  <div class="q-num"><span>Question 15 of 15</span> <span class="q-marks">3 marks</span></div>
   <div class="q-text">Explain <b>natural selection</b> in your own words.</div>
   <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
   <div class="q-show-row">
-    <button class="q-btn-show" onclick="showModel(4)">👁️ Show model answer</button>
+    <button class="q-btn-show" onclick="showModel(14)">👁️ Show model answer</button>
   </div>
   <div class="q-model">
     <h4>✅ Model answer</h4>
@@ -956,20 +1604,19 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <span class="ko-help">💡 변이→적자 생존·번식→유전자 전달→진화.</span>
   </div>
   <div class="q-self-rate">
-    <button class="rate-good" onclick="rateSelf(4,'good')">😎 잘함</button>
-    <button class="rate-mid" onclick="rateSelf(4,'mid')">🤔 부분</button>
-    <button class="rate-bad" onclick="rateSelf(4,'bad')">😅 다시</button>
-  </div>
-</div></div>
+    <button class="rate-good" onclick="rateSelf(14,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(14,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(14,'bad')">😅 다시</button>
   </div>
 </div>
-
-<!-- 단어시험 -->
+    </div>
+  </div>
+</div>
 <div class="tab-pane" id="tab-spelling">
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">32</span> 남음</div>
+      <div>📚 <span id="sp-remaining">56</span> 남음</div>
     </div>
     <div class="spell-card" id="spell-card">
       <span class="spell-cat" id="sp-cat">CATEGORY</span>
@@ -988,26 +1635,25 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 
-<footer>Genes and inheritance 유전자와 유전 · science-vocab · <span style="opacity:.5">v20260619-155905</span></footer>
 
-<script>
-const QUIZ_DATA = [{"q": "Put these in order from largest to smallest: <b>gene, chromosome, DNA base, nucleus</b>.", "marks": 2, "sample_answer": "Nucleus → chromosome → gene → DNA base.", "mark_points": ["nucleus then chromosome (1)", "gene then base (1)"], "ko_hint": "핵 > 염색체 > 유전자 > 염기."}, {"q": "What is a <b>gene</b>?", "marks": 1, "sample_answer": "A short section of DNA that codes for one feature.", "mark_points": ["section of DNA coding for a feature (1)"], "ko_hint": "한 특징을 정하는 DNA의 짧은 부분."}, {"q": "Why is a child <b>similar but not identical</b> to its parents?", "marks": 2, "sample_answer": "At fertilisation it inherits a mix of genes from both the mother and the father, so it shows a combination of their features.", "mark_points": ["genes from both parents (1)", "mix/combination → not identical (1)"], "ko_hint": "양쪽 부모 유전자 섞임."}, {"q": "Give one example of <b>environmental</b> variation.", "marks": 1, "sample_answer": "A scar, a suntan, or a learned language (caused by surroundings, not genes).", "mark_points": ["valid environmental example (1)"], "ko_hint": "흉터·피부 그을림 등."}, {"q": "Explain <b>natural selection</b> in your own words.", "marks": 3, "sample_answer": "There is variation in a species. Organisms with helpful adaptations are more likely to survive and reproduce, so they pass on their genes. Over many generations the species changes (evolves).", "mark_points": ["variation exists (1)", "best adapted survive & reproduce (1)", "pass on genes → evolution (1)"], "ko_hint": "변이→적자 생존·번식→유전자 전달→진화."}];
-const VOCAB_DATA = [{"en": "DNA", "ko": "DNA", "def_en": "The molecule that carries genetic information in all living things.", "cat": "organ"}, {"en": "Gene", "ko": "유전자", "def_en": "A short section of DNA that codes for one feature.", "cat": "organ"}, {"en": "Chromosome", "ko": "염색체", "def_en": "A long thread of DNA found in the nucleus.", "cat": "organ"}, {"en": "Nucleus", "ko": "핵", "def_en": "The part of a cell that contains the chromosomes.", "cat": "organ"}, {"en": "Genetic information", "ko": "유전 정보", "def_en": "The instructions carried by DNA for building an organism.", "cat": "organ"}, {"en": "Genome", "ko": "유전체(게놈)", "def_en": "All the DNA of an organism.", "cat": "organ"}, {"en": "Base", "ko": "염기", "def_en": "One of the chemical units (A, T, C, G) that make up DNA.", "cat": "organ"}, {"en": "Gamete", "ko": "생식세포(배우자)", "def_en": "A sex cell — sperm or egg — with half the normal chromosomes.", "cat": "process"}, {"en": "Sperm", "ko": "정자", "def_en": "The male gamete.", "cat": "process"}, {"en": "Egg (ovum)", "ko": "난자", "def_en": "The female gamete.", "cat": "process"}, {"en": "Fertilisation", "ko": "수정", "def_en": "When a sperm and egg join to form a new cell.", "cat": "process"}, {"en": "Inheritance", "ko": "유전", "def_en": "The passing of genes from parents to offspring.", "cat": "process"}, {"en": "Offspring", "ko": "자손", "def_en": "The young produced by parents.", "cat": "process"}, {"en": "Inherited characteristic", "ko": "유전 형질", "def_en": "A feature passed from parents through genes, e.g. eye colour.", "cat": "process"}, {"en": "Variation", "ko": "변이", "def_en": "The differences between individuals of the same species.", "cat": "blood"}, {"en": "Genetic variation", "ko": "유전적 변이", "def_en": "Variation caused by differences in genes.", "cat": "blood"}, {"en": "Environmental variation", "ko": "환경적 변이", "def_en": "Variation caused by the surroundings, e.g. a scar.", "cat": "blood"}, {"en": "Continuous variation", "ko": "연속 변이", "def_en": "Variation with a range of values, e.g. height.", "cat": "blood"}, {"en": "Discontinuous variation", "ko": "불연속 변이", "def_en": "Variation in separate groups, e.g. blood type.", "cat": "blood"}, {"en": "Mutation", "ko": "돌연변이", "def_en": "A random change in DNA that can create new variation.", "cat": "blood"}, {"en": "Species", "ko": "종", "def_en": "A group of similar organisms that can breed together.", "cat": "blood"}, {"en": "Natural selection", "ko": "자연 선택", "def_en": "Organisms best suited to their environment survive and reproduce.", "cat": "gas"}, {"en": "Adaptation", "ko": "적응", "def_en": "A feature that helps an organism survive in its environment.", "cat": "gas"}, {"en": "Survival of the fittest", "ko": "적자생존", "def_en": "The best-adapted organisms are most likely to survive.", "cat": "gas"}, {"en": "Reproduce", "ko": "번식하다", "def_en": "To produce offspring.", "cat": "gas"}, {"en": "Evolution", "ko": "진화", "def_en": "The gradual change in a species over many generations.", "cat": "gas"}, {"en": "Extinct", "ko": "멸종한", "def_en": "When a species has died out completely.", "cat": "gas"}, {"en": "Generation", "ko": "세대", "def_en": "One step in a line of parents and offspring.", "cat": "gas"}, {"en": "Allele", "ko": "대립유전자", "def_en": "A different version of the same gene.", "cat": "process"}, {"en": "Dominant", "ko": "우성", "def_en": "An allele that shows even if only one copy is present.", "cat": "process"}, {"en": "Recessive", "ko": "열성", "def_en": "An allele that shows only when both copies are present.", "cat": "process"}, {"en": "Selective breeding", "ko": "선택적 교배(육종)", "def_en": "Choosing parents with wanted features to breed offspring.", "cat": "gas"}];
-const UNIT_ID = "y9_genes";
-const UNIT_TITLE = "Genes and inheritance 유전자와 유전";
-const UNIT_TOPICS = ["7.1 Chromosomes, genes and DNA", "7.2 Gametes and inheritance", "7.3 Variation", "7.4 Natural selection"];
+<footer>9B1 Genes and inheritance 유전 · science-vocab · <span style="opacity:.5">v20260827-003005</span></footer><script>
+const QUIZ_DATA = [{"q": "Explain why we cannot usually see the chromosomes in a cell, even using a microscope.", "marks": 3, "sample_answer": "<p class='en'>Chromosomes only become <b>visible</b> when a cell is <b>dividing</b>.</p><p class='ko'>염색체는 세포가 <b>분열할 때만</b> 보입니다.</p><p class='en'>At other times they are <b>too thin and spread out</b> to see.</p><p class='ko'>다른 때에는 <b>너무 가늘고 퍼져 있어</b> 보이지 않습니다.</p><p class='en'>They also have to be coloured with a special <b>stain</b> before they show up.</p><p class='ko'>또 특수 <b>염색약</b>으로 색을 입혀야 보입니다.</p>", "mark_points": ["Only visible when the cell is dividing", "Too thin / spread out otherwise", "Need a stain to colour them"], "ko_hint": "분열할 때만 + 너무 가늘다 + 염색약 필요."}, {"q": "Explain the difference between a chromosome and a gene.", "marks": 3, "sample_answer": "<p class='en'>A <b>chromosome</b> is a long thread of DNA found in the nucleus.</p><p class='ko'><b>염색체</b>는 핵 속에 있는 긴 DNA 실입니다.</p><p class='en'>A <b>gene</b> is a <b>short length of DNA</b> on that chromosome.</p><p class='ko'><b>유전자</b>는 그 염색체 위의 <b>짧은 DNA 구간</b>입니다.</p><p class='en'>Each chromosome contains <b>hundreds of genes</b>, and each gene controls one characteristic.</p><p class='ko'>염색체 하나에는 <b>수백 개 유전자</b>가 있고, 유전자 하나가 형질 하나를 조절합니다.</p>", "mark_points": ["Chromosome = long DNA thread in nucleus", "Gene = short length of DNA on it", "One chromosome carries many genes"], "ko_hint": "염색체=긴 실 / 유전자=그 위 짧은 구간 / 하나에 수백 개."}, {"q": "Red blood cells do not contain a nucleus. Do you think they contain any chromosomes? Explain your answer.", "marks": 2, "sample_answer": "<p class='en'><b>No</b> — red blood cells do <b>not</b> contain chromosomes.</p><p class='ko'><b>아니요</b> — 적혈구에는 염색체가 <b>없습니다</b>.</p><p class='en'>Chromosomes are found <b>inside the nucleus</b>, and a red blood cell has no nucleus.</p><p class='ko'>염색체는 <b>핵 안에</b> 있는데, 적혈구에는 핵이 없기 때문입니다.</p>", "mark_points": ["Answer: no", "Because chromosomes are inside the nucleus"], "ko_hint": "없다 + 염색체는 핵 안에 있으니까."}, {"q": "Describe the shape of a DNA molecule and name it.", "marks": 2, "sample_answer": "<p class='en'>A DNA molecule is shaped like a <b>twisted ladder</b>.</p><p class='ko'>DNA 분자는 <b>꼬인 사다리</b> 모양입니다.</p><p class='en'>This shape is called a <b>double helix</b>.</p><p class='ko'>이 모양을 <b>이중나선</b>이라고 부릅니다.</p>", "mark_points": ["Twisted ladder shape", "Called a double helix"], "ko_hint": "꼬인 사다리 + 이중나선."}, {"q": "What is a gamete? Give the two human examples and say how many chromosomes each contains.", "marks": 3, "sample_answer": "<p class='en'>A <b>gamete</b> is a <b>sex cell</b> with only <b>one set</b> of chromosomes.</p><p class='ko'><b>생식세포</b>는 염색체를 <b>한 세트</b>만 가진 <b>성세포</b>입니다.</p><p class='en'>In humans the gametes are the <b>sperm cell</b> (male) and the <b>egg cell</b> (female).</p><p class='ko'>사람의 생식세포는 <b>정자</b>(남성)와 <b>난자</b>(여성)입니다.</p><p class='en'>Each contains <b>23 chromosomes</b>.</p><p class='ko'>각각 <b>염색체 23개</b>를 가집니다.</p>", "mark_points": ["Gamete = sex cell with one set", "Sperm cell and egg cell", "23 chromosomes each"], "ko_hint": "한 세트 성세포 + 정자·난자 + 23개."}, {"q": "Make a comparison of a sperm cell and an egg cell. Give at least three differences.", "marks": 4, "sample_answer": "<p class='en'><b>Size:</b> the sperm cell is very small; the egg cell is much bigger.</p><p class='ko'><b>크기:</b> 정자는 아주 작고 난자는 훨씬 큽니다.</p><p class='en'><b>Movement:</b> the sperm cell has a <b>tail</b> and swims; the egg cell <b>cannot move</b> by itself.</p><p class='ko'><b>움직임:</b> 정자는 <b>꼬리</b>로 헤엄치고, 난자는 <b>스스로 못 움직입니다</b>.</p><p class='en'><b>Cytoplasm:</b> the sperm cell has only a small amount; the egg cell has plenty, containing <b>food reserves</b>.</p><p class='ko'><b>세포질:</b> 정자는 조금뿐, 난자는 많고 <b>저장 양분</b>이 들어 있습니다.</p><p class='en'><b>Same:</b> both have a nucleus containing <b>23 chromosomes</b> and a cell surface membrane.</p><p class='ko'><b>같은 점:</b> 둘 다 <b>염색체 23개</b>가 든 핵과 세포막을 가집니다.</p>", "mark_points": ["Size difference", "Sperm has tail / swims, egg cannot move", "Egg has food reserves in cytoplasm", "Both have 23 chromosomes"], "ko_hint": "크기 + 움직임(꼬리) + 양분 + 둘 다 23개."}, {"q": "Explain what happens at fertilisation, and name the cell that is produced.", "marks": 4, "sample_answer": "<p class='en'>The <b>head of the sperm cell enters the egg cell</b>.</p><p class='ko'><b>정자의 머리가 난자 안으로 들어갑니다</b>.</p><p class='en'>The <b>nucleus of the sperm cell and the nucleus of the egg cell fuse together</b>.</p><p class='ko'><b>정자의 핵과 난자의 핵이 하나로 합쳐집니다</b>.</p><p class='en'>Each gamete brought <b>23 chromosomes</b>, so the new cell has <b>46</b>.</p><p class='ko'>생식세포가 각각 <b>23개</b>씩 가져와 새 세포는 <b>46개</b>가 됩니다.</p><p class='en'>The new cell is called a <b>zygote</b>.</p><p class='ko'>이 새 세포를 <b>접합자(수정란)</b>라고 합니다.</p>", "mark_points": ["Sperm head enters egg", "Nuclei fuse", "23 + 23 = 46 chromosomes", "New cell = zygote"], "ko_hint": "머리 진입 + 핵 융합 + 23+23=46 + 접합자."}, {"q": "Is it correct to say that the sex of a baby is determined by its father, not its mother? Explain your answer.", "marks": 4, "sample_answer": "<p class='en'><b>Yes, it is correct.</b></p><p class='ko'><b>맞습니다.</b></p><p class='en'><b>All egg cells</b> from the mother contain <b>one X chromosome</b>, so the mother can only give an X.</p><p class='ko'>어머니의 <b>모든 난자</b>는 <b>X염색체</b>를 가지므로 X만 줄 수 있습니다.</p><p class='en'><b>Sperm cells</b> can contain <b>either an X or a Y</b> chromosome.</p><p class='ko'><b>정자</b>는 <b>X 또는 Y</b>를 가질 수 있습니다.</p><p class='en'>So it is the father's sperm that decides whether the zygote is <b>XX (girl)</b> or <b>XY (boy)</b>.</p><p class='ko'>따라서 접합자가 <b>XX(딸)</b>인지 <b>XY(아들)</b>인지는 아버지의 정자가 결정합니다.</p>", "mark_points": ["Yes", "Eggs always carry X", "Sperm carry X or Y", "Therefore the sperm decides XX or XY"], "ko_hint": "맞다 + 난자는 X만 + 정자는 X or Y + 그래서 아빠가 결정."}, {"q": "Explain why the numbers of boy and girl babies born each year is approximately equal.", "marks": 3, "sample_answer": "<p class='en'><b>Half</b> of all sperm cells carry an <b>X</b> chromosome and <b>half</b> carry a <b>Y</b>.</p><p class='ko'>정자의 <b>절반</b>은 <b>X</b>, <b>절반</b>은 <b>Y</b>를 가집니다.</p><p class='en'>Every egg carries an X, so an X-sperm gives <b>XX</b> and a Y-sperm gives <b>XY</b>.</p><p class='ko'>난자는 모두 X이므로, X정자면 <b>XX</b>, Y정자면 <b>XY</b>가 됩니다.</p><p class='en'>Because the <b>chance of each is about equal</b>, roughly equal numbers of boys and girls are born.</p><p class='ko'>두 경우의 <b>확률이 거의 같아서</b> 남아와 여아가 비슷하게 태어납니다.</p>", "mark_points": ["Half of sperm are X, half are Y", "X-sperm → XX, Y-sperm → XY", "Equal chance → equal numbers"], "ko_hint": "정자 반반 + XX/XY + 확률이 같다."}, {"q": "Define inheritance.", "marks": 2, "sample_answer": "<p class='en'><b>Inheritance</b> means <b>passing on DNA</b> — as chromosomes containing genes — from <b>parents to offspring</b>.</p><p class='ko'><b>유전</b>은 유전자를 담은 염색체 형태로 <b>DNA를 부모에서 자손으로 물려주는</b> 것입니다.</p><p class='en'><b>Sex inheritance</b> is the term for inheriting the X or Y chromosomes that decide sex.</p><p class='ko'>성별을 정하는 X·Y염색체를 물려받는 것은 <b>성 유전</b>이라고 합니다.</p>", "mark_points": ["Passing DNA / chromosomes with genes", "From parents to offspring"], "ko_hint": "DNA(유전자 담은 염색체)를 부모→자손."}];
+const VOCAB_DATA = [{"en": "Chromosome", "ko": "염색체", "def_en": "A thread-like structure in the nucleus of a cell that carries the genes.", "cat": "all"}, {"en": "Nucleus", "ko": "핵", "def_en": "The part of a cell that contains the chromosomes and controls the cell's activities.", "cat": "all"}, {"en": "Gene", "ko": "유전자", "def_en": "A short length of DNA on a chromosome that helps to control one characteristic.", "cat": "all"}, {"en": "DNA", "ko": "디엔에이", "def_en": "The chemical substance that chromosomes and genes are made of.", "cat": "all"}, {"en": "Double helix", "ko": "이중나선", "def_en": "The twisted-ladder shape of a DNA molecule.", "cat": "all"}, {"en": "Molecule", "ko": "분자", "def_en": "A group of atoms joined together. Each chromosome is one very long DNA molecule.", "cat": "all"}, {"en": "Characteristic", "ko": "형질 (특징)", "def_en": "A feature of an organism, such as eye colour, that genes help to control.", "cat": "all"}, {"en": "Cell division", "ko": "세포분열", "def_en": "When one cell divides into two. Chromosomes are only visible at this time.", "cat": "all"}, {"en": "Stain", "ko": "염색약", "def_en": "A special dye used to colour chromosomes so that they can be seen.", "cat": "all"}, {"en": "Light microscope", "ko": "광학현미경", "def_en": "A microscope that uses light. Chromosomes show up only when a cell is dividing.", "cat": "all"}, {"en": "Species", "ko": "종", "def_en": "A kind of organism. Different species have different numbers of chromosomes.", "cat": "all"}, {"en": "Sequence", "ko": "순서 (배열)", "def_en": "The particular order in which the genes are arranged along a chromosome.", "cat": "all"}, {"en": "Giant chromosome", "ko": "거대염색체", "def_en": "An especially thick chromosome, as found in fruit flies, that is easier to see.", "cat": "all"}, {"en": "Eye colour", "ko": "눈 색깔", "def_en": "An example of a characteristic. Two genes on chromosome 15 help to determine it.", "cat": "all"}, {"en": "Version of a gene", "ko": "유전자의 형태", "def_en": "A different form of the same gene, giving for example blue eyes or brown eyes.", "cat": "all"}, {"en": "Gamete", "ko": "생식세포", "def_en": "A sex cell — a sperm cell or an egg cell — with only one set of chromosomes.", "cat": "all"}, {"en": "Sperm cell", "ko": "정자", "def_en": "The male gamete. It is small, has a tail and swims vigorously.", "cat": "all"}, {"en": "Egg cell", "ko": "난자", "def_en": "The female gamete. It is much bigger, cannot move by itself and holds food reserves.", "cat": "all"}, {"en": "Specialised cell", "ko": "특수화된 세포", "def_en": "A cell that is adapted to carry out one particular function.", "cat": "all"}, {"en": "Tail", "ko": "꼬리", "def_en": "The part of a sperm cell that produces swimming movements.", "cat": "all"}, {"en": "Cytoplasm", "ko": "세포질", "def_en": "The jelly-like part of a cell. In an egg cell it contains food reserves.", "cat": "all"}, {"en": "Cell surface membrane", "ko": "세포막", "def_en": "The thin layer around the outside of a cell.", "cat": "all"}, {"en": "Food reserves", "ko": "저장 양분", "def_en": "Stored food inside the egg cell, which is why it is bigger than a sperm cell.", "cat": "all"}, {"en": "Scanning electron microscope", "ko": "주사전자현미경", "def_en": "A very powerful microscope used to photograph sperm cells and egg cells.", "cat": "all"}, {"en": "Fertilisation", "ko": "수정", "def_en": "The joining of a sperm cell with an egg cell.", "cat": "all"}, {"en": "Fuse", "ko": "융합하다", "def_en": "To join together. At fertilisation the two nuclei fuse.", "cat": "all"}, {"en": "Zygote", "ko": "접합자 (수정란)", "def_en": "The new cell formed when the nuclei of a sperm cell and an egg cell join. It has 46 chromosomes.", "cat": "all"}, {"en": "Set of chromosomes", "ko": "염색체 한 세트", "def_en": "23 chromosomes. Body cells have two sets; gametes have only one set.", "cat": "all"}, {"en": "Inheritance", "ko": "유전", "def_en": "Passing on DNA, as chromosomes containing genes, from parents to offspring.", "cat": "all"}, {"en": "Offspring", "ko": "자손", "def_en": "The young that are produced by parents.", "cat": "all"}, {"en": "Sex chromosomes", "ko": "성염색체", "def_en": "The pair of chromosomes that determine whether a person is male or female.", "cat": "all"}, {"en": "X chromosome", "ko": "X염색체", "def_en": "A sex chromosome. XX is female. Every egg cell contains one X chromosome.", "cat": "all"}, {"en": "Y chromosome", "ko": "Y염색체", "def_en": "A much smaller sex chromosome. XY is male. Only sperm cells can carry it.", "cat": "all"}, {"en": "Sex inheritance", "ko": "성 유전", "def_en": "How a baby inherits X or Y chromosomes from its parents, which decides its sex.", "cat": "all"}, {"en": "Determine", "ko": "결정하다", "def_en": "To decide or fix something. Genes determine characteristics such as eye colour.", "cat": "all"}, {"en": "Genetic information", "ko": "유전 정보", "def_en": "The instructions carried by DNA for building an organism.", "cat": "all"}, {"en": "Genome", "ko": "유전체 (게놈)", "def_en": "All the DNA of an organism.", "cat": "all"}, {"en": "Base", "ko": "염기", "def_en": "One of the chemical units (A, T, C, G) that make up DNA.", "cat": "all"}, {"en": "Inherited characteristic", "ko": "유전 형질", "def_en": "A feature passed from parents through genes, for example eye colour.", "cat": "all"}, {"en": "Variation", "ko": "변이", "def_en": "The differences between individuals of the same species.", "cat": "all"}, {"en": "Genetic variation", "ko": "유전적 변이", "def_en": "Variation caused by differences in genes.", "cat": "all"}, {"en": "Environmental variation", "ko": "환경적 변이", "def_en": "Variation caused by the surroundings, for example a scar.", "cat": "all"}, {"en": "Continuous variation", "ko": "연속 변이", "def_en": "Variation with a range of values, for example height.", "cat": "all"}, {"en": "Discontinuous variation", "ko": "불연속 변이", "def_en": "Variation in separate groups, for example blood type.", "cat": "all"}, {"en": "Mutation", "ko": "돌연변이", "def_en": "A random change in DNA that can create new variation.", "cat": "all"}, {"en": "Natural selection", "ko": "자연 선택", "def_en": "Organisms best suited to their environment survive and reproduce.", "cat": "all"}, {"en": "Adaptation", "ko": "적응", "def_en": "A feature that helps an organism survive in its environment.", "cat": "all"}, {"en": "Survival of the fittest", "ko": "적자생존", "def_en": "The best-adapted organisms are most likely to survive.", "cat": "all"}, {"en": "Reproduce", "ko": "번식하다", "def_en": "To produce offspring.", "cat": "all"}, {"en": "Evolution", "ko": "진화", "def_en": "The gradual change in a species over many generations.", "cat": "all"}, {"en": "Extinct", "ko": "멸종한", "def_en": "When a species has died out completely.", "cat": "all"}, {"en": "Generation", "ko": "세대", "def_en": "One step in a line of parents and offspring.", "cat": "all"}, {"en": "Allele", "ko": "대립유전자", "def_en": "A different version of the same gene.", "cat": "all"}, {"en": "Dominant", "ko": "우성", "def_en": "An allele that shows even if only one copy is present.", "cat": "all"}, {"en": "Recessive", "ko": "열성", "def_en": "An allele that shows only when both copies are present.", "cat": "all"}, {"en": "Selective breeding", "ko": "선택적 교배 (육종)", "def_en": "Choosing parents with wanted features to breed offspring.", "cat": "all"}];
+const UNIT_ID = "genes";
+const UNIT_TITLE = "9B1 Genes and inheritance 유전";
+const UNIT_TOPICS = ["7.1 Chromosomes, genes and DNA", "7.2 Gametes and inheritance"];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
 
 // ─── claude.ai 새 창 링크 ───
 (function setupClaudeLinks() {
   var NL = String.fromCharCode(10);
   var topicsList = UNIT_TOPICS.map(function(t, i) { return (i+1) + '. ' + t; }).join(NL);
-  var askMsg = "I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
+  var askMsg = "I'm a Year 9 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
     "Current unit: " + UNIT_TITLE + NL +
     "Topics:" + NL + topicsList + NL + NL +
     "Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use - if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary." + NL + NL +
     "질문 시작할게요:" + NL;
-  var gradeMsg = "I'm a Year 8 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
+  var gradeMsg = "I'm a Year 9 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
     "Unit: " + UNIT_TITLE + NL +
     "Topics: " + UNIT_TOPICS.join(' · ') + NL + NL +
     "Please grade my worksheet. For each question:" + NL +
@@ -1397,6 +2043,43 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+</script>
+
+<script>
+/* 단원 전체 듣기 — 미리 합쳐 둔 mp3 하나를 재생한다.
+   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일 하나로 합쳤다. */
+(function(){
+  var a = document.getElementById('allplay-audio');
+  var btn = document.getElementById('allplay-btn');
+  var tEl = document.getElementById('allplay-time');
+  var rEl = document.getElementById('allplay-range');
+  if (!a) return;
+  function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  window.toggleAllPlay = function(){
+    if (typeof stopSeq === 'function') stopSeq();
+    if (a.paused) { a.play(); } else { a.pause(); }
+  };
+  window.seekAllPlay = function(v){ if (a.duration) a.currentTime = a.duration * (v/1000); };
+  a.addEventListener('play', function(){
+    btn.textContent = '⏸ 멈춤'; btn.classList.add('playing');
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: '단원 전체 듣기 — 35 단어', artist: UNIT_TITLE, album: 'AMY Study App'
+      });
+      navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
+      navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
+    }
+  });
+  a.addEventListener('pause', function(){ btn.textContent = '▶ 단원 전체 듣기'; btn.classList.remove('playing'); });
+  a.addEventListener('ended', function(){ btn.textContent = '▶ 단원 전체 듣기'; btn.classList.remove('playing'); });
+  a.addEventListener('timeupdate', function(){
+    tEl.textContent = mmss(a.currentTime) + (a.duration ? ' / ' + mmss(a.duration) : '');
+    if (a.duration) rEl.value = Math.round(a.currentTime / a.duration * 1000);
+  });
+  a.addEventListener('error', function(){
+    btn.disabled = true; btn.textContent = '전체 듣기 파일 없음';
+  });
+})();
 </script>
 </body>
 </html>
