@@ -343,7 +343,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="mem-bar">
       <span class="mem-info">📚 전체 <b id="total-count">0</b>개</span>
       <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
-      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><button class="blind-btn" id="allplay-btn" onclick="toggleAllPlay()" title="29개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9_forces_energy_all.mp3"></audio>
       <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
     </div>
   </div>
@@ -356,7 +356,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
       <button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>🔥 열 이동 Heat transfer</button>
     </div>
   </div>
-<div class="section-header" data-cat="organ"><h2>🧊 밀도 Density</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="organ" onclick="playSection('organ', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="organ"><h2>🧊 밀도 Density</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="organ">
   <div class="vcard-left">
@@ -431,7 +431,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="process"><h2>🌡️ 열과 온도 Heat & temp</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="process" onclick="playSection('process', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="process"><h2>🌡️ 열과 온도 Heat & temp</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="process">
   <div class="vcard-left">
@@ -506,7 +506,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="blood"><h2>♻️ 에너지 보존 Conservation</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="blood" onclick="playSection('blood', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="blood"><h2>♻️ 에너지 보존 Conservation</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="blood">
   <div class="vcard-left">
@@ -617,7 +617,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   </div>
 </div>
 </div>
-<div class="section-header" data-cat="gas"><h2>🔥 열 이동 Heat transfer</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="gas" onclick="playSection('gas', this)">▶ 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="gas"><h2>🔥 열 이동 Heat transfer</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="gas">
   <div class="vcard-left">
@@ -1361,6 +1361,35 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+</script>
+
+<script>
+/* 단원 전체 듣기 — 미리 합쳐 둔 mp3 하나를 재생한다.
+   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일 하나로 합쳤다. */
+(function(){
+  var a = document.getElementById('allplay-audio');
+  var btn = document.getElementById('allplay-btn');
+  if (!a || !btn) return;
+  function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  window.toggleAllPlay = function(){
+    if (typeof stopSeq === 'function') stopSeq();
+    if (a.paused) { a.play(); } else { a.pause(); }
+  };
+  a.addEventListener('play', function(){
+    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: '단원 전체 듣기 — 29 단어', artist: UNIT_TITLE, album: 'AMY Study App'
+      });
+      navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
+      navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
+    }
+  });
+  a.addEventListener('pause', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('ended', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('timeupdate', function(){ if (!a.paused) btn.textContent = '⏸ ' + mmss(a.currentTime); });
+  a.addEventListener('error', function(){ btn.disabled = true; btn.textContent = '전체 듣기 파일 없음'; });
+})();
 </script>
 </body>
 </html>
