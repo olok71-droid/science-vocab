@@ -81,7 +81,7 @@ header {
 
 /* TABS */
 .tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
-.tabs { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+.tabs { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
 .tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
   font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
 .tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
@@ -320,6 +320,13 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 .cur table.rot th, .cur table.rot td { border: 1px solid var(--border, rgba(36,59,107,.12)); padding: 6px 9px; font-size: 12px; font-weight: 700; text-align: left; }
 .cur table.rot th { width: 110px; background: rgba(36,59,107,0.05); }
 </style>
+<style>
+.spellbox { max-width: 720px; margin: 10px auto 0; padding: 0 16px; }
+.spellbox > summary { list-style: none; cursor: pointer; background: rgba(109,93,252,0.10);
+  border: 1.5px solid rgba(109,93,252,0.35); border-radius: 12px; padding: 10px 14px;
+  font-size: 13.5px; font-weight: 800; color: var(--purple, #6d5dfc); }
+.spellbox > summary::-webkit-details-marker { display: none; }
+</style>
 </head>
 <body>
 
@@ -351,8 +358,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
     <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
     <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
-    <button class="tab-btn" data-tab="spelling">✏️ 단어시험</button><button class="tab-btn" data-tab="curriculum">📅 진도표</button>
-  </div>
+    </div>
 </div>
 
 <!-- 단어장 -->
@@ -365,6 +371,29 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
       <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="31개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/geo_migration_all.mp3"></audio>
       <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
     </div>
+<details class="spellbox" id="spellbox"><summary>✏️ 단어시험 시작 — 뜻을 보고 영어 단어 쓰기</summary>
+  <div class="spell-wrap">
+    <div class="spell-stats">
+      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
+      <div>📚 <span id="sp-remaining">31</span> 남음</div>
+    </div>
+    <div class="spell-card" id="spell-card">
+      <span class="spell-cat" id="sp-cat">CATEGORY</span>
+      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
+      <div class="spell-def" id="sp-def">English definition</div>
+      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
+      <div class="spell-feedback" id="sp-feedback"></div>
+      <div class="spell-input-row">
+        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
+      </div>
+      <div class="spell-buttons">
+        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
+        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
+      </div>
+    </div>
+  </div>
+</details>
+
   </div>
   <div class="filter-wrap">
     <div class="filter-tabs">
@@ -1128,51 +1157,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </div>
 
 <!-- 단어시험 -->
-<div class="tab-pane" id="tab-spelling">
-  <div class="spell-wrap">
-    <div class="spell-stats">
-      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">31</span> 남음</div>
-    </div>
-    <div class="spell-card" id="spell-card">
-      <span class="spell-cat" id="sp-cat">CATEGORY</span>
-      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
-      <div class="spell-def" id="sp-def">English definition</div>
-      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
-      <div class="spell-feedback" id="sp-feedback"></div>
-      <div class="spell-input-row">
-        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
-      </div>
-      <div class="spell-buttons">
-        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
-        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="tab-pane" id="tab-curriculum"><div class="cur-body"><div class="teacher">Douglas Lawrence · H4-02</div>
-    <div class="term-card">
-      <span class="term-tag">TERM 1</span>
-      <div class="unit-name-en">1. Tectonic Hazards <span style="font-weight:700;font-size:11.5px;color:var(--muted)">Geography</span></div>
-      <div class="unit-name-ko">지각 재해 — 지진과 화산이 지역사회·환경에 주는 영향과 대비 전략</div>
-      <div class="unit-name-en">2. World War One <span style="font-weight:700;font-size:11.5px;color:var(--muted)">History</span></div>
-      <div class="unit-name-ko">제1차 세계대전 — 왜 '최초의 현대 전쟁'이라 부르는가</div>
-    </div>
-    <div class="term-card">
-      <span class="term-tag">TERM 2</span>
-      <div class="unit-name-en">3. Climate Change <span style="font-weight:700;font-size:11.5px;color:var(--muted)">Geography</span></div>
-      <div class="unit-name-ko">기후변화 — 연결된 세계에서 어떻게 이해하고 대응할 것인가</div>
-      <div class="unit-name-en">4. The Holocaust <span style="font-weight:700;font-size:11.5px;color:var(--muted)">History</span></div>
-      <div class="unit-name-ko">홀로코스트 — 나치의 유대인 박해가 '최종 해결책'으로 이어진 과정</div>
-    </div>
-    <div class="term-card">
-      <span class="term-tag">TERM 3</span>
-      <div class="unit-name-en">5. International Development <span style="font-weight:700;font-size:11.5px;color:var(--muted)">Geography</span></div>
-      <div class="unit-name-ko">국제 개발 — 선진국이란 무엇인가, 개발 격차를 지속가능하게 줄이기</div>
-      <div class="unit-name-en">6. World War Two <span style="font-weight:700;font-size:11.5px;color:var(--muted)">History</span></div>
-      <div class="unit-name-ko">제2차 세계대전 — 유럽과 아시아에 미친 영향</div>
-    </div>
-    <div class="src">Y7-9 Humanities Curriculum Overview.pdf p.1 (Year 9, 6개 단원)</div></div></div>
+
 
 
 <footer>Y8 Geography Migration 이주 · science-vocab · <span style="opacity:.5">v20260527-164640</span></footer>
@@ -1219,8 +1204,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top: 0, behavior: 'smooth'});
     if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
-    if (btn.dataset.tab === 'spelling' && !spellState.started) startSpelling();
-    try { localStorage.setItem('tab_' + UNIT_ID, btn.dataset.tab); } catch(e){}
+        try { localStorage.setItem('tab_' + UNIT_ID, btn.dataset.tab); } catch(e){}
   });
 });
 
@@ -1237,7 +1221,6 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
   btn.classList.add('active');
   pane.classList.add('active');
-  if (t === 'spelling' && typeof startSpelling === 'function' && !spellState.started) startSpelling();
 })();
 
 // 발음
@@ -1629,6 +1612,16 @@ if ('serviceWorker' in navigator) {
   a.addEventListener('ended', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
   a.addEventListener('timeupdate', function(){ if (!a.paused) btn.textContent = '⏸ ' + mmss(a.currentTime); });
   a.addEventListener('error', function(){ btn.disabled = true; btn.textContent = '전체 듣기 파일 없음'; });
+})();
+</script>
+<script>
+/* 단어시험을 단어장 안에서 연다 */
+(function(){
+  var box=document.getElementById('spellbox');
+  if(!box) return;
+  box.addEventListener('toggle', function(){
+    if(box.open && typeof startSpelling==='function' && !spellState.started) startSpelling();
+  });
 })();
 </script>
 </body>
