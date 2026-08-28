@@ -177,6 +177,8 @@ header {
 .dh-btns{display:flex;gap:5px;flex-shrink:0;}
 .blind-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
 .blind-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.allplay-mini{background:var(--accent);border-color:var(--accent);color:#fff;font-size:12.5px;padding:6px 13px;border-radius:15px;box-shadow:0 2px 6px rgba(13,148,136,0.35);}
+.allplay-mini.active{background:var(--purple);border-color:var(--purple);color:#fff;}
 #tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
 #tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
 .vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
@@ -345,7 +347,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="mem-bar">
       <span class="mem-info">📚 전체 <b id="total-count">0</b>개</span>
       <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
-      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><button class="blind-btn" id="allplay-btn" onclick="toggleAllPlay()" title="26개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/math_statistics_all.mp3"></audio>
+      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="26개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/math_statistics_all.mp3"></audio>
       <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
     </div>
   </div>
