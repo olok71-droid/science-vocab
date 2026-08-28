@@ -298,17 +298,6 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </style>
 
 <style>
-/* 단원 전체 듣기 바 */
-.allplay { max-width: 980px; margin: 14px auto 0; padding: 0 16px; }
-.allplay-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px;
-  padding: 14px 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.allplay-btn { flex: 0 0 auto; background: var(--accent); color: #fff; border: none; cursor: pointer;
-  font-family: inherit; font-size: 15px; font-weight: 800; padding: 12px 18px; border-radius: 12px; }
-.allplay-btn.playing { background: var(--purple); }
-.allplay-txt { font-size: 13px; color: var(--text); font-weight: 600; line-height: 1.5; }
-.allplay-txt b { color: var(--accent); }
-.allplay-time { margin-left: auto; font-size: 13px; font-weight: 700; color: var(--text); }
-.allplay-range { width: 100%; accent-color: var(--accent); }
 /* 자료 탭 */
 .files-wrap { max-width: 980px; margin: 0 auto; padding: 4px 16px 40px; }
 .file-card { display: flex; align-items: center; gap: 14px; background: var(--card);
@@ -349,7 +338,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="tabs">
     <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
     <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
-    <button class="tab-btn" data-tab="files">📄 자료</button>
+    <button class="tab-btn" data-tab="files">📄 클래스룸자료</button>
     <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
     <button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
   </div>
@@ -357,15 +346,6 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 
 
 <div class="tab-pane active" id="tab-vocab">
-  <div class="allplay">
-    <div class="allplay-box">
-      <button class="allplay-btn" id="allplay-btn" onclick="toggleAllPlay()">▶ 단원 전체 듣기</button>
-      <div class="allplay-txt">한 번만 누르면 <b>이 단원 56개 단어를 처음부터 끝까지</b> 끊김 없이 들려준다.<br>화면을 꺼도, 다른 앱을 열어도 계속 재생된다.</div>
-      <div class="allplay-time" id="allplay-time">0:00</div>
-      <input class="allplay-range" id="allplay-range" type="range" min="0" max="1000" value="0" oninput="seekAllPlay(this.value)">
-      <audio id="allplay-audio" preload="none" src="audio/genes_all.mp3"></audio>
-    </div>
-  </div>
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
     <div class="mem-bar">
@@ -375,7 +355,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="total-line">총 <b id="total-count">0</b>개</div>
   </div>
 
-<div class="section-header" data-cat="all"><h2>🧬 7단원 단어 전체 Genes and inheritance</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn play-all-btn" data-cat="all" onclick="playSection('all', this)">▶ 화면 켜고 듣기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="all"><h2>🧬 7단원 단어 전체 Genes and inheritance</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" id="allplay-btn" onclick="toggleAllPlay()" title="56개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/genes_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="all">
   <div class="vcard-left">
@@ -2047,30 +2027,26 @@ if ('serviceWorker' in navigator) {
 (function(){
   var a = document.getElementById('allplay-audio');
   var btn = document.getElementById('allplay-btn');
-  var tEl = document.getElementById('allplay-time');
-  var rEl = document.getElementById('allplay-range');
   if (!a) return;
   function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
   window.toggleAllPlay = function(){
     if (typeof stopSeq === 'function') stopSeq();
     if (a.paused) { a.play(); } else { a.pause(); }
   };
-  window.seekAllPlay = function(v){ if (a.duration) a.currentTime = a.duration * (v/1000); };
   a.addEventListener('play', function(){
-    btn.textContent = '⏸ 멈춤'; btn.classList.add('playing');
+    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
     if ('mediaSession' in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
-        title: '단원 전체 듣기 — 35 단어', artist: UNIT_TITLE, album: 'AMY Study App'
+        title: '단원 전체 듣기 — 56 단어', artist: UNIT_TITLE, album: 'AMY Study App'
       });
       navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
       navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
     }
   });
-  a.addEventListener('pause', function(){ btn.textContent = '▶ 단원 전체 듣기'; btn.classList.remove('playing'); });
-  a.addEventListener('ended', function(){ btn.textContent = '▶ 단원 전체 듣기'; btn.classList.remove('playing'); });
+  a.addEventListener('pause', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('ended', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
   a.addEventListener('timeupdate', function(){
-    tEl.textContent = mmss(a.currentTime) + (a.duration ? ' / ' + mmss(a.duration) : '');
-    if (a.duration) rEl.value = Math.round(a.currentTime / a.duration * 1000);
+    if (!a.paused) btn.textContent = '⏸ ' + mmss(a.currentTime);
   });
   a.addEventListener('error', function(){
     btn.disabled = true; btn.textContent = '전체 듣기 파일 없음';
