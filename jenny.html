@@ -286,15 +286,15 @@
 .cur > summary::-webkit-details-marker { display: none; }
 .cur > summary::before { content: "▸ "; color: var(--accent, #0d9488); }
 .cur[open] > summary::before { content: "▾ "; }
-.cur-body { background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12)); border-top: none;
-  border-radius: 0 0 12px 12px; padding: 12px 15px 15px; margin-top: -6px; }
-.cur .teacher { font-size: 12.5px; font-weight: 700; color: var(--text, #243b6b); margin-bottom: 10px; }
-.cur .term-card { border: 1px solid var(--border, rgba(36,59,107,.12)); border-radius: 11px; padding: 11px 13px; margin-bottom: 9px; }
-.cur .term-tag { display: inline-block; background: var(--accent, #0d9488); color: #fff; font-size: 11px; font-weight: 900;
+.cur-body { background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12));
+  border-radius: 14px; padding: 14px 16px 16px; max-width: 980px; margin: 0 auto; }
+.cur-body .teacher { font-size: 12.5px; font-weight: 700; color: var(--text, #243b6b); margin-bottom: 10px; }
+.cur-body .term-card { border: 1px solid var(--border, rgba(36,59,107,.12)); border-radius: 11px; padding: 11px 13px; margin-bottom: 9px; }
+.cur-body .term-tag { display: inline-block; background: var(--accent, #0d9488); color: #fff; font-size: 11px; font-weight: 900;
   padding: 3px 9px; border-radius: 999px; margin-bottom: 7px; }
-.cur .u-body { font-size: 13.5px; line-height: 1.85; color: var(--text, #243b6b); }
-.cur .u-body b { color: var(--strong, #16223f); }
-.cur .src { font-size: 11.5px; font-weight: 700; color: var(--text, #243b6b); margin-top: 6px; }
+.cur-body .u-body { font-size: 13.5px; line-height: 1.85; color: var(--text, #243b6b); }
+.cur-body .u-body b { color: var(--strong, #16223f); }
+.cur-body .src { font-size: 11.5px; font-weight: 700; color: var(--text, #243b6b); margin-top: 6px; }
 .cur table.rot { width: 100%; border-collapse: collapse; margin-top: 6px; }
 .cur table.rot th, .cur table.rot td { border: 1px solid var(--border, rgba(36,59,107,.12)); padding: 6px 9px; font-size: 12px; font-weight: 700; text-align: left; }
 .cur table.rot th { width: 110px; background: rgba(36,59,107,0.05); }
@@ -312,43 +312,11 @@
   <div class="tabs">
     <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
     <button class="tab-btn" data-tab="phrase">📝 문장</button>
-    <button class="tab-btn" data-tab="test">✅ 테스트</button>
+    <button class="tab-btn" data-tab="test">✅ 테스트</button><button class="tab-btn" data-tab="curriculum">📅 진도표</button>
   </div>
 
   <!-- 단어장 -->
-  <details class="cur"><summary>📅 2026/27 영어 진도표 — 올해 배우는 순서</summary><div class="cur-body"><div class="teacher">Garry Glanz · H3-02</div>
-    <div class="term-card">
-      <span class="term-tag">TERM 1</span>
-      <div class="unit-name-en">The Art of Storytelling — Narrative Fiction</div>
-      <div class="unit-name-ko">이야기의 기술 — 서사 소설</div>
-      <div class="u-body">19세기부터 현대까지 여러 작가의 단편소설 모음집을 읽는다. 시간 순서대로 쓴 이야기와 뒤섞어 쓴 이야기를 비교하고, 작가가 왜 그런 구조를 골랐는지 분석한다. 직접 여러 방식으로 이야기를 구성해 본다.</div>
-      <div class="unit-name-en">Make Your Voice Heard — Speech Writing <span style="font-weight:700;font-size:11.5px;color:var(--muted)">(Term 1~2)</span></div>
-      <div class="unit-name-ko">목소리를 내라 — 연설문 쓰기</div>
-      <div class="u-body">미디어를 읽는 법을 배운다. 의식적·무의식적 편견, 가짜뉴스, 선전을 다룬다. 직접 고른 주제로 연설문을 써서 반 앞에서 발표한다.</div>
-    </div>
-    <div class="term-card">
-      <span class="term-tag">TERM 2</span>
-      <div class="unit-name-en">Prose Study — <i>Animal Farm</i></div>
-      <div class="unit-name-ko">소설 정독 — 동물농장</div>
-      <div class="u-body">이상적인 사회와 실제로 나타난 디스토피아의 충돌을 다룬다. 우화로 읽고 마지막에 문학 에세이를 쓴다. <b>IGCSE 산문 시험 대비</b>가 목적이다.</div>
-    </div>
-    <div class="term-card">
-      <span class="term-tag">TERM 3</span>
-      <div class="unit-name-en">Drama — <i>An Inspector Calls</i></div>
-      <div class="unit-name-ko">희곡 — 이너스펙터 콜스</div>
-      <div class="u-body">IGCSE 지정 희곡이다. 평판과 책임 중 무엇이 더 중요한가를 다룬다. 직접 연기해 보고, 무대·조명·대사·지시문이 뜻을 만드는 방식을 배운다.</div>
-    </div>
-    <div class="term-card">
-      <span class="term-tag">ALL YEAR</span>
-      <div class="unit-name-en">Vocabulary — "Remember, Spell, Define"</div>
-      <div class="unit-name-ko">어휘 (외우고 · 철자 쓰고 · 뜻 쓰기 숙제)</div>
-      <div class="u-body">1학기에는 묘사용 어휘, 이후에는 <i>Animal Farm</i>·<i>An Inspector Calls</i>에 나오는 시대 배경 어휘를 배운다.</div>
-    </div>
-    <div class="src">Y7-9 English Curriculum Overview 2026_27.pdf p.3</div>
-  </div>
-
-  <!-- MATHS --></div></details>
-<div class="tab-panel active" id="tab-vocab">
+  <div class="tab-panel active" id="tab-vocab">
     <input class="search" id="search" placeholder="🔍 영어 또는 한글 검색…">
     <div class="mem-bar">
       <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
@@ -390,6 +358,36 @@
       </div>
     </div>
   </div>
+<div class="tab-panel" id="tab-curriculum"><div class="cur-body"><div class="teacher">Garry Glanz · H3-02</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">The Art of Storytelling — Narrative Fiction</div>
+      <div class="unit-name-ko">이야기의 기술 — 서사 소설</div>
+      <div class="u-body">19세기부터 현대까지 여러 작가의 단편소설 모음집을 읽는다. 시간 순서대로 쓴 이야기와 뒤섞어 쓴 이야기를 비교하고, 작가가 왜 그런 구조를 골랐는지 분석한다. 직접 여러 방식으로 이야기를 구성해 본다.</div>
+      <div class="unit-name-en">Make Your Voice Heard — Speech Writing <span style="font-weight:700;font-size:11.5px;color:var(--muted)">(Term 1~2)</span></div>
+      <div class="unit-name-ko">목소리를 내라 — 연설문 쓰기</div>
+      <div class="u-body">미디어를 읽는 법을 배운다. 의식적·무의식적 편견, 가짜뉴스, 선전을 다룬다. 직접 고른 주제로 연설문을 써서 반 앞에서 발표한다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">Prose Study — <i>Animal Farm</i></div>
+      <div class="unit-name-ko">소설 정독 — 동물농장</div>
+      <div class="u-body">이상적인 사회와 실제로 나타난 디스토피아의 충돌을 다룬다. 우화로 읽고 마지막에 문학 에세이를 쓴다. <b>IGCSE 산문 시험 대비</b>가 목적이다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">Drama — <i>An Inspector Calls</i></div>
+      <div class="unit-name-ko">희곡 — 이너스펙터 콜스</div>
+      <div class="u-body">IGCSE 지정 희곡이다. 평판과 책임 중 무엇이 더 중요한가를 다룬다. 직접 연기해 보고, 무대·조명·대사·지시문이 뜻을 만드는 방식을 배운다.</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">ALL YEAR</span>
+      <div class="unit-name-en">Vocabulary — "Remember, Spell, Define"</div>
+      <div class="unit-name-ko">어휘 (외우고 · 철자 쓰고 · 뜻 쓰기 숙제)</div>
+      <div class="u-body">1학기에는 묘사용 어휘, 이후에는 <i>Animal Farm</i>·<i>An Inspector Calls</i>에 나오는 시대 배경 어휘를 배운다.</div>
+    </div>
+    <div class="src">Y7-9 English Curriculum Overview 2026_27.pdf p.3</div></div></div>
+
 
 </div>
 
