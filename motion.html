@@ -1291,5 +1291,54 @@ if ('serviceWorker' in navigator) {
   });
 })();
 </script>
+
+<script>
+/* 외운 단어를 숨긴 상태면, 전체 듣기는 화면에 보이는 단어만 순서대로 들려준다.
+   (합친 mp3는 통짜라 건너뛸 수 없어서, 이때만 낱개 발음을 이어서 재생한다) */
+(function(){
+  var btn = document.getElementById('allplay-btn');
+  var a   = document.getElementById('allplay-audio');
+  if (!btn) return;
+  var seq = null, cur = null;
+  function slug(t){ return (t||'').replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+  function stop(){ if (cur) { cur.pause(); cur = null; } seq = null; btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); }
+  window.stopVisibleSeq = stop;
+  function playList(words){
+    var i = 0, token = {};
+    seq = token;
+    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
+    (function next(){
+      if (seq !== token) return;
+      if (i >= words.length) { i = 0; }
+      var sl = slug(words[i]);
+      var ko = new Audio('audio/sci_ko/' + sl + '.mp3');
+      cur = ko;
+      ko.onended = ko.onerror = function(){
+        if (seq !== token) return;
+        var en = new Audio('audio/sci/' + sl + '.mp3');
+        cur = en;
+        en.onended = en.onerror = function(){ if (seq === token) { i++; setTimeout(next, 300); } };
+        en.play().catch(function(){ if (seq === token) { i++; setTimeout(next, 300); } });
+      };
+      ko.play().catch(function(){ if (seq === token) ko.onended(); });
+    })();
+  }
+  var origToggle = window.toggleAllPlay;
+  window.toggleAllPlay = function(){
+    var hiding = (typeof memHidden !== 'undefined' && memHidden);
+    if (!hiding) { if (seq) stop(); if (origToggle) origToggle(); return; }
+    if (a && !a.paused) a.pause();
+    if (seq) { stop(); return; }
+    var words = [];
+    document.querySelectorAll('#tab-vocab .vcard').forEach(function(c){
+      if (c.classList.contains('hidden')) return;
+      var en = (c.querySelector('.vcard-en') || {}).textContent;
+      if (en) words.push(en.trim());
+    });
+    if (!words.length) return;
+    playList(words);
+  };
+})();
+</script>
 </body>
 </html>
