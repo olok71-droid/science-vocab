@@ -1013,7 +1013,7 @@ function showCat(id){
   document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active', b.dataset.cat===id));
   document.body.classList.add('in-subject');          // 시간표·과목 고르는 칸을 감춘다
   var d=document.querySelector('#cat-'+id+' details.cur');
-  if(d) d.open=true;                                   // 진도표는 펼친 채로 보여준다
+  if(d) d.open=false;                                  // 진도표는 접어 둔다 (폰에서 목차가 바로 보이게)
   window.scrollTo({top:0});
 }
 function backToSubjects(){
