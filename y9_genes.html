@@ -444,7 +444,7 @@ details.mat-src .notes-list { padding: 10px 0 0; }
 
 
 <div class="tab-pane active" id="tab-vocab">
-  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn" id="mem-hide-btn" onclick="toggleMemHide()">외운 단어 숨기기 (0)</button><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="56개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/genes_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="blind-btn" onclick="var b=document.getElementById('spellbox');b.open=!b.open;if(b.open)b.scrollIntoView({block:'nearest'});">✏️ 단어시험</button></div><details class="spellbox" id="spellbox"><summary>✏️ 단어시험 시작 — 뜻을 보고 영어 단어 쓰기</summary>
+  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn" id="mem-hide-btn" onclick="toggleMemHide()">외운 단어 숨기기 (0)</button><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="69개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/genes_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="blind-btn" onclick="var b=document.getElementById('spellbox');b.open=!b.open;if(b.open)b.scrollIntoView({block:'nearest'});">✏️ 단어시험</button></div><details class="spellbox" id="spellbox"><summary>✏️ 단어시험 시작 — 뜻을 보고 영어 단어 쓰기</summary>
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
@@ -1139,6 +1139,162 @@ details.mat-src .notes-list { padding: 10px 0 0; }
   </div>
   <div class="vcard-right">
     <button class="btn-speak" onclick='speak("Selective breeding")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Chromatid</div>
+    <div class="vcard-ko">염색분체</div>
+    <div class="vcard-def">One half of a replicated chromosome, joined to its copy at the centromere.</div>
+    <div class="vcard-def-ko">복제된 염색체의 반쪽. X자 모양에서 한쪽 세로줄. 가운데 동원체로 짝과 묶여 있다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Chromatid")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Centromere</div>
+    <div class="vcard-ko">동원체</div>
+    <div class="vcard-def">The structure that binds the two sister chromatids together.</div>
+    <div class="vcard-def-ko">X자 염색체의 잘록한 허리. 염색분체 두 개를 묶어 주는 자리.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Centromere")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Base sequence</div>
+    <div class="vcard-ko">염기 서열</div>
+    <div class="vcard-def">The order of the bases A, T, C and G along a DNA molecule.</div>
+    <div class="vcard-def-ko">DNA를 이루는 염기 A·T·C·G가 늘어선 순서. 이 순서가 곧 유전 정보다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Base sequence")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Complementary base pairing</div>
+    <div class="vcard-ko">상보적 염기쌍</div>
+    <div class="vcard-def">The rule that A always pairs with T, and C always pairs with G.</div>
+    <div class="vcard-def-ko">A는 T와, C는 G와만 짝을 짓는 규칙. 빈칸 채우기 문제로 자주 나온다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Complementary base pairing")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Cell membrane</div>
+    <div class="vcard-ko">세포막</div>
+    <div class="vcard-def">The thin layer around a cell that controls what goes in and out.</div>
+    <div class="vcard-def-ko">세포를 감싸는 얇은 막. 드나드는 물질을 조절한다. 정자·난자 그림 이름표에 나온다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Cell membrane")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Flagellum</div>
+    <div class="vcard-ko">꼬리(편모)</div>
+    <div class="vcard-def">The tail of a sperm cell that lets it swim to the egg.</div>
+    <div class="vcard-def-ko">정자의 꼬리. 이것으로 헤엄쳐 난자까지 간다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Flagellum")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Head</div>
+    <div class="vcard-ko">머리</div>
+    <div class="vcard-def">The front part of a sperm cell, containing the nucleus and the acrosome.</div>
+    <div class="vcard-def-ko">정자의 앞부분. 핵과 첨체가 들어 있다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Head")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Acrosome</div>
+    <div class="vcard-ko">첨체</div>
+    <div class="vcard-def">The part in the sperm head that contains enzymes to digest the egg's coat.</div>
+    <div class="vcard-def-ko">정자 머리 앞의 주머니. 효소가 들어 있어 난자의 젤리막을 녹인다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Acrosome")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Mitochondria</div>
+    <div class="vcard-ko">미토콘드리아</div>
+    <div class="vcard-def">Parts of a cell that release energy by respiration.</div>
+    <div class="vcard-def-ko">호흡으로 에너지를 내는 곳. 정자에 많아서 꼬리를 계속 움직일 수 있다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Mitochondria")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Jelly coat</div>
+    <div class="vcard-ko">젤리막</div>
+    <div class="vcard-def">The jelly-like layer around an egg cell.</div>
+    <div class="vcard-def-ko">난자를 둘러싼 젤리 같은 막. 수정 뒤에는 굳어서 다른 정자가 못 들어온다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Jelly coat")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Protein</div>
+    <div class="vcard-ko">단백질</div>
+    <div class="vcard-def">A substance made using the instructions in a gene.</div>
+    <div class="vcard-def-ko">유전자의 설명서대로 만들어지는 물질. 세포마다 하는 일이 다른 이유다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Protein")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Ovum</div>
+    <div class="vcard-ko">난자(학명)</div>
+    <div class="vcard-def">The scientific name for an egg cell.</div>
+    <div class="vcard-def-ko">난자를 가리키는 학술 용어. 교과서와 슬라이드에 egg cell과 같이 쓰인다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Ovum")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="all">
+  <div class="vcard-left">
+    <div class="vcard-en">Punnett square</div>
+    <div class="vcard-ko">푸넷 사각형</div>
+    <div class="vcard-def">A diagram used to work out the chance of each combination of alleles.</div>
+    <div class="vcard-def-ko">부모의 유전자 조합으로 자식이 나올 확률을 따지는 표. 성별 확률 계산에 쓴다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Punnett square")'>🔊</button>
     <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
   </div>
 </div>
@@ -1983,7 +2139,7 @@ if ('serviceWorker' in navigator) {
     btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
     if ('mediaSession' in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
-        title: '단원 전체 듣기 — 56 단어', artist: UNIT_TITLE, album: 'AMY Study App'
+        title: '단원 전체 듣기 — 69 단어', artist: UNIT_TITLE, album: 'AMY Study App'
       });
       navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
       navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
