@@ -407,10 +407,14 @@ details.mat-src .notes-list { padding: 10px 0 0; }
 <style>
 .vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; display: flex; flex-wrap: wrap;
   align-items: center; gap: 6px; }
-.vtool .search-input { flex: 1 1 150px; max-width: 46%; min-width: 0; padding: 8px 12px; font-size: 13px; }
-@media (max-width: 520px) { .vtool .search-input { flex: 1 1 100%; max-width: 100%; } }
+.vtool .search-input { flex: 0 1 48%; max-width: 48%; min-width: 0; padding: 8px 12px; font-size: 13px; }
 .vtool .mem-info { font-size: 12px; font-weight: 800; color: var(--text); white-space: nowrap; }
-.vtool .blind-btn, .vtool .mem-toggle-btn { padding: 5px 10px; }
+.vtool .mem-info { color: var(--strong, #16223f); }
+.vtool .mem-info b { color: #0b4f45; font-weight: 900; }
+.vtool .blind-btn, .vtool .mem-toggle-btn { padding: 5px 10px; color: #0d5c50; border-color: rgba(13,92,80,0.55); background: rgba(255,255,255,0.85); font-weight: 900; }
+.vtool .blind-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.vtool .allplay-mini { background: var(--accent); border-color: var(--accent); color: #fff; }
+
 .spellbox > summary { display: none; }
 .spellbox { margin-top: 4px; }
 </style>
@@ -442,7 +446,7 @@ details.mat-src .notes-list { padding: 10px 0 0; }
 
 
 <div class="tab-pane active" id="tab-vocab">
-  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn" id="mem-hide-btn" onclick="toggleMemHide()">외운 단어 숨기기 (0)</button><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="69개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/genes_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></div>
+  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleMemHide()">외운 단어 숨기기 (0)</button><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="69개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/genes_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></div>
 
 
 <div class="cards-wrap">
