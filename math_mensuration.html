@@ -321,13 +321,6 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 .cur table.rot th { width: 110px; background: rgba(36,59,107,0.05); }
 </style>
 <style>
-.spellbox { max-width: 720px; margin: 10px auto 0; padding: 0 16px; }
-.spellbox > summary { list-style: none; cursor: pointer; background: rgba(109,93,252,0.10);
-  border: 1.5px solid rgba(109,93,252,0.35); border-radius: 12px; padding: 10px 14px;
-  font-size: 13.5px; font-weight: 800; color: var(--purple, #6d5dfc); }
-.spellbox > summary::-webkit-details-marker { display: none; }
-</style>
-<style>
 .vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; display: flex; flex-wrap: wrap;
   align-items: center; gap: 6px; }
 .vtool .search-input { flex: 0 1 48%; max-width: 48%; min-width: 0; padding: 8px 12px; font-size: 13px; }
@@ -1420,17 +1413,6 @@ if ('serviceWorker' in navigator) {
   a.addEventListener('error', function(){ btn.disabled = true; btn.textContent = '전체 듣기 파일 없음'; });
 })();
 </script>
-<script>
-/* 단어시험을 단어장 안에서 연다 */
-(function(){
-  var box=document.getElementById('spellbox');
-  if(!box) return;
-  box.addEventListener('toggle', function(){
-    if(box.open && typeof startSpelling==='function' && !spellState.started) startSpelling();
-  });
-})();
-</script>
-
 <script>
 /* 외운 단어를 숨긴 상태면, 전체 듣기는 화면에 보이는 단어만 순서대로 들려준다.
    (합친 mp3는 통짜라 건너뛸 수 없어서, 이때만 낱개 발음을 이어서 재생한다) */
