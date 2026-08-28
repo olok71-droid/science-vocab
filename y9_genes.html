@@ -298,6 +298,34 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </style>
 
 <style>
+
+/* 수업자료 카드 (핵심노트 + 클래스룸자료 합침) */
+.mat-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+.mat-card.sum { border: 2px solid var(--accent); }
+.mat-head { padding: 13px 15px; display: flex; align-items: center; gap: 11px; border-bottom: 1px solid var(--border); }
+.mat-t { flex: 1; min-width: 0; }
+.mat-title { font-size: 15px; font-weight: 900; color: var(--strong); line-height: 1.35; }
+.mat-sub { font-size: 12px; font-weight: 700; color: var(--text); margin-top: 3px; }
+.mat-open { margin-left: auto; flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #fff; background: var(--accent);
+  padding: 7px 12px; border-radius: 10px; text-decoration: none; white-space: nowrap; }
+.file-ico.sum { background: var(--purple); font-size: 12px; }
+.mat-body { padding: 13px 15px 15px; }
+.mat-one { font-size: 14.5px; font-weight: 800; color: var(--accent); line-height: 1.55; margin-bottom: 9px; }
+.mat-why { font-size: 14.5px; color: var(--text); line-height: 1.8; }
+.mat-why p { margin-bottom: 9px; }
+.mat-why p:last-child { margin-bottom: 0; }
+.mat-why b { color: var(--strong); font-weight: 800; }
+.mat-exam { margin-top: 12px; background: rgba(109,93,252,0.08); border-left: 4px solid var(--purple);
+  border-radius: 0 10px 10px 0; padding: 10px 13px; }
+.mat-exam h4 { font-size: 12.5px; font-weight: 900; color: var(--purple); margin-bottom: 6px; }
+.mat-exam ul { margin: 0 0 0 17px; }
+.mat-exam li { font-size: 13.5px; color: var(--text); line-height: 1.6; margin: 4px 0; }
+details.mat-src { margin-top: 12px; border-top: 1px dashed var(--border); padding-top: 10px; }
+details.mat-src summary { font-size: 13px; font-weight: 800; color: var(--strong); cursor: pointer; list-style: none; }
+details.mat-src summary::-webkit-details-marker { display: none; }
+details.mat-src summary::before { content: "▸ "; color: var(--accent); }
+details.mat-src[open] summary::before { content: "▾ "; }
+details.mat-src .notes-list { padding: 10px 0 0; }
 /* 자료 탭 */
 .files-wrap { max-width: 980px; margin: 0 auto; padding: 4px 16px 40px; }
 .file-card { display: flex; align-items: center; gap: 14px; background: var(--card);
@@ -337,7 +365,6 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="tabs-wrap">
   <div class="tabs">
     <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
-    <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
     <button class="tab-btn" data-tab="files">📄 클래스룸자료</button>
     <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
     <button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
@@ -1031,15 +1058,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </div>
 </div>
 </div>
-<div class="tab-pane" id="tab-notes">
-<div class="chapter-block">
-  <div class="chapter-head">
-    <span class="ch-icon">🧬</span>
-    <div class="ch-text"><h2>1. Chromosomes, genes and DNA</h2><span class="ch-sub">7.1 염색체·유전자·DNA</span></div>
-    <a class="btn-pdf" href="pdfs/genes/7.1%20Chromosomes,%20genes%20and%20DNA.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
-  </div>
-  <div class="notes-list">
-<div class="note-card">
+<div class="tab-pane" id="tab-files"><div class="files-wrap"><div class="mat-card sum"><div class="mat-head"><div class="file-ico sum">요약</div><div class="mat-t"><div class="mat-title">이 단원 한 장 요약</div><div class="mat-sub">시험 전날 여기만 다시 읽어도 된다</div></div></div><div class="mat-body"><div class="mat-why"><p>1. 우리 몸 세포 하나하나의 <b>핵</b> 속에 <b>염색체가 46개(23쌍)</b> 들어 있다. 한 짝은 엄마에게서, 한 짝은 아빠에게서 왔다.</p><p>2. 염색체는 <b>아주 긴 DNA 한 가닥</b>이 감긴 것이고, 그 DNA의 <b>짧은 구간 하나가 유전자</b>다. 유전자 하나가 형질 하나를 조절한다. 크기 순서는 <b>염색체 &gt; 유전자 &gt; DNA</b>다.</p><p>3. 정자와 난자(<b>생식세포 gamete</b>)만 염색체가 <b>23개</b>다. 그래서 둘이 합쳐진(<b>수정</b>) 새 세포 <b>접합자(zygote)</b>가 다시 46개가 된다.</p><p>4. 23번째 쌍이 <b>성염색체</b>다. <b>XX면 여자, XY면 남자</b>. 난자는 항상 X, 정자만 X 또는 Y를 갖는다 → <b>아기 성별은 아빠 쪽 정자가 정한다</b>.</p><p>5. 같은 유전자의 <b>다른 버전</b>을 <b>대립유전자(allele)</b>라고 한다. 자매인데도 눈 색이 다른 이유가 이것이다.</p></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ppt">PPT</div><div class="mat-t"><div class="mat-title">B1.2 Chromosomes, genes and DNA</div><div class="mat-sub">필립스 선생님 수업 슬라이드 · 23장</div></div><a class="mat-open" href="pdfs/genes/B1.2%20Chromosomes,%20genes%20and%20DNA.pptx" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">이 단원 첫 수업 슬라이드다. 염색체·유전자·DNA가 각각 무엇이고 어떻게 포개져 있는지를 그림으로 짚는다.</div><div class="mat-why"><p>수업은 "세포에도 핵이 있고 원자에도 핵이 있는데 왜 이름이 같을까"라는 질문으로 시작한다. 답은 둘 다 큰 구조의 <b>가운데</b>에 있기 때문이고, 세포의 핵은 세포가 하는 일을 <b>조절</b>한다.</p><p>그다음이 이 단원의 뼈대다. <b>세포 → 핵 → 염색체 → 유전자 → DNA</b> 순서로 러시아 인형처럼 들어 있다고 보면 된다. 염색체는 핵 속의 긴 DNA 실이고, 유전자는 그 실의 짧은 구간이며, DNA는 둘을 이루는 화학 물질이다.</p><p>여기서 꼭 짚고 갈 것이 하나 있다. 그림에서 흔히 보는 <b>X자 모양 염색체는 평소 모습이 아니다.</b> 세포가 나뉘기 직전에 자기를 한 번 복사해 둔 모습이라 X자로 보인다. 그 복사본 반쪽 하나를 <b>염색분체(chromatid)</b>, 두 반쪽이 묶인 잘록한 허리를 <b>동원체(centromere)</b>라고 한다.</p><p>뒤쪽 슬라이드는 DNA로 들어간다. DNA는 <b>이중나선</b>이고 염기 <b>A는 T와, C는 G와만</b> 짝을 짓는다(<b>상보적 염기쌍</b>). 빈칸에 짝 염기를 채우는 활동과 틀린 곳 찾기 활동이 들어 있는데, 그 답을 보지 않고 말할 수 있으면 이 자료는 다 소화한 것이다.</p></div><div class="mat-exam"><h4>✍️ 시험에 나오는 것</h4><ul><li>그림의 X자 모양이 왜 X자인지 설명하기 (복사 직후라서)</li><li>chromatid와 centromere를 그림에서 짚기</li><li>염기쌍 규칙 A–T, C–G</li></ul></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ">PDF</div><div class="mat-t"><div class="mat-title">7.1 Chromosomes, genes and DNA</div><div class="mat-sub">교과서 243~246쪽 · 4쪽</div></div><a class="mat-open" href="pdfs/genes/7.1%20Chromosomes,%20genes%20and%20DNA.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">교과서 본문. 염색체가 왜 평소엔 안 보이는지부터 유전자·DNA가 무엇인지까지 이어진다.</div><div class="mat-why"><p>먼저 <b>왜 현미경으로 염색체를 못 봤나</b>를 설명한다. 염색체는 <b>세포가 분열할 때만</b> 보이고, 그것도 <b>염색약으로 물들여야</b> 광학현미경에 나타난다. 그래서 평소 세포를 아무리 들여다봐도 안 보였던 것이다.</p><p>염색체 수는 <b>종마다 정해져 있다</b>. 사람 <b>46개</b>, 초파리 <b>8개</b>, 망고나무 <b>40개</b>. 사람은 같은 종류가 <b>두 개씩</b> 있고, 길이 순으로 번호를 붙여 <b>1번이 가장 길다</b>.</p><p>유전자 이야기로 넘어가면 숫자가 나온다. 1번 염색체에는 유전자가 약 <b>2000개</b>, 훨씬 짧은 15번에는 약 <b>600개</b> 있다. 15번의 두 유전자가 <b>눈 색</b>을 결정하는데, 유전자가 놓인 자리는 누구나 같지만 <b>버전이 달라서</b> 자매라도 눈 색이 다를 수 있다.</p><p>마지막이 DNA다. 염색체 하나가 <b>엄청나게 긴 DNA 분자 하나</b>이고, 그러니 유전자도 DNA로 되어 있다. 모양은 <b>꼬인 사다리 = 이중나선</b>이며, 유전자 하나가 약 <b>2500번 꼬인</b> 길이다. DNA는 <b>1950년대</b>에 발견됐다.</p></div><div class="mat-exam"><h4>✍️ 시험에 나오는 것</h4><ul><li>현미경으로 염색체를 보통 볼 수 없는 이유를 설명하기</li><li>염색체와 유전자의 차이를 한 문장으로 쓰기</li><li>적혈구에는 핵이 없다 → 염색체도 없다 (교과서 질문 2번)</li></ul></div><details class="mat-src"><summary>📖 교과서 문장 그대로 보기 (영어 + 한글)</summary><div class="notes-list"><div class="note-card">
   <div class="note-head"><h3>What is a chromosome? (염색체란 무엇인가)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=IePMXxQ-KWY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Stated Clearly</a></div>
   <div class="note-body"><p class='en'>The nucleus of every cell contains threads called <b>chromosomes</b>.</p><p class='ko'>모든 세포의 <b>핵</b> 안에는 <b>염색체</b>라고 부르는 실 모양 구조가 들어 있습니다.</p><p class='en'>Chromosomes were discovered in the <b>nineteenth century</b>, when microscopes first became powerful enough.</p><p class='ko'>염색체는 현미경이 충분히 강력해진 <b>19세기</b>에 처음 발견되었습니다.</p><p class='en'>Chromosomes only become visible with a light microscope <b>when a cell is dividing</b>, and they must be coloured with a <b>stain</b>.</p><p class='ko'>염색체는 <b>세포가 분열할 때만</b> 광학현미경으로 보이고, <b>염색약</b>으로 색을 입혀야 보입니다.</p><p class='en'>Different <b>species</b> have different numbers: humans have <b>46</b>, fruit flies have <b>8</b>, mango trees have <b>40</b>.</p><p class='ko'><b>종</b>마다 염색체 수가 다릅니다. 사람 <b>46개</b>, 초파리 <b>8개</b>, 망고나무 <b>40개</b>.</p><p class='en'>We have <b>two of each kind</b> of chromosome, and they are numbered by length — chromosome 1 is the longest.</p><p class='ko'>염색체는 종류마다 <b>두 개씩</b> 있고, 길이 순으로 번호를 붙입니다. 1번이 가장 깁니다.</p><p class='en'>Just before a cell divides, each chromosome <b>makes a copy of itself</b>, so it looks like a cross shape.</p><p class='ko'>세포가 분열하기 직전 각 염색체는 <b>자기 복사본</b>을 만들어서 십자 모양처럼 보입니다.</p></div>
 </div>
@@ -1054,16 +1073,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="note-card">
   <div class="note-head"><h3>Chromosome vs gene vs DNA — 시험 단골 (Exam favourite)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=0obYR-nf45I" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>TED-Ed</a></div>
   <div class="note-body"><p class='en'><b>Chromosome</b> = a long thread of DNA in the nucleus, carrying many genes.</p><p class='ko'><b>염색체</b> = 핵 속의 긴 DNA 실. 유전자를 많이 담고 있습니다.</p><p class='en'><b>Gene</b> = a short section of that DNA which controls one characteristic.</p><p class='ko'><b>유전자</b> = 그 DNA의 짧은 구간. 형질 하나를 조절합니다.</p><p class='en'><b>DNA</b> = the chemical that both of them are made of.</p><p class='ko'><b>DNA</b> = 그 둘을 이루는 화학 물질입니다.</p><p class='en'>Remember the order from big to small: <b>chromosome → gene → DNA</b>.</p><p class='ko'>큰 것부터 작은 것 순서로 외우세요. <b>염색체 → 유전자 → DNA</b>.</p></div>
-</div>
-</div></div>
-<div class="chapter-block">
-  <div class="chapter-head">
-    <span class="ch-icon">🧬</span>
-    <div class="ch-text"><h2>2. Gametes and inheritance</h2><span class="ch-sub">7.2 생식세포와 유전</span></div>
-    <a class="btn-pdf" href="pdfs/genes/7.2%20Gametes%20and%20inheritance.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
-  </div>
-  <div class="notes-list">
-<div class="note-card">
+</div></div></details></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ">PDF</div><div class="mat-t"><div class="mat-title">Genes, chromosomes and DNA (과제지)</div><div class="mat-sub">빈칸 채우기 · 1쪽</div></div><a class="mat-open" href="pdfs/genes/Genes,%20chromosomes-and-DNA.%20Y9.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">위 두 자료를 제대로 봤는지 확인하는 빈칸 채우기 과제다.</div><div class="mat-why"><p>그림 옆 빈칸을 아래 단어 상자(23, pairs, alleles, coiled, control…)에서 골라 채우는 과제다. 답의 뼈대는 이렇다.</p><p>염색체는 언제나 <b>쌍(pairs)</b>으로 있고 한 짝은 <b>부모(parents)</b> 각각에게서 온다. 사람 세포의 핵에는 <b>23쌍</b>이 있다. DNA가 <b>감겨서(coiled)</b> 염색체의 <b>팔(arms)</b>을 이룬다.</p><p>유전자는 염색체의 <b>짧은 구간</b>이고, 서로 다른 유전자가 머리색·눈색 같은 <b>형질(characteristics)</b>을 <b>조절(control)</b>한다. 같은 유전자의 <b>다른 버전(different versions)</b>은 유전자라 부르지 않고 <b>대립유전자(alleles)</b>라고 부른다 — 이 마지막 칸이 제일 많이 틀리는 곳이다.</p></div><div class="mat-exam"><h4>✍️ 시험에 나오는 것</h4><ul><li>alleles가 무엇인지 정의하기</li><li>사람 세포핵 = 23쌍이라는 숫자</li><li>유전자 = 염색체의 짧은 구간</li></ul></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ">PDF</div><div class="mat-t"><div class="mat-title">Chromosome Structure Labeling</div><div class="mat-sub">그림에 이름 붙이기 활동지 · 1쪽</div></div><a class="mat-open" href="pdfs/genes/Chromosome%20Structure%20Diagram%20Labeling%20Activity.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">염색체 그림의 각 부위에 이름을 붙이는 연습지다.</div><div class="mat-why"><p>단어 상자에 들어 있는 여섯 개는 chromatid, centromere, chromosomes, cell membrane, DNA, nucleus다. <b>바깥에서 안쪽 순서</b>로 외우면 어떤 그림이 나와도 붙일 수 있다.</p><p><b>세포막(cell membrane)</b> 안에 <b>핵(nucleus)</b>이 있고, 핵 안에 <b>염색체(chromosomes)</b>가 있다. 염색체 X자의 반쪽 하나가 <b>chromatid</b>, 두 반쪽을 묶은 잘록한 허리가 <b>centromere</b>, 그리고 그 실 자체를 이루는 물질이 <b>DNA</b>다.</p></div><div class="mat-exam"><h4>✍️ 시험에 나오는 것</h4><ul><li>centromere와 chromatid를 그림에서 정확히 짚기</li></ul></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ">PDF</div><div class="mat-t"><div class="mat-title">B1.3 Gametes</div><div class="mat-sub">필립스 선생님 수업 슬라이드 · 19장</div></div><a class="mat-open" href="pdfs/genes/B1.3%20Gametes.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">정자·난자 수업이다. 왜 생식세포만 염색체가 23개인지, 수정과 성 결정까지 간다.</div><div class="mat-why"><p>수업 목표가 셋이라고 첫 장에 적혀 있다. <b>생식세포(gamete)</b>가 무엇인지 말하기, 사람 생식세포가 <b>왜 23개뿐인지</b> 설명하기, <b>대립유전자(allele)</b>를 같은 유전자의 다른 버전으로 설명하기.</p><p>정자와 난자는 생김새부터 반대다. <b>정자</b>는 아주 작고 꼬리로 헤엄치며 수가 매우 많다. <b>난자</b>는 크고 양분을 담고 있으며 <b>스스로 움직이지 못한다</b>. 슬라이드에 정자가 난자보다 <b>1만 배 작다</b>고 나온다.</p><p>수정 과정도 그림으로 나온다. 정자 머리의 <b>첨체(acrosome)</b>에서 효소가 나와 난자를 둘러싼 <b>젤리막</b>을 녹이고, 가장 먼저 뚫고 들어간 정자의 <b>핵</b>이 난자의 <b>핵과 융합</b>해 <b>접합자(zygote)</b>가 된다. 23 + 23 = <b>46</b>이다.</p><p>마지막 두 장은 <b>틀린 문장 찾기</b>인데, 거기 나온 것이 그대로 시험 함정이다. 특히 "정자는 남자 염색체를, 난자는 여자 염색체를 갖는다"는 <b>틀린 말</b>이라고 슬라이드가 못박고 있다.</p></div><div class="mat-exam"><h4>✍️ 시험에 나오는 것</h4><ul><li>정자와 난자의 차이 세 가지 쓰기</li><li>생식세포가 23개인 이유와 접합자가 46개인 이유 설명하기</li><li>흔한 오해 — 정자에 남자 염색체, 난자에 여자 염색체가 들어 있는 것이 아니다</li></ul></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ">PDF</div><div class="mat-t"><div class="mat-title">7.2 Gametes and inheritance</div><div class="mat-sub">교과서 247~252쪽 · 6쪽</div></div><a class="mat-open" href="pdfs/genes/7.2%20Gametes%20and%20inheritance.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">교과서 본문. 수정 → 접합자 → 성 결정(XX·XY) → 유전으로 이어진다.</div><div class="mat-why"><p>몸 세포는 46개인데 생식세포는 <b>한 세트인 23개</b>만 갖는다. 정자와 난자가 합쳐지는 것이 <b>수정(fertilisation)</b>이고, 그렇게 생긴 새 세포가 <b>접합자(zygote)</b>다. 사람은 누구나 이 세포 하나에서 시작했다.</p><p>23쌍 중 마지막 한 쌍이 <b>성염색체</b>다. <b>XX면 여자, XY면 남자</b>이고, Y는 X보다 훨씬 작다.</p><p>여기서 이 단원 최고의 시험 포인트가 나온다. <b>난자는 언제나 X</b>를 갖는다. 정자만 <b>X 또는 Y</b>를 갖는다. 그러니 아기 성별을 정하는 쪽은 <b>아빠</b>다. X정자가 만나면 XX(딸), Y정자가 만나면 XY(아들)가 된다.</p><p>그리고 X정자와 Y정자의 수가 <b>거의 반반</b>이기 때문에 해마다 태어나는 남녀 수도 <b>거의 같다</b>. 마지막으로 <b>유전(inheritance)</b>은 부모가 자식에게 DNA(유전자를 담은 염색체)를 물려주는 것을 뜻한다.</p></div><div class="mat-exam"><h4>✍️ 시험에 나오는 것</h4><ul><li>아기 성별을 아빠가 정한다는 말이 맞는지, 이유까지 설명하기</li><li>남자아이와 여자아이가 해마다 비슷하게 태어나는 이유 설명하기</li><li>수정과 접합자의 정의</li></ul></div><details class="mat-src"><summary>📖 교과서 문장 그대로 보기 (영어 + 한글)</summary><div class="notes-list"><div class="note-card">
   <div class="note-head"><h3>Gametes — sperm cells and egg cells (생식세포)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=kSVKUNCDcPk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Cognito</a></div>
   <div class="note-body"><p class='en'>Every human being began life as a <b>single cell</b>, formed when a <b>sperm cell</b> joined with an <b>egg cell</b>.</p><p class='ko'>모든 사람은 <b>정자</b>와 <b>난자</b>가 합쳐져 생긴 <b>세포 하나</b>에서 시작했습니다.</p><p class='en'>Sperm cells and egg cells are specialised cells known as <b>gametes</b>. A sperm cell is the <b>male</b> gamete; an egg cell is the <b>female</b> gamete.</p><p class='ko'>정자와 난자는 <b>생식세포</b>라 불리는 특수 세포입니다. 정자는 <b>남성</b>, 난자는 <b>여성</b> 생식세포입니다.</p><p class='en'>A sperm cell is <b>very small</b>, has a <b>tail</b> for swimming, only a small amount of cytoplasm, and a nucleus with <b>23 chromosomes</b>.</p><p class='ko'>정자는 <b>아주 작고</b> 헤엄치는 <b>꼬리</b>가 있으며, 세포질은 조금뿐이고 핵에 <b>염색체 23개</b>가 있습니다.</p><p class='en'>An egg cell is <b>much bigger</b> (about the size of a full stop), <b>cannot move by itself</b>, and its cytoplasm contains <b>food reserves</b>.</p><p class='ko'>난자는 <b>훨씬 크고</b>(마침표 크기 정도) <b>스스로 움직이지 못하며</b>, 세포질에 <b>저장 양분</b>이 들어 있습니다.</p><p class='en'>Both photographs in the book were taken with a <b>scanning electron microscope</b>.</p><p class='ko'>교과서의 두 사진 모두 <b>주사전자현미경</b>으로 찍은 것입니다.</p></div>
 </div>
@@ -1078,122 +1088,22 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 <div class="note-card">
   <div class="note-head"><h3>Inheritance (유전이란)</h3></div>
   <div class="note-body"><p class='en'><b>Inheritance</b> means passing on DNA — as chromosomes containing genes — from <b>parents to offspring</b>.</p><p class='ko'><b>유전</b>은 유전자를 담은 염색체 형태로 DNA를 <b>부모에서 자손으로</b> 물려주는 것입니다.</p><p class='en'>A baby's sex is determined because it inherits X or Y chromosomes from its parents — we call this <b>sex inheritance</b>.</p><p class='ko'>아기의 성별은 부모에게서 X나 Y염색체를 물려받아 정해지며, 이를 <b>성 유전</b>이라 합니다.</p><p class='en'>All organisms also inherit <b>other features</b> from their parents, not only sex.</p><p class='ko'>생물은 성별뿐 아니라 <b>다른 특징들</b>도 부모에게서 물려받습니다.</p></div>
-</div>
-</div></div>
-<div class="chapter-block">
-  <div class="chapter-head">
-    <span class="ch-icon">🧬</span>
-    <div class="ch-text"><h2>3. Working like a scientist</h2><span class="ch-sub">탐구 — Shark attack investigation</span></div>
-    <a class="btn-pdf" href="pdfs/genes/D-Shark%20attack%20Investigation%20sheet.pdf" target="_blank" rel="noopener" title="원본 PDF 보기">📄 PDF</a>
-  </div>
-  <div class="notes-list">
-<div class="note-card">
+</div></div></details></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico link">WEB</div><div class="mat-t"><div class="mat-title">Wayground 퀴즈 — DNA, chromosomes and genes</div><div class="mat-sub">선생님이 낸 과제 퀴즈 (옛 Quizizz)</div></div><a class="mat-open" href="https://wayground.com/join?c=Mv1R_umMtNpo7rML-SPh5thceUO8mknXGFa_hSiiRJOzN1cXiDX_uh88SjnjDg2Tb2dNXSxHWbt1JdI6vsS6KBsnT7cKjBQb4NUmR" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">위 자료를 다 본 뒤 풀어 보는 온라인 퀴즈다. 누르면 바로 퀴즈로 들어간다.</div><div class="mat-why"><p>틀린 문제가 나오면 답만 고치지 말고, 그 내용이 <b>어느 자료에 있었는지</b> 찾아 그 부분을 다시 읽는 것이 가장 빠르다. 이 단원 문제는 대부분 위의 7.1·7.2와 두 수업 슬라이드 안에 있다.</p></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ">PDF</div><div class="mat-t"><div class="mat-title">Shark attack — investigation</div><div class="mat-sub">탐구 활동지 · 3쪽</div></div><a class="mat-open" href="pdfs/genes/D-Shark%20attack%20Investigation%20sheet.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">유전 내용이 아니라 "과학하는 방법"을 연습하는 자료다.</div><div class="mat-why"><p>질문은 <b>물의 온도가 피가 물속에 퍼지는 속도에 어떤 영향을 주는가</b>이다. 활동지 맨 위에 <b>예측(prediction)</b>부터 쓰게 되어 있다.</p><p>이런 탐구 문제는 <b>변인 세 가지</b>만 구분하면 절반은 푼 것이다. 내가 <b>바꾸는 것</b>(물 온도)이 독립변인, 내가 <b>재는 것</b>(피가 퍼진 정도나 걸린 시간)이 종속변인, <b>똑같이 두는 것</b>(물의 양, 피의 양, 그릇 크기)이 통제변인이다.</p><p>시험에서 표나 그래프와 함께 나오는 탐구 문항이 정확히 이 형식이다. 예측은 <b>하기 전에</b> 쓰는 것이고 결론은 <b>결과를 보고</b> 쓰는 것이라는 차이도 자주 묻는다.</p></div><div class="mat-exam"><h4>✍️ 시험에 나오는 것</h4><ul><li>독립·종속·통제 변인 구분하기</li><li>예측과 결론의 차이</li></ul></div><details class="mat-src"><summary>📖 이 활동에 대한 교과서 설명 보기</summary><div class="notes-list"><div class="note-card">
   <div class="note-head"><h3>The scientific method (과학 탐구 방법)</h3><a class="btn-yt" href="https://www.youtube.com/watch?v=SMGRe824kak" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>Teacher's Pet</a></div>
   <div class="note-body"><p class='en'>A good investigation starts with a <b>question</b> and a <b>prediction (hypothesis)</b>.</p><p class='ko'>좋은 탐구는 <b>질문</b>과 <b>예측(가설)</b>에서 시작합니다.</p><p class='en'>Change only <b>one variable</b> at a time and keep the others the <b>same</b>, so the test is <b>fair</b>.</p><p class='ko'>한 번에 <b>변인 하나</b>만 바꾸고 나머지는 <b>똑같이</b> 두어야 <b>공정한 실험</b>이 됩니다.</p><p class='en'>Record the <b>results</b> in a clear table, then draw a <b>conclusion</b> and say how you could <b>improve</b> the method.</p><p class='ko'><b>결과</b>를 표에 또렷이 적고 <b>결론</b>을 내린 뒤, 방법을 어떻게 <b>개선</b>할지 씁니다.</p></div>
-</div>
-</div></div>
-<div class="chapter-block">
-  <div class="chapter-head">
-    <span class="ch-icon">🦋</span>
-    <div class="ch-text">
-      <h2>7.3 Variation</h2>
-      <span class="ch-sub">변이</span>
-    </div>
-    
-  </div>
-  <div class="notes-list"><div class="note-card">
+</div></div></details></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ">📅</div><div class="mat-t"><div class="mat-title">다음에 배울 것 — 7.3 변이 · 7.4 자연선택</div><div class="mat-sub">교과서 253쪽~ · 아직 수업 전</div></div></div><div class="mat-body"><div class="mat-one">이 단원 뒤에 이어지는 내용이다. 미리 읽어두면 수업이 쉬워진다.</div><div class="mat-why"><p>7.3 <b>변이(variation)</b>는 같은 종 안에서도 개체마다 다른 점이 있다는 내용이고, 7.4 <b>자연선택(natural selection)</b>은 그 다른 점 때문에 살아남는 개체가 갈린다는 내용이다. 아래를 펼치면 교과서 설명이 나온다.</p></div><details class="mat-src"><summary>📖 7.3 · 7.4 교과서 설명 보기</summary><div class="notes-list"><div class="note-card">
   <div class="note-head">
     <h3>Variation (변이)</h3>
     <a class="btn-yt" href="https://www.youtube.com/watch?v=_LoPYfhTgeI" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeScienceLessons</a>
   </div>
   <div class="note-body"><p class='en'><b>Variation</b> is the differences between living things. <b>Inherited (genetic)</b> variation comes from genes; <b>environmental</b> variation comes from surroundings.</p><p class='ko'><b>변이</b>는 생물 사이의 차이입니다. <b>유전적</b> 변이는 유전자에서, <b>환경적</b> 변이는 주변 환경에서 옵니다.</p><p class='en'>A <b>mutation</b> is a random change in DNA that can create new variation.</p><p class='ko'><b>돌연변이</b>는 DNA의 무작위 변화로, 새로운 변이를 만들 수 있습니다.</p></div>
-  <img class="note-img" src="assets/diagrams/y9/y9_genes__variation-bellcurve.png" alt="" loading="lazy">
-</div></div>
-</div>
-
-<div class="chapter-block">
-  <div class="chapter-head">
-    <span class="ch-icon">🐦</span>
-    <div class="ch-text">
-      <h2>7.4 Natural selection</h2>
-      <span class="ch-sub">자연 선택과 진화</span>
-    </div>
-    
-  </div>
-  <div class="notes-list"><div class="note-card">
+  <img class="note-img" src="assets/diagrams/y9/y9_genes__variation-bellcurve.png" alt="" loading="lazy"><div class="note-card">
   <div class="note-head">
     <h3>Natural selection (자연 선택)</h3>
     <a class="btn-yt" href="https://www.youtube.com/watch?v=7RraYCKvTXc" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>FreeScienceLessons</a>
   </div>
   <div class="note-body"><p class='en'>Organisms with helpful <b>adaptations</b> are more likely to <b>survive</b> and <b>reproduce</b>, passing on their genes — <b>natural selection</b> ("survival of the fittest").</p><p class='ko'>유리한 <b>적응</b>을 가진 생물이 <b>살아남아 번식</b>할 가능성이 커서 유전자를 물려줍니다 — <b>자연 선택</b>('적자생존').</p><p class='en'>Over many generations this leads to <b>evolution</b>.</p><p class='ko'>여러 세대를 거치며 이것이 <b>진화</b>로 이어집니다.</p></div>
-  <img class="note-img" src="assets/diagrams/y9/y9_genes__natural-selection-finches.jpg" alt="" loading="lazy">
-</div></div>
-</div>
-</div>
-<div class="tab-pane" id="tab-files"><div class="files-wrap">
-<div class="files-head">📄 선생님이 올린 파일 (누르면 바로 열림)</div>
-<a class="file-card" href="pdfs/genes/7.1%20Chromosomes,%20genes%20and%20DNA.pdf" target="_blank" rel="noopener">
-  <div class="file-ico">PDF</div>
-  <div><div class="file-name">7.1 Chromosomes, genes and DNA</div><div class="file-desc">교과서 7.1 단원 — 염색체·유전자·DNA (4쪽)</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="pdfs/genes/7.2%20Gametes%20and%20inheritance.pdf" target="_blank" rel="noopener">
-  <div class="file-ico">PDF</div>
-  <div><div class="file-name">7.2 Gametes and inheritance</div><div class="file-desc">교과서 7.2 단원 — 생식세포·수정·성 결정 (6쪽)</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="pdfs/genes/B1.3%20Gametes.pdf" target="_blank" rel="noopener">
-  <div class="file-ico">PDF</div>
-  <div><div class="file-name">B1.3 Gametes</div><div class="file-desc">필립스 선생님 수업자료 — 생식세포</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="pdfs/genes/Genes,%20chromosomes-and-DNA.%20Y9.pdf" target="_blank" rel="noopener">
-  <div class="file-ico">PDF</div>
-  <div><div class="file-name">Genes, chromosomes and DNA (과제지)</div><div class="file-desc">과제 'label the chromosome' 문제지</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="pdfs/genes/Chromosome%20Structure%20Diagram%20Labeling%20Activity.pdf" target="_blank" rel="noopener">
-  <div class="file-ico">PDF</div>
-  <div><div class="file-name">Chromosome Structure Labeling</div><div class="file-desc">염색체 구조 그림에 이름 붙이기 활동지</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="pdfs/genes/D-Shark%20attack%20Investigation%20sheet.pdf" target="_blank" rel="noopener">
-  <div class="file-ico">PDF</div>
-  <div><div class="file-name">Shark attack — investigation</div><div class="file-desc">상어 공격 탐구 활동지 (과학 탐구방법)</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="pdfs/genes/Contents%20-%20Y9%20Book.pdf" target="_blank" rel="noopener">
-  <div class="file-ico">PDF</div>
-  <div><div class="file-name">Contents — Y9 Book</div><div class="file-desc">케임브리지 9학년 과학 교과서 목차</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="pdfs/genes/CLS%20Science%20Learners%20Book%209.pdf" target="_blank" rel="noopener">
-  <div class="file-ico">PDF</div>
-  <div><div class="file-name">CLS Science Learner's Book 9</div><div class="file-desc">케임브리지 9학년 과학 교과서 전체 (용량 큼 · 와이파이에서)</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="pdfs/genes/B1.2%20Chromosomes,%20genes%20and%20DNA.pptx" target="_blank" rel="noopener">
-  <div class="file-ico ppt">PPT</div>
-  <div><div class="file-name">B1.2 Chromosomes, genes and DNA</div><div class="file-desc">필립스 선생님 수업 슬라이드 (파워포인트)</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="pdfs/genes/Y9%20Introductory%20Lesson%20-%20KPH.pptx" target="_blank" rel="noopener">
-  <div class="file-ico ppt">PPT</div>
-  <div><div class="file-name">Y9 Introductory Lesson</div><div class="file-desc">9학년 과학 첫 수업 슬라이드 (파워포인트)</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<div class="files-head">🔗 링크 자료</div>
-<a class="file-card" href="https://wayground.com/join?c=Mv1R_umMtNpo7rML-SPh5thceUO8mknXGFa_hSiiRJOzN1cXiDX_uh88SjnjDg2Tb2dNXSxHWbt1JdI6vsS6KBsnT7cKjBQb4NUmR" target="_blank" rel="noopener">
-  <div class="file-ico link">WEB</div>
-  <div><div class="file-name">Wayground 퀴즈 — DNA chromosomes and genes Y9</div><div class="file-desc">선생님이 낸 과제 퀴즈 (옛 Quizizz)</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-<a class="file-card" href="https://docs.google.com/spreadsheets/d/1U6JitGTw-4Jg1O6QXpHeKfQROkMSRPa393EczBl9ohg/edit" target="_blank" rel="noopener">
-  <div class="file-ico link">WEB</div>
-  <div><div class="file-name">Y9 Year plan 26/27</div><div class="file-desc">26/27학년도 9학년 과학 연간 진도표</div></div>
-  <div class="file-open">열기 →</div>
-</a>
-</div></div>
+  <img class="note-img" src="assets/diagrams/y9/y9_genes__natural-selection-finches.jpg" alt="" loading="lazy"></div></details></div></div><div class="files-head">📌 참고 자료 (수업 내용은 아님)</div><div class="mat-card"><div class="mat-head"><div class="file-ico ">PDF</div><div class="mat-t"><div class="mat-title">Contents — Y9 Book</div><div class="mat-sub">교과서 목차 · 2쪽</div></div><a class="mat-open" href="pdfs/genes/Contents%20-%20Y9%20Book.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">9학년 과학 교과서 전체 목차다. 유전은 7단원, 243쪽부터다.</div><div class="mat-why"><p>7단원 안은 <b>7.1 염색체·유전자·DNA(243쪽)</b>, <b>7.2 생식세포와 유전(247쪽)</b>, <b>7.3 변이(253쪽)</b>, <b>7.4 자연선택(261쪽)</b>으로 되어 있다. 지금 배우는 곳이 어디쯤인지 확인할 때 본다.</p></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ">PDF</div><div class="mat-t"><div class="mat-title">CLS Science Learner's Book 9</div><div class="mat-sub">교과서 전체 · 용량 큼</div></div><a class="mat-open" href="pdfs/genes/CLS%20Science%20Learners%20Book%209.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">교과서를 통째로 담은 PDF다. 파일이 크니 와이파이에서 여는 것이 좋다.</div><div class="mat-why"><p>위의 7.1·7.2는 이 책에서 뽑은 부분이다. 선생님이 슬라이드에서 내준 연습문제는 <b>Exercise 7.1(133~134쪽)</b>과 <b>Exercise 7.2 Egg cells and sperm cells(135~136쪽)</b>이다.</p></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico link">WEB</div><div class="mat-t"><div class="mat-title">Y9 Year plan 26/27</div><div class="mat-sub">연간 진도표 (구글 시트)</div></div><a class="mat-open" href="https://docs.google.com/spreadsheets/d/1U6JitGTw-4Jg1O6QXpHeKfQROkMSRPa393EczBl9ohg/edit" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">올해 9학년 과학이 어느 학기에 무엇을 배우는지 적힌 진도표다.</div><div class="mat-why"><p>다음 단원이 무엇인지 미리 보고 싶을 때 연다.</p></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico ppt">PPT</div><div class="mat-t"><div class="mat-title">Y9 Introductory Lesson</div><div class="mat-sub">학년 첫 수업 슬라이드 · 12장</div></div><a class="mat-open" href="pdfs/genes/Y9%20Introductory%20Lesson%20-%20KPH.pptx" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">과학 수업 첫 시간 안내다. 선생님 소개와 수업·평가 규칙이 들어 있다.</div><div class="mat-why"><p><b>필립스 선생님(Mr Phillips)</b>이 KS3 과학과 IGCSE 물리를 가르친다. 메일은 kennethphillips@sji-international.edu.my이다.</p><p>평가는 <b>객관식</b>, <b>단답형·구조화 문항</b>, <b>실험 기술 문항</b>으로 나오고, 시험이 있으면 <b>최소 2주 전에 알려준다</b>고 적혀 있다.</p><p>실험실 규칙도 여기 있다. 실험실에는 선생님이 있을 때만 들어가고, 먹지 않으며, 한 번에 한 사람만 말하고, 기기는 필요할 때만 쓴다.</p></div></div></div></div></div>
 <div class="tab-pane" id="tab-quiz">
   <div class="quiz-wrap">
     <div class="quiz-info">
