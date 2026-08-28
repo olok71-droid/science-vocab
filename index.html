@@ -340,9 +340,10 @@
 </style><style>
 /* 과목을 누르면 그 과목 화면으로 넘어간다 */
 .backb { display: none; background: #fff; border: 1.5px solid #ddd; border-radius: 10px;
-  padding: 9px 14px; font-size: 13px; font-weight: 800; font-family: inherit; cursor: pointer;
-  margin: 0 auto 12px; }
+  padding: 6px 12px; font-size: 12.5px; font-weight: 800; font-family: inherit; cursor: pointer;
+  margin-left: auto; align-self: center; }
 body.in-subject .backb { display: block; }
+body.in-subject header,
 body.in-subject .tt-card,
 body.in-subject .cat-grid { display: none; }
 </style>
@@ -358,6 +359,21 @@ body.in-subject .cat-grid { display: none; }
 .cur-body .u-name .u-ko { font-weight: 700; color: #444; font-size: 13px; }
 .cur-body .u-list { margin: 5px 0 0 18px; padding: 0; }
 .cur-body .u-list li { font-size: 13px; line-height: 1.75; color: #333; }
+</style>
+<style>
+/* 폰에서 가로로 넘치지 않게 */
+html, body { overflow-x: hidden; }
+.container, .cat-pane, .subject-section, .cur-body, .term-card, .units-grid { max-width: 100%; box-sizing: border-box; }
+.subject-label { flex-wrap: wrap; }
+.backb { white-space: nowrap; }
+</style>
+<style>
+/* 진도표 표 */
+.curtbl { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.curtbl td { border: 1px solid rgba(0,0,0,.10); padding: 6px 9px; vertical-align: middle; }
+.curtbl .t-term { width: 46px; text-align: center; font-size: 11px; font-weight: 900; background: #f4f4f3; color: #111; }
+.curtbl .t-en { font-size: 13px; font-weight: 800; color: #111; line-height: 1.35; }
+.curtbl .t-ko { font-size: 12.5px; font-weight: 700; color: #444; line-height: 1.35; width: 34%; }
 </style>
 </head>
 <body>
@@ -418,19 +434,7 @@ body.in-subject .cat-grid { display: none; }
   <div class="cat-pane" id="cat-y9sci">
     <div class="subject-section">
       <div class="subject-label"><span class="icon">📗</span><span class="name-en">9학년 과학</span><span class="name-ko">Year 9 Science</span></div>
-      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><div class="term-card">
-      <span class="term-tag">TERM 1</span>
-      <div class="u-body"><div class="u-row"><div class="u-name"><b>Working Scientifically</b> <span class="u-ko">과학하는 방법</span></div></div><div class="u-row"><div class="u-name"><b>9B1 Genes and Inheritance</b> <span class="u-ko">유전자와 유전</span></div></div><div class="u-row"><div class="u-name"><b>9C1 Periodic Table</b> <span class="u-ko">주기율표</span></div></div><div class="u-row"><div class="u-name"><b>9P1 Electrostatic and Electric Current</b> <span class="u-ko">정전기와 전류</span></div></div></div>
-    </div>
-    <div class="term-card">
-      <span class="term-tag">TERM 2</span>
-      <div class="u-body"><div class="u-row"><div class="u-name"><b>9B2 Photosynthesis and Plant Growth</b> <span class="u-ko">광합성과 식물 성장</span></div></div><div class="u-row"><div class="u-name"><b>9C2 Reactivity</b> <span class="u-ko">반응성</span></div></div><div class="u-row"><div class="u-name"><b>9P2 Thermal Energy</b> <span class="u-ko">열에너지</span></div></div></div>
-    </div>
-    <div class="term-card">
-      <span class="term-tag">TERM 3</span>
-      <div class="u-body"><div class="u-row"><div class="u-name"><b>9B3 Sexual Reproduction in Flowering Plants</b> <span class="u-ko">꽃식물의 유성생식</span></div></div><div class="u-row"><div class="u-name"><b>9C3 Rates of Reaction</b> <span class="u-ko">반응 속도</span></div></div><div class="u-row"><div class="u-name"><b>9P4 Sound</b> <span class="u-ko">소리</span></div></div></div>
-    </div>
-    </div>
+      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr><td class="t-term" rowspan="4">TERM 1</td><td class="t-en">Working Scientifically</td><td class="t-ko">과학하는 방법</td></tr><tr><td class="t-en">9B1 Genes and Inheritance</td><td class="t-ko">유전자와 유전</td></tr><tr><td class="t-en">9C1 Periodic Table</td><td class="t-ko">주기율표</td></tr><tr><td class="t-en">9P1 Electrostatic and Electric Current</td><td class="t-ko">정전기와 전류</td></tr><tr><td class="t-term" rowspan="3">TERM 2</td><td class="t-en">9B2 Photosynthesis and Plant Growth</td><td class="t-ko">광합성과 식물 성장</td></tr><tr><td class="t-en">9C2 Reactivity</td><td class="t-ko">반응성</td></tr><tr><td class="t-en">9P2 Thermal Energy</td><td class="t-ko">열에너지</td></tr><tr><td class="t-term" rowspan="3">TERM 3</td><td class="t-en">9B3 Sexual Reproduction in Flowering Plants</td><td class="t-ko">꽃식물의 유성생식</td></tr><tr><td class="t-en">9C3 Rates of Reaction</td><td class="t-ko">반응 속도</td></tr><tr><td class="t-en">9P4 Sound</td><td class="t-ko">소리</td></tr></tbody></table></div>
       <div class="units-grid">
 
         <a class="unit-card ready" href="y9_genes.html">
@@ -584,19 +588,7 @@ body.in-subject .cat-grid { display: none; }
   <div class="cat-pane" id="cat-math">
     <div class="subject-section">
       <div class="subject-label"><span class="icon">🔢</span><span class="name-en">IGCSE 수학</span><span class="name-ko">Maths 0580</span></div>
-      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><div class="term-card">
-      <span class="term-tag">TERM 1 · 6 chapters</span>
-      <div class="u-body"><div class="u-row"><div class="u-name"><b>① Number and calculation</b> <span class="u-ko">수와 계산</span></div></div><div class="u-row"><div class="u-name"><b>② Expressions and formulae</b> <span class="u-ko">식과 공식</span></div></div><div class="u-row"><div class="u-name"><b>③ Decimals, percentages and rounding</b> <span class="u-ko"></span></div></div><div class="u-row"><div class="u-name"><b>④ Equations and inequalities</b> <span class="u-ko">방정식과 부등식</span></div></div><div class="u-row"><div class="u-name"><b>⑤ Angles</b> <span class="u-ko">각</span></div></div><div class="u-row"><div class="u-name"><b>⑥ Statistical investigations</b> <span class="u-ko">통계 조사</span></div></div></div>
-    </div>
-    <div class="term-card">
-      <span class="term-tag">TERM 2 · 5 chapters</span>
-      <div class="u-body"><div class="u-row"><div class="u-name"><b>① Shapes and measurements</b> <span class="u-ko"></span></div></div><div class="u-row"><div class="u-name"><b>② Fractions</b> <span class="u-ko">분수</span></div></div><div class="u-row"><div class="u-name"><b>③ Sequences and functions</b> <span class="u-ko">수열과 함수</span></div></div><div class="u-row"><div class="u-name"><b>④ Graphs</b> <span class="u-ko">그래프</span></div></div><div class="u-row"><div class="u-name"><b>⑤ Ratio and proportion</b> <span class="u-ko">비와 비례</span></div></div></div>
-    </div>
-    <div class="term-card">
-      <span class="term-tag">TERM 3 · 5 chapters</span>
-      <div class="u-body"><div class="u-row"><div class="u-name"><b>① Probability</b> <span class="u-ko">확률</span></div></div><div class="u-row"><div class="u-name"><b>② Position and transformation</b> <span class="u-ko"></span></div></div><div class="u-row"><div class="u-name"><b>③ Volume, surface area and symmetry</b> <span class="u-ko"></span></div></div><div class="u-row"><div class="u-name"><b>④ Interpreting and discussing results</b> <span class="u-ko"></span></div></div><div class="u-row"><div class="u-name"><b>⑤ End of Year Exam Preparation</b> 학년말 시험 대비</div></div></div>
-    </div>
-    </div>
+      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr><td class="t-term" rowspan="6">TERM 1</td><td class="t-en">① Number and calculation</td><td class="t-ko">수와 계산</td></tr><tr><td class="t-en">② Expressions and formulae</td><td class="t-ko">식과 공식</td></tr><tr><td class="t-en">③ Decimals, percentages and rounding</td><td class="t-ko">소수·백분율·반올림</td></tr><tr><td class="t-en">④ Equations and inequalities</td><td class="t-ko">방정식과 부등식</td></tr><tr><td class="t-en">⑤ Angles</td><td class="t-ko">각</td></tr><tr><td class="t-en">⑥ Statistical investigations</td><td class="t-ko">통계 조사</td></tr><tr><td class="t-term" rowspan="5">TERM 2</td><td class="t-en">① Shapes and measurements</td><td class="t-ko">도형과 측정</td></tr><tr><td class="t-en">② Fractions</td><td class="t-ko">분수</td></tr><tr><td class="t-en">③ Sequences and functions</td><td class="t-ko">수열과 함수</td></tr><tr><td class="t-en">④ Graphs</td><td class="t-ko">그래프</td></tr><tr><td class="t-en">⑤ Ratio and proportion</td><td class="t-ko">비와 비례</td></tr><tr><td class="t-term" rowspan="5">TERM 3</td><td class="t-en">① Probability</td><td class="t-ko">확률</td></tr><tr><td class="t-en">② Position and transformation</td><td class="t-ko">위치와 변환</td></tr><tr><td class="t-en">③ Volume, surface area and symmetry</td><td class="t-ko">부피·겉넓이·대칭</td></tr><tr><td class="t-en">④ Interpreting and discussing results</td><td class="t-ko">자료 해석과 토론</td></tr><tr><td class="t-en">⑤ End of Year Exam Preparation</td><td class="t-ko">학년말 시험 대비</td></tr></tbody></table></div>
       <div class="units-grid">
 
         <a class="unit-card ready" href="math_number.html">
@@ -666,31 +658,30 @@ body.in-subject .cat-grid { display: none; }
       <span class="term-tag">TERM 1</span>
       <div class="unit-name-en">The Art of Storytelling — Narrative Fiction</div>
       <div class="unit-name-ko">이야기의 기술 — 서사 소설</div>
-      <div class="u-body"><div class="u-row"><div class="u-name">19세기부터 현대까지 여러 작가의 단편소설 모음집을 읽는다. 시간 순서대로 쓴 이야기와 뒤섞어 쓴 이야기를 비교하고, 작가가 왜 그런 구조를 골랐는지 분석한다. 직접 여러 방식으로 이야기를 구성해 본다.</div></div></div>
+      <div class="u-body">19세기부터 현대까지 여러 작가의 단편소설 모음집을 읽는다. 시간 순서대로 쓴 이야기와 뒤섞어 쓴 이야기를 비교하고, 작가가 왜 그런 구조를 골랐는지 분석한다. 직접 여러 방식으로 이야기를 구성해 본다.</div>
       <div class="unit-name-en">Make Your Voice Heard — Speech Writing <span style="font-weight:700;font-size:11.5px;color:var(--muted)">(Term 1~2)</span></div>
       <div class="unit-name-ko">목소리를 내라 — 연설문 쓰기</div>
-      <div class="u-body"><div class="u-row"><div class="u-name">미디어를 읽는 법을 배운다. 의식적·무의식적 편견, 가짜뉴스, 선전을 다룬다. 직접 고른 주제로 연설문을 써서 반 앞에서 발표한다.</div></div></div>
+      <div class="u-body">미디어를 읽는 법을 배운다. 의식적·무의식적 편견, 가짜뉴스, 선전을 다룬다. 직접 고른 주제로 연설문을 써서 반 앞에서 발표한다.</div>
     </div>
     <div class="term-card">
       <span class="term-tag">TERM 2</span>
       <div class="unit-name-en">Prose Study — <i>Animal Farm</i></div>
       <div class="unit-name-ko">소설 정독 — 동물농장</div>
-      <div class="u-body"><div class="u-row"><div class="u-name">이상적인 사회와 실제로 나타난 디스토피아의 충돌을 다룬다. 우화로 읽고 마지막에 문학 에세이를 쓴다. <b>IGCSE 산문 시험 대비</b>가 목적이다.</div></div></div>
+      <div class="u-body">이상적인 사회와 실제로 나타난 디스토피아의 충돌을 다룬다. 우화로 읽고 마지막에 문학 에세이를 쓴다. <b>IGCSE 산문 시험 대비</b>가 목적이다.</div>
     </div>
     <div class="term-card">
       <span class="term-tag">TERM 3</span>
       <div class="unit-name-en">Drama — <i>An Inspector Calls</i></div>
       <div class="unit-name-ko">희곡 — 이너스펙터 콜스</div>
-      <div class="u-body"><div class="u-row"><div class="u-name">IGCSE 지정 희곡이다. 평판과 책임 중 무엇이 더 중요한가를 다룬다. 직접 연기해 보고, 무대·조명·대사·지시문이 뜻을 만드는 방식을 배운다.</div></div></div>
+      <div class="u-body">IGCSE 지정 희곡이다. 평판과 책임 중 무엇이 더 중요한가를 다룬다. 직접 연기해 보고, 무대·조명·대사·지시문이 뜻을 만드는 방식을 배운다.</div>
     </div>
     <div class="term-card">
       <span class="term-tag">ALL YEAR</span>
       <div class="unit-name-en">Vocabulary — "Remember, Spell, Define"</div>
       <div class="unit-name-ko">어휘 (외우고 · 철자 쓰고 · 뜻 쓰기 숙제)</div>
-      <div class="u-body"><div class="u-row"><div class="u-name">1학기에는 묘사용 어휘, 이후에는 <i>Animal Farm</i>·<i>An Inspector Calls</i>에 나오는 시대 배경 어휘를 배운다.</div></div></div>
+      <div class="u-body">1학기에는 묘사용 어휘, 이후에는 <i>Animal Farm</i>·<i>An Inspector Calls</i>에 나오는 시대 배경 어휘를 배운다.</div>
     </div>
-    </div>
-      <div class="units-grid">
+    </div><div class="units-grid">
 
         <a class="unit-card ready" href="eal.html">
           <div class="unit-name-en">EAL Y8 EoY Exam</div>
@@ -789,22 +780,29 @@ body.in-subject .cat-grid { display: none; }
       <span class="term-tag">TERM 1</span>
       <div class="unit-name-en">Unit 1: School Life &amp; Learning Chinese</div>
       <div class="unit-name-ko">1단원 학교생활과 중국어 배우기</div>
-      <div class="u-body"><div class="u-row"><div class="u-name">我的新学校 새 학교 · 我每天都很忙 매일 일과와 시간표 · 参加中文夏令营 중국어 여름캠프 · 中文短期培训班 단기 어학과정 · 汉语学习 중국어 학습법</div></div><div class="u-row"><div class="u-name"><b>문법</b> 一…就 / 得(정도보어) / A比B / 只要…就 / 从…开始 / 每…都 / 既…又</div></div><div class="u-row"><div class="u-name"><b>어휘</b> 학교 시설과 길 안내, 과목과 방과후활동, 캠프 활동</div></div><div class="u-row"><div class="u-name"><b>쓰기·말하기</b> 펜팔에게 학교 소개 편지, 캠프 후기 발표</div></div></div>
+      <div class="u-body">我的新学校 새 학교 · 我每天都很忙 매일 일과와 시간표 · 参加中文夏令营 중국어 여름캠프 · 中文短期培训班 단기 어학과정 · 汉语学习 중국어 학습법<br>
+      <b>문법</b> 一…就 / 得(정도보어) / A比B / 只要…就 / 从…开始 / 每…都 / 既…又<br>
+      <b>어휘</b> 학교 시설과 길 안내, 과목과 방과후활동, 캠프 활동<br>
+      <b>쓰기·말하기</b> 펜팔에게 학교 소개 편지, 캠프 후기 발표</div>
     </div>
     <div class="term-card">
       <span class="term-tag">TERM 2</span>
       <div class="unit-name-en">Unit 2: Healthy Life</div>
       <div class="unit-name-ko">2단원 건강한 생활</div>
-      <div class="u-body"><div class="u-row"><div class="u-name">生病 아플 때 · 건강한 식사와 생활습관 · 운동 · 취미와 여가</div></div><div class="u-row"><div class="u-name"><b>문법</b> 给·把 / 就·才 / 越来越 / 地 / 不是…就是 / 除了…以外,…还</div></div><div class="u-row"><div class="u-name"><b>어휘</b> 몸 부위와 증상, 병원, 음식군, 운동과 헬스, 음악과 취미</div></div><div class="u-row"><div class="u-name"><b>쓰기·말하기</b> 병가 쪽지 쓰기, 건강한 식사 대 안 건강한 식사 토론</div></div></div>
+      <div class="u-body">生病 아플 때 · 건강한 식사와 생활습관 · 운동 · 취미와 여가<br>
+      <b>문법</b> 给·把 / 就·才 / 越来越 / 地 / 不是…就是 / 除了…以外,…还<br>
+      <b>어휘</b> 몸 부위와 증상, 병원, 음식군, 운동과 헬스, 음악과 취미<br>
+      <b>쓰기·말하기</b> 병가 쪽지 쓰기, 건강한 식사 대 안 건강한 식사 토론</div>
     </div>
     <div class="term-card">
       <span class="term-tag">TERM 3</span>
       <div class="unit-name-en">Unit 3: Environment &amp; Technology</div>
       <div class="unit-name-ko">3단원 환경과 기술</div>
-      <div class="u-body"><div class="u-row"><div class="u-name">问路 길 묻기 · 环保周 환경보호 주간 · 善用电脑 컴퓨터 바르게 쓰기</div></div><div class="u-row"><div class="u-name"><b>어휘</b> 방향과 교통편, 오염·재활용·친환경 생활, 기기와 인터넷 안전</div></div><div class="u-row"><div class="u-name"><b>토론</b> 우리 동네와 세계의 환경 문제. 10학년 진입 준비 단계다.</div></div></div>
+      <div class="u-body">问路 길 묻기 · 环保周 환경보호 주간 · 善用电脑 컴퓨터 바르게 쓰기<br>
+      <b>어휘</b> 방향과 교통편, 오염·재활용·친환경 생활, 기기와 인터넷 안전<br>
+      <b>토론</b> 우리 동네와 세계의 환경 문제. 10학년 진입 준비 단계다.</div>
     </div>
-    </div>
-      <div class="units-grid">
+    </div><div class="units-grid">
 
         <a class="unit-card ready" href="chinese.html">
           <div class="unit-name-en">First Steps</div>
@@ -1010,6 +1008,9 @@ function showCat(id){
   document.querySelectorAll('.cat-pane').forEach(p=>p.classList.toggle('active', p.id==='cat-'+id));
   document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active', b.dataset.cat===id));
   document.body.classList.add('in-subject');          // 시간표·과목 고르는 칸을 감춘다
+  var lab=document.querySelector('#cat-'+id+' .subject-label');
+  var bb=document.getElementById('backBtn');
+  if(lab && bb) lab.appendChild(bb);                   // 뒤로 버튼을 과목 제목 줄 오른쪽에 붙인다
   window.scrollTo({top:0});
 }
 function backToSubjects(){
