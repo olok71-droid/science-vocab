@@ -327,6 +327,16 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   font-size: 13.5px; font-weight: 800; color: var(--purple, #6d5dfc); }
 .spellbox > summary::-webkit-details-marker { display: none; }
 </style>
+<style>
+.vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; display: flex; flex-wrap: wrap;
+  align-items: center; gap: 6px; }
+.vtool .search-input { flex: 1 1 150px; max-width: 46%; min-width: 0; padding: 8px 12px; font-size: 13px; }
+@media (max-width: 520px) { .vtool .search-input { flex: 1 1 100%; max-width: 100%; } }
+.vtool .mem-info { font-size: 12px; font-weight: 800; color: var(--text); white-space: nowrap; }
+.vtool .blind-btn, .vtool .mem-toggle-btn { padding: 5px 10px; }
+.spellbox > summary { display: none; }
+.spellbox { margin-top: 4px; }
+</style>
 </head>
 <body>
 
@@ -346,7 +356,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 
 <div class="hero">
   <h1>⏱️ <span>Rates of reaction 반응 속도</span></h1>
-  <p>Rate 속도 · Surface area 표면적 · Temperature 온도 · Concentration 농도</p>
+  
 </div>
 
 
@@ -357,13 +367,11 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
     <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
     </div>
-</div>
+
 
 <!-- 단어장 -->
 <div class="tab-pane active" id="tab-vocab">
-  <div class="search-wrap">
-    <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
-    <div class="mem-bar"><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div><details class="spellbox" id="spellbox"><summary>✏️ 단어시험 시작 — 뜻을 보고 영어 단어 쓰기</summary>
+  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="blind-btn" onclick="var b=document.getElementById('spellbox');b.open=!b.open;if(b.open)b.scrollIntoView({block:'nearest'});">✏️ 단어시험</button><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div><details class="spellbox" id="spellbox"><summary>✏️ 단어시험 시작 — 뜻을 보고 영어 단어 쓰기</summary>
   <div class="spell-wrap">
     <div class="spell-stats">
       <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
@@ -396,7 +404,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
       <button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>💧 농도 Concentration</button>
     </div>
   </div>
-<div class="section-header" data-cat="organ"><h2>⏱️ 속도 측정 Measuring</h2><div class="section-line"></div><span class="dh-btns"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></span></div>
+<div class="section-header" data-cat="organ"><h2>⏱️ 속도 측정 Measuring</h2><div class="section-line"></div></div>
 <div class="cards-wrap">
 <div class="vcard" data-cat="organ">
   <div class="vcard-left">
