@@ -364,34 +364,13 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
   <div class="tabs">
     <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
     <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
-    <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
+    <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button><button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
     </div>
 
 
 <!-- 단어장 -->
 <div class="tab-pane active" id="tab-vocab">
-  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="blind-btn" onclick="var b=document.getElementById('spellbox');b.open=!b.open;if(b.open)b.scrollIntoView({block:'nearest'});">✏️ 단어시험</button><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div><details class="spellbox" id="spellbox"><summary>✏️ 단어시험 시작 — 뜻을 보고 영어 단어 쓰기</summary>
-  <div class="spell-wrap">
-    <div class="spell-stats">
-      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
-      <div>📚 <span id="sp-remaining">48</span> 남음</div>
-    </div>
-    <div class="spell-card" id="spell-card">
-      <span class="spell-cat" id="sp-cat">CATEGORY</span>
-      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
-      <div class="spell-def" id="sp-def">English definition</div>
-      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
-      <div class="spell-feedback" id="sp-feedback"></div>
-      <div class="spell-input-row">
-        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
-      </div>
-      <div class="spell-buttons">
-        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
-        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
-      </div>
-    </div>
-  </div>
-</details>
+  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div>
 
   </div>
   <div class="filter-wrap">
@@ -1236,6 +1215,29 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </div></div>
   </div>
 </div>
+<div class="tab-pane" id="tab-spelling">
+  <div class="spell-wrap">
+    <div class="spell-stats">
+      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
+      <div>📚 <span id="sp-remaining">48</span> 남음</div>
+    </div>
+    <div class="spell-card" id="spell-card">
+      <span class="spell-cat" id="sp-cat">CATEGORY</span>
+      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
+      <div class="spell-def" id="sp-def">English definition</div>
+      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
+      <div class="spell-feedback" id="sp-feedback"></div>
+      <div class="spell-input-row">
+        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
+      </div>
+      <div class="spell-buttons">
+        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
+        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- 단어시험 -->
 
@@ -1285,7 +1287,8 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top: 0, behavior: 'smooth'});
     if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
-        try { localStorage.setItem('tab_' + UNIT_ID, btn.dataset.tab); } catch(e){}
+        if (btn.dataset.tab === 'spelling' && typeof startSpelling === 'function' && !spellState.started) startSpelling();
+    try { localStorage.setItem('tab_' + UNIT_ID, btn.dataset.tab); } catch(e){}
   });
 });
 
@@ -1401,7 +1404,7 @@ function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textCo
 function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
 function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
 function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
-function annotateCounts(){ let total=0; document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; total+=n; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=total; }
+function annotateCounts(){ document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=document.querySelectorAll('#tab-vocab .vcard').length; }
 function numberVocab(){ let n=0; document.querySelectorAll('#tab-vocab .vcard').forEach(c => { n++; const L=c.querySelector('.vcard-left'); if(L && !L.querySelector('.vcard-num')){ const d=document.createElement('div'); d.className='vcard-num'; d.textContent=n+'번'; L.insertBefore(d, L.firstChild); } }); }
 function setMemUI(c){
   const on = memSet.has(cardSlug(c));
