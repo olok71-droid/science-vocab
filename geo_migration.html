@@ -298,6 +298,28 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
 </style>
+
+<style>
+/* 학년 진도표 (누르면 펼쳐짐) */
+.cur { max-width: 980px; margin: 0 auto 14px; padding: 0 16px; }
+.cur > summary { list-style: none; cursor: pointer; background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12));
+  border-radius: 12px; padding: 11px 15px; font-size: 14px; font-weight: 800; color: var(--strong, #16223f); }
+.cur > summary::-webkit-details-marker { display: none; }
+.cur > summary::before { content: "▸ "; color: var(--accent, #0d9488); }
+.cur[open] > summary::before { content: "▾ "; }
+.cur-body { background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12)); border-top: none;
+  border-radius: 0 0 12px 12px; padding: 12px 15px 15px; margin-top: -6px; }
+.cur .teacher { font-size: 12.5px; font-weight: 700; color: var(--text, #243b6b); margin-bottom: 10px; }
+.cur .term-card { border: 1px solid var(--border, rgba(36,59,107,.12)); border-radius: 11px; padding: 11px 13px; margin-bottom: 9px; }
+.cur .term-tag { display: inline-block; background: var(--accent, #0d9488); color: #fff; font-size: 11px; font-weight: 900;
+  padding: 3px 9px; border-radius: 999px; margin-bottom: 7px; }
+.cur .u-body { font-size: 13.5px; line-height: 1.85; color: var(--text, #243b6b); }
+.cur .u-body b { color: var(--strong, #16223f); }
+.cur .src { font-size: 11.5px; font-weight: 700; color: var(--text, #243b6b); margin-top: 6px; }
+.cur table.rot { width: 100%; border-collapse: collapse; margin-top: 6px; }
+.cur table.rot th, .cur table.rot td { border: 1px solid var(--border, rgba(36,59,107,.12)); padding: 6px 9px; font-size: 12px; font-weight: 700; text-align: left; }
+.cur table.rot th { width: 110px; background: rgba(36,59,107,0.05); }
+</style>
 </head>
 <body>
 
@@ -340,6 +362,32 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </div>
 
 <!-- 단어장 -->
+<details class="cur"><summary>📅 2026/27 인문(지리·역사) 진도표 — 올해 배우는 순서</summary><div class="cur-body"><div class="teacher">Douglas Lawrence · H4-02</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">1. Tectonic Hazards <span style="font-weight:700;font-size:11.5px;color:var(--muted)">Geography</span></div>
+      <div class="unit-name-ko">지각 재해 — 지진과 화산이 지역사회·환경에 주는 영향과 대비 전략</div>
+      <div class="unit-name-en">2. World War One <span style="font-weight:700;font-size:11.5px;color:var(--muted)">History</span></div>
+      <div class="unit-name-ko">제1차 세계대전 — 왜 '최초의 현대 전쟁'이라 부르는가</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">3. Climate Change <span style="font-weight:700;font-size:11.5px;color:var(--muted)">Geography</span></div>
+      <div class="unit-name-ko">기후변화 — 연결된 세계에서 어떻게 이해하고 대응할 것인가</div>
+      <div class="unit-name-en">4. The Holocaust <span style="font-weight:700;font-size:11.5px;color:var(--muted)">History</span></div>
+      <div class="unit-name-ko">홀로코스트 — 나치의 유대인 박해가 '최종 해결책'으로 이어진 과정</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">5. International Development <span style="font-weight:700;font-size:11.5px;color:var(--muted)">Geography</span></div>
+      <div class="unit-name-ko">국제 개발 — 선진국이란 무엇인가, 개발 격차를 지속가능하게 줄이기</div>
+      <div class="unit-name-en">6. World War Two <span style="font-weight:700;font-size:11.5px;color:var(--muted)">History</span></div>
+      <div class="unit-name-ko">제2차 세계대전 — 유럽과 아시아에 미친 영향</div>
+    </div>
+    <div class="src">Y7-9 Humanities Curriculum Overview.pdf p.1 (Year 9, 6개 단원)</div>
+  </div>
+
+  <!-- MANDARIN --></div></details>
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">

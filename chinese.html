@@ -121,7 +121,27 @@
   .upload-box .upload-close{margin-top:14px; border:none; cursor:pointer; border-radius:14px;
     background:var(--accent); color:#fff; font-family:inherit; font-weight:800; font-size:15px; padding:10px 26px;}
 </style>
-</head>
+<style>
+/* 학년 진도표 (누르면 펼쳐짐) */
+.cur { max-width: 980px; margin: 0 auto 14px; padding: 0 16px; }
+.cur > summary { list-style: none; cursor: pointer; background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12));
+  border-radius: 12px; padding: 11px 15px; font-size: 14px; font-weight: 800; color: var(--strong, #16223f); }
+.cur > summary::-webkit-details-marker { display: none; }
+.cur > summary::before { content: "▸ "; color: var(--accent, #0d9488); }
+.cur[open] > summary::before { content: "▾ "; }
+.cur-body { background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12)); border-top: none;
+  border-radius: 0 0 12px 12px; padding: 12px 15px 15px; margin-top: -6px; }
+.cur .teacher { font-size: 12.5px; font-weight: 700; color: var(--text, #243b6b); margin-bottom: 10px; }
+.cur .term-card { border: 1px solid var(--border, rgba(36,59,107,.12)); border-radius: 11px; padding: 11px 13px; margin-bottom: 9px; }
+.cur .term-tag { display: inline-block; background: var(--accent, #0d9488); color: #fff; font-size: 11px; font-weight: 900;
+  padding: 3px 9px; border-radius: 999px; margin-bottom: 7px; }
+.cur .u-body { font-size: 13.5px; line-height: 1.85; color: var(--text, #243b6b); }
+.cur .u-body b { color: var(--strong, #16223f); }
+.cur .src { font-size: 11.5px; font-weight: 700; color: var(--text, #243b6b); margin-top: 6px; }
+.cur table.rot { width: 100%; border-collapse: collapse; margin-top: 6px; }
+.cur table.rot th, .cur table.rot td { border: 1px solid var(--border, rgba(36,59,107,.12)); padding: 6px 9px; font-size: 12px; font-weight: 700; text-align: left; }
+.cur table.rot th { width: 110px; background: rgba(36,59,107,0.05); }
+</style></head>
 <body>
 
 <a class="back" href="index.html">← 메인</a>
@@ -140,7 +160,38 @@
   </div>
 
   <!-- 듣고 배우기 -->
-  <div class="tab-panel active" id="tab-learn">
+  <details class="cur"><summary>📅 2026/27 중국어 진도표 — 올해 배우는 순서</summary><div class="cur-body"><div class="teacher">Ying Ying Tan · H1-03 · 주 3회</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1</span>
+      <div class="unit-name-en">Unit 1: School Life &amp; Learning Chinese</div>
+      <div class="unit-name-ko">1단원 학교생활과 중국어 배우기</div>
+      <div class="u-body">我的新学校 새 학교 · 我每天都很忙 매일 일과와 시간표 · 参加中文夏令营 중국어 여름캠프 · 中文短期培训班 단기 어학과정 · 汉语学习 중국어 학습법<br>
+      <b>문법</b> 一…就 / 得(정도보어) / A比B / 只要…就 / 从…开始 / 每…都 / 既…又<br>
+      <b>어휘</b> 학교 시설과 길 안내, 과목과 방과후활동, 캠프 활동<br>
+      <b>쓰기·말하기</b> 펜팔에게 학교 소개 편지, 캠프 후기 발표</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2</span>
+      <div class="unit-name-en">Unit 2: Healthy Life</div>
+      <div class="unit-name-ko">2단원 건강한 생활</div>
+      <div class="u-body">生病 아플 때 · 건강한 식사와 생활습관 · 운동 · 취미와 여가<br>
+      <b>문법</b> 给·把 / 就·才 / 越来越 / 地 / 不是…就是 / 除了…以外,…还<br>
+      <b>어휘</b> 몸 부위와 증상, 병원, 음식군, 운동과 헬스, 음악과 취미<br>
+      <b>쓰기·말하기</b> 병가 쪽지 쓰기, 건강한 식사 대 안 건강한 식사 토론</div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3</span>
+      <div class="unit-name-en">Unit 3: Environment &amp; Technology</div>
+      <div class="unit-name-ko">3단원 환경과 기술</div>
+      <div class="u-body">问路 길 묻기 · 环保周 환경보호 주간 · 善用电脑 컴퓨터 바르게 쓰기<br>
+      <b>어휘</b> 방향과 교통편, 오염·재활용·친환경 생활, 기기와 인터넷 안전<br>
+      <b>토론</b> 우리 동네와 세계의 환경 문제. 10학년 진입 준비 단계다.</div>
+    </div>
+    <div class="src">Y9 Mandarin Curriculum Overview.pdf p.1~2 (Beginner) · 중급·고급 진도표는 서정이 반이 아니라 뺐다</div>
+  </div>
+
+  <!-- COMPUTER SCIENCE --></div></details>
+<div class="tab-panel active" id="tab-learn">
     <div class="hint">👆 <b>카드를 누르면 소리</b>가 나요. 한자 아래 <b>병음</b>(소리 적은 것)을 보고 <b>여러 번 듣고 따라 말하기</b>! 처음엔 <b>성조</b>(소리 높낮이)부터 들어봐요.</div>
     <div class="topic-filter" id="topic-filter"></div>
     <div style="margin-bottom:14px;"><button class="big-btn" id="play-all-btn" onclick="togglePlayAll(this)">▶︎ 전체 듣기</button></div>

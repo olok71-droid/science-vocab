@@ -298,6 +298,28 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
 </style>
+
+<style>
+/* 학년 진도표 (누르면 펼쳐짐) */
+.cur { max-width: 980px; margin: 0 auto 14px; padding: 0 16px; }
+.cur > summary { list-style: none; cursor: pointer; background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12));
+  border-radius: 12px; padding: 11px 15px; font-size: 14px; font-weight: 800; color: var(--strong, #16223f); }
+.cur > summary::-webkit-details-marker { display: none; }
+.cur > summary::before { content: "▸ "; color: var(--accent, #0d9488); }
+.cur[open] > summary::before { content: "▾ "; }
+.cur-body { background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12)); border-top: none;
+  border-radius: 0 0 12px 12px; padding: 12px 15px 15px; margin-top: -6px; }
+.cur .teacher { font-size: 12.5px; font-weight: 700; color: var(--text, #243b6b); margin-bottom: 10px; }
+.cur .term-card { border: 1px solid var(--border, rgba(36,59,107,.12)); border-radius: 11px; padding: 11px 13px; margin-bottom: 9px; }
+.cur .term-tag { display: inline-block; background: var(--accent, #0d9488); color: #fff; font-size: 11px; font-weight: 900;
+  padding: 3px 9px; border-radius: 999px; margin-bottom: 7px; }
+.cur .u-body { font-size: 13.5px; line-height: 1.85; color: var(--text, #243b6b); }
+.cur .u-body b { color: var(--strong, #16223f); }
+.cur .src { font-size: 11.5px; font-weight: 700; color: var(--text, #243b6b); margin-top: 6px; }
+.cur table.rot { width: 100%; border-collapse: collapse; margin-top: 6px; }
+.cur table.rot th, .cur table.rot td { border: 1px solid var(--border, rgba(36,59,107,.12)); padding: 6px 9px; font-size: 12px; font-weight: 700; text-align: left; }
+.cur table.rot th { width: 110px; background: rgba(36,59,107,0.05); }
+</style>
 </head>
 <body>
 
@@ -341,6 +363,42 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </div>
 
 <!-- 단어장 -->
+<details class="cur"><summary>📅 2026/27 수학 진도표 — 올해 배우는 순서</summary><div class="cur-body"><div class="teacher">Ananthan Seluerajah · H2-01</div>
+    <div class="term-card">
+      <span class="term-tag">TERM 1 · 6 chapters</span>
+      <div class="u-body">
+        <b>① Number and calculation</b> 수와 계산 — 지수와 표준형, 유리수·무리수, 근호 어림하기<br>
+        <b>② Expressions and formulae</b> 식과 공식 — 지수 법칙을 문자식에, 공식의 주어 바꾸기<br>
+        <b>③ Decimals, percentages and rounding</b> — 부등식과 상·하한, 복리 백분율(저축·이자)<br>
+        <b>④ Equations and inequalities</b> 방정식과 부등식 — 일차·연립방정식 풀이법 비교<br>
+        <b>⑤ Angles</b> 각 — 피타고라스 정리, 다각형 내각·외각, 방위각과 작도<br>
+        <b>⑥ Statistical investigations</b> 통계 조사 — 설문 설계, 자료 수집과 그래프 고르기
+      </div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 2 · 5 chapters</span>
+      <div class="u-body">
+        <b>① Shapes and measurements</b> — 원의 넓이, 복합도형<br>
+        <b>② Fractions</b> 분수 — 분수·소수 혼합 계산, 약분<br>
+        <b>③ Sequences and functions</b> 수열과 함수 — 규칙 찾기, 역연산<br>
+        <b>④ Graphs</b> 그래프 — 일차·이차함수 표와 그래프<br>
+        <b>⑤ Ratio and proportion</b> 비와 비례 — 실생활·기하 디자인 속 비
+      </div>
+    </div>
+    <div class="term-card">
+      <span class="term-tag">TERM 3 · 5 chapters</span>
+      <div class="u-body">
+        <b>① Probability</b> 확률 — 복원·비복원, 확률나무, 기대 도수<br>
+        <b>② Position and transformation</b> — 방위각·작도, 대칭·회전·평행이동, 확대<br>
+        <b>③ Volume, surface area and symmetry</b> — 입체 부피·겉넓이, 평면대칭<br>
+        <b>④ Interpreting and discussing results</b> — 묶은 자료의 평균, 지구온난화 사례 연구, 통계 탐구 전 과정<br>
+        <b>⑤ End of Year Exam Preparation</b> 학년말 시험 대비
+      </div>
+    </div>
+    <div class="src">Y7-9 Maths Curriculum Overview.pdf p.6~8 · 학기마다 수시·정기 평가가 따로 있다</div>
+  </div>
+
+  <!-- SCIENCE --></div></details>
 <div class="tab-pane active" id="tab-vocab">
   <div class="search-wrap">
     <input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off">
