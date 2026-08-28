@@ -317,12 +317,7 @@
   <!-- 단어장 -->
   <div class="tab-panel active" id="tab-vocab">
     <input class="search" id="search" placeholder="🔍 영어 또는 한글 검색…">
-    <div class="mem-bar">
-      <span class="mem-info">✅ 외움 <b id="mem-count">0</b>개</span>
-      <button class="mem-toggle-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
-      <button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button>
-    </div>
-    <div class="day-filter" id="month-filter"></div>
+    <div class="mem-bar"><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div><div class="day-filter" id="month-filter"></div>
     <div class="day-filter" id="day-filter"></div>
     <div id="vocab-list"></div>
   </div>
@@ -642,7 +637,7 @@ function cell(side, text) {
 }
 
 function blindButtons(m, day) {
-  return `<span class="dh-btns">
+  return `<span class="dh-btns"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button>
     <button class="blind-btn play-all-btn" onclick="playDay(${m}, ${day}, this)">▶ 듣기</button>
     <button class="blind-btn${blindEn ? ' active' : ''}" onclick="toggleBlind('en')">🇬🇧 영어가림</button>
     <button class="blind-btn${blindKo ? ' active' : ''}" onclick="toggleBlind('ko')">🇰🇷 한글가림</button>
