@@ -391,6 +391,54 @@ html, body { overflow-x: hidden; }
 .y8sub { font-size: 14px; font-weight: 900; color: #333; margin: 14px 0 8px; }
 .y8sub:first-of-type { margin-top: 4px; }
 </style>
+<style>
+/* ── 클래스룸 새 글 (시간표와 같은 톤) ── */
+.cn-card {
+  background: var(--card, #fff);
+  border-radius: 20px;
+  border: 1.5px solid rgba(0,0,0,0.16);
+  box-shadow: 0 2px 12px var(--shadow, rgba(0,0,0,.06));
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.fold-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 14px; cursor: pointer;
+  background: rgba(0,0,0,0.04);
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+}
+.fold-bar .fold-name { font-size: 13px; font-weight: 900; color: var(--text, #243b6b); }
+.fold-bar .fold-count {
+  font-size: 11px; font-weight: 900; color: #fff; background: #c62828;
+  border-radius: 999px; padding: 2px 8px;
+}
+.fold-bar .fold-arrow { margin-left: auto; font-size: 13px; font-weight: 900; color: var(--text, #243b6b); }
+.folded .fold-bar { border-bottom: none; }
+.folded .fold-body { display: none; }
+
+.cn-list { padding: 4px 0 6px; }
+.cn-row {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding: 8px 13px; border-top: 1px solid rgba(0,0,0,0.07);
+}
+.cn-row:first-child { border-top: none; }
+.cn-date { flex: 0 0 44px; font-size: 10.5px; font-weight: 900; color: var(--muted, #666); text-align: center; line-height: 1.3; padding-top: 2px; }
+.cn-main { flex: 1 1 auto; min-width: 0; }
+.cn-ko { font-size: 12.5px; font-weight: 800; color: #111; line-height: 1.4; }
+.cn-sub { margin-top: 2px; font-size: 10.5px; font-weight: 700; color: #555; }
+.cn-tag { display: inline-block; font-size: 9.5px; font-weight: 900; padding: 2px 6px; border-radius: 999px; margin-left: 5px; vertical-align: 1px; }
+.cn-tag.t-gongji { background: #1f4fa3; color: #fff; }
+.cn-tag.t-gwaje  { background: #b3261e; color: #fff; }
+.cn-tag.t-jaryo  { background: #2e6b3a; color: #fff; }
+.cn-due { display: inline-block; font-size: 10px; font-weight: 900; background: #ffe08a; color: #4a3200; border-radius: 6px; padding: 2px 6px; margin-left: 5px; }
+.cn-empty { padding: 14px; font-size: 12.5px; font-weight: 700; color: #555; }
+body.in-subject .cn-card { display: none; }
+
+/* 진도표 접기 */
+.cur-fold { margin-bottom: 12px; }
+.cur-fold .fold-bar { border-radius: 12px 12px 0 0; }
+.cur-fold.folded .fold-bar { border-radius: 12px; }
+</style>
 </head>
 <body>
 
@@ -401,10 +449,25 @@ html, body { overflow-x: hidden; }
 
 <div class="container">
 
+  <div class="cn-card" id="cnCard">
+    <div class="fold-bar" onclick="toggleFold('cnCard')">
+      <span class="fold-name">📣 클래스룸 새 글</span>
+      <span class="fold-count" id="cnCount"></span>
+      <span class="fold-arrow">▾</span>
+    </div>
+    <div class="fold-body"><div class="cn-list" id="cnList"></div></div>
+  </div>
+
   <div class="tt-card" id="ttCard">
-    <div class="tt-bar"><button class="tt-toggle" id="ttToggle" type="button">넓게 보기</button></div>
-    <div class="tt-scroll">
-      <table class="tt-table" id="ttTable"></table>
+    <div class="fold-bar" onclick="toggleFold('ttCard')">
+      <span class="fold-name">🗓 시간표</span>
+      <span class="fold-arrow">▾</span>
+    </div>
+    <div class="fold-body">
+      <div class="tt-bar"><button class="tt-toggle" id="ttToggle" type="button">넓게 보기</button></div>
+      <div class="tt-scroll">
+        <table class="tt-table" id="ttTable"></table>
+      </div>
     </div>
   </div>
 
@@ -919,5 +982,82 @@ if ('serviceWorker' in navigator) {
 </script>
 
 <!-- SW-AUTO-END -->
+<script src="classroom_posts.js"></script>
+<script>
+/* 접기·펼치기 — 상태를 기억한다 */
+function applyFold(el, folded){
+  el.classList.toggle('folded', folded);
+  var a = el.querySelector('.fold-bar .fold-arrow');
+  if (a) a.textContent = folded ? '\u25B8' : '\u25BE';
+}
+function toggleFold(id){
+  var el = (typeof id === 'string') ? document.getElementById(id) : id;
+  if (!el) return;
+  var folded = !el.classList.contains('folded');
+  applyFold(el, folded);
+  try { localStorage.setItem('fold:' + (el.id || el.dataset.foldKey), folded ? '1' : '0'); } catch(e){}
+}
+function initFold(el, defFolded){
+  var key = 'fold:' + (el.id || el.dataset.foldKey);
+  var v = null;
+  try { v = localStorage.getItem(key); } catch(e){}
+  applyFold(el, v === null ? defFolded : v === '1');
+}
+
+/* 클래스룸 새 글 */
+(function(){
+  var list = document.getElementById('cnList');
+  var cnt  = document.getElementById('cnCount');
+  var rows = window.CLASSROOM_POSTS || [];
+  if (!list) return;
+  if (!rows.length){
+    list.innerHTML = '<div class="cn-empty">새 글이 없다.</div>';
+    if (cnt) cnt.style.display = 'none';
+  } else {
+    var cls = {'공지':'t-gongji','과제':'t-gwaje','자료':'t-jaryo'};
+    var html = rows.slice(0, 12).map(function(r){
+      var d = (r.date || '').split('-');
+      var day = d.length === 3 ? (+d[1]) + '/' + (+d[2]) : '';
+      var tag = cls[r.type] || 't-jaryo';
+      var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
+      var due = '';
+      if (r.due){ var dd = r.due.split('-'); due = '<span class="cn-due">마감 ' + (+dd[1]) + '/' + (+dd[2]) + '</span>'; }
+      return '<div class="cn-row"><div class="cn-date">' + day + '</div><div class="cn-main">' +
+             '<div class="cn-ko">' + (r.ko || r.title || '') + due + '</div>' +
+             '<div class="cn-sub">' + subj + '<span class="cn-tag ' + tag + '">' + (r.type || '') + '</span></div>' +
+             '</div></div>';
+    }).join('');
+    list.innerHTML = html;
+    var todo = rows.filter(function(r){ return r.due; }).length;
+    if (cnt){ if (todo) cnt.textContent = todo; else cnt.style.display = 'none'; }
+  }
+  var cn = document.getElementById('cnCard'); if (cn) initFold(cn, false);
+  var tt = document.getElementById('ttCard'); if (tt) initFold(tt, false);
+})();
+
+/* 과목 진도표도 접기 */
+(function(){
+  var n = 0;
+  document.querySelectorAll('.cur-body').forEach(function(body){
+    var t = body.querySelector('.cur-title');
+    var name = t ? t.textContent.trim() : '진도표';
+    if (t) t.remove();
+    var wrap = document.createElement('div');
+    wrap.className = 'cur-fold';
+    wrap.dataset.foldKey = 'cur' + (++n);
+    body.parentNode.insertBefore(wrap, body);
+    var bar = document.createElement('div');
+    bar.className = 'fold-bar';
+    bar.innerHTML = '<span class="fold-name">' + name + '</span><span class="fold-arrow">\u25B8</span>';
+    bar.onclick = function(){ toggleFold(wrap); };
+    wrap.appendChild(bar);
+    var inner = document.createElement('div');
+    inner.className = 'fold-body';
+    wrap.appendChild(inner);
+    inner.appendChild(body);
+    initFold(wrap, true);
+  });
+})();
+</script>
 </body>
 </html>
