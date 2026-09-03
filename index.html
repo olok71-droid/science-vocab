@@ -416,21 +416,21 @@ html, body { overflow-x: hidden; }
 .folded .fold-bar { border-bottom: none; }
 .folded .fold-body { display: none; }
 
-.cn-list { padding: 4px 0 6px; }
+.cn-list { padding: 2px 0 4px; }
 .cn-row {
-  display: flex; align-items: flex-start; gap: 8px;
-  padding: 8px 13px; border-top: 1px solid rgba(0,0,0,0.07);
+  display: flex; align-items: center; gap: 6px; white-space: nowrap;
+  padding: 7px 12px; border-top: 1px solid rgba(0,0,0,0.07);
 }
 .cn-row:first-child { border-top: none; }
-.cn-date { flex: 0 0 44px; font-size: 10.5px; font-weight: 900; color: var(--muted, #666); text-align: center; line-height: 1.3; padding-top: 2px; }
-.cn-main { flex: 1 1 auto; min-width: 0; }
-.cn-ko { font-size: 12.5px; font-weight: 800; color: #111; line-height: 1.4; }
-.cn-sub { margin-top: 2px; font-size: 10.5px; font-weight: 700; color: #555; }
-.cn-tag { display: inline-block; font-size: 9.5px; font-weight: 900; padding: 2px 6px; border-radius: 999px; margin-left: 5px; vertical-align: 1px; }
+.cn-date { flex: 0 0 auto; font-size: 11px; font-weight: 900; color: #111; }
+.cn-subj { flex: 0 0 auto; font-size: 11px; font-weight: 800; color: #333; }
+.cn-ko { flex: 1 1 auto; min-width: 0; font-size: 12px; font-weight: 800; color: #111;
+  overflow: hidden; text-overflow: ellipsis; }
+.cn-tag { flex: 0 0 auto; font-size: 9.5px; font-weight: 900; padding: 2px 6px; border-radius: 999px; }
 .cn-tag.t-gongji { background: #1f4fa3; color: #fff; }
 .cn-tag.t-gwaje  { background: #b3261e; color: #fff; }
 .cn-tag.t-jaryo  { background: #2e6b3a; color: #fff; }
-.cn-due { display: inline-block; font-size: 10px; font-weight: 900; background: #ffe08a; color: #4a3200; border-radius: 6px; padding: 2px 6px; margin-left: 5px; }
+.cn-due { flex: 0 0 auto; font-size: 10px; font-weight: 900; background: #ffe08a; color: #4a3200; border-radius: 6px; padding: 2px 6px; }
 .cn-empty { padding: 14px; font-size: 12.5px; font-weight: 700; color: #555; }
 body.in-subject .cn-card { display: none; }
 
@@ -1022,10 +1022,12 @@ function initFold(el, defFolded){
       var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
       var due = '';
       if (r.due){ var dd = r.due.split('-'); due = '<span class="cn-due">마감 ' + (+dd[1]) + '/' + (+dd[2]) + '</span>'; }
-      return '<div class="cn-row"><div class="cn-date">' + day + '</div><div class="cn-main">' +
-             '<div class="cn-ko">' + (r.ko || r.title || '') + due + '</div>' +
-             '<div class="cn-sub">' + subj + '<span class="cn-tag ' + tag + '">' + (r.type || '') + '</span></div>' +
-             '</div></div>';
+      return '<div class="cn-row">' +
+             '<span class="cn-date">' + day + '</span>' +
+             '<span class="cn-subj">' + subj + '</span>' +
+             '<span class="cn-tag ' + tag + '">' + (r.type || '') + '</span>' +
+             '<span class="cn-ko">' + (r.ko || r.title || '') + '</span>' + due +
+             '</div>';
     }).join('');
     list.innerHTML = html;
     var todo = rows.filter(function(r){ return r.due; }).length;
