@@ -2,7 +2,7 @@
 // 빌드 버전: v20260604-065736
 // 새 버전이 push되면 자동으로 클라이언트 새로고침.
 
-const CACHE_VERSION = 'v20260828-190000';
+const CACHE_VERSION = 'v20260903-120000';
 const CACHE_NAME = 'amy-study-' + CACHE_VERSION;
 const CORE_FILES = ["./", "biology.html", "chemistry.html", "ecosystems.html", "atoms.html", "forces.html", "atmosphere.html", "motion.html", "pressure.html", "purity.html", "eal.html", "history.html", "geo_population.html", "geo_migration.html", "checkpoint.html", "index.html"];
 
@@ -53,6 +53,34 @@ self.addEventListener('fetch', function(event) {
     }).catch(function() {
       // 오프라인 → 캐시에서
       return caches.match(event.request);
+    })
+  );
+});
+
+// ── 클래스룸 새 글 알림 (웹 푸시) ──
+self.addEventListener('push', function(event) {
+  var d = {};
+  try { d = event.data ? event.data.json() : {}; } catch (e) { d = { body: event.data ? event.data.text() : '' }; }
+  var title = d.title || '클래스룸 새 글';
+  var opts = {
+    body: d.body || '',
+    icon: 'icon-512.png',
+    badge: 'favicon.png',
+    tag: d.tag || 'amy-classroom',
+    data: { url: d.url || './' }
+  };
+  event.waitUntil(self.registration.showNotification(title, opts));
+});
+
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close();
+  var url = (event.notification.data && event.notification.data.url) || './';
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function(list) {
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].url.indexOf(self.location.origin) === 0 && 'focus' in list[i]) return list[i].focus();
+      }
+      return self.clients.openWindow(url);
     })
   );
 });

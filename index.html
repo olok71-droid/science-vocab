@@ -418,20 +418,32 @@ html, body { overflow-x: hidden; }
 
 .cn-list { padding: 2px 0 4px; }
 .cn-row {
-  display: flex; align-items: center; gap: 6px; white-space: nowrap;
-  padding: 7px 12px; border-top: 1px solid rgba(0,0,0,0.07);
+  display: grid; grid-template-columns: 34px 46px 34px 50px 1fr;
+  align-items: center; column-gap: 6px; white-space: nowrap;
+  padding: 7px 10px; border-top: 1px solid rgba(0,0,0,0.07);
+  text-decoration: none; color: inherit;
 }
 .cn-row:first-child { border-top: none; }
-.cn-date { flex: 0 0 auto; font-size: 11px; font-weight: 900; color: #111; }
-.cn-subj { flex: 0 0 auto; font-size: 11px; font-weight: 800; color: #333; }
-.cn-ko { flex: 1 1 auto; min-width: 0; font-size: 12px; font-weight: 800; color: #111;
+.cn-date { font-size: 11px; font-weight: 900; color: #111; }
+.cn-subj { font-size: 11px; font-weight: 800; color: #333; overflow: hidden; text-overflow: ellipsis; }
+.cn-ko { min-width: 0; font-size: 12px; font-weight: 800; color: #111;
   overflow: hidden; text-overflow: ellipsis; }
-.cn-tag { flex: 0 0 auto; font-size: 9.5px; font-weight: 900; padding: 2px 6px; border-radius: 999px; }
+.cn-tag { font-size: 9.5px; font-weight: 900; padding: 2px 0; border-radius: 999px; text-align: center; }
 .cn-tag.t-gongji { background: #1f4fa3; color: #fff; }
 .cn-tag.t-gwaje  { background: #b3261e; color: #fff; }
 .cn-tag.t-jaryo  { background: #2e6b3a; color: #fff; }
-.cn-due { flex: 0 0 auto; font-size: 10px; font-weight: 900; background: #ffe08a; color: #4a3200; border-radius: 6px; padding: 2px 6px; }
+.cn-due { font-size: 10px; font-weight: 900; background: #ffe08a; color: #4a3200;
+  border-radius: 6px; padding: 2px 0; text-align: center; }
+.cn-due.none { background: none; }
 .cn-empty { padding: 14px; font-size: 12.5px; font-weight: 700; color: #555; }
+.cn-bell {
+  margin-left: auto; font-family: inherit; cursor: pointer;
+  font-size: 11px; font-weight: 900; color: #111;
+  background: #fff; border: 1.5px solid #e0a800; border-radius: 999px; padding: 4px 10px;
+}
+.cn-bell.on { background: #2e6b3a; border-color: #2e6b3a; color: #fff; }
+.cn-bell.warn { border-color: #c62828; color: #c62828; }
+.fold-bar .fold-arrow { margin-left: 8px; }
 body.in-subject .cn-card { display: none; }
 
 /* 진도표 접기 */
@@ -453,6 +465,7 @@ body.in-subject .cn-card { display: none; }
     <div class="fold-bar" onclick="toggleFold('cnCard')">
       <span class="fold-name">📣 클래스룸 새 글</span>
       <span class="fold-count" id="cnCount"></span>
+      <button class="cn-bell" id="cnBell" type="button" onclick="event.stopPropagation();amyPushOn()">🔔 알림 켜기</button>
       <span class="fold-arrow">▾</span>
     </div>
     <div class="fold-body"><div class="cn-list" id="cnList"></div></div>
@@ -1020,14 +1033,16 @@ function initFold(el, defFolded){
       var day = d.length === 3 ? (+d[1]) + '/' + (+d[2]) : '';
       var tag = cls[r.type] || 't-jaryo';
       var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
-      var due = '';
-      if (r.due){ var dd = r.due.split('-'); due = '<span class="cn-due">마감 ' + (+dd[1]) + '/' + (+dd[2]) + '</span>'; }
-      return '<div class="cn-row">' +
+      var due = '<span class="cn-due none"></span>';
+      if (r.due){ var dd = r.due.split('-'); due = '<span class="cn-due">' + (+dd[1]) + '/' + (+dd[2]) + '</span>'; }
+      var href = r.url || 'https://classroom.google.com/';
+      return '<a class="cn-row" href="' + href + '" target="_blank" rel="noopener">' +
              '<span class="cn-date">' + day + '</span>' +
              '<span class="cn-subj">' + subj + '</span>' +
              '<span class="cn-tag ' + tag + '">' + (r.type || '') + '</span>' +
-             '<span class="cn-ko">' + (r.ko || r.title || '') + '</span>' + due +
-             '</div>';
+             due +
+             '<span class="cn-ko">' + (r.ko || r.title || '') + '</span>' +
+             '</a>';
     }).join('');
     list.innerHTML = html;
     var todo = rows.filter(function(r){ return r.due; }).length;
@@ -1059,6 +1074,61 @@ function initFold(el, defFolded){
     inner.appendChild(body);
     initFold(wrap, true);
   });
+})();
+</script>
+<script>
+/* 클래스룸 새 글 알림 (웹 푸시) */
+var AMY_PUSH = {
+  url: "https://pwbnbooyhujyzbmaydtp.supabase.co/rest/v1/amy_push_subs",
+  key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3Ym5ib295aHVqeXpibWF5ZHRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4MTU0NTQsImV4cCI6MjA5NjM5MTQ1NH0.BwKTVgnswWqPlAdclwMpso6kcEA2x0d502CXv2DvBIE",
+  vapid: "BNKcryaAEMiJ79aU62ZVDKIYeWSfMR_OHEQa9PWcB4VrtvAUpvcVHKiBuqHFLKvEl8LOJT10YPZxzK5W7LOqCSA"
+};
+function b64ToU8(s){
+  var pad = '='.repeat((4 - s.length % 4) % 4);
+  var b = atob((s + pad).replace(/-/g,'+').replace(/_/g,'/'));
+  var u = new Uint8Array(b.length);
+  for (var i=0;i<b.length;i++) u[i]=b.charCodeAt(i);
+  return u;
+}
+function isStandalone(){
+  return window.navigator.standalone === true ||
+         (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+}
+function bellSet(text, cls){
+  var b = document.getElementById('cnBell'); if(!b) return;
+  b.textContent = text; b.className = 'cn-bell' + (cls ? ' ' + cls : '');
+}
+function amyPushOn(){
+  if (!('serviceWorker' in navigator) || !('PushManager' in window)){
+    bellSet('홈 화면에 추가해야 알림', 'warn'); return;
+  }
+  Notification.requestPermission().then(function(p){
+    if (p !== 'granted'){ bellSet('알림 꺼짐', 'warn'); return; }
+    navigator.serviceWorker.ready.then(function(reg){
+      return reg.pushManager.getSubscription().then(function(sub){
+        return sub || reg.pushManager.subscribe({userVisibleOnly:true, applicationServerKey:b64ToU8(AMY_PUSH.vapid)});
+      });
+    }).then(function(sub){
+      var j = sub.toJSON();
+      return fetch(AMY_PUSH.url, {
+        method:'POST',
+        headers:{'apikey':AMY_PUSH.key,'Authorization':'Bearer '+AMY_PUSH.key,
+                 'Content-Type':'application/json','Prefer':'resolution=merge-duplicates'},
+        body: JSON.stringify({endpoint: j.endpoint, sub: j})
+      });
+    }).then(function(){ bellSet('🔔 알림 켜짐','on'); })
+      .catch(function(){ bellSet('알림 실패','warn'); });
+  });
+}
+(function(){
+  var b = document.getElementById('cnBell'); if(!b) return;
+  if (!('PushManager' in window)){
+    bellSet(isStandalone() ? '이 폰은 알림 안 됨' : '홈 화면에 추가하면 알림', 'warn'); return;
+  }
+  if (Notification.permission === 'granted'){
+    navigator.serviceWorker.ready.then(function(reg){ return reg.pushManager.getSubscription(); })
+      .then(function(sub){ if (sub) bellSet('🔔 알림 켜짐','on'); });
+  }
 })();
 </script>
 </body>
