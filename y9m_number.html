@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>Number and calculation 수와 계산</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e3f2ee;
+  --card: #ffffff;
+  --card2: #eef3fb;
+  --accent: #0d9488;
+  --green: #16a34a;
+  --yellow: #c97a06;
+  --pink: #db2777;
+  --orange: #ea580c;
+  --purple: #6d5dfc;
+  --text: #243b6b;
+  --strong: #16223f;
+  --muted: #6b7a99;
+  --border: rgba(36,59,107,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito','Noto Sans KR',sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(150deg, #d6f5ec 0%, #dceff0 32%, #e4e9fb 70%, #e7e2fb 100%);
+  background-attachment: fixed;
+}
+
+/* HEADER */
+header {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 18px;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 10px;
+}
+.header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(20,184,166,0.08); text-decoration: none; flex-shrink:0; }
+.header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
+.header-text { flex: 1; min-width:0; }
+.header-title { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* Claude 묻기 / 채점 버튼 (헤더) */
+.header-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.btn-claude { background: rgba(109,93,252,0.14); border: 1.5px solid rgba(109,93,252,0.4);
+  color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  font-family: inherit; white-space: nowrap; cursor: pointer; }
+.btn-claude:hover { background: rgba(109,93,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(13,148,136,0.12); border-color: rgba(13,148,136,0.4); color: #0d9488; }
+.btn-claude.grade:hover { background: rgba(13,148,136,0.24); }
+
+/* HERO */
+.hero { text-align: center; padding: 28px 20px 18px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: var(--strong); letter-spacing: -0.5px; }
+.hero h1 span { color: var(--accent); }
+.hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.stat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 5px 12px; font-size: 11.5px; font-weight: 700; color: var(--accent); }
+
+/* EQUATION BOX */
+.eq-box { max-width: 720px; margin: 0 auto 24px; padding: 0 16px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width:480px){ .eq-box { grid-template-columns: 1fr; } }
+.eq-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.eq-label.aerobic { color: var(--green); }
+.eq-label.anaerobic { color: var(--orange); }
+.eq-formula { font-size: 13px; font-weight: 700; color: var(--strong); line-height: 1.5; }
+
+/* TABS */
+.tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
+.tabs { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
+  font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
+.tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* SEARCH BOX (단어장) */
+.search-wrap { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; }
+.search-input { width: 100%; background: var(--card); border: 1.5px solid var(--border); color: var(--text);
+  padding: 12px 16px; border-radius: 12px; font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.15s; }
+.search-input:focus { border-color: var(--accent); background: var(--card2); }
+.search-input::placeholder { color: var(--muted); }
+
+/* SPELLING TEST (탭 4) */
+.spell-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.spell-stats { display: flex; justify-content: space-between; align-items: center; padding: 10px 0 16px; font-size: 13px; color: var(--muted); font-weight: 700; }
+.spell-stats b { color: var(--accent); }
+.spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
+.spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
+.spell-ko { font-size: 22px; font-weight: 900; color: var(--strong); margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+.spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
+.spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: var(--strong);
+  padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
+  letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
+.spell-input:focus { border-color: var(--accent); }
+.spell-input.disabled { opacity: 0.6; pointer-events: none; }
+.spell-feedback { font-family: 'Courier New', monospace; font-size: 20px; letter-spacing: 3px;
+  text-align: center; padding: 10px; min-height: 42px; font-weight: 800; margin-bottom: 12px;
+  background: var(--card2); border-radius: 10px; border: 1px solid var(--border); }
+.spell-feedback .ok { color: var(--green); }
+.spell-feedback .bad { color: #ff6b6b; }
+.spell-feedback .miss { color: var(--muted); }
+.spell-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.spell-btn { padding: 12px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.spell-btn-show:hover { background: rgba(251,191,36,0.22); }
+.spell-btn-next { background: rgba(20,184,166,0.14); border-color: rgba(20,184,166,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(20,184,166,0.24); }
+.spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
+  color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
+  color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner b { color: var(--strong); font-size: 16px; letter-spacing: 1px; }
+
+/* SECTION HEADERS (vocab filter) */
+.filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
+.filter-wrap::-webkit-scrollbar { display: none; }
+.filter-tabs { display: flex; gap: 8px; white-space: nowrap; padding-bottom: 2px; }
+.filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
+  border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
+  font-family: inherit; transition: all 0.2s; white-space: nowrap; }
+.filter-btn.active, .filter-btn:hover { background: rgba(20,184,166,0.12); border-color: var(--accent); color: var(--accent); }
+
+.section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
+.section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+.sec-count { color: var(--accent); font-weight: 900; margin-left: 4px; }
+.vcard-num { grid-column: 1 / -1; font-size: 11px; font-weight: 900; color: var(--accent); opacity: 0.65; margin-bottom: 1px; }
+.section-line { flex: 1; height: 1px; background: var(--border); }
+
+/* CARDS WRAP */
+.cards-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+/* VOCAB CARD */
+.vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+  display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
+.vcard:hover { border-color: rgba(20,184,166,0.3); transform: translateY(-1px); }
+.vcard-left { min-width: 0; }
+.vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
+.cat-organ  { background: rgba(20,184,166,0.12); color: var(--accent); }
+.cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
+.cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
+.cat-gas    { background: rgba(109,93,252,0.12); color: var(--purple); }
+
+.vcard-en { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px; }
+.vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
+.vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
+
+/* 단어장 좌(영어)|우(한글) + 가림 */
+.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
+.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
+.vcard-en{grid-column:1;grid-row:2;}
+.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
+.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
+.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
+.dh-btns{display:flex;gap:5px;flex-shrink:0;}
+.blind-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
+#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
+.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+.btn-speak { background: rgba(20,184,166,0.1); border: 1.5px solid rgba(20,184,166,0.25);
+  color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
+.btn-speak:hover { background: rgba(20,184,166,0.2); transform: scale(1.05); }
+
+.btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
+  color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
+  cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; transition: all 0.15s; white-space: nowrap; font-family: inherit; }
+.btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
+.btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* NOTES (탭: 핵심노트) */
+.chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
+.chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.chapter-head .ch-icon { font-size: 22px; }
+.chapter-head .ch-text { flex: 1; min-width: 0; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: var(--strong); margin: 0; }
+.chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.btn-pdf { background: rgba(109,93,252,0.12); border: 1.5px solid rgba(109,93,252,0.35);
+  color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  flex-shrink: 0; font-family: inherit; white-space: nowrap; }
+.btn-pdf:hover { background: rgba(109,93,252,0.22); border-color: var(--purple); transform: scale(1.03); }
+.notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(20,184,166,0.06); }
+.note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
+.note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
+.note-body b { color: var(--strong); }
+/* 영어 문단 */
+.note-body p.en { color: var(--text); margin-bottom: 3px; }
+/* 한국어 문단 (영어 바로 아래 짝) */
+.note-body p.ko { color: #5b7089; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
+.note-body p.ko:last-child { margin-bottom: 0; }
+.note-body ul.en { margin: 4px 0 4px 20px; }
+.note-body ul.ko { margin: 0 0 12px 20px; color: #5b7089; font-size: 13px; padding-left: 8px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); }
+.note-body ul li { margin-bottom: 3px; }
+.note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
+.note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(20,184,166,0.06); }
+.note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
+  margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
+  object-fit: contain; }
+@media (max-width: 480px) {
+  .note-img { max-width: 100%; max-height: 180px; }
+}
+
+/* QUIZ (서술형 short-answer) */
+.quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.quiz-info { font-size: 12px; color: var(--muted); margin-bottom: 12px; text-align: center;
+  background: var(--card); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); line-height: 1.5; }
+.quiz-info b { color: var(--accent); }
+.q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
+.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center; }
+.q-num .q-marks { background: rgba(109,93,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: var(--strong); line-height: 1.5; margin-bottom: 14px; }
+.q-answer-input {
+  width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
+  padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
+  outline: none; resize: vertical; min-height: 70px; line-height: 1.5;
+}
+.q-answer-input:focus { border-color: var(--accent); }
+.q-show-row { display: flex; gap: 8px; margin-top: 10px; }
+.q-show-row button { flex: 1; padding: 10px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.q-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-btn-show:hover { background: rgba(251,191,36,0.22); }
+
+.q-model {
+  display: none;
+  margin-top: 14px; padding: 14px 14px; background: rgba(20,184,166,0.06);
+  border: 1.5px solid rgba(20,184,166,0.25); border-radius: 10px;
+}
+.q-model.show { display: block; }
+.q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
+.q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
+.q-model .model-text b { color: var(--strong); }
+.q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
+  padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
+.q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.q-model .points ul { margin-left: 16px; }
+.q-model .points li { margin-bottom: 3px; line-height: 1.45; }
+.q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
+  color: #51698a; font-size: 12px; line-height: 1.5;
+  background: rgba(36,59,107,0.05); border-radius: 4px; }
+
+.q-self-rate { display: none; margin-top: 12px; gap: 6px; }
+.q-self-rate.show { display: flex; }
+.q-self-rate button {
+  flex: 1; padding: 9px 4px; border-radius: 8px; font-weight: 800; font-family: inherit;
+  font-size: 12px; cursor: pointer; border: 1.5px solid; transition: all 0.15s;
+}
+.q-self-rate .rate-good { background: rgba(74,222,128,0.12); border-color: rgba(74,222,128,0.4); color: var(--green); }
+.q-self-rate .rate-mid { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-self-rate .rate-bad { background: rgba(244,114,182,0.12); border-color: rgba(244,114,182,0.4); color: var(--pink); }
+.q-self-rate .selected { transform: scale(1.04); border-width: 2px; }
+
+/* FOOTER */
+footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
+.vcard.hidden { display: none; }
+.section-header.hidden { display: none; }
+.allplay-mini{background:var(--accent);border-color:var(--accent);color:#fff;font-size:12.5px;padding:6px 13px;border-radius:15px;box-shadow:0 2px 6px rgba(13,148,136,0.35);}
+.allplay-mini.active{background:var(--purple);border-color:var(--purple);color:#fff;}
+</style>
+<style>
+/* 학년 진도표 (누르면 펼쳐짐) */
+.cur { max-width: 980px; margin: 0 auto 14px; padding: 0 16px; }
+.cur > summary { list-style: none; cursor: pointer; background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12));
+  border-radius: 12px; padding: 11px 15px; font-size: 14px; font-weight: 800; color: var(--strong, #16223f); }
+.cur > summary::-webkit-details-marker { display: none; }
+.cur > summary::before { content: "▸ "; color: var(--accent, #0d9488); }
+.cur[open] > summary::before { content: "▾ "; }
+.cur-body { background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12));
+  border-radius: 14px; padding: 14px 16px 16px; max-width: 980px; margin: 0 auto; }
+.cur-body .teacher { font-size: 12.5px; font-weight: 700; color: var(--text, #243b6b); margin-bottom: 10px; }
+.cur-body .term-card { border: 1px solid var(--border, rgba(36,59,107,.12)); border-radius: 11px; padding: 11px 13px; margin-bottom: 9px; }
+.cur-body .term-tag { display: inline-block; background: var(--accent, #0d9488); color: #fff; font-size: 11px; font-weight: 900;
+  padding: 3px 9px; border-radius: 999px; margin-bottom: 7px; }
+.cur-body .u-body { font-size: 13.5px; line-height: 1.85; color: var(--text, #243b6b); }
+.cur-body .u-body b { color: var(--strong, #16223f); }
+.cur-body .src { font-size: 11.5px; font-weight: 700; color: var(--text, #243b6b); margin-top: 6px; }
+.cur table.rot { width: 100%; border-collapse: collapse; margin-top: 6px; }
+.cur table.rot th, .cur table.rot td { border: 1px solid var(--border, rgba(36,59,107,.12)); padding: 6px 9px; font-size: 12px; font-weight: 700; text-align: left; }
+.cur table.rot th { width: 110px; background: rgba(36,59,107,0.05); }
+</style>
+<style>
+.vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; display: flex; flex-wrap: wrap;
+  align-items: center; gap: 6px; }
+.vtool .search-input { flex: 0 1 48%; max-width: 48%; min-width: 0; padding: 8px 12px; font-size: 13px; }
+.vtool .mem-info { font-size: 12px; font-weight: 800; color: var(--text); white-space: nowrap; }
+.vtool .mem-info { color: var(--strong, #16223f); }
+.vtool .mem-info b { color: #0b4f45; font-weight: 900; }
+.vtool .blind-btn, .vtool .mem-toggle-btn { padding: 5px 10px; color: #0d5c50; border-color: rgba(13,92,80,0.55); background: rgba(255,255,255,0.85); font-weight: 900; }
+.vtool .blind-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.vtool .allplay-mini { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.spellbox > summary { display: none; }
+.spellbox { margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="header-back" href="index.html" aria-label="홈">←</a>
+  <div class="header-icon">🔢</div>
+  <div class="header-text">
+    <div class="header-title">Number and calculation 수와 계산</div>
+    <div class="header-sub">📐 Maths 수학 · Unit 1 · Year 9 · Cambridge Lower Secondary</div>
+  </div>
+  <div class="header-actions">
+    <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제집 채점">📷</a>
+    <a class="btn-claude" id="btn-ask" target="_blank" rel="noopener" href="#" title="이 단원에 대해 Claude에게 질문">💬 Claude</a>
+
+  </div>
+</header>
+
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
+    <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button>
+    <button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
+  </div>
+</div>
+
+<!-- 단어장 -->
+<div class="tab-pane active" id="tab-vocab">
+<div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="41개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9m_number_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div>
+  <div class="filter-wrap">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-cat="all" onclick='filterCards("all")'>전체 All</button>
+      <button class="filter-btn" data-cat="organ" onclick='filterCards("organ")'>🔢 수의 종류 Number types</button>
+      <button class="filter-btn" data-cat="process" onclick='filterCards("process")'>🔟 지수·표준형 Indices</button>
+      <button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>📏 반올림·어림 Rounding</button>
+      <button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>🧮 계산 Calculation</button>
+    </div>
+  </div>
+<div class="section-header" data-cat="organ"><h2>🔢 수의 종류 Number types</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Integer</div>
+    <div class="vcard-ko">정수</div>
+    <div class="vcard-def">A whole number, positive, negative or zero.</div>
+    <div class="vcard-def-ko">양수·음수·0을 포함하는 정수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Integer")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Rational number</div>
+    <div class="vcard-ko">유리수</div>
+    <div class="vcard-def">A number that can be written as a fraction a/b where a and b are integers.</div>
+    <div class="vcard-def-ko">분수 a/b 꼴로 쓸 수 있는 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Rational number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Irrational number</div>
+    <div class="vcard-ko">무리수</div>
+    <div class="vcard-def">A number that cannot be written as a fraction; its decimal never ends or repeats.</div>
+    <div class="vcard-def-ko">분수로 쓸 수 없는 수. 소수가 끝나거나 반복되지 않음.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Irrational number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Square number</div>
+    <div class="vcard-ko">제곱수</div>
+    <div class="vcard-def">The result of multiplying a whole number by itself, such as 25.</div>
+    <div class="vcard-def-ko">같은 정수를 두 번 곱해 나온 수(예 25).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Square number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Square root</div>
+    <div class="vcard-ko">제곱근</div>
+    <div class="vcard-def">The number that gives the original when multiplied by itself; the symbol is √.</div>
+    <div class="vcard-def-ko">제곱하면 원래 수가 되는 수. 기호는 √.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Square root")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Cube number</div>
+    <div class="vcard-ko">세제곱수</div>
+    <div class="vcard-def">The result of multiplying a number by itself three times, such as 27.</div>
+    <div class="vcard-def-ko">같은 수를 세 번 곱해 나온 수(예 27).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Cube number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Cube root</div>
+    <div class="vcard-ko">세제곱근</div>
+    <div class="vcard-def">The number that gives the original when cubed; the symbol is the cube root sign.</div>
+    <div class="vcard-def-ko">세제곱하면 원래 수가 되는 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Cube root")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Terminating decimal</div>
+    <div class="vcard-ko">유한소수</div>
+    <div class="vcard-def">A decimal that stops after a certain number of digits, such as 0.75.</div>
+    <div class="vcard-def-ko">일정 자리에서 끝나는 소수(예 0.75).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Terminating decimal")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Recurring decimal</div>
+    <div class="vcard-ko">순환소수</div>
+    <div class="vcard-def">A decimal with a digit or group of digits that repeats forever.</div>
+    <div class="vcard-def-ko">같은 숫자가 끝없이 반복되는 소수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Recurring decimal")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Natural number</div>
+    <div class="vcard-ko">자연수</div>
+    <div class="vcard-def">A counting number: 1, 2, 3, 4 and so on.</div>
+    <div class="vcard-def-ko">1, 2, 3처럼 세는 데 쓰는 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Natural number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Prime number</div>
+    <div class="vcard-ko">소수</div>
+    <div class="vcard-def">A number with exactly two factors, itself and 1.</div>
+    <div class="vcard-def-ko">약수가 자기 자신과 1뿐인 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Prime number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Factor</div>
+    <div class="vcard-ko">약수</div>
+    <div class="vcard-def">A whole number that divides exactly into another number.</div>
+    <div class="vcard-def-ko">어떤 수를 나누어떨어지게 하는 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Factor")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Multiple</div>
+    <div class="vcard-ko">배수</div>
+    <div class="vcard-def">The result of multiplying a number by a whole number.</div>
+    <div class="vcard-def-ko">어떤 수에 정수를 곱해 나온 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Multiple")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Perfect square</div>
+    <div class="vcard-ko">완전제곱수</div>
+    <div class="vcard-def">A number whose square root is a whole number.</div>
+    <div class="vcard-def-ko">제곱근이 정수인 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Perfect square")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="process"><h2>🔟 지수·표준형 Indices</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Index</div>
+    <div class="vcard-ko">지수</div>
+    <div class="vcard-def">The small raised number that shows how many times the base is multiplied by itself.</div>
+    <div class="vcard-def-ko">밑을 몇 번 곱하는지 나타내는 작은 위 숫자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Index")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Indices</div>
+    <div class="vcard-ko">지수(복수형)</div>
+    <div class="vcard-def">The plural of index.</div>
+    <div class="vcard-def-ko">index의 복수형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Indices")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Base</div>
+    <div class="vcard-ko">밑</div>
+    <div class="vcard-def">The number that is raised to a power.</div>
+    <div class="vcard-def-ko">거듭제곱에서 반복해 곱하는 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Base")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Power</div>
+    <div class="vcard-ko">거듭제곱</div>
+    <div class="vcard-def">Another word for index; also the whole expression such as 2 to the power 5.</div>
+    <div class="vcard-def-ko">지수를 가리키는 말. 거듭제곱 식 전체를 뜻하기도 함.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Power")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Index law</div>
+    <div class="vcard-ko">지수 법칙</div>
+    <div class="vcard-def">A rule for adding or subtracting indices when powers of the same base are multiplied or divided.</div>
+    <div class="vcard-def-ko">같은 밑의 거듭제곱을 곱하거나 나눌 때 지수를 더하거나 빼는 규칙.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Index law")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Negative index</div>
+    <div class="vcard-ko">음의 지수</div>
+    <div class="vcard-def">An index below zero, meaning one over that power.</div>
+    <div class="vcard-def-ko">0보다 작은 지수. 그 거듭제곱의 역수를 뜻함.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Negative index")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Standard form</div>
+    <div class="vcard-ko">표준형</div>
+    <div class="vcard-def">A way of writing numbers as A multiplied by a power of ten, where A is at least 1 and less than 10.</div>
+    <div class="vcard-def-ko">수를 A × 10의 거듭제곱 꼴로 쓰는 방법(1 ≤ A < 10).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Standard form")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Ordinary number</div>
+    <div class="vcard-ko">보통 수</div>
+    <div class="vcard-def">A number written in the usual way rather than in standard form.</div>
+    <div class="vcard-def-ko">표준형이 아닌 보통 방식으로 쓴 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Ordinary number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Exponent</div>
+    <div class="vcard-ko">지수</div>
+    <div class="vcard-def">Another word for index, used in many textbooks.</div>
+    <div class="vcard-def-ko">index와 같은 뜻으로 쓰는 말.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Exponent")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="blood"><h2>📏 반올림·어림 Rounding</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Round</div>
+    <div class="vcard-ko">반올림하다</div>
+    <div class="vcard-def">To change a number to a nearby simpler value.</div>
+    <div class="vcard-def-ko">수를 가까운 간단한 값으로 바꾸다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Round")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Decimal place</div>
+    <div class="vcard-ko">소수 자리</div>
+    <div class="vcard-def">The position of a digit after the decimal point.</div>
+    <div class="vcard-def-ko">소수점 뒤 숫자의 자리.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Decimal place")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Significant figure</div>
+    <div class="vcard-ko">유효숫자</div>
+    <div class="vcard-def">A digit counted from the first non-zero digit of a number.</div>
+    <div class="vcard-def-ko">0이 아닌 첫 숫자부터 세는 숫자.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Significant figure")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Estimate</div>
+    <div class="vcard-ko">어림하다</div>
+    <div class="vcard-def">To find an approximate answer, usually by rounding to 1 significant figure.</div>
+    <div class="vcard-def-ko">대략의 답을 구하다. 보통 유효숫자 1자리로 반올림해서 함.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Estimate")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Approximately</div>
+    <div class="vcard-ko">대략</div>
+    <div class="vcard-def">Nearly but not exactly; the symbol is a wavy equals sign.</div>
+    <div class="vcard-def-ko">정확하지는 않지만 거의 같음.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Approximately")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Upper bound</div>
+    <div class="vcard-ko">상한</div>
+    <div class="vcard-def">The largest value a rounded measurement could have been.</div>
+    <div class="vcard-def-ko">반올림한 값이 될 수 있었던 가장 큰 값.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Upper bound")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Lower bound</div>
+    <div class="vcard-ko">하한</div>
+    <div class="vcard-def">The smallest value a rounded measurement could have been.</div>
+    <div class="vcard-def-ko">반올림한 값이 될 수 있었던 가장 작은 값.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Lower bound")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Accurate</div>
+    <div class="vcard-ko">정확한</div>
+    <div class="vcard-def">Very close to the true value.</div>
+    <div class="vcard-def-ko">참값에 매우 가까운.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Accurate")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="gas"><h2>🧮 계산 Calculation</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Order of operations</div>
+    <div class="vcard-ko">계산 순서</div>
+    <div class="vcard-def">The rule that brackets come first, then indices, then division and multiplication, then addition and subtraction.</div>
+    <div class="vcard-def-ko">괄호 → 지수 → 나눗셈·곱셈 → 덧셈·뺄셈 순으로 계산하는 규칙.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Order of operations")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Bracket</div>
+    <div class="vcard-ko">괄호</div>
+    <div class="vcard-def">A symbol that groups part of a calculation so it is done first.</div>
+    <div class="vcard-def-ko">먼저 계산할 부분을 묶는 기호.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Bracket")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Reciprocal</div>
+    <div class="vcard-ko">역수</div>
+    <div class="vcard-def">One divided by a number; multiplying by it is the same as dividing.</div>
+    <div class="vcard-def-ko">1을 그 수로 나눈 값. 곱하면 나누는 것과 같음.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Reciprocal")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Negative number</div>
+    <div class="vcard-ko">음수</div>
+    <div class="vcard-def">A number less than zero.</div>
+    <div class="vcard-def-ko">0보다 작은 수.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Negative number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Sum</div>
+    <div class="vcard-ko">합</div>
+    <div class="vcard-def">The answer to an addition.</div>
+    <div class="vcard-def-ko">덧셈의 결과.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sum")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Difference</div>
+    <div class="vcard-ko">차</div>
+    <div class="vcard-def">The answer to a subtraction.</div>
+    <div class="vcard-def-ko">뺄셈의 결과.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Difference")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Product</div>
+    <div class="vcard-ko">곱</div>
+    <div class="vcard-def">The answer to a multiplication.</div>
+    <div class="vcard-def-ko">곱셈의 결과.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Product")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Quotient</div>
+    <div class="vcard-ko">몫</div>
+    <div class="vcard-def">The answer to a division.</div>
+    <div class="vcard-def-ko">나눗셈의 결과.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Quotient")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Inverse operation</div>
+    <div class="vcard-ko">역연산</div>
+    <div class="vcard-def">The operation that undoes another, such as subtraction undoing addition.</div>
+    <div class="vcard-def-ko">다른 연산을 되돌리는 연산(예 뺄셈은 덧셈을 되돌림).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Inverse operation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Mental method</div>
+    <div class="vcard-ko">암산</div>
+    <div class="vcard-def">Working out an answer in your head without writing every step.</div>
+    <div class="vcard-def-ko">쓰지 않고 머릿속으로 계산하는 방법.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Mental method")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- 핵심노트 -->
+<div class="tab-pane" id="tab-notes">
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🔢</span>
+    <div class="ch-text">
+      <h2>1.1 Types of number</h2>
+      <span class="ch-sub">수의 종류 · 유리수와 무리수</span>
+    </div>
+    
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Rational and irrational numbers (유리수와 무리수)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>A <b>rational number</b> can be written as a fraction <b>a/b</b>, where a and b are integers and b is not 0.</p><p class='ko'><b>유리수</b>는 분수 <b>a/b</b> 꼴로 쓸 수 있는 수입니다(a·b는 정수, b는 0이 아님).</p><p class='en'>Every integer, terminating decimal and recurring decimal is rational.</p><p class='ko'>모든 정수, 끝나는 소수, 순환소수는 유리수입니다.</p><p class='en'>An <b>irrational number</b> cannot be written as a fraction. Its decimal never ends and never repeats — for example <b>√2</b> and <b>π</b>.</p><p class='ko'><b>무리수</b>는 분수로 쓸 수 없습니다. 소수가 끝나지도 반복되지도 않습니다 — 예를 들어 <b>√2</b>, <b>π</b>입니다.</p><div style='border-left:4px solid #0d9488;background:#f0fdfa;padding:10px 14px;margin:10px 0;border-radius:8px'><p class='en'><b>📝 Example</b></p><p class='en'>0.75 = 3/4 → rational. 0.333… = 1/3 → rational (recurring).</p><p class='en'>√9 = 3 → rational (it is a perfect square). √10 = 3.1622… → irrational.</p><p class='ko'>√ 안이 <b>제곱수</b>면 유리수, 아니면 무리수입니다.</p></div></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Square roots and cube roots (제곱근과 세제곱근)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>A <b>square number</b> is a number multiplied by itself: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100.</p><p class='ko'><b>제곱수</b>는 같은 수를 두 번 곱한 수입니다.</p><p class='en'>The <b>square root</b> (√) undoes squaring. √49 = 7.</p><p class='ko'><b>제곱근</b>(√)은 제곱을 되돌립니다.</p><p class='en'>A <b>cube number</b> is a number multiplied by itself three times: 1, 8, 27, 64, 125. The <b>cube root</b> (∛) undoes cubing. ∛64 = 4.</p><p class='ko'><b>세제곱수</b>는 같은 수를 세 번 곱한 수이고, <b>세제곱근</b>(∛)은 세제곱을 되돌립니다.</p><div style='border-left:4px solid #0d9488;background:#f0fdfa;padding:10px 14px;margin:10px 0;border-radius:8px'><p class='en'><b>📝 Estimating √30</b></p><p class='en'>25 &lt; 30 &lt; 36, so 5 &lt; √30 &lt; 6. √30 ≈ 5.5.</p><p class='ko'>양옆의 <b>제곱수 사이에 끼워</b> 어림합니다.</p></div></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🔟</span>
+    <div class="ch-text">
+      <h2>1.2 Indices and standard form</h2>
+      <span class="ch-sub">지수와 표준형</span>
+    </div>
+    
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Index laws (지수 법칙)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>In <b>5<sup>3</sup></b>, 5 is the <b>base</b> and 3 is the <b>index</b> (or power). It means 5 × 5 × 5.</p><p class='ko'><b>5<sup>3</sup></b>에서 5는 <b>밑</b>, 3은 <b>지수</b>입니다. 5 × 5 × 5라는 뜻입니다.</p><p class='en'>When you <b>multiply</b> powers of the same base, you <b>add</b> the indices. When you <b>divide</b>, you <b>subtract</b> them.</p><p class='ko'>같은 밑끼리 <b>곱하면 지수를 더하고</b>, <b>나누면 지수를 뺍니다</b>.</p><p class='en'>Any number to the power <b>0</b> is <b>1</b>. A <b>negative index</b> means one over that power.</p><p class='ko'>지수가 <b>0</b>이면 값은 <b>1</b>이고, <b>음의 지수</b>는 그 거듭제곱의 <b>역수</b>를 뜻합니다.</p><div style='border-left:4px solid #0d9488;background:#f0fdfa;padding:10px 14px;margin:10px 0;border-radius:8px'><p class='en'><b>📝 Example</b></p><p class='en'>2<sup>4</sup> × 2<sup>3</sup> = 2<sup>7</sup> = 128</p><p class='en'>3<sup>6</sup> ÷ 3<sup>2</sup> = 3<sup>4</sup> = 81</p><p class='en'>7<sup>0</sup> = 1&nbsp;&nbsp;&nbsp;5<sup>−2</sup> = 1/5<sup>2</sup> = 1/25</p></div></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Standard form (표준형)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'><b>Standard form</b> writes very large or very small numbers as <b>A × 10<sup>n</sup></b>, where <b>1 ≤ A &lt; 10</b> and n is an integer.</p><p class='ko'><b>표준형</b>은 아주 크거나 아주 작은 수를 <b>A × 10<sup>n</sup></b> 꼴로 씁니다(<b>1 ≤ A &lt; 10</b>, n은 정수).</p><p class='en'>A <b>positive</b> index makes the number bigger; a <b>negative</b> index makes it smaller than 1.</p><p class='ko'>지수가 <b>양수</b>면 큰 수, <b>음수</b>면 1보다 작은 수입니다.</p><div style='border-left:4px solid #0d9488;background:#f0fdfa;padding:10px 14px;margin:10px 0;border-radius:8px'><p class='en'><b>📝 Example</b></p><p class='en'>4 500 000 = <b>4.5 × 10<sup>6</sup></b> (move the point 6 places left)</p><p class='en'>0.000 32 = <b>3.2 × 10<sup>−4</sup></b> (move the point 4 places right)</p><p class='ko'>소수점을 옮긴 <b>칸 수</b>가 지수가 됩니다.</p></div></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📏</span>
+    <div class="ch-text">
+      <h2>1.3 Rounding and estimating</h2>
+      <span class="ch-sub">반올림과 어림</span>
+    </div>
+    
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Decimal places and significant figures (소수 자리와 유효숫자)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'><b>Decimal places (d.p.)</b> are counted after the decimal point. <b>Significant figures (s.f.)</b> are counted from the first non-zero digit.</p><p class='ko'><b>소수 자리(d.p.)</b>는 소수점 뒤부터 세고, <b>유효숫자(s.f.)</b>는 <b>0이 아닌 첫 숫자</b>부터 셉니다.</p><p class='en'>Look at the <b>next digit</b>: if it is 5 or more, <b>round up</b>; if it is 4 or less, <b>round down</b>.</p><p class='ko'><b>다음 자리 숫자</b>를 봅니다. 5 이상이면 <b>올리고</b>, 4 이하면 <b>버립니다</b>.</p><div style='border-left:4px solid #0d9488;background:#f0fdfa;padding:10px 14px;margin:10px 0;border-radius:8px'><p class='en'><b>📝 Example — 3.647</b></p><p class='en'>to 1 d.p. → 3.6&nbsp;&nbsp;|&nbsp;&nbsp;to 2 d.p. → 3.65</p><p class='en'>to 2 s.f. → 3.6&nbsp;&nbsp;|&nbsp;&nbsp;0.004 072 to 2 s.f. → 0.0041</p><p class='ko'>0.004072에서 유효숫자는 <b>4</b>부터 셉니다.</p></div></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Estimating an answer (답 어림하기)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>To <b>estimate</b>, round each number to <b>1 significant figure</b> and then calculate. The symbol <b>≈</b> means 'approximately equal to'.</p><p class='ko'><b>어림</b>할 때는 각 수를 <b>유효숫자 1자리</b>로 반올림한 뒤 계산합니다. <b>≈</b>는 '거의 같다'는 뜻입니다.</p><p class='en'>Estimating checks whether an answer is <b>sensible</b> — it is not the exact answer.</p><p class='ko'>어림은 답이 <b>말이 되는지</b> 확인하는 것이지 정확한 답이 아닙니다.</p><div style='border-left:4px solid #0d9488;background:#f0fdfa;padding:10px 14px;margin:10px 0;border-radius:8px'><p class='en'><b>📝 Example</b></p><p class='en'>38.7 × 5.2 ≈ 40 × 5 = <b>200</b></p><p class='en'>612 ÷ 29 ≈ 600 ÷ 30 = <b>20</b></p></div></div>
+  
+</div></div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🧮</span>
+    <div class="ch-text">
+      <h2>1.4 Order of operations and negative numbers</h2>
+      <span class="ch-sub">계산 순서와 음수</span>
+    </div>
+    
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>Order of operations (계산 순서)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>Work in this order: <b>Brackets → Indices → Division and Multiplication → Addition and Subtraction</b> (BIDMAS).</p><p class='ko'>계산 순서는 <b>괄호 → 지수 → 나눗셈·곱셈 → 덧셈·뺄셈</b>입니다(BIDMAS).</p><p class='en'>Division and multiplication have the <b>same rank</b>, so work from <b>left to right</b>. The same is true for addition and subtraction.</p><p class='ko'>나눗셈과 곱셈은 <b>순위가 같아</b> <b>왼쪽부터</b> 차례로 합니다. 덧셈·뺄셈도 마찬가지입니다.</p><div style='border-left:4px solid #0d9488;background:#f0fdfa;padding:10px 14px;margin:10px 0;border-radius:8px'><p class='en'><b>📝 Example</b></p><p class='en'>5 + 3 × 2<sup>2</sup> = 5 + 3 × 4 = 5 + 12 = <b>17</b></p><p class='en'>(5 + 3) × 2 = 8 × 2 = <b>16</b></p></div></div>
+  
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>Calculating with negative numbers (음수 계산)</h3>
+    
+  </div>
+  <div class="note-body"><p class='en'>Two <b>like signs</b> give a plus; two <b>unlike signs</b> give a minus.</p><p class='ko'>부호가 <b>같으면 +</b>, <b>다르면 −</b>가 됩니다.</p><p class='en'>The <b>reciprocal</b> of a number is 1 divided by it — dividing by a fraction is the same as multiplying by its reciprocal.</p><p class='ko'>어떤 수의 <b>역수</b>는 1을 그 수로 나눈 것입니다. 분수로 나누는 것은 <b>역수를 곱하는 것</b>과 같습니다.</p><div style='border-left:4px solid #0d9488;background:#f0fdfa;padding:10px 14px;margin:10px 0;border-radius:8px'><p class='en'><b>📝 Example</b></p><p class='en'>−6 × −4 = <b>+24</b>&nbsp;&nbsp;|&nbsp;&nbsp;−20 ÷ 5 = <b>−4</b></p><p class='en'>8 ÷ 2/3 = 8 × 3/2 = <b>12</b></p></div></div>
+  
+</div></div>
+</div>
+</div>
+
+<!-- 퀴즈 (서술형) -->
+<div class="tab-pane" id="tab-quiz">
+  <div class="quiz-wrap">
+    <div class="quiz-info">
+      📝 <b>Written-answer practice</b> · 시험 형식: 서술형<br>
+      답을 영어로 써본 다음 <b>Show model answer</b>를 눌러 비교하세요.
+    </div>
+    <div id="quiz-list"><div class="q-card" id="q-card-0">
+  <div class="q-num"><span>Question 1 of 8</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Explain why <b>√2</b> is an <b>irrational</b> number but <b>√16</b> is not.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(0)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">16 is a perfect square, so √16 = 4, a whole number, which is rational. 2 is not a perfect square, so √2 = 1.4142… never ends and never repeats, so it cannot be written as a fraction.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>√16 = 4, a whole number / can be written as a fraction (1)</li>
+      <li>√2 does not end or repeat, so it cannot be written as a fraction (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 √ 안이 제곱수면 유리수, 아니면 무리수다.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(0,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(0,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(0,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-1">
+  <div class="q-num"><span>Question 2 of 8</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Work out <b>3<sup>5</sup> ÷ 3<sup>3</sup></b>. Give your answer as an ordinary number.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(1)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">3^5 ÷ 3^3 = 3^(5−3) = 3^2 = 9.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>subtracts the indices to get 3^2 (1)</li>
+      <li>answer 9 (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 같은 밑끼리 나누면 지수를 뺀다.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(1,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(1,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(1,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-2">
+  <div class="q-num"><span>Question 3 of 8</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Write <b>0.000 58</b> in <b>standard form</b>.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(2)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">5.8 × 10^(−4).</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>A = 5.8, so that 1 ≤ A < 10 (1)</li>
+      <li>index −4 (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 소수점을 오른쪽으로 옮긴 칸 수가 음의 지수가 된다.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(2,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(2,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(2,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-3">
+  <div class="q-num"><span>Question 4 of 8</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">Round <b>0.020 749</b> to <b>2 significant figures</b>.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(3)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">0.021</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>starts counting from the first non-zero digit, 2 (1)</li>
+      <li>answer 0.021 (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 유효숫자는 0이 아닌 첫 숫자부터 센다.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(3,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(3,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(3,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-4">
+  <div class="q-num"><span>Question 5 of 8</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text"><b>Estimate</b> the value of <b>41.6 × 19.3</b>. Show your working.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(4)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">41.6 ≈ 40 and 19.3 ≈ 20, so 40 × 20 = 800.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>rounds both numbers to 1 significant figure (1)</li>
+      <li>estimate 800 (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 두 수를 유효숫자 1자리로 반올림한 뒤 곱한다.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(4,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(4,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(4,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-5">
+  <div class="q-num"><span>Question 6 of 8</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Work out <b>12 − 4 × (2 + 1)<sup>2</sup></b>.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(5)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">Brackets first: (2+1) = 3. Then indices: 3^2 = 9. Then multiply: 4 × 9 = 36. Then subtract: 12 − 36 = −24.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>brackets worked out first (1)</li>
+      <li>index worked out before multiplying (1)</li>
+      <li>answer −24 (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 괄호 → 지수 → 곱셈 → 뺄셈 순서(BIDMAS).</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(5,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(5,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(5,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-6">
+  <div class="q-num"><span>Question 7 of 8</span> <span class="q-marks">3 marks</span></div>
+  <div class="q-text">Explain what the <b>reciprocal</b> of a number is, and use it to work out <b>6 ÷ 3/4</b>.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(6)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">The reciprocal of a number is 1 divided by that number, so the reciprocal of 3/4 is 4/3. Dividing by a fraction is the same as multiplying by its reciprocal: 6 × 4/3 = 8.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>reciprocal = 1 divided by the number / the fraction turned upside down (1)</li>
+      <li>changes the division into 6 × 4/3 (1)</li>
+      <li>answer 8 (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 분수로 나누기 = 역수를 곱하기.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(6,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(6,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(6,'bad')">😅 다시</button>
+  </div>
+</div>
+<div class="q-card" id="q-card-7">
+  <div class="q-num"><span>Question 8 of 8</span> <span class="q-marks">2 marks</span></div>
+  <div class="q-text">A length is <b>7.4 cm</b> to <b>1 decimal place</b>. Write down its <b>lower bound</b> and <b>upper bound</b>.</div>
+  <textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea>
+  <div class="q-show-row">
+    <button class="q-btn-show" onclick="showModel(7)">👁️ Show model answer</button>
+  </div>
+  <div class="q-model">
+    <h4>✅ Model answer</h4>
+    <div class="model-text">Lower bound 7.35 cm, upper bound 7.45 cm.</div>
+    <div class="points">
+      <h5>🎯 Marking points (look for these)</h5>
+      <ul>
+      <li>lower bound 7.35 (1)</li>
+      <li>upper bound 7.45 (1)</li>
+      </ul>
+    </div>
+    <span class="ko-help">💡 반올림 자리의 절반(0.05)을 빼고 더한다.</span>
+  </div>
+  <div class="q-self-rate">
+    <button class="rate-good" onclick="rateSelf(7,'good')">😎 잘함</button>
+    <button class="rate-mid" onclick="rateSelf(7,'mid')">🤔 부분</button>
+    <button class="rate-bad" onclick="rateSelf(7,'bad')">😅 다시</button>
+  </div>
+</div></div>
+  </div>
+</div>
+
+<!-- 단어시험 -->
+<div class="tab-pane" id="tab-spelling">
+  <div class="spell-wrap">
+    <div class="spell-stats">
+      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
+      <div>📚 <span id="sp-remaining">41</span> 남음</div>
+    </div>
+    <div class="spell-card" id="spell-card">
+      <span class="spell-cat" id="sp-cat">CATEGORY</span>
+      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
+      <div class="spell-def" id="sp-def">English definition</div>
+      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
+      <div class="spell-feedback" id="sp-feedback"></div>
+      <div class="spell-input-row">
+        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
+      </div>
+      <div class="spell-buttons">
+        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
+        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>Number and calculation 수와 계산 · science-vocab · <span style="opacity:.5">v20260904-221312</span></footer>
+
+<script>
+const QUIZ_DATA = [{"q": "Explain why <b>√2</b> is an <b>irrational</b> number but <b>√16</b> is not.", "marks": 2, "sample_answer": "16 is a perfect square, so √16 = 4, a whole number, which is rational. 2 is not a perfect square, so √2 = 1.4142… never ends and never repeats, so it cannot be written as a fraction.", "mark_points": ["√16 = 4, a whole number / can be written as a fraction (1)", "√2 does not end or repeat, so it cannot be written as a fraction (1)"], "ko_hint": "√ 안이 제곱수면 유리수, 아니면 무리수다."}, {"q": "Work out <b>3<sup>5</sup> ÷ 3<sup>3</sup></b>. Give your answer as an ordinary number.", "marks": 2, "sample_answer": "3^5 ÷ 3^3 = 3^(5−3) = 3^2 = 9.", "mark_points": ["subtracts the indices to get 3^2 (1)", "answer 9 (1)"], "ko_hint": "같은 밑끼리 나누면 지수를 뺀다."}, {"q": "Write <b>0.000 58</b> in <b>standard form</b>.", "marks": 2, "sample_answer": "5.8 × 10^(−4).", "mark_points": ["A = 5.8, so that 1 ≤ A < 10 (1)", "index −4 (1)"], "ko_hint": "소수점을 오른쪽으로 옮긴 칸 수가 음의 지수가 된다."}, {"q": "Round <b>0.020 749</b> to <b>2 significant figures</b>.", "marks": 2, "sample_answer": "0.021", "mark_points": ["starts counting from the first non-zero digit, 2 (1)", "answer 0.021 (1)"], "ko_hint": "유효숫자는 0이 아닌 첫 숫자부터 센다."}, {"q": "<b>Estimate</b> the value of <b>41.6 × 19.3</b>. Show your working.", "marks": 2, "sample_answer": "41.6 ≈ 40 and 19.3 ≈ 20, so 40 × 20 = 800.", "mark_points": ["rounds both numbers to 1 significant figure (1)", "estimate 800 (1)"], "ko_hint": "두 수를 유효숫자 1자리로 반올림한 뒤 곱한다."}, {"q": "Work out <b>12 − 4 × (2 + 1)<sup>2</sup></b>.", "marks": 3, "sample_answer": "Brackets first: (2+1) = 3. Then indices: 3^2 = 9. Then multiply: 4 × 9 = 36. Then subtract: 12 − 36 = −24.", "mark_points": ["brackets worked out first (1)", "index worked out before multiplying (1)", "answer −24 (1)"], "ko_hint": "괄호 → 지수 → 곱셈 → 뺄셈 순서(BIDMAS)."}, {"q": "Explain what the <b>reciprocal</b> of a number is, and use it to work out <b>6 ÷ 3/4</b>.", "marks": 3, "sample_answer": "The reciprocal of a number is 1 divided by that number, so the reciprocal of 3/4 is 4/3. Dividing by a fraction is the same as multiplying by its reciprocal: 6 × 4/3 = 8.", "mark_points": ["reciprocal = 1 divided by the number / the fraction turned upside down (1)", "changes the division into 6 × 4/3 (1)", "answer 8 (1)"], "ko_hint": "분수로 나누기 = 역수를 곱하기."}, {"q": "A length is <b>7.4 cm</b> to <b>1 decimal place</b>. Write down its <b>lower bound</b> and <b>upper bound</b>.", "marks": 2, "sample_answer": "Lower bound 7.35 cm, upper bound 7.45 cm.", "mark_points": ["lower bound 7.35 (1)", "upper bound 7.45 (1)"], "ko_hint": "반올림 자리의 절반(0.05)을 빼고 더한다."}];
+const VOCAB_DATA = [{"en": "Integer", "ko": "정수", "def_en": "A whole number, positive, negative or zero.", "cat": "organ"}, {"en": "Rational number", "ko": "유리수", "def_en": "A number that can be written as a fraction a/b where a and b are integers.", "cat": "organ"}, {"en": "Irrational number", "ko": "무리수", "def_en": "A number that cannot be written as a fraction; its decimal never ends or repeats.", "cat": "organ"}, {"en": "Square number", "ko": "제곱수", "def_en": "The result of multiplying a whole number by itself, such as 25.", "cat": "organ"}, {"en": "Square root", "ko": "제곱근", "def_en": "The number that gives the original when multiplied by itself; the symbol is √.", "cat": "organ"}, {"en": "Cube number", "ko": "세제곱수", "def_en": "The result of multiplying a number by itself three times, such as 27.", "cat": "organ"}, {"en": "Cube root", "ko": "세제곱근", "def_en": "The number that gives the original when cubed; the symbol is the cube root sign.", "cat": "organ"}, {"en": "Terminating decimal", "ko": "유한소수", "def_en": "A decimal that stops after a certain number of digits, such as 0.75.", "cat": "organ"}, {"en": "Recurring decimal", "ko": "순환소수", "def_en": "A decimal with a digit or group of digits that repeats forever.", "cat": "organ"}, {"en": "Natural number", "ko": "자연수", "def_en": "A counting number: 1, 2, 3, 4 and so on.", "cat": "organ"}, {"en": "Prime number", "ko": "소수", "def_en": "A number with exactly two factors, itself and 1.", "cat": "organ"}, {"en": "Factor", "ko": "약수", "def_en": "A whole number that divides exactly into another number.", "cat": "organ"}, {"en": "Multiple", "ko": "배수", "def_en": "The result of multiplying a number by a whole number.", "cat": "organ"}, {"en": "Perfect square", "ko": "완전제곱수", "def_en": "A number whose square root is a whole number.", "cat": "organ"}, {"en": "Index", "ko": "지수", "def_en": "The small raised number that shows how many times the base is multiplied by itself.", "cat": "process"}, {"en": "Indices", "ko": "지수(복수형)", "def_en": "The plural of index.", "cat": "process"}, {"en": "Base", "ko": "밑", "def_en": "The number that is raised to a power.", "cat": "process"}, {"en": "Power", "ko": "거듭제곱", "def_en": "Another word for index; also the whole expression such as 2 to the power 5.", "cat": "process"}, {"en": "Index law", "ko": "지수 법칙", "def_en": "A rule for adding or subtracting indices when powers of the same base are multiplied or divided.", "cat": "process"}, {"en": "Negative index", "ko": "음의 지수", "def_en": "An index below zero, meaning one over that power.", "cat": "process"}, {"en": "Standard form", "ko": "표준형", "def_en": "A way of writing numbers as A multiplied by a power of ten, where A is at least 1 and less than 10.", "cat": "process"}, {"en": "Ordinary number", "ko": "보통 수", "def_en": "A number written in the usual way rather than in standard form.", "cat": "process"}, {"en": "Exponent", "ko": "지수", "def_en": "Another word for index, used in many textbooks.", "cat": "process"}, {"en": "Round", "ko": "반올림하다", "def_en": "To change a number to a nearby simpler value.", "cat": "blood"}, {"en": "Decimal place", "ko": "소수 자리", "def_en": "The position of a digit after the decimal point.", "cat": "blood"}, {"en": "Significant figure", "ko": "유효숫자", "def_en": "A digit counted from the first non-zero digit of a number.", "cat": "blood"}, {"en": "Estimate", "ko": "어림하다", "def_en": "To find an approximate answer, usually by rounding to 1 significant figure.", "cat": "blood"}, {"en": "Approximately", "ko": "대략", "def_en": "Nearly but not exactly; the symbol is a wavy equals sign.", "cat": "blood"}, {"en": "Upper bound", "ko": "상한", "def_en": "The largest value a rounded measurement could have been.", "cat": "blood"}, {"en": "Lower bound", "ko": "하한", "def_en": "The smallest value a rounded measurement could have been.", "cat": "blood"}, {"en": "Accurate", "ko": "정확한", "def_en": "Very close to the true value.", "cat": "blood"}, {"en": "Order of operations", "ko": "계산 순서", "def_en": "The rule that brackets come first, then indices, then division and multiplication, then addition and subtraction.", "cat": "gas"}, {"en": "Bracket", "ko": "괄호", "def_en": "A symbol that groups part of a calculation so it is done first.", "cat": "gas"}, {"en": "Reciprocal", "ko": "역수", "def_en": "One divided by a number; multiplying by it is the same as dividing.", "cat": "gas"}, {"en": "Negative number", "ko": "음수", "def_en": "A number less than zero.", "cat": "gas"}, {"en": "Sum", "ko": "합", "def_en": "The answer to an addition.", "cat": "gas"}, {"en": "Difference", "ko": "차", "def_en": "The answer to a subtraction.", "cat": "gas"}, {"en": "Product", "ko": "곱", "def_en": "The answer to a multiplication.", "cat": "gas"}, {"en": "Quotient", "ko": "몫", "def_en": "The answer to a division.", "cat": "gas"}, {"en": "Inverse operation", "ko": "역연산", "def_en": "The operation that undoes another, such as subtraction undoing addition.", "cat": "gas"}, {"en": "Mental method", "ko": "암산", "def_en": "Working out an answer in your head without writing every step.", "cat": "gas"}];
+const UNIT_ID = "y9m_number";
+const UNIT_TITLE = "Number and calculation 수와 계산";
+const UNIT_TOPICS = ["1.1 Types of number", "1.2 Indices and standard form", "1.3 Rounding and estimating", "1.4 Order of operations and negative numbers"];
+let qAnswered = new Array(QUIZ_DATA.length).fill(null);
+
+// ─── claude.ai 새 창 링크 ───
+(function setupClaudeLinks() {
+  var NL = String.fromCharCode(10);
+  var topicsList = UNIT_TOPICS.map(function(t, i) { return (i+1) + '. ' + t; }).join(NL);
+  var askMsg = "I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
+    "Current unit: " + UNIT_TITLE + NL +
+    "Topics:" + NL + topicsList + NL + NL +
+    "Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use - if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary." + NL + NL +
+    "질문 시작할게요:" + NL;
+  var gradeMsg = "I'm a Year 8 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
+    "Unit: " + UNIT_TITLE + NL +
+    "Topics: " + UNIT_TOPICS.join(' · ') + NL + NL +
+    "Please grade my worksheet. For each question:" + NL +
+    "- Read the problem and my answer (if any)." + NL +
+    "- Mark ✅ correct / ❌ wrong / ⚠️ partial." + NL +
+    "- Give the correct answer." + NL +
+    "- Explain mistakes in British English with a short Korean hint in parentheses for tough words." + NL + NL +
+    "End with a summary: total / correct / what to review next." + NL + NL +
+    "사진 첨부할게요!";
+  var ask = document.getElementById('btn-ask');
+  var grade = document.getElementById('btn-grade');
+  if (ask) ask.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
+  if (grade) grade.href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
+})();
+
+// 탭 전환
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
+        if (btn.dataset.tab === 'spelling' && typeof startSpelling === 'function' && !spellState.started) startSpelling();
+    try { localStorage.setItem('tab_' + UNIT_ID, btn.dataset.tab); } catch(e){}
+  });
+});
+
+// 발음
+// ─── 발음: 미리 받아둔 mp3(audio/sci/) 직접 재생, 못 틀면 폰 음성 보조 ───
+function slugify(t){ return t.replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
+let _audio = null;
+function speak(text) {
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
+    a.onerror = () => fallbackSpeak(cleanText(text));
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(text)));
+  } catch (e) { fallbackSpeak(cleanText(text)); }
+}
+let _voices = [];
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis) { loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9;
+  const en = _voices.filter(v => normLang(v.lang).startsWith('en'));
+  const local = en.filter(v => v.localService);
+  const pool = local.length ? local : en;
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
+  if (v) { u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'en-GB'; }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
+}
+
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = function(){ if (_seq && _seq.token === token) done(); };
+    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
+/* 새로고침해도 보던 탭 그대로 — 마지막에 본 탭을 기억한다 */
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('tab_' + UNIT_ID); } catch(e){}
+  if (location.hash && location.hash.length > 1) t = location.hash.slice(1);
+  if (!t) return;
+  var btn = document.querySelector('.tab-btn[data-tab="' + t + '"]');
+  var pane = document.getElementById('tab-' + t);
+  if (!btn || !pane) return;
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  pane.classList.add('active');
+})();
+
+function annotateCounts(){ document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=document.querySelectorAll('#tab-vocab .vcard').length; }
+function numberVocab(){ let n=0; document.querySelectorAll('#tab-vocab .vcard').forEach(c => { n++; const L=c.querySelector('.vcard-left'); if(L && !L.querySelector('.vcard-num')){ const d=document.createElement('div'); d.className='vcard-num'; d.textContent=n+'번'; L.insertBefore(d, L.firstChild); } }); }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
+// 단어장: 필터 + 검색 통합
+let selectedCats = new Set();   // 비어있으면 전체. 여러 단원 다중선택
+let currentQuery = '';
+
+function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (selectedCats.size === 0 || selectedCats.has(cat));
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', !visibleByCat[target]);
+  });
+}
+
+function filterCards(cat) {
+  if (cat === 'all') { selectedCats.clear(); }
+  else { if (selectedCats.has(cat)) selectedCats.delete(cat); else selectedCats.add(cat); }
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if (b.dataset.cat === 'all') b.classList.toggle('active', selectedCats.size === 0);
+    else b.classList.toggle('active', selectedCats.has(b.dataset.cat));
+  });
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
+  annotateCounts();   // 단원별·전체 단어 수 표시
+  numberVocab();      // 단어 앞 고정 번호 (1번~)
+});
+
+// ─── 단어시험 (Spelling Test) ───
+const spellState = {
+  started: false,
+  pool: [],         // 남은 단어들
+  current: null,    // 현재 단어
+  correct: 0,
+  wrong: 0,
+  revealed: false,
+};
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startSpelling() {
+  spellState.started = true;
+  spellState.pool = shuffle(VOCAB_DATA);
+  spellState.correct = 0;
+  spellState.wrong = 0;
+  updateSpellStats();
+  nextWord();
+  setTimeout(() => document.getElementById('sp-input')?.focus(), 200);
+}
+
+function nextWord() {
+  if (spellState.pool.length === 0) {
+    // 다 끝나면 다시 섞기
+    spellState.pool = shuffle(VOCAB_DATA);
+  }
+  spellState.current = spellState.pool.shift();
+  spellState.revealed = false;
+  const w = spellState.current;
+  const catLabel = {organ:'🫁 Organ',process:'⚙️ Process',blood:'🩸 Blood',gas:'💨 Gas'}[w.cat] || w.cat;
+  const catEl = document.getElementById('sp-cat');
+  catEl.textContent = catLabel;
+  catEl.className = 'spell-cat cat-' + w.cat;
+  document.getElementById('sp-ko').textContent = w.ko;
+  document.getElementById('sp-def').textContent = w.def_en;
+  // 글자수 힌트 — 공백/특수문자는 그대로, 글자는 _로
+  const hint = w.en.split('').map(ch => /[A-Za-z0-9]/.test(ch) ? '_' : ch).join(' ');
+  document.getElementById('sp-hint').textContent = hint + '  (' + w.en.length + ')';
+  document.getElementById('sp-feedback').innerHTML = '';
+  const input = document.getElementById('sp-input');
+  input.value = '';
+  input.classList.remove('disabled');
+  input.disabled = false;
+  input.placeholder = w.en.length + ' chars · 영어로 입력…';
+  input.focus();
+  updateSpellStats();
+}
+
+function showAnswer() {
+  if (!spellState.current || spellState.revealed) return;
+  spellState.revealed = true;
+  const w = spellState.current;
+  document.getElementById('sp-feedback').innerHTML =
+    '<span class="ok">' + w.en + '</span>';
+  const input = document.getElementById('sp-input');
+  input.value = w.en;
+  input.classList.add('disabled');
+  input.disabled = true;
+  // 자동으로 발음
+  if (window.speechSynthesis) speak(w.en);
+}
+
+function updateSpellStats() {
+  document.getElementById('sp-correct').textContent = spellState.correct;
+  document.getElementById('sp-wrong').textContent = spellState.wrong;
+  document.getElementById('sp-remaining').textContent = spellState.pool.length;
+}
+
+function renderSpellFeedback(typed, target) {
+  // 글자별 색상 표시
+  let html = '';
+  for (let i = 0; i < target.length; i++) {
+    const t = typed[i];
+    const a = target[i];
+    if (t === undefined) {
+      html += '<span class="miss">' + (a === ' ' ? '&nbsp;' : '_') + '</span>';
+    } else if (t.toLowerCase() === a.toLowerCase()) {
+      html += '<span class="ok">' + a + '</span>';
+    } else {
+      html += '<span class="bad">' + t + '</span>';
+    }
+  }
+  return html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('sp-input');
+  if (!input) return;
+  input.addEventListener('input', () => {
+    if (!spellState.current || spellState.revealed) return;
+    const typed = input.value;
+    const target = spellState.current.en;
+    document.getElementById('sp-feedback').innerHTML = renderSpellFeedback(typed, target);
+    // 완전 일치 (대소문자 무시)
+    if (typed.toLowerCase() === target.toLowerCase()) {
+      spellState.correct++;
+      input.classList.add('disabled');
+      input.disabled = true;
+      document.getElementById('sp-feedback').innerHTML =
+        '<span class="ok">✓ ' + target + '</span>';
+      updateSpellStats();
+      // 0.9초 후 다음 단어
+      setTimeout(() => nextWord(), 900);
+    }
+  });
+  // Enter로 정답이 아니면 틀린 것 처리
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && spellState.current && !spellState.revealed) {
+      const typed = input.value.trim();
+      const target = spellState.current.en;
+      if (typed.toLowerCase() !== target.toLowerCase() && typed.length > 0) {
+        spellState.wrong++;
+        showAnswer();
+        updateSpellStats();
+      }
+    }
+  });
+});
+
+// 서술형 퀴즈: 모범 답안 보이기 + 자기 채점
+function showModel(qi) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  var model = card.querySelector('.q-model');
+  var rate = card.querySelector('.q-self-rate');
+  model.classList.add('show');
+  rate.classList.add('show');
+}
+
+function rateSelf(qi, level) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  card.querySelectorAll('.q-self-rate button').forEach(function(b) { b.classList.remove('selected'); });
+  card.querySelector('.q-self-rate .rate-' + level).classList.add('selected');
+}
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      // 새 SW 발견 시 즉시 적용 → 페이지 자동 새로고침
+      reg.addEventListener('updatefound', function() {
+        var newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', function() {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+            // 새 버전 준비됨 → 즉시 활성화 명령
+            newSW.postMessage({type: 'SKIP_WAITING'});
+          }
+        });
+      });
+      // 매 30분마다 새 버전 확인
+      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+    }).catch(function(e) { /* fail silently */ });
+    // 새 SW가 통제권 잡으면 페이지 자동 reload (한 번만)
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (reloaded) return;
+      reloaded = true;
+      window.location.reload();
+    });
+  });
+}
+</script>
+<script>
+/* 단원 전체 듣기 — 미리 합쳐 둔 mp3 하나를 재생한다.
+   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일 하나로 합쳤다. */
+(function(){
+  var a = document.getElementById('allplay-audio');
+  var btn = document.getElementById('allplay-btn');
+  if (!a || !btn) return;
+  function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  window.toggleAllPlay = function(){
+    if (typeof stopSeq === 'function') stopSeq();
+    if (a.paused) { a.play(); } else { a.pause(); }
+  };
+  a.addEventListener('play', function(){
+    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: '단원 전체 듣기 — 41 단어', artist: UNIT_TITLE, album: 'AMY Study App'
+      });
+      navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
+      navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
+    }
+  });
+  a.addEventListener('pause', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('ended', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('timeupdate', function(){ if (!a.paused) btn.textContent = '⏸ ' + mmss(a.currentTime); });
+  a.addEventListener('error', function(){ btn.disabled = true; btn.textContent = '전체 듣기 파일 없음'; });
+})();
+</script>
+</body>
+</html>
