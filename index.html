@@ -1053,7 +1053,15 @@ function initFold(el, defFolded){
     list.innerHTML = '<div class="cn-empty">새 글이 없다.</div>';
   } else {
     var cls = {'공지':'t-gongji','과제':'t-gwaje','자료':'t-jaryo'};
-    var html = rows.slice(0, 12).map(function(r){
+    /* 최근 12건 + 12건 밖으로 밀렸지만 마감이 아직 남은 글(마감 빠른 순) */
+    var t0 = new Date(); t0.setHours(0,0,0,0);
+    var top = rows.slice(0, 12);
+    var rest = rows.slice(12).filter(function(r){
+      if (!r.due) return false;
+      var p = r.due.split('-');
+      return new Date(+p[0], +p[1]-1, +p[2]) >= t0;
+    }).sort(function(a,b){ return a.due < b.due ? -1 : 1; });
+    var html = top.concat(rest).map(function(r){
       var d = (r.date || '').split('-');
       var day = d.length === 3 ? (+d[1]) + '/' + (+d[2]) : '';
       var tag = cls[r.type] || 't-jaryo';
