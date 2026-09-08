@@ -429,7 +429,22 @@ html, body { overflow-x: hidden; }
 .cn-head span:last-child { text-align: left; padding-left: 2px; }
 /* 과제 카드는 종류 칸이 없다 */
 .gw .cn-row, .gw .cn-head { grid-template-columns: 34px 46px 50px 1fr; }
+.gw .cn-head { padding-left: 46px; }
 .cn-card + .cn-card { margin-top: 12px; }
+/* 완료 체크 */
+.cn-line { display: flex; align-items: center; border-top: 1px solid rgba(0,0,0,0.07); }
+.cn-line:first-child { border-top: none; }
+.gw .cn-line .cn-row { border-top: none; flex: 1; min-width: 0; padding-left: 4px; }
+.cn-chk {
+  flex: none; width: 30px; height: 30px; margin-left: 10px; padding: 0;
+  font-family: inherit; font-size: 15px; font-weight: 900; line-height: 1; cursor: pointer;
+  background: #fff; border: 1.5px solid #b3261e; border-radius: 8px; color: #b3261e;
+}
+.cn-chk.on { background: #2e6b3a; border-color: #2e6b3a; color: #fff; }
+.cn-done-bar {
+  padding: 9px 12px; font-size: 11.5px; font-weight: 900; color: #1f4fa3; cursor: pointer;
+  border-top: 1px solid rgba(0,0,0,0.10); background: rgba(0,0,0,0.03);
+}
 .cn-date { font-size: 11.5px; font-weight: 900; color: #111; }
 .cn-subj { font-size: 11.5px; font-weight: 900; color: #111; overflow: hidden; text-overflow: ellipsis; }
 .cn-ko { min-width: 0; font-size: 12.5px; font-weight: 900; color: #111;
@@ -1059,17 +1074,31 @@ function initFold(el, defFolded){
   applyFold(el, v === null ? defFolded : v === '1');
 }
 
-/* 클래스룸 새 글 — 위 박스=과제(마감순), 아래 박스=공지·자료 */
-(function(){
+/* 클래스룸 새 글 — 위 박스=과제(마감순, 체크하면 사라짐), 아래 박스=공지·자료 */
+var CN_DONE_KEY = 'amy:doneHw';
+var cnShowDone = false;
+function cnLoadDone(){ try { return JSON.parse(localStorage.getItem(CN_DONE_KEY) || '{}'); } catch(e){ return {}; } }
+function cnSaveDone(o){ try { localStorage.setItem(CN_DONE_KEY, JSON.stringify(o)); } catch(e){} }
+function cnToggleDone(k){
+  var o = cnLoadDone();
+  if (o[k]) { delete o[k]; } else { o[k] = 1; }
+  cnSaveDone(o);
+  cnRender();
+}
+function cnToggleShowDone(){ cnShowDone = !cnShowDone; cnRender(); }
+
+function cnRender(){
   var list = document.getElementById('cnList');
   var list2 = document.getElementById('cnList2');
   var rows = window.CLASSROOM_POSTS || [];
   if (!list) return;
   var cls = {'공지':'t-gongji','과제':'t-gwaje','자료':'t-jaryo'};
   var t0 = new Date(); t0.setHours(0,0,0,0);
+  var done = cnLoadDone();
 
   function dnum(s){ var p = (s||'').split('-'); return p.length === 3 ? (+p[0])*10000 + (+p[1])*100 + (+p[2]) : 0; }
   function isPast(s){ var p = s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]) < t0; }
+  function keyOf(r){ return ((r.subject||'') + '|' + (r.title||'') + '|' + (r.due||'')).replace(/'/g, ''); }
 
   function row(r, withType){
     var d = (r.date || '').split('-');
@@ -1094,8 +1123,16 @@ function initFold(el, defFolded){
            '</span>' +
            '</a>';
   }
+  function line(r, isDone){
+    var k = keyOf(r);
+    return '<div class="cn-line">' +
+           '<button class="cn-chk' + (isDone ? ' on' : '') + '" type="button" title="완료" ' +
+           'onclick="cnToggleDone(\'' + k + '\')">' + (isDone ? '\u2714' : '\u00A0') + '</button>' +
+           row(r, false) + '</div>';
+  }
 
-  /* 위 박스 = 과제만. 마감 없는 것이 맨 위, 그다음 마감 빠른 순, 이미 지난 마감은 맨 아래 */
+  /* 위 박스 = 과제만. 마감 없는 것이 맨 위, 그다음 마감 빠른 순, 이미 지난 마감은 맨 아래.
+     완료로 체크한 과제는 목록에서 빠지고, 맨 아래 '완료 N개' 줄을 눌러야 다시 보인다. */
   var gw = rows.filter(function(r){ return r.type === '과제'; });
   gw.sort(function(a, b){
     function grp(r){ return !r.due ? 0 : (isPast(r.due) ? 2 : 1); }
@@ -1105,17 +1142,34 @@ function initFold(el, defFolded){
     if (ga === 1) return dnum(a.due) - dnum(b.due);
     return dnum(b.due) - dnum(a.due);
   });
-  list.innerHTML = gw.length ? gw.map(function(r){ return row(r, false); }).join('')
-                             : '<div class="cn-empty">과제가 없다.</div>';
+  var left = gw.filter(function(r){ return !done[keyOf(r)]; });
+  var fin  = gw.filter(function(r){ return  done[keyOf(r)]; });
+  var html = left.length ? left.map(function(r){ return line(r, false); }).join('')
+                         : '<div class="cn-empty">' + (fin.length ? '남은 과제가 없다.' : '과제가 없다.') + '</div>';
+  if (fin.length){
+    html += '<div class="cn-done-bar" onclick="cnToggleShowDone()">\u2714 완료 ' + fin.length + '개 ' +
+            (cnShowDone ? '숨기기 \u25B4' : '보기 \u25BE') + '</div>';
+    if (cnShowDone) html += fin.map(function(r){ return line(r, true); }).join('');
+  }
+  list.innerHTML = html;
 
   /* 아래 박스 = 공지·자료. 올라온 날짜 최신순 */
   if (list2){
-    var etc = rows.filter(function(r){ return r.type !== '과제'; })
+    /* 공지·자료는 최근 1주치만 (2주는 24건으로 여전히 길었다. 지난 자료는 과목별 진도표에 남는다) */
+    var lim = new Date(t0.getTime() - 7 * 86400000);
+    var etc = rows.filter(function(r){
+                    if (r.type === '과제') return false;
+                    var p = (r.date || '').split('-');
+                    return p.length === 3 && new Date(+p[0], +p[1]-1, +p[2]) >= lim;
+                  })
                   .sort(function(a, b){ return dnum(b.date) - dnum(a.date); });
     list2.innerHTML = etc.length ? etc.map(function(r){ return row(r, true); }).join('')
                                  : '<div class="cn-empty">공지·자료가 없다.</div>';
   }
+}
 
+(function(){
+  cnRender();
   var cn = document.getElementById('cnCard'); if (cn) initFold(cn, false);
   var cn2 = document.getElementById('cnCard2'); if (cn2) initFold(cn2, false);
   var tt = document.getElementById('ttCard'); if (tt) initFold(tt, false);
