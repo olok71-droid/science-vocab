@@ -1131,16 +1131,16 @@ function cnRender(){
            row(r, false) + '</div>';
   }
 
-  /* 위 박스 = 과제만. 마감 없는 것이 맨 위, 그다음 마감 빠른 순, 이미 지난 마감은 맨 아래.
+  /* 위 박스 = 과제만. 마감 빠른 순 → 이미 지난 마감 → 마감이 안 적힌 것은 가장 아래.
      완료로 체크한 과제는 목록에서 빠지고, 맨 아래 '완료 N개' 줄을 눌러야 다시 보인다. */
   var gw = rows.filter(function(r){ return r.type === '과제'; });
   gw.sort(function(a, b){
-    function grp(r){ return !r.due ? 0 : (isPast(r.due) ? 2 : 1); }
+    function grp(r){ return !r.due ? 2 : (isPast(r.due) ? 1 : 0); }
     var ga = grp(a), gb = grp(b);
     if (ga !== gb) return ga - gb;
-    if (ga === 0) return dnum(b.date) - dnum(a.date);
-    if (ga === 1) return dnum(a.due) - dnum(b.due);
-    return dnum(b.due) - dnum(a.due);
+    if (ga === 0) return dnum(a.due) - dnum(b.due);
+    if (ga === 1) return dnum(b.due) - dnum(a.due);
+    return dnum(b.date) - dnum(a.date);
   });
   var left = gw.filter(function(r){ return !done[keyOf(r)]; });
   var fin  = gw.filter(function(r){ return  done[keyOf(r)]; });
