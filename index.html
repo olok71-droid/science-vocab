@@ -427,6 +427,9 @@ html, body { overflow-x: hidden; }
   font-size: 10.5px; font-weight: 900; color: #111; text-align: center;
 }
 .cn-head span:last-child { text-align: left; padding-left: 2px; }
+/* 과제 카드는 종류 칸이 없다 */
+.gw .cn-row, .gw .cn-head { grid-template-columns: 34px 46px 50px 1fr; }
+.cn-card + .cn-card { margin-top: 12px; }
 .cn-date { font-size: 11.5px; font-weight: 900; color: #111; }
 .cn-subj { font-size: 11.5px; font-weight: 900; color: #111; overflow: hidden; text-overflow: ellipsis; }
 .cn-ko { min-width: 0; font-size: 12.5px; font-weight: 900; color: #111;
@@ -441,6 +444,7 @@ html, body { overflow-x: hidden; }
 .cn-due { font-size: 10px; font-weight: 900; letter-spacing: -0.3px; background: #ffe08a; color: #4a3200;
   border-radius: 6px; padding: 2px 0; text-align: center; }
 .cn-due.none { background: none; }
+.cn-due.past { background: #fff; border: 1.5px solid #b3261e; color: #b3261e; padding: 1px 0; }
 .cn-empty { padding: 14px; font-size: 12.5px; font-weight: 700; color: #555; }
 .cn-bell {
   margin-left: auto; font-family: inherit; cursor: pointer;
@@ -467,15 +471,26 @@ body.in-subject .cn-card { display: none; }
 
 <div class="container">
 
-  <div class="cn-card" id="cnCard">
+  <div class="cn-card gw" id="cnCard">
     <div class="fold-bar" onclick="toggleFold('cnCard')">
-      <span class="fold-name">클래스룸 새 글</span>
+      <span class="fold-name">클래스룸 과제</span>
       <button class="cn-bell" id="cnBell" type="button" onclick="event.stopPropagation();amyPushOn()">🔔 알림 켜기</button>
       <span class="fold-arrow">▾</span>
     </div>
     <div class="fold-body">
-      <div class="cn-head"><span>날짜</span><span>과목</span><span>종류</span><span>마감</span><span>내용</span></div>
+      <div class="cn-head"><span>날짜</span><span>과목</span><span>마감</span><span>내용</span></div>
       <div class="cn-list" id="cnList"></div>
+    </div>
+  </div>
+
+  <div class="cn-card" id="cnCard2">
+    <div class="fold-bar" onclick="toggleFold('cnCard2')">
+      <span class="fold-name">클래스룸 공지·자료</span>
+      <span class="fold-arrow">▾</span>
+    </div>
+    <div class="fold-body">
+      <div class="cn-head"><span>날짜</span><span>과목</span><span>종류</span><span>마감</span><span>내용</span></div>
+      <div class="cn-list" id="cnList2"></div>
     </div>
   </div>
 
@@ -1044,49 +1059,65 @@ function initFold(el, defFolded){
   applyFold(el, v === null ? defFolded : v === '1');
 }
 
-/* 클래스룸 새 글 */
+/* 클래스룸 새 글 — 위 박스=과제(마감순), 아래 박스=공지·자료 */
 (function(){
   var list = document.getElementById('cnList');
+  var list2 = document.getElementById('cnList2');
   var rows = window.CLASSROOM_POSTS || [];
   if (!list) return;
-  if (!rows.length){
-    list.innerHTML = '<div class="cn-empty">새 글이 없다.</div>';
-  } else {
-    var cls = {'공지':'t-gongji','과제':'t-gwaje','자료':'t-jaryo'};
-    /* 최근 12건 + 12건 밖으로 밀렸지만 마감이 아직 남은 글(마감 빠른 순) */
-    var t0 = new Date(); t0.setHours(0,0,0,0);
-    var top = rows.slice(0, 12);
-    var rest = rows.slice(12).filter(function(r){
-      if (!r.due) return false;
-      var p = r.due.split('-');
-      return new Date(+p[0], +p[1]-1, +p[2]) >= t0;
-    }).sort(function(a,b){ return a.due < b.due ? -1 : 1; });
-    var html = top.concat(rest).map(function(r){
-      var d = (r.date || '').split('-');
-      var day = d.length === 3 ? (+d[1]) + '/' + (+d[2]) : '';
-      var tag = cls[r.type] || 't-jaryo';
-      var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
-      var due = '<span class="cn-due none"></span>';
-      if (r.due){
-        var dd = r.due.split('-');
-        var wd = ['일','월','화','수','목','금','토'][new Date(+dd[0], +dd[1]-1, +dd[2]).getDay()];
-        due = '<span class="cn-due">' + (+dd[1]) + '/' + (+dd[2]) + ' ' + wd + '</span>';
-      }
-      var href = r.url || 'https://classroom.google.com/';
-      return '<a class="cn-row" href="' + href + '" target="_blank" rel="noopener">' +
-             '<span class="cn-date">' + day + '</span>' +
-             '<span class="cn-subj">' + subj + '</span>' +
-             '<span class="cn-tag ' + tag + '">' + (r.type || '') + '</span>' +
-             due +
-             '<span class="cn-txt">' +
-               '<span class="cn-en">' + (r.title || '') + '</span>' +
-               ((r.ko && r.title) ? '<span class="cn-kr">' + r.ko + '</span>' : (r.title ? '' : '<span class="cn-en">' + (r.ko||'') + '</span>')) +
-             '</span>' +
-             '</a>';
-    }).join('');
-    list.innerHTML = html;
+  var cls = {'공지':'t-gongji','과제':'t-gwaje','자료':'t-jaryo'};
+  var t0 = new Date(); t0.setHours(0,0,0,0);
+
+  function dnum(s){ var p = (s||'').split('-'); return p.length === 3 ? (+p[0])*10000 + (+p[1])*100 + (+p[2]) : 0; }
+  function isPast(s){ var p = s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]) < t0; }
+
+  function row(r, withType){
+    var d = (r.date || '').split('-');
+    var day = d.length === 3 ? (+d[1]) + '/' + (+d[2]) : '';
+    var tag = cls[r.type] || 't-jaryo';
+    var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
+    var due = '<span class="cn-due none"></span>';
+    if (r.due){
+      var dd = r.due.split('-');
+      var wd = ['일','월','화','수','목','금','토'][new Date(+dd[0], +dd[1]-1, +dd[2]).getDay()];
+      due = '<span class="cn-due' + (isPast(r.due) ? ' past' : '') + '">' + (+dd[1]) + '/' + (+dd[2]) + ' ' + wd + '</span>';
+    }
+    var href = r.url || 'https://classroom.google.com/';
+    return '<a class="cn-row" href="' + href + '" target="_blank" rel="noopener">' +
+           '<span class="cn-date">' + day + '</span>' +
+           '<span class="cn-subj">' + subj + '</span>' +
+           (withType ? '<span class="cn-tag ' + tag + '">' + (r.type || '') + '</span>' : '') +
+           due +
+           '<span class="cn-txt">' +
+             '<span class="cn-en">' + (r.title || '') + '</span>' +
+             ((r.ko && r.title) ? '<span class="cn-kr">' + r.ko + '</span>' : (r.title ? '' : '<span class="cn-en">' + (r.ko||'') + '</span>')) +
+           '</span>' +
+           '</a>';
   }
+
+  /* 위 박스 = 과제만. 마감 없는 것이 맨 위, 그다음 마감 빠른 순, 이미 지난 마감은 맨 아래 */
+  var gw = rows.filter(function(r){ return r.type === '과제'; });
+  gw.sort(function(a, b){
+    function grp(r){ return !r.due ? 0 : (isPast(r.due) ? 2 : 1); }
+    var ga = grp(a), gb = grp(b);
+    if (ga !== gb) return ga - gb;
+    if (ga === 0) return dnum(b.date) - dnum(a.date);
+    if (ga === 1) return dnum(a.due) - dnum(b.due);
+    return dnum(b.due) - dnum(a.due);
+  });
+  list.innerHTML = gw.length ? gw.map(function(r){ return row(r, false); }).join('')
+                             : '<div class="cn-empty">과제가 없다.</div>';
+
+  /* 아래 박스 = 공지·자료. 올라온 날짜 최신순 */
+  if (list2){
+    var etc = rows.filter(function(r){ return r.type !== '과제'; })
+                  .sort(function(a, b){ return dnum(b.date) - dnum(a.date); });
+    list2.innerHTML = etc.length ? etc.map(function(r){ return row(r, true); }).join('')
+                                 : '<div class="cn-empty">공지·자료가 없다.</div>';
+  }
+
   var cn = document.getElementById('cnCard'); if (cn) initFold(cn, false);
+  var cn2 = document.getElementById('cnCard2'); if (cn2) initFold(cn2, false);
   var tt = document.getElementById('ttCard'); if (tt) initFold(tt, false);
 })();
 
