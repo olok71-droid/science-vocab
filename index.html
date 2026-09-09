@@ -427,16 +427,17 @@ html, body { overflow-x: hidden; }
   font-size: 10.5px; font-weight: 900; color: #111; text-align: center;
 }
 .cn-head span:last-child { text-align: left; padding-left: 2px; }
-/* 과제 카드는 종류 칸이 없다 */
-.gw .cn-row { grid-template-columns: 34px 46px 50px 1fr; }
-.gw .cn-head { grid-template-columns: 44px 34px 46px 50px 1fr; }
+/* 과제 카드 — 마감을 맨 왼쪽에. 머리글과 줄의 칸을 정확히 맞춘다(2026-09-09) */
+.gw .cn-row { grid-template-columns: 50px 46px 34px 1fr; }
+.gw .cn-head { grid-template-columns: 44px 50px 46px 34px 1fr; }
+.gw .cn-line { padding: 0 10px; }
 .cn-card + .cn-card { margin-top: 12px; }
 /* 완료 체크 */
 .cn-line { display: flex; align-items: center; border-top: 1px solid rgba(0,0,0,0.07); }
 .cn-line:first-child { border-top: none; }
-.gw .cn-line .cn-row { border-top: none; flex: 1; min-width: 0; padding-left: 4px; }
+.gw .cn-line .cn-row { border-top: none; flex: 1; min-width: 0; padding: 7px 0; margin-left: 6px; }
 .cn-chk {
-  flex: none; width: 30px; height: 30px; margin-left: 10px; padding: 0;
+  flex: none; width: 44px; height: 30px; margin-left: 0; padding: 0;
   font-family: inherit; font-size: 15px; font-weight: 900; line-height: 1; cursor: pointer;
   background: #fff; border: 1.5px solid #b3261e; border-radius: 8px; color: #b3261e;
 }
@@ -504,7 +505,7 @@ body.in-subject .cn-card { display: none; }
       <span class="fold-arrow">▾</span>
     </div>
     <div class="fold-body">
-      <div class="cn-head"><span>완료</span><span>날짜</span><span>과목</span><span>마감</span><span>내용</span></div>
+      <div class="cn-head"><span>완료</span><span>마감</span><span>과목</span><span>날짜</span><span>내용</span></div>
       <div class="cn-list" id="cnList"></div>
     </div>
   </div>
@@ -1178,12 +1179,34 @@ function cnRender(){
            '</span>' +
            '</a>';
   }
+  /* 과제 줄 = 마감·과목·날짜·내용 차례. 완료 체크 옆이 마감이라 헷갈리지 않는다(2026-09-09). */
+  function rowHw(r){
+    var d = (r.date || '').split('-');
+    var day = d.length === 3 ? (+d[1]) + '/' + (+d[2]) : '';
+    var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
+    var due = '<span class="cn-due none"></span>';
+    if (r.due){
+      var dd = r.due.split('-');
+      var wd = ['일','월','화','수','목','금','토'][new Date(+dd[0], +dd[1]-1, +dd[2]).getDay()];
+      due = '<span class="cn-due' + (isPast(r.due) ? ' past' : '') + '">' + (+dd[1]) + '/' + (+dd[2]) + ' ' + wd + '</span>';
+    }
+    var href = r.url || 'https://classroom.google.com/';
+    return '<a class="cn-row" href="' + href + '" target="_blank" rel="noopener">' +
+           due +
+           '<span class="cn-subj">' + subj + '</span>' +
+           '<span class="cn-date">' + day + '</span>' +
+           '<span class="cn-txt">' +
+             '<span class="cn-en">' + (r.title || '') + '</span>' +
+             ((r.ko && r.title) ? '<span class="cn-kr">' + r.ko + '</span>' : (r.title ? '' : '<span class="cn-en">' + (r.ko||'') + '</span>')) +
+           '</span>' +
+           '</a>';
+  }
   function line(r, isDone){
     var k = keyOf(r);
     return '<div class="cn-line">' +
            '<button class="cn-chk' + (isDone ? ' on' : '') + '" type="button" title="완료" ' +
            'onclick="cnToggleDone(\'' + k + '\')">' + (isDone ? '\u2714' : '\u00A0') + '</button>' +
-           row(r, false) + '</div>';
+           rowHw(r) + '</div>';
   }
 
   /* 위 박스 = 과제만. 마감 빠른 순 → 이미 지난 마감 → 마감이 안 적힌 것은 가장 아래.
