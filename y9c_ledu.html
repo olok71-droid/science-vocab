@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko"><head>
+<html lang="ko">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>라살 교육 클래스룸자료</title>
-<link rel="icon" href="favicon.png">
+<meta name="theme-color" content="#d6f5ec">
+<title>라살 교육 Lasallian Education · AMY Study App</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #e3f2ee;
@@ -295,7 +297,9 @@ header {
 footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
 .vcard.hidden { display: none; }
 .section-header.hidden { display: none; }
-</style><style>
+</style>
+
+<style>
 
 /* 수업자료 카드 (핵심노트 + 클래스룸자료 합침) */
 .mat-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
@@ -370,7 +374,9 @@ details.mat-src .notes-list { padding: 10px 0 0; }
 .file-desc { font-size: 13px; color: var(--text); margin-top: 3px; }
 .file-open { margin-left: auto; font-size: 13px; font-weight: 800; color: var(--accent); white-space: nowrap; }
 .files-head { font-size: 14px; font-weight: 800; color: var(--strong); margin: 18px 0 10px; }
-</style><style>
+</style>
+
+<style>
 /* 학년 진도표 (누르면 펼쳐짐) */
 .cur { max-width: 980px; margin: 0 auto 14px; padding: 0 16px; }
 .cur > summary { list-style: none; cursor: pointer; background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12));
@@ -390,13 +396,8 @@ details.mat-src .notes-list { padding: 10px 0 0; }
 .cur table.rot { width: 100%; border-collapse: collapse; margin-top: 6px; }
 .cur table.rot th, .cur table.rot td { border: 1px solid var(--border, rgba(36,59,107,.12)); padding: 6px 9px; font-size: 12px; font-weight: 700; text-align: left; }
 .cur table.rot th { width: 110px; background: rgba(36,59,107,0.05); }
-</style><style>
-.spellbox { max-width: 720px; margin: 10px auto 0; padding: 0 16px; }
-.spellbox > summary { list-style: none; cursor: pointer; background: rgba(109,93,252,0.10);
-  border: 1.5px solid rgba(109,93,252,0.35); border-radius: 12px; padding: 10px 14px;
-  font-size: 13.5px; font-weight: 800; color: var(--purple, #6d5dfc); }
-.spellbox > summary::-webkit-details-marker { display: none; }
-</style><style>
+</style>
+<style>
 .vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; display: flex; flex-wrap: wrap;
   align-items: center; gap: 6px; }
 .vtool .search-input { flex: 0 1 48%; max-width: 48%; min-width: 0; padding: 8px 12px; font-size: 13px; }
@@ -422,16 +423,568 @@ details.mat-src .notes-list { padding: 10px 0 0; }
 <body>
 <header>
   <a class="header-back" href="index.html" aria-label="홈">←</a>
-  <div class="header-icon">🤝</div>
+  <div class="header-icon">🕊️</div>
   <div class="header-text">
-    <div class="header-title">라살 교육 클래스룸자료</div>
-    <div class="header-sub">LEDU</div>
+    <div class="header-title">라살 교육 Lasallian Education</div>
+    <div class="header-sub">Year 9 · LEDU</div>
+  </div>
+  <div class="header-actions">
+    <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제집 채점">📷</a>
+    <a class="btn-claude" id="btn-ask" target="_blank" rel="noopener" href="#" title="이 단원에 대해 Claude에게 질문">💬 Claude</a>
   </div>
 </header>
 
-<div class="tab-pane active" id="tab-files"><div class="files-wrap"><div class="mat-card"><div class="mat-head"><div class="file-ico mat-open">PPT</div><div class="mat-t"><div class="mat-title">Y9 T1Lesson 2&amp;3 Lasallian Reflection.pptx</div><div class="mat-sub">선생님이 클래스룸에 올린 자료 · Lesson 2: The Heart of Service</div></div><a class="mat-open" href="pdfs/ledu/Y9%20T1Lesson%202%263%20Lasallian%20Reflection.pptx" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">라살리안 성찰 수업 중 '봉사의 마음'을 다루는 2·3차시 발표 자료다.</div><div class="mat-why"><p>이 자료는 <b>Lesson 2: The Heart of Service</b>(봉사의 마음)라는 단원의 수업용 슬라이드다. 라살리안 성찰(<b>Lasallian Reflection</b>)은 라살(La Salle) 학교들이 공유하는 가치 교육 시간으로, 학생이 자기 삶과 태도를 되돌아보게 하는 수업이다.</p><p>슬라이드 안에는 <b>WHITEBOARD</b>(화이트보드)라는 활동 영역과, 이름이 적힌 표(table)들이 여러 개 들어 있다. John, Marcus, Donnacha, William, Ben, Jeffery, Da Feng, Ryan 같은 반 학생 이름이 칸마다 배치되어 있고, 그 옆에는 빈 칸이 함께 놓여 있다. 이런 구성은 각자 자기 칸에 생각이나 답을 적어 넣는 <b>모둠·개인 활동</b> 형식이다.</p><p>즉 이 자료는 읽고 외우는 지식 자료라기보다, 수업 시간에 <b>직접 써 넣으며 참여하는</b> 활동 슬라이드에 가깝다. 자기 이름이 있는 칸을 찾아 그 자리에 답을 적는 방식이므로, 수업 중 비어 있는 자기 칸을 채우는 것이 핵심이다.</p></div><div class="mat-exam"><h4>✍️ 꼭 알아야 하는 것</h4><ul><li>단원 이름과 뜻: <b>The Heart of Service</b>는 '봉사의 마음'이며, 이 수업은 <b>Lasallian Reflection</b>(라살리안 성찰) 시간의 일부다.</li><li>슬라이드의 <b>화이트보드(whiteboard)</b> 표에는 학생 이름별 칸이 있어, 자기 이름 칸에 자신의 생각을 적어 넣는 활동이 포함되어 있다.</li></ul></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico mat-open">PDF</div><div class="mat-t"><div class="mat-title">Lesson 0: What Kind of Student Do I Want to Be This Year?</div><div class="mat-sub">선생님이 클래스룸에 올린 자료 · Lesson 0: What Kind of Student Do I Want</div></div><a class="mat-open" href="pdfs/ledu/Lesson%200_%20What%20Kind%20of%20Student%20Do%20I%20Want%20to%20Be%20This%20Year_.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">올해 어떤 학생이 될지 정하고 교실 규칙을 익히는 첫 수업 자료다.</div><div class="mat-why"><p>이 수업의 학습목표(LO)는 두 가지다. 하나는 라살리안 교육(Lasallian Education)의 <b>기대사항과 규칙(expectations and routines)</b>을 이해하는 것이고, 다른 하나는 올해 자신이 기르고 싶은 <b>가치와 태도(values and qualities)</b>를 스스로 생각해 보는 것이다. 학교 표어는 'Enter to Learn, Leave to Serve'(배우러 들어와, 봉사하러 나간다)이고 핵심 가치는 <b>Faith(믿음)·Service(봉사)·Community(공동체)</b> 세 가지다.</p><p>첫 활동은 <b>Lasallian Bingo</b>다. 교실을 돌아다니며 여러 친구와 이야기해서 16칸 문장 전부에 해당하는 사람 이름을 적고, 그 답에 대해 <b>후속 질문(follow-up question)</b>을 하나 더 해서 무슨 뜻인지 이해해야 한다. 학생이 16명 이상인 반은 칸마다 다른 사람을 써야 하고, 16명보다 적은 반은 같은 사람을 최대 두 번까지만 쓸 수 있다. 다 채우면 그 종이를 연습장(exercise book)에 붙인다.</p><p>교실 규칙의 뼈대는 <b>3Es — Enter(들어오기)·Engage(참여하기)·Exit(나가기)</b>다. Enter는 밖에서 조용히 줄을 서서 선생님께 인사하고, 차분히 들어와 자리에 앉아 가방을 바닥에 두고, LeDU 연습장을 책상에 꺼내 수업 제목과 날짜를 쓴 뒤, <b>조용히 스타터 활동을 시작</b>하는 순서다. Exit는 하던 일을 멈추고 선생님 지시를 듣고, 물건을 정리하고, 의자를 밀어 넣은 뒤 <b>조용히 의자 뒤에 서서 해산 허락을 기다리는</b> 것까지다.</p><p>Engage에는 세부 규칙이 여러 개 있다. 받은 코드로 <b>이 LeDU 수업의 구글 클래스룸(Google Classroom)에만</b> 들어가야 하고(다른 반에 잘못 들어가지 않도록 확인), 7~10학년은 연습장을 꼭 가지고 다니며 표지에 이름을 쓴다. 손 신호(hand signals)는 <b>손가락 하나(☝)면 화장실, 둘(✌)이면 질문·발표</b>이며, 화장실은 한 번에 한 명만 간다. 가방은 교실 뒤나 책상 아래에 두고 <b>복도에 두면 안 된다</b>.</p><p>규칙을 어겼을 때는 <b>리셋 버튼(Reset Button)</b> 단계를 밟는다. 먼저 반 전체에 부드럽게 말로 알려주고(Verbal Reminder), 그다음은 조용히 따로 이야기하고(Private Chat), 그래도 안 되면 집에 연락(Contact Home)해서 가정과 함께 돕는 방식이다. 벌이 아니라 <b>다시 시작하게 도와주는 절차</b>라는 점이 핵심이다.</p></div><div class="mat-exam"><h4>✍️ 꼭 알아야 하는 것</h4><ul><li>3Es(Enter·Engage·Exit) 각 단계에서 해야 할 행동 순서 — 특히 들어올 때 연습장에 제목과 날짜 쓰기, 나갈 때 해산 허락 전까지 자리 뒤에 서 있기.</li><li>손 신호 두 가지(☝ 화장실 / ✌ 질문·발표)와 가방·연습장 보관 규칙.</li></ul><div class="wordbox"><h4 class="vids-h">📚 이 자료의 핵심 단어</h4><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/lasallian_education.mp3').play()">🔊</button><b>Lasallian Education</b><span class="wko">라살리안 교육</span><span class="wdef">믿음·봉사·공동체를 바탕으로 하는 라살 학교의 가치 교육 과목이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/learning_objective_lo.mp3').play()">🔊</button><b>Learning Objective (LO)</b><span class="wko">학습 목표</span><span class="wdef">이 수업이 끝났을 때 학생이 알아야 하거나 할 수 있어야 하는 것을 적은 문장이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/expectations.mp3').play()">🔊</button><b>expectations</b><span class="wko">기대 행동, 지켜야 할 규칙</span><span class="wdef">수업에서 학생이 지켜야 할 행동과 학습의 기준이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/routines.mp3').play()">🔊</button><b>routines</b><span class="wko">수업 절차, 정해진 순서</span><span class="wdef">들어오기·나가기처럼 매 수업마다 똑같이 반복하는 정해진 순서다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/the_3es_enter_engage_exit.mp3').play()">🔊</button><b>The 3Es (Enter, Engage, Exit)</b><span class="wko">3E (입실·참여·퇴실)</span><span class="wdef">교실에 들어오는 법, 수업에 참여하는 법, 나가는 법의 세 단계를 말한다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/starter_activity.mp3').play()">🔊</button><b>starter activity</b><span class="wko">도입 활동</span><span class="wdef">수업 시작하자마자 조용히 하는 짧은 첫 활동이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/exercise_book.mp3').play()">🔊</button><b>exercise book</b><span class="wko">연습장, 학습 공책</span><span class="wdef">수업 제목과 날짜, 수업 내용을 적는 공책이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/reset_button.mp3').play()">🔊</button><b>reset button</b><span class="wko">리셋 버튼 (행동 교정 단계)</span><span class="wdef">말로 알려주기 → 조용히 개인 면담 → 가정 연락으로 이어지는 3단계 행동 교정 방식이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/dismissed.mp3').play()">🔊</button><b>dismissed</b><span class="wko">(수업이) 끝나 나가도 좋다는 허락을 받다</span><span class="wdef">선생님이 교실을 나가도 된다고 정식으로 허락하는 것이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/service_learning.mp3').play()">🔊</button><b>Service Learning</b><span class="wko">봉사 학습</span><span class="wdef">지역사회의 실제 필요를 채우는 봉사를 계획해 그 과정에서 배우는 수업이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/advocacy.mp3').play()">🔊</button><b>advocacy</b><span class="wko">옹호, 알리고 지지를 이끌어내는 활동</span><span class="wdef">사회 문제를 사람들에게 알리고 지지를 얻어내려는 활동이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/call_to_action.mp3').play()">🔊</button><b>Call to Action</b><span class="wko">행동 촉구 메시지</span><span class="wdef">듣는 사람에게 이 문제를 위해 무엇을 하라고 분명히 요청하는 말이다.</span></div></div><div class="pages"><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p1.jpg" alt="1쪽" loading="lazy"><div class="pg-txt"><h5>1쪽 · 올해 나는 어떤 학생이 되고 싶은가</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br><b>학습 목표(LO)</b>: 라살리안 교육의 기대와 규칙을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>BMDL 자리 배치도</b><br>(학생들이 교실에 들어올 때 화면에 띄운다)</div><p>이 수업의 뼈대는 라살리안 교육의 세 낱말, 믿음·봉사·공동체다.</p><p>이 시간에 할 일은 두 가지다. 학교의 기대와 규칙을 이해하는 것, 그리고 올해 어떤 학생이 되고 싶은지 스스로 돌아보는 것이다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p2.jpg" alt="2쪽" loading="lazy"><div class="pg-txt"><h5>2쪽 · 라살리안 빙고 활동 안내</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br>믿음 ⭑ 봉사 ⭑ 공동체<br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br><b>학습 목표</b>: 라살리안 교육의 기대와 규칙을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>라살리안 빙고</b><br>1. 교실을 돌아다니며 여러 친구와 이야기한다.<br>2. <b>16개 문장을 모두</b> 채운다.<br>3. 각 문장에 맞는 사람의 <b>이름을 적는다</b>.<br>4. <b>추가 질문</b>을 해서 그 친구의 답이나 말한 내용을 이해한다.<br>5. 학생이 16명 이상인 반에서는 문장마다 다른 사람을 쓴다. 16명보다 적은 반에서는 같은 사람을 <b>최대 두 번까지</b> 쓸 수 있다.<br>6. 종이 전체가 다 찰 때까지 계속한다.<br>7. 다 하면 종이를 <b>연습장(exercise book)</b>에 붙인다.<br>연습장에:<br>누군가에 대해 알게 된 흥미로운 점은 무엇인가?<br>올해 라살리안 교육에서 무엇을 얻기를 바라는가?</div><p>빙고 칸마다 조건에 맞는 친구의 이름을 적고, 반드시 추가 질문까지 해서 그 답의 내용을 이해해야 한다.</p><p>반 인원이 16명 이상이면 이름이 겹치면 안 되고, 16명 미만이면 같은 사람을 두 번까지만 쓸 수 있다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p3.jpg" alt="3쪽" loading="lazy"><div class="pg-txt"><h5>3쪽 · 라살리안 교육 소개</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와서, <b>섬기러</b> 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>환영합니다!</div><p>라살리안 학교의 표어는 '배우러 들어와 섬기러 나간다'로, 배운 것을 남을 위해 쓰라는 뜻이다.</p><p>이 학교가 내세우는 세 가지 가치는 믿음(Faith)·봉사(Service)·공동체(Community)다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p4.jpg" alt="4쪽" loading="lazy"><div class="pg-txt"><h5>4쪽 · 올해 나는 어떤 학생이 되고 싶은가</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우기 위해 들어와서, 섬기기 위해 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>(1) ✅ <b>도달</b><br>나는 교실의 <b>기대와 가치</b> 중 나에게 중요한 것을 <b>찾아낼 수 있다</b>.<br>(2) 🚀 <b>넘어섬</b><br>나는 특정 가치가 왜 나에게 학생으로서 중요한지 <b>설명할 수 있다</b>.<br>(3) 👑 <b>숙달</b><br>나는 나의 가치를 올해 내가 할 수 있는 <b>구체적인 행동과 선택</b>에 <b>연결할 수 있다</b>.<br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br><b>학습목표(LO)</b>: 라살리안 교육의 기대와 <b>규칙(루틴)</b>을 이해한다; 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 돌아본다.<br>올해 나는 어떤 학생이 되고 싶은가?</div><p>학습 단계가 3칸으로 나뉜다 — 찾아내기(도달) → 왜 중요한지 설명하기(넘어섬) → 구체적 행동에 연결하기(숙달). 뒤로 갈수록 요구가 높아진다.</p><p>학교의 세 가지 핵심 가치는 믿음·봉사·공동체이고, 표어는 '배우기 위해 들어와서, 섬기기 위해 나간다'다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p5.jpg" alt="5쪽" loading="lazy"><div class="pg-txt"><h5>5쪽 · 1과 시작 — 라살 교육 소개</h5><div class="pg-tr"><b>LASALLIAN EDUCATION</b> (라살 교육)<br>배우기 위해 들어오고, 섬기기 위해 나간다.<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살 교육의 <b>기대사항</b>과 <b>규칙(루틴)</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 되돌아본다.<br><b>3E</b>: Enter(들어가기), Engage(참여하기), Exit(나가기)<br>교실 <b>규칙</b>과 <b>기대사항</b></div><p>이 수업의 목표는 두 가지다. 학교의 기대사항·규칙을 이해하는 것, 그리고 올해 어떤 학생이 되고 싶은지 스스로 생각해 보는 것이다.</p><p>라살 교육의 세 가지 핵심 가치는 믿음(Faith)·봉사(Service)·공동체(Community)이며, 수업 진행의 틀은 3E(Enter·Engage·Exit)다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p6.jpg" alt="6쪽" loading="lazy"><div class="pg-txt"><h5>6쪽 · 3E — 들어올 때</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항</b>과 <b>규칙적인 절차</b>를 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>3E</b>: 우리가 <b>들어오는</b> 방법<br>1. 밖에서 조용히 <b>줄을 선다</b>. 선생님께 인사한다.<br>2. 차분하게 들어와 자리로 가고, 가방은 바닥에 둔다.<br>3. <b>LeDU 연습장</b>을 책상 위에 놓는다. 수업 제목과 날짜를 쓴다.<br>4. <b>스타터 활동</b>을 조용히 시작한다.</div><p>교실에 들어오는 순서가 4단계로 정해져 있다 — 줄서기·인사 → 차분히 착석·가방은 바닥 → 연습장 꺼내 제목과 날짜 쓰기 → 조용히 스타터 활동 시작.</p><p>이 수업의 목표는 라살리안 교육의 기대사항과 절차를 이해하고, 올해 기르고 싶은 가치와 자질을 스스로 돌아보는 것이다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p7.jpg" alt="7쪽" loading="lazy"><div class="pg-txt"><h5>7쪽 · 책과 가방 규칙</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항과 규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 돌아본다<br><b>책과 가방</b><br>1. 학생들이 <b>사물함</b>을 쓰도록 권한다.<br>2. <b>연습장(공책)</b>은 교실에 둔다. 단 특정 과제 때문에 집으로 가져가야 하거나 반이 다른 선생님과 나뉘는 경우는 예외다.<br>3. <b>가방</b>은 교실 안으로 가지고 들어와 뒤쪽이나 책상 밑에 둔다.<br>4. 가방을 <b>복도</b>에 내놓아 두면 안 된다.</div><p>연습장은 교실에 두는 것이 원칙이고, 과제나 분반 수업 때만 집에 가져갈 수 있다.</p><p>가방은 교실 뒤쪽이나 책상 밑에 두며, 복도에 두는 것은 금지다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p8.jpg" alt="8쪽" loading="lazy"><div class="pg-txt"><h5>8쪽 · 구글 클래스룸 가입하기</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br>믿음 ⭑ 봉사 ⭑ 공동체<br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 <b>기대사항과 규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 되돌아본다<br><b>3E</b>: 우리가 참여하는 방법<br><b>구글 클래스룸</b> 💻<br>1. 받은 <b>코드</b>를 써서, 이 <b>LeDU 수업</b>의 구글 클래스룸에만 가입한다.<br>2. <b>맞는 반</b>에 들어가는지 다시 확인한다. 다른 반에는 절대 가입하지 않는다.</div><p>선생님이 준 코드로 이 LeDU 수업의 구글 클래스룸에만 가입한다</p><p>가입 전에 반이 맞는지 두 번 확인하고, 다른 반에는 들어가지 않는다</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p9.jpg" alt="9쪽" loading="lazy"><div class="pg-txt"><h5>9쪽 · 라살리안 교육과 3E — 연습장 규칙</h5><div class="pg-tr"><b>LASALLIAN EDUCATION</b> (라살리안 교육)<br>배우기 위해 들어오고, 섬기기 위해 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항</b>과 <b>규칙적인 생활방식</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>3E: 우리가 참여하는 방법</b><br><b>연습장(Exercise Books)</b><br>1. Years 7-10 LeDU 학생에게 해당한다. 이 학생들은 반드시 자신의 연습장을 갖고 있어야 한다.<br>2. 앞표지에 자기 <b>이름</b>을 쓴다.</div><p>학교의 세 가지 핵심 가치는 믿음·봉사·공동체다.</p><p>7~10학년 LeDU 학생은 연습장을 반드시 챙기고, 앞표지에 이름을 써야 한다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p10.jpg" alt="10쪽" loading="lazy"><div class="pg-txt"><h5>10쪽 · 라살 교육과 손 신호</h5><div class="pg-tr"><b>라살 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br><b>학습목표</b>: 라살 교육의 <b>기대사항</b>과 <b>규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>3E</b>: 우리가 참여하는 방식<br><b>손 신호</b> ✋<br>1. ☝ <b>화장실</b>: 수업을 방해하지 않고 조용히 요청한다.<br>2. ✌ <b>질문/발표</b>: 자기 의견을 말하는 방법이다.</div><p>학교 표어는 '배우러 들어와, 섬기러 나간다'이고, 핵심 가치는 믿음·봉사·공동체 세 가지다.</p><p>말로 끼어들지 않고 손가락 신호로 표시한다. 손가락 하나는 화장실, 둘은 질문이나 발표다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p11.jpg" alt="11쪽" loading="lazy"><div class="pg-txt"><h5>11쪽 · 화장실 이용 규칙</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br>믿음 ⭑ 봉사 ⭑ 공동체<br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항</b>과 <b>일과</b>를 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>화장실 허가</b><br>1. 학생은 <b>한 번에 한 명씩만</b> 화장실에 가게 한다.<br>2. <b>쉬는 시간 앞뒤 15분 이내</b>라면, 학생이 정말 가야 하는지 판단하거나 쉬는 시간을 어떻게 쓰는지 학생과 이야기를 나눈다.<br>3. <b>시간대를 살핀다</b> — 학생이 그저 '시간을 때우거나' 어려운 과제를 피하려는 것 같으면 기다리라고 한다.<br>4. 수업 중 일을 피하려고 화장실을 자주 쓰는 학생을 눈여겨본다. 걱정이 되기 시작하면 <b>ISAMS</b>에 기록한다.</div><p>화장실은 한 번에 한 명만 가고, 쉬는 시간 앞뒤 15분 이내면 선생님이 판단해서 기다리게 할 수 있다.</p><p>과제를 피하려고 화장실을 자주 쓰면 선생님이 ISAMS(학교 기록 시스템)에 기록한다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p12.jpg" alt="12쪽" loading="lazy"><div class="pg-txt"><h5>12쪽 · 3E와 리셋 버튼</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와서, 섬기러 나간다<br><b>신앙</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항</b>과 <b>일과</b>를 이해한다. 올해 학생으로서 기르고 싶은 가치와 자질을 돌아본다.<br><b>3E: 우리가 참여하는 방법</b><br><b>리셋 버튼</b> 🔄<br>★<b>말로 하는 알림</b>: 친절하고 전체를 향한 학급 알림이다.<br>★<b>따로 이야기</b>: 조용하고 예의를 갖춘 대화다.<br>★<b>집에 연락</b>: 너의 성공을 위해 가족과 손잡는 것이다.</div><p>문제가 생기면 바로 벌을 주는 것이 아니라 '리셋 버튼'을 눌러 다시 시작하게 하는 방식이다.</p><p>알림은 세 단계로 올라간다 — 말로 하는 알림 → 따로 이야기 → 집에 연락이다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p13.jpg" alt="13쪽" loading="lazy"><div class="pg-txt"><h5>13쪽 · 3E 규칙: 나가는 법</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와서, <b>섬기러</b> 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 <b>기대사항</b>과 <b>규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>3E</b>: 우리가 <b>나가는</b> 방법<br>★ 하던 일을 멈추고 선생님의 지시를 듣는다.<br>★ 준비물을 치우고 자기 자리를 <b>정돈</b>한다.<br>★ 의자를 밀어 넣고 그 뒤에 <b>조용히</b> 선다.<br>★ <b>나가라는 말</b>을 들을 때까지 기다린다.<br>★ 감사 인사와 작별 인사를 한다.</div><p>3E 중 '나가기(Exit)' 단계다. 수업이 끝날 때 지켜야 할 다섯 가지 순서를 정해 놓았다.</p><p>마음대로 먼저 나가지 않는다. 자리를 정돈하고 의자 뒤에 조용히 선 뒤, 선생님이 보내 줄 때까지 기다린다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p14.jpg" alt="14쪽" loading="lazy"><div class="pg-txt"><h5>14쪽 · 1학기 학습 성과와 일정</h5><div class="pg-tr"><b>라살리안 교육</b> (LASALLIAN EDUCATION)<br>배우러 들어와, 섬기러 나간다 (Enter to Learn, Leave to Serve)<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 기대와 일과를 이해한다; 올해 학생으로서 기르고 싶은 가치와 자질을 되돌아본다<br>1학기 - 11학년: <b>애드보커시(옹호) 봉사</b><br><br><b>학기말 학습 성과</b><br>1학기가 끝날 때까지 학생들은 청중을 <b>교육하고, 참여시키고, 힘을 주는</b> 윤리적이고 <b>근거에 기반한 애드보커시 부스</b>를 설계하고 실행하게 된다.<br><br><b>주요 이정표</b><br>❏ 모둠을 만든다.<br>❏ 초점을 맞춘 <b>사회 문제</b>를 고르고 조사한다.<br>❏ 핵심 메시지, 이야기, <b>행동 촉구(Call to Action)</b>를 만든다.<br>❏ 애드보커시 부스를 완성하고 다듬는다.<br>❏ 실행하고 청중에게 준 영향을 되돌아본다.<br><br><b>중요한 날짜</b><br>★ 11주차: 10월 19일 주 — <b>제안서 승인</b><br>★ 16주차: 11월 23일 주 — <b>애드보커시 인식의 날</b> 실행<br>★ 17~18주차: 11월 30일 및 12월 7일 주 — <b>성찰</b></div><p>1학기의 최종 결과물은 '애드보커시 부스'다. 윤리적이고 근거에 기반해야 하며, 청중을 교육·참여·역량강화하는 것이 목표다.</p><p>이정표는 모둠 구성 → 사회 문제 조사 → 핵심 메시지와 행동 촉구 개발 → 부스 완성 → 실행 및 성찰 순서로 진행된다.</p><p>날짜는 3개만 기억하면 된다. 10월 19일 주 제안서 승인, 11월 23일 주 실행, 11월 30일~12월 7일 주 성찰이다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p15.jpg" alt="15쪽" loading="lazy"><div class="pg-txt"><h5>15쪽 · 1학기 봉사학습 과제 안내</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와서, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 기대사항과 규칙을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 돌아본다.<br>1학기 - 12학년: <b>직접 봉사 학습</b><br>학기말 성과물: 1학기가 끝날 때까지 학생들은 <b>윤리적이고</b>, <b>근거에 기반하며</b>, <b>바로 실행할 수 있는</b> 직접 봉사 학습 <b>프로젝트 제안서</b>를 만들어 발표하게 된다.<br><b>주요 단계</b><br>❏ 필요한 것과 함께할 <b>파트너</b>를 찾는다<br>❏ 봉사 내용과 <b>목표</b>를 설계한다<br>❏ <b>자원</b>과 평가 방법을 계획한다<br>❏ 제안서를 제출하고 발표한다<br><b>중요한 날짜</b><br>★ 14주차(11월 9일 주): 제안서 <b>점검</b><br>★ 16주차(11월 23일 주): <b>최종 제출</b><br>★ 17주차(11월 30일 주): 제안서 <b>발표</b><br>★ 18주차(12월 7일 주): <b>돌아보기</b></div><p>1학기 최종 결과물은 '직접 봉사 학습 프로젝트 제안서'이며, 윤리적·근거 기반·실행 가능이라는 세 조건을 갖춰야 한다.</p><p>제안서는 파트너 찾기 → 목표 설계 → 자원·평가 계획 → 제출·발표의 네 단계로 진행되고, 11월 9일 주 점검부터 12월 7일 주 돌아보기까지 날짜가 정해져 있다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p16.jpg" alt="16쪽" loading="lazy"><div class="pg-txt"><h5>16쪽 · 1학기 목표와 주요 일정</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br>믿음 ⭑ 봉사 ⭑ 공동체<br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 <b>기대와 규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 돌아본다.<br><br><b>1학기 - 13학년: 직접 봉사 학습</b><br><b>학기말 성과</b><br>1학기가 끝날 때까지 학생들은 <b>직접 봉사 학습</b>의 두 번째 주기를 개선하고, 실행하고, 비판적으로 평가하게 된다.<br>그리하여 더 강한 <b>리더십</b>과 성찰적 성장을 보여주게 된다.<br><br><b>주요 단계</b><br>❏ 12학년 경험을 평가한다<br>❏ 제안서를 개선하고 <b>변론</b>한다<br>❏ 실행하고, 점검하고, 조정한다<br>❏ 영향을 평가하고 성찰한다<br><br><b>중요한 날짜</b><br>★ 11주차: 10월 19일 주 — 개선된 제안서 발표<br>★ 12~17주차: 10월 26일~11월 30일 주 — 실행과 점검<br>★ 18주차: 12월 7일 주 — 최종 성찰</div><p>13학년 1학기는 봉사 학습의 두 번째 주기다. 12학년 때 한 것을 평가해서 더 낫게 고치는 것이 출발점이다.</p><p>날짜가 정해져 있다. 10월 19일 주에 제안서를 발표하고, 10월 26일부터 11월 30일까지 실행하며, 12월 7일 주에 최종 성찰을 쓴다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p17.jpg" alt="17쪽" loading="lazy"><div class="pg-txt"><h5>17쪽 · 내 가치관 다이아몬드</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 기대와 규칙을 이해한다. 올해 학생으로서 기르고 싶은 가치와 자질을 되돌아본다.<br><b>나의 학생 가치관 다이아몬드</b><br>1. 아홉 가지 가치를 모두 읽는다.<br>2. 올해 나에게 가장 중요한 <b>세 가지</b>를 고른다.<br>3. 가장 중요한 가치를 <b>맨 위</b>에 놓는다.<br>4. 나머지 가치들을 중요한 순서대로 배열한다.<br>5. 왜 그렇게 골랐는지 설명할 <b>준비</b>를 한다.<br>a. 1 = 올해 나에게 가장 높은 우선순위<br>b. 9 = 올해 나에게 낮은 우선순위<br><b>연습장에 다음을 작성한다.</b><br>1. 나에게 가장 중요한 가치는 __________ 이다. 왜냐하면…<br>2. 올해 내가 기르고 싶은 가치는 __________ 이다. 왜냐하면…<br>3. 이 가치를 기르기 위해 내가 할 수 있는 행동 하나는…<br><b>짝</b>을 찾아 각자의 상위 세 가지 가치를 <b>비교</b>하고, 공통점 하나와 차이점 하나를 <b>찾아내고</b>, 왜 서로 다르게 순위를 매겼는지 <b>설명</b>한다.</div><p>가치 아홉 개를 1(가장 중요)부터 9(덜 중요)까지 다이아몬드 모양으로 배열하는 활동이다. 상위 세 개를 먼저 고르고 가장 중요한 것을 맨 위에 놓는다.</p><p>다이아몬드를 채운 뒤에는 연습장에 세 문장(가장 중요한 가치·기르고 싶은 가치·그 가치를 위한 행동)을 쓰고, 짝과 상위 세 가치를 비교해 공통점 하나와 차이점 하나를 찾아 설명한다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p18.jpg" alt="18쪽" loading="lazy"><div class="pg-txt"><h5>18쪽 · 수준 골라 정리하기</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br><br><b>성공 기준</b> — 네 수준을 골라라<br><br>(1) ✅ <b>도달</b><br>나는 교실 규칙과 나에게 중요한 가치를 <b>찾아낼</b> 수 있다.<br>올해 학생으로서 중요한 교실 규칙 세 가지와 가치 세 가지를 적어라.<br><br>(2) 🚀 <b>넘어섬</b><br>나는 특정 가치가 학생인 나에게 왜 중요한지 <b>설명할</b> 수 있다.<br>가치 다이아몬드에서 가치 하나를 골라라. 그것이 왜 중요한지, 올해 어떻게 도움이 될지 설명하라.<br><br>(3) 👑 <b>숙달</b><br>나는 내 가치를 올해 내가 할 수 있는 구체적인 행동과 선택에 <b>연결할</b> 수 있다.<br>완성하라: "올해 나는 ~한 학생이 되고 싶다", "그렇게 하기 위해 나는 ~할 것이다". 네가 할 구체적인 행동을 최소 두 가지 써라.<br><br><b>수준을 골라라.</b> 오늘 수업을 얼마나 이해했는지 가장 잘 보여주는 수준을 골라라. 과제를 꼼꼼하고 정확하게 끝내라.<br><br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br><b>학습 목표(LO)</b>: 라살리안 교육의 규칙과 일과를 이해한다. 올해 학생으로서 기르고 싶은 가치와 자질을 돌아본다.<br><br>올해 나는 어떤 학생이 되고 싶은가?</div><p>세 단계는 난이도 순이다 — 찾아내기(도달) → 설명하기(넘어섬) → 행동으로 연결하기(숙달). 자기 수준을 스스로 골라 그 과제를 하면 된다.</p><p>숙달(3단계)은 '~하고 싶다'로 끝내지 말고 구체적 행동 두 가지를 반드시 써야 한다.</p></div></div></div></div></div></div>
-</div></div>
 
-<footer>라살 교육 · AMY Study App</footer>
-<script>const UNIT_ID = "y9c_ledu"; const UNIT_TITLE = "라살 교육";</script>
-</body></html>
+
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn" data-tab="files">📄 클래스룸자료</button>
+    <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button><button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
+    </div>
+</div>
+
+
+<div class="tab-pane active" id="tab-vocab">
+  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기 (0)</button><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="69개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9c_ledu_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></div>
+
+
+<div class="cards-wrap"><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">Lasallian Education</div><div class="vcard-ko">라살리안 교육</div><div class="vcard-def-ko">믿음·봉사·공동체를 바탕으로 하는 라살 학교의 가치 교육 과목이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("Lasallian Education")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">Learning Objective (LO)</div><div class="vcard-ko">학습 목표</div><div class="vcard-def-ko">이 수업이 끝났을 때 학생이 알아야 하거나 할 수 있어야 하는 것을 적은 문장이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("Learning Objective (LO)")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">expectations</div><div class="vcard-ko">기대 행동, 지켜야 할 규칙</div><div class="vcard-def-ko">수업에서 학생이 지켜야 할 행동과 학습의 기준이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("expectations")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">routines</div><div class="vcard-ko">수업 절차, 정해진 순서</div><div class="vcard-def-ko">들어오기·나가기처럼 매 수업마다 똑같이 반복하는 정해진 순서다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("routines")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">The 3Es (Enter, Engage, Exit)</div><div class="vcard-ko">3E (입실·참여·퇴실)</div><div class="vcard-def-ko">교실에 들어오는 법, 수업에 참여하는 법, 나가는 법의 세 단계를 말한다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("The 3Es (Enter, Engage, Exit)")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">starter activity</div><div class="vcard-ko">도입 활동</div><div class="vcard-def-ko">수업 시작하자마자 조용히 하는 짧은 첫 활동이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("starter activity")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">exercise book</div><div class="vcard-ko">연습장, 학습 공책</div><div class="vcard-def-ko">수업 제목과 날짜, 수업 내용을 적는 공책이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("exercise book")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">reset button</div><div class="vcard-ko">리셋 버튼 (행동 교정 단계)</div><div class="vcard-def-ko">말로 알려주기 → 조용히 개인 면담 → 가정 연락으로 이어지는 3단계 행동 교정 방식이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("reset button")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">dismissed</div><div class="vcard-ko">(수업이) 끝나 나가도 좋다는 허락을 받다</div><div class="vcard-def-ko">선생님이 교실을 나가도 된다고 정식으로 허락하는 것이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("dismissed")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">Service Learning</div><div class="vcard-ko">봉사 학습</div><div class="vcard-def-ko">지역사회의 실제 필요를 채우는 봉사를 계획해 그 과정에서 배우는 수업이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("Service Learning")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">advocacy</div><div class="vcard-ko">옹호, 알리고 지지를 이끌어내는 활동</div><div class="vcard-def-ko">사회 문제를 사람들에게 알리고 지지를 얻어내려는 활동이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("advocacy")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">Call to Action</div><div class="vcard-ko">행동 촉구 메시지</div><div class="vcard-def-ko">듣는 사람에게 이 문제를 위해 무엇을 하라고 분명히 요청하는 말이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("Call to Action")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div></div></div>
+<div class="tab-pane" id="tab-files"><div class="files-wrap"><div class="mat-card"><div class="mat-head"><div class="file-ico mat-open">PPT</div><div class="mat-t"><div class="mat-title">Y9 T1Lesson 2&amp;3 Lasallian Reflection.pptx</div><div class="mat-sub">선생님이 클래스룸에 올린 자료 · Lesson 2: The Heart of Service</div></div><a class="mat-open" href="pdfs/ledu/Y9%20T1Lesson%202%263%20Lasallian%20Reflection.pptx" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">라살리안 성찰 수업 중 '봉사의 마음'을 다루는 2·3차시 발표 자료다.</div><div class="mat-why"><p>이 자료는 <b>Lesson 2: The Heart of Service</b>(봉사의 마음)라는 단원의 수업용 슬라이드다. 라살리안 성찰(<b>Lasallian Reflection</b>)은 라살(La Salle) 학교들이 공유하는 가치 교육 시간으로, 학생이 자기 삶과 태도를 되돌아보게 하는 수업이다.</p><p>슬라이드 안에는 <b>WHITEBOARD</b>(화이트보드)라는 활동 영역과, 이름이 적힌 표(table)들이 여러 개 들어 있다. John, Marcus, Donnacha, William, Ben, Jeffery, Da Feng, Ryan 같은 반 학생 이름이 칸마다 배치되어 있고, 그 옆에는 빈 칸이 함께 놓여 있다. 이런 구성은 각자 자기 칸에 생각이나 답을 적어 넣는 <b>모둠·개인 활동</b> 형식이다.</p><p>즉 이 자료는 읽고 외우는 지식 자료라기보다, 수업 시간에 <b>직접 써 넣으며 참여하는</b> 활동 슬라이드에 가깝다. 자기 이름이 있는 칸을 찾아 그 자리에 답을 적는 방식이므로, 수업 중 비어 있는 자기 칸을 채우는 것이 핵심이다.</p></div><div class="mat-exam"><h4>✍️ 꼭 알아야 하는 것</h4><ul><li>단원 이름과 뜻: <b>The Heart of Service</b>는 '봉사의 마음'이며, 이 수업은 <b>Lasallian Reflection</b>(라살리안 성찰) 시간의 일부다.</li><li>슬라이드의 <b>화이트보드(whiteboard)</b> 표에는 학생 이름별 칸이 있어, 자기 이름 칸에 자신의 생각을 적어 넣는 활동이 포함되어 있다.</li></ul></div></div></div><div class="mat-card"><div class="mat-head"><div class="file-ico mat-open">PDF</div><div class="mat-t"><div class="mat-title">Lesson 0: What Kind of Student Do I Want to Be This Year?</div><div class="mat-sub">선생님이 클래스룸에 올린 자료 · Lesson 0: What Kind of Student Do I Want</div></div><a class="mat-open" href="pdfs/ledu/Lesson%200_%20What%20Kind%20of%20Student%20Do%20I%20Want%20to%20Be%20This%20Year_.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">올해 어떤 학생이 될지 정하고 교실 규칙을 익히는 첫 수업 자료다.</div><div class="mat-why"><p>이 수업의 학습목표(LO)는 두 가지다. 하나는 라살리안 교육(Lasallian Education)의 <b>기대사항과 규칙(expectations and routines)</b>을 이해하는 것이고, 다른 하나는 올해 자신이 기르고 싶은 <b>가치와 태도(values and qualities)</b>를 스스로 생각해 보는 것이다. 학교 표어는 'Enter to Learn, Leave to Serve'(배우러 들어와, 봉사하러 나간다)이고 핵심 가치는 <b>Faith(믿음)·Service(봉사)·Community(공동체)</b> 세 가지다.</p><p>첫 활동은 <b>Lasallian Bingo</b>다. 교실을 돌아다니며 여러 친구와 이야기해서 16칸 문장 전부에 해당하는 사람 이름을 적고, 그 답에 대해 <b>후속 질문(follow-up question)</b>을 하나 더 해서 무슨 뜻인지 이해해야 한다. 학생이 16명 이상인 반은 칸마다 다른 사람을 써야 하고, 16명보다 적은 반은 같은 사람을 최대 두 번까지만 쓸 수 있다. 다 채우면 그 종이를 연습장(exercise book)에 붙인다.</p><p>교실 규칙의 뼈대는 <b>3Es — Enter(들어오기)·Engage(참여하기)·Exit(나가기)</b>다. Enter는 밖에서 조용히 줄을 서서 선생님께 인사하고, 차분히 들어와 자리에 앉아 가방을 바닥에 두고, LeDU 연습장을 책상에 꺼내 수업 제목과 날짜를 쓴 뒤, <b>조용히 스타터 활동을 시작</b>하는 순서다. Exit는 하던 일을 멈추고 선생님 지시를 듣고, 물건을 정리하고, 의자를 밀어 넣은 뒤 <b>조용히 의자 뒤에 서서 해산 허락을 기다리는</b> 것까지다.</p><p>Engage에는 세부 규칙이 여러 개 있다. 받은 코드로 <b>이 LeDU 수업의 구글 클래스룸(Google Classroom)에만</b> 들어가야 하고(다른 반에 잘못 들어가지 않도록 확인), 7~10학년은 연습장을 꼭 가지고 다니며 표지에 이름을 쓴다. 손 신호(hand signals)는 <b>손가락 하나(☝)면 화장실, 둘(✌)이면 질문·발표</b>이며, 화장실은 한 번에 한 명만 간다. 가방은 교실 뒤나 책상 아래에 두고 <b>복도에 두면 안 된다</b>.</p><p>규칙을 어겼을 때는 <b>리셋 버튼(Reset Button)</b> 단계를 밟는다. 먼저 반 전체에 부드럽게 말로 알려주고(Verbal Reminder), 그다음은 조용히 따로 이야기하고(Private Chat), 그래도 안 되면 집에 연락(Contact Home)해서 가정과 함께 돕는 방식이다. 벌이 아니라 <b>다시 시작하게 도와주는 절차</b>라는 점이 핵심이다.</p></div><div class="mat-exam"><h4>✍️ 꼭 알아야 하는 것</h4><ul><li>3Es(Enter·Engage·Exit) 각 단계에서 해야 할 행동 순서 — 특히 들어올 때 연습장에 제목과 날짜 쓰기, 나갈 때 해산 허락 전까지 자리 뒤에 서 있기.</li><li>손 신호 두 가지(☝ 화장실 / ✌ 질문·발표)와 가방·연습장 보관 규칙.</li></ul><div class="wordbox"><h4 class="vids-h">📚 이 자료의 핵심 단어</h4><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/lasallian_education.mp3').play()">🔊</button><b>Lasallian Education</b><span class="wko">라살리안 교육</span><span class="wdef">믿음·봉사·공동체를 바탕으로 하는 라살 학교의 가치 교육 과목이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/learning_objective_lo.mp3').play()">🔊</button><b>Learning Objective (LO)</b><span class="wko">학습 목표</span><span class="wdef">이 수업이 끝났을 때 학생이 알아야 하거나 할 수 있어야 하는 것을 적은 문장이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/expectations.mp3').play()">🔊</button><b>expectations</b><span class="wko">기대 행동, 지켜야 할 규칙</span><span class="wdef">수업에서 학생이 지켜야 할 행동과 학습의 기준이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/routines.mp3').play()">🔊</button><b>routines</b><span class="wko">수업 절차, 정해진 순서</span><span class="wdef">들어오기·나가기처럼 매 수업마다 똑같이 반복하는 정해진 순서다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/the_3es_enter_engage_exit.mp3').play()">🔊</button><b>The 3Es (Enter, Engage, Exit)</b><span class="wko">3E (입실·참여·퇴실)</span><span class="wdef">교실에 들어오는 법, 수업에 참여하는 법, 나가는 법의 세 단계를 말한다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/starter_activity.mp3').play()">🔊</button><b>starter activity</b><span class="wko">도입 활동</span><span class="wdef">수업 시작하자마자 조용히 하는 짧은 첫 활동이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/exercise_book.mp3').play()">🔊</button><b>exercise book</b><span class="wko">연습장, 학습 공책</span><span class="wdef">수업 제목과 날짜, 수업 내용을 적는 공책이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/reset_button.mp3').play()">🔊</button><b>reset button</b><span class="wko">리셋 버튼 (행동 교정 단계)</span><span class="wdef">말로 알려주기 → 조용히 개인 면담 → 가정 연락으로 이어지는 3단계 행동 교정 방식이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/dismissed.mp3').play()">🔊</button><b>dismissed</b><span class="wko">(수업이) 끝나 나가도 좋다는 허락을 받다</span><span class="wdef">선생님이 교실을 나가도 된다고 정식으로 허락하는 것이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/service_learning.mp3').play()">🔊</button><b>Service Learning</b><span class="wko">봉사 학습</span><span class="wdef">지역사회의 실제 필요를 채우는 봉사를 계획해 그 과정에서 배우는 수업이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/advocacy.mp3').play()">🔊</button><b>advocacy</b><span class="wko">옹호, 알리고 지지를 이끌어내는 활동</span><span class="wdef">사회 문제를 사람들에게 알리고 지지를 얻어내려는 활동이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/call_to_action.mp3').play()">🔊</button><b>Call to Action</b><span class="wko">행동 촉구 메시지</span><span class="wdef">듣는 사람에게 이 문제를 위해 무엇을 하라고 분명히 요청하는 말이다.</span></div></div><div class="pages"><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p1.jpg" alt="1쪽" loading="lazy"><div class="pg-txt"><h5>1쪽 · 올해 나는 어떤 학생이 되고 싶은가</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br><b>학습 목표(LO)</b>: 라살리안 교육의 기대와 규칙을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>BMDL 자리 배치도</b><br>(학생들이 교실에 들어올 때 화면에 띄운다)</div><p>이 수업의 뼈대는 라살리안 교육의 세 낱말, 믿음·봉사·공동체다.</p><p>이 시간에 할 일은 두 가지다. 학교의 기대와 규칙을 이해하는 것, 그리고 올해 어떤 학생이 되고 싶은지 스스로 돌아보는 것이다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p2.jpg" alt="2쪽" loading="lazy"><div class="pg-txt"><h5>2쪽 · 라살리안 빙고 활동 안내</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br>믿음 ⭑ 봉사 ⭑ 공동체<br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br><b>학습 목표</b>: 라살리안 교육의 기대와 규칙을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>라살리안 빙고</b><br>1. 교실을 돌아다니며 여러 친구와 이야기한다.<br>2. <b>16개 문장을 모두</b> 채운다.<br>3. 각 문장에 맞는 사람의 <b>이름을 적는다</b>.<br>4. <b>추가 질문</b>을 해서 그 친구의 답이나 말한 내용을 이해한다.<br>5. 학생이 16명 이상인 반에서는 문장마다 다른 사람을 쓴다. 16명보다 적은 반에서는 같은 사람을 <b>최대 두 번까지</b> 쓸 수 있다.<br>6. 종이 전체가 다 찰 때까지 계속한다.<br>7. 다 하면 종이를 <b>연습장(exercise book)</b>에 붙인다.<br>연습장에:<br>누군가에 대해 알게 된 흥미로운 점은 무엇인가?<br>올해 라살리안 교육에서 무엇을 얻기를 바라는가?</div><p>빙고 칸마다 조건에 맞는 친구의 이름을 적고, 반드시 추가 질문까지 해서 그 답의 내용을 이해해야 한다.</p><p>반 인원이 16명 이상이면 이름이 겹치면 안 되고, 16명 미만이면 같은 사람을 두 번까지만 쓸 수 있다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p3.jpg" alt="3쪽" loading="lazy"><div class="pg-txt"><h5>3쪽 · 라살리안 교육 소개</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와서, <b>섬기러</b> 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>환영합니다!</div><p>라살리안 학교의 표어는 '배우러 들어와 섬기러 나간다'로, 배운 것을 남을 위해 쓰라는 뜻이다.</p><p>이 학교가 내세우는 세 가지 가치는 믿음(Faith)·봉사(Service)·공동체(Community)다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p4.jpg" alt="4쪽" loading="lazy"><div class="pg-txt"><h5>4쪽 · 올해 나는 어떤 학생이 되고 싶은가</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우기 위해 들어와서, 섬기기 위해 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>(1) ✅ <b>도달</b><br>나는 교실의 <b>기대와 가치</b> 중 나에게 중요한 것을 <b>찾아낼 수 있다</b>.<br>(2) 🚀 <b>넘어섬</b><br>나는 특정 가치가 왜 나에게 학생으로서 중요한지 <b>설명할 수 있다</b>.<br>(3) 👑 <b>숙달</b><br>나는 나의 가치를 올해 내가 할 수 있는 <b>구체적인 행동과 선택</b>에 <b>연결할 수 있다</b>.<br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br><b>학습목표(LO)</b>: 라살리안 교육의 기대와 <b>규칙(루틴)</b>을 이해한다; 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 돌아본다.<br>올해 나는 어떤 학생이 되고 싶은가?</div><p>학습 단계가 3칸으로 나뉜다 — 찾아내기(도달) → 왜 중요한지 설명하기(넘어섬) → 구체적 행동에 연결하기(숙달). 뒤로 갈수록 요구가 높아진다.</p><p>학교의 세 가지 핵심 가치는 믿음·봉사·공동체이고, 표어는 '배우기 위해 들어와서, 섬기기 위해 나간다'다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p5.jpg" alt="5쪽" loading="lazy"><div class="pg-txt"><h5>5쪽 · 1과 시작 — 라살 교육 소개</h5><div class="pg-tr"><b>LASALLIAN EDUCATION</b> (라살 교육)<br>배우기 위해 들어오고, 섬기기 위해 나간다.<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살 교육의 <b>기대사항</b>과 <b>규칙(루틴)</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 되돌아본다.<br><b>3E</b>: Enter(들어가기), Engage(참여하기), Exit(나가기)<br>교실 <b>규칙</b>과 <b>기대사항</b></div><p>이 수업의 목표는 두 가지다. 학교의 기대사항·규칙을 이해하는 것, 그리고 올해 어떤 학생이 되고 싶은지 스스로 생각해 보는 것이다.</p><p>라살 교육의 세 가지 핵심 가치는 믿음(Faith)·봉사(Service)·공동체(Community)이며, 수업 진행의 틀은 3E(Enter·Engage·Exit)다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p6.jpg" alt="6쪽" loading="lazy"><div class="pg-txt"><h5>6쪽 · 3E — 들어올 때</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항</b>과 <b>규칙적인 절차</b>를 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>3E</b>: 우리가 <b>들어오는</b> 방법<br>1. 밖에서 조용히 <b>줄을 선다</b>. 선생님께 인사한다.<br>2. 차분하게 들어와 자리로 가고, 가방은 바닥에 둔다.<br>3. <b>LeDU 연습장</b>을 책상 위에 놓는다. 수업 제목과 날짜를 쓴다.<br>4. <b>스타터 활동</b>을 조용히 시작한다.</div><p>교실에 들어오는 순서가 4단계로 정해져 있다 — 줄서기·인사 → 차분히 착석·가방은 바닥 → 연습장 꺼내 제목과 날짜 쓰기 → 조용히 스타터 활동 시작.</p><p>이 수업의 목표는 라살리안 교육의 기대사항과 절차를 이해하고, 올해 기르고 싶은 가치와 자질을 스스로 돌아보는 것이다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p7.jpg" alt="7쪽" loading="lazy"><div class="pg-txt"><h5>7쪽 · 책과 가방 규칙</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항과 규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 돌아본다<br><b>책과 가방</b><br>1. 학생들이 <b>사물함</b>을 쓰도록 권한다.<br>2. <b>연습장(공책)</b>은 교실에 둔다. 단 특정 과제 때문에 집으로 가져가야 하거나 반이 다른 선생님과 나뉘는 경우는 예외다.<br>3. <b>가방</b>은 교실 안으로 가지고 들어와 뒤쪽이나 책상 밑에 둔다.<br>4. 가방을 <b>복도</b>에 내놓아 두면 안 된다.</div><p>연습장은 교실에 두는 것이 원칙이고, 과제나 분반 수업 때만 집에 가져갈 수 있다.</p><p>가방은 교실 뒤쪽이나 책상 밑에 두며, 복도에 두는 것은 금지다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p8.jpg" alt="8쪽" loading="lazy"><div class="pg-txt"><h5>8쪽 · 구글 클래스룸 가입하기</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br>믿음 ⭑ 봉사 ⭑ 공동체<br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 <b>기대사항과 규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 되돌아본다<br><b>3E</b>: 우리가 참여하는 방법<br><b>구글 클래스룸</b> 💻<br>1. 받은 <b>코드</b>를 써서, 이 <b>LeDU 수업</b>의 구글 클래스룸에만 가입한다.<br>2. <b>맞는 반</b>에 들어가는지 다시 확인한다. 다른 반에는 절대 가입하지 않는다.</div><p>선생님이 준 코드로 이 LeDU 수업의 구글 클래스룸에만 가입한다</p><p>가입 전에 반이 맞는지 두 번 확인하고, 다른 반에는 들어가지 않는다</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p9.jpg" alt="9쪽" loading="lazy"><div class="pg-txt"><h5>9쪽 · 라살리안 교육과 3E — 연습장 규칙</h5><div class="pg-tr"><b>LASALLIAN EDUCATION</b> (라살리안 교육)<br>배우기 위해 들어오고, 섬기기 위해 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항</b>과 <b>규칙적인 생활방식</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>3E: 우리가 참여하는 방법</b><br><b>연습장(Exercise Books)</b><br>1. Years 7-10 LeDU 학생에게 해당한다. 이 학생들은 반드시 자신의 연습장을 갖고 있어야 한다.<br>2. 앞표지에 자기 <b>이름</b>을 쓴다.</div><p>학교의 세 가지 핵심 가치는 믿음·봉사·공동체다.</p><p>7~10학년 LeDU 학생은 연습장을 반드시 챙기고, 앞표지에 이름을 써야 한다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p10.jpg" alt="10쪽" loading="lazy"><div class="pg-txt"><h5>10쪽 · 라살 교육과 손 신호</h5><div class="pg-tr"><b>라살 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br><b>학습목표</b>: 라살 교육의 <b>기대사항</b>과 <b>규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>3E</b>: 우리가 참여하는 방식<br><b>손 신호</b> ✋<br>1. ☝ <b>화장실</b>: 수업을 방해하지 않고 조용히 요청한다.<br>2. ✌ <b>질문/발표</b>: 자기 의견을 말하는 방법이다.</div><p>학교 표어는 '배우러 들어와, 섬기러 나간다'이고, 핵심 가치는 믿음·봉사·공동체 세 가지다.</p><p>말로 끼어들지 않고 손가락 신호로 표시한다. 손가락 하나는 화장실, 둘은 질문이나 발표다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p11.jpg" alt="11쪽" loading="lazy"><div class="pg-txt"><h5>11쪽 · 화장실 이용 규칙</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br>믿음 ⭑ 봉사 ⭑ 공동체<br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항</b>과 <b>일과</b>를 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>화장실 허가</b><br>1. 학생은 <b>한 번에 한 명씩만</b> 화장실에 가게 한다.<br>2. <b>쉬는 시간 앞뒤 15분 이내</b>라면, 학생이 정말 가야 하는지 판단하거나 쉬는 시간을 어떻게 쓰는지 학생과 이야기를 나눈다.<br>3. <b>시간대를 살핀다</b> — 학생이 그저 '시간을 때우거나' 어려운 과제를 피하려는 것 같으면 기다리라고 한다.<br>4. 수업 중 일을 피하려고 화장실을 자주 쓰는 학생을 눈여겨본다. 걱정이 되기 시작하면 <b>ISAMS</b>에 기록한다.</div><p>화장실은 한 번에 한 명만 가고, 쉬는 시간 앞뒤 15분 이내면 선생님이 판단해서 기다리게 할 수 있다.</p><p>과제를 피하려고 화장실을 자주 쓰면 선생님이 ISAMS(학교 기록 시스템)에 기록한다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p12.jpg" alt="12쪽" loading="lazy"><div class="pg-txt"><h5>12쪽 · 3E와 리셋 버튼</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와서, 섬기러 나간다<br><b>신앙</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 <b>기대사항</b>과 <b>일과</b>를 이해한다. 올해 학생으로서 기르고 싶은 가치와 자질을 돌아본다.<br><b>3E: 우리가 참여하는 방법</b><br><b>리셋 버튼</b> 🔄<br>★<b>말로 하는 알림</b>: 친절하고 전체를 향한 학급 알림이다.<br>★<b>따로 이야기</b>: 조용하고 예의를 갖춘 대화다.<br>★<b>집에 연락</b>: 너의 성공을 위해 가족과 손잡는 것이다.</div><p>문제가 생기면 바로 벌을 주는 것이 아니라 '리셋 버튼'을 눌러 다시 시작하게 하는 방식이다.</p><p>알림은 세 단계로 올라간다 — 말로 하는 알림 → 따로 이야기 → 집에 연락이다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p13.jpg" alt="13쪽" loading="lazy"><div class="pg-txt"><h5>13쪽 · 3E 규칙: 나가는 법</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와서, <b>섬기러</b> 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 <b>기대사항</b>과 <b>규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치</b>와 <b>자질</b>을 돌아본다.<br><b>3E</b>: 우리가 <b>나가는</b> 방법<br>★ 하던 일을 멈추고 선생님의 지시를 듣는다.<br>★ 준비물을 치우고 자기 자리를 <b>정돈</b>한다.<br>★ 의자를 밀어 넣고 그 뒤에 <b>조용히</b> 선다.<br>★ <b>나가라는 말</b>을 들을 때까지 기다린다.<br>★ 감사 인사와 작별 인사를 한다.</div><p>3E 중 '나가기(Exit)' 단계다. 수업이 끝날 때 지켜야 할 다섯 가지 순서를 정해 놓았다.</p><p>마음대로 먼저 나가지 않는다. 자리를 정돈하고 의자 뒤에 조용히 선 뒤, 선생님이 보내 줄 때까지 기다린다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p14.jpg" alt="14쪽" loading="lazy"><div class="pg-txt"><h5>14쪽 · 1학기 학습 성과와 일정</h5><div class="pg-tr"><b>라살리안 교육</b> (LASALLIAN EDUCATION)<br>배우러 들어와, 섬기러 나간다 (Enter to Learn, Leave to Serve)<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표(LO): 라살리안 교육의 기대와 일과를 이해한다; 올해 학생으로서 기르고 싶은 가치와 자질을 되돌아본다<br>1학기 - 11학년: <b>애드보커시(옹호) 봉사</b><br><br><b>학기말 학습 성과</b><br>1학기가 끝날 때까지 학생들은 청중을 <b>교육하고, 참여시키고, 힘을 주는</b> 윤리적이고 <b>근거에 기반한 애드보커시 부스</b>를 설계하고 실행하게 된다.<br><br><b>주요 이정표</b><br>❏ 모둠을 만든다.<br>❏ 초점을 맞춘 <b>사회 문제</b>를 고르고 조사한다.<br>❏ 핵심 메시지, 이야기, <b>행동 촉구(Call to Action)</b>를 만든다.<br>❏ 애드보커시 부스를 완성하고 다듬는다.<br>❏ 실행하고 청중에게 준 영향을 되돌아본다.<br><br><b>중요한 날짜</b><br>★ 11주차: 10월 19일 주 — <b>제안서 승인</b><br>★ 16주차: 11월 23일 주 — <b>애드보커시 인식의 날</b> 실행<br>★ 17~18주차: 11월 30일 및 12월 7일 주 — <b>성찰</b></div><p>1학기의 최종 결과물은 '애드보커시 부스'다. 윤리적이고 근거에 기반해야 하며, 청중을 교육·참여·역량강화하는 것이 목표다.</p><p>이정표는 모둠 구성 → 사회 문제 조사 → 핵심 메시지와 행동 촉구 개발 → 부스 완성 → 실행 및 성찰 순서로 진행된다.</p><p>날짜는 3개만 기억하면 된다. 10월 19일 주 제안서 승인, 11월 23일 주 실행, 11월 30일~12월 7일 주 성찰이다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p15.jpg" alt="15쪽" loading="lazy"><div class="pg-txt"><h5>15쪽 · 1학기 봉사학습 과제 안내</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와서, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 기대사항과 규칙을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 돌아본다.<br>1학기 - 12학년: <b>직접 봉사 학습</b><br>학기말 성과물: 1학기가 끝날 때까지 학생들은 <b>윤리적이고</b>, <b>근거에 기반하며</b>, <b>바로 실행할 수 있는</b> 직접 봉사 학습 <b>프로젝트 제안서</b>를 만들어 발표하게 된다.<br><b>주요 단계</b><br>❏ 필요한 것과 함께할 <b>파트너</b>를 찾는다<br>❏ 봉사 내용과 <b>목표</b>를 설계한다<br>❏ <b>자원</b>과 평가 방법을 계획한다<br>❏ 제안서를 제출하고 발표한다<br><b>중요한 날짜</b><br>★ 14주차(11월 9일 주): 제안서 <b>점검</b><br>★ 16주차(11월 23일 주): <b>최종 제출</b><br>★ 17주차(11월 30일 주): 제안서 <b>발표</b><br>★ 18주차(12월 7일 주): <b>돌아보기</b></div><p>1학기 최종 결과물은 '직접 봉사 학습 프로젝트 제안서'이며, 윤리적·근거 기반·실행 가능이라는 세 조건을 갖춰야 한다.</p><p>제안서는 파트너 찾기 → 목표 설계 → 자원·평가 계획 → 제출·발표의 네 단계로 진행되고, 11월 9일 주 점검부터 12월 7일 주 돌아보기까지 날짜가 정해져 있다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p16.jpg" alt="16쪽" loading="lazy"><div class="pg-txt"><h5>16쪽 · 1학기 목표와 주요 일정</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br>믿음 ⭑ 봉사 ⭑ 공동체<br>제목: 나는 올해 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 <b>기대와 규칙</b>을 이해한다. 올해 학생으로서 기르고 싶은 <b>가치와 자질</b>을 돌아본다.<br><br><b>1학기 - 13학년: 직접 봉사 학습</b><br><b>학기말 성과</b><br>1학기가 끝날 때까지 학생들은 <b>직접 봉사 학습</b>의 두 번째 주기를 개선하고, 실행하고, 비판적으로 평가하게 된다.<br>그리하여 더 강한 <b>리더십</b>과 성찰적 성장을 보여주게 된다.<br><br><b>주요 단계</b><br>❏ 12학년 경험을 평가한다<br>❏ 제안서를 개선하고 <b>변론</b>한다<br>❏ 실행하고, 점검하고, 조정한다<br>❏ 영향을 평가하고 성찰한다<br><br><b>중요한 날짜</b><br>★ 11주차: 10월 19일 주 — 개선된 제안서 발표<br>★ 12~17주차: 10월 26일~11월 30일 주 — 실행과 점검<br>★ 18주차: 12월 7일 주 — 최종 성찰</div><p>13학년 1학기는 봉사 학습의 두 번째 주기다. 12학년 때 한 것을 평가해서 더 낫게 고치는 것이 출발점이다.</p><p>날짜가 정해져 있다. 10월 19일 주에 제안서를 발표하고, 10월 26일부터 11월 30일까지 실행하며, 12월 7일 주에 최종 성찰을 쓴다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p17.jpg" alt="17쪽" loading="lazy"><div class="pg-txt"><h5>17쪽 · 내 가치관 다이아몬드</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br>학습목표: 라살리안 교육의 기대와 규칙을 이해한다. 올해 학생으로서 기르고 싶은 가치와 자질을 되돌아본다.<br><b>나의 학생 가치관 다이아몬드</b><br>1. 아홉 가지 가치를 모두 읽는다.<br>2. 올해 나에게 가장 중요한 <b>세 가지</b>를 고른다.<br>3. 가장 중요한 가치를 <b>맨 위</b>에 놓는다.<br>4. 나머지 가치들을 중요한 순서대로 배열한다.<br>5. 왜 그렇게 골랐는지 설명할 <b>준비</b>를 한다.<br>a. 1 = 올해 나에게 가장 높은 우선순위<br>b. 9 = 올해 나에게 낮은 우선순위<br><b>연습장에 다음을 작성한다.</b><br>1. 나에게 가장 중요한 가치는 __________ 이다. 왜냐하면…<br>2. 올해 내가 기르고 싶은 가치는 __________ 이다. 왜냐하면…<br>3. 이 가치를 기르기 위해 내가 할 수 있는 행동 하나는…<br><b>짝</b>을 찾아 각자의 상위 세 가지 가치를 <b>비교</b>하고, 공통점 하나와 차이점 하나를 <b>찾아내고</b>, 왜 서로 다르게 순위를 매겼는지 <b>설명</b>한다.</div><p>가치 아홉 개를 1(가장 중요)부터 9(덜 중요)까지 다이아몬드 모양으로 배열하는 활동이다. 상위 세 개를 먼저 고르고 가장 중요한 것을 맨 위에 놓는다.</p><p>다이아몬드를 채운 뒤에는 연습장에 세 문장(가장 중요한 가치·기르고 싶은 가치·그 가치를 위한 행동)을 쓰고, 짝과 상위 세 가치를 비교해 공통점 하나와 차이점 하나를 찾아 설명한다.</p></div></div><div class="pg"><img src="assets/pages/ledu/Lesson_0_What_Kind_of_Student_Do_I_Want__p18.jpg" alt="18쪽" loading="lazy"><div class="pg-txt"><h5>18쪽 · 수준 골라 정리하기</h5><div class="pg-tr"><b>라살리안 교육</b><br>배우러 들어와, 섬기러 나간다<br><b>믿음</b> ⭑ <b>봉사</b> ⭑ <b>공동체</b><br><br><b>성공 기준</b> — 네 수준을 골라라<br><br>(1) ✅ <b>도달</b><br>나는 교실 규칙과 나에게 중요한 가치를 <b>찾아낼</b> 수 있다.<br>올해 학생으로서 중요한 교실 규칙 세 가지와 가치 세 가지를 적어라.<br><br>(2) 🚀 <b>넘어섬</b><br>나는 특정 가치가 학생인 나에게 왜 중요한지 <b>설명할</b> 수 있다.<br>가치 다이아몬드에서 가치 하나를 골라라. 그것이 왜 중요한지, 올해 어떻게 도움이 될지 설명하라.<br><br>(3) 👑 <b>숙달</b><br>나는 내 가치를 올해 내가 할 수 있는 구체적인 행동과 선택에 <b>연결할</b> 수 있다.<br>완성하라: "올해 나는 ~한 학생이 되고 싶다", "그렇게 하기 위해 나는 ~할 것이다". 네가 할 구체적인 행동을 최소 두 가지 써라.<br><br><b>수준을 골라라.</b> 오늘 수업을 얼마나 이해했는지 가장 잘 보여주는 수준을 골라라. 과제를 꼼꼼하고 정확하게 끝내라.<br><br>제목: 올해 나는 어떤 학생이 되고 싶은가?<br><b>학습 목표(LO)</b>: 라살리안 교육의 규칙과 일과를 이해한다. 올해 학생으로서 기르고 싶은 가치와 자질을 돌아본다.<br><br>올해 나는 어떤 학생이 되고 싶은가?</div><p>세 단계는 난이도 순이다 — 찾아내기(도달) → 설명하기(넘어섬) → 행동으로 연결하기(숙달). 자기 수준을 스스로 골라 그 과제를 하면 된다.</p><p>숙달(3단계)은 '~하고 싶다'로 끝내지 말고 구체적 행동 두 가지를 반드시 써야 한다.</p></div></div></div></div></div></div>
+</div></div>
+<div class="tab-pane" id="tab-quiz"><div class="quiz-wrap"><div class="quiz-info">📝 <b>Written-answer practice</b> · 시험 형식: 서술형<br>답을 영어로 써본 다음 <b>Show model answer</b>를 눌러 비교하세요.</div><div id="quiz-list"><div class="q-card" id="q-card-0"><div class="q-num"><span>Question 1 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">State the school motto and explain what it means for how Lasallian students should live.</div><div class="q-ko">학교 표어를 쓰고 그 뜻을 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(0)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>The motto is &#x27;Enter to Learn, Leave to Serve&#x27;. It means students come into the school to learn and grow, and then go out into the world to use what they have learned to serve others. Learning is therefore not only for personal success but is meant to lead to service for other people.</p></div></div><div class="q-card" id="q-card-1"><div class="q-num"><span>Question 2 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Name the three core values of Lasallian Education and briefly explain one of them in your own words.</div><div class="q-ko">라살리안 교육의 핵심 가치 3가지를 쓰고 하나를 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(1)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>The three core values are Faith, Service and Community. For example, Service means using your time and abilities to help others rather than only thinking about yourself, which links directly to the motto &#x27;Enter to Learn, Leave to Serve&#x27;. (Credit is also given for a sensible explanation of Faith or Community.)</p></div></div><div class="q-card" id="q-card-2"><div class="q-num"><span>Question 3 of 10</span> <span class="q-marks">2 marks</span></div><div class="q-text">What are the two learning objectives (LOs) of this lesson?</div><div class="q-ko">이 수업의 학습목표 두 가지를 쓰는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(2)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>The first LO is to understand the expectations and routines of Lasallian Education. The second LO is to think about the values and qualities you want to develop in yourself this year. Both must be stated for full marks.</p></div></div><div class="q-card" id="q-card-3"><div class="q-num"><span>Question 4 of 10</span> <span class="q-marks">4 marks</span></div><div class="q-text">Explain how the Lasallian Bingo activity is carried out.</div><div class="q-ko">라살리안 빙고 활동의 진행 방법과 규칙을 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(3)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>Students move around the classroom and talk to different classmates to find someone who matches each of the 16 statements, writing that person&#x27;s name in the box. For each answer they must also ask one follow-up question so that they understand what the answer really means. In a class of 16 or more students a different person must be written in every box, while a class of fewer than 16 may use the same person a maximum of twice. When the sheet is completed it is stuck into the exercise book.</p></div></div><div class="q-card" id="q-card-4"><div class="q-num"><span>Question 5 of 10</span> <span class="q-marks">2 marks</span></div><div class="q-text">What are the 3Es of the classroom routines?</div><div class="q-ko">교실 규칙의 뼈대인 3Es가 무엇인지 쓰는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(4)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>The 3Es are Enter, Engage and Exit. They are the framework for how students come into the lesson, take part in it, and leave the classroom.</p></div></div><div class="q-card" id="q-card-5"><div class="q-num"><span>Question 6 of 10</span> <span class="q-marks">4 marks</span></div><div class="q-text">Describe, in order, what a student should do during the &#x27;Enter&#x27; routine.</div><div class="q-ko">&#x27;Enter(들어오기)&#x27; 단계에서 학생이 해야 할 순서를 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(5)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>Students line up quietly outside the classroom and greet the teacher. They walk in calmly, sit down in their seat and put their bag on the floor. They take out their LeDU exercise book and write the lesson title and the date. They then begin the starter activity quietly without being told.</p></div></div><div class="q-card" id="q-card-6"><div class="q-num"><span>Question 7 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Describe what students must do during the &#x27;Exit&#x27; routine at the end of the lesson.</div><div class="q-ko">수업이 끝날 때 &#x27;Exit(나가기)&#x27; 단계에서 해야 할 행동을 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(6)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>Students stop what they are doing and listen to the teacher&#x27;s instructions. They pack away and tidy their belongings and push their chairs in. They then stand quietly behind their chairs and wait for permission to be dismissed.</p></div></div><div class="q-card" id="q-card-7"><div class="q-num"><span>Question 8 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Explain the hand signals used in this classroom and the rule that goes with them.</div><div class="q-ko">교실에서 쓰는 손 신호 두 가지와 관련 규칙을 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(7)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>One finger (☝) is used to ask to go to the toilet, and two fingers (✌) are used to ask a question or to answer/contribute. The signals let students communicate without calling out and interrupting the lesson. Only one student may go to the toilet at a time.</p></div></div><div class="q-card" id="q-card-8"><div class="q-num"><span>Question 9 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Give two &#x27;Engage&#x27; expectations about equipment or belongings that students in Years 7-10 must follow.</div><div class="q-ko">&#x27;Engage&#x27; 단계의 준비물·소지품 관련 규칙 두 가지를 쓰는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(8)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>Students in Years 7-10 must bring their exercise book to every lesson and write their name on the cover. Bags must be kept at the back of the classroom or under the desk and must never be left in the corridor. Students must also join the correct LeDU Google Classroom using the code they were given, checking that they have not joined the wrong class.</p></div></div><div class="q-card" id="q-card-9"><div class="q-num"><span>Question 10 of 10</span> <span class="q-marks">4 marks</span></div><div class="q-text">Explain the three steps of the Reset Button and why it is not seen as a punishment.</div><div class="q-ko">규칙을 어겼을 때의 &#x27;리셋 버튼&#x27; 3단계와 그것이 벌이 아닌 이유를 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(9)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>The first step is a Verbal Reminder given gently to the whole class. If the behaviour continues the teacher has a Private Chat with the student quietly and separately. If it still continues the teacher will Contact Home so that the family can help support the student. It is not a punishment because its purpose is to help the student start again and get back on track, which fits the Lasallian values of Community and Service.</p></div></div></div></div></div>
+<div class="tab-pane" id="tab-spelling">
+  <div class="spell-wrap">
+    <div class="spell-stats">
+      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
+      <div>📚 <span id="sp-remaining">56</span> 남음</div>
+    </div>
+    <div class="spell-card" id="spell-card">
+      <span class="spell-cat" id="sp-cat">CATEGORY</span>
+      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
+      <div class="spell-def" id="sp-def">English definition</div>
+      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
+      <div class="spell-feedback" id="sp-feedback"></div>
+      <div class="spell-input-row">
+        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
+      </div>
+      <div class="spell-buttons">
+        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
+        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<footer>9B1 Genes and inheritance 유전 · science-vocab · <span style="opacity:.5">v20260827-003005</span></footer><script>
+const QUIZ_DATA = [{"q": "State the school motto and explain what it means for how Lasallian students should live.", "model": "The motto is 'Enter to Learn, Leave to Serve'. It means students come into the school to learn and grow, and then go out into the world to use what they have learned to serve others. Learning is therefore not only for personal success but is meant to lead to service for other people."}, {"q": "Name the three core values of Lasallian Education and briefly explain one of them in your own words.", "model": "The three core values are Faith, Service and Community. For example, Service means using your time and abilities to help others rather than only thinking about yourself, which links directly to the motto 'Enter to Learn, Leave to Serve'. (Credit is also given for a sensible explanation of Faith or Community.)"}, {"q": "What are the two learning objectives (LOs) of this lesson?", "model": "The first LO is to understand the expectations and routines of Lasallian Education. The second LO is to think about the values and qualities you want to develop in yourself this year. Both must be stated for full marks."}, {"q": "Explain how the Lasallian Bingo activity is carried out.", "model": "Students move around the classroom and talk to different classmates to find someone who matches each of the 16 statements, writing that person's name in the box. For each answer they must also ask one follow-up question so that they understand what the answer really means. In a class of 16 or more students a different person must be written in every box, while a class of fewer than 16 may use the same person a maximum of twice. When the sheet is completed it is stuck into the exercise book."}, {"q": "What are the 3Es of the classroom routines?", "model": "The 3Es are Enter, Engage and Exit. They are the framework for how students come into the lesson, take part in it, and leave the classroom."}, {"q": "Describe, in order, what a student should do during the 'Enter' routine.", "model": "Students line up quietly outside the classroom and greet the teacher. They walk in calmly, sit down in their seat and put their bag on the floor. They take out their LeDU exercise book and write the lesson title and the date. They then begin the starter activity quietly without being told."}, {"q": "Describe what students must do during the 'Exit' routine at the end of the lesson.", "model": "Students stop what they are doing and listen to the teacher's instructions. They pack away and tidy their belongings and push their chairs in. They then stand quietly behind their chairs and wait for permission to be dismissed."}, {"q": "Explain the hand signals used in this classroom and the rule that goes with them.", "model": "One finger (☝) is used to ask to go to the toilet, and two fingers (✌) are used to ask a question or to answer/contribute. The signals let students communicate without calling out and interrupting the lesson. Only one student may go to the toilet at a time."}, {"q": "Give two 'Engage' expectations about equipment or belongings that students in Years 7-10 must follow.", "model": "Students in Years 7-10 must bring their exercise book to every lesson and write their name on the cover. Bags must be kept at the back of the classroom or under the desk and must never be left in the corridor. Students must also join the correct LeDU Google Classroom using the code they were given, checking that they have not joined the wrong class."}, {"q": "Explain the three steps of the Reset Button and why it is not seen as a punishment.", "model": "The first step is a Verbal Reminder given gently to the whole class. If the behaviour continues the teacher has a Private Chat with the student quietly and separately. If it still continues the teacher will Contact Home so that the family can help support the student. It is not a punishment because its purpose is to help the student start again and get back on track, which fits the Lasallian values of Community and Service."}];
+const VOCAB_DATA = [{"en": "Lasallian Education", "ko": "라살리안 교육", "def_en": "", "cat": "all"}, {"en": "Learning Objective (LO)", "ko": "학습 목표", "def_en": "", "cat": "all"}, {"en": "expectations", "ko": "기대 행동, 지켜야 할 규칙", "def_en": "", "cat": "all"}, {"en": "routines", "ko": "수업 절차, 정해진 순서", "def_en": "", "cat": "all"}, {"en": "The 3Es (Enter, Engage, Exit)", "ko": "3E (입실·참여·퇴실)", "def_en": "", "cat": "all"}, {"en": "starter activity", "ko": "도입 활동", "def_en": "", "cat": "all"}, {"en": "exercise book", "ko": "연습장, 학습 공책", "def_en": "", "cat": "all"}, {"en": "reset button", "ko": "리셋 버튼 (행동 교정 단계)", "def_en": "", "cat": "all"}, {"en": "dismissed", "ko": "(수업이) 끝나 나가도 좋다는 허락을 받다", "def_en": "", "cat": "all"}, {"en": "Service Learning", "ko": "봉사 학습", "def_en": "", "cat": "all"}, {"en": "advocacy", "ko": "옹호, 알리고 지지를 이끌어내는 활동", "def_en": "", "cat": "all"}, {"en": "Call to Action", "ko": "행동 촉구 메시지", "def_en": "", "cat": "all"}];
+const UNIT_ID = "y9c_ledu";
+const UNIT_TITLE = "라살 교육 Lasallian Education";
+const UNIT_TOPICS = [];
+let qAnswered = new Array(QUIZ_DATA.length).fill(null);
+
+// ─── claude.ai 새 창 링크 ───
+(function setupClaudeLinks() {
+  var NL = String.fromCharCode(10);
+  var topicsList = UNIT_TOPICS.map(function(t, i) { return (i+1) + '. ' + t; }).join(NL);
+  var askMsg = "I'm a Year 9 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
+    "Current unit: " + UNIT_TITLE + NL +
+    "Topics:" + NL + topicsList + NL + NL +
+    "Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use - if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary." + NL + NL +
+    "질문 시작할게요:" + NL;
+  var gradeMsg = "I'm a Year 9 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
+    "Unit: " + UNIT_TITLE + NL +
+    "Topics: " + UNIT_TOPICS.join(' · ') + NL + NL +
+    "Please grade my worksheet. For each question:" + NL +
+    "- Read the problem and my answer (if any)." + NL +
+    "- Mark ✅ correct / ❌ wrong / ⚠️ partial." + NL +
+    "- Give the correct answer." + NL +
+    "- Explain mistakes in British English with a short Korean hint in parentheses for tough words." + NL + NL +
+    "End with a summary: total / correct / what to review next." + NL + NL +
+    "사진 첨부할게요!";
+  var ask = document.getElementById('btn-ask');
+  var grade = document.getElementById('btn-grade');
+  if (ask) ask.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
+  if (grade) grade.href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
+})();
+
+// 탭 전환
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
+        if (btn.dataset.tab === 'spelling' && typeof startSpelling === 'function' && !spellState.started) startSpelling();
+    try { localStorage.setItem('tab_' + UNIT_ID, btn.dataset.tab); } catch(e){}
+  });
+});
+
+/* 새로고침해도 보던 탭 그대로 — 마지막에 본 탭을 기억한다 */
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('tab_' + UNIT_ID); } catch(e){}
+  if (location.hash && location.hash.length > 1) t = location.hash.slice(1);
+  if (!t) return;
+  var btn = document.querySelector('.tab-btn[data-tab="' + t + '"]');
+  var pane = document.getElementById('tab-' + t);
+  if (!btn || !pane) return;
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  pane.classList.add('active');
+})();
+
+// 발음
+// ─── 발음: 미리 받아둔 mp3(audio/sci/) 직접 재생, 못 틀면 폰 음성 보조 ───
+function slugify(t){ return t.replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
+let _audio = null;
+function speak(text) {
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
+    a.onerror = () => fallbackSpeak(cleanText(text));
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(text)));
+  } catch (e) { fallbackSpeak(cleanText(text)); }
+}
+let _voices = [];
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis) { loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9;
+  const en = _voices.filter(v => normLang(v.lang).startsWith('en'));
+  const local = en.filter(v => v.localService);
+  const pool = local.length ? local : en;
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
+  if (v) { u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'en-GB'; }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
+}
+
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = function(){ if (_seq && _seq.token === token) done(); };
+    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
+function annotateCounts(){ document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=document.querySelectorAll('#tab-vocab .vcard').length; }
+function numberVocab(){ let n=0; document.querySelectorAll('#tab-vocab .vcard').forEach(c => { n++; const L=c.querySelector('.vcard-left'); if(L && !L.querySelector('.vcard-num')){ const d=document.createElement('div'); d.className='vcard-num'; d.textContent=n+'번'; L.insertBefore(d, L.firstChild); } }); }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
+// 단어장: 필터 + 검색 통합
+let selectedCats = new Set();   // 비어있으면 전체. 여러 단원 다중선택
+let currentQuery = '';
+
+function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (selectedCats.size === 0 || selectedCats.has(cat));
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', !visibleByCat[target]);
+  });
+}
+
+function filterCards(cat) {
+  if (cat === 'all') { selectedCats.clear(); }
+  else { if (selectedCats.has(cat)) selectedCats.delete(cat); else selectedCats.add(cat); }
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if (b.dataset.cat === 'all') b.classList.toggle('active', selectedCats.size === 0);
+    else b.classList.toggle('active', selectedCats.has(b.dataset.cat));
+  });
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
+  annotateCounts();   // 단원별·전체 단어 수 표시
+  numberVocab();      // 단어 앞 고정 번호 (1번~)
+});
+
+// ─── 단어시험 (Spelling Test) ───
+const spellState = {
+  started: false,
+  pool: [],         // 남은 단어들
+  current: null,    // 현재 단어
+  correct: 0,
+  wrong: 0,
+  revealed: false,
+};
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startSpelling() {
+  spellState.started = true;
+  spellState.pool = shuffle(VOCAB_DATA);
+  spellState.correct = 0;
+  spellState.wrong = 0;
+  updateSpellStats();
+  nextWord();
+  setTimeout(() => document.getElementById('sp-input')?.focus(), 200);
+}
+
+function nextWord() {
+  if (spellState.pool.length === 0) {
+    // 다 끝나면 다시 섞기
+    spellState.pool = shuffle(VOCAB_DATA);
+  }
+  spellState.current = spellState.pool.shift();
+  spellState.revealed = false;
+  const w = spellState.current;
+  const catLabel = {organ:'🫁 Organ',process:'⚙️ Process',blood:'🩸 Blood',gas:'💨 Gas'}[w.cat] || w.cat;
+  const catEl = document.getElementById('sp-cat');
+  catEl.textContent = catLabel;
+  catEl.className = 'spell-cat cat-' + w.cat;
+  document.getElementById('sp-ko').textContent = w.ko;
+  document.getElementById('sp-def').textContent = w.def_en;
+  // 글자수 힌트 — 공백/특수문자는 그대로, 글자는 _로
+  const hint = w.en.split('').map(ch => /[A-Za-z0-9]/.test(ch) ? '_' : ch).join(' ');
+  document.getElementById('sp-hint').textContent = hint + '  (' + w.en.length + ')';
+  document.getElementById('sp-feedback').innerHTML = '';
+  const input = document.getElementById('sp-input');
+  input.value = '';
+  input.classList.remove('disabled');
+  input.disabled = false;
+  input.placeholder = w.en.length + ' chars · 영어로 입력…';
+  input.focus();
+  updateSpellStats();
+}
+
+function showAnswer() {
+  if (!spellState.current || spellState.revealed) return;
+  spellState.revealed = true;
+  const w = spellState.current;
+  document.getElementById('sp-feedback').innerHTML =
+    '<span class="ok">' + w.en + '</span>';
+  const input = document.getElementById('sp-input');
+  input.value = w.en;
+  input.classList.add('disabled');
+  input.disabled = true;
+  // 자동으로 발음
+  if (window.speechSynthesis) speak(w.en);
+}
+
+function updateSpellStats() {
+  document.getElementById('sp-correct').textContent = spellState.correct;
+  document.getElementById('sp-wrong').textContent = spellState.wrong;
+  document.getElementById('sp-remaining').textContent = spellState.pool.length;
+}
+
+function renderSpellFeedback(typed, target) {
+  // 글자별 색상 표시
+  let html = '';
+  for (let i = 0; i < target.length; i++) {
+    const t = typed[i];
+    const a = target[i];
+    if (t === undefined) {
+      html += '<span class="miss">' + (a === ' ' ? '&nbsp;' : '_') + '</span>';
+    } else if (t.toLowerCase() === a.toLowerCase()) {
+      html += '<span class="ok">' + a + '</span>';
+    } else {
+      html += '<span class="bad">' + t + '</span>';
+    }
+  }
+  return html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('sp-input');
+  if (!input) return;
+  input.addEventListener('input', () => {
+    if (!spellState.current || spellState.revealed) return;
+    const typed = input.value;
+    const target = spellState.current.en;
+    document.getElementById('sp-feedback').innerHTML = renderSpellFeedback(typed, target);
+    // 완전 일치 (대소문자 무시)
+    if (typed.toLowerCase() === target.toLowerCase()) {
+      spellState.correct++;
+      input.classList.add('disabled');
+      input.disabled = true;
+      document.getElementById('sp-feedback').innerHTML =
+        '<span class="ok">✓ ' + target + '</span>';
+      updateSpellStats();
+      // 0.9초 후 다음 단어
+      setTimeout(() => nextWord(), 900);
+    }
+  });
+  // Enter로 정답이 아니면 틀린 것 처리
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && spellState.current && !spellState.revealed) {
+      const typed = input.value.trim();
+      const target = spellState.current.en;
+      if (typed.toLowerCase() !== target.toLowerCase() && typed.length > 0) {
+        spellState.wrong++;
+        showAnswer();
+        updateSpellStats();
+      }
+    }
+  });
+});
+
+// 서술형 퀴즈: 모범 답안 보이기 + 자기 채점
+function showModel(qi) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  var model = card.querySelector('.q-model');
+  var rate = card.querySelector('.q-self-rate');
+  model.classList.add('show');
+  rate.classList.add('show');
+}
+
+function rateSelf(qi, level) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  card.querySelectorAll('.q-self-rate button').forEach(function(b) { b.classList.remove('selected'); });
+  card.querySelector('.q-self-rate .rate-' + level).classList.add('selected');
+}
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      // 새 SW 발견 시 즉시 적용 → 페이지 자동 새로고침
+      reg.addEventListener('updatefound', function() {
+        var newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', function() {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+            // 새 버전 준비됨 → 즉시 활성화 명령
+            newSW.postMessage({type: 'SKIP_WAITING'});
+          }
+        });
+      });
+      // 매 30분마다 새 버전 확인
+      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+    }).catch(function(e) { /* fail silently */ });
+    // 새 SW가 통제권 잡으면 페이지 자동 reload (한 번만)
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (reloaded) return;
+      reloaded = true;
+      window.location.reload();
+    });
+  });
+}
+</script>
+
+<script>
+/* 단원 전체 듣기 — 미리 합쳐 둔 mp3 하나를 재생한다.
+   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일 하나로 합쳤다. */
+(function(){
+  var a = document.getElementById('allplay-audio');
+  var btn = document.getElementById('allplay-btn');
+  if (!a) return;
+  function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  window.toggleAllPlay = function(){
+    if (typeof stopSeq === 'function') stopSeq();
+    if (a.paused) { a.play(); } else { a.pause(); }
+  };
+  a.addEventListener('play', function(){
+    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: '단원 전체 듣기 — 69 단어', artist: UNIT_TITLE, album: 'AMY Study App'
+      });
+      navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
+      navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
+    }
+  });
+  a.addEventListener('pause', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('ended', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('timeupdate', function(){
+    if (!a.paused) btn.textContent = '⏸ ' + mmss(a.currentTime);
+  });
+  a.addEventListener('error', function(){
+    btn.disabled = true; btn.textContent = '전체 듣기 파일 없음';
+  });
+})();
+</script>
+<script>
+/* 외운 단어를 숨긴 상태면, 전체 듣기는 화면에 보이는 단어만 순서대로 들려준다.
+   (합친 mp3는 통짜라 건너뛸 수 없어서, 이때만 낱개 발음을 이어서 재생한다) */
+(function(){
+  var btn = document.getElementById('allplay-btn');
+  var a   = document.getElementById('allplay-audio');
+  if (!btn) return;
+  var seq = null, cur = null;
+  function slug(t){ return (t||'').replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+  function stop(){ if (cur) { cur.pause(); cur = null; } seq = null; btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); }
+  window.stopVisibleSeq = stop;
+  function playList(words){
+    var i = 0, token = {};
+    seq = token;
+    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
+    (function next(){
+      if (seq !== token) return;
+      if (i >= words.length) { i = 0; }
+      var sl = slug(words[i]);
+      var ko = new Audio('audio/sci_ko/' + sl + '.mp3');
+      cur = ko;
+      ko.onended = ko.onerror = function(){
+        if (seq !== token) return;
+        var en = new Audio('audio/sci/' + sl + '.mp3');
+        cur = en;
+        en.onended = en.onerror = function(){ if (seq === token) { i++; setTimeout(next, 300); } };
+        en.play().catch(function(){ if (seq === token) { i++; setTimeout(next, 300); } });
+      };
+      ko.play().catch(function(){ if (seq === token) ko.onended(); });
+    })();
+  }
+  var origToggle = window.toggleAllPlay;
+  window.toggleAllPlay = function(){
+    var hiding = (typeof memHidden !== 'undefined' && memHidden);
+    if (!hiding) { if (seq) stop(); if (origToggle) origToggle(); return; }
+    if (a && !a.paused) a.pause();
+    if (seq) { stop(); return; }
+    var words = [];
+    document.querySelectorAll('#tab-vocab .vcard').forEach(function(c){
+      if (c.classList.contains('hidden')) return;
+      var en = (c.querySelector('.vcard-en') || {}).textContent;
+      if (en) words.push(en.trim());
+    });
+    if (!words.length) return;
+    playList(words);
+  };
+})();
+</script>
+</body>
+</html>
