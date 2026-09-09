@@ -1074,16 +1074,48 @@ function initFold(el, defFolded){
   applyFold(el, v === null ? defFolded : v === '1');
 }
 
-/* 클래스룸 새 글 — 위 박스=과제(마감순, 체크하면 사라짐), 아래 박스=공지·자료 */
+/* 클래스룸 새 글 — 위 박스=과제(마감순, 체크하면 사라짐), 아래 박스=공지·자료
+   완료 체크는 모든 기기가 같이 보도록 수파베이스 표 amy_hw_done 에 저장한다.
+   인터넷이 안 되면 이 기기 localStorage 로만 기억했다가 다음에 열 때 맞춘다. */
 var CN_DONE_KEY = 'amy:doneHw';
+var CN_DB = {
+  url: 'https://pwbnbooyhujyzbmaydtp.supabase.co/rest/v1/amy_hw_done',
+  key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3Ym5ib295aHVqeXpibWF5ZHRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4MTU0NTQsImV4cCI6MjA5NjM5MTQ1NH0.BwKTVgnswWqPlAdclwMpso6kcEA2x0d502CXv2DvBIE'
+};
 var cnShowDone = false;
+function cnDbHead(){ return { 'apikey': CN_DB.key, 'Authorization': 'Bearer ' + CN_DB.key, 'Content-Type': 'application/json' }; }
 function cnLoadDone(){ try { return JSON.parse(localStorage.getItem(CN_DONE_KEY) || '{}'); } catch(e){ return {}; } }
 function cnSaveDone(o){ try { localStorage.setItem(CN_DONE_KEY, JSON.stringify(o)); } catch(e){} }
 function cnToggleDone(k){
   var o = cnLoadDone();
-  if (o[k]) { delete o[k]; } else { o[k] = 1; }
+  var on = !o[k];
+  if (on) { o[k] = 1; } else { delete o[k]; }
   cnSaveDone(o);
   cnRender();
+  try {
+    if (on){
+      fetch(CN_DB.url, { method: 'POST',
+        headers: Object.assign(cnDbHead(), { 'Prefer': 'resolution=merge-duplicates' }),
+        body: JSON.stringify([{ k: k }]) });
+    } else {
+      fetch(CN_DB.url + '?k=eq.' + encodeURIComponent(k), { method: 'DELETE', headers: cnDbHead() });
+    }
+  } catch(e){}
+}
+/* 다른 기기에서 체크한 것 받아오기 — 서버 목록이 정답이다 */
+function cnPullDone(){
+  try {
+    fetch(CN_DB.url + '?select=k', { headers: cnDbHead() })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(list){
+        if (!list) return;
+        var o = {};
+        list.forEach(function(x){ if (x && x.k) o[x.k] = 1; });
+        cnSaveDone(o);
+        cnRender();
+      })
+      .catch(function(){});
+  } catch(e){}
 }
 function cnToggleShowDone(){ cnShowDone = !cnShowDone; cnRender(); }
 
@@ -1098,7 +1130,7 @@ function cnRender(){
 
   function dnum(s){ var p = (s||'').split('-'); return p.length === 3 ? (+p[0])*10000 + (+p[1])*100 + (+p[2]) : 0; }
   function isPast(s){ var p = s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]) < t0; }
-  function keyOf(r){ return ((r.subject||'') + '|' + (r.title||'') + '|' + (r.due||'')).replace(/'/g, ''); }
+  function keyOf(r){ return ((r.subject||'') + '|' + (r.title||'')).replace(/'/g, ''); }
 
   function row(r, withType){
     var d = (r.date || '').split('-');
@@ -1170,6 +1202,8 @@ function cnRender(){
 
 (function(){
   cnRender();
+  cnPullDone();
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) cnPullDone(); });
   var cn = document.getElementById('cnCard'); if (cn) initFold(cn, false);
   var cn2 = document.getElementById('cnCard2'); if (cn2) initFold(cn2, false);
   var tt = document.getElementById('ttCard'); if (tt) initFold(tt, false);
