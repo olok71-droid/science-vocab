@@ -13,7 +13,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "자료",
   "title": "Properties of materials",
-  "ko": "물질의 성질 학습자료",
+  "ko": "물질의 성질 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -31,7 +31,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "공지",
   "title": "If you didnt manage to read more than 10, please make sure you read some more for homework so you are picking the best o",
-  "ko": "독백 10개 이상 더 읽고 마음에 드는 것 고르기",
+  "ko": "모놀로그 10개 이상 더 읽고 마음에 드는 것 고르기",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -40,7 +40,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "자료",
   "title": "Miss Heather's Year 9 Monologue Bank",
-  "ko": "9학년 독백 모음 자료",
+  "ko": "9학년 모놀로그 모음 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -49,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-08",
   "type": "공지",
   "title": "Your first Continues Assessment (CA1) will be on Tuesday 22nd September 2026.",
-  "ko": "첫 평가 CA1 안내, 첨부 CAT 확인",
+  "ko": "첫 평가 CA1 안내, CAT 문서 확인",
   "due": "2026-09-22",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -67,7 +67,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-08",
   "type": "공지",
   "title": "❗️Haze Alert – Important Reminders❗️",
-  "ko": "연무 경보, 실내에서만 활동",
+  "ko": "연무 경보, 실내 대기 및 야외활동 금지",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -76,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Genes and inheritance - check your progress",
-  "ko": "유전 단원 진도 점검 과제",
+  "ko": "유전 단원 자기점검 과제",
   "due": "2026-09-13",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODc3ODAxNTY5OTIx/details"
  },
@@ -94,7 +94,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Natural selection - Peppered Moth video and worksheet",
-  "ko": "회색가지나방 영상 보고 워크시트 작성",
+  "ko": "후추나방 영상 보고 워크시트 작성",
   "due": "2026-09-13",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODcyNzQwMDE4Nzg4/details"
  },
@@ -139,7 +139,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "자료",
   "title": "Lesson 2: The Heart of Service",
-  "ko": "봉사의 의미 수업 자료",
+  "ko": "봉사의 마음 수업자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
  },
@@ -148,7 +148,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-06",
   "type": "과제",
   "title": "Vocabulary HW 1",
-  "ko": "영어 단어 숙제 1",
+  "ko": "어휘 숙제 1 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -166,7 +166,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-03",
   "type": "과제",
   "title": "7.3B Variation in Holly leaves - p139/140",
-  "ko": "호랑가시나무 잎 변이 교재 139~140쪽",
+  "ko": "호랑가시나무 잎 변이 139~140쪽",
   "due": "2026-09-09",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -238,7 +238,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "자료",
   "title": "🔪 Meet Chef Chop: Your AI Rhythm Tutor!",
-  "ko": "AI 리듬 튜터 셰프촙 소개",
+  "ko": "AI 리듬 튜터 셰프 찹 소개",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -256,7 +256,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "읽을 책 챙겨오기",
+  "ko": "독서책 가져오기",
   "due": "2026-09-09",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5/a/ODY5MzgyODg3NDYw/details"
  },
@@ -265,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-31",
   "type": "공지",
   "title": "Instruments",
-  "ko": "집 악기 이번 주 학교로 가져오기",
+  "ko": "집 악기 있으면 이번 주 학교로 가져오기",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -274,7 +274,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-28",
   "type": "과제",
   "title": "Year 9 End of Chapter Review Y9",
-  "ko": "9학년 단원 마무리 복습 과제",
+  "ko": "단원 마무리 복습 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -301,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "자료",
   "title": "Cambridge science workbook Y9",
-  "ko": "9학년 케임브리지 과학 워크북",
+  "ko": "케임브리지 과학 워크북 9학년",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -319,7 +319,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "공지",
   "title": "If you were not able to do our recent baseline tests in lesson (due to absence or device issues), please use the slides ",
-  "ko": "결석자는 기초평가 1~5번 온라인 응시",
+  "ko": "결석·기기문제로 못 본 기초평가 1~5 완료",
   "due": "2026-09-02",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -337,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "자료",
   "title": "PRODUCT IN A TIN SLIDES",
-  "ko": "캔 제품 프로젝트 수업 슬라이드",
+  "ko": "틴 제품 프로젝트 수업 슬라이드",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -346,7 +346,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "과제",
   "title": "PRODUCT IN A TIN MIND MAP",
-  "ko": "캔 제품 아이디어 마인드맵 작성",
+  "ko": "틴 제품 아이디어 마인드맵 작성",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -355,7 +355,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "과제",
   "title": "Genetics and Heredity Vocabulary",
-  "ko": "유전 용어 익히기 과제",
+  "ko": "유전 용어 어휘 과제",
   "due": "2026-09-01",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -364,7 +364,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "자료",
   "title": "7.2 Gametes and inheritance",
-  "ko": "7.2 생식세포와 유전 학습자료",
+  "ko": "7.2 생식세포와 유전 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -382,7 +382,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "자료",
   "title": "Short story anthology",
-  "ko": "단편소설 모음집 자료",
+  "ko": "단편소설 선집 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -391,7 +391,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "공지",
   "title": "Please click on this link to join Dr Frost Math",
-  "ko": "Dr Frost Maths 가입 링크 접속",
+  "ko": "Dr Frost Maths 가입 링크",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -409,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "과제",
   "title": "Music Background and Instrument Preference",
-  "ko": "음악 경험·악기 선호 설문 제출",
+  "ko": "음악 경험·악기 선호 설문 작성",
   "due": "2026-09-01",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -436,7 +436,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-24",
   "type": "자료",
   "title": "Chromosomes, genes and DNA",
-  "ko": "염색체·유전자·DNA 학습자료",
+  "ko": "염색체·유전자·DNA 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -444,7 +444,7 @@ window.CLASSROOM_POSTS = [
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-08-24",
   "type": "공지",
-  "title": "Assembly on Wednesday!",
+  "title": "Assembly on Wednesday! Make sure you wear your formal uniform.",
   "ko": "조회 있음, 정장 교복 착용",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
@@ -454,7 +454,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-24",
   "type": "자료",
   "title": "Link to YouHQ",
-  "ko": "YouHQ 접속 링크",
+  "ko": "YouHQ 링크 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -463,7 +463,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-23",
   "type": "자료",
   "title": "Lesson 0: What Kind of Student Do I Want to Be This Year?",
-  "ko": "올해 학습 태도 정하기 자료",
+  "ko": "올해 목표 정하기 수업자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
  },
@@ -480,8 +480,8 @@ window.CLASSROOM_POSTS = [
   "subject": "수학 (Mr Anan)",
   "date": "2026-08-21",
   "type": "공지",
-  "title": "This is for new students only, existing SJI students will not sit for this assessment",
-  "ko": "신입생만 수학 배치고사, 계산기 지참",
+  "title": "This is for new students only, existing SJI students will not sit for this assessment:",
+  "ko": "신입생 수학 배치고사, 계산기 지참",
   "due": "2026-08-26",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -490,7 +490,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-20",
   "type": "과제",
   "title": "Simple pendulum graph - upload here",
-  "ko": "단진자 그래프 그려 업로드",
+  "ko": "단진자 그래프 업로드",
   "due": "2026-08-26",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -499,7 +499,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-20",
   "type": "자료",
   "title": "CLS Science Learners Book 9",
-  "ko": "9학년 과학 교과서",
+  "ko": "과학 교과서 9학년",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -513,4 +513,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-09-09 14:02";
+window.CLASSROOM_POSTS_AT = "2026-09-09 15:42";
