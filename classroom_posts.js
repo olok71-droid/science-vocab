@@ -22,7 +22,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "자료",
   "title": "Theory Gym Starter Activities",
-  "ko": "이론 워밍업 활동 자료",
+  "ko": "이론 연습 시작 자료 올라옴",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -58,7 +58,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-08",
   "type": "과제",
   "title": "Comic Art Submission",
-  "ko": "만화 작품 제출 과제",
+  "ko": "만화 그림 과제 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -76,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Genes and inheritance - check your progress",
-  "ko": "유전 단원 진도 점검 과제",
+  "ko": "유전 단원 이해도 점검 과제",
   "due": "2026-09-13",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODc3ODAxNTY5OTIx/details"
  },
@@ -139,7 +139,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "자료",
   "title": "Lesson 2: The Heart of Service",
-  "ko": "봉사의 마음 수업자료 게시",
+  "ko": "봉사의 의미 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
  },
@@ -148,7 +148,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-06",
   "type": "과제",
   "title": "Vocabulary HW 1",
-  "ko": "어휘 숙제 1 제출",
+  "ko": "영어 단어 숙제 1",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -166,7 +166,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-03",
   "type": "과제",
   "title": "7.3B Variation in Holly leaves - p139/140",
-  "ko": "교재 139~140쪽 호랑가시나무 잎 변이 과제",
+  "ko": "교과서 139~140쪽 호랑가시나무 잎 변이 과제",
   "due": "2026-09-09",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -175,7 +175,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-03",
   "type": "공지",
   "title": "Your CA1 will take place Tuesday 22nd September 2026.",
-  "ko": "지리 지각변동 단원 CA1 시험, 복습자료 첨부",
+  "ko": "지리 CA1 시험, 복습자료 PDF 첨부",
   "due": "2026-09-22",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -184,7 +184,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-03",
   "type": "자료",
   "title": "Legend of Zelda scores",
-  "ko": "젤다의 전설 악보 자료",
+  "ko": "젤다 악보 자료 올라옴",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -229,7 +229,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "공지",
   "title": "Dear Students, please remember to bring your textbook to lessons today (compulsory)",
-  "ko": "수업에 교과서 필참",
+  "ko": "수업에 교과서 필수 지참",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -238,7 +238,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "자료",
   "title": "🔪 Meet Chef Chop: Your AI Rhythm Tutor!",
-  "ko": "AI 리듬 튜터 셰프 찹 소개",
+  "ko": "AI 리듬 튜터 셰프촙 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -247,7 +247,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "공지",
   "title": "Reminder - please complete the Music Background and Instrument Preference assignment, if you have not already done so.",
-  "ko": "음악 배경·악기 선호 과제 제출 요청",
+  "ko": "음악 배경·악기 선호 과제 마무리 요청",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -256,7 +256,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "읽기 책 가져오기",
+  "ko": "독서책 가져오기",
   "due": "2026-09-09",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5/a/ODY5MzgyODg3NDYw/details"
  },
@@ -265,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-31",
   "type": "공지",
   "title": "Instruments",
-  "ko": "집 악기 있으면 학교로 가져오기",
+  "ko": "집 악기 있으면 이번 주 학교로 가져오기",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -274,7 +274,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-28",
   "type": "과제",
   "title": "Year 9 End of Chapter Review Y9",
-  "ko": "9학년 단원 정리 과제",
+  "ko": "9학년 단원 마무리 복습 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -283,7 +283,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-28",
   "type": "공지",
   "title": "Dear Students, please remember to bring your textbook to lessons today (compulsory)",
-  "ko": "수업에 교과서 필참",
+  "ko": "수업에 교과서 필수 지참",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -310,7 +310,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "공지",
   "title": "Here are the slides for the first three topics.",
-  "ko": "첫 세 단원 슬라이드와 다음 주제 안내",
+  "ko": "1~3차시 슬라이드와 다음 주제 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -319,7 +319,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "공지",
   "title": "If you were not able to do our recent baseline tests in lesson (due to absence or device issues), please use the slides ",
-  "ko": "결석자는 기초평가 1~5번 보충 응시",
+  "ko": "결석자는 기초평가 1~5번 온라인으로 완료",
   "due": "2026-09-02",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -337,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "자료",
   "title": "PRODUCT IN A TIN SLIDES",
-  "ko": "틴 제품 프로젝트 수업 슬라이드",
+  "ko": "틴 제품 프로젝트 슬라이드 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -346,7 +346,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "과제",
   "title": "PRODUCT IN A TIN MIND MAP",
-  "ko": "틴 제품 마인드맵 만들기",
+  "ko": "틴 제품 마인드맵 작성",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -373,7 +373,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "과제",
   "title": "Homework",
-  "ko": "휴머니티 숙제",
+  "ko": "휴머니티 숙제 제출",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -463,7 +463,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-23",
   "type": "자료",
   "title": "Lesson 0: What Kind of Student Do I Want to Be This Year?",
-  "ko": "올해 어떤 학생이 될지 수업자료",
+  "ko": "올해 어떤 학생이 될지 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
  },
@@ -472,7 +472,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-21",
   "type": "공지",
   "title": "Hi, all. This is your Google Classroom for this year for English.",
-  "ko": "영어 수업 클래스룸 안내",
+  "ko": "올해 영어 수업 클래스룸 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -481,7 +481,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-21",
   "type": "공지",
   "title": "This is for new students only, existing SJI students will not sit for this assessment",
-  "ko": "신입생 수학 배치고사, 계산기 필요",
+  "ko": "신입생만 수학 배치고사, 계산기 지참",
   "due": "2026-08-26",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -490,7 +490,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-20",
   "type": "과제",
   "title": "Simple pendulum graph - upload here",
-  "ko": "단진자 그래프 그려서 업로드",
+  "ko": "단진자 그래프 그려 업로드",
   "due": "2026-08-26",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -499,7 +499,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-20",
   "type": "자료",
   "title": "CLS Science Learners Book 9",
-  "ko": "9학년 과학 교과서",
+  "ko": "과학 교과서 9학년",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -508,9 +508,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-20",
   "type": "공지",
   "title": "Building relationships, promoting unity, and empowering you!",
-  "ko": "튜터 대표 선거 포스터 첨부",
+  "ko": "튜터 대표 선거 안내 포스터",
   "due": "2026-09-03",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-09-09 15:49";
+window.CLASSROOM_POSTS_AT = "2026-09-09 16:02";
