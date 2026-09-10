@@ -558,11 +558,6 @@ body.in-subject .cn-card { display: none; }
       <span class="cat-name">9학년 수학</span>
       <span class="cat-sub">Year 9 Maths</span>
     </button>
-    <button class="cat-btn" data-cat="math" onclick="showCat('math')">
-      <span class="cat-emoji">🔢</span>
-      <span class="cat-name">IGCSE 수학</span>
-      <span class="cat-sub">Maths 0580</span>
-    </button>
     <button class="cat-btn" data-cat="eng" onclick="showCat('eng')">
       <span class="cat-emoji">📖</span>
       <span class="cat-name">9학년 영어</span>
@@ -582,6 +577,11 @@ body.in-subject .cn-card { display: none; }
       <span class="cat-emoji">🎨</span>
       <span class="cat-name">그 밖의 과목</span>
       <span class="cat-sub">미술·음악·DT·컴퓨터·드라마·라살·튜터</span>
+    </button>
+    <button class="cat-btn" data-cat="math" onclick="showCat('math')">
+      <span class="cat-emoji">🔢</span>
+      <span class="cat-name">IGCSE 수학</span>
+      <span class="cat-sub">Maths 0580</span>
     </button>
     <button class="cat-btn" data-cat="y8sci" onclick="showCat('y8sci')">
       <span class="cat-emoji">📘</span>
@@ -689,7 +689,47 @@ body.in-subject .cn-card { display: none; }
     </div>
   </div>
 
-  <div class="cat-pane" id="cat-math">
+  
+
+  <div class="cat-pane" id="cat-eng">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">📖</span><span class="name-en">9학년 영어</span><span class="name-ko">Year 9 English</span></div>
+      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="term-start"><td class="t-term" rowspan="2">TERM 1</td><td class="t-en">The Art of Storytelling — Narrative Fiction</td><td class="t-ko">이야기의 기술 — 서사 소설</td></tr><tr><td class="t-en">Make Your Voice Heard — Speech Writing</td><td class="t-ko">목소리를 내라 — 연설문 쓰기</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 2</td><td class="t-en">Prose Study — Animal Farm</td><td class="t-ko">소설 정독 — 동물농장</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 3</td><td class="t-en">Drama — An Inspector Calls</td><td class="t-ko">희곡 — 이너스펙터 콜스</td></tr><tr class="term-start"><td class="t-term" rowspan="1">ALL YEAR</td><td class="t-en">Vocabulary — "Remember, Spell, Define"</td><td class="t-ko">어휘 (외우고 · 철자 쓰고 · 뜻 쓰기 숙제)</td></tr></tbody></table></div><div class="units-grid"><a class="unit-card ready" href="y9c_english.html"><div class="unit-name-en">클래스룸 자료</div><div class="unit-name-ko">9학년 영어 · 선생님이 올린 자료</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a></div>
+
+    </div>
+  </div>
+
+  <div class="cat-pane" id="cat-hum">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">🌍</span><span class="name-en">휴머니티</span><span class="name-ko">Humanities · 지리 + 역사</span></div>
+      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="term-start"><td class="t-term" rowspan="2">TERM 1</td><td class="t-en">1. Tectonic Hazards<span class="subj-b geo">지리</span></td><td class="t-ko">지각 재해</td></tr><tr><td class="t-en">2. World War One<span class="subj-b his">역사</span></td><td class="t-ko">제1차 세계대전</td></tr><tr class="term-start"><td class="t-term" rowspan="2">TERM 2</td><td class="t-en">3. Climate Change<span class="subj-b geo">지리</span></td><td class="t-ko">기후변화</td></tr><tr><td class="t-en">4. The Holocaust<span class="subj-b his">역사</span></td><td class="t-ko">홀로코스트</td></tr><tr class="term-start"><td class="t-term" rowspan="2">TERM 3</td><td class="t-en">5. International Development<span class="subj-b geo">지리</span></td><td class="t-ko">국제 개발</td></tr><tr><td class="t-en">6. World War Two<span class="subj-b his">역사</span></td><td class="t-ko">제2차 세계대전</td></tr></tbody></table></div><div class="units-grid"><a class="unit-card ready" href="y9c_humanities.html"><div class="unit-name-en">클래스룸 자료</div><div class="unit-name-ko">휴머니티 · 선생님이 올린 자료</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a></div>
+
+    </div>
+  </div>
+
+  
+
+  <div class="cat-pane" id="cat-chin">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">🐼</span><span class="name-en">중국어</span><span class="name-ko">Chinese</span></div>
+      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="term-start"><td class="t-term" rowspan="1">TERM 1</td><td class="t-en">Unit 1: School Life &amp; Learning Chinese</td><td class="t-ko">1단원 학교생활과 중국어 배우기</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 2</td><td class="t-en">Unit 2: Healthy Life</td><td class="t-ko">2단원 건강한 생활</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 3</td><td class="t-en">Unit 3: Environment &amp; Technology</td><td class="t-ko">3단원 환경과 기술</td></tr></tbody></table></div><div class="units-grid">
+
+        <a class="unit-card ready" href="chinese.html">
+          <div class="unit-name-en">First Steps</div>
+          <div class="unit-name-ko">듣고 배우는 기초</div>
+          <div class="unit-menu"><span class="menu-chip">듣고 배우기</span><span class="menu-chip">듣기 퀴즈</span><span class="menu-chip">유튜브</span></div>
+        </a>
+
+        <a class="unit-card ready" href="chinese_sgn1.html">
+          <div class="unit-name-en">신공략중국어1</div>
+          <div class="unit-name-ko">발음·단어·회화 (1~5과)</div>
+          <div class="unit-menu"><span class="menu-chip">듣고 배우기</span><span class="menu-chip">듣기 퀴즈</span><span class="menu-chip">유튜브</span></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+  <div class="cat-pane" id="cat-etc"><div class="subject-section"><div class="subject-label"><span class="icon">🎨</span><span class="name-en">그 밖의 과목</span><span class="name-ko">클래스룸 자료</span></div><div class="units-grid"><a class="unit-card ready" href="y9c_cs.html"><div class="unit-name-en">컴퓨터 과학</div><div class="unit-name-ko">Computer Science</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_art.html"><div class="unit-name-en">미술</div><div class="unit-name-ko">Art</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_music.html"><div class="unit-name-en">음악</div><div class="unit-name-ko">Music</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_dt.html"><div class="unit-name-en">디자인 기술</div><div class="unit-name-ko">Design Technology</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_drama.html"><div class="unit-name-en">드라마</div><div class="unit-name-ko">Drama</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_ledu.html"><div class="unit-name-en">라살 교육</div><div class="unit-name-ko">LEDU</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_tutor.html"><div class="unit-name-en">튜터</div><div class="unit-name-ko">Tutor</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a></div></div></div><div class="cat-pane" id="cat-math">
     <div class="subject-section">
       <div class="subject-label"><span class="icon">🔢</span><span class="name-en">IGCSE 수학</span><span class="name-ko">Maths 0580</span></div>
       <div class="units-grid"><a class="unit-card ready" href="math_number.html">
@@ -735,46 +775,6 @@ body.in-subject .cn-card { display: none; }
         </a></div>
     </div>
   </div>
-
-  <div class="cat-pane" id="cat-eng">
-    <div class="subject-section">
-      <div class="subject-label"><span class="icon">📖</span><span class="name-en">9학년 영어</span><span class="name-ko">Year 9 English</span></div>
-      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="term-start"><td class="t-term" rowspan="2">TERM 1</td><td class="t-en">The Art of Storytelling — Narrative Fiction</td><td class="t-ko">이야기의 기술 — 서사 소설</td></tr><tr><td class="t-en">Make Your Voice Heard — Speech Writing</td><td class="t-ko">목소리를 내라 — 연설문 쓰기</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 2</td><td class="t-en">Prose Study — Animal Farm</td><td class="t-ko">소설 정독 — 동물농장</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 3</td><td class="t-en">Drama — An Inspector Calls</td><td class="t-ko">희곡 — 이너스펙터 콜스</td></tr><tr class="term-start"><td class="t-term" rowspan="1">ALL YEAR</td><td class="t-en">Vocabulary — "Remember, Spell, Define"</td><td class="t-ko">어휘 (외우고 · 철자 쓰고 · 뜻 쓰기 숙제)</td></tr></tbody></table></div><div class="units-grid"><a class="unit-card ready" href="y9c_english.html"><div class="unit-name-en">클래스룸 자료</div><div class="unit-name-ko">9학년 영어 · 선생님이 올린 자료</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a></div>
-
-    </div>
-  </div>
-
-  <div class="cat-pane" id="cat-hum">
-    <div class="subject-section">
-      <div class="subject-label"><span class="icon">🌍</span><span class="name-en">휴머니티</span><span class="name-ko">Humanities · 지리 + 역사</span></div>
-      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="term-start"><td class="t-term" rowspan="2">TERM 1</td><td class="t-en">1. Tectonic Hazards<span class="subj-b geo">지리</span></td><td class="t-ko">지각 재해</td></tr><tr><td class="t-en">2. World War One<span class="subj-b his">역사</span></td><td class="t-ko">제1차 세계대전</td></tr><tr class="term-start"><td class="t-term" rowspan="2">TERM 2</td><td class="t-en">3. Climate Change<span class="subj-b geo">지리</span></td><td class="t-ko">기후변화</td></tr><tr><td class="t-en">4. The Holocaust<span class="subj-b his">역사</span></td><td class="t-ko">홀로코스트</td></tr><tr class="term-start"><td class="t-term" rowspan="2">TERM 3</td><td class="t-en">5. International Development<span class="subj-b geo">지리</span></td><td class="t-ko">국제 개발</td></tr><tr><td class="t-en">6. World War Two<span class="subj-b his">역사</span></td><td class="t-ko">제2차 세계대전</td></tr></tbody></table></div><div class="units-grid"><a class="unit-card ready" href="y9c_humanities.html"><div class="unit-name-en">클래스룸 자료</div><div class="unit-name-ko">휴머니티 · 선생님이 올린 자료</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a></div>
-
-    </div>
-  </div>
-
-  
-
-  <div class="cat-pane" id="cat-chin">
-    <div class="subject-section">
-      <div class="subject-label"><span class="icon">🐼</span><span class="name-en">중국어</span><span class="name-ko">Chinese</span></div>
-      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="term-start"><td class="t-term" rowspan="1">TERM 1</td><td class="t-en">Unit 1: School Life &amp; Learning Chinese</td><td class="t-ko">1단원 학교생활과 중국어 배우기</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 2</td><td class="t-en">Unit 2: Healthy Life</td><td class="t-ko">2단원 건강한 생활</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 3</td><td class="t-en">Unit 3: Environment &amp; Technology</td><td class="t-ko">3단원 환경과 기술</td></tr></tbody></table></div><div class="units-grid">
-
-        <a class="unit-card ready" href="chinese.html">
-          <div class="unit-name-en">First Steps</div>
-          <div class="unit-name-ko">듣고 배우는 기초</div>
-          <div class="unit-menu"><span class="menu-chip">듣고 배우기</span><span class="menu-chip">듣기 퀴즈</span><span class="menu-chip">유튜브</span></div>
-        </a>
-
-        <a class="unit-card ready" href="chinese_sgn1.html">
-          <div class="unit-name-en">신공략중국어1</div>
-          <div class="unit-name-ko">발음·단어·회화 (1~5과)</div>
-          <div class="unit-menu"><span class="menu-chip">듣고 배우기</span><span class="menu-chip">듣기 퀴즈</span><span class="menu-chip">유튜브</span></div>
-        </a>
-
-      </div>
-    </div>
-  </div>
-  <div class="cat-pane" id="cat-etc"><div class="subject-section"><div class="subject-label"><span class="icon">🎨</span><span class="name-en">그 밖의 과목</span><span class="name-ko">클래스룸 자료</span></div><div class="units-grid"><a class="unit-card ready" href="y9c_cs.html"><div class="unit-name-en">컴퓨터 과학</div><div class="unit-name-ko">Computer Science</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_art.html"><div class="unit-name-en">미술</div><div class="unit-name-ko">Art</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_music.html"><div class="unit-name-en">음악</div><div class="unit-name-ko">Music</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_dt.html"><div class="unit-name-en">디자인 기술</div><div class="unit-name-ko">Design Technology</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_drama.html"><div class="unit-name-en">드라마</div><div class="unit-name-ko">Drama</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_ledu.html"><div class="unit-name-en">라살 교육</div><div class="unit-name-ko">LEDU</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9c_tutor.html"><div class="unit-name-en">튜터</div><div class="unit-name-ko">Tutor</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a></div></div></div>
   <div class="cat-pane" id="cat-y8sci">
     <div class="subject-section">
       <div class="subject-label"><span class="icon">📘</span><span class="name-en">8학년 자료</span><span class="name-ko">Year 8 · 작년에 배운 것</span></div>
