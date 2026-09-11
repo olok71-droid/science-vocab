@@ -1,3 +1,989 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>준비중</title></head><body>
-<div class="tab-pane active" id="tab-files"><div class="files-wrap"></div></div>
-</body></html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>디자인 기술 DEC · AMY Study App</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e3f2ee;
+  --card: #ffffff;
+  --card2: #eef3fb;
+  --accent: #0d9488;
+  --green: #16a34a;
+  --yellow: #c97a06;
+  --pink: #db2777;
+  --orange: #ea580c;
+  --purple: #6d5dfc;
+  --text: #243b6b;
+  --strong: #16223f;
+  --muted: #6b7a99;
+  --border: rgba(36,59,107,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito','Noto Sans KR',sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(150deg, #d6f5ec 0%, #dceff0 32%, #e4e9fb 70%, #e7e2fb 100%);
+  background-attachment: fixed;
+}
+
+/* HEADER */
+header {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 18px;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 10px;
+}
+.header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(20,184,166,0.08); text-decoration: none; flex-shrink:0; }
+.header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
+.header-text { flex: 1; min-width:0; }
+.header-title { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* Claude 묻기 / 채점 버튼 (헤더) */
+.header-actions { display: flex; gap: 6px; flex-shrink: 0; }
+.btn-claude { background: rgba(109,93,252,0.14); border: 1.5px solid rgba(109,93,252,0.4);
+  color: var(--purple); border-radius: 10px; padding: 7px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  font-family: inherit; white-space: nowrap; cursor: pointer; }
+.btn-claude:hover { background: rgba(109,93,252,0.25); transform: scale(1.04); }
+.btn-claude.grade { background: rgba(13,148,136,0.12); border-color: rgba(13,148,136,0.4); color: #0d9488; }
+.btn-claude.grade:hover { background: rgba(13,148,136,0.24); }
+
+/* HERO */
+.hero { text-align: center; padding: 28px 20px 18px; }
+.hero h1 { font-size: 26px; font-weight: 900; color: var(--strong); letter-spacing: -0.5px; }
+.hero h1 span { color: var(--accent); }
+.hero p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.stats-row { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.stat-chip { background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 5px 12px; font-size: 11.5px; font-weight: 700; color: var(--accent); }
+
+/* EQUATION BOX */
+.eq-box { max-width: 720px; margin: 0 auto 24px; padding: 0 16px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width:480px){ .eq-box { grid-template-columns: 1fr; } }
+.eq-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.eq-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.eq-label.aerobic { color: var(--green); }
+.eq-label.anaerobic { color: var(--orange); }
+.eq-formula { font-size: 13px; font-weight: 700; color: var(--strong); line-height: 1.5; }
+
+/* TABS */
+.tabs-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; }
+.tabs { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; background: var(--card); border-radius: 14px; padding: 5px; border: 1px solid var(--border); }
+.tab-btn { background: transparent; border: none; color: var(--muted); padding: 11px 4px; border-radius: 10px;
+  font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.18s; white-space: nowrap; }
+.tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* SEARCH BOX (단어장) */
+.search-wrap { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; }
+.search-input { width: 100%; background: var(--card); border: 1.5px solid var(--border); color: var(--text);
+  padding: 12px 16px; border-radius: 12px; font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.15s; }
+.search-input:focus { border-color: var(--accent); background: var(--card2); }
+.search-input::placeholder { color: var(--muted); }
+
+/* SPELLING TEST (탭 4) */
+.spell-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.spell-stats { display: flex; justify-content: space-between; align-items: center; padding: 10px 0 16px; font-size: 13px; color: var(--muted); font-weight: 700; }
+.spell-stats b { color: var(--accent); }
+.spell-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px 18px; margin-bottom: 14px; }
+.spell-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 8px; display: inline-block; margin-bottom: 12px; }
+.spell-ko { font-size: 22px; font-weight: 900; color: var(--strong); margin-bottom: 6px; letter-spacing: -0.3px; line-height: 1.3; }
+.spell-def { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+.spell-hint { font-family: 'Courier New', monospace; font-size: 18px; color: var(--accent); font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; text-align: center; }
+.spell-input-row { display: flex; gap: 8px; align-items: stretch; margin-bottom: 12px; }
+.spell-input { flex: 1; background: var(--card2); border: 2px solid var(--border); color: var(--strong);
+  padding: 14px 16px; border-radius: 12px; font-size: 18px; font-family: 'Courier New', monospace;
+  letter-spacing: 2px; outline: none; transition: border-color 0.15s; font-weight: 700; }
+.spell-input:focus { border-color: var(--accent); }
+.spell-input.disabled { opacity: 0.6; pointer-events: none; }
+.spell-feedback { font-family: 'Courier New', monospace; font-size: 20px; letter-spacing: 3px;
+  text-align: center; padding: 10px; min-height: 42px; font-weight: 800; margin-bottom: 12px;
+  background: var(--card2); border-radius: 10px; border: 1px solid var(--border); }
+.spell-feedback .ok { color: var(--green); }
+.spell-feedback .bad { color: #ff6b6b; }
+.spell-feedback .miss { color: var(--muted); }
+.spell-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.spell-btn { padding: 12px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.spell-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.spell-btn-show:hover { background: rgba(251,191,36,0.22); }
+.spell-btn-next { background: rgba(20,184,166,0.14); border-color: rgba(20,184,166,0.4); color: var(--accent); }
+.spell-btn-next:hover { background: rgba(20,184,166,0.24); }
+.spell-correct-banner { background: rgba(74,222,128,0.15); border: 1.5px solid rgba(74,222,128,0.5);
+  color: var(--green); padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner { background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.4);
+  color: var(--yellow); padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
+  text-align: center; margin-bottom: 12px; }
+.spell-answer-banner b { color: var(--strong); font-size: 16px; letter-spacing: 1px; }
+
+/* SECTION HEADERS (vocab filter) */
+.filter-wrap { max-width: 720px; margin: 0 auto 16px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
+.filter-wrap::-webkit-scrollbar { display: none; }
+.filter-tabs { display: flex; gap: 8px; white-space: nowrap; padding-bottom: 2px; }
+.filter-btn { background: var(--card); border: 1.5px solid var(--border); color: var(--muted);
+  border-radius: 20px; padding: 6px 14px; font-size: 11.5px; font-weight: 800; cursor: pointer;
+  font-family: inherit; transition: all 0.2s; white-space: nowrap; }
+.filter-btn.active, .filter-btn:hover { background: rgba(20,184,166,0.12); border-color: var(--accent); color: var(--accent); }
+
+.section-header { max-width: 720px; margin: 0 auto 12px; padding: 0 16px; display: flex; align-items: center; gap: 8px; }
+.section-header h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); }
+.sec-count { color: var(--accent); font-weight: 900; margin-left: 4px; }
+.vcard-num { grid-column: 1 / -1; font-size: 11px; font-weight: 900; color: var(--accent); opacity: 0.65; margin-bottom: 1px; }
+.section-line { flex: 1; height: 1px; background: var(--border); }
+
+/* CARDS WRAP */
+.cards-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+/* VOCAB CARD */
+.vcard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+  display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; transition: border-color 0.2s, transform 0.15s; }
+.vcard:hover { border-color: rgba(20,184,166,0.3); transform: translateY(-1px); }
+.vcard-left { min-width: 0; }
+.vcard-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.vcard-cat { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 8px; }
+.cat-organ  { background: rgba(20,184,166,0.12); color: var(--accent); }
+.cat-process{ background: rgba(74,222,128,0.12); color: var(--green); }
+.cat-blood  { background: rgba(244,114,182,0.12); color: var(--pink); }
+.cat-gas    { background: rgba(109,93,252,0.12); color: var(--purple); }
+
+.vcard-en { font-size: 16px; font-weight: 900; color: var(--strong); letter-spacing: -0.3px; }
+.vcard-ko { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+.vcard-def { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.vcard-def-ko { font-size: 11.5px; color: #4a7090; line-height: 1.5; margin-top: 3px; }
+.vcard-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; flex-shrink: 0; }
+
+/* 단어장 좌(영어)|우(한글) + 가림 */
+.vcard-left{display:grid;grid-template-columns:1fr 1fr;column-gap:12px;row-gap:2px;align-items:start;}
+.vcard-top{grid-column:1 / -1;margin-bottom:2px;}
+.vcard-en{grid-column:1;grid-row:2;}
+.vcard-ko{grid-column:2;grid-row:2;margin-bottom:0;}
+.vcard-def{grid-column:1;grid-row:3;margin-top:4px;}
+.vcard-def-ko{grid-column:2;grid-row:3;margin-top:4px;}
+.dh-btns{display:flex;gap:5px;flex-shrink:0;}
+.blind-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:10.5px;padding:4px 8px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.blind-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.allplay-mini{background:var(--accent);border-color:var(--accent);color:#fff;font-size:12.5px;padding:6px 13px;border-radius:15px;box-shadow:0 2px 6px rgba(13,148,136,0.35);}
+.allplay-mini.active{background:var(--purple);border-color:var(--purple);color:#fff;}
+#tab-vocab.blind-en .vcard-en,#tab-vocab.blind-en .vcard-def{filter:blur(6px);opacity:.45;cursor:pointer;}
+#tab-vocab.blind-ko .vcard-ko,#tab-vocab.blind-ko .vcard-def-ko{filter:blur(6px);opacity:.45;cursor:pointer;}
+.vcard-en.peek,.vcard-ko.peek,.vcard-def.peek,.vcard-def-ko.peek{filter:none!important;opacity:1!important;}
+/* 외움 체크 (2026-05-27) */
+.btn-mem{background:transparent;border:1.5px solid rgba(148,163,184,0.4);border-radius:8px;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:inherit;line-height:1;transition:all .15s;}
+.btn-mem.on{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.vcard.memorized{opacity:.5;}
+.vcard.memorized .vcard-en{text-decoration:line-through;}
+.mem-bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;font-size:12px;}
+.mem-info{color:var(--muted);font-weight:800;}
+.mem-info b{color:#22c55e;}
+.mem-toggle-btn{border:1.5px solid rgba(20,184,166,0.35);background:transparent;color:var(--muted);font-family:inherit;font-weight:800;font-size:11px;padding:4px 10px;border-radius:13px;cursor:pointer;white-space:nowrap;}
+.mem-toggle-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+.btn-speak { background: rgba(20,184,166,0.1); border: 1.5px solid rgba(20,184,166,0.25);
+  color: var(--accent); border-radius: 8px; width: 36px; height: 36px; font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-family: inherit; }
+.btn-speak:hover { background: rgba(20,184,166,0.2); transform: scale(1.05); }
+
+.btn-yt { background: rgba(254,44,44,0.12); border: 1.5px solid rgba(254,44,44,0.3);
+  color: #ff6b6b; border-radius: 8px; padding: 5px 10px; font-size: 11px; font-weight: 800;
+  cursor: pointer; display: flex; align-items: center; gap: 5px; text-decoration: none; transition: all 0.15s; white-space: nowrap; font-family: inherit; }
+.btn-yt:hover { background: rgba(254,44,44,0.22); border-color: rgba(254,44,44,0.6); color: #ff4444; transform: scale(1.03); }
+.btn-yt svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* NOTES (탭: 핵심노트) */
+.chapter-block { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 14px; overflow: hidden; }
+.chapter-head { padding: 14px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.chapter-head .ch-icon { font-size: 22px; }
+.chapter-head .ch-text { flex: 1; min-width: 0; }
+.chapter-head h2 { font-size: 15px; font-weight: 900; color: var(--strong); margin: 0; }
+.chapter-head .ch-sub { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; }
+.btn-pdf { background: rgba(109,93,252,0.12); border: 1.5px solid rgba(109,93,252,0.35);
+  color: var(--purple); border-radius: 8px; padding: 6px 10px; font-size: 11px; font-weight: 800;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;
+  flex-shrink: 0; font-family: inherit; white-space: nowrap; }
+.btn-pdf:hover { background: rgba(109,93,252,0.22); border-color: var(--purple); transform: scale(1.03); }
+.notes-list { padding: 8px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.note-card { background: var(--card2); border-radius: 12px; padding: 13px 14px; border: 1px solid rgba(20,184,166,0.06); }
+.note-card .note-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.note-card h3 { font-size: 14px; font-weight: 800; color: var(--accent); line-height: 1.3; flex: 1; }
+.note-body { font-size: 14px; color: var(--text); line-height: 1.65; }
+.note-body b { color: var(--strong); }
+/* 영어 문단 */
+.note-body p.en { color: var(--text); margin-bottom: 3px; }
+/* 한국어 문단 (영어 바로 아래 짝) */
+.note-body p.ko { color: #5b7089; font-size: 13.5px; margin-bottom: 14px; padding-left: 12px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); line-height: 1.55; }
+.note-body p.ko:last-child { margin-bottom: 0; }
+.note-body ul.en { margin: 4px 0 4px 20px; }
+.note-body ul.ko { margin: 0 0 12px 20px; color: #5b7089; font-size: 13px; padding-left: 8px;
+  border-left: 2.5px solid rgba(140,180,200,0.25); }
+.note-body ul li { margin-bottom: 3px; }
+.note-body table { border-collapse: collapse; margin: 8px 0; width: 100%; font-size: 13px; }
+.note-body th, .note-body td { padding: 6px 10px; border: 1px solid var(--border); text-align: left; }
+.note-body th { color: var(--accent); font-weight: 800; background: rgba(20,184,166,0.06); }
+.note-img { display: block; max-width: 360px; max-height: 220px; width: auto; height: auto;
+  margin: 12px auto 4px; border-radius: 8px; border: 1px solid var(--border); background: #fff;
+  object-fit: contain; }
+@media (max-width: 480px) {
+  .note-img { max-width: 100%; max-height: 180px; }
+}
+
+/* QUIZ (서술형 short-answer) */
+.quiz-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 24px; }
+.quiz-info { font-size: 12px; color: var(--muted); margin-bottom: 12px; text-align: center;
+  background: var(--card); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); line-height: 1.5; }
+.quiz-info b { color: var(--accent); }
+.q-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 16px; margin-bottom: 14px; }
+.q-num { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center; }
+.q-num .q-marks { background: rgba(109,93,252,0.15); color: var(--purple); padding: 2px 8px; border-radius: 8px; font-size: 10px; }
+.q-text { font-size: 14.5px; font-weight: 700; color: var(--strong); line-height: 1.5; margin-bottom: 14px; }
+.q-answer-input {
+  width: 100%; background: var(--card2); border: 1.5px solid var(--border); color: var(--text);
+  padding: 11px 13px; border-radius: 10px; font-family: inherit; font-size: 14px;
+  outline: none; resize: vertical; min-height: 70px; line-height: 1.5;
+}
+.q-answer-input:focus { border-color: var(--accent); }
+.q-show-row { display: flex; gap: 8px; margin-top: 10px; }
+.q-show-row button { flex: 1; padding: 10px; border-radius: 10px; font-weight: 800; font-family: inherit;
+  font-size: 13px; cursor: pointer; border: 1.5px solid; transition: all 0.15s; }
+.q-btn-show { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-btn-show:hover { background: rgba(251,191,36,0.22); }
+
+.q-model {
+  display: none;
+  margin-top: 14px; padding: 14px 14px; background: rgba(20,184,166,0.06);
+  border: 1.5px solid rgba(20,184,166,0.25); border-radius: 10px;
+}
+.q-model.show { display: block; }
+.q-model h4 { font-size: 12px; color: var(--accent); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
+.q-model .model-text { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 10px; }
+.q-model .model-text b { color: var(--strong); }
+.q-model .points { background: rgba(74,222,128,0.08); border-left: 3px solid var(--green);
+  padding: 8px 12px; border-radius: 4px; font-size: 12.5px; color: var(--text); margin-top: 8px; }
+.q-model .points h5 { color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.q-model .points ul { margin-left: 16px; }
+.q-model .points li { margin-bottom: 3px; line-height: 1.45; }
+.q-model .ko-help { display: block; margin-top: 8px; padding: 7px 11px;
+  color: #51698a; font-size: 12px; line-height: 1.5;
+  background: rgba(36,59,107,0.05); border-radius: 4px; }
+
+.q-self-rate { display: none; margin-top: 12px; gap: 6px; }
+.q-self-rate.show { display: flex; }
+.q-self-rate button {
+  flex: 1; padding: 9px 4px; border-radius: 8px; font-weight: 800; font-family: inherit;
+  font-size: 12px; cursor: pointer; border: 1.5px solid; transition: all 0.15s;
+}
+.q-self-rate .rate-good { background: rgba(74,222,128,0.12); border-color: rgba(74,222,128,0.4); color: var(--green); }
+.q-self-rate .rate-mid { background: rgba(251,191,36,0.12); border-color: rgba(251,191,36,0.4); color: var(--yellow); }
+.q-self-rate .rate-bad { background: rgba(244,114,182,0.12); border-color: rgba(244,114,182,0.4); color: var(--pink); }
+.q-self-rate .selected { transform: scale(1.04); border-width: 2px; }
+
+/* FOOTER */
+footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2a4060; border-top: 1px solid var(--border); margin-top: 24px; }
+.vcard.hidden { display: none; }
+.section-header.hidden { display: none; }
+</style>
+
+<style>
+
+/* 수업자료 카드 (핵심노트 + 클래스룸자료 합침) */
+.mat-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+.mat-card.sum { border: 2px solid var(--accent); }
+.mat-head { padding: 13px 15px; display: flex; align-items: center; gap: 11px; border-bottom: 1px solid var(--border); }
+.mat-t { flex: 1; min-width: 0; }
+.mat-title { font-size: 15px; font-weight: 900; color: var(--strong); line-height: 1.35; }
+.mat-sub { font-size: 12px; font-weight: 700; color: var(--text); margin-top: 3px; }
+.mat-meta { margin-left: auto; flex: 0 0 auto; font-size: 12px; font-weight: 800; color: var(--text);
+  background: rgba(36,59,107,0.06); border-radius: 999px; padding: 5px 11px; white-space: nowrap; }
+.mat-open { margin-left: 8px; flex: 0 0 auto; font-size: 13px; font-weight: 800; color: #fff; background: var(--accent);
+  padding: 7px 12px; border-radius: 10px; text-decoration: none; white-space: nowrap; }
+.file-ico.sum { background: var(--purple); font-size: 12px; }
+.mat-open.yt { background: #ff2c2c; }
+.file-ico.yt { background: #ff2c2c; font-size: 16px; }
+.mat-body { padding: 13px 15px 15px; }
+.mat-one { font-size: 14.5px; font-weight: 800; color: var(--accent); line-height: 1.55; margin-bottom: 9px; }
+.mat-why { font-size: 14.5px; color: var(--text); line-height: 1.8; }
+.mat-why p { margin-bottom: 9px; }
+.mat-why p:last-child { margin-bottom: 0; }
+.mat-why b { color: var(--strong); font-weight: 800; }
+.mat-exam { margin-top: 12px; background: rgba(109,93,252,0.08); border-left: 4px solid var(--purple);
+  border-radius: 0 10px 10px 0; padding: 10px 13px; }
+.mat-exam h4 { font-size: 12.5px; font-weight: 900; color: var(--purple); margin-bottom: 6px; }
+.mat-exam ul { margin: 0 0 0 17px; }
+.mat-exam li { font-size: 13.5px; color: var(--text); line-height: 1.6; margin: 4px 0; }
+.mat-exam h4 .mat-note{display:block;font-size:11px;font-weight:700;color:var(--text);margin-top:3px;letter-spacing:0;}
+details.mat-src { margin-top: 12px; border-top: 1px dashed var(--border); padding-top: 10px; }
+details.mat-src summary { font-size: 13px; font-weight: 800; color: var(--strong); cursor: pointer; list-style: none; }
+details.mat-src summary::-webkit-details-marker { display: none; }
+details.mat-src summary::before { content: "▸ "; color: var(--accent); }
+details.mat-src[open] summary::before { content: "▾ "; }
+details.mat-src .notes-list { padding: 10px 0 0; }
+
+
+/* 영상 줄 */
+.vids-h { font-size: 13px; font-weight: 900; color: var(--strong); margin-bottom: 10px; }
+.vids { margin-top: 13px; border-top: 1px dashed var(--border); padding-top: 11px; }
+.vid { display: flex; align-items: center; gap: 10px; background: rgba(254,44,44,0.06);
+  border: 1.5px solid rgba(254,44,44,0.28); border-radius: 12px; padding: 9px 12px; margin-bottom: 7px;
+  text-decoration: none; color: inherit; }
+.vid-ico { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 8px; background: #ff2c2c; color: #fff;
+  display: grid; place-items: center; font-size: 13px; }
+.vid-t { font-size: 14px; font-weight: 800; color: var(--strong); line-height: 1.4; }
+.vid-src { display: inline-block; font-size: 10.5px; font-weight: 900; padding: 2px 7px; border-radius: 999px; margin-right: 6px; }
+.vid-src.teacher { background: #0d9488; color: #fff; }
+.vid-src.app { background: #6d5dfc; color: #fff; }
+.vid-ch { display: block; font-size: 11.5px; font-weight: 700; color: var(--text); margin-top: 2px; }
+/* 자료 쪽마다 보기 */
+.pages { margin-top: 14px; border-top: 1px dashed var(--border); padding-top: 12px; }
+.pages-h { font-size: 13px; font-weight: 900; color: var(--strong); margin-bottom: 12px; }
+.pg { display: grid; grid-template-columns: 1fr; gap: 11px; margin-bottom: 20px; }
+@media (min-width: 860px) { .pg { grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: start; } }
+.pg img { width: 100%; border: 1px solid var(--border); border-radius: 10px; background: #fff;
+  box-shadow: 0 2px 10px rgba(36,59,107,0.10); }
+.pg-txt h5 { font-size: 13.5px; font-weight: 900; color: var(--accent); margin-bottom: 7px; }
+.pg-tr { background: rgba(20,184,166,0.07); border-radius: 10px; padding: 10px 12px; font-size: 13.5px;
+  line-height: 1.75; color: var(--text); margin-bottom: 9px; }
+.pg-tr b { color: var(--strong); font-weight: 800; }
+.pg-txt p.pg-ans{background:rgba(20,184,166,0.12);border-radius:9px;padding:8px 11px;font-weight:800;color:var(--strong);}
+.pg-txt p { font-size: 14px; line-height: 1.75; color: var(--text); margin-bottom: 8px; }
+/* 자료 탭 */
+.files-wrap { max-width: 980px; margin: 0 auto; padding: 4px 16px 40px; }
+.file-card { display: flex; align-items: center; gap: 14px; background: var(--card);
+  border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin-bottom: 10px;
+  text-decoration: none; color: inherit; }
+.file-ico { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center;
+  font-size: 13px; font-weight: 900; color: #fff; background: var(--accent); letter-spacing: .5px; }
+.file-ico.ppt { background: var(--purple); }
+.file-ico.link { background: var(--strong); }
+.file-name { font-size: 15px; font-weight: 800; color: var(--strong); }
+.file-desc { font-size: 13px; color: var(--text); margin-top: 3px; }
+.file-open { margin-left: auto; font-size: 13px; font-weight: 800; color: var(--accent); white-space: nowrap; }
+.files-head { font-size: 14px; font-weight: 800; color: var(--strong); margin: 18px 0 10px; }
+</style>
+
+<style>
+/* 학년 진도표 (누르면 펼쳐짐) */
+.cur { max-width: 980px; margin: 0 auto 14px; padding: 0 16px; }
+.cur > summary { list-style: none; cursor: pointer; background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12));
+  border-radius: 12px; padding: 11px 15px; font-size: 14px; font-weight: 800; color: var(--strong, #16223f); }
+.cur > summary::-webkit-details-marker { display: none; }
+.cur > summary::before { content: "▸ "; color: var(--accent, #0d9488); }
+.cur[open] > summary::before { content: "▾ "; }
+.cur-body { background: var(--card, #fff); border: 1px solid var(--border, rgba(36,59,107,.12));
+  border-radius: 14px; padding: 14px 16px 16px; max-width: 980px; margin: 0 auto; }
+.cur-body .teacher { font-size: 12.5px; font-weight: 700; color: var(--text, #243b6b); margin-bottom: 10px; }
+.cur-body .term-card { border: 1px solid var(--border, rgba(36,59,107,.12)); border-radius: 11px; padding: 11px 13px; margin-bottom: 9px; }
+.cur-body .term-tag { display: inline-block; background: var(--accent, #0d9488); color: #fff; font-size: 11px; font-weight: 900;
+  padding: 3px 9px; border-radius: 999px; margin-bottom: 7px; }
+.cur-body .u-body { font-size: 13.5px; line-height: 1.85; color: var(--text, #243b6b); }
+.cur-body .u-body b { color: var(--strong, #16223f); }
+.cur-body .src { font-size: 11.5px; font-weight: 700; color: var(--text, #243b6b); margin-top: 6px; }
+.cur table.rot { width: 100%; border-collapse: collapse; margin-top: 6px; }
+.cur table.rot th, .cur table.rot td { border: 1px solid var(--border, rgba(36,59,107,.12)); padding: 6px 9px; font-size: 12px; font-weight: 700; text-align: left; }
+.cur table.rot th { width: 110px; background: rgba(36,59,107,0.05); }
+</style>
+<style>
+.vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; display: flex; flex-wrap: wrap;
+  align-items: center; gap: 6px; }
+.vtool .search-input { flex: 0 1 48%; max-width: 48%; min-width: 0; padding: 8px 12px; font-size: 13px; }
+.vtool .mem-info { font-size: 12px; font-weight: 800; color: var(--text); white-space: nowrap; }
+.vtool .mem-info { color: var(--strong, #16223f); }
+.vtool .mem-info b { color: #0b4f45; font-weight: 900; }
+.vtool .blind-btn, .vtool .mem-toggle-btn { padding: 5px 10px; color: #0d5c50; border-color: rgba(13,92,80,0.55); background: rgba(255,255,255,0.85); font-weight: 900; }
+.vtool .blind-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.vtool .allplay-mini { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.spellbox > summary { display: none; }
+.spellbox { margin-top: 4px; }
+</style>
+<style>
+/* 자료 카드 안 핵심 단어 */
+.wordbox { margin-top: 12px; border-top: 1px dashed var(--border); padding-top: 10px; }
+.wrow { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid rgba(36,59,107,.07); flex-wrap: wrap; }
+.wrow b { font-size: 14.5px; color: var(--strong); }
+.wrow .wko { font-size: 13.5px; font-weight: 800; color: var(--accent); }
+.wrow .wdef { flex: 1 1 100%; font-size: 12.5px; color: var(--text); line-height: 1.5; }
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html" aria-label="홈">←</a>
+  <div class="header-icon">🛠️</div>
+  <div class="header-text">
+    <div class="header-title">디자인 기술 DEC</div>
+    <div class="header-sub">Year 9 · Mr Mathyk</div>
+  </div>
+  <div class="header-actions">
+    <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제집 채점">📷</a>
+    <a class="btn-claude" id="btn-ask" target="_blank" rel="noopener" href="#" title="이 단원에 대해 Claude에게 질문">💬 Claude</a>
+  </div>
+</header>
+
+
+
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn" data-tab="files">📄 클래스룸자료</button>
+    <button class="tab-btn" data-tab="quiz">✅ 퀴즈</button><button class="tab-btn" data-tab="spelling">✏️ 단어시험</button>
+    </div>
+</div>
+
+
+<div class="tab-pane active" id="tab-vocab">
+  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기 (0)</button><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="69개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9c_dtdec_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></div>
+
+
+<div class="cards-wrap"><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">promotional merchandise</div><div class="vcard-ko">홍보용 상품(굿즈)</div><div class="vcard-def-ko">행사나 브랜드를 홍보하려고 만드는 티셔츠·배지 같은 상품이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("promotional merchandise")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">typography</div><div class="vcard-ko">타이포그래피(글자 디자인)</div><div class="vcard-def-ko">글꼴과 글자 배치를 디자인하는 기술이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("typography")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">branding</div><div class="vcard-ko">브랜딩</div><div class="vcard-def-ko">로고·색·글꼴을 일관되게 써서 하나의 이미지를 만드는 일이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("branding")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">brand identity</div><div class="vcard-ko">브랜드 정체성</div><div class="vcard-def-ko">로고·색상·글꼴처럼 그 브랜드를 알아보게 하는 시각 요소들이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("brand identity")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">target audience</div><div class="vcard-ko">목표 고객층</div><div class="vcard-def-ko">이 디자인을 보고 사게 될 특정 사람들의 집단이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("target audience")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">moodboard</div><div class="vcard-ko">무드보드</div><div class="vcard-def-ko">이미지와 글을 모아 디자인 분위기와 주제를 보여주는 판이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("moodboard")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">design intent</div><div class="vcard-ko">디자인 의도</div><div class="vcard-def-ko">디자이너가 그 디자인으로 이루려는 목적이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("design intent")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">aesthetics</div><div class="vcard-ko">미적 요소(겉모습)</div><div class="vcard-def-ko">색·모양·질감·스타일 등 제품의 겉모습이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("aesthetics")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">colour scheme</div><div class="vcard-ko">색 배합</div><div class="vcard-def-ko">디자인에 쓰기로 정한 색들의 조합이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("colour scheme")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">ACCESSFM</div><div class="vcard-ko">애세스에프엠(디자인 분석 기준)</div><div class="vcard-def-ko">제품을 여덟 기준(미적·비용·고객·환경·크기·안전·기능·재료)으로 분석하는 방법이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("ACCESSFM")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">ticket tier</div><div class="vcard-ko">티켓 등급</div><div class="vcard-def-ko">일반 입장·VIP처럼 티켓 등급과 입장 권한을 말한다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("ticket tier")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-en">anti-counterfeiting</div><div class="vcard-ko">위조 방지</div><div class="vcard-def-ko">홀로그램·워터마크처럼 가짜 티켓을 막는 장치다.</div></div><div class="vcard-right"><button class="btn-speak" onclick='speak("anti-counterfeiting")'>🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div></div></div>
+<div class="tab-pane" id="tab-files"><div class="files-wrap"><div class="mat-card"><div class="mat-head"><div class="file-ico mat-open">PDF</div><div class="mat-t"><div class="mat-title">T1 - Festival Project</div><div class="mat-sub">선생님이 클래스룸에 올린 자료 · FESTIVAL PROJECT SLIDES</div></div><a class="mat-open" href="pdfs/dtdec/T1%20-%20Festival%20Project.pdf" target="_blank" rel="noopener">열기 →</a></div><div class="mat-body"><div class="mat-one">축제를 만들고 그 축제의 포스터·티켓·굿즈를 디자인하는 프로젝트 안내 자료다.</div><div class="mat-why"><p>이 프로젝트에서 학생은 <b>그래픽 디자이너(graphic designer)</b>가 된 상황을 가정한다. 인기 있는 축제를 위한 <b>홍보용 굿즈(promotional merchandise)</b>를 만들어 달라는 의뢰를 받았다는 설정이다. 만들 것은 포스터, 배지, 로고, 티셔츠, 손목밴드 같은 것들이고, 축제 주제는 음악·게임·영화·음식과 음료 중에서 고르면 된다.</p><p>first는 조사와 <b>무드보드(moodboard)</b>다. 어떤 축제인지, 어떤 행사와 공연이 있는지, 무엇을 팔지, 색 조합(colour scheme)은 무엇인지, 어떤 손님이 올지를 먼저 정한다. 그 답을 그림과 글로 한 판에 모아 붙인 것이 무드보드이고, 축제의 전체 분위기가 한눈에 느껴져야 한다. 여기서 <b>타깃 고객(target audience)</b>을 정하는 것이 핵심이다.</p><p>다음은 포스터와 로고다. 포스터에는 주제가 드러나는 <b>로고</b>, 축제 이름, 보기 좋은 꾸밈, 무엇을 즐길 수 있는지에 대한 정보와 사진, 티켓 구하는 방법이 반드시 들어가야 한다. 그리고 <b>Canva 기본 템플릿을 그대로 쓰면 안 된다</b>고 자료에 분명히 적혀 있다. 시간·장소, 후원사, 특별 행사, 경품 추첨 같은 것을 더 넣어도 좋다.</p><p>티켓에는 브랜드가 눈에 보이게 드러나야 하고 <b>바코드/QR</b>, 가격, <b>티켓 등급(ticket tier)</b>, 장소, 날짜와 시간, 축제 이름과 로고가 들어가야 한다. 티켓 등급은 일반 입장(General Admission), VIP, 1일권·3일권처럼 어떤 권한이 있는지를 밝히는 것이다. 위조를 막는 홀로그램·워터마크 같은 <b>보안 요소(security features)</b>도 티켓에 왜 필요한지 생각해 보라고 한다. 굿즈(배지 등) 디자인에는 제품 스케치, 로고와 브랜드 이름, 색 조합, 글자체(typography)가 모두 들어가야 한다.</p><p>제출물은 총 5쪽이다. 1쪽 제목 페이지(이름·반·선생님 이름), 2쪽 무드보드, 3쪽 포스터, 4쪽 티켓, 5쪽 배지 디자인이고, 포스터부터는 <b>ACCESSFM 설명(annotation)</b>을 같이 붙여야 한다. 평가는 Foundation - Developing - Secure - Excellence 단계로 나뉘며, 모든 쪽을 채우고 주제가 일관되게 이어질수록 높은 단계다.</p></div><div class="mat-exam"><h4>✍️ 꼭 알아야 하는 것</h4><ul><li>ACCESSFM은 디자인을 설명하는 8가지 항목이다 — Aesthetics(생김새·색·모양), Cost(비용), Client(누가 사는가), Environment(환경·재활용), Size(크기), Safety(안전), Function(기능·어떻게 쓰이는가), Materials(재료). 포스터·티켓·배지 옆에 이 항목으로 설명을 붙여야 한다.</li><li>축제 이름, 로고, 색, 글자체가 포스터·티켓·굿즈 전부에서 똑같이 이어져야 한다. 이것이 <b>브랜드 정체성(brand identity)</b>이고, 이 프로젝트에서 가장 자주 반복되는 요구다.</li></ul></div><div class="wordbox"><h4 class="vids-h">📚 이 자료의 핵심 단어</h4><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/promotional_merchandise.mp3').play()">🔊</button><b>promotional merchandise</b><span class="wko">홍보용 상품(굿즈)</span><span class="wdef">행사나 브랜드를 홍보하려고 만드는 티셔츠·배지 같은 상품이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/typography.mp3').play()">🔊</button><b>typography</b><span class="wko">타이포그래피(글자 디자인)</span><span class="wdef">글꼴과 글자 배치를 디자인하는 기술이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/branding.mp3').play()">🔊</button><b>branding</b><span class="wko">브랜딩</span><span class="wdef">로고·색·글꼴을 일관되게 써서 하나의 이미지를 만드는 일이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/brand_identity.mp3').play()">🔊</button><b>brand identity</b><span class="wko">브랜드 정체성</span><span class="wdef">로고·색상·글꼴처럼 그 브랜드를 알아보게 하는 시각 요소들이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/target_audience.mp3').play()">🔊</button><b>target audience</b><span class="wko">목표 고객층</span><span class="wdef">이 디자인을 보고 사게 될 특정 사람들의 집단이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/moodboard.mp3').play()">🔊</button><b>moodboard</b><span class="wko">무드보드</span><span class="wdef">이미지와 글을 모아 디자인 분위기와 주제를 보여주는 판이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/design_intent.mp3').play()">🔊</button><b>design intent</b><span class="wko">디자인 의도</span><span class="wdef">디자이너가 그 디자인으로 이루려는 목적이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/aesthetics.mp3').play()">🔊</button><b>aesthetics</b><span class="wko">미적 요소(겉모습)</span><span class="wdef">색·모양·질감·스타일 등 제품의 겉모습이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/colour_scheme.mp3').play()">🔊</button><b>colour scheme</b><span class="wko">색 배합</span><span class="wdef">디자인에 쓰기로 정한 색들의 조합이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/accessfm.mp3').play()">🔊</button><b>ACCESSFM</b><span class="wko">애세스에프엠(디자인 분석 기준)</span><span class="wdef">제품을 여덟 기준(미적·비용·고객·환경·크기·안전·기능·재료)으로 분석하는 방법이다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/ticket_tier.mp3').play()">🔊</button><b>ticket tier</b><span class="wko">티켓 등급</span><span class="wdef">일반 입장·VIP처럼 티켓 등급과 입장 권한을 말한다.</span></div><div class="wrow"><button class="btn-speak" onclick="new Audio('audio/sci/anti_counterfeiting.mp3').play()">🔊</button><b>anti-counterfeiting</b><span class="wko">위조 방지</span><span class="wdef">홀로그램·워터마크처럼 가짜 티켓을 막는 장치다.</span></div></div><div class="pages"><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p1.jpg" alt="1쪽" loading="lazy"><div class="pg-txt"><h5>1쪽 · 축제 준비에 필요한 것</h5><div class="pg-tr"><b>축제</b>를 <b>열기</b> 위해 무엇을 <b>준비</b>해야 하는가?</div><p>이 단원은 축제를 여는 데 필요한 준비물을 생각해 보는 질문으로 시작한다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p2.jpg" alt="2쪽" loading="lazy"><div class="pg-txt"><h5>2쪽 · 축제 프로젝트</h5><div class="pg-tr"><b>Festival Project</b><br>축제 프로젝트</div><p>이 쪽은 과제의 제목만 적힌 표지다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p3.jpg" alt="3쪽" loading="lazy"><div class="pg-txt"><h5>3쪽 · 프로젝트 안내문</h5><div class="pg-tr"><b>프로젝트 안내문</b><br>너는 <b>그래픽 디자이너</b>다.<br>인기 있는 <b>축제</b>의 <b>홍보 상품</b>을 개발해 달라는 의뢰를 받았다.<br>이 상품에는 <b>포스터</b>, <b>배지</b>, <b>로고</b>, <b>티셔츠</b>, <b>손목밴드</b> 등이 들어간다.<br>프로젝트를 하는 동안 다음과 같은 폭넓은 기술 능력을 기르게 된다.<br>- <b>타이포그래피</b>(글자 디자인)<br>- <b>그래픽 디자인</b><br>- <b>마케팅</b><br>- <b>브랜딩</b><br>- <b>디자인 발전시키기</b><br>너는 네 축제의 <b>주제(테마)와 이름</b>을 고르게 된다.<br>여기에는 행사, 오락거리 등이 들어간다.<br><b>축제 주제 아이디어</b><br>● 음악 축제<br>● 게임 축제<br>● 영화 축제<br>● 음식과 음료 축제<br><b>네가 디자인하고 만들 것</b><br>★ 티켓<br>★ 티셔츠 상품<br>★ 포스터<br>★ 배지<br><b>무드보드</b><br><b>학습 목표</b><br>● 프로젝트 안내문과 기대하는 바를 이해한다<br>● <b>목표 고객층</b>을 찾아낸다<br>● 분명한 주제를 전달하는 <b>무드보드</b>를 만든다<br>9L 구글 클래스룸 코드: kiqkwt5y</div><p>이 프로젝트는 축제의 홍보 상품을 만드는 것이고, 실제로 만들어 낼 결과물은 티켓·티셔츠·포스터·배지 네 가지다.</p><p>먼저 축제의 주제와 이름을 스스로 정하고, 목표 고객층을 정한 뒤 그 주제를 보여주는 무드보드를 만드는 것이 이 쪽의 학습 목표다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p4.jpg" alt="4쪽" loading="lazy"><div class="pg-txt"><h5>4쪽 · 전자 포트폴리오 표지</h5><div class="pg-tr"><b>전자 포트폴리오</b> <b>표지</b></div><p>이 쪽은 과제물의 표지 쪽이다</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p5.jpg" alt="5쪽" loading="lazy"><div class="pg-txt"><h5>5쪽 · 무드보드 예시 분석하기</h5><div class="pg-tr">이 <b>무드보드</b> 예시를 살펴본다.<br>이 <b>행사</b>의 <b>콘셉트</b>는 무엇인가?<br>이 행사의 <b>타깃 관객</b>은 누구일까?<br>이 행사의 <b>디자인 의도</b>를 어떻게 설명하겠는가?</div><p>무드보드 예시 하나를 놓고 콘셉트·타깃 관객·디자인 의도 세 가지를 읽어내는 연습이다</p><p>무드보드는 이미지만 모은 것이 아니라 행사의 방향을 남에게 설명할 수 있어야 한다</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p6.jpg" alt="6쪽" loading="lazy"><div class="pg-txt"><h5>6쪽 · 과제 1 — 축제 조사와 무드보드</h5><div class="pg-tr"><b>과제 1</b><br>너의 축제를 위한 아이디어를 <b>조사</b>하라. 다음 <b>질문</b>들을 참고하라.<br>1. 너는 어떤 <b>종류의 축제</b>를 준비하고 있는가?<br>2. 너의 축제에는 어떤 <b>행사</b>가 있을 수 있는가?<br>3. <b>공연</b>이 있을 것인가? 어떤 종류인가?<br>4. 너의 축제에서는 어떤 <b>상품</b>이 팔릴 것인가?<br>5. 너의 축제는 어떤 <b>색 구성</b>을 가질 것인가?<br>6. 어떤 <b>손님</b>이 너의 축제에 올 것인가?<br>조사한 것을 바탕으로 축제의 <b>무드보드</b>를 만들어라. 무드보드는 너의 축제 아이디어의 전체 <b>분위기</b>를 보여주어야 한다. <b>이미지</b>와 <b>글</b>을 넣어야 한다.<br><b>학습 목표</b><br>● 과제 <b>안내문</b>과 요구 사항을 이해한다<br>● <b>목표 관객</b>을 정한다<br>● 뚜렷한 <b>주제</b>를 전달하는 무드보드를 만든다</div><p>축제 아이디어를 정할 때 종류·행사·공연·상품·색 구성·손님 여섯 가지 질문에 답해야 한다.</p><p>무드보드에는 이미지와 글을 함께 넣어 축제의 전체 분위기와 뚜렷한 주제가 드러나게 한다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p7.jpg" alt="7쪽" loading="lazy"><div class="pg-txt"><h5>7쪽 · 축제 프로젝트 안내</h5><div class="pg-tr">이 쪽에는 글자가 없다.</div><p>이 쪽은 <b>T1 Festival Project</b> 자료의 7번째 쪽이며, 읽을 글이 없으므로 앞뒤 쪽 내용으로 이어서 공부한다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p8.jpg" alt="8쪽" loading="lazy"><div class="pg-txt"><h5>8쪽 · 축제 포스터 살펴보기</h5><div class="pg-tr">이 <b>축제 포스터</b>들을 살펴보자.<br>무엇이 포스터를 <b>잘 디자인된</b> 것으로 만드는가?<br>무엇이 포스터를 <b>못 디자인된</b> 것으로 만드는가?</div><p>포스터 예시를 보며 좋은 디자인과 나쁜 디자인의 기준을 찾아보는 쪽이다</p><p>What makes ~?는 '무엇이 ~을 만드는가', 즉 '왜 그런가'를 묻는 표현이다</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p9.jpg" alt="9쪽" loading="lazy"><div class="pg-txt"><h5>9쪽 · 로고와 글자 디자인</h5><div class="pg-tr"><b>로고/타이포그래피</b><br>학습 목표<br>● 여러 가지 <b>글꼴 스타일</b>과 <b>배치</b>를 실험해 본다.<br>● 명확하고 알맞은 <b>축제 로고</b>를 디자인한다.<br>● 시각적으로 효과적인 <b>홍보 포스터</b>를 만든다.<br>과제:<br>우리 축제를 위해 정보가 담기면서도 보기 좋은 <b>포스터</b>를 디자인한다.<br>● 오락거리, 미적 요소, 고객, 행사를 고려한다.<br>● 홍보물 전체에 <b>일관되게</b> 쓸 수 있는 축제 <b>로고</b>를 넣는다.</div><p>글꼴과 배치를 여러 가지로 시도해 보고, 정보와 디자인을 모두 갖춘 포스터를 만드는 것이 이 쪽의 과제다.</p><p>로고는 한 번 정하면 모든 홍보물에 똑같이 쓰여야 하므로 일관성이 핵심이다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p10.jpg" alt="10쪽" loading="lazy"><div class="pg-txt"><h5>10쪽 · 포스터에 꼭 들어갈 것</h5><div class="pg-tr">포스터에 반드시 있어야 하는 것은?<br>주제가 분명히 드러나는 <b>로고</b><br>축제의 <b>제목</b><br>보기 좋게 만드는 알맞은 <b>미적 요소·장식</b><br>축제에서 무엇을 하는지에 대한 <b>정보와 사진</b>(예: 음악, 게임, 음식, 초청 손님 등)<br>참가자가 <b>표를 구하는 방법</b><br>남다른 <b>디자인 요소</b>(캔바 기본 템플릿을 그대로 쓰지 <b>말 것</b>)</div><p>포스터 필수 항목 6가지 — 로고, 제목, 장식, 축제 정보와 사진, 티켓 구하는 법, 독창적 디자인이다.</p><p>캔바 기본 템플릿을 그대로 쓰면 안 되고 자기만의 디자인을 넣어야 한다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p11.jpg" alt="11쪽" loading="lazy"><div class="pg-txt"><h5>11쪽 · 로고와 포스터 만들기</h5><div class="pg-tr"><b>로고/타이포그래피</b><br>학습 목표<br>● 여러 가지 <b>글씨체(font)</b>와 <b>배치(layout)</b>를 실험해 본다.<br>● 분명하고 알맞은 <b>축제 로고</b>를 디자인한다.<br>● 시각적으로 효과적인 <b>홍보 포스터</b>를 만든다.<br><br><b>포스터에 반드시 들어가야 할 것</b><br>주제가 잘 드러나는 분명한 로고<br>축제의 <b>제목</b><br>시각적으로 눈에 띄게 하는 알맞은 <b>미적 요소/장식</b><br>축제에서 무엇을 하는지에 대한 정보와 이미지(예: 음악, 게임, 음식, 초청 손님 등)<br>참가자가 <b>표(티켓)</b>를 어떻게 구할 수 있는지<br>독창적인 디자인 요소(<b>캔바 기본 템플릿을 그대로 쓰지 말 것</b>)<br><br><b>넣어도 되는 것</b><br>● 시간과 장소<br>● 알맞은 후원사<br>● 참가자의 관심을 끌 만한 특별 행사<br>● 대회나 행운권 추첨</div><p>포스터 필수 항목은 다섯 가지다 — 로고, 축제 제목, 장식, 축제 내용 정보와 이미지, 티켓 구하는 방법이다.</p><p>캔바 기본 템플릿을 그대로 쓰면 안 되고, 자기만의 독창적인 디자인을 넣어야 한다. 시간·장소, 후원사, 특별 행사, 대회나 추첨은 선택 사항이다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p12.jpg" alt="12쪽" loading="lazy"><div class="pg-txt"><h5>12쪽 · 축제 프로젝트 표지 쪽</h5><div class="pg-tr">이 쪽에는 옮길 <b>글자</b>가 없다.</div><p>이 쪽에는 읽을 글이 없어 앞뒤 쪽으로 내용을 이어 봐야 한다</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p13.jpg" alt="13쪽" loading="lazy"><div class="pg-txt"><h5>13쪽 · 티켓 디자인</h5><div class="pg-tr"><b>Ticket Design</b>(티켓 디자인)<br><b>Learning Objectives</b>(학습 목표)<br>● 필요한 정보를 담은 <b>티켓을 디자인</b>하는 것<br>● 더 작은 형식에도 <b>브랜딩</b>을 일관되게 적용하는 것<br><b>축제 티켓에는 무엇이 들어가야 하는가? 왜 그런가?</b><br><b>Event Name & Logo</b>(행사 이름과 로고): 그 축제를 알아볼 수 있는 분명한 브랜딩.<br><b>Date & Time</b>(날짜와 시간): 정확한 행사 날짜, 문 여는 시각, 공연 시각.<br><b>Venue Details</b>(장소 정보): 축제 장소의 정식 이름과 실제 주소.<br><b>Ticket Tier & Access Rights</b>(티켓 등급과 입장 권한): 티켓 종류(예: 일반 입장, VIP, 1일권/3일권)와 특별 혜택을 분명히 표시한다.<br><b>Unique Identifier</b>(고유 식별자): 원래 예매와 연결되어 안전하게 스캔해 인증할 수 있는 <b>QR 코드</b>나 <b>바코드</b>.<br><b>Security Features</b>(보안 요소): <b>홀로그램</b>, <b>워터마크</b>, 무작위 번호 같은 위조 방지 장치.<br><b>Think, Pair, Share</b>(혼자 생각하고, 짝과 나누고, 발표하기)</div><p>티켓에 꼭 들어갈 여섯 가지는 행사 이름과 로고, 날짜와 시간, 장소 정보, 티켓 등급과 입장 권한, 고유 식별자(QR·바코드), 보안 요소다.</p><p>티켓은 포스터보다 작은 형식이지만 같은 브랜딩을 일관되게 적용해야 한다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p14.jpg" alt="14쪽" loading="lazy"><div class="pg-txt"><h5>14쪽 · 티켓 디자인</h5><div class="pg-tr"><b>티켓 디자인</b><br>학습 목표<br>● 필요한 정보를 담은 <b>티켓</b>을 디자인한다<br>● 더 작은 형식에도 <b>브랜딩</b>을 일관되게 적용한다<br>과제:<br>내 축제의 티켓을 디자인한다. 티켓에는 반드시 다음이 들어가야 한다:<br>● 내 <b>브랜드 정체성</b>(시각적으로)<br>● <b>바코드/QR</b><br>● <b>가격</b><br>● <b>티켓 등급</b><br>● <b>공연장</b><br>● <b>날짜/시간</b><br>● <b>행사 이름과 로고</b><br>심화:<br>서로 다른 입장 등급별 티켓을 만들고, 손목밴드나 목걸이줄 같은 다른 형태의 티켓 디자인도 넣는다.</div><p>티켓에 반드시 들어가야 할 7가지는 브랜드 정체성, 바코드/QR, 가격, 티켓 등급, 공연장, 날짜/시간, 행사 이름과 로고다.</p><p>티켓처럼 작은 형식에서도 브랜딩을 일관되게 유지하는 것이 이 쪽의 핵심 목표다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p15.jpg" alt="15쪽" loading="lazy"><div class="pg-txt"><h5>15쪽 · 티켓 디자인</h5><div class="pg-tr"><b>티켓 디자인</b><br>학습 목표<br>● 필요한 <b>정보</b>가 들어간 티켓을 디자인하기<br>● 더 작은 <b>형식</b>에도 <b>브랜딩</b>을 일관되게 적용하기</div><p>티켓에는 꼭 들어가야 할 정보가 있고, 그것을 빠짐없이 넣어 디자인하는 것이 목표다.</p><p>포스터보다 작은 티켓에도 같은 브랜딩을 일관되게 적용해야 한다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p16.jpg" alt="16쪽" loading="lazy"><div class="pg-txt"><h5>16쪽 · 티켓 디자인</h5><div class="pg-tr"><b>티켓 디자인</b><br>학습 목표<br>● 필요한 정보를 담은 <b>티켓</b>을 디자인한다<br>● <b>브랜딩</b>을 더 작은 크기의 형식에도 일관되게 적용한다<br>너의 <b>브랜드 정체성</b>(시각적으로)<br>행사 이름과 <b>로고</b><br>날짜/시간<br><b>장소</b><br>티켓 <b>등급</b><br>가격<br><b>바코드/QR</b></div><p>티켓에는 행사 이름과 로고, 날짜·시간, 장소, 티켓 등급, 가격, 바코드/QR을 넣어야 한다</p><p>포스터보다 작은 티켓에도 같은 브랜드 정체성을 일관되게 적용해야 한다</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p17.jpg" alt="17쪽" loading="lazy"><div class="pg-txt"><h5>17쪽 · 프로젝트 중간 점검</h5><div class="pg-tr"><b>학습 목표</b><br>● 지금까지 끝낸 작업을 모두 <b>다시 살펴본다</b>.<br>● <b>WWW/EBI</b>를 써서 자기 작업을 스스로 평가한다.<br>다 했나? ✅ / ❌<br><b>과제물에 들어갈 슬라이드/쪽</b><br>1쪽: 이름, 반, 선생님 이름이 들어간 <b>표지</b><br>2쪽: 축제 프로젝트 <b>무드보드</b><br>3쪽: <b>ACCESSFM</b> 설명을 붙인 축제 <b>포스터</b><br>4쪽: <b>ACCESSFM</b> 설명을 붙인 축제 <b>티켓</b><br>1) 나는 지금 어느 <b>수준</b>에서 하고 있나?<br>2) 내가 잘한 것은 무엇인가?<br>3) 더 <b>나아질 수 있는</b> 부분은 무엇인가?<br>4) 지금 당장 무엇을 더하거나 바꾸면 작업이 좋아질까?<br><b>프로젝트 중간 점검</b><br><b>기초(Foundation)</b>: 여러 쪽이 <b>덜 끝났고</b> 중요한 정보가 빠져 있다.<br><b>발전(Developing)</b>: 대부분의 쪽을 끝냈고 좋은 <b>세부 표현</b>과 꾸밈이 조금 있다.<br><b>안정(Secure)</b>: 과제물의 <b>모든 쪽</b>을 끝냈고 <b>수준 높은</b> 세부 표현과 꾸밈을 넣었다. 내 과제물은 보기에 <b>아름답다</b>.<br><b>우수(Excellence)</b>: 모든 쪽을 끝냈고 프로젝트에 대한 <b>분명한</b> 세부 설명과 이미지를 넣었다. 내 과제물의 <b>주제</b>가 내 아이디어와 맞는다.</div><p>과제물은 표지·무드보드·포스터·티켓 네 쪽으로 이뤄지며, 포스터와 티켓에는 ACCESSFM 설명이 붙어야 한다</p><p>평가 단계는 기초→발전→안정→우수 네 단계이고, 위로 갈수록 '모든 쪽 완성 + 수준 높은 세부 표현 + 주제 일치'가 요구된다</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p18.jpg" alt="18쪽" loading="lazy"><div class="pg-txt"><h5>18쪽 · 과제 제출 점검표</h5><div class="pg-tr"><b>다 했나?</b> ✅ / ❌<br>과제에 들어갈 <b>슬라이드·쪽</b><br>1쪽: <b>제목 쪽</b> — 이름, 반, 선생님 이름<br>2쪽: 축제 프로젝트 <b>무드보드</b><br>3쪽: 축제 <b>포스터</b> + ACCESSFM 설명<br>4쪽: 축제 <b>티켓</b> + ACCESSFM 설명<br>5쪽: <b>배지 디자인</b> + ACCESSFM 설명<br><b>선생님 피드백</b><br>WWW(잘한 점):<br>EBI(더 좋아지려면):<br>예상 등급:</div><p>과제는 모두 5쪽이며, 제목 쪽을 뺀 포스터·티켓·배지 3쪽에는 반드시 ACCESSFM 설명을 붙여야 한다.</p><p>선생님이 WWW(잘한 점)·EBI(개선점)·예상 등급 세 가지로 평가해 준다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p19.jpg" alt="19쪽" loading="lazy"><div class="pg-txt"><h5>19쪽 · ACCESSFM 제품 분석법</h5><div class="pg-tr"><b>ACCESSFM</b><br>A, C, C, E, S, S, F, M<br><b>미학(Aesthetics)</b><br>미학이란 제품이 어떻게 보이는가를 뜻한다.<br>색은? 모양은? 질감은? 무늬는? 겉모습은? 촉감은? 무게는? 양식은?<br><b>비용(Cost)</b><br>비용이란 제품을 사는 데 돈이 얼마나 드는가를 뜻한다.<br>제품을 만드는 데는 얼마가 드는가?<br>재료마다 값은 얼마인가? 그만한 값어치가 있는가?<br><b>고객(Client)</b><br>고객·소비자·사용자란 누가 이 제품을 살 것인가를 뜻한다.<br>그들의 나이는? 성별은? 소득은? 생활방식은? 사용자가 필요로 하는 것은? 좋아하는 것과 싫어하는 것은? 필요는? 선호는?<br><b>환경(Environment)</b><br>환경이란 제품이 환경에 영향을 줄 것인가를 뜻한다.<br>이 제품은 재활용이 되는가? 재사용이 되는가? 수리가 되는가? 지속 가능한가? 환경에 이로운가? 환경에 해로운가?<br>디자인의 <b>6R</b>: 재활용(Recycle), 재사용(Reuse), 수리(Repair), 다시 생각하기(Rethink), 줄이기(Reduce), 거부하기(Refuse).<br><b>크기(Size)</b><br>크기란 제품이 얼마나 크거나 작은가를 뜻한다.<br>제품의 크기는 밀리미터(mm)로 얼마인가? 시장에 나온 다른 제품과 크기가 비슷한가? 쓰기에 편한가? 잘 맞는가? 더 크거나 더 작으면 나아지겠는가?<br><b>안전(Safety)</b><br>안전이란 제품을 쓸 때 얼마나 안전한가를 뜻한다.<br>소비자가 쓰기에 안전한가? 다칠 수도 있는가? 이 제품을 쓰는 올바르고 가장 안전한 방법은 무엇인가?<br><b>기능(Function)</b><br>기능이란 제품이 어떻게 작동하는가를 뜻한다.<br>이 제품이 하는 일과 역할은 무엇인가? 무엇에 필요한가? 얼마나 잘 작동하는가? 어떻게 개선할 수 있는가? 왜 이런 방식으로 쓰이는가?<br><b>재료(Materials)</b><br>재료란 제품이 무엇으로 만들어졌는가를 뜻한다.<br>왜 이 재료들을 썼는가? 다른 재료가 더 나을까? 제품은 어떻게 만들어졌는가? 어떤 제조 기법이 쓰였는가?</div><p>ACCESSFM은 제품을 분석하는 여덟 가지 기준의 머리글자다 — Aesthetics(미학), Cost(비용), Client(고객), Environment(환경), Size(크기), Safety(안전), Function(기능), Materials(재료).</p><p>각 기준마다 던져야 할 질문이 정해져 있다. 예를 들어 크기는 mm 단위로 답하고, 환경은 6R(Recycle, Reuse, Repair, Rethink, Reduce, Refuse)로 따진다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p20.jpg" alt="20쪽" loading="lazy"><div class="pg-txt"><h5>20쪽 · 굿즈 디자인</h5><div class="pg-tr"><b>굿즈(기념상품) 디자인</b><br>학습 목표<br>● 여러 제품에 걸쳐 <b>브랜딩을 일관되게</b> 적용한다.<br>● <b>실용적이면서 보기에도 어울리는</b> 굿즈를 만든다.<br>생각해 보기:<br>● 사람들은 왜 축제 굿즈를 사는가?<br>● 굿즈는 단순한 <b>제품</b> 그 이상으로 어떤 역할을 하는가?<br>짝과 함께:<br>● 굿즈는 축제 <b>브랜드</b>에 왜 중요한가?<br>● 굿즈는 <b>돈</b>을 버는 것만이 전부인가?<br>나누기…</div><p>여러 제품에 같은 브랜딩을 일관되게 적용하는 것과, 쓸모 있으면서 보기에도 어울리게 만드는 것이 이 쪽의 두 가지 목표다.</p><p>굿즈를 돈벌이로만 보지 말고, 축제 브랜드에 어떤 의미가 있는지를 혼자 생각한 뒤 짝과 이야기하고 전체와 나누는 순서로 진행한다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p21.jpg" alt="21쪽" loading="lazy"><div class="pg-txt"><h5>21쪽 · 굿즈 디자인 필수 요소</h5><div class="pg-tr">각 디자인에 반드시 들어가야 하는 것:<br>✔ <b>명확한 제품 스케치</b>(정면도 또는 간단한 3D)<br>✔ <b>로고 / 브랜드 이름</b><br>✔ <b>색 구성</b><br>✔ <b>글꼴</b><br>✔ <b>브랜드 정체성</b><br><br><b>굿즈 디자인</b><br>학습 목표<br>● 여러 제품에 걸쳐 브랜딩을 <b>일관되게</b> 적용하는 것<br>● 기능적이면서 시각적으로 알맞은 굿즈를 만드는 것<br><br>팁: 배지 배경 디자인을 <b>템플릿보다 크게</b> 잡아라. 그래야 눌러 찍었을 때 마무리가 더 깔끔하다.<br><br>(시각적으로 드러나는) 너의 <b>브랜드 정체성</b><br>행사 이름 & 로고<br>글꼴<br>색 구성<br>명확한 제품 스케치</div><p>굿즈 디자인 하나하나에 제품 스케치·로고/브랜드 이름·색 구성·글꼴·브랜드 정체성 다섯 가지를 모두 넣어야 한다.</p><p>배지는 배경 디자인을 템플릿보다 크게 그려야 눌러 찍은 뒤 가장자리가 깔끔하게 나온다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p22.jpg" alt="22쪽" loading="lazy"><div class="pg-txt"><h5>22쪽 · 굿즈 디자인 평가 기준</h5><div class="pg-tr"><b>굿즈 디자인(Merchandise Design)</b><br><b>학습 목표</b><br>● 여러 제품에 <b>브랜딩</b>을 일관되게 적용하는 것<br>● 기능적이고 보기에 알맞은 굿즈를 만드는 것<br><br><b>평가 확인 지점 (Assessment Checkpoint)</b><br><b>Meeting(도달)</b><br>● 나는 명확한 굿즈 한 점을 디자인했다<br>● 내 디자인에는 <b>로고, 색, 제품 세부사항</b>이 들어 있다<br>● 내 디자인은 내 축제 <b>테마</b>와 맞는다<br><br><b>Mastering(숙달)</b><br>● 내 디자인은 특정 <b>대상 고객</b>을 분명히 겨냥한다<br>● 내 브랜딩은 일관되고 잘 적용되어 있다<br>● 내 <b>주석(annotation)</b>은 디자인 결정을 설명한다<br><br><b>Exceeding(초과 달성)</b><br>● 내 디자인은 창의적이고 시각적으로 강하다<br>● 내 브랜딩은 여러 제품에 걸쳐 매우 일관적이다<br>● 내 주석은 <b>DT 용어</b>를 써서 결정을 정당화한다<br><br><b>주석(Annotation)에 넣을 것</b><br>❏ <b>미적 요소</b> — 색, 스타일, 분위기<br>❏ <b>고객</b> — 누구를 위한 것인가<br>❏ <b>비용</b> — 제조 원가(대략), 판매 가격<br>❏ <b>기능</b> — 무엇을 하는가 / 어떻게 쓰는가<br>❏ <b>재료</b> — 무엇으로 만들어졌는가<br><br><b>더 해보기(Stretch)</b><br>추가 굿즈나 무료 사은품으로 내 축제의 <b>스티커 팩</b>을 디자인해 본다.</div><p>평가는 Meeting → Mastering → Exceeding 세 단계다. 로고·색·제품 세부사항을 넣고 축제 테마와 맞추면 Meeting, 대상 고객을 겨냥하고 브랜딩을 일관되게 하며 주석으로 결정을 설명하면 Mastering, 창의성과 DT 용어로 결정을 정당화하면 Exceeding이다.</p><p>주석에는 다섯 가지를 반드시 쓴다 — 미적 요소, 고객, 비용(제조 원가와 판매 가격), 기능, 재료다. 더 해볼 것으로 스티커 팩 디자인이 제시되어 있다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p23.jpg" alt="23쪽" loading="lazy"><div class="pg-txt"><h5>23쪽 · 제작 일지 쓰기</h5><div class="pg-tr"><b>제작 일지(Diary of Making)</b><br>사진을 포함해 제품을 만드는 <b>단계별 과정</b>을 분명하게 기록한다.<br>만드는 동안의 <b>결정, 문제, 개선</b>을 설명한다.<br><b>과목 전문 용어</b>를 써서 도구, 재료, 과정을 설명한다.<br>큰 그림: 디자이너는 왜 최종 결과물만이 아니라 <b>만드는 과정</b>을 기록할까?<br>생각하고, 짝과 나누고, 함께 말해 보기…<br>무언가가 어떻게 만들어졌는지 <b>기록하는 것</b>이 왜 중요할까?</div><p>제작 일지에는 사진을 넣은 단계별 과정과 함께, 만들면서 내린 결정·생긴 문제·개선한 점까지 적어야 한다.</p><p>도구·재료·과정을 설명할 때는 과목에서 쓰는 전문 용어를 쓴다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p24.jpg" alt="24쪽" loading="lazy"><div class="pg-txt"><h5>24쪽 · 제작 일지 쓰는 법</h5><div class="pg-tr"><b>Diary of Making(제작 일지)</b><br>제품을 만드는 과정을 <b>사진을 포함해</b> 단계별로 분명하게 기록한다.<br>만드는 동안의 <b>결정, 문제, 개선</b>을 설명한다.<br>도구·재료·공정을 설명할 때 <b>과목 전문 용어</b>를 쓴다.<br><br><b>Help Hub(도움말)</b><br>핵심 낱말: Manufacture(제조), Process(공정), Accuracy(정확도), Quality control(품질 관리), Heat press(열 압착기), Alignment(정렬), Transfer(전사), Pressure(압력)<br>문장 시작 표현: First, I…(먼저 나는…) / Next, I used…(다음으로 나는 …를 썼다) / A problem I had was…(내가 겪은 문제는 …였다) / To improve this, I would…(이것을 개선하려면 나는 …할 것이다)<br><br><b>Meeting(도달)</b>: 순서대로 분명한 단계를 기록했다. 내가 한 일을 설명했다. 도구와 재료를 넣었다.<br><b>Mastering(숙달)</b>: 문제와 그것을 해결한 방법을 설명한다. DT 용어를 정확하게 쓴다. 내 작업에 대한 분명한 성찰을 넣는다.<br><b>Exceeding(초과 달성)</b>: 일지가 자세하고 분명하며 구조가 잘 잡혀 있다. 공정을 개선하는 방법을 설명한다. 품질 관리와 독자적인 사고를 넣는다.<br><br><b>단계별 과정</b><br>각 단계마다 반드시 넣어야 할 것: 내가 한 일 / 사용한 도구·재료 / 문제 또는 점검(해당될 때) / 결과 / 그 단계의 사진이나 스케치</div><p>제작 일지는 단계 순서대로 쓰고, 각 단계에 한 일·도구와 재료·문제나 점검·결과·사진(스케치)까지 다섯 가지를 모두 넣어야 한다.</p><p>성적 단계가 올라가려면 기록에 더해 문제 해결 과정과 성찰, 나아가 공정 개선 방법과 품질 관리·독자적 사고까지 써야 한다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p25.jpg" alt="25쪽" loading="lazy"><div class="pg-txt"><h5>25쪽 · 글자 없는 쪽</h5><div class="pg-tr">이 쪽에는 옮길 글이 없다.</div><p>이 쪽에는 읽을 글자가 없으므로 앞뒤 쪽의 흐름을 이어서 보면 된다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p26.jpg" alt="26쪽" loading="lazy"><div class="pg-txt"><h5>26쪽 · GROW 평가 성찰 쪽</h5><div class="pg-tr"><b>큰 그림… 왜 하는가?</b><br>작업에 대한 <b>안내된 성찰</b>을 통해…<br>나는 내가 무엇을 잘했는지, 어디서 점수를 잃었는지, 그 이유가 무엇인지 파악한다.<br>나는 성적만 보지 않고 나의 <b>강점</b>과 <b>발전이 필요한 부분</b>을 분석한다.<br>나는 나의 <b>디자인 기술</b>과 <b>발표</b>를 향상시킬 실질적인 방법을 생각한다.<br><b>GROW</b>는 내가 스스로 기술을 발전시키는 더 독립적이고 성찰적인 디자이너가 되도록 돕는다.<br><b>GROW - 공통 평가 피드백</b><br><b>학습 목표</b><br>나는 공통 평가 결과를 분석해 나의 강점과 발전이 필요한 부분을 찾아낼 수 있다.<br>나는 <b>GROW 성찰 모델</b>을 사용해 디자인·기술 능력을 향상시킬 분명하고 실현 가능한 다음 단계를 정할 수 있다.<br><b>과제:</b> 예시 평가자료를 사용해 <b>초록색 펜</b>으로 친구의 답안을 평가한다.<br><b>도전 과제!!</b><br>자신의 작업을 검토하고 <b>분홍색이나 보라색 펜</b>으로 답을 발전시킨다.</div><p>GROW는 성적 자체가 아니라 강점과 발전할 점을 분석해 다음 단계를 정하는 성찰 모델이다.</p><p>펜 색깔로 작업을 구분한다 — 초록색 펜은 친구 답안 평가, 분홍색·보라색 펜은 자기 답안 보완이다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p27.jpg" alt="27쪽" loading="lazy"><div class="pg-txt"><h5>27쪽 · 승화전사 인쇄 안전 수칙</h5><div class="pg-tr"><b>승화전사 인쇄</b> – 안전 보건 안내<br><br><b>시작하기 전에</b><br>☐ 긴 머리는 뒤로 묶는다<br>☐ 소매를 걷고 헐렁한 물건은 뺀다<br>☐ <b>내열 장갑</b>을 낀다<br>☐ 잘 듣는다, 이것은 고열 작업이다<br>☐ 지시받기 전에는 <b>열 프레스</b>를 만지지 않는다<br><br>● 기계는 매우 뜨겁다<br>● 금속을 만지지 않는다<br>● 지시받았을 때만 손잡이를 잡는다<br>● 장갑을 쓴다<br>● 선생님을 기다린다<br>● 천천히 움직인다<br><br><b>단계별 과정</b><br><b>1. 디자인 준비</b><br>● 인쇄물의 크기와 방향이 맞는지 확인한다<br>● 디자인을 조심스럽게 놓는다<br>● <b>열 테이프</b>로 고정한다<br>⚠ 안전: 작업 공간을 깨끗이 한다 / 종이를 평평하게 한다(겹치지 않게)<br><br><b>2. 열 프레스 준비(선생님)</b><br>● 선생님이 온도와 시간을 설정한다(약 <b>180~200°C</b>)<br>● 지시받았을 때만 기계에 다가간다<br>⚠ 위험: 표면이 매우 뜨겁다<br><br><b>3. 머그컵을 프레스에 넣기</b><br>● 물건을 조심스럽게 열 프레스에 넣는다<br>● 제대로 놓였는지 확인한다<br>⚠ 안전: 지시받았을 때만 손잡이를 잡는다 / 뜨거운 금속에서 손가락을 멀리한다<br><br><b>4. 프레스를 닫고 시작하기</b><br>● 프레스를 단단히 닫는다<br>● 타이머를 시작한다<br>⚠ 안전: 프레스를 열지 않는다 / 가열 중에 만지지 않는다 / 집중한다, 딴짓 금지<br><br><b>5. 물건 꺼내기</b><br>● 물건은 <b>극도로 뜨겁다</b><br>● 내열 장갑을 쓰거나 선생님의 도움을 받는다<br>⚠ 안전: 표면을 만지지 않는다 / 바로 <b>내열 매트</b> 위에 놓는다<br><br><b>6. 승화 전사지 떼기</b><br>● 종이를 조심스럽게 벗겨낸다<br>⚠ 안전: 뜨거운 <b>수증기</b>가 나올 수 있다 / 인쇄된 면에서 손을 멀리한다<br><br><b>7. 식히기</b><br>● 제품이 완전히 식도록 둔다<br>⚠ 안전: 안전해질 때까지 들거나 만지지 않는다 / 아직 뜨겁다고 여긴다<br><br><b>최종 포장 제작 및 승화전사 인쇄 과정</b><br>● 승화전사 인쇄 과정과 그것이 최종 제품을 만드는 데 어떻게 쓰이는지 이해한다<br>● 정확하게 작업하고 시간을 관리해 각 단계를 성공적으로 마친다<br>● 모든 보건·안전 지침을 따르며 도구와 장비를 안전하게 사용한다</div><p>승화전사 인쇄는 약 180~200°C의 고열 작업이라, 시작 전에 머리를 묶고 소매를 걷고 내열 장갑을 끼며, 열 프레스는 선생님이 지시할 때만 만진다.</p><p>7단계 순서는 디자인 준비 → 프레스 준비(선생님) → 머그컵 넣기 → 닫고 시작 → 꺼내기 → 전사지 떼기 → 식히기이며, 꺼낸 물건은 극도로 뜨거워 내열 매트에 바로 놓고 완전히 식을 때까지 만지지 않는다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p28.jpg" alt="28쪽" loading="lazy"><div class="pg-txt"><h5>28쪽 · 최종 포장 제작과 승화 인쇄</h5><div class="pg-tr"><b>최종 포장 제작</b>과 <b>승화 인쇄</b> 과정.<br><b>승화 인쇄</b> 과정을 이해하고, 그것이 최종 제품을 만드는 데 어떻게 쓰이는지 안다.<br>정확하게 작업하고 <b>시간을 효과적으로 관리</b>하여 각 단계를 성공적으로 끝낸다.<br>모든 <b>보건·안전 지침</b>을 지켜 도구와 장비를 안전하게 쓴다.<br>네 <b>티셔츠/토트백 디자인</b>은 이래야 한다…<br>그리기 또는 <b>포토배싱</b>으로, 네가 직접 만든 것.<br><b>축제 로고와 이름</b>을 넣는다.<br>네 <b>축제 색</b>을 쓴다.<br>네 축제에서 영감을 얻은 <b>디자인 요소</b>를 쓴다.</div><p>승화 인쇄로 최종 제품을 만드는 과정을 이해하고, 시간 관리와 안전 수칙을 지키며 각 단계를 끝내는 것이 이 쪽의 목표다.</p><p>티셔츠나 토트백 디자인은 직접 그리거나 포토배싱으로 만들고, 축제 로고·이름·색·디자인 요소를 반드시 넣어야 한다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p29.jpg" alt="29쪽" loading="lazy"><div class="pg-txt"><h5>29쪽 · GROW 공통평가 피드백</h5><div class="pg-tr"><b>GROW</b> - 공통평가 피드백<br>학습 목표<br>● 나는 <b>공통평가 결과</b>를 분석해 나의 <b>강점</b>과 <b>보완할 점</b>을 찾아낼 수 있다.<br>● 나는 <b>GROW 성찰 모형</b>을 사용해 <b>디자인·기술(Design & Technology)</b> 실력을 키우기 위한 분명하고 실천 가능한 <b>다음 단계</b>를 정할 수 있다.</div><p>공통평가 결과를 분석해 강점과 보완할 점을 스스로 찾아내는 것이 이 쪽의 목표다.</p><p>GROW 성찰 모형은 다음에 무엇을 할지 분명하고 실천 가능한 단계로 정하는 데 쓴다.</p></div></div><div class="pg"><img src="assets/pages/y9c_dtdec/T1_Festival_Project_p30.jpg" alt="30쪽" loading="lazy"><div class="pg-txt"><h5>30쪽 · GROW - 공동 평가 피드백</h5><div class="pg-tr"><b>GROW - 공동 평가 피드백</b><br>학습 목표<br>● 나는 나의 <b>공동 평가 결과</b>를 분석하여 나의 <b>강점</b>과 <b>발전이 필요한 부분</b>을 찾아낼 수 있다.<br>● 나는 <b>GROW 성찰 모델</b>을 사용하여 <b>디자인·기술</b> 실력을 향상시키기 위한 분명하고 실천 가능한 <b>다음 단계</b>를 세울 수 있다.</div><p>공동 평가 결과를 분석해 잘한 점과 부족한 점을 스스로 찾아내는 것이 이 쪽의 목표다.</p><p>GROW 성찰 모델로 디자인·기술 실력을 올릴 구체적인 다음 단계를 세운다.</p></div></div></div></div></div></div></div>
+<div class="tab-pane" id="tab-quiz"><div class="quiz-wrap"><div class="quiz-info">📝 <b>Written-answer practice</b> · 시험 형식: 서술형<br>답을 영어로 써본 다음 <b>Show model answer</b>를 눌러 비교하세요.</div><div id="quiz-list"><div class="q-card" id="q-card-0"><div class="q-num"><span>Question 1 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Explain what a moodboard is and why a graphic designer makes one at the start of this festival project. (3 marks)</div><div class="q-ko">무드보드가 무엇이고 왜 프로젝트 맨 처음에 만드는지 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(0)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>A moodboard is a single page where images and words about the festival are collected and stuck together in one place. It shows the research decisions — what kind of festival it is, what events and performances there are, what will be sold, the colour scheme and who the customers are. Its purpose is to let anyone feel the whole atmosphere of the festival at a glance, so the designer has a clear direction before designing the poster, ticket and merchandise.</p></div></div><div class="q-card" id="q-card-1"><div class="q-num"><span>Question 2 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Describe the design brief you have been given in this project: who you are, who the client is, and what you must produce. (3 marks)</div><div class="q-ko">이 프로젝트의 설정(내 역할·의뢰 내용·만들 물건)을 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(1)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>In this project I take the role of a graphic designer. I have been asked by a client to create promotional merchandise for a popular festival. The items I must produce include a poster, a badge, a logo, a T-shirt and a wristband, and the festival theme can be chosen from music, gaming, film, or food and drink.</p></div></div><div class="q-card" id="q-card-2"><div class="q-num"><span>Question 3 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Explain why identifying the target audience is described as the key part of the research stage. (3 marks)</div><div class="q-ko">타깃 고객 정하기가 왜 조사 단계의 핵심인지 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(2)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>The target audience is the type of customer who will actually come to the festival, and it is decided during the research and moodboard stage. Knowing the audience controls the other design decisions such as the colour scheme, the events and performances shown, and the merchandise that will be sold. If the audience is not identified, the poster, ticket and badge may not appeal to the people the festival is trying to attract.</p></div></div><div class="q-card" id="q-card-3"><div class="q-num"><span>Question 4 of 10</span> <span class="q-marks">4 marks</span></div><div class="q-text">State four items that must be included on your festival poster and explain why each one is needed. (4 marks)</div><div class="q-ko">포스터에 반드시 들어가야 할 4가지와 각각의 이유를 쓰는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(3)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>The poster must include a logo that shows the theme, so the festival&#x27;s identity and subject are recognised immediately. It must include the name of the festival so people know which event is being advertised. It must include information and pictures about what visitors can enjoy, so the audience knows what they are paying for. It must include how to get tickets, otherwise interested people cannot actually buy entry, and the poster must also be attractively decorated so it draws attention.</p></div></div><div class="q-card" id="q-card-4"><div class="q-num"><span>Question 5 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">The brief clearly states that you must not simply use a default Canva template for your poster. Explain what you should do instead and give a reason for this rule. (3 marks)</div><div class="q-ko">캔바 기본 템플릿을 그대로 쓰면 안 되는 이유와 대신 무엇을 해야 하는지 묻는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(4)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>Instead of using a ready-made default Canva template as it is, I must design my own layout and decoration so the poster is original work. The poster should carry my own logo, festival name, colour scheme and typography so the design matches the theme decided on my moodboard. Using an unchanged template would mean the design is not really mine and would not show a consistent, original festival identity, which is what the assessment rewards.</p></div></div><div class="q-card" id="q-card-5"><div class="q-num"><span>Question 6 of 10</span> <span class="q-marks">4 marks</span></div><div class="q-text">List the information that must appear on your festival ticket. (4 marks)</div><div class="q-ko">티켓에 들어가야 할 정보들을 나열하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(5)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>The ticket must show clear, visible branding, including the festival name and logo. It must have a barcode or QR code, the price, and the ticket tier. It must also state the venue, and the date and time of the festival. All of these together make the ticket both usable at the gate and recognisable as part of the festival&#x27;s brand.</p></div></div><div class="q-card" id="q-card-6"><div class="q-num"><span>Question 7 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Explain what is meant by a &#x27;ticket tier&#x27; and give two examples. (3 marks)</div><div class="q-ko">티켓 등급(ticket tier)이 무엇인지와 예시를 쓰는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(6)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>A ticket tier is the level of ticket a customer buys, which makes clear what access or privileges that ticket gives them. Examples include General Admission and VIP, and tiers can also be based on length of access such as a 1-day pass or a 3-day pass. Showing the tier on the ticket means staff and customers both know exactly what the ticket allows.</p></div></div><div class="q-card" id="q-card-7"><div class="q-num"><span>Question 8 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Explain why security features are needed on a festival ticket and give examples of such features. (3 marks)</div><div class="q-ko">티켓 보안 요소가 왜 필요한지와 그 예를 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(7)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>Security features are included to stop tickets from being forged or copied. Examples given in the brief are holograms and watermarks, and the barcode or QR code also allows each ticket to be checked. Without them, fake tickets could be sold or used, which would cost the festival money and let in people who have not paid.</p></div></div><div class="q-card" id="q-card-8"><div class="q-num"><span>Question 9 of 10</span> <span class="q-marks">3 marks</span></div><div class="q-text">Describe what must be included in your merchandise (badge) design page. (3 marks)</div><div class="q-ko">굿즈(배지) 디자인 쪽에 무엇이 들어가야 하는지 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(8)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>The merchandise design page must include a sketch of the product itself, so the shape and look of the badge are clear. It must also show the logo and the brand name of the festival. In addition it must show the colour scheme and the typography being used, so the badge clearly belongs to the same festival brand as the poster and ticket.</p></div></div><div class="q-card" id="q-card-9"><div class="q-num"><span>Question 10 of 10</span> <span class="q-marks">4 marks</span></div><div class="q-text">Describe the five pages you must submit for this project, and explain what makes the difference between a Foundation level and an Excellence level outcome. (4 marks)</div><div class="q-ko">제출물 5쪽 구성과 평가 단계(Foundation~Excellence)의 차이를 설명하는 문제.</div><textarea class="q-answer-input" placeholder="Write your answer in English…"></textarea><div class="q-show-row"><button class="q-btn-show" onclick="showModel(9)">👁️ Show model answer</button></div><div class="q-model"><h4>Model answer</h4><p>Page 1 is the title page with my name, class and teacher&#x27;s name; page 2 is the moodboard; page 3 is the poster; page 4 is the ticket; and page 5 is the badge design. From the poster page onwards, ACCESSFM annotation must be added alongside the design to explain the design decisions. The work is graded as Foundation, Developing, Secure or Excellence, and higher levels are reached by completing every page and by keeping the theme consistent across all of them, so an Excellence outcome has all five pages finished with one clear theme running through the poster, ticket and merchandise.</p></div></div></div></div></div>
+<div class="tab-pane" id="tab-spelling">
+  <div class="spell-wrap">
+    <div class="spell-stats">
+      <div>✅ 맞음 <b id="sp-correct">0</b> · ❌ 틀림 <b id="sp-wrong">0</b></div>
+      <div>📚 <span id="sp-remaining">56</span> 남음</div>
+    </div>
+    <div class="spell-card" id="spell-card">
+      <span class="spell-cat" id="sp-cat">CATEGORY</span>
+      <div class="spell-ko" id="sp-ko">한국어 뜻</div>
+      <div class="spell-def" id="sp-def">English definition</div>
+      <div class="spell-hint" id="sp-hint">_ _ _ _</div>
+      <div class="spell-feedback" id="sp-feedback"></div>
+      <div class="spell-input-row">
+        <input class="spell-input" id="sp-input" type="text" autocomplete="off" spellcheck="false" placeholder="영어 단어 입력…">
+      </div>
+      <div class="spell-buttons">
+        <button class="spell-btn spell-btn-show" onclick="showAnswer()">👁️ 정답 보기 / Reveal</button>
+        <button class="spell-btn spell-btn-next" onclick="nextWord()">⏭️ 다음 / Skip</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<footer>9B1 Genes and inheritance 유전 · science-vocab · <span style="opacity:.5">v20260827-003005</span></footer><script>
+const QUIZ_DATA = [{"q": "Explain what a moodboard is and why a graphic designer makes one at the start of this festival project. (3 marks)", "model": "A moodboard is a single page where images and words about the festival are collected and stuck together in one place. It shows the research decisions — what kind of festival it is, what events and performances there are, what will be sold, the colour scheme and who the customers are. Its purpose is to let anyone feel the whole atmosphere of the festival at a glance, so the designer has a clear direction before designing the poster, ticket and merchandise."}, {"q": "Describe the design brief you have been given in this project: who you are, who the client is, and what you must produce. (3 marks)", "model": "In this project I take the role of a graphic designer. I have been asked by a client to create promotional merchandise for a popular festival. The items I must produce include a poster, a badge, a logo, a T-shirt and a wristband, and the festival theme can be chosen from music, gaming, film, or food and drink."}, {"q": "Explain why identifying the target audience is described as the key part of the research stage. (3 marks)", "model": "The target audience is the type of customer who will actually come to the festival, and it is decided during the research and moodboard stage. Knowing the audience controls the other design decisions such as the colour scheme, the events and performances shown, and the merchandise that will be sold. If the audience is not identified, the poster, ticket and badge may not appeal to the people the festival is trying to attract."}, {"q": "State four items that must be included on your festival poster and explain why each one is needed. (4 marks)", "model": "The poster must include a logo that shows the theme, so the festival's identity and subject are recognised immediately. It must include the name of the festival so people know which event is being advertised. It must include information and pictures about what visitors can enjoy, so the audience knows what they are paying for. It must include how to get tickets, otherwise interested people cannot actually buy entry, and the poster must also be attractively decorated so it draws attention."}, {"q": "The brief clearly states that you must not simply use a default Canva template for your poster. Explain what you should do instead and give a reason for this rule. (3 marks)", "model": "Instead of using a ready-made default Canva template as it is, I must design my own layout and decoration so the poster is original work. The poster should carry my own logo, festival name, colour scheme and typography so the design matches the theme decided on my moodboard. Using an unchanged template would mean the design is not really mine and would not show a consistent, original festival identity, which is what the assessment rewards."}, {"q": "List the information that must appear on your festival ticket. (4 marks)", "model": "The ticket must show clear, visible branding, including the festival name and logo. It must have a barcode or QR code, the price, and the ticket tier. It must also state the venue, and the date and time of the festival. All of these together make the ticket both usable at the gate and recognisable as part of the festival's brand."}, {"q": "Explain what is meant by a 'ticket tier' and give two examples. (3 marks)", "model": "A ticket tier is the level of ticket a customer buys, which makes clear what access or privileges that ticket gives them. Examples include General Admission and VIP, and tiers can also be based on length of access such as a 1-day pass or a 3-day pass. Showing the tier on the ticket means staff and customers both know exactly what the ticket allows."}, {"q": "Explain why security features are needed on a festival ticket and give examples of such features. (3 marks)", "model": "Security features are included to stop tickets from being forged or copied. Examples given in the brief are holograms and watermarks, and the barcode or QR code also allows each ticket to be checked. Without them, fake tickets could be sold or used, which would cost the festival money and let in people who have not paid."}, {"q": "Describe what must be included in your merchandise (badge) design page. (3 marks)", "model": "The merchandise design page must include a sketch of the product itself, so the shape and look of the badge are clear. It must also show the logo and the brand name of the festival. In addition it must show the colour scheme and the typography being used, so the badge clearly belongs to the same festival brand as the poster and ticket."}, {"q": "Describe the five pages you must submit for this project, and explain what makes the difference between a Foundation level and an Excellence level outcome. (4 marks)", "model": "Page 1 is the title page with my name, class and teacher's name; page 2 is the moodboard; page 3 is the poster; page 4 is the ticket; and page 5 is the badge design. From the poster page onwards, ACCESSFM annotation must be added alongside the design to explain the design decisions. The work is graded as Foundation, Developing, Secure or Excellence, and higher levels are reached by completing every page and by keeping the theme consistent across all of them, so an Excellence outcome has all five pages finished with one clear theme running through the poster, ticket and merchandise."}];
+const VOCAB_DATA = [{"en": "promotional merchandise", "ko": "홍보용 상품(굿즈)", "def_en": "", "cat": "all"}, {"en": "typography", "ko": "타이포그래피(글자 디자인)", "def_en": "", "cat": "all"}, {"en": "branding", "ko": "브랜딩", "def_en": "", "cat": "all"}, {"en": "brand identity", "ko": "브랜드 정체성", "def_en": "", "cat": "all"}, {"en": "target audience", "ko": "목표 고객층", "def_en": "", "cat": "all"}, {"en": "moodboard", "ko": "무드보드", "def_en": "", "cat": "all"}, {"en": "design intent", "ko": "디자인 의도", "def_en": "", "cat": "all"}, {"en": "aesthetics", "ko": "미적 요소(겉모습)", "def_en": "", "cat": "all"}, {"en": "colour scheme", "ko": "색 배합", "def_en": "", "cat": "all"}, {"en": "ACCESSFM", "ko": "애세스에프엠(디자인 분석 기준)", "def_en": "", "cat": "all"}, {"en": "ticket tier", "ko": "티켓 등급", "def_en": "", "cat": "all"}, {"en": "anti-counterfeiting", "ko": "위조 방지", "def_en": "", "cat": "all"}];
+const UNIT_ID = "y9c_dtdec";
+const UNIT_TITLE = "디자인 기술 DEC";
+const UNIT_TOPICS = [];
+let qAnswered = new Array(QUIZ_DATA.length).fill(null);
+
+// ─── claude.ai 새 창 링크 ───
+(function setupClaudeLinks() {
+  var NL = String.fromCharCode(10);
+  var topicsList = UNIT_TOPICS.map(function(t, i) { return (i+1) + '. ' + t; }).join(NL);
+  var askMsg = "I'm a Year 9 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
+    "Current unit: " + UNIT_TITLE + NL +
+    "Topics:" + NL + topicsList + NL + NL +
+    "Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use - if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary." + NL + NL +
+    "질문 시작할게요:" + NL;
+  var gradeMsg = "I'm a Year 9 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
+    "Unit: " + UNIT_TITLE + NL +
+    "Topics: " + UNIT_TOPICS.join(' · ') + NL + NL +
+    "Please grade my worksheet. For each question:" + NL +
+    "- Read the problem and my answer (if any)." + NL +
+    "- Mark ✅ correct / ❌ wrong / ⚠️ partial." + NL +
+    "- Give the correct answer." + NL +
+    "- Explain mistakes in British English with a short Korean hint in parentheses for tough words." + NL + NL +
+    "End with a summary: total / correct / what to review next." + NL + NL +
+    "사진 첨부할게요!";
+  var ask = document.getElementById('btn-ask');
+  var grade = document.getElementById('btn-grade');
+  if (ask) ask.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
+  if (grade) grade.href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
+})();
+
+// 탭 전환
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();   // 탭 바꾸면 전체듣기 정지
+        if (btn.dataset.tab === 'spelling' && typeof startSpelling === 'function' && !spellState.started) startSpelling();
+    try { localStorage.setItem('tab_' + UNIT_ID, btn.dataset.tab); } catch(e){}
+  });
+});
+
+/* 새로고침해도 보던 탭 그대로 — 마지막에 본 탭을 기억한다 */
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('tab_' + UNIT_ID); } catch(e){}
+  if (location.hash && location.hash.length > 1) t = location.hash.slice(1);
+  if (!t) return;
+  var btn = document.querySelector('.tab-btn[data-tab="' + t + '"]');
+  var pane = document.getElementById('tab-' + t);
+  if (!btn || !pane) return;
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  pane.classList.add('active');
+})();
+
+// 발음
+// ─── 발음: 미리 받아둔 mp3(audio/sci/) 직접 재생, 못 틀면 폰 음성 보조 ───
+function slugify(t){ return t.replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
+let _audio = null;
+function speak(text) {
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
+    a.onerror = () => fallbackSpeak(cleanText(text));
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(text)));
+  } catch (e) { fallbackSpeak(cleanText(text)); }
+}
+let _voices = [];
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis) { loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9;
+  const en = _voices.filter(v => normLang(v.lang).startsWith('en'));
+  const local = en.filter(v => v.localService);
+  const pool = local.length ? local : en;
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
+  if (v) { u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'en-GB'; }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
+}
+
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = function(){ if (_seq && _seq.token === token) done(); };
+    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
+  } catch (e) { if (_seq && _seq.token === token) done(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
+function annotateCounts(){ document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=document.querySelectorAll('#tab-vocab .vcard').length; }
+function numberVocab(){ let n=0; document.querySelectorAll('#tab-vocab .vcard').forEach(c => { n++; const L=c.querySelector('.vcard-left'); if(L && !L.querySelector('.vcard-num')){ const d=document.createElement('div'); d.className='vcard-num'; d.textContent=n+'번'; L.insertBefore(d, L.firstChild); } }); }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
+// 단어장: 필터 + 검색 통합
+let selectedCats = new Set();   // 비어있으면 전체. 여러 단원 다중선택
+let currentQuery = '';
+
+function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (selectedCats.size === 0 || selectedCats.has(cat));
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', !visibleByCat[target]);
+  });
+}
+
+function filterCards(cat) {
+  if (cat === 'all') { selectedCats.clear(); }
+  else { if (selectedCats.has(cat)) selectedCats.delete(cat); else selectedCats.add(cat); }
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if (b.dataset.cat === 'all') b.classList.toggle('active', selectedCats.size === 0);
+    else b.classList.toggle('active', selectedCats.has(b.dataset.cat));
+  });
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
+  annotateCounts();   // 단원별·전체 단어 수 표시
+  numberVocab();      // 단어 앞 고정 번호 (1번~)
+});
+
+// ─── 단어시험 (Spelling Test) ───
+const spellState = {
+  started: false,
+  pool: [],         // 남은 단어들
+  current: null,    // 현재 단어
+  correct: 0,
+  wrong: 0,
+  revealed: false,
+};
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startSpelling() {
+  spellState.started = true;
+  spellState.pool = shuffle(VOCAB_DATA);
+  spellState.correct = 0;
+  spellState.wrong = 0;
+  updateSpellStats();
+  nextWord();
+  setTimeout(() => document.getElementById('sp-input')?.focus(), 200);
+}
+
+function nextWord() {
+  if (spellState.pool.length === 0) {
+    // 다 끝나면 다시 섞기
+    spellState.pool = shuffle(VOCAB_DATA);
+  }
+  spellState.current = spellState.pool.shift();
+  spellState.revealed = false;
+  const w = spellState.current;
+  const catLabel = {organ:'🫁 Organ',process:'⚙️ Process',blood:'🩸 Blood',gas:'💨 Gas'}[w.cat] || w.cat;
+  const catEl = document.getElementById('sp-cat');
+  catEl.textContent = catLabel;
+  catEl.className = 'spell-cat cat-' + w.cat;
+  document.getElementById('sp-ko').textContent = w.ko;
+  document.getElementById('sp-def').textContent = w.def_en;
+  // 글자수 힌트 — 공백/특수문자는 그대로, 글자는 _로
+  const hint = w.en.split('').map(ch => /[A-Za-z0-9]/.test(ch) ? '_' : ch).join(' ');
+  document.getElementById('sp-hint').textContent = hint + '  (' + w.en.length + ')';
+  document.getElementById('sp-feedback').innerHTML = '';
+  const input = document.getElementById('sp-input');
+  input.value = '';
+  input.classList.remove('disabled');
+  input.disabled = false;
+  input.placeholder = w.en.length + ' chars · 영어로 입력…';
+  input.focus();
+  updateSpellStats();
+}
+
+function showAnswer() {
+  if (!spellState.current || spellState.revealed) return;
+  spellState.revealed = true;
+  const w = spellState.current;
+  document.getElementById('sp-feedback').innerHTML =
+    '<span class="ok">' + w.en + '</span>';
+  const input = document.getElementById('sp-input');
+  input.value = w.en;
+  input.classList.add('disabled');
+  input.disabled = true;
+  // 자동으로 발음
+  if (window.speechSynthesis) speak(w.en);
+}
+
+function updateSpellStats() {
+  document.getElementById('sp-correct').textContent = spellState.correct;
+  document.getElementById('sp-wrong').textContent = spellState.wrong;
+  document.getElementById('sp-remaining').textContent = spellState.pool.length;
+}
+
+function renderSpellFeedback(typed, target) {
+  // 글자별 색상 표시
+  let html = '';
+  for (let i = 0; i < target.length; i++) {
+    const t = typed[i];
+    const a = target[i];
+    if (t === undefined) {
+      html += '<span class="miss">' + (a === ' ' ? '&nbsp;' : '_') + '</span>';
+    } else if (t.toLowerCase() === a.toLowerCase()) {
+      html += '<span class="ok">' + a + '</span>';
+    } else {
+      html += '<span class="bad">' + t + '</span>';
+    }
+  }
+  return html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('sp-input');
+  if (!input) return;
+  input.addEventListener('input', () => {
+    if (!spellState.current || spellState.revealed) return;
+    const typed = input.value;
+    const target = spellState.current.en;
+    document.getElementById('sp-feedback').innerHTML = renderSpellFeedback(typed, target);
+    // 완전 일치 (대소문자 무시)
+    if (typed.toLowerCase() === target.toLowerCase()) {
+      spellState.correct++;
+      input.classList.add('disabled');
+      input.disabled = true;
+      document.getElementById('sp-feedback').innerHTML =
+        '<span class="ok">✓ ' + target + '</span>';
+      updateSpellStats();
+      // 0.9초 후 다음 단어
+      setTimeout(() => nextWord(), 900);
+    }
+  });
+  // Enter로 정답이 아니면 틀린 것 처리
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && spellState.current && !spellState.revealed) {
+      const typed = input.value.trim();
+      const target = spellState.current.en;
+      if (typed.toLowerCase() !== target.toLowerCase() && typed.length > 0) {
+        spellState.wrong++;
+        showAnswer();
+        updateSpellStats();
+      }
+    }
+  });
+});
+
+// 서술형 퀴즈: 모범 답안 보이기 + 자기 채점
+function showModel(qi) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  var model = card.querySelector('.q-model');
+  var rate = card.querySelector('.q-self-rate');
+  model.classList.add('show');
+  rate.classList.add('show');
+}
+
+function rateSelf(qi, level) {
+  var card = document.getElementById('q-card-' + qi);
+  if (!card) return;
+  card.querySelectorAll('.q-self-rate button').forEach(function(b) { b.classList.remove('selected'); });
+  card.querySelector('.q-self-rate .rate-' + level).classList.add('selected');
+}
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+      // 새 SW 발견 시 즉시 적용 → 페이지 자동 새로고침
+      reg.addEventListener('updatefound', function() {
+        var newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', function() {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+            // 새 버전 준비됨 → 즉시 활성화 명령
+            newSW.postMessage({type: 'SKIP_WAITING'});
+          }
+        });
+      });
+      // 매 30분마다 새 버전 확인
+      setInterval(function() { reg.update(); }, 30 * 60 * 1000);
+    }).catch(function(e) { /* fail silently */ });
+    // 새 SW가 통제권 잡으면 페이지 자동 reload (한 번만)
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (reloaded) return;
+      reloaded = true;
+      window.location.reload();
+    });
+  });
+}
+</script>
+
+<script>
+/* 단원 전체 듣기 — 미리 합쳐 둔 mp3 하나를 재생한다.
+   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일 하나로 합쳤다. */
+(function(){
+  var a = document.getElementById('allplay-audio');
+  var btn = document.getElementById('allplay-btn');
+  if (!a) return;
+  function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  window.toggleAllPlay = function(){
+    if (typeof stopSeq === 'function') stopSeq();
+    if (a.paused) { a.play(); } else { a.pause(); }
+  };
+  a.addEventListener('play', function(){
+    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: '단원 전체 듣기 — 69 단어', artist: UNIT_TITLE, album: 'AMY Study App'
+      });
+      navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
+      navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
+    }
+  });
+  a.addEventListener('pause', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('ended', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('timeupdate', function(){
+    if (!a.paused) btn.textContent = '⏸ ' + mmss(a.currentTime);
+  });
+  a.addEventListener('error', function(){
+    btn.disabled = true; btn.textContent = '전체 듣기 파일 없음';
+  });
+})();
+</script>
+<script>
+/* 외운 단어를 숨긴 상태면, 전체 듣기는 화면에 보이는 단어만 순서대로 들려준다.
+   (합친 mp3는 통짜라 건너뛸 수 없어서, 이때만 낱개 발음을 이어서 재생한다) */
+(function(){
+  var btn = document.getElementById('allplay-btn');
+  var a   = document.getElementById('allplay-audio');
+  if (!btn) return;
+  var seq = null, cur = null;
+  function slug(t){ return (t||'').replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+  function stop(){ if (cur) { cur.pause(); cur = null; } seq = null; btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); }
+  window.stopVisibleSeq = stop;
+  function playList(words){
+    var i = 0, token = {};
+    seq = token;
+    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
+    (function next(){
+      if (seq !== token) return;
+      if (i >= words.length) { i = 0; }
+      var sl = slug(words[i]);
+      var ko = new Audio('audio/sci_ko/' + sl + '.mp3');
+      cur = ko;
+      ko.onended = ko.onerror = function(){
+        if (seq !== token) return;
+        var en = new Audio('audio/sci/' + sl + '.mp3');
+        cur = en;
+        en.onended = en.onerror = function(){ if (seq === token) { i++; setTimeout(next, 300); } };
+        en.play().catch(function(){ if (seq === token) { i++; setTimeout(next, 300); } });
+      };
+      ko.play().catch(function(){ if (seq === token) ko.onended(); });
+    })();
+  }
+  var origToggle = window.toggleAllPlay;
+  window.toggleAllPlay = function(){
+    var hiding = (typeof memHidden !== 'undefined' && memHidden);
+    if (!hiding) { if (seq) stop(); if (origToggle) origToggle(); return; }
+    if (a && !a.paused) a.pause();
+    if (seq) { stop(); return; }
+    var words = [];
+    document.querySelectorAll('#tab-vocab .vcard').forEach(function(c){
+      if (c.classList.contains('hidden')) return;
+      var en = (c.querySelector('.vcard-en') || {}).textContent;
+      if (en) words.push(en.trim());
+    });
+    if (!words.length) return;
+    playList(words);
+  };
+})();
+</script>
+</body>
+</html>
