@@ -1237,8 +1237,15 @@ function cnRender(){
     var t = (r.title || '') + ' ' + (r.ko || '');
     return /\bCA\s?[1-4]\b/i.test(t) || /common\s+assessment/i.test(t) || /continu\w*\s+assessment/i.test(t);
   }
-  var caRows = rows.filter(function(r){ return isCA(r) && r.due && !isPast(r.due); })
-                   .sort(function(a, b){ return dnum(a.due) - dnum(b.due); });
+  // ★시험 글은 날짜를 못 읽었어도 박스에 띄운다. 날짜가 빈칸이라고 시험이 통째로
+  //   사라진 적이 있다(2026-09-13 영어 CA1). 날짜 없는 것은 맨 아래로 보낸다.
+  var caRows = rows.filter(function(r){ return isCA(r) && (!r.due || !isPast(r.due)); })
+                   .sort(function(a, b){
+                     if (!a.due && !b.due) return 0;
+                     if (!a.due) return 1;
+                     if (!b.due) return -1;
+                     return dnum(a.due) - dnum(b.due);
+                   });
   var caKeys = {};
   caRows.forEach(function(r){ caKeys[keyOf(r)] = 1; });
   var caCard = document.getElementById('cnCardCA');
