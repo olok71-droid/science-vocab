@@ -1,5 +1,14 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "영어 (Mr Glanz)",
+  "date": "2026-09-13",
+  "type": "과제",
+  "title": "Vocab homework 2",
+  "ko": "어휘 숙제 2 제출",
+  "due": "2026-09-17",
+  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy/a/ODg0NzU1NTUxNzM0/details"
+ },
+ {
   "subject": "디자인 기술 (Mr Mathyk)",
   "date": "2026-09-11",
   "type": "과제",
@@ -13,7 +22,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "과제",
   "title": "Electron Shells & Valence Electrons",
-  "ko": "전자껍질과 원자가전자 퀴즈",
+  "ko": "전자껍질·최외각전자 퀴즈",
   "due": "2026-09-16",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg0MTg0OTIyMzQ2/details"
  },
@@ -22,7 +31,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "과제",
   "title": "Electron arrangement - fill in worksheet",
-  "ko": "전자배열 워크시트 작성",
+  "ko": "전자배치 워크시트 작성",
   "due": "2026-09-16",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -31,7 +40,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "자료",
   "title": "Template for Common Assessment 1, 25/9/26",
-  "ko": "공통평가 1 템플릿 자료",
+  "ko": "공통평가 1 양식",
   "due": "2026-09-25",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -67,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "과제",
   "title": "Atomic Structure and Periodic Table Review",
-  "ko": "원자 구조와 주기율표 복습 퀴즈",
+  "ko": "원자구조·주기율표 복습 퀴즈",
   "due": "2026-09-16",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODc4MTY5MTk3NTY0/details"
  },
@@ -76,7 +85,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "자료",
   "title": "Properties of materials",
-  "ko": "물질의 성질 학습자료",
+  "ko": "물질의 성질 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -157,7 +166,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Genes and inheritance - check your progress",
-  "ko": "유전 단원 진도 점검 문제",
+  "ko": "유전 단원 진도 점검 과제",
   "due": "2026-09-13",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -175,7 +184,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Natural selection - Peppered Moth video and worksheet",
-  "ko": "회색가지나방 영상과 워크시트",
+  "ko": "회색가지나방 영상·워크시트",
   "due": "2026-09-13",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -202,7 +211,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Week 3",
-  "ko": "주 3차 과제 게시",
+  "ko": "3주차 과제",
   "due": "2026-09-14",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -229,7 +238,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-06",
   "type": "과제",
   "title": "Vocabulary HW 1",
-  "ko": "어휘 숙제 1",
+  "ko": "어휘 숙제 1 제출",
   "due": "2026-09-09",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -301,7 +310,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "자료",
   "title": "Variation investigation",
-  "ko": "변이 탐구 실험자료",
+  "ko": "변이 탐구 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -391,7 +400,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "과제",
   "title": "7.1 & 7.2 Workbook questions",
-  "ko": "7.1·7.2 워크북 문제 풀이",
+  "ko": "워크북 7.1·7.2 문제 풀이",
   "due": "2026-09-02",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -400,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "자료",
   "title": "Cambridge science workbook Y9",
-  "ko": "케임브리지 과학 워크북 교재",
+  "ko": "9학년 과학 워크북 교재",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -463,7 +472,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "과제",
   "title": "Genetics and Heredity Vocabulary",
-  "ko": "유전 용어 익히기 과제",
+  "ko": "유전 용어 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -472,7 +481,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "자료",
   "title": "7.2 Gametes and inheritance",
-  "ko": "생식세포와 유전 학습자료",
+  "ko": "생식세포와 유전 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -490,7 +499,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "자료",
   "title": "Short story anthology",
-  "ko": "단편소설 선집 자료",
+  "ko": "단편소설 모음집 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -535,7 +544,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-24",
   "type": "과제",
   "title": "label the chromosome",
-  "ko": "염색체 부위 이름 붙이기",
+  "ko": "염색체 이름 붙이기 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -553,7 +562,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-24",
   "type": "자료",
   "title": "Chromosomes, genes and DNA",
-  "ko": "염색체·유전자·DNA 학습자료",
+  "ko": "염색체·유전자·DNA 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -585,4 +594,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-09-13 15:25";
+window.CLASSROOM_POSTS_AT = "2026-09-13 18:10";
