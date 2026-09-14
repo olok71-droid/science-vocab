@@ -563,7 +563,9 @@ body.in-subject .cn-card { display: none; }
       <span class="cat-name">9학년 영어</span>
       <span class="cat-sub">Year 9 English</span>
     </button>
-    <button class="cat-btn" data-cat="hum" onclick="showCat('hum')">
+    <!-- 2026-09-14 대표님 지시: 단원 구분이 생기기 전까지 휴머니티는 누르면 바로 학습 자료로 간다.
+       (단원 카드가 생기면 아래 cat-pane #cat-hum 을 다시 쓰고 이 onclick 을 showCat('hum') 으로 되돌린다) -->
+    <button class="cat-btn" data-cat="hum" onclick="location.href='y9c_humanities.html'">
       <span class="cat-emoji">🌍</span>
       <span class="cat-name">9학년 휴머니티</span>
       <span class="cat-sub">Humanities · 지리+역사</span>
