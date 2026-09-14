@@ -492,15 +492,14 @@ body.in-subject .cn-card { display: none; }
 .ca-box { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
   width: min(600px, 94vw); max-height: 90vh; overflow: auto; background: #fff;
   border-radius: 10px; box-shadow: 0 10px 36px rgba(0,0,0,0.38); }
-.ca-bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 8px;
-  padding: 9px 12px; background: #fdecea; border-bottom: 2px solid #b3261e; }
-.ca-bar .ca-t { font-size: 12px; font-weight: 900; color: #8c1d18; }
-.ca-x { margin-left: auto; flex: none; font-family: inherit; font-size: 14px; font-weight: 900; line-height: 1;
-  cursor: pointer; background: #fff; border: 1.5px solid #b3261e; color: #b3261e;
-  border-radius: 8px; padding: 6px 11px; }
+.ca-bar { position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end;
+  padding: 8px 10px 0; background: #fff; }
+.ca-x { flex: none; font-family: inherit; font-size: 14px; font-weight: 900; line-height: 1;
+  cursor: pointer; background: #fff; border: 1.5px solid #888; color: #333;
+  border-radius: 8px; padding: 6px 10px; }
 
 /* 종이 */
-.ca-doc { background: #fff; padding: 22px 26px 26px;
+.ca-doc { background: #fff; padding: 6px 26px 30px;
   font-family: Arial, Helvetica, 'Apple SD Gothic Neo', sans-serif; color: #000; }
 .ca-school { text-align: center; font-size: 11.5px; font-weight: 900; color: #0b5d3b;
   line-height: 1.35; letter-spacing: 0.2px; margin-bottom: 14px; }
@@ -1205,26 +1204,22 @@ function caOpen(i){
   var d = CA_DETAILS[i];
   if (!d) return;
   var h = '<div class="ca-bar">' +
-            '<span class="ca-t">' + caEsc(d.headKo || d.head) + '</span>' +
-            '<button class="ca-x" type="button" onclick="caClose()">✕ 닫기</button>' +
+            '<button class="ca-x" type="button" onclick="caClose()">✕</button>' +
           '</div><div class="ca-doc">';
   if (d.school && d.school.length){
     h += '<div class="ca-school">' + d.school.map(caEsc).join('<br>') + '</div>';
   }
   (d.doc || []).forEach(function(x){
-    var ko = x.ko ? '<span class="ko">' + caEsc(x.ko) + '</span>' : '';
     if (x.t === 's'){ h += '<div class="ca-sp"></div>'; return; }
-    if (x.t === 'h1'){ h += '<div class="ca-h1">' + caEsc(x.en) + ko + '</div>'; return; }
-    if (x.t === 'h2'){ h += '<div class="ca-h2">' + caEsc(x.en) + ko + '</div>'; return; }
+    if (x.t === 'h1'){ h += '<div class="ca-h1">' + caEsc(x.en) + '</div>'; return; }
+    if (x.t === 'h2'){ h += '<div class="ca-h2">' + caEsc(x.en) + '</div>'; return; }
     if (x.t === 'li'){
-      h += '<div class="ca-item"><span class="bul">●</span><span>' + caEsc(x.en) + ko + '</span></div>';
+      h += '<div class="ca-item"><span class="bul">●</span><span>' + caEsc(x.en) + '</span></div>';
       return;
     }
-    h += '<div class="ca-p' + (x.t === 'pi' ? ' it' : '') + '">' + caEsc(x.en) + ko + '</div>';
+    h += '<div class="ca-p' + (x.t === 'pi' ? ' it' : '') + '">' + caEsc(x.en) + '</div>';
   });
-  h += '</div><div class="ca-foot"><a class="ca-link" href="' +
-       caEsc(d._url || 'https://classroom.google.com/') +
-       '" target="_blank" rel="noopener">클래스룸에서 원본 첨부 보기</a></div>';
+  h += '</div>';
 
   var box = document.getElementById('caBox');
   var m = document.getElementById('caModal');
@@ -1380,7 +1375,6 @@ function cnRender(){
                   '<span class="ca-day">' + day + '</span>' +
                   '<span class="cn-txt"><span class="cn-en">' + (r.title || '') + '</span>' +
                     (r.ko ? '<span class="cn-kr">' + r.ko + '</span>' : '') +
-                    (di >= 0 ? '<span class="ca-more">안내문 보기</span>' : '') +
                   '</span>';
       if (di >= 0){
         CA_DETAILS[di]._url = r.url || '';
