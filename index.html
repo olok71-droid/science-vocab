@@ -483,47 +483,42 @@ html, body { overflow-x: hidden; }
 .fold-bar .fold-arrow { margin-left: 8px; }
 body.in-subject .cn-card { display: none; }
 
-/* ── 시험 안내문(CAT) 팝업 — 시험 박스 줄을 누르면 뜬다 ── */
+/* ── 시험 안내문(CAT) 팝업 — 선생님이 올린 서류를 그대로 보여준다 ── */
 .ca-more { font-size: 10px; font-weight: 900; color: #b3261e; background: #fdecea;
   border: 1px solid #b3261e; border-radius: 999px; padding: 1px 6px; margin-left: 5px; white-space: nowrap; }
 .ca-modal { position: fixed; inset: 0; z-index: 9999; display: none; }
 .ca-modal.on { display: block; }
-.ca-dim { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.ca-dim { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
 .ca-box { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-  width: min(560px, 93vw); max-height: 88vh; overflow: auto; background: #fff;
-  border: 2px solid #b3261e; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
-.ca-bar { position: sticky; top: 0; display: flex; align-items: center; gap: 8px; padding: 11px 14px;
-  background: #fdecea; border-bottom: 2px solid #b3261e; }
-.ca-bar .ca-t { font-size: 13px; font-weight: 900; color: #8c1d18; }
-.ca-bar .ca-t .ca-tko { font-size: 11.5px; font-weight: 900; color: #1f4fa3; margin-left: 6px; }
-.ca-x { margin-left: auto; flex: none; font-family: inherit; font-size: 15px; font-weight: 900; line-height: 1;
+  width: min(600px, 94vw); max-height: 90vh; overflow: auto; background: #fff;
+  border-radius: 10px; box-shadow: 0 10px 36px rgba(0,0,0,0.38); }
+.ca-bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 8px;
+  padding: 9px 12px; background: #fdecea; border-bottom: 2px solid #b3261e; }
+.ca-bar .ca-t { font-size: 12px; font-weight: 900; color: #8c1d18; }
+.ca-x { margin-left: auto; flex: none; font-family: inherit; font-size: 14px; font-weight: 900; line-height: 1;
   cursor: pointer; background: #fff; border: 1.5px solid #b3261e; color: #b3261e;
-  border-radius: 8px; padding: 5px 10px; }
-.ca-sub { padding: 9px 14px 2px; font-size: 12px; font-weight: 900; color: #111; }
-.ca-sub .ca-subko { font-size: 11.5px; font-weight: 900; color: #1f4fa3; margin-left: 6px; }
-.ca-tbl { padding: 6px 14px 2px; }
-.ca-tr { display: grid; grid-template-columns: 66px 1fr; column-gap: 8px; align-items: start;
-  padding: 8px 0; border-top: 1px solid rgba(0,0,0,0.10); }
-.ca-tr:first-child { border-top: none; }
-.ca-lab { font-size: 11.5px; font-weight: 900; color: #8c1d18; }
-.ca-val { min-width: 0; }
-.ca-val .en { display: block; font-size: 12.5px; font-weight: 500; color: #111; line-height: 1.4; white-space: pre-line; }
-.ca-val .ko { display: block; font-size: 12px; font-weight: 700; color: #1f4fa3; line-height: 1.45; white-space: pre-line; margin-top: 2px; }
-.ca-note { margin: 8px 14px 2px; padding: 10px 12px; background: #fff8e1; border: 1.5px solid #e0a800; border-radius: 12px; }
-.ca-sect { padding: 12px 14px 2px; font-size: 12.5px; font-weight: 900; color: #8c1d18; }
-.ca-sect .ca-subko { font-size: 11.5px; font-weight: 900; color: #1f4fa3; margin-left: 6px; }
-.ca-li { display: grid; grid-template-columns: 20px 1fr; column-gap: 4px; padding: 8px 14px;
-  border-top: 1px solid rgba(0,0,0,0.08); }
-.ca-num { font-size: 11.5px; font-weight: 900; color: #b3261e; }
-.ca-foot { padding: 12px 14px 16px; }
+  border-radius: 8px; padding: 6px 11px; }
+
+/* 종이 */
+.ca-doc { background: #fff; padding: 22px 26px 26px;
+  font-family: Arial, Helvetica, 'Apple SD Gothic Neo', sans-serif; color: #000; }
+.ca-school { text-align: center; font-size: 11.5px; font-weight: 900; color: #0b5d3b;
+  line-height: 1.35; letter-spacing: 0.2px; margin-bottom: 14px; }
+.ca-doc .ko { display: block; font-size: 12px; font-weight: 700; color: #1f4fa3; line-height: 1.45; margin-top: 1px; }
+.ca-h1 { text-align: center; font-size: 15.5px; font-weight: 900; line-height: 1.35; }
+.ca-h1 .ko { text-align: center; }
+.ca-h2 { font-size: 13px; font-weight: 900; line-height: 1.4; }
+.ca-p  { font-size: 13px; line-height: 1.45; }
+.ca-p.it { font-style: italic; }
+.ca-p.it .ko { font-style: normal; }
+.ca-item { display: grid; grid-template-columns: 16px 1fr; column-gap: 6px;
+  font-size: 13px; line-height: 1.45; padding-left: 10px; }
+.ca-item .bul { font-size: 11px; line-height: 1.7; }
+.ca-sp { height: 11px; }
+.ca-foot { padding: 4px 26px 24px; }
 .ca-link { display: block; text-align: center; text-decoration: none;
   font-size: 12px; font-weight: 900; color: #fff; background: #1f4fa3;
   border-radius: 10px; padding: 10px 12px; }
-
-/* 진도표 접기 */
-.cur-fold { margin-bottom: 12px; }
-.cur-fold .fold-bar { border-radius: 12px 12px 0 0; }
-.cur-fold.folded .fold-bar { border-radius: 12px; }
 </style>
 </head>
 <body>
@@ -548,10 +543,10 @@ body.in-subject .cn-card { display: none; }
   </div>
 
   <div class="cn-card ca" id="cnCardCA" style="display:none">
-    <div class="fold-bar" onclick="toggleFold('cnCardCA')">
+    <div class="fold-bar" onclick="caOpenFirst()">
       <span class="fold-name">📕 시험 (Common Assessment)</span>
       <span class="ca-badge" id="caBadge"></span>
-      <span class="fold-arrow">▾</span>
+      <span class="fold-arrow" onclick="event.stopPropagation();toggleFold('cnCardCA')">▾</span>
     </div>
     <div class="fold-body">
       <div class="cn-head"><span>과목</span><span>시험일</span><span>남은날</span><span>내용</span></div>
@@ -1210,38 +1205,26 @@ function caOpen(i){
   var d = CA_DETAILS[i];
   if (!d) return;
   var h = '<div class="ca-bar">' +
-            '<span class="ca-t">' + caEsc(d.head) +
-              (d.headKo ? '<span class="ca-tko">' + caEsc(d.headKo) + '</span>' : '') +
-            '</span>' +
+            '<span class="ca-t">' + caEsc(d.headKo || d.head) + '</span>' +
             '<button class="ca-x" type="button" onclick="caClose()">✕ 닫기</button>' +
-          '</div>';
-  if (d.sub){
-    h += '<div class="ca-sub">' + caEsc(d.sub) +
-         (d.subKo ? '<span class="ca-subko">' + caEsc(d.subKo) + '</span>' : '') + '</div>';
+          '</div><div class="ca-doc">';
+  if (d.school && d.school.length){
+    h += '<div class="ca-school">' + d.school.map(caEsc).join('<br>') + '</div>';
   }
-  if (d.rows && d.rows.length){
-    h += '<div class="ca-tbl">' + d.rows.map(function(x){
-      return '<div class="ca-tr"><span class="ca-lab">' + caEsc(x.label) + '</span>' +
-             '<span class="ca-val"><span class="en">' + caEsc(x.en) + '</span>' +
-             (x.ko ? '<span class="ko">' + caEsc(x.ko) + '</span>' : '') + '</span></div>';
-    }).join('') + '</div>';
-  }
-  if (d.note){
-    h += '<div class="ca-note"><span class="ca-val"><span class="en">' + caEsc(d.note.en) + '</span>' +
-         (d.note.ko ? '<span class="ko">' + caEsc(d.note.ko) + '</span>' : '') + '</span></div>';
-  }
-  if (d.revise && d.revise.length){
-    h += '<div class="ca-sect">' + caEsc(d.reviseTitle || 'Suggested Revision Approaches') +
-         (d.reviseTitleKo ? '<span class="ca-subko">' + caEsc(d.reviseTitleKo) + '</span>' : '') + '</div>';
-    h += d.revise.map(function(x, n){
-      return '<div class="ca-li"><span class="ca-num">' + (n + 1) + '.</span>' +
-             '<span class="ca-val"><span class="en">' + caEsc(x.en) + '</span>' +
-             (x.ko ? '<span class="ko">' + caEsc(x.ko) + '</span>' : '') + '</span></div>';
-    }).join('');
-  }
-  h += '<div class="ca-foot"><a class="ca-link" href="' +
+  (d.doc || []).forEach(function(x){
+    var ko = x.ko ? '<span class="ko">' + caEsc(x.ko) + '</span>' : '';
+    if (x.t === 's'){ h += '<div class="ca-sp"></div>'; return; }
+    if (x.t === 'h1'){ h += '<div class="ca-h1">' + caEsc(x.en) + ko + '</div>'; return; }
+    if (x.t === 'h2'){ h += '<div class="ca-h2">' + caEsc(x.en) + ko + '</div>'; return; }
+    if (x.t === 'li'){
+      h += '<div class="ca-item"><span class="bul">●</span><span>' + caEsc(x.en) + ko + '</span></div>';
+      return;
+    }
+    h += '<div class="ca-p' + (x.t === 'pi' ? ' it' : '') + '">' + caEsc(x.en) + ko + '</div>';
+  });
+  h += '</div><div class="ca-foot"><a class="ca-link" href="' +
        caEsc(d._url || 'https://classroom.google.com/') +
-       '" target="_blank" rel="noopener">클래스룸에서 원문·첨부 보기</a></div>';
+       '" target="_blank" rel="noopener">클래스룸에서 원본 첨부 보기</a></div>';
 
   var box = document.getElementById('caBox');
   var m = document.getElementById('caModal');
@@ -1251,6 +1234,14 @@ function caOpen(i){
   m.classList.add('on');
   document.body.style.overflow = 'hidden';
 }
+
+/* 📕 시험 머리글을 눌러도 그 서류가 뜬다(접기·펴기는 오른쪽 ▾ 화살표로 한다) */
+function caOpenFirst(){
+  if (typeof caFirstDoc === 'number' && caFirstDoc >= 0) caOpen(caFirstDoc);
+  else toggleFold('cnCardCA');
+}
+var caFirstDoc = -1;
+
 function caClose(){
   var m = document.getElementById('caModal');
   if (m) m.classList.remove('on');
@@ -1369,6 +1360,7 @@ function cnRender(){
     caCard.style.display = caRows.length ? '' : 'none';
     var badge = document.getElementById('caBadge');
     if (badge) badge.textContent = caRows.length ? caRows.length + '개' : '';
+    caFirstDoc = -1;
     caList.innerHTML = caRows.map(function(r){
       /* 날짜를 못 읽은 시험 글도 박스에 뜬다 → 날짜칸은 비워 둔다 */
       var when = '', day = '';
@@ -1382,6 +1374,7 @@ function cnRender(){
       }
       var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
       var di = caDetailIndex(r);              /* 선생님 안내문(CAT)이 있나 */
+      if (di >= 0 && caFirstDoc < 0) caFirstDoc = di;
       var inner = '<span class="cn-subj">' + subj + '</span>' +
                   '<span class="ca-when">' + when + '</span>' +
                   '<span class="ca-day">' + day + '</span>' +
