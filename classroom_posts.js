@@ -1,5 +1,14 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "음악 (Mr Everett)",
+  "date": "2026-09-16",
+  "type": "자료",
+  "title": "Super Mario Bros",
+  "ko": "슈퍼마리오 게임음악 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
+ },
+ {
   "subject": "휴머니티 (Mr Lawrence)",
   "date": "2026-09-15",
   "type": "자료",
@@ -49,16 +58,16 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "alkali metals and halogens",
-  "ko": "알칼리금속·할로겐 퀴즈 과제",
+  "ko": "알칼리 금속·할로젠 퀴즈(Wayground) 풀기",
   "due": "2026-09-20",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODI2Mzk0NzAxNzcx/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-09-14",
   "type": "과제",
   "title": "Workbook Questions - 2.2 Trends in groups within Periodic Table",
-  "ko": "2.2 족 경향 워크북 문제 풀기",
+  "ko": "워크북 2.2 주기표 족별 경향 문제 풀기",
   "due": "2026-09-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -67,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Cool Alkali Metal Experiments Video (by Aditya)",
-  "ko": "학생이 알칼리금속 실험 영상 공유",
+  "ko": "학생이 올린 알칼리 금속 실험 영상 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -76,7 +85,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "Group 1 Properities",
-  "ko": "1족 원소 성질 과제",
+  "ko": "1족 원소의 성질 과제",
   "due": "2026-09-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -85,7 +94,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Heads up - Common Assessment on Wednesday 30th lesson 3 - 10.55 - 11.50",
-  "ko": "공통평가 1 실시 안내",
+  "ko": "3교시(10:55~11:50) 과학 공통평가 1 예정",
   "due": "2026-09-30",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -94,7 +103,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "2.2 Trends in groups within the Periodic Table",
-  "ko": "주기율표 족 경향 학습자료",
+  "ko": "2.2 주기표 족별 경향 수업자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -103,7 +112,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "CA1 - criteria",
-  "ko": "공통평가1 채점 기준 자료",
+  "ko": "CA1 평가 기준 안내 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -159,7 +168,7 @@ window.CLASSROOM_POSTS = [
   "title": "Vocab homework 2",
   "ko": "어휘 숙제 2 제출",
   "due": "2026-09-17",
-  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy/a/ODg0NzU1NTUxNzM0/details"
+  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
  {
   "subject": "디자인 기술 (Mr Mathyk)",
@@ -175,7 +184,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "과제",
   "title": "Electron Shells & Valence Electrons",
-  "ko": "전자껍질·원자가전자 퀴즈",
+  "ko": "전자껍질·원자가전자 퀴즈(Wayground) 풀기",
   "due": "2026-09-16",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg0MTg0OTIyMzQ2/details"
  },
@@ -184,7 +193,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "과제",
   "title": "Electron arrangement - fill in worksheet",
-  "ko": "전자 배치 워크시트 작성",
+  "ko": "전자 배치 워크시트 채우기",
   "due": "2026-09-16",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -193,7 +202,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "자료",
   "title": "Template for Common Assessment 1, 25/9/26",
-  "ko": "공통평가 1 서식 자료",
+  "ko": "공통평가1(CA1) 양식 자료",
   "due": "2026-09-25",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -229,7 +238,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "과제",
   "title": "Atomic Structure and Periodic Table Review",
-  "ko": "원자구조·주기율표 복습 퀴즈",
+  "ko": "원자 구조·주기표 복습 퀴즈(Wayground)",
   "due": "2026-09-16",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODc4MTY5MTk3NTY0/details"
  },
@@ -238,7 +247,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "자료",
   "title": "Properties of materials",
-  "ko": "물질의 성질 학습자료",
+  "ko": "물질의 성질 수업자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -247,7 +256,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "자료",
   "title": "Theory Gym Starter Activities",
-  "ko": "이론 연습 시작 활동 자료",
+  "ko": "음악이론 기초 연습활동 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -292,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-08",
   "type": "과제",
   "title": "Comic Art Submission",
-  "ko": "만화 작품 제출",
+  "ko": "만화 작품 제출 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -319,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Genes and inheritance - check your progress",
-  "ko": "유전 단원 진도 점검 과제",
+  "ko": "유전자와 유전 단원 점검 문제",
   "due": "2026-09-13",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -328,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "7.4 Workbook Questions - Natural selection",
-  "ko": "7.4 자연선택 워크북 문제",
+  "ko": "워크북 7.4 자연선택 문제 풀기",
   "due": "2026-09-13",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -337,7 +346,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Natural selection - Peppered Moth video and worksheet",
-  "ko": "회색가지나방 영상·워크시트 과제",
+  "ko": "회색가지나방 영상 보고 워크시트 작성",
   "due": "2026-09-13",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -346,7 +355,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "자료",
   "title": "7.4 Natural Selection",
-  "ko": "7.4 자연선택 학습자료",
+  "ko": "7.4 자연선택 수업자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -418,7 +427,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-03",
   "type": "과제",
   "title": "7.3B Variation in Holly leaves - p139/140",
-  "ko": "호랑가시나무 잎 변이 과제",
+  "ko": "호랑가시잎 변이 과제(교과서 139~140쪽)",
   "due": "2026-09-09",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -454,7 +463,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "과제",
   "title": "Histogram/Barchart - variation",
-  "ko": "변이 히스토그램·막대그래프 과제",
+  "ko": "변이 자료로 히스토그램·막대그래프 그리기",
   "due": "2026-09-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -463,7 +472,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "자료",
   "title": "Variation investigation",
-  "ko": "변이 탐구 학습자료",
+  "ko": "변이 탐구 활동 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -472,7 +481,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "자료",
   "title": "7.3 Variation",
-  "ko": "7.3 변이 학습자료",
+  "ko": "7.3 변이 수업자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -490,7 +499,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "자료",
   "title": "🔪 Meet Chef Chop: Your AI Rhythm Tutor!",
-  "ko": "리듬 연습 AI 튜터 셰프촙 소개",
+  "ko": "AI 리듬 튜터 '셰프 찹' 소개",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -499,7 +508,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "공지",
   "title": "Reminder - please complete the Music Background and Instrument Preference assignment, if you have not already done so.",
-  "ko": "음악 배경·악기 선호 과제 완료 요청",
+  "ko": "음악배경·악기선호 과제 미제출자 제출 요청",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -526,7 +535,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-31",
   "type": "공지",
   "title": "Instruments",
-  "ko": "집 악기 가져올 학생은 학교로 지참",
+  "ko": "집 악기 쓸 학생은 이번 주 악기 지참",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -553,7 +562,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "과제",
   "title": "7.1 & 7.2 Workbook questions",
-  "ko": "7.1·7.2 워크북 문제 풀기",
+  "ko": "워크북 7.1·7.2 문제 풀기",
   "due": "2026-09-02",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -571,7 +580,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "공지",
   "title": "If you were not able to do our recent baseline tests in lesson (due to absence or device issues), please use the slides ",
-  "ko": "결석자는 슬라이드로 테스트 1~5 완료",
+  "ko": "기초평가 못 본 학생은 슬라이드로 테스트 1-5 완료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -580,7 +589,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-27",
   "type": "자료",
   "title": "Baseline Assessment Slides",
-  "ko": "기초 평가 슬라이드 자료",
+  "ko": "기초평가 슬라이드 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -652,7 +661,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-08-26",
   "type": "과제",
   "title": "Music Background and Instrument Preference",
-  "ko": "음악 경험·악기 선호 설문 제출",
+  "ko": "음악 배경·선호 악기 조사 과제",
   "due": "2026-09-01",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -666,4 +675,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2/a/ODc1OTE5NzI3MTgz/details"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-09-16 12:55";
+window.CLASSROOM_POSTS_AT = "2026-09-16 18:10";
