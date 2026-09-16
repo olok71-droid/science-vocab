@@ -462,6 +462,10 @@ html, body { overflow-x: hidden; }
 .cn-due.none { background: none; }
 .cn-due.past { background: #fff; border: 1.5px solid #b3261e; color: #b3261e; padding: 1px 0; }
 .cn-empty { padding: 14px; font-size: 12.5px; font-weight: 700; color: #555; }
+/* ★2026-09-16: 공지·자료는 한 번에 6줄까지만 보이고 나머지는 이 줄을 눌러 펼친다(대표님 "줄줄 늘어놓지 마"). */
+.cn-more { display: block; width: 100%; padding: 10px 14px; border: 0; border-top: 1px solid rgba(36,59,107,0.12);
+           background: #f5f5f4; font-family: inherit; font-size: 12.5px; font-weight: 800; color: #111;
+           text-align: center; cursor: pointer; }
 .cn-bell {
   margin-left: auto; font-family: inherit; cursor: pointer;
   font-size: 11px; font-weight: 900; color: #111;
@@ -1273,6 +1277,8 @@ function caClose(){
 }
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') caClose(); });
 
+var cn2Open = false;
+function cn2Toggle(){ cn2Open = !cn2Open; cnRender(); }
 function cnRender(){
   var list = document.getElementById('cnList');
   var list2 = document.getElementById('cnList2');
@@ -1445,8 +1451,17 @@ function cnRender(){
                     return p.length === 3 && new Date(+p[0], +p[1]-1, +p[2]) >= lim;
                   })
                   .sort(function(a, b){ return dnum(b.date) - dnum(a.date); });
-    list2.innerHTML = etc.length ? etc.map(function(r){ return row(r, true); }).join('')
-                                 : '<div class="cn-empty">공지·자료가 없다.</div>';
+    /* ★2026-09-16 대표님 지시 — 1주 기준은 그대로 두고 화면에는 6줄까지만. 나머지는 '더 보기'로 펼친다. */
+    var CN2_MAX = 6;
+    if (!etc.length){
+      list2.innerHTML = '<div class="cn-empty">공지·자료가 없다.</div>';
+    } else if (etc.length <= CN2_MAX || cn2Open){
+      list2.innerHTML = etc.map(function(r){ return row(r, true); }).join('') +
+        (etc.length > CN2_MAX ? '<button class="cn-more" type="button" onclick="cn2Toggle()">접기 \u25b4</button>' : '');
+    } else {
+      list2.innerHTML = etc.slice(0, CN2_MAX).map(function(r){ return row(r, true); }).join('') +
+        '<button class="cn-more" type="button" onclick="cn2Toggle()">더 보기 ' + (etc.length - CN2_MAX) + '개 \u25be</button>';
+    }
   }
 }
 
