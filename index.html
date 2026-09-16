@@ -1213,17 +1213,17 @@ function caOpen(i){
   if (d.school && d.school.length){
     h += '<div class="ca-school">' + d.school.map(caEsc).join('<br>') + '</div>';
   }
-  /* ★2026-09-16: 줄마다 한국어 뜻(파란 글씨)을 같이 띄운다. 자료에는 ko 가 있는데 화면에 안 나왔다. */
-  function caKo(x){ return x.ko ? '<span class="ko">' + caEsc(x.ko) + '</span>' : ''; }
+  /* ★★팝업은 선생님 서류 원문만 띄운다(대표님 2026-09-14 지시, 커밋 2171f19 "내가 덧붙인 한국어·링크 제거").
+     ca_details.js 에 ko 가 남아 있어도 화면에 찍지 마라. 2026-09-16에 내가 멋대로 되살렸다가 지적받고 되돌렸다. */
   (d.doc || []).forEach(function(x){
     if (x.t === 's'){ h += '<div class="ca-sp"></div>'; return; }
-    if (x.t === 'h1'){ h += '<div class="ca-h1">' + caEsc(x.en) + caKo(x) + '</div>'; return; }
-    if (x.t === 'h2'){ h += '<div class="ca-h2">' + caEsc(x.en) + caKo(x) + '</div>'; return; }
+    if (x.t === 'h1'){ h += '<div class="ca-h1">' + caEsc(x.en) + '</div>'; return; }
+    if (x.t === 'h2'){ h += '<div class="ca-h2">' + caEsc(x.en) + '</div>'; return; }
     if (x.t === 'li'){
-      h += '<div class="ca-item"><span class="bul">●</span><span>' + caEsc(x.en) + caKo(x) + '</span></div>';
+      h += '<div class="ca-item"><span class="bul">●</span><span>' + caEsc(x.en) + '</span></div>';
       return;
     }
-    h += '<div class="ca-p' + (x.t === 'pi' ? ' it' : '') + '">' + caEsc(x.en) + caKo(x) + '</div>';
+    h += '<div class="ca-p' + (x.t === 'pi' ? ' it' : '') + '">' + caEsc(x.en) + '</div>';
   });
   h += '</div>';
 
