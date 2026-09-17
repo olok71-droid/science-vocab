@@ -458,7 +458,7 @@ details.mat-src .notes-list { padding: 10px 0 0; }
 
 
 <div class="tab-pane active" id="tab-vocab">
-  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기 (0)</button><span class="mem-info">총 <b id="total-count">48</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="69개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9c_chinese_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></div>
+  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기 (0)</button><span class="mem-info">총 <b id="total-count">48</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" data-total="48" onclick="toggleAllPlay()" title="69개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9c_chinese_all.mp3"></audio><button class="blind-btn chunkplay" data-part="1" data-label="▶ 1~20" title="1~20번 단어만 듣기" onclick="playAllFrom(1)">▶ 1~20</button><button class="blind-btn chunkplay" data-part="2" data-label="▶ 21~40" title="21~40번 단어만 듣기" onclick="playAllFrom(2)">▶ 21~40</button><button class="blind-btn chunkplay" data-part="3" data-label="▶ 41~48" title="41~48번 단어만 듣기" onclick="playAllFrom(3)">▶ 41~48</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button></div>
 
 
 <div class="cards-wrap"><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">1번</div><div class="vcard-en">school subject</div><div class="vcard-ko">학교 과목</div><div class="vcard-def-ko">학교에서 배우는 과목을 뜻한다 (科目 kēmù).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;school subject&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">2번</div><div class="vcard-en">English</div><div class="vcard-ko">영어</div><div class="vcard-def-ko">영어 수업 과목이다 (英语 yīngyǔ).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;English&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">3번</div><div class="vcard-en">Chinese</div><div class="vcard-ko">중국어</div><div class="vcard-def-ko">중국어 수업 과목이다 (中文 zhōngwén).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;Chinese&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">4번</div><div class="vcard-en">mathematics</div><div class="vcard-ko">수학</div><div class="vcard-def-ko">숫자와 도형을 다루는 과목이다 (数学 shùxué).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;mathematics&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">5번</div><div class="vcard-en">physics</div><div class="vcard-ko">물리</div><div class="vcard-def-ko">물질과 힘·에너지를 배우는 과학 과목이다 (物理 wùlǐ).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;physics&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">6번</div><div class="vcard-en">chemistry</div><div class="vcard-ko">화학</div><div class="vcard-def-ko">물질의 성질과 반응을 배우는 과학 과목이다 (化学 huàxué).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;chemistry&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">7번</div><div class="vcard-en">biology</div><div class="vcard-ko">생물</div><div class="vcard-def-ko">생물과 생명 현상을 배우는 과학 과목이다 (生物 shēngwù).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;biology&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">8번</div><div class="vcard-en">art</div><div class="vcard-ko">미술</div><div class="vcard-def-ko">그림 그리기와 만들기를 배우는 과목이다 (美术 měishù).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;art&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">9번</div><div class="vcard-en">physical education</div><div class="vcard-ko">체육</div><div class="vcard-def-ko">운동과 스포츠를 배우는 과목이다 (体育 tǐyù).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;physical education&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">10번</div><div class="vcard-en">experiment</div><div class="vcard-ko">실험</div><div class="vcard-def-ko">과학 시간에 하는 실험이다 (实验 shíyàn).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;experiment&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">11번</div><div class="vcard-en">test/quiz</div><div class="vcard-ko">시험, 쪽지시험</div><div class="vcard-def-ko">배운 내용을 확인하는 시험이다 (测验 cèyàn).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;test/quiz&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">12번</div><div class="vcard-en">lesson/class</div><div class="vcard-ko">수업, 과목 시간</div><div class="vcard-def-ko">한 과목을 배우는 수업 시간이다 (课 kè).</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;lesson/class&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">13번</div><div class="vcard-en">reading comprehension</div><div class="vcard-ko">독해</div><div class="vcard-def-ko">글을 읽고 내용을 이해해 문제에 답하는 평가 방식이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;reading comprehension&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">14번</div><div class="vcard-en">vocabulary</div><div class="vcard-ko">어휘</div><div class="vcard-def-ko">학교 시설·과목 등 주제별로 외워야 할 단어들을 뜻한다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;vocabulary&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">15번</div><div class="vcard-en">grammar structure</div><div class="vcard-ko">문법 구조</div><div class="vcard-def-ko">在/是/有, 比 같은 정해진 문장 틀을 말한다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;grammar structure&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">16번</div><div class="vcard-en">location expression</div><div class="vcard-ko">위치 표현</div><div class="vcard-def-ko">旁边/左边/右边/后面/对面/里面처럼 위치를 나타내는 표현이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;location expression&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">17번</div><div class="vcard-en">comparison</div><div class="vcard-ko">비교</div><div class="vcard-def-ko">比를 써서 두 대상을 견주는 문법이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;comparison&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">18번</div><div class="vcard-en">school facilities</div><div class="vcard-ko">학교 시설</div><div class="vcard-def-ko">수영장·체육관·농구장 같은 학교 안 시설(学校设施)을 가리킨다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;school facilities&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">19번</div><div class="vcard-en">school subjects</div><div class="vcard-ko">학교 과목</div><div class="vcard-def-ko">수학·중국어 등 학교에서 배우는 과목(学校科目)이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;school subjects&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">20번</div><div class="vcard-en">directions</div><div class="vcard-ko">방향</div><div class="vcard-def-ko">왼쪽·오른쪽·뒤쪽처럼 방향을 가리키는 말이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;directions&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">21번</div><div class="vcard-en">fill in the blanks</div><div class="vcard-ko">빈칸 채우기</div><div class="vcard-def-ko">핵심 단어로 빈칸을 채우는 문제 유형이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;fill in the blanks&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">22번</div><div class="vcard-en">passage</div><div class="vcard-ko">지문</div><div class="vcard-def-ko">독해 문제에 나오는 짧은 글이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;passage&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">23번</div><div class="vcard-en">context</div><div class="vcard-ko">문맥</div><div class="vcard-def-ko">단어 뜻을 앞뒤 내용으로 파악하는 것을 말한다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;context&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">24번</div><div class="vcard-en">assessment objectives</div><div class="vcard-ko">평가 목표</div><div class="vcard-def-ko">이번 시험에서 무엇을 평가하는지 정해 놓은 기준이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;assessment objectives&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">25번</div><div class="vcard-en">school</div><div class="vcard-ko">학교</div><div class="vcard-def-ko">학생들이 공부하러 다니는 곳이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;school&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">26번</div><div class="vcard-en">classroom</div><div class="vcard-ko">교실</div><div class="vcard-def-ko">수업이 이루어지는 학교 안의 방이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;classroom&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">27번</div><div class="vcard-en">subject</div><div class="vcard-ko">과목</div><div class="vcard-def-ko">수학처럼 학교에서 배우는 학습 영역이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;subject&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">28번</div><div class="vcard-en">timetable</div><div class="vcard-ko">시간표</div><div class="vcard-def-ko">어떤 수업이 언제 있는지 보여주는 표이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;timetable&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">29번</div><div class="vcard-en">teacher</div><div class="vcard-ko">선생님</div><div class="vcard-def-ko">학생을 가르치는 사람이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;teacher&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">30번</div><div class="vcard-en">classmate</div><div class="vcard-ko">반 친구</div><div class="vcard-def-ko">나와 같은 반에서 공부하는 학생이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;classmate&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">31번</div><div class="vcard-en">library</div><div class="vcard-ko">도서관</div><div class="vcard-def-ko">학교에서 책을 보관하고 읽는 곳이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;library&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">32번</div><div class="vcard-en">playground</div><div class="vcard-ko">운동장</div><div class="vcard-def-ko">학교에서 놀거나 운동하는 야외 공간이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;playground&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">33번</div><div class="vcard-en">canteen</div><div class="vcard-ko">급식실, 구내식당</div><div class="vcard-def-ko">학생들이 밥을 먹는 학교 안의 식당이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;canteen&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">34번</div><div class="vcard-en">uniform</div><div class="vcard-ko">교복</div><div class="vcard-def-ko">학생이 학교에서 입어야 하는 정해진 옷이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;uniform&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">35번</div><div class="vcard-en">lesson</div><div class="vcard-ko">수업</div><div class="vcard-def-ko">무언가를 가르치고 배우는 한 시간 단위의 수업이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;lesson&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">36번</div><div class="vcard-en">homework</div><div class="vcard-ko">숙제</div><div class="vcard-def-ko">학생이 집에서 하는 학교 과제이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;homework&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">37번</div><div class="vcard-en">我的新学校</div><div class="vcard-ko">우리 새 학교</div><div class="vcard-def-ko">'나의 새 학교'라는 뜻으로, 이 단원(Unit 1 Lesson 1)의 제목이자 주제다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;我的新学校&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">38번</div><div class="vcard-en">Mandarin</div><div class="vcard-ko">중국어(표준 중국어)</div><div class="vcard-def-ko">수업에서 배우는 표준 중국어를 가리키는 말이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;Mandarin&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">39번</div><div class="vcard-en">Pinyin</div><div class="vcard-ko">병음</div><div class="vcard-def-ko">한자의 발음을 알파벳과 성조 기호로 적는 표기법이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;Pinyin&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">40번</div><div class="vcard-en">sentence structure</div><div class="vcard-ko">문장 구조</div><div class="vcard-def-ko">주어·동사·장소 같은 요소가 놓이는 정해진 순서를 말한다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;sentence structure&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">41번</div><div class="vcard-en">word order</div><div class="vcard-ko">어순</div><div class="vcard-def-ko">在·是·有처럼 동사에 따라 달라지는 단어 배열 순서다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;word order&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">42번</div><div class="vcard-en">verb</div><div class="vcard-ko">동사</div><div class="vcard-def-ko">동작이나 상태를 나타내는 말로 在·是·有가 여기에 속한다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;verb&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">43번</div><div class="vcard-en">clause</div><div class="vcard-ko">절</div><div class="vcard-def-ko">而且나 除了……以外로 이어 붙이는, 주어와 동사를 갖춘 문장 덩어리다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;clause&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">44번</div><div class="vcard-en">reading strategy</div><div class="vcard-ko">읽기 전략</div><div class="vcard-def-ko">글에서 핵심 정보를 찾아내기 위해 쓰는 읽기 방법이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;reading strategy&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">45번</div><div class="vcard-en">context clue</div><div class="vcard-ko">문맥 단서</div><div class="vcard-def-ko">모르는 단어의 뜻을 주변 내용으로 추측하게 해 주는 실마리다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;context clue&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">46번</div><div class="vcard-en">comprehension question</div><div class="vcard-ko">독해 문제</div><div class="vcard-def-ko">숫자·순서·위치 같은 세부 내용을 이해했는지 확인하는 질문이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;comprehension question&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">47번</div><div class="vcard-en">infer</div><div class="vcard-ko">추론하다</div><div class="vcard-def-ko">글에 직접 쓰여 있지 않은 내용을 단서로 알아내는 것이다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;infer&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div><div class="vcard" data-cat="all"><div class="vcard-left"><div class="vcard-num">48번</div><div class="vcard-en">tone</div><div class="vcard-ko">어조</div><div class="vcard-def-ko">글쓴이의 태도나 느낌이 말투에서 드러나는 것을 뜻한다.</div></div><div class="vcard-right"><button class="btn-speak" onclick="speak(&quot;tone&quot;)">🔊</button><button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button></div></div></div></div>
@@ -560,6 +560,10 @@ function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(
 let _audio = null;
 function speak(text) {
   try {
+    // ★2026-09-17: 전체듣기·토막듣기·낱개순차가 돌고 있으면 먼저 멈춘다. 안 그러면 소리가 겹친다.
+    var _ap = document.getElementById('allplay-audio');
+    if (_ap && !_ap.paused) _ap.pause();
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
     if (_audio) { _audio.pause(); _audio = null; }
     const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
     a.onerror = () => fallbackSpeak(cleanText(text));
@@ -593,6 +597,8 @@ let _seqToken = 0;
 function stopSeq(){
   if (_seq) _seq.token = -1;
   if (_audio) { _audio.pause(); _audio = null; }
+  // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
+  //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
   _seq = null;
   document.querySelectorAll('.play-all-btn').forEach(function(b){
     b.classList.remove('active'); b.textContent = '▶ 듣기';
@@ -600,15 +606,19 @@ function stopSeq(){
 }
 function playFileSeq(src, token, done){
   if (!_seq || _seq.token !== token) return;
+  // ★2026-09-17: onended·onerror·play().catch() 가 모두 done()을 불러서 한 소리가
+  //   두 갈래로 갈라져 재생되던 것(목소리 겹침)을 막는다. 무슨 일이 나도 딱 한 번만 넘어간다.
+  var fired = false;
+  var go = function(){ if (fired) return; fired = true; if (_seq && _seq.token === token) done(); };
   try {
     if (_audio) { _audio.pause(); _audio = null; }
     const a = new Audio(src);
     _audio = a;
-    a.onended = function(){ if (_seq && _seq.token === token) done(); };
-    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    a.onended = go;
+    a.onerror = go;                       // 파일 없으면 건너뜀
     const p = a.play();
-    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
-  } catch (e) { if (_seq && _seq.token === token) done(); }
+    if (p && p.catch) p.catch(go);
+  } catch (e) { go(); }
 }
 function playSection(cat, btn){
   const wasPlaying = btn.classList.contains('active');
@@ -917,35 +927,62 @@ if ('serviceWorker' in navigator) {
 </script>
 
 <script>
-/* 단원 전체 듣기 — 미리 합쳐 둔 mp3 하나를 재생한다.
-   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일 하나로 합쳤다. */
+/* 단원 전체 듣기 + 20개씩 끊어 듣기 — 미리 합쳐 둔 mp3를 재생한다.
+   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일로 합쳤다.
+   ★2026-09-17 대표님 지시: 한 번에 60몇 개는 안 외워진다 → 20개 토막 버튼 추가.
+     전체와 토막이 audio 요소 하나를 같이 쓴다 → 두 소리가 겹칠 수 없다. */
 (function(){
   var a = document.getElementById('allplay-audio');
   var btn = document.getElementById('allplay-btn');
-  if (!a) return;
+  if (!a || !btn) return;
+  var FULL = a.getAttribute('src');
+  var TOTAL = btn.getAttribute('data-total') || '';
+  var cur = 0;   // 0 = 전체, 1.. = 몇 번째 토막
+  function parts(){ return Array.prototype.slice.call(document.querySelectorAll('.chunkplay')); }
+  function resetLabels(){
+    btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active');
+    parts().forEach(function(b){ b.textContent = b.getAttribute('data-label'); b.classList.remove('active'); });
+  }
+  function activeBtn(){
+    return cur === 0 ? btn : document.querySelector('.chunkplay[data-part="' + cur + '"]');
+  }
   function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
-  window.toggleAllPlay = function(){
+  function playSrc(src, which, title){
     if (typeof stopSeq === 'function') stopSeq();
-    if (a.paused) { a.play(); } else { a.pause(); }
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
+    if (a.getAttribute('src') !== src) { a.pause(); a.setAttribute('src', src); a.load(); }
+    cur = which;
+    try { a.currentTime = 0; } catch (e) {}   // 끝까지 들은 뒤 다시 눌러도 처음부터
+    a._title = title;
+    a.play();
+  }
+  window.playAllFrom = function(n, label){
+    var b = document.querySelector('.chunkplay[data-part="' + n + '"]');
+    if (cur === n && !a.paused) { a.pause(); return; }
+    playSrc(FULL.replace('_all.mp3', '_p' + n + '.mp3'), n, (b ? b.getAttribute('data-label').replace('▶ ','') : n + '번째') + ' 듣기');
+  };
+  window.toggleAllPlay = function(){
+    if (cur === 0 && !a.paused) { a.pause(); return; }
+    playSrc(FULL, 0, '단원 전체 듣기' + (TOTAL ? ' — ' + TOTAL + ' 단어' : ''));
   };
   a.addEventListener('play', function(){
-    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
+    resetLabels();
+    var b = activeBtn(); if (b) { b.textContent = '⏸ 멈춤'; b.classList.add('active'); }
     if ('mediaSession' in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
-        title: '단원 전체 듣기 — 69 단어', artist: UNIT_TITLE, album: 'AMY Study App'
+        title: a._title || '단원 전체 듣기', artist: UNIT_TITLE, album: 'AMY Study App'
       });
       navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
       navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
     }
   });
-  a.addEventListener('pause', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
-  a.addEventListener('ended', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
+  a.addEventListener('pause', resetLabels);
+  a.addEventListener('ended', resetLabels);
   a.addEventListener('timeupdate', function(){
-    if (!a.paused) btn.textContent = '⏸ ' + mmss(a.currentTime);
+    if (a.paused) return;
+    var b = activeBtn(); if (b) b.textContent = '⏸ ' + mmss(a.currentTime);
   });
-  a.addEventListener('error', function(){
-    btn.disabled = true; btn.textContent = '전체 듣기 파일 없음';
-  });
+  a.addEventListener('error', function(){ resetLabels(); });
 })();
 </script>
 <script>
@@ -967,16 +1004,27 @@ if ('serviceWorker' in navigator) {
       if (seq !== token) return;
       if (i >= words.length) { i = 0; }
       var sl = slug(words[i]);
+      // ★2026-09-17: onended·onerror·play().catch() 가 같은 함수를 가리켜, 파일이 없으면
+      //   한 단어에서 두 갈래가 동시에 흘러 목소리가 겹쳤다. 단계마다 딱 한 번만 넘어가게 막는다.
+      var koDone = false, enDone = false;
       var ko = new Audio('audio/sci_ko/' + sl + '.mp3');
       cur = ko;
-      ko.onended = ko.onerror = function(){
+      var afterEn = function(){
+        if (enDone) return; enDone = true;
+        if (seq === token) { i++; setTimeout(next, 300); }
+      };
+      var afterKo = function(){
+        if (koDone) return; koDone = true;
         if (seq !== token) return;
         var en = new Audio('audio/sci/' + sl + '.mp3');
         cur = en;
-        en.onended = en.onerror = function(){ if (seq === token) { i++; setTimeout(next, 300); } };
-        en.play().catch(function(){ if (seq === token) { i++; setTimeout(next, 300); } });
+        en.onended = afterEn;
+        en.onerror = afterEn;
+        en.play().catch(afterEn);
       };
-      ko.play().catch(function(){ if (seq === token) ko.onended(); });
+      ko.onended = afterKo;
+      ko.onerror = afterKo;
+      ko.play().catch(afterKo);
     })();
   }
   var origToggle = window.toggleAllPlay;

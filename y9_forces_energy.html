@@ -365,7 +365,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 
 <!-- 단어장 -->
 <div class="tab-pane active" id="tab-vocab">
-  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" onclick="toggleAllPlay()" title="29개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9_forces_energy_all.mp3"></audio><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div>
+  <div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" data-total="29" onclick="toggleAllPlay()" title="29개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9_forces_energy_all.mp3"></audio><button class="blind-btn chunkplay" data-part="1" data-label="▶ 1~20" title="1~20번 단어만 듣기" onclick="playAllFrom(1)">▶ 1~20</button><button class="blind-btn chunkplay" data-part="2" data-label="▶ 21~29" title="21~29번 단어만 듣기" onclick="playAllFrom(2)">▶ 21~29</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div>
   <div class="filter-wrap">
     <div class="filter-tabs">
       <button class="filter-btn active" data-cat="all" onclick='filterCards("all")'>전체 All</button>
@@ -1045,6 +1045,10 @@ function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(
 let _audio = null;
 function speak(text) {
   try {
+    // ★2026-09-17: 전체듣기·토막듣기·낱개순차가 돌고 있으면 먼저 멈춘다. 안 그러면 소리가 겹친다.
+    var _ap = document.getElementById('allplay-audio');
+    if (_ap && !_ap.paused) _ap.pause();
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
     if (_audio) { _audio.pause(); _audio = null; }
     const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
     a.onerror = () => fallbackSpeak(cleanText(text));
@@ -1078,6 +1082,8 @@ let _seqToken = 0;
 function stopSeq(){
   if (_seq) _seq.token = -1;
   if (_audio) { _audio.pause(); _audio = null; }
+  // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
+  //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
   _seq = null;
   document.querySelectorAll('.play-all-btn').forEach(function(b){
     b.classList.remove('active'); b.textContent = '▶ 듣기';
@@ -1085,15 +1091,19 @@ function stopSeq(){
 }
 function playFileSeq(src, token, done){
   if (!_seq || _seq.token !== token) return;
+  // ★2026-09-17: onended·onerror·play().catch() 가 모두 done()을 불러서 한 소리가
+  //   두 갈래로 갈라져 재생되던 것(목소리 겹침)을 막는다. 무슨 일이 나도 딱 한 번만 넘어간다.
+  var fired = false;
+  var go = function(){ if (fired) return; fired = true; if (_seq && _seq.token === token) done(); };
   try {
     if (_audio) { _audio.pause(); _audio = null; }
     const a = new Audio(src);
     _audio = a;
-    a.onended = function(){ if (_seq && _seq.token === token) done(); };
-    a.onerror = function(){ if (_seq && _seq.token === token) done(); };  // 파일 없으면 건너뜀
+    a.onended = go;
+    a.onerror = go;                       // 파일 없으면 건너뜀
     const p = a.play();
-    if (p && p.catch) p.catch(function(){ if (_seq && _seq.token === token) done(); });
-  } catch (e) { if (_seq && _seq.token === token) done(); }
+    if (p && p.catch) p.catch(go);
+  } catch (e) { go(); }
 }
 function playSection(cat, btn){
   const wasPlaying = btn.classList.contains('active');
@@ -1402,31 +1412,62 @@ if ('serviceWorker' in navigator) {
 </script>
 
 <script>
-/* 단원 전체 듣기 — 미리 합쳐 둔 mp3 하나를 재생한다.
-   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일 하나로 합쳤다. */
+/* 단원 전체 듣기 + 20개씩 끊어 듣기 — 미리 합쳐 둔 mp3를 재생한다.
+   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일로 합쳤다.
+   ★2026-09-17 대표님 지시: 한 번에 60몇 개는 안 외워진다 → 20개 토막 버튼 추가.
+     전체와 토막이 audio 요소 하나를 같이 쓴다 → 두 소리가 겹칠 수 없다. */
 (function(){
   var a = document.getElementById('allplay-audio');
   var btn = document.getElementById('allplay-btn');
   if (!a || !btn) return;
+  var FULL = a.getAttribute('src');
+  var TOTAL = btn.getAttribute('data-total') || '';
+  var cur = 0;   // 0 = 전체, 1.. = 몇 번째 토막
+  function parts(){ return Array.prototype.slice.call(document.querySelectorAll('.chunkplay')); }
+  function resetLabels(){
+    btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active');
+    parts().forEach(function(b){ b.textContent = b.getAttribute('data-label'); b.classList.remove('active'); });
+  }
+  function activeBtn(){
+    return cur === 0 ? btn : document.querySelector('.chunkplay[data-part="' + cur + '"]');
+  }
   function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
-  window.toggleAllPlay = function(){
+  function playSrc(src, which, title){
     if (typeof stopSeq === 'function') stopSeq();
-    if (a.paused) { a.play(); } else { a.pause(); }
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
+    if (a.getAttribute('src') !== src) { a.pause(); a.setAttribute('src', src); a.load(); }
+    cur = which;
+    try { a.currentTime = 0; } catch (e) {}   // 끝까지 들은 뒤 다시 눌러도 처음부터
+    a._title = title;
+    a.play();
+  }
+  window.playAllFrom = function(n, label){
+    var b = document.querySelector('.chunkplay[data-part="' + n + '"]');
+    if (cur === n && !a.paused) { a.pause(); return; }
+    playSrc(FULL.replace('_all.mp3', '_p' + n + '.mp3'), n, (b ? b.getAttribute('data-label').replace('▶ ','') : n + '번째') + ' 듣기');
+  };
+  window.toggleAllPlay = function(){
+    if (cur === 0 && !a.paused) { a.pause(); return; }
+    playSrc(FULL, 0, '단원 전체 듣기' + (TOTAL ? ' — ' + TOTAL + ' 단어' : ''));
   };
   a.addEventListener('play', function(){
-    btn.textContent = '⏸ 멈춤'; btn.classList.add('active');
+    resetLabels();
+    var b = activeBtn(); if (b) { b.textContent = '⏸ 멈춤'; b.classList.add('active'); }
     if ('mediaSession' in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
-        title: '단원 전체 듣기 — 29 단어', artist: UNIT_TITLE, album: 'AMY Study App'
+        title: a._title || '단원 전체 듣기', artist: UNIT_TITLE, album: 'AMY Study App'
       });
       navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
       navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
     }
   });
-  a.addEventListener('pause', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
-  a.addEventListener('ended', function(){ btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active'); });
-  a.addEventListener('timeupdate', function(){ if (!a.paused) btn.textContent = '⏸ ' + mmss(a.currentTime); });
-  a.addEventListener('error', function(){ btn.disabled = true; btn.textContent = '전체 듣기 파일 없음'; });
+  a.addEventListener('pause', resetLabels);
+  a.addEventListener('ended', resetLabels);
+  a.addEventListener('timeupdate', function(){
+    if (a.paused) return;
+    var b = activeBtn(); if (b) b.textContent = '⏸ ' + mmss(a.currentTime);
+  });
+  a.addEventListener('error', function(){ resetLabels(); });
 })();
 </script>
 <script>
@@ -1448,16 +1489,27 @@ if ('serviceWorker' in navigator) {
       if (seq !== token) return;
       if (i >= words.length) { i = 0; }
       var sl = slug(words[i]);
+      // ★2026-09-17: onended·onerror·play().catch() 가 같은 함수를 가리켜, 파일이 없으면
+      //   한 단어에서 두 갈래가 동시에 흘러 목소리가 겹쳤다. 단계마다 딱 한 번만 넘어가게 막는다.
+      var koDone = false, enDone = false;
       var ko = new Audio('audio/sci_ko/' + sl + '.mp3');
       cur = ko;
-      ko.onended = ko.onerror = function(){
+      var afterEn = function(){
+        if (enDone) return; enDone = true;
+        if (seq === token) { i++; setTimeout(next, 300); }
+      };
+      var afterKo = function(){
+        if (koDone) return; koDone = true;
         if (seq !== token) return;
         var en = new Audio('audio/sci/' + sl + '.mp3');
         cur = en;
-        en.onended = en.onerror = function(){ if (seq === token) { i++; setTimeout(next, 300); } };
-        en.play().catch(function(){ if (seq === token) { i++; setTimeout(next, 300); } });
+        en.onended = afterEn;
+        en.onerror = afterEn;
+        en.play().catch(afterEn);
       };
-      ko.play().catch(function(){ if (seq === token) ko.onended(); });
+      ko.onended = afterKo;
+      ko.onerror = afterKo;
+      ko.play().catch(afterKo);
     })();
   }
   var origToggle = window.toggleAllPlay;
