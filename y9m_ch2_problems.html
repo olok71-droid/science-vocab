@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>9학년 수학 2단원 문제 · Expressions and formulae</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--green:#16a34a;--yellow:#c97a06;
+--pink:#db2777;--orange:#ea580c;--purple:#6d5dfc;--text:#243b6b;--strong:#16223f;--muted:#6b7a99;
+--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;flex-wrap:wrap;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.shot{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;margin:10px 0 14px;}
+.shot img{width:100%;height:auto;border-radius:8px;display:block;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">📐</div>
+  <div class="header-text">
+    <div class="header-title">2단원 Expressions and formulae</div>
+    <div class="header-sub">TERM 1 · 2단원 식과 공식 · 문제 + 풀이</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ========== 2.1 ========== -->
+<div class="sec">
+<div class="sec-head"><span class="sec-no">2.1</span><span class="sec-title">Substituting into expressions</span><span class="sec-ko">식에 수 대입하기</span></div>
+<div class="shot"><img src="assets/y9m/ch2/21_wex.png" alt="교과서 Worked example 2.1"></div>
+<div class="shot"><img src="assets/y9m/ch2/21_wex_ans.png" alt="Worked example 2.1 풀이 과정"></div>
+
+<span class="src">STARTER</span>
+<div class="shot"><img src="assets/y9m/ch2/21_starter.png" alt="STARTER Question 2"></div>
+<div class="q">
+  <div class="q-title">Question 2: If f = 5, g = 6, h = 4 and i = 2, find the value of each expression.</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> fg</span><span><b class="tag">(b)</b> hi</span><span><b class="tag">(c)</b> fgh</span><span><b class="tag">(d)</b> i<sup>3</sup></span>
+    <span><b class="tag">(e)</b> √h</span><span><b class="tag">(f)</b> 3f + 2g</span><span><b class="tag">(g)</b> 5h + 7i</span><span><b class="tag">(h)</b> 9h − 7i</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 5×6 = 30 &nbsp;(b) 4×2 = 8 &nbsp;(c) 5×6×4 = 120 &nbsp;(d) 2³ = 8<br>
+    (e) √4 = 2 &nbsp;(f) 15+12 = 27 &nbsp;(g) 20+14 = 34 &nbsp;(h) 36−14 = 22
+    <span class="how">글자 옆에 숫자가 붙어 있으면 곱셈이다(fg = f × g). 대입한 뒤에는 BIDMAS 순서(괄호 → 지수 → 곱셈·나눗셈 → 덧셈·뺄셈)로 계산한다.</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Substitution Into Formulae</span>
+<div class="q">
+  <div class="q-title">Question 1: Find the value of the formula using the numbers given</div>
+  <div class="q-ko">(a) T = 11(z + a), a = 2, z = 7 &nbsp; (b) L = 4(3c + b), c = −5, b = −6 &nbsp; (c) T = 4(5y + 3b + 3x), x = −3, y = 5, b = 2</div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) T = 11(7+2) = 11 × 9 = <b>99</b><br>
+    (b) L = 4(3×(−5) + (−6)) = 4(−15−6) = 4 × (−21) = <b>−84</b><br>
+    (c) T = 4(5×5 + 3×2 + 3×(−3)) = 4(25 + 6 − 9) = 4 × 22 = <b>88</b>
+    <span class="how">괄호 안을 먼저 다 계산하고 마지막에 밖의 수를 곱한다. 음수를 대입할 때는 괄호를 씌워서 부호 실수를 막는다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: C = 2πr — radius 8 cm 인 원의 둘레 (소수 첫째 자리)</div>
+  <details><summary>풀이</summary><div class="ans">
+    C = 2 × π × 8 = 16π = 50.265… → <b>50.3 cm</b>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: A = (x/360) × πr² — radius 6 cm 인 부채꼴의 넓이 (소수 첫째 자리)</div>
+  <details><summary>풀이</summary><div class="ans">
+    답 = <b>104.5 cm²</b>
+    <span class="how">부채꼴(sector)은 원 전체의 x/360 만큼이다. 먼저 원 넓이 πr² = π × 36 = 113.097… 을 구하고, 여기에 (중심각 x ÷ 360)을 곱한다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 4: s = ut + ½at² — u = 4 m/s, a = 5 m/s², t = 9 s 일 때 s</div>
+  <details><summary>풀이</summary><div class="ans">
+    s = 4×9 + ½×5×9² = 36 + ½×5×81 = 36 + 202.5 = <b>238.5 m</b>
+    <span class="how">지수를 먼저 계산한다(9² = 81). t² 는 (at)² 가 아니라 t 만 제곱하는 것이다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 5: A = 2lh + 2wh + 2lw — 길이 10 cm, 폭 7 cm, 높이 5 cm 직육면체의 겉넓이</div>
+  <details><summary>풀이</summary><div class="ans">
+    A = 2×10×5 + 2×7×5 + 2×10×7 = 100 + 70 + 140 = <b>310 cm²</b>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 6: V = ⅓πr²h — 반지름 6 m, 높이 3 m 인 원뿔의 부피 (정수로 반올림)</div>
+  <details><summary>풀이</summary><div class="ans">
+    V = ⅓ × π × 6² × 3 = ⅓ × π × 36 × 3 = 36π = 113.09… → <b>113 m³</b>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 7: C = (5/9)(F − 32) — F = 13 일 때 섭씨 (정수로 반올림)</div>
+  <details><summary>풀이</summary><div class="ans">
+    C = (5/9)(13 − 32) = (5/9)(−19) = −10.55… → <b>−11 °C</b>
+    <span class="how">괄호 안을 먼저 계산한다. 음수 × 양수 = 음수.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 8: A = P(1 + R/100)<sup>n</sup> — P = 152, R = 9, n = 7 (소수 둘째 자리)</div>
+  <details><summary>풀이</summary><div class="ans">
+    A = 152 × (1 + 0.09)<sup>7</sup> = 152 × 1.09<sup>7</sup> = 152 × 1.828039… = <b>277.86</b>
+    <span class="how">복리(compound interest) 공식이다. 괄호 안(1.09)을 먼저 구하고 n제곱한 뒤 P를 곱한다.</span>
+  </div></details>
+</div>
+</div>
+
+<!-- ========== 2.2 ========== -->
+<div class="sec">
+<div class="sec-head"><span class="sec-no">2.2</span><span class="sec-title">Constructing expressions</span><span class="sec-ko">식 세우기</span></div>
+<div class="shot"><img src="assets/y9m/ch2/22_section.png" alt="2.2 학습 목표와 핵심 낱말"></div>
+<div class="shot"><img src="assets/y9m/ch2/22_wex.png" alt="교과서 Worked example 2.2"></div>
+
+<div class="q">
+  <div class="q-title">Worked example 2.2 (a) Ahmad thinks of a number, n. Write an expression for:</div>
+  <div class="q-ko">i. 3으로 나눈 뒤 6을 뺀다 &nbsp; ii. 3을 더한 뒤 4를 곱한다 &nbsp; iii. 자기 자신과 곱한 뒤 반으로 나눈다 &nbsp; iv. 제곱근을 구한 뒤 5를 더한다</div>
+  <details><summary>풀이</summary><div class="ans">
+    i. n/3 − 6 &nbsp;&nbsp; ii. 4(n + 3) &nbsp;&nbsp; iii. n²/2 &nbsp;&nbsp; iv. √n + 5
+    <span class="how">'먼저 하는 계산'을 괄호로 묶는다. ii는 더하기를 먼저 하므로 4(n+3), 만약 4n+3 으로 쓰면 곱하기를 먼저 한 뜻이 되어 틀린다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Worked example 2.2 (b) 가로 3x + 4, 세로 x² 인 직사각형. i. 둘레 ii. 넓이</div>
+  <details><summary>풀이</summary><div class="ans">
+    i. 둘레 P = 2(3x+4) + 2x² = 2x² + 6x + 8<br>
+    ii. 넓이 A = x²(3x+4) = 3x³ + 4x²
+    <span class="how">둘레(perimeter)는 네 변을 모두 더하고, 넓이(area)는 가로 × 세로다. 넓이에서 x² × 3x = 3x³ 처럼 지수는 더한다.</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Forming Expressions (Corbettmaths 16) — Workout</span>
+<div class="q">
+  <div class="q-title">Question 1: Write an algebraic expression for each of the following</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 4 more than c</span><span><b class="tag">(b)</b> 2 lots of a</span><span><b class="tag">(c)</b> 3 less than b</span><span><b class="tag">(d)</b> m divided by 5</span>
+    <span><b class="tag">(e)</b> 7 multiplied by s</span><span><b class="tag">(f)</b> w subtract 1</span><span><b class="tag">(g)</b> e squared</span><span><b class="tag">(h)</b> y add 9</span>
+    <span><b class="tag">(i)</b> m shared between 3</span><span><b class="tag">(j)</b> 10 times x</span><span><b class="tag">(k)</b> k less than 8</span><span><b class="tag">(l)</b> 12 less than g</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) c + 4 &nbsp;(b) 2a &nbsp;(c) b − 3 &nbsp;(d) m/5 &nbsp;(e) 7s &nbsp;(f) w − 1<br>
+    (g) e² &nbsp;(h) y + 9 &nbsp;(i) m/3 &nbsp;(j) 10x &nbsp;(k) 8 − k &nbsp;(l) g − 12
+    <span class="how">★ 'A less than B' 는 B − A 다. (k) 'k less than 8' 은 8 − k, (c) '3 less than b' 는 b − 3. 순서를 거꾸로 쓰기 쉬운 곳이다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Write an algebraic expression</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> c add p</span><span><b class="tag">(b)</b> f minus m</span><span><b class="tag">(c)</b> a times b</span><span><b class="tag">(d)</b> p divided by z</span>
+    <span><b class="tag">(e)</b> b taken away from u</span><span><b class="tag">(f)</b> k add n add r</span><span><b class="tag">(g)</b> w less than c</span><span><b class="tag">(h)</b> l multiplied by m</span>
+    <span><b class="tag">(i)</b> y multiplied by m multiplied by a</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) c + p &nbsp;(b) f − m &nbsp;(c) ab &nbsp;(d) p/z &nbsp;(e) u − b &nbsp;(f) k + n + r &nbsp;(g) c − w &nbsp;(h) lm &nbsp;(i) amy (= a × m × y)
+    <span class="how">곱셈 기호는 쓰지 않고 붙여 쓴다. 보통 알파벳 순서로 정리한다(y × m × a = amy).</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: Write an algebraic expression</div>
+  <div class="q-ko">(a) m×2 후 +3 &nbsp;(b) h÷4 후 +7 &nbsp;(c) p² 후 +10 &nbsp;(d) t+2 후 ×5 &nbsp;(e) 9e 후 +1 &nbsp;(f) h÷3 후 +1 &nbsp;(g) m−6 후 ÷3 &nbsp;(h) y² 후 ×4 &nbsp;(i) k×4 후 제곱 &nbsp;(j) a² 후 ×b</div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 2m + 3 &nbsp;(b) h/4 + 7 &nbsp;(c) p² + 10 &nbsp;(d) 5(t + 2) &nbsp;(e) 9e + 1<br>
+    (f) h/3 + 1 &nbsp;(g) (m − 6)/3 &nbsp;(h) 4y² &nbsp;(i) (4k)² = 16k² &nbsp;(j) a²b
+    <span class="how">★ (h) 4y² 는 y 만 제곱, (i) (4k)² 는 4도 같이 제곱해서 16k². 괄호가 있느냐 없느냐로 뜻이 완전히 달라진다.</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Forming Expressions — Apply</span>
+<div class="q">
+  <div class="q-title">Question 1: An orange costs y pence, an apple z pence, a banana 17 pence. 총액을 식으로</div>
+  <div class="q-ko">(a) 오렌지 3 &nbsp;(b) 사과 5 &nbsp;(c) 오렌지 2 + 사과 3 &nbsp;(d) 사과 2 + 바나나 1 &nbsp;(e) 바나나 m개 &nbsp;(f) 오렌지 3 + 바나나 3 &nbsp;(g) 사과 20 + 오렌지 10 + 바나나 2 &nbsp;(h) 오렌지 4 + 사과 3 + 바나나 n개</div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 3y &nbsp;(b) 5z &nbsp;(c) 2y + 3z &nbsp;(d) 2z + 17 &nbsp;(e) 17m &nbsp;(f) 3y + 51 &nbsp;(g) 20z + 10y + 34 &nbsp;(h) 4y + 3z + 17n
+    <span class="how">바나나는 값이 정해져 있어(17) 개수를 곱한 숫자가 된다: 3개 = 51, 2개 = 34.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: A taxi driver charges £m per mile. 총 요금을 식으로</div>
+  <div class="q-ko">(a) 2 mile &nbsp;(b) 15 mile &nbsp;(c) x mile</div>
+  <details><summary>풀이</summary><div class="ans">(a) 2m &nbsp;(b) 15m &nbsp;(c) xm (= mx)</div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: Write an expression for the perimeter of each shape</div>
+  <div class="q-ko">(a) 한 변이 m 인 정사각형 &nbsp;(b) 가로 d, 세로 c 인 직사각형 &nbsp;(c) 두 변이 f, 밑변이 g 인 이등변삼각형</div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 4m &nbsp;(b) 2d + 2c = 2(d + c) &nbsp;(c) 2f + g
+    <span class="how">삼각형 그림의 빗금(tick)이 같은 변은 길이가 같다는 뜻이라 f 가 두 개다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 4: Alan is y years old. 자매들의 나이를 식으로</div>
+  <div class="q-ko">(a) Beth 3살 많음 (b) Clara 2살 적음 (c) Donna 3배 (d) Emma 절반 (e) Fiona는 Donna보다 2살 적음 (f) Georgia는 Beth의 2배 (g) Hannah는 Fiona보다 4살 많음 (h) Isabelle은 Clara의 3배</div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) y + 3 &nbsp;(b) y − 2 &nbsp;(c) 3y &nbsp;(d) y/2 &nbsp;(e) 3y − 2 &nbsp;(f) 2(y + 3) = 2y + 6 &nbsp;(g) 3y + 2 &nbsp;(h) 3(y − 2) = 3y − 6
+    <span class="how">(g) Hannah = Fiona + 4 = (3y − 2) + 4 = 3y + 2. 앞 문제의 답을 그대로 가져와 쓰는 문제다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 5: 쇼핑 후 남은 돈을 식으로</div>
+  <div class="q-ko">(a) Guy: £20 가지고 £y 씀 &nbsp;(b) Eric: £m 가지고 £12 씀 &nbsp;(c) Luke: £a 가지고 £b 씀</div>
+  <details><summary>풀이</summary><div class="ans">(a) 20 − y &nbsp;(b) m − 12 &nbsp;(c) a − b</div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 6: A TV costs £x. A DVD player costs £45 less than the TV. 둘의 합은?</div>
+  <details><summary>풀이</summary><div class="ans">
+    x + (x − 45) = <b>2x − 45</b>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 7: A plumber charges £15 per hour plus £y callout. 총액을 식으로</div>
+  <div class="q-ko">(a) 3시간 &nbsp;(b) 8시간 &nbsp;(c) n시간</div>
+  <details><summary>풀이</summary><div class="ans">(a) 45 + y &nbsp;(b) 120 + y &nbsp;(c) 15n + y</div></details>
+</div>
+</div>
+
+<!-- ========== 2.3 ========== -->
+<div class="sec">
+<div class="sec-head"><span class="sec-no">2.3</span><span class="sec-title">Expressions and indices</span><span class="sec-ko">식의 지수법칙</span></div>
+<div class="shot"><img src="assets/y9m/ch2/23_laws.png" alt="대수식에서의 지수법칙"></div>
+
+<span class="src">Worksheet · Basic Index Laws with Algebra (Dr Frost)</span>
+<div class="q">
+  <div class="q-title">Question 1: Simplify</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 2<sup>7</sup> × 2<sup>5</sup></span><span><b class="tag">(b)</b> 8<sup>2</sup> × 5<sup>2</sup></span><span><b class="tag">(c)</b> 7<sup>−3</sup> × 7<sup>5</sup></span><span><b class="tag">(d)</b> 3<sup>0.2</sup> × 3<sup>1/4</sup></span>
+    <span><b class="tag">(e)</b> x<sup>8</sup> × x<sup>5</sup></span><span><b class="tag">(f)</b> g<sup>2</sup> × h<sup>3</sup></span><span><b class="tag">(g)</b> p<sup>−2</sup> × p<sup>5</sup></span><span><b class="tag">(h)</b> m<sup>1/4</sup> × m<sup>0.2</sup></span>
+    <span><b class="tag">(i)</b> 5<sup>8</sup> ÷ 5<sup>3</sup></span><span><b class="tag">(j)</b> 6<sup>16</sup> ÷ 6<sup>4</sup></span><span><b class="tag">(k)</b> (5<sup>2</sup>)<sup>7</sup></span><span><b class="tag">(l)</b> (0.2<sup>5</sup>)<sup>0</sup></span>
+    <span><b class="tag">(m)</b> y<sup>8</sup> ÷ y<sup>5</sup></span><span><b class="tag">(n)</b> d<sup>16</sup>/d<sup>8</sup></span><span><b class="tag">(o)</b> (g<sup>3</sup>)<sup>7</sup></span><span><b class="tag">(p)</b> (b<sup>−0.3</sup>)<sup>1</sup></span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 2<sup>12</sup> &nbsp;(b) 1600 (밑이 달라 지수를 더할 수 없다. 64 × 25 = 1600 = 40²) &nbsp;(c) 7<sup>2</sup> = 49 &nbsp;(d) 3<sup>0.45</sup><br>
+    (e) x<sup>13</sup> &nbsp;(f) g²h³ (더 못 줄인다) &nbsp;(g) p<sup>3</sup> &nbsp;(h) m<sup>0.45</sup><br>
+    (i) 5<sup>5</sup> = 3125 &nbsp;(j) 6<sup>12</sup> &nbsp;(k) 5<sup>14</sup> &nbsp;(l) 1<br>
+    (m) y<sup>3</sup> &nbsp;(n) d<sup>8</sup> &nbsp;(o) g<sup>21</sup> &nbsp;(p) b<sup>−0.3</sup>
+    <span class="how">지수법칙은 <b>밑(base)이 같을 때만</b> 쓴다. 곱하면 더하고(a<sup>m</sup>a<sup>n</sup>=a<sup>m+n</sup>), 나누면 빼고(a<sup>m−n</sup>), 괄호 밖 지수는 곱한다((a<sup>m</sup>)<sup>n</sup>=a<sup>mn</sup>). 무엇이든 0제곱은 1이다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Identify all the mistakes, then find the correct answers</div>
+  <div class="q-ko">① 2a²b⁴c³ × 8ab<sup>−2</sup>c<sup>−3</sup> 를 0 이라고 했다 &nbsp; ② 6p⁸q<sup>−2</sup>r⁵ ÷ 3p⁴q<sup>−3</sup>r⁴ 를 2p²q<sup>−5</sup>r 이라고 했다</div>
+  <details><summary>풀이</summary><div class="ans">
+    ① 틀린 곳 3개 — a² × a = a<b>³</b>(a² 아님), b⁴ × b<sup>−2</sup> = b<b>²</b>(b<sup>−8</sup> 아님, 4+(−2)=2), c³ × c<sup>−3</sup> = c<sup>0</sup> = <b>1</b>(0 아님).<br>
+    바른 답: <b>16a³b²</b><br>
+    ② 틀린 곳 2개 — p⁸ ÷ p⁴ = p<b>⁴</b>(p² 아님), q<sup>−2</sup> ÷ q<sup>−3</sup> = q<sup>−2−(−3)</sup> = q<b>¹</b>(q<sup>−5</sup> 아님).<br>
+    바른 답: <b>2p⁴qr</b>
+    <span class="how">★ a<sup>0</sup> = 1 이다. 0 이 아니다. 그리고 음수 지수를 뺄 때는 −(−3) = +3 이 되는 것을 잊지 마라.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3~6</div>
+  <div class="q-ko">
+    3) Write down the value of y<sup>0</sup><br>
+    4) (y⁵ × y<sup>n</sup>) ÷ y⁶ = y<sup>13</sup> 일 때 n<br>
+    5) (x<sup>−6</sup>)⁵ ÷ x⁴ = x<sup>n</sup> 일 때 n<br>
+    6) (3x<sup>−5/4</sup> × 4x<sup>7/4</sup>) ÷ x<sup>3/2</sup> 를 간단히<br>
+    ★ 3<sup>x</sup> × 3<sup>x+3</sup> = 81 을 풀어라
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    3) y<sup>0</sup> = <b>1</b><br>
+    4) 5 + n − 6 = 13 → <b>n = 14</b><br>
+    5) (x<sup>−6</sup>)⁵ = x<sup>−30</sup>, 여기서 x⁴ 를 나누면 −30 − 4 = <b>n = −34</b><br>
+    6) 3 × 4 = 12, 지수는 −5/4 + 7/4 − 3/2 = 1/2 − 3/2 = −1 → <b>12x<sup>−1</sup> = 12/x</b><br>
+    ★ 3<sup>x+(x+3)</sup> = 3<sup>2x+3</sup> = 3⁴ → 2x + 3 = 4 → <b>x = 0.5</b>
+    <span class="how">지수가 같은 밑으로 맞춰지면 '지수끼리 같다'로 놓고 방정식을 푼다(81 = 3⁴).</span>
+  </div></details>
+</div>
+</div>
+
+<!-- ========== 2.4 ========== -->
+<div class="sec">
+<div class="sec-head"><span class="sec-no">2.4</span><span class="sec-title">Expanding the product of two linear expressions</span><span class="sec-ko">두 괄호의 전개</span></div>
+<div class="shot"><img src="assets/y9m/ch2/24_section.png" alt="2.4 학습 목표와 핵심 낱말"></div>
+
+<span class="src">STARTER</span>
+<div class="shot"><img src="assets/y9m/ch2/24_starter.png" alt="STARTER 단일 괄호 전개"></div>
+<div class="q">
+  <div class="q-title">Expand and simplify</div>
+  <div class="items">
+    <span><b class="tag">(d)</b> 2e(4e+3) − 3e(e−5)</span><span><b class="tag">(e)</b> a(3+c) + c(a+2)</span><span><b class="tag">(f)</b> m(a+7) − a(4−3m)</span>
+    <span><b class="tag">(g)</b> 8c(8−3a) + 3(4−c)</span><span><b class="tag">(h)</b> 5y(3y+z) − 2y(4y−3z)</span><span><b class="tag">(i)</b> 4c(3c−c²) − 2c²(4−5c)</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (d) 8e²+6e −3e²+15e = <b>5e² + 21e</b><br>
+    (e) 3a+ac + ac+2c = <b>3a + 2ac + 2c</b><br>
+    (f) am+7m −4a+3am = <b>4am + 7m − 4a</b><br>
+    (g) 64c−24ac + 12−3c = <b>61c − 24ac + 12</b><br>
+    (h) 15y²+5yz −8y²+6yz = <b>7y² + 11yz</b><br>
+    (i) 12c²−4c³ −8c²+10c³ = <b>6c³ + 4c²</b>
+    <span class="how">★ 괄호 앞이 마이너스면 괄호 안 <b>모든</b> 항의 부호가 바뀐다. −2y(4y − 3z) = −8y² <b>+</b> 6yz.</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Expanding Two Brackets (Corbettmaths 14)</span>
+<div class="q">
+  <div class="q-title">Question 1: Expand and simplify</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (w+4)(w+2)</span><span><b class="tag">(b)</b> (y+1)(y+2)</span><span><b class="tag">(c)</b> (c+2)(c+5)</span><span><b class="tag">(d)</b> (x+6)(x+7)</span>
+    <span><b class="tag">(e)</b> (a+5)(a−3)</span><span><b class="tag">(f)</b> (g+7)(g−4)</span><span><b class="tag">(g)</b> (s−4)(s+5)</span><span><b class="tag">(h)</b> (x+1)(x−3)</span>
+    <span><b class="tag">(i)</b> (p−3)(p−2)</span><span><b class="tag">(j)</b> (y−4)(y−4)</span><span><b class="tag">(k)</b> (k−5)(k−6)</span><span><b class="tag">(l)</b> (v+4)(v+3)</span>
+    <span><b class="tag">(m)</b> (n+8)(n−10)</span><span><b class="tag">(n)</b> (b−3)(b+7)</span><span><b class="tag">(o)</b> (z−9)(z−3)</span><span><b class="tag">(p)</b> (a−5)(a+7)</span>
+    <span><b class="tag">(q)</b> (w+2)(w−8)</span><span><b class="tag">(r)</b> (r+7)(r+7)</span><span><b class="tag">(s)</b> (w−11)(w+1)</span><span><b class="tag">(t)</b> (t−8)(t−7)</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) w²+6w+8 &nbsp;(b) y²+3y+2 &nbsp;(c) c²+7c+10 &nbsp;(d) x²+13x+42<br>
+    (e) a²+2a−15 &nbsp;(f) g²+3g−28 &nbsp;(g) s²+s−20 &nbsp;(h) x²−2x−3<br>
+    (i) p²−5p+6 &nbsp;(j) y²−8y+16 &nbsp;(k) k²−11k+30 &nbsp;(l) v²+7v+12<br>
+    (m) n²−2n−80 &nbsp;(n) b²+4b−21 &nbsp;(o) z²−12z+27 &nbsp;(p) a²+2a−35<br>
+    (q) w²−6w−16 &nbsp;(r) r²+14r+49 &nbsp;(s) w²−10w−11 &nbsp;(t) t²−15t+56
+    <span class="how">FOIL 순서로 곱한다: 앞×앞, 앞×뒤, 뒤×앞, 뒤×뒤. 가운데 항은 두 수의 <b>합</b>, 마지막 항은 두 수의 <b>곱</b>이다. 예 (x+6)(x+7) → 6+7 = 13, 6×7 = 42.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Expand and simplify</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (8+x)(2+x)</span><span><b class="tag">(b)</b> (9+y)(4−y)</span><span><b class="tag">(c)</b> (1+y)(3+y)</span><span><b class="tag">(d)</b> (10−t)(4−t)</span>
+    <span><b class="tag">(e)</b> (4−w)(w+2)</span><span><b class="tag">(f)</b> (6−x)(x−4)</span><span><b class="tag">(g)</b> (2−r)(8−r)</span><span><b class="tag">(h)</b> (x+2)(8−x)</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) x²+10x+16 &nbsp;(b) −y²−5y+36 &nbsp;(c) y²+4y+3 &nbsp;(d) t²−14t+40<br>
+    (e) −w²+2w+8 &nbsp;(f) −x²+10x−24 &nbsp;(g) r²−10r+16 &nbsp;(h) −x²+6x+16
+    <span class="how">(d)처럼 마이너스 두 개가 곱해지면 (−t)(−t) = +t² 로 양수가 된다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: Expand and simplify (difference of two squares)</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (y+2)(y−2)</span><span><b class="tag">(b)</b> (w+7)(w−7)</span><span><b class="tag">(c)</b> (a+1)(a−1)</span><span><b class="tag">(d)</b> (x−10)(x+10)</span>
+    <span><b class="tag">(e)</b> (g−8)(g+8)</span><span><b class="tag">(f)</b> (6−x)(6+x)</span><span><b class="tag">(g)</b> (4−r)(4+r)</span><span><b class="tag">(h)</b> (11+y)(11−y)</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) y²−4 &nbsp;(b) w²−49 &nbsp;(c) a²−1 &nbsp;(d) x²−100 &nbsp;(e) g²−64 &nbsp;(f) 36−x² &nbsp;(g) 16−r² &nbsp;(h) 121−y²
+    <span class="how">(a+b)(a−b) = a² − b². 가운데 항이 서로 지워져서 항이 두 개만 남는다. 이것이 <b>difference of two squares</b>(두 제곱의 차)다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 4: Expand and simplify</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (2c+1)(2c+3)</span><span><b class="tag">(b)</b> (5x+1)(2x+5)</span><span><b class="tag">(c)</b> (3w+2)(w+1)</span><span><b class="tag">(d)</b> (3p+2)(2p−1)</span>
+    <span><b class="tag">(e)</b> (5g−4)(g+1)</span><span><b class="tag">(f)</b> (2a−3)(4a+7)</span><span><b class="tag">(g)</b> (4r−5)(2r−3)</span><span><b class="tag">(h)</b> (2y−3)(9y−1)</span>
+    <span><b class="tag">(i)</b> (5k−4)(2k−1)</span><span><b class="tag">(j)</b> (2n+3)(2n+5)</span><span><b class="tag">(k)</b> (3b+4)(2b+9)</span><span><b class="tag">(l)</b> (2z−9)(6z−5)</span>
+    <span><b class="tag">(m)</b> (4w−3)(3w−1)</span><span><b class="tag">(n)</b> (4r+3)(3r+2)</span><span><b class="tag">(o)</b> (5w−1)(2w−3)</span><span><b class="tag">(p)</b> (3+2c)(5+c)</span>
+    <span><b class="tag">(q)</b> (9+2x)(3−2x)</span><span><b class="tag">(r)</b> (9−4y)(2+3y)</span><span><b class="tag">(s)</b> (3w+2)(3w−2)</span><span><b class="tag">(t)</b> (2y+3)(2y−3)</span>
+    <span><b class="tag">(u)</b> (5w−1)(5w+1)</span><span><b class="tag">(v)</b> (9−5a)(9+5a)</span><span><b class="tag">(w)</b> (1−2x)(1+2x)</span><span><b class="tag">(x)</b> (3+2y)(3−2y)</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 4c²+8c+3 &nbsp;(b) 10x²+27x+5 &nbsp;(c) 3w²+5w+2 &nbsp;(d) 6p²+p−2<br>
+    (e) 5g²+g−4 &nbsp;(f) 8a²+2a−21 &nbsp;(g) 8r²−22r+15 &nbsp;(h) 18y²−29y+3<br>
+    (i) 10k²−13k+4 &nbsp;(j) 4n²+16n+15 &nbsp;(k) 6b²+35b+36 &nbsp;(l) 12z²−64z+45<br>
+    (m) 12w²−13w+3 &nbsp;(n) 12r²+17r+6 &nbsp;(o) 10w²−17w+3 &nbsp;(p) 2c²+13c+15<br>
+    (q) −4x²−12x+27 &nbsp;(r) −12y²+19y+18 &nbsp;(s) 9w²−4 &nbsp;(t) 4y²−9<br>
+    (u) 25w²−1 &nbsp;(v) 81−25a² &nbsp;(w) 1−4x² &nbsp;(x) 9−4y²
+    <span class="how">앞에 숫자가 붙은 항은 그 숫자까지 곱해야 한다: (3w+2)(3w−2) = 9w² − 4 처럼 (3w)² = 9w².</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 5: Expand and simplify (perfect square)</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (a+2)²</span><span><b class="tag">(b)</b> (x+7)²</span><span><b class="tag">(c)</b> (z−9)²</span><span><b class="tag">(d)</b> (p+1)²</span>
+    <span><b class="tag">(e)</b> (c−5)²</span><span><b class="tag">(f)</b> (k+4)²</span><span><b class="tag">(g)</b> (y−3)²</span><span><b class="tag">(h)</b> (10+r)²</span>
+    <span><b class="tag">(i)</b> (3g+2)²</span><span><b class="tag">(j)</b> (2b−1)²</span><span><b class="tag">(k)</b> (3m−5)²</span><span><b class="tag">(l)</b> (2v+9)²</span>
+    <span><b class="tag">(m)</b> (7−a)²</span><span><b class="tag">(n)</b> (4−3s)²</span><span><b class="tag">(o)</b> (8+5h)²</span><span><b class="tag">(p)</b> (7−2p)²</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) a²+4a+4 &nbsp;(b) x²+14x+49 &nbsp;(c) z²−18z+81 &nbsp;(d) p²+2p+1<br>
+    (e) c²−10c+25 &nbsp;(f) k²+8k+16 &nbsp;(g) y²−6y+9 &nbsp;(h) 100+20r+r²<br>
+    (i) 9g²+12g+4 &nbsp;(j) 4b²−4b+1 &nbsp;(k) 9m²−30m+25 &nbsp;(l) 4v²+36v+81<br>
+    (m) 49−14a+a² &nbsp;(n) 16−24s+9s² &nbsp;(o) 64+80h+25h² &nbsp;(p) 49−28p+4p²
+    <span class="how">★ (x+7)² 는 x²+49 가 <b>아니다</b>. (x+7)(x+7) 로 써서 전개하면 가운데 항 14x 가 반드시 나온다. 공식 (a±b)² = a² ± 2ab + b².</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 6: Expand and simplify</div>
+  <div class="q-ko">(a) (a+2)(a+3)+(a+4)(a+1) &nbsp;(b) (2w+3)(w−1)+(w−3)(w−2) &nbsp;(c) (x+9)(3x+4)−(x+3)(x−1) &nbsp;(d) 2(x+1)(x+4)−(x+1)(x+2) &nbsp;(e) (x+4)²+(x+1)² &nbsp;(f) (2x+1)²−(x−5)²</div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) (a²+5a+6)+(a²+5a+4) = <b>2a²+10a+10</b><br>
+    (b) (2w²+w−3)+(w²−5w+6) = <b>3w²−4w+3</b><br>
+    (c) (3x²+31x+36)−(x²+2x−3) = <b>2x²+29x+39</b><br>
+    (d) 2(x²+5x+4)−(x²+3x+2) = (2x²+10x+8)−(x²+3x+2) = <b>x²+7x+6</b><br>
+    (e) (x²+8x+16)+(x²+2x+1) = <b>2x²+10x+17</b><br>
+    (f) (4x²+4x+1)−(x²−10x+25) = <b>3x²+14x−24</b>
+    <span class="how">뺄 때는 뒤 괄호 전체에 마이너스를 나눠 준다. −(x²+2x−3) = −x²−2x<b>+</b>3.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Apply Question 1: Can you spot any mistakes?</div>
+  <div class="q-ko">① (5y−1)(y−2) 를 5y²−10y−y−2 = 5y²−11y−2 라고 했다 &nbsp; ② (y−7)² 를 y²−49 라고 했다</div>
+  <details><summary>풀이</summary><div class="ans">
+    ① 마지막 항이 틀렸다. (−1)×(−2) = <b>+2</b> 이므로 5y²−10y−y<b>+2</b> = <b>5y²−11y+2</b>.<br>
+    ② 제곱을 각 항에 따로 하면 안 된다. (y−7)² = (y−7)(y−7) = <b>y²−14y+49</b>.
+  </div></details>
+</div>
+</div>
+
+<!-- ========== 2.5 ========== -->
+<div class="sec">
+<div class="sec-head"><span class="sec-no">2.5</span><span class="sec-title">Simplifying algebraic fractions</span><span class="sec-ko">대수 분수 정리하기</span></div>
+<div class="shot"><img src="assets/y9m/ch2/25_section.png" alt="2.5 학습 목표와 핵심 낱말"></div>
+
+<span class="src">STARTER</span>
+<div class="shot"><img src="assets/y9m/ch2/25_starter.png" alt="STARTER 분수 덧셈·뺄셈"></div>
+<div class="q">
+  <div class="q-title">Question 1: Work out the following additions and subtractions. Give your answers as simplified fractions.</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 2/5 + 1/2</span><span><b class="tag">(b)</b> 2/7 + 1/2</span><span><b class="tag">(c)</b> 1/3 + 1/2</span><span><b class="tag">(d)</b> 4/5 − 2/3</span>
+    <span><b class="tag">(e)</b> 8/9 − 1/3</span><span><b class="tag">(f)</b> 2/3 + 1/6</span><span><b class="tag">(g)</b> 3/10 + 2/5</span><span><b class="tag">(h)</b> 3/8 + 1/4</span>
+    <span><b class="tag">(i)</b> 7/15 − 1/5</span><span><b class="tag">(j)</b> 3/4 − 2/5</span><span><b class="tag">(k)</b> 3/10 + 3/8</span><span><b class="tag">(l)</b> 2/5 + 4/7</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 9/10 &nbsp;(b) 11/14 &nbsp;(c) 5/6 &nbsp;(d) 2/15 &nbsp;(e) 5/9 &nbsp;(f) 5/6<br>
+    (g) 7/10 &nbsp;(h) 5/8 &nbsp;(i) 4/15 &nbsp;(j) 7/20 &nbsp;(k) 27/40 &nbsp;(l) 34/35
+    <span class="how">분모를 최소공배수(LCM)로 맞춘 뒤 분자끼리 더하거나 뺀다. 예 (k) 10과 8의 LCM은 40 → 12/40 + 15/40 = 27/40.</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Algebraic Fractions (Corbettmaths 21)</span>
+<div class="q">
+  <div class="q-title">Question 1: Express as a single simplified fraction</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> x/3 + x/5</span><span><b class="tag">(b)</b> c/2 + c/7</span><span><b class="tag">(c)</b> w/3 + w/9</span><span><b class="tag">(d)</b> x/2 − x/3</span>
+    <span><b class="tag">(e)</b> a/5 − a/9</span><span><b class="tag">(f)</b> m/2 − m/8</span><span><b class="tag">(g)</b> m/3 + 2m/7</span><span><b class="tag">(h)</b> 3x/5 + x/2</span>
+    <span><b class="tag">(i)</b> 3c/4 + 5c/9</span><span><b class="tag">(j)</b> m/2 − 2m/5</span><span><b class="tag">(k)</b> 3n/4 − 5n/9</span><span><b class="tag">(l)</b> 7h/8 − 5h/12</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 8x/15 &nbsp;(b) 9c/14 &nbsp;(c) 4w/9 &nbsp;(d) x/6 &nbsp;(e) 4a/45 &nbsp;(f) 3m/8<br>
+    (g) 13m/21 &nbsp;(h) 11x/10 &nbsp;(i) 47c/36 &nbsp;(j) m/10 &nbsp;(k) 7n/36 &nbsp;(l) 11h/24
+    <span class="how">숫자 분수와 똑같다. 분모를 맞추고 분자끼리 계산한 뒤 글자는 그대로 둔다. 예 (i) LCD 36 → 27c/36 + 20c/36 = 47c/36.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Express as a single simplified fraction</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 2/x² + 5/x</span><span><b class="tag">(b)</b> 5/6x − 1/3x</span><span><b class="tag">(c)</b> 2/fg − 4/g</span><span><b class="tag">(d)</b> 6/ac + 2/3</span>
+    <span><b class="tag">(e)</b> 9/w + wx/4</span><span><b class="tag">(f)</b> d/3 + 2/d²</span><span><b class="tag">(g)</b> m²/6 − 9/4m</span><span><b class="tag">(h)</b> 3/4b² − 1/2b</span>
+    <span><b class="tag">(i)</b> ac/5 + 4/c</span><span><b class="tag">(j)</b> x³/w − 2/wx²</span><span><b class="tag">(k)</b> 2/ab² − 3/b³</span><span><b class="tag">(l)</b> xy/5 − 1/x</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) (2 + 5x)/x² &nbsp;(b) 1/(2x) &nbsp;(c) (2 − 4f)/(fg) &nbsp;(d) (18 + 2ac)/(3ac)<br>
+    (e) (36 + w²x)/(4w) &nbsp;(f) (d³ + 6)/(3d²) &nbsp;(g) (2m³ − 27)/(12m) &nbsp;(h) (3 − 2b)/(4b²)<br>
+    (i) (ac² + 20)/(5c) &nbsp;(j) (x⁵ − 2)/(wx²) &nbsp;(k) (2b − 3a)/(ab³) &nbsp;(l) (x²y − 5)/(5x)
+    <span class="how">분모가 글자여도 방법은 같다. 두 분모의 공통분모를 만들고, 각 분자에 '모자란 만큼'을 곱한다. 예 (b) 5/6x − 1/3x = 5/6x − 2/6x = 3/6x = 1/2x.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: Express as a single simplified fraction</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (x+4)/3 + (x+1)/2</span><span><b class="tag">(b)</b> (2x+1)/2 + (x+3)/5</span><span><b class="tag">(c)</b> (5x−2)/3 + (2x+7)/4</span>
+    <span><b class="tag">(d)</b> (3x+11)/2 + (x−20)/3</span><span><b class="tag">(e)</b> (5x−4)/2 + (x+1)/3</span><span><b class="tag">(f)</b> (x−4)/8 + (2x−3)/2</span>
+    <span><b class="tag">(g)</b> (7x+4)/2 − (x+1)/3</span><span><b class="tag">(h)</b> (9x+1)/5 − (x+2)/2</span><span><b class="tag">(i)</b> (3x+11)/2 − (2x−3)/6</span>
+    <span><b class="tag">(j)</b> (x−8)/3 − (x−5)/7</span><span><b class="tag">(k)</b> (4x−7)/10 − (2x−9)/3</span><span><b class="tag">(l)</b> (5−x)/6 − (8−3x)/10</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) (5x+11)/6 &nbsp;(b) (12x+11)/10 &nbsp;(c) (26x+13)/12 &nbsp;(d) (11x−7)/6<br>
+    (e) (17x−10)/6 &nbsp;(f) (9x−16)/8 &nbsp;(g) (19x+10)/6 &nbsp;(h) (13x−8)/10<br>
+    (i) (7x+36)/6 &nbsp;(j) (4x−41)/21 &nbsp;(k) (69−8x)/30 &nbsp;(l) (4x+1)/30
+    <span class="how">★ 분자가 여러 항일 때는 반드시 괄호를 쓴 뒤 곱한다. (g) 3(7x+4) − 2(x+1) = 21x+12−2x−2 = 19x+10.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 4: Express as a single simplified fraction</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 2/(x+5) + 3/(x+1)</span><span><b class="tag">(b)</b> 2/(x+1) + 1/(x+3)</span><span><b class="tag">(c)</b> 4/(x+5) − 2/(x−1)</span>
+    <span><b class="tag">(d)</b> (x+1)/(x−2) + (x+3)/(x+5)</span><span><b class="tag">(e)</b> (x+3)/(2x+1) − (x−2)/(x−1)</span><span><b class="tag">(f)</b> x/(x+7) + (2x+5)/(3x+1)</span>
+    <span><b class="tag">(g)</b> 3/(x+1) + (x+7)/((x+1)(x+2))</span><span><b class="tag">(h)</b> (1−x)/((x−7)(x+1)) − 2/(x−7)</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) (5x+17)/((x+5)(x+1)) &nbsp;(b) (3x+7)/((x+1)(x+3)) &nbsp;(c) (2x−14)/((x+5)(x−1))<br>
+    (d) (2x²+7x−1)/((x−2)(x+5)) &nbsp;(e) (−x²+5x−1)/((2x+1)(x−1)) &nbsp;(f) 5(x²+4x+7)/((x+7)(3x+1))<br>
+    (g) (4x+13)/((x+1)(x+2)) &nbsp;(h) −(3x+1)/((x−7)(x+1))
+    <span class="how">공통분모는 두 분모를 그대로 곱한 것이다(이미 한쪽이 다른 쪽을 포함하면 그것만 쓴다 — (g),(h)). 분자를 전개해 정리하고, 분모는 괄호 그대로 둔다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 5: Solve the following equations</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (x+5)/3 + (x+1)/2 = 8</span><span><b class="tag">(b)</b> (x+6)/5 + (x−3)/2 = 13</span><span><b class="tag">(c)</b> (2x−1)/4 + (x−3)/5 = 3</span>
+    <span><b class="tag">(d)</b> (x+5)/10 − (x+4)/2 = 1</span><span><b class="tag">(e)</b> (x−3)/4 − (x−8)/3 = 4</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) ×6 → 2(x+5)+3(x+1)=48 → 5x+13=48 → <b>x = 7</b><br>
+    (b) ×10 → 2(x+6)+5(x−3)=130 → 7x−3=130 → <b>x = 19</b><br>
+    (c) ×20 → 5(2x−1)+4(x−3)=60 → 14x−17=60 → <b>x = 5.5</b><br>
+    (d) ×10 → (x+5)−5(x+4)=10 → −4x−15=10 → <b>x = −6.25</b><br>
+    (e) ×12 → 3(x−3)−4(x−8)=48 → −x+23=48 → <b>x = −25</b>
+    <span class="how">분수 방정식은 양변에 분모들의 최소공배수를 곱해 분수를 없앤 뒤 푼다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 6: Solve the following equations</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 4/(x+1) + 2/(x−2) = 3</span><span><b class="tag">(b)</b> 2/(x−3) + 1/(x−4) = 2</span><span><b class="tag">(c)</b> 2/(x−5) − 2/(x−4) = 1</span>
+    <span><b class="tag">(d)</b> 2/(x+1) − 10/(x+4) = −1</span><span><b class="tag">(e)</b> 3/(x−2) + 3/(x+2) = 2</span><span><b class="tag">(f)</b> 11/((x−1)(x+4)) + 5/(x−1) = 1</span>
+  </div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 6x−6 = 3(x²−x−2) → 3x²−9x = 0 → 3x(x−3)=0 → <b>x = 0 또는 3</b><br>
+    (b) 3x−11 = 2(x²−7x+12) → 2x²−17x+35=0 → <b>x = 5 또는 3.5</b><br>
+    (c) 2 = x²−9x+20 → x²−9x+18=0 → (x−3)(x−6)=0 → <b>x = 3 또는 6</b><br>
+    (d) −8x−2 = −(x²+5x+4) → x²−3x+2=0 → (x−1)(x−2)=0 → <b>x = 1 또는 2</b><br>
+    (e) 6x = 2(x²−4) → x²−3x−4=0 → (x−4)(x+1)=0 → <b>x = 4 또는 −1</b><br>
+    (f) 11+5(x+4) = (x−1)(x+4) → x²−2x−35=0 → (x−7)(x+5)=0 → <b>x = 7 또는 −5</b>
+    <span class="how">양변에 분모를 모두 곱하면 이차방정식이 된다. 인수분해하면 답이 두 개 나온다.</span>
+  </div></details>
+</div>
+</div>
+
+<!-- ========== 2.6 ========== -->
+<div class="sec">
+<div class="sec-head"><span class="sec-no">2.6</span><span class="sec-title">Deriving and using formulae</span><span class="sec-ko">공식 세우기 · 주어 바꾸기</span></div>
+<div class="shot"><img src="assets/y9m/ch2/26_section.png" alt="2.6 학습 목표와 핵심 낱말"></div>
+<div class="shot"><img src="assets/y9m/ch2/26_wex.png" alt="교과서 Worked example 2.6"></div>
+
+<div class="q">
+  <div class="q-title">Worked example 2.6: Li는 하루에 고정급 W달러 + 시간당 R달러를 받는다. H시간 일할 때 총급여 P.</div>
+  <div class="q-ko">a. 공식 세우기 &nbsp; b. W = 60, H = 8¼, R = 4.80 일 때 P &nbsp; c. H를 주어(subject)로 바꾸기 &nbsp; d. P = 91, W = 65, R = 5.20 일 때 H</div>
+  <details><summary>풀이</summary><div class="ans">
+    a. <b>P = W + RH</b><br>
+    b. P = 60 + 4.80 × 8.25 = 60 + 39.60 = <b>$99.60</b><br>
+    c. P − W = RH → <b>H = (P − W)/R</b><br>
+    d. H = (91 − 65)/5.20 = 26/5.2 = <b>5시간</b>
+    <span class="how">주어 바꾸기(changing the subject)는 방정식 풀기와 같다. 구하려는 글자만 남기고, 나머지는 <b>반대 연산</b>으로 옮긴다(더하기 ↔ 빼기, 곱하기 ↔ 나누기).</span>
+  </div></details>
+</div>
+
+<div class="shot"><img src="assets/y9m/ch2/26_q5.png" alt="Question 5 — F = 1.8C + 32"></div>
+<div class="q">
+  <div class="q-title">Question 5: F = 1.8C + 32</div>
+  <div class="q-ko">(a) C = 10 일 때 F &nbsp;(b) C = 20 일 때 F &nbsp;(c) C = 4 일 때 F &nbsp;(d) F = 35.6 일 때 C &nbsp;(e) F = 41 일 때 C &nbsp;(f) F = 112 일 때 C &nbsp;(g) F와 C가 같아지는 온도</div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 1.8×10+32 = <b>50</b> &nbsp;(b) 1.8×20+32 = <b>68</b> &nbsp;(c) 1.8×4+32 = <b>39.2</b><br>
+    (d) C = (35.6−32)/1.8 = 3.6/1.8 = <b>2</b> &nbsp;(e) C = (41−32)/1.8 = 9/1.8 = <b>5</b> &nbsp;(f) C = (112−32)/1.8 = 80/1.8 = <b>44.44…</b><br>
+    (g) C = 1.8C + 32 → −0.8C = 32 → <b>−40°</b> (F도 −40, C도 −40)
+    <span class="how">C를 구할 때는 먼저 32를 빼고 1.8로 나눈다 → C = (F − 32)/1.8. (g)처럼 '두 값이 같다'는 F 자리에 C를 넣고 방정식을 푼다.</span>
+  </div></details>
+</div>
+</div>
+
+</div>
+</body>
+</html>
