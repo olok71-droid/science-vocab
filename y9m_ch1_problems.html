@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>9학년 수학 1단원 문제 · Number and Calculation</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--green:#16a34a;--yellow:#c97a06;
+--pink:#db2777;--orange:#ea580c;--purple:#6d5dfc;--text:#243b6b;--strong:#16223f;--muted:#6b7a99;
+--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.intro{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:16px;
+font-size:13px;line-height:1.75;}
+.intro b{color:var(--strong);}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);margin-left:2px;}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+.foot{text-align:center;color:var(--muted);font-size:11px;margin-top:26px;line-height:1.8;}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">📐</div>
+  <div class="header-text">
+    <div class="header-title">1단원 Number and Calculation</div>
+    <div class="header-sub">TERM 1 · 1단원 수와 계산 · 문제 + 풀이(열고 닫기)</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="intro">
+  선생님 OneNote(<b>SJI Year 9 Math</b>)의 <b>CHAPTER 1</b>에 있는 문제를 전부 옮긴 것이다.<br>
+  소단원은 <b>1.1 무리수(Irrational numbers) · 1.2 표준형(Standard form) · 1.3 지수(Indices)</b> 세 개다.<br>
+  답과 풀이는 <b>▶ 답·풀이 보기</b>를 눌러야 나온다. 먼저 스스로 풀고 눌러라.
+</div>
+
+<!-- ================= 1.1 ================= -->
+<div class="sec">
+<div class="sec-head"><span class="sec-no">1.1</span><span class="sec-title">Irrational numbers</span><span class="sec-ko">무리수 · 서드(surd)</span></div>
+
+<span class="src">STARTER (수업 시작 문제)</span>
+
+<div class="q">
+  <div class="q-title">Question 4: Between which two consecutive integers do each of the following lie between?</div>
+  <div class="q-ko">다음 수는 어떤 연속한 두 정수 사이에 있나? (예: √53 은 7과 8 사이)</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> √20</span><span><b class="tag">(b)</b> √97</span><span><b class="tag">(c)</b> √6</span>
+    <span><b class="tag">(d)</b> √41</span><span><b class="tag">(e)</b> √130</span><span><b class="tag">(f)</b> √250</span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 4 and 5 &nbsp; (b) 9 and 10 &nbsp; (c) 2 and 3 &nbsp; (d) 6 and 7 &nbsp; (e) 11 and 12 &nbsp; (f) 15 and 16
+    <span class="how">푸는 법: 제곱수(square numbers)를 양옆에서 찾는다. 예 (a) 16 &lt; 20 &lt; 25 이므로 4 &lt; √20 &lt; 5.
+    (b) 81 &lt; 97 &lt; 100 → 9~10. (d) 36 &lt; 41 &lt; 49 → 6~7. (e) 121 &lt; 130 &lt; 144 → 11~12. (f) 225 &lt; 250 &lt; 256 → 15~16.</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Rational and Irrational Numbers (Corbettmaths 230) — Workout</span>
+
+<div class="q">
+  <div class="q-title">Question 1: Write down 3 rational numbers</div>
+  <div class="q-ko">유리수 3개를 써라.</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    예: 5, −3/4, 0.25 (정답은 여러 개)
+    <span class="how">유리수(rational number) = 분수 a/b (b≠0)로 쓸 수 있는 수. 정수·소수(유한·순환)는 모두 유리수다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Write down 3 irrational numbers</div>
+  <div class="q-ko">무리수 3개를 써라.</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    예: π, √2, √5
+    <span class="how">무리수(irrational number) = 분수로 못 쓰는 수. 소수로 쓰면 끝도 없고 규칙도 없다. 제곱수가 아닌 수의 √ 는 무리수다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: List any irrational numbers from the box below</div>
+  <div class="q-ko">상자 안에서 무리수만 골라라. 상자: 8, π, 2/3, √4, 1/2, √5, 0.1̇</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    π 와 √5
+    <span class="how">√4 = 2 라서 유리수다. 0.1̇ 는 순환소수 = 1/9 라 유리수. 8, 2/3, 1/2 도 전부 유리수.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 4~6: Write down an irrational number between …</div>
+  <div class="q-ko">Q4) 4와 6 사이 무리수 &nbsp; Q5) 3과 4 사이 &nbsp; Q6) 6과 7 사이</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    Q4: √20 (≈4.47) 또는 π+2 &nbsp;/&nbsp; Q5: √10 (≈3.16) 또는 π &nbsp;/&nbsp; Q6: √40 (≈6.32)
+    <span class="how">사이에 있는 제곱수가 아닌 수의 √ 를 고르면 된다. 예 Q6: 6²=36, 7²=49 → 36과 49 사이 아무 수(40)의 √.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 7~9: Find a value</div>
+  <div class="q-ko">Q7) √y 가 √33 과 √50 사이의 <b>유리수</b>. y? &nbsp; Q8) √z 가 √125 과 √150 사이의 유리수. z? &nbsp; Q9) ∛a 가 ∛100 과 ∛200 사이의 유리수. a?</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    Q7: y = 36 또는 49 &nbsp;/&nbsp; Q8: z = 144 &nbsp;/&nbsp; Q9: a = 125
+    <span class="how">√가 유리수가 되려면 안의 수가 제곱수(square number)여야 한다. 33~50 사이 제곱수 = 36, 49.
+    125~150 사이 제곱수 = 144 (12²). ∛ 는 세제곱수(cube number)여야 하므로 100~200 사이 = 125 (5³).</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Rational and Irrational Numbers — Apply</span>
+
+<div class="q">
+  <div class="q-title">Question 1: Hannah says “all integers are rational.” Is Hannah correct?</div>
+  <div class="q-ko">"모든 정수는 유리수다" — 맞나?</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    Yes, she is correct.
+    <span class="how">정수 n 은 n/1 로 쓸 수 있으니 항상 유리수다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Kate says “0.3333… is irrational because it is a recurring decimal.” Is Kate correct?</div>
+  <div class="q-ko">"0.333…은 순환소수라서 무리수다" — 맞나?</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    No. 0.333… = 1/3 이므로 rational 이다.
+    <span class="how">순환소수(recurring decimal)는 항상 분수로 바꿀 수 있다. 끝나지 않지만 규칙이 있으면 유리수다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: Does this equation have rational or irrational solutions? &nbsp; (2/3)x² = 40</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    Irrational. x = ±√60
+    <span class="how">(2/3)x² = 40 → x² = 40 × 3/2 = 60 → x = ±√60. 60은 제곱수가 아니므로 무리수.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 4: 5x² = k &nbsp; (a) k 를 유리수 해가 되게 &nbsp; (b) 무리수 해가 되게</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) k = 20 → x² = 4 → x = ±2 (rational) &nbsp;&nbsp; (b) k = 10 → x² = 2 → x = ±√2 (irrational)
+    <span class="how">x² = k/5 이므로 k/5 가 제곱수면 유리수, 아니면 무리수. (a)는 k=5,45,80… 도 정답.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 5: ABC is a right angled triangle. Is the length BC rational or irrational? (AB = 4cm, AC = 8.5cm)</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    Rational. BC = 7.5 cm
+    <span class="how">피타고라스(Pythagoras): BC² = 8.5² − 4² = 72.25 − 16 = 56.25 → BC = √56.25 = 7.5. 딱 떨어지므로 유리수.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 6: Show (7 − √2)(7 + √2) is rational</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    = 49 − 2 = 47 → rational
+    <span class="how">(a−b)(a+b) = a² − b² 꼴이다. (√2)² = 2 라서 √가 사라진다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 7: Find two surds that when multiplied together give a rational answer.</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    예: √2 × √8 = √16 = 4 &nbsp;(또는 √3 × √3 = 3, √5 × √20 = 10)
+    <span class="how">√a × √b = √(ab). 곱이 제곱수가 되게 짝을 고르면 된다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 8: Show 2√27 ÷ 5√3 is rational</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    = 6/5 (= 1.2) → rational
+    <span class="how">√27 = √(9×3) = 3√3 이므로 2√27 = 6√3. 따라서 6√3 / 5√3 = 6/5. √3 가 약분되어 사라진다.</span>
+  </div></details>
+</div>
+</div>
+
+<!-- ================= 1.2 ================= -->
+<div class="sec">
+<div class="sec-head"><span class="sec-no">1.2</span><span class="sec-title">Standard form</span><span class="sec-ko">표준형(과학적 표기법)</span></div>
+
+<span class="src">STARTER (수업 시작 문제)</span>
+
+<div class="q">
+  <div class="q-title">Question 3: Work out each of the following multiplications</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 5 × 10<sup>4</sup></span><span><b class="tag">(b)</b> 200 × 10<sup>3</sup></span>
+    <span><b class="tag">(c)</b> 35 × 10<sup>5</sup></span><span><b class="tag">(d)</b> 88 × 10<sup>4</sup></span>
+    <span><b class="tag">(e)</b> 29 × 10<sup>5</sup></span><span><b class="tag">(f)</b> 4.2 × 10<sup>4</sup></span>
+    <span><b class="tag">(g)</b> 1.5 × 10<sup>5</sup></span><span><b class="tag">(h)</b> 0.03 × 10<sup>6</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 50 000 &nbsp; (b) 200 000 &nbsp; (c) 3 500 000 &nbsp; (d) 880 000 &nbsp; (e) 2 900 000 &nbsp; (f) 42 000 &nbsp; (g) 150 000 &nbsp; (h) 30 000
+    <span class="how">10<sup>n</sup> 을 곱하면 소수점이 오른쪽으로 n칸 간다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3 (뒷부분): divisions</div>
+  <div class="items">
+    <span><b class="tag">(i)</b> 482 ÷ 10<sup>2</sup></span><span><b class="tag">(j)</b> 0.3 ÷ 10<sup>4</sup></span>
+    <span><b class="tag">(k)</b> 9.5 ÷ 10<sup>2</sup></span><span><b class="tag">(l)</b> 6.3 ÷ 10<sup>5</sup></span>
+    <span><b class="tag">(m)</b> 0.28 ÷ 10<sup>3</sup></span><span><b class="tag">(n)</b> 390.15 ÷ 10</span>
+    <span><b class="tag">(o)</b> 5.06 ÷ 10<sup>4</sup></span><span><b class="tag">(p)</b> 0.05 ÷ 10<sup>2</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (i) 4.82 &nbsp; (j) 0.00003 &nbsp; (k) 0.095 &nbsp; (l) 0.000063 &nbsp; (m) 0.00028 &nbsp; (n) 39.015 &nbsp; (o) 0.000506 &nbsp; (p) 0.0005
+    <span class="how">10<sup>n</sup> 으로 나누면 소수점이 왼쪽으로 n칸 간다.</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Standard Form (Corbettmaths 300–303) — Workout</span>
+
+<div class="q">
+  <div class="q-title">Question 1: Write each of the following numbers in standard form</div>
+  <div class="q-ko">표준형 a × 10<sup>n</sup> (1 ≤ a &lt; 10) 으로 고쳐라.</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 40000</span><span><b class="tag">(b)</b> 2000000</span><span><b class="tag">(c)</b> 8000000</span><span><b class="tag">(d)</b> 7000</span>
+    <span><b class="tag">(e)</b> 100000000</span><span><b class="tag">(f)</b> 900</span><span><b class="tag">(g)</b> 250000</span><span><b class="tag">(h)</b> 1900</span>
+    <span><b class="tag">(i)</b> 54000000</span><span><b class="tag">(j)</b> 11000000</span><span><b class="tag">(k)</b> 89000</span><span><b class="tag">(l)</b> 3600000000</span>
+    <span><b class="tag">(m)</b> 43500</span><span><b class="tag">(n)</b> 91900000</span><span><b class="tag">(o)</b> 1230000000</span><span><b class="tag">(p)</b> 71120</span>
+    <span><b class="tag">(q)</b> 9804000</span><span><b class="tag">(r)</b> 471500</span><span><b class="tag">(s)</b> 55403</span><span><b class="tag">(t)</b> 2936000</span>
+    <span><b class="tag">(u)</b> 93508000</span><span><b class="tag">(v)</b> 333810000</span><span><b class="tag">(w)</b> 9800200000</span><span><b class="tag">(x)</b> 49300</span>
+    <span><b class="tag">(y)</b> 804000</span><span><b class="tag">(z)</b> 69702000000</span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 4 × 10<sup>4</sup> &nbsp;(b) 2 × 10<sup>6</sup> &nbsp;(c) 8 × 10<sup>6</sup> &nbsp;(d) 7 × 10<sup>3</sup> &nbsp;(e) 1 × 10<sup>8</sup> &nbsp;(f) 9 × 10<sup>2</sup><br>
+    (g) 2.5 × 10<sup>5</sup> &nbsp;(h) 1.9 × 10<sup>3</sup> &nbsp;(i) 5.4 × 10<sup>7</sup> &nbsp;(j) 1.1 × 10<sup>7</sup> &nbsp;(k) 8.9 × 10<sup>4</sup> &nbsp;(l) 3.6 × 10<sup>9</sup><br>
+    (m) 4.35 × 10<sup>4</sup> &nbsp;(n) 9.19 × 10<sup>7</sup> &nbsp;(o) 1.23 × 10<sup>9</sup> &nbsp;(p) 7.112 × 10<sup>4</sup> &nbsp;(q) 9.804 × 10<sup>6</sup> &nbsp;(r) 4.715 × 10<sup>5</sup><br>
+    (s) 5.5403 × 10<sup>4</sup> &nbsp;(t) 2.936 × 10<sup>6</sup> &nbsp;(u) 9.3508 × 10<sup>7</sup> &nbsp;(v) 3.3381 × 10<sup>8</sup> &nbsp;(w) 9.8002 × 10<sup>9</sup> &nbsp;(x) 4.93 × 10<sup>4</sup><br>
+    (y) 8.04 × 10<sup>5</sup> &nbsp;(z) 6.9702 × 10<sup>10</sup>
+    <span class="how">푸는 법: 소수점을 맨 앞 숫자 바로 뒤로 옮기고, 옮긴 칸 수가 지수 n 이다. 큰 수는 n이 양수.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Write each of the following as ordinary numbers</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 3 × 10<sup>4</sup></span><span><b class="tag">(b)</b> 9 × 10<sup>3</sup></span><span><b class="tag">(c)</b> 6 × 10<sup>6</sup></span><span><b class="tag">(d)</b> 2 × 10<sup>10</sup></span>
+    <span><b class="tag">(e)</b> 5 × 10<sup>7</sup></span><span><b class="tag">(f)</b> 1.2 × 10<sup>2</sup></span><span><b class="tag">(g)</b> 2.9 × 10<sup>5</sup></span><span><b class="tag">(h)</b> 8.4 × 10<sup>8</sup></span>
+    <span><b class="tag">(i)</b> 7.7 × 10<sup>4</sup></span><span><b class="tag">(j)</b> 3.51 × 10<sup>5</sup></span><span><b class="tag">(k)</b> 9.89 × 10<sup>7</sup></span><span><b class="tag">(l)</b> 1.27 × 10<sup>9</sup></span>
+    <span><b class="tag">(m)</b> 4.05 × 10<sup>6</sup></span><span><b class="tag">(n)</b> 1.616 × 10<sup>5</sup></span><span><b class="tag">(o)</b> 2.0651 × 10<sup>3</sup></span><span><b class="tag">(p)</b> 8.829 × 10<sup>7</sup></span>
+    <span><b class="tag">(q)</b> 1.0051 × 10<sup>6</sup></span><span><b class="tag">(r)</b> 2.143578 × 10<sup>4</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 30 000 &nbsp;(b) 9 000 &nbsp;(c) 6 000 000 &nbsp;(d) 20 000 000 000 &nbsp;(e) 50 000 000 &nbsp;(f) 120<br>
+    (g) 290 000 &nbsp;(h) 840 000 000 &nbsp;(i) 77 000 &nbsp;(j) 351 000 &nbsp;(k) 98 900 000 &nbsp;(l) 1 270 000 000<br>
+    (m) 4 050 000 &nbsp;(n) 161 600 &nbsp;(o) 2 065.1 &nbsp;(p) 88 290 000 &nbsp;(q) 1 005 100 &nbsp;(r) 21 435.78
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: Write each of the following numbers in standard form (작은 수)</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 0.002</span><span><b class="tag">(b)</b> 0.0005</span><span><b class="tag">(c)</b> 0.9</span><span><b class="tag">(d)</b> 0.00000004</span>
+    <span><b class="tag">(e)</b> 0.00065</span><span><b class="tag">(f)</b> 0.0022</span><span><b class="tag">(g)</b> 0.0361</span><span><b class="tag">(h)</b> 0.000558</span>
+    <span><b class="tag">(i)</b> 0.00000423</span><span><b class="tag">(j)</b> 0.0000000981</span><span><b class="tag">(k)</b> 0.00407</span><span><b class="tag">(l)</b> 0.02052</span>
+    <span><b class="tag">(m)</b> 0.0000515</span><span><b class="tag">(n)</b> 0.006015</span><span><b class="tag">(o)</b> 0.0000000082</span><span><b class="tag">(p)</b> 0.00007005</span>
+    <span><b class="tag">(q)</b> 0.000000024</span><span><b class="tag">(r)</b> 0.00000000000005</span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 2 × 10<sup>−3</sup> &nbsp;(b) 5 × 10<sup>−4</sup> &nbsp;(c) 9 × 10<sup>−1</sup> &nbsp;(d) 4 × 10<sup>−8</sup> &nbsp;(e) 6.5 × 10<sup>−4</sup> &nbsp;(f) 2.2 × 10<sup>−3</sup><br>
+    (g) 3.61 × 10<sup>−2</sup> &nbsp;(h) 5.58 × 10<sup>−4</sup> &nbsp;(i) 4.23 × 10<sup>−6</sup> &nbsp;(j) 9.81 × 10<sup>−8</sup> &nbsp;(k) 4.07 × 10<sup>−3</sup> &nbsp;(l) 2.052 × 10<sup>−2</sup><br>
+    (m) 5.15 × 10<sup>−5</sup> &nbsp;(n) 6.015 × 10<sup>−3</sup> &nbsp;(o) 8.2 × 10<sup>−9</sup> &nbsp;(p) 7.005 × 10<sup>−5</sup> &nbsp;(q) 2.4 × 10<sup>−8</sup> &nbsp;(r) 5 × 10<sup>−14</sup>
+    <span class="how">1보다 작은 수는 지수가 음수(negative)다. 맨 앞 0이 아닌 숫자가 소수점 뒤 몇 번째인지 세면, 그 수가 −n 이다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 4: Write each of the following as ordinary numbers</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 2 × 10<sup>−3</sup></span><span><b class="tag">(b)</b> 7 × 10<sup>−2</sup></span><span><b class="tag">(c)</b> 3 × 10<sup>−6</sup></span><span><b class="tag">(d)</b> 9 × 10<sup>−8</sup></span>
+    <span><b class="tag">(e)</b> 4.8 × 10<sup>−4</sup></span><span><b class="tag">(f)</b> 6.7 × 10<sup>−3</sup></span><span><b class="tag">(g)</b> 9.2 × 10<sup>−6</sup></span><span><b class="tag">(h)</b> 4.1 × 10<sup>−2</sup></span>
+    <span><b class="tag">(i)</b> 3.16 × 10<sup>−5</sup></span><span><b class="tag">(j)</b> 8.62 × 10<sup>−4</sup></span><span><b class="tag">(k)</b> 7.09 × 10<sup>−6</sup></span><span><b class="tag">(l)</b> 5.71 × 10<sup>−3</sup></span>
+    <span><b class="tag">(m)</b> 2.05 × 10<sup>−8</sup></span><span><b class="tag">(n)</b> 4.112 × 10<sup>−2</sup></span><span><b class="tag">(o)</b> 1.651 × 10<sup>−3</sup></span><span><b class="tag">(p)</b> 2.0019 × 10<sup>−7</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 0.002 &nbsp;(b) 0.07 &nbsp;(c) 0.000003 &nbsp;(d) 0.00000009 &nbsp;(e) 0.00048 &nbsp;(f) 0.0067<br>
+    (g) 0.0000092 &nbsp;(h) 0.041 &nbsp;(i) 0.0000316 &nbsp;(j) 0.000862 &nbsp;(k) 0.00000709 &nbsp;(l) 0.00571<br>
+    (m) 0.0000000205 &nbsp;(n) 0.04112 &nbsp;(o) 0.001651 &nbsp;(p) 0.00000020019
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 5: Write these numbers in standard form</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> one million</span><span><b class="tag">(b)</b> nine thousand</span><span><b class="tag">(c)</b> forty thousand</span><span><b class="tag">(d)</b> nine billion</span>
+    <span><b class="tag">(e)</b> 500<sup>2</sup></span><span><b class="tag">(f)</b> 200<sup>3</sup></span><span><b class="tag">(g)</b> 30,000<sup>2</sup></span><span><b class="tag">(h)</b> two thousandths</span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 1 × 10<sup>6</sup> &nbsp;(b) 9 × 10<sup>3</sup> &nbsp;(c) 4 × 10<sup>4</sup> &nbsp;(d) 9 × 10<sup>9</sup><br>
+    (e) 500² = 250 000 = 2.5 × 10<sup>5</sup> &nbsp;(f) 200³ = 8 000 000 = 8 × 10<sup>6</sup> &nbsp;(g) 30 000² = 900 000 000 = 9 × 10<sup>8</sup> &nbsp;(h) 0.002 = 2 × 10<sup>−3</sup>
+    <span class="how">단어 뜻: million = 100만(10<sup>6</sup>), billion = 10억(10<sup>9</sup>), thousandth = 1/1000.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 6: Write each of these numbers in standard form (표준형이 아닌 것을 고치기)</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 72 × 10<sup>3</sup></span><span><b class="tag">(b)</b> 84 × 10<sup>6</sup></span><span><b class="tag">(c)</b> 500 × 10<sup>2</sup></span><span><b class="tag">(d)</b> 210 × 10<sup>4</sup></span>
+    <span><b class="tag">(e)</b> 0.8 × 10<sup>7</sup></span><span><b class="tag">(f)</b> 0.46 × 10<sup>5</sup></span><span><b class="tag">(g)</b> 0.06 × 10<sup>8</sup></span><span><b class="tag">(h)</b> 0.007 × 10<sup>12</sup></span>
+    <span><b class="tag">(i)</b> 3000 × 10<sup>14</sup></span><span><b class="tag">(j)</b> 24 × 10<sup>−5</sup></span><span><b class="tag">(k)</b> 0.8 × 10<sup>−10</sup></span><span><b class="tag">(l)</b> 0.0055 × 10<sup>−2</sup></span>
+    <span><b class="tag">(m)</b> 0.0372 × 10<sup>−9</sup></span><span><b class="tag">(n)</b> 65213 × 10<sup>−7</sup></span><span><b class="tag">(o)</b> 2933 × 10<sup>21</sup></span><span><b class="tag">(p)</b> 759300 × 10<sup>−1</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 7.2 × 10<sup>4</sup> &nbsp;(b) 8.4 × 10<sup>7</sup> &nbsp;(c) 5 × 10<sup>4</sup> &nbsp;(d) 2.1 × 10<sup>6</sup> &nbsp;(e) 8 × 10<sup>6</sup> &nbsp;(f) 4.6 × 10<sup>4</sup><br>
+    (g) 6 × 10<sup>6</sup> &nbsp;(h) 7 × 10<sup>9</sup> &nbsp;(i) 3 × 10<sup>17</sup> &nbsp;(j) 2.4 × 10<sup>−4</sup> &nbsp;(k) 8 × 10<sup>−11</sup> &nbsp;(l) 5.5 × 10<sup>−5</sup><br>
+    (m) 3.72 × 10<sup>−11</sup> &nbsp;(n) 6.5213 × 10<sup>−3</sup> &nbsp;(o) 2.933 × 10<sup>24</sup> &nbsp;(p) 7.593 × 10<sup>4</sup>
+    <span class="how">앞 수를 1~10 사이로 만들면서, 소수점을 옮긴 만큼 지수를 반대로 바꾼다. 앞 수를 작게(÷10) 하면 지수는 +1.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 7: Multiplications (계산기 없이)</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 2×10<sup>3</sup> × 3×10<sup>4</sup></span><span><b class="tag">(b)</b> (4×10<sup>8</sup>)(2×10<sup>5</sup>)</span><span><b class="tag">(c)</b> 1.2×10<sup>4</sup> × 6×10<sup>4</sup></span>
+    <span><b class="tag">(d)</b> (3×10<sup>−9</sup>)(3×10<sup>3</sup>)</span><span><b class="tag">(e)</b> 4×10<sup>−7</sup> × 3×10<sup>−2</sup></span><span><b class="tag">(f)</b> 6×10<sup>10</sup> × 4×10<sup>8</sup></span>
+    <span><b class="tag">(g)</b> 7×10<sup>12</sup> × 8×10<sup>−9</sup></span><span><b class="tag">(h)</b> 3.7×10<sup>5</sup> × 5×10<sup>6</sup></span><span><b class="tag">(i)</b> (8×10<sup>3</sup>)(5×10<sup>5</sup>)</span>
+    <span><b class="tag">(j)</b> 5×10<sup>−14</sup> × 4×10<sup>−7</sup></span><span><b class="tag">(k)</b> 1.8×10<sup>2</sup> × 2×10<sup>−8</sup></span><span><b class="tag">(l)</b> 5.8×10<sup>6</sup> × 4×10<sup>7</sup></span>
+    <span><b class="tag">(m)</b> 4.5×10<sup>20</sup> × 9×10<sup>−14</sup></span><span><b class="tag">(n)</b> (1.1×10<sup>−5</sup>)(1.2×10<sup>−2</sup>)</span><span><b class="tag">(o)</b> 6.2×10<sup>4</sup> × 7×10<sup>9</sup></span>
+    <span><b class="tag">(p)</b> 2.8×10<sup>8</sup> × 1.3×10<sup>7</sup></span><span><b class="tag">(q)</b> 1.25×10<sup>−16</sup> × 3.2×10<sup>10</sup></span><span><b class="tag">(r)</b> 8.7×10<sup>2</sup> × 9.2×10<sup>6</sup></span>
+    <span><b class="tag">(s)</b> 2×10<sup>2</sup> × 3×10<sup>7</sup> × 6×10<sup>4</sup></span><span><b class="tag">(t)</b> 3×10<sup>6</sup> × 2.1×10<sup>−8</sup> × 5×10<sup>12</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 6 × 10<sup>7</sup> &nbsp;(b) 8 × 10<sup>13</sup> &nbsp;(c) 7.2 × 10<sup>8</sup> &nbsp;(d) 9 × 10<sup>−6</sup> &nbsp;(e) 1.2 × 10<sup>−8</sup> &nbsp;(f) 2.4 × 10<sup>19</sup><br>
+    (g) 5.6 × 10<sup>4</sup> &nbsp;(h) 1.85 × 10<sup>12</sup> &nbsp;(i) 4 × 10<sup>9</sup> &nbsp;(j) 2 × 10<sup>−20</sup> &nbsp;(k) 3.6 × 10<sup>−6</sup> &nbsp;(l) 2.32 × 10<sup>14</sup><br>
+    (m) 4.05 × 10<sup>7</sup> &nbsp;(n) 1.32 × 10<sup>−7</sup> &nbsp;(o) 4.34 × 10<sup>14</sup> &nbsp;(p) 3.64 × 10<sup>15</sup> &nbsp;(q) 4 × 10<sup>−6</sup> &nbsp;(r) 8.004 × 10<sup>9</sup><br>
+    (s) 3.6 × 10<sup>14</sup> &nbsp;(t) 3.15 × 10<sup>11</sup>
+    <span class="how">푸는 법: 앞 숫자끼리 곱하고, 10의 지수끼리는 더한다(a<sup>m</sup>×a<sup>n</sup> = a<sup>m+n</sup>).
+    마지막에 앞 숫자가 10 이상이면 한 칸 줄이고 지수 +1. 예 (r) 8.7×9.2 = 80.04 → 8.004 × 10<sup>1</sup> → 10<sup>8+1</sup> 로 8.004×10<sup>9</sup>.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 8: Divisions (계산기 없이)</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (8×10<sup>5</sup>)÷(2×10<sup>3</sup>)</span><span><b class="tag">(b)</b> (9×10<sup>9</sup>)÷(3×10<sup>4</sup>)</span><span><b class="tag">(c)</b> (5×10<sup>6</sup>)÷(2×10<sup>2</sup>)</span>
+    <span><b class="tag">(d)</b> (9×10<sup>9</sup>)÷(4×10<sup>9</sup>)</span><span><b class="tag">(e)</b> (1.2×10<sup>4</sup>)÷(3×10<sup>8</sup>)</span><span><b class="tag">(f)</b> (3.5×10<sup>2</sup>)÷(5×10<sup>9</sup>)</span>
+    <span><b class="tag">(g)</b> (4.8×10<sup>15</sup>)÷(3×10<sup>4</sup>)</span><span><b class="tag">(h)</b> (6.4×10<sup>3</sup>)÷(8×10<sup>16</sup>)</span><span><b class="tag">(i)</b> (2.7×10<sup>−3</sup>)÷(9×10<sup>7</sup>)</span>
+    <span><b class="tag">(j)</b> (1.44×10<sup>8</sup>)÷(12×10<sup>−5</sup>)</span><span><b class="tag">(k)</b> (2×10<sup>10</sup>)÷(5×10<sup>−2</sup>)</span><span><b class="tag">(l)</b> (1×10<sup>−5</sup>)÷(4×10<sup>−2</sup>)</span>
+    <span><b class="tag">(m)</b> (5×10<sup>−6</sup>)÷(8×10<sup>−14</sup>)</span><span><b class="tag">(n)</b> (8.1×10<sup>−9</sup>)÷(2.7×10<sup>3</sup>)</span><span><b class="tag">(o)</b> (1.6×10<sup>7</sup>)÷(8×10<sup>2</sup>)</span>
+    <span><b class="tag">(p)</b> (3×10<sup>22</sup>)÷(8×10<sup>9</sup>)</span><span><b class="tag">(q)</b> (3.92×10<sup>8</sup>)÷(1.4×10<sup>−6</sup>)</span><span><b class="tag">(r)</b> (3×10<sup>−4</sup>)÷(1.2×10<sup>7</sup>)</span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 4 × 10<sup>2</sup> &nbsp;(b) 3 × 10<sup>5</sup> &nbsp;(c) 2.5 × 10<sup>4</sup> &nbsp;(d) 2.25 &nbsp;(e) 4 × 10<sup>−5</sup> &nbsp;(f) 7 × 10<sup>−8</sup><br>
+    (g) 1.6 × 10<sup>11</sup> &nbsp;(h) 8 × 10<sup>−14</sup> &nbsp;(i) 3 × 10<sup>−11</sup> &nbsp;(j) 1.2 × 10<sup>12</sup> &nbsp;(k) 4 × 10<sup>11</sup> &nbsp;(l) 2.5 × 10<sup>−4</sup><br>
+    (m) 6.25 × 10<sup>7</sup> &nbsp;(n) 3 × 10<sup>−12</sup> &nbsp;(o) 2 × 10<sup>4</sup> &nbsp;(p) 3.75 × 10<sup>12</sup> &nbsp;(q) 2.8 × 10<sup>14</sup> &nbsp;(r) 2.5 × 10<sup>−11</sup>
+    <span class="how">푸는 법: 앞 숫자끼리 나누고, 지수끼리는 뺀다(a<sup>m</sup>÷a<sup>n</sup> = a<sup>m−n</sup>).
+    앞 숫자가 1보다 작아지면 ×10 해 주고 지수를 −1 한다. 예 (e) 1.2÷3 = 0.4 → 4 × 10<sup>−1</sup>, 10<sup>4−8</sup>=10<sup>−4</sup> → 4×10<sup>−5</sup>.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 9: Powers (계산기 없이)</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (3×10<sup>3</sup>)<sup>2</sup></span><span><b class="tag">(b)</b> (2×10<sup>6</sup>)<sup>2</sup></span><span><b class="tag">(c)</b> (5×10<sup>4</sup>)<sup>2</sup></span><span><b class="tag">(d)</b> (8×10<sup>5</sup>)<sup>2</sup></span>
+    <span><b class="tag">(e)</b> (9×10<sup>10</sup>)<sup>2</sup></span><span><b class="tag">(f)</b> (6×10<sup>−3</sup>)<sup>2</sup></span><span><b class="tag">(g)</b> (2.5×10<sup>−6</sup>)<sup>2</sup></span><span><b class="tag">(h)</b> (1.2×10<sup>8</sup>)<sup>2</sup></span>
+    <span><b class="tag">(i)</b> (2×10<sup>5</sup>)<sup>3</sup></span><span><b class="tag">(j)</b> (4×10<sup>9</sup>)<sup>3</sup></span><span><b class="tag">(k)</b> (3×10<sup>15</sup>)<sup>3</sup></span><span><b class="tag">(l)</b> (5×10<sup>−7</sup>)<sup>3</sup></span>
+    <span><b class="tag">(m)</b> (2×10<sup>6</sup>)<sup>4</sup></span><span><b class="tag">(n)</b> (1×10<sup>−4</sup>)<sup>6</sup></span><span><b class="tag">(o)</b> (8.3×10<sup>−2</sup>)<sup>2</sup></span><span><b class="tag">(p)</b> (9.7×10<sup>3</sup>)<sup>2</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 9 × 10<sup>6</sup> &nbsp;(b) 4 × 10<sup>12</sup> &nbsp;(c) 2.5 × 10<sup>9</sup> &nbsp;(d) 6.4 × 10<sup>11</sup> &nbsp;(e) 8.1 × 10<sup>21</sup> &nbsp;(f) 3.6 × 10<sup>−5</sup><br>
+    (g) 6.25 × 10<sup>−12</sup> &nbsp;(h) 1.44 × 10<sup>16</sup> &nbsp;(i) 8 × 10<sup>15</sup> &nbsp;(j) 6.4 × 10<sup>28</sup> &nbsp;(k) 2.7 × 10<sup>46</sup> &nbsp;(l) 1.25 × 10<sup>−19</sup><br>
+    (m) 1.6 × 10<sup>25</sup> &nbsp;(n) 1 × 10<sup>−24</sup> &nbsp;(o) 6.889 × 10<sup>−3</sup> &nbsp;(p) 9.409 × 10<sup>7</sup>
+    <span class="how">푸는 법: 앞 숫자를 그 거듭제곱 하고, 지수는 곱한다((a<sup>m</sup>)<sup>n</sup> = a<sup>mn</sup>).
+    예 (c) 5²=25, 10<sup>4×2</sup>=10<sup>8</sup> → 25×10<sup>8</sup> = 2.5×10<sup>9</sup>.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 10: Work out each of the following (더하기·빼기)</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 5×10<sup>4</sup> + 3×10<sup>4</sup></span><span><b class="tag">(b)</b> 4×10<sup>3</sup> − 2×10<sup>3</sup></span><span><b class="tag">(c)</b> 2.5×10<sup>5</sup> + 3.3×10<sup>5</sup></span>
+    <span><b class="tag">(d)</b> 7×10<sup>−2</sup> + 2×10<sup>−2</sup></span><span><b class="tag">(e)</b> 6×10<sup>3</sup> + 8×10<sup>2</sup></span><span><b class="tag">(f)</b> 2×10<sup>6</sup> − 8×10<sup>5</sup></span>
+    <span><b class="tag">(g)</b> 2.6×10<sup>8</sup> + 4.5×10<sup>9</sup></span><span><b class="tag">(h)</b> 5.12×10<sup>5</sup> − 1.89×10<sup>4</sup></span><span><b class="tag">(i)</b> (8×10<sup>7</sup>) + (3×10<sup>5</sup>)</span>
+    <span><b class="tag">(j)</b> 5.07×10<sup>10</sup> + 2.77×10<sup>9</sup></span><span><b class="tag">(k)</b> 6.12×10<sup>−3</sup> − 1.07×10<sup>−2</sup></span><span><b class="tag">(l)</b> 4×10<sup>−7</sup> + 9×10<sup>−5</sup></span>
+    <span><b class="tag">(m)</b> 3.44×10<sup>8</sup> + 7.03×10<sup>6</sup> + 9.89×10<sup>7</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 8 × 10<sup>4</sup> &nbsp;(b) 2 × 10<sup>3</sup> &nbsp;(c) 5.8 × 10<sup>5</sup> &nbsp;(d) 9 × 10<sup>−2</sup> &nbsp;(e) 6.8 × 10<sup>3</sup> &nbsp;(f) 1.2 × 10<sup>6</sup><br>
+    (g) 4.76 × 10<sup>9</sup> &nbsp;(h) 4.931 × 10<sup>5</sup> &nbsp;(i) 8.03 × 10<sup>7</sup> &nbsp;(j) 5.347 × 10<sup>10</sup> &nbsp;(k) −4.58 × 10<sup>−3</sup> &nbsp;(l) 9.04 × 10<sup>−5</sup><br>
+    (m) 4.4993 × 10<sup>8</sup>
+    <span class="how">푸는 법: 더하기·빼기는 지수를 같게 맞춘 뒤 앞 숫자끼리 더하거나 뺀다(또는 보통 수로 바꿔 계산).
+    예 (g) 2.6×10<sup>8</sup> = 0.26×10<sup>9</sup> → 0.26+4.5 = 4.76 → 4.76×10<sup>9</sup>.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 11: Using a calculator, work out the following</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 3.57×10<sup>3</sup> × 6.7×10<sup>7</sup></span><span><b class="tag">(b)</b> 9.5×10<sup>4</sup> + 3.8×10<sup>5</sup></span><span><b class="tag">(c)</b> 1.8×10<sup>9</sup> × 5.2×10<sup>9</sup></span>
+    <span><b class="tag">(d)</b> 7×10<sup>−8</sup> × 2×10<sup>−6</sup></span><span><b class="tag">(e)</b> (7.71×10<sup>15</sup>)÷(6×10<sup>4</sup>)</span><span><b class="tag">(f)</b> (8×10<sup>9</sup>)<sup>3</sup></span>
+    <span><b class="tag">(g)</b> (5×10<sup>−7</sup>)<sup>−3</sup></span><span><b class="tag">(h)</b> 2.55×10<sup>7</sup> × 8.02×10<sup>4</sup> × 1.1×10<sup>5</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 2.3919 × 10<sup>11</sup> &nbsp;(b) 4.75 × 10<sup>5</sup> &nbsp;(c) 9.36 × 10<sup>18</sup> &nbsp;(d) 1.4 × 10<sup>−13</sup><br>
+    (e) 1.285 × 10<sup>11</sup> &nbsp;(f) 5.12 × 10<sup>29</sup> &nbsp;(g) 8 × 10<sup>18</sup> &nbsp;(h) 2.24961 × 10<sup>17</sup>
+    <span class="how">(g) 는 (5×10<sup>−7</sup>)<sup>−3</sup> = 5<sup>−3</sup> × 10<sup>21</sup> = (1/125)×10<sup>21</sup> = 0.008×10<sup>21</sup> = 8×10<sup>18</sup>.</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Standard Form — Apply (활용 문제)</span>
+
+<div class="q">
+  <div class="q-title">Question 1~5</div>
+  <div class="q-ko">
+    1) 런던–뉴욕 거리 5,567,000 m 를 표준형으로.<br>
+    2) 태양–명왕성 거리 3.67 billion miles 를 표준형으로.<br>
+    3) 세포의 길이 0.016 mm 를 표준형으로.<br>
+    4) 인구 6.51 × 10<sup>5</sup> 를 보통 수로.<br>
+    5) 축구 관중 32,010 명을 표준형으로.
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    1) 5.567 × 10<sup>6</sup> m &nbsp; 2) 3.67 × 10<sup>9</sup> miles &nbsp; 3) 1.6 × 10<sup>−2</sup> mm &nbsp; 4) 651 000 &nbsp; 5) 3.201 × 10<sup>4</sup>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 6~8</div>
+  <div class="q-ko">
+    6) 쌀 1 kg 에 쌀알이 약 5 × 10<sup>4</sup> 개. 20 kg 에는 몇 개?<br>
+    7) 1페니 무게 0.0036 kg. £400 어치 페니의 전체 무게는?<br>
+    8) A = 6 × 10<sup>5</sup>, B = 30000, C = 5 × 10<sup>−2</sup> 일 때 (a) AB (b) C<sup>2</sup>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    6) 5 × 10<sup>4</sup> × 20 = 1 × 10<sup>6</sup> 개<br>
+    7) £400 = 40 000 pennies → 40 000 × 0.0036 = 144 kg (= 1.44 × 10<sup>2</sup> kg)<br>
+    8) (a) AB = 6×10<sup>5</sup> × 3×10<sup>4</sup> = 1.8 × 10<sup>10</sup> &nbsp; (b) C² = (5×10<sup>−2</sup>)² = 2.5 × 10<sup>−3</sup>
+    <span class="how">7번 함정: £1 = 100 pennies 이므로 £400 = 40,000개다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 9~14</div>
+  <div class="q-ko">
+    9) 영국 인구 1950년 5.06×10<sup>7</sup>, 2015년 6.47×10<sup>7</sup>. 몇 명 더 늘었나(보통 수로)?<br>
+    10) 계산기에 1.5 × 10<sup>12</sup>. 한 수가 5000이면 다른 수는?<br>
+    11) 소행성이 초속 25 km. 1시간 동안 간 거리를 표준형으로.<br>
+    12) 계산기 없이 √(4.9 × 10<sup>11</sup>)<br>
+    13) 지구 질량 5.97×10<sup>24</sup>, 목성 1.898×10<sup>27</sup>. 목성은 지구의 몇 배(소수 첫째 자리)?<br>
+    14) 질소 밀도 1.25 × 10<sup>−6</sup> kg/cm³. 1 m³ 의 질량은?
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    9) 6.47×10<sup>7</sup> − 5.06×10<sup>7</sup> = 1.41×10<sup>7</sup> = 14 100 000 명<br>
+    10) 1.5×10<sup>12</sup> ÷ 5×10<sup>3</sup> = 3 × 10<sup>8</sup><br>
+    11) 25 × 3600 = 90 000 km = 9 × 10<sup>4</sup> km<br>
+    12) √(4.9×10<sup>11</sup>) = √(49×10<sup>10</sup>) = 7 × 10<sup>5</sup><br>
+    13) 1.898×10<sup>27</sup> ÷ 5.97×10<sup>24</sup> = 317.9 배<br>
+    14) 1 m³ = 10<sup>6</sup> cm³ → 1.25×10<sup>−6</sup> × 10<sup>6</sup> = 1.25 kg
+    <span class="how">12번 요령: 지수를 짝수로 만들면 √ 가 쉬워진다. 4.9×10<sup>11</sup> = 49×10<sup>10</sup> 로 바꿔 √49 = 7, √10<sup>10</sup> = 10<sup>5</sup>.</span>
+  </div></details>
+</div>
+</div>
+
+<!-- ================= 1.3 ================= -->
+<div class="sec">
+<div class="sec-head"><span class="sec-no">1.3</span><span class="sec-title">Indices</span><span class="sec-ko">지수법칙 · 음수 지수</span></div>
+
+<span class="src">STARTER (수업 시작 문제)</span>
+
+<div class="q">
+  <div class="q-title">Question 1: Write as a single power of 2</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 2<sup>2</sup> × 2<sup>2</sup></span><span><b class="tag">(b)</b> 2<sup>2</sup> × 2<sup>3</sup></span>
+    <span><b class="tag">(c)</b> 2<sup>6</sup> × 2<sup>2</sup></span><span><b class="tag">(d)</b> 2<sup>4</sup> × 2<sup>3</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 2<sup>4</sup> &nbsp;(b) 2<sup>5</sup> &nbsp;(c) 2<sup>8</sup> &nbsp;(d) 2<sup>7</sup>
+    <span class="how">밑(base)이 같으면 곱셈은 지수를 더한다: a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup>. 밑 2는 그대로 2다(4로 바꾸면 틀린다).</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Laws of Indices (Corbettmaths 174) — Workout</span>
+
+<div class="q">
+  <div class="q-title">Question 1: Write as a single power of 2</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 2<sup>2</sup>×2<sup>2</sup></span><span><b class="tag">(b)</b> 2<sup>2</sup>×2<sup>3</sup></span><span><b class="tag">(c)</b> 2<sup>6</sup>×2<sup>2</sup></span><span><b class="tag">(d)</b> 2<sup>4</sup>×2<sup>3</sup></span>
+    <span><b class="tag">(e)</b> 2<sup>6</sup>×2<sup>8</sup></span><span><b class="tag">(f)</b> 2<sup>2</sup>×2</span><span><b class="tag">(g)</b> 2×2<sup>4</sup></span><span><b class="tag">(h)</b> 2<sup>8</sup>×2<sup>8</sup></span>
+    <span><b class="tag">(i)</b> 2<sup>9</sup>×2<sup>2</sup></span><span><b class="tag">(j)</b> 2×2<sup>8</sup></span><span><b class="tag">(k)</b> 2<sup>6</sup>×2<sup>5</sup></span><span><b class="tag">(l)</b> 2<sup>2</sup>×2<sup>2</sup>×2<sup>2</sup>×2<sup>2</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 2<sup>4</sup> (b) 2<sup>5</sup> (c) 2<sup>8</sup> (d) 2<sup>7</sup> (e) 2<sup>14</sup> (f) 2<sup>3</sup> (g) 2<sup>5</sup> (h) 2<sup>16</sup> (i) 2<sup>11</sup> (j) 2<sup>9</sup> (k) 2<sup>11</sup> (l) 2<sup>8</sup>
+    <span class="how">2 는 2<sup>1</sup> 이다. (f) 2+1 = 3.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Write as a single power of 5</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 5<sup>5</sup>÷5<sup>2</sup></span><span><b class="tag">(b)</b> 5<sup>8</sup>÷5<sup>3</sup></span><span><b class="tag">(c)</b> 5<sup>9</sup>÷5<sup>2</sup></span><span><b class="tag">(d)</b> 5<sup>7</sup>÷5<sup>5</sup></span>
+    <span><b class="tag">(e)</b> 5<sup>3</sup>÷5</span><span><b class="tag">(f)</b> 5<sup>8</sup>÷5</span><span><b class="tag">(g)</b> 5<sup>7</sup>÷5<sup>4</sup></span><span><b class="tag">(h)</b> 5<sup>9</sup>÷5<sup>3</sup></span>
+    <span><b class="tag">(i)</b> 5<sup>4</sup>÷5<sup>8</sup></span><span><b class="tag">(j)</b> 5÷5<sup>3</sup></span><span><b class="tag">(k)</b> 5<sup>45</sup>÷5<sup>5</sup></span><span><b class="tag">(l)</b> 5<sup>3</sup>÷5<sup>3</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 5<sup>3</sup> (b) 5<sup>5</sup> (c) 5<sup>7</sup> (d) 5<sup>2</sup> (e) 5<sup>2</sup> (f) 5<sup>7</sup> (g) 5<sup>3</sup> (h) 5<sup>6</sup> (i) 5<sup>−4</sup> (j) 5<sup>−2</sup> (k) 5<sup>40</sup> (l) 5<sup>0</sup> (= 1)
+    <span class="how">나눗셈은 지수를 뺀다: a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m−n</sup>. 같은 수끼리 나누면 a<sup>0</sup> = 1.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: Write as a single power of 3</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 3<sup>5</sup>/3<sup>2</sup></span><span><b class="tag">(b)</b> 3<sup>10</sup>/3<sup>5</sup></span><span><b class="tag">(c)</b> 3<sup>8</sup>/3<sup>3</sup></span><span><b class="tag">(d)</b> 3<sup>20</sup>/3<sup>5</sup></span>
+    <span><b class="tag">(e)</b> 3<sup>7</sup>/3<sup>7</sup></span><span><b class="tag">(f)</b> 3<sup>2</sup>/3<sup>4</sup></span><span><b class="tag">(g)</b> 3<sup>15</sup>/3<sup>9</sup></span><span><b class="tag">(h)</b> 3<sup>3</sup>/3<sup>8</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 3<sup>3</sup> (b) 3<sup>5</sup> (c) 3<sup>5</sup> (d) 3<sup>15</sup> (e) 3<sup>0</sup> (=1) (f) 3<sup>−2</sup> (g) 3<sup>6</sup> (h) 3<sup>−5</sup>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 4: Write as a single power of 8</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> (8<sup>5</sup>)<sup>2</sup></span><span><b class="tag">(b)</b> (8<sup>3</sup>)<sup>2</sup></span><span><b class="tag">(c)</b> (8<sup>4</sup>)<sup>3</sup></span><span><b class="tag">(d)</b> (8<sup>5</sup>)<sup>4</sup></span>
+    <span><b class="tag">(e)</b> (8<sup>3</sup>)<sup>6</sup></span><span><b class="tag">(f)</b> (8<sup>7</sup>)<sup>3</sup></span><span><b class="tag">(g)</b> (8<sup>6</sup>)<sup>6</sup></span><span><b class="tag">(h)</b> (8<sup>9</sup>)<sup>2</sup></span>
+    <span><b class="tag">(i)</b> (8<sup>4</sup>)<sup>8</sup></span><span><b class="tag">(j)</b> (8<sup>3</sup>)<sup>−5</sup></span><span><b class="tag">(k)</b> (8<sup>−5</sup>)<sup>2</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 8<sup>10</sup> (b) 8<sup>6</sup> (c) 8<sup>12</sup> (d) 8<sup>20</sup> (e) 8<sup>18</sup> (f) 8<sup>21</sup> (g) 8<sup>36</sup> (h) 8<sup>18</sup> (i) 8<sup>32</sup> (j) 8<sup>−15</sup> (k) 8<sup>−10</sup>
+    <span class="how">괄호 밖 지수는 곱한다: (a<sup>m</sup>)<sup>n</sup> = a<sup>m×n</sup>. 음수도 그대로 곱한다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 5: Write as a single power of y</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> y<sup>7</sup>×y<sup>3</sup></span><span><b class="tag">(b)</b> y<sup>9</sup>÷y<sup>7</sup></span><span><b class="tag">(c)</b> y<sup>6</sup>÷y<sup>2</sup></span><span><b class="tag">(d)</b> (y<sup>3</sup>)<sup>5</sup></span>
+    <span><b class="tag">(e)</b> y<sup>7</sup>÷y</span><span><b class="tag">(f)</b> y<sup>3</sup>÷y<sup>7</sup></span><span><b class="tag">(g)</b> (y<sup>9</sup>)<sup>5</sup></span><span><b class="tag">(h)</b> y<sup>6</sup>×y<sup>7</sup></span>
+    <span><b class="tag">(i)</b> y<sup>6</sup>×y<sup>5</sup>×y<sup>2</sup></span><span><b class="tag">(j)</b> y<sup>8</sup>×y×y<sup>3</sup></span><span><b class="tag">(k)</b> y<sup>8</sup>/y<sup>5</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) y<sup>10</sup> (b) y<sup>2</sup> (c) y<sup>4</sup> (d) y<sup>15</sup> (e) y<sup>6</sup> (f) y<sup>−4</sup> (g) y<sup>45</sup> (h) y<sup>13</sup> (i) y<sup>13</sup> (j) y<sup>12</sup> (k) y<sup>3</sup>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Laws of Indices — Apply</span>
+
+<div class="q">
+  <div class="q-title">Question 1: Can you spot any mistakes? &nbsp; 2<sup>6</sup>×2<sup>3</sup> = 4<sup>9</sup> &nbsp;/&nbsp; 7<sup>15</sup>÷7<sup>5</sup> = 7<sup>3</sup> &nbsp;/&nbsp; 6<sup>3</sup>×6<sup>4</sup> = 6<sup>12</sup></div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    세 개 모두 틀렸다.<br>
+    ① 2<sup>6</sup>×2<sup>3</sup> = 2<sup>9</sup> — 밑은 그대로 2다(4로 바꾸면 안 된다).<br>
+    ② 7<sup>15</sup>÷7<sup>5</sup> = 7<sup>10</sup> — 나눗셈은 빼기지 나누기가 아니다(15−5).<br>
+    ③ 6<sup>3</sup>×6<sup>4</sup> = 6<sup>7</sup> — 곱셈은 더하기지 곱하기가 아니다(3+4).
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Find three different pairs of values for m and n. &nbsp; c<sup>m</sup> × c<sup>n</sup> = c<sup>8</sup></div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    m + n = 8 이면 된다 → (1, 7), (2, 6), (3, 5) … (음수도 가능: (10, −2))
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Negative Indices (Corbettmaths 175) — Workout</span>
+
+<div class="q">
+  <div class="q-title">Question 1: Evaluate each of the following</div>
+  <div class="items">
+    <span><b class="tag">(a)</b> 5<sup>−2</sup></span><span><b class="tag">(b)</b> 2<sup>−1</sup></span><span><b class="tag">(c)</b> 2<sup>−3</sup></span><span><b class="tag">(d)</b> 4<sup>−2</sup></span><span><b class="tag">(e)</b> 3<sup>−3</sup></span><span><b class="tag">(f)</b> 6<sup>−1</sup></span>
+    <span><b class="tag">(g)</b> 10<sup>−2</sup></span><span><b class="tag">(h)</b> 2<sup>−4</sup></span><span><b class="tag">(i)</b> 9<sup>−2</sup></span><span><b class="tag">(j)</b> 3<sup>−4</sup></span><span><b class="tag">(k)</b> 10<sup>−1</sup></span><span><b class="tag">(l)</b> 7<sup>−2</sup></span>
+    <span><b class="tag">(m)</b> 2<sup>−5</sup></span><span><b class="tag">(n)</b> 5<sup>−3</sup></span><span><b class="tag">(o)</b> 2<sup>−6</sup></span><span><b class="tag">(p)</b> 10<sup>−4</sup></span><span><b class="tag">(q)</b> 6<sup>−3</sup></span><span><b class="tag">(r)</b> 10<sup>−6</sup></span>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) 1/25 (b) 1/2 (c) 1/8 (d) 1/16 (e) 1/27 (f) 1/6 (g) 1/100 (h) 1/16 (i) 1/81<br>
+    (j) 1/81 (k) 1/10 (l) 1/49 (m) 1/32 (n) 1/125 (o) 1/64 (p) 1/10000 (q) 1/216 (r) 1/1000000
+    <span class="how">음수 지수(negative index) = 뒤집어라: a<sup>−n</sup> = 1/a<sup>n</sup>. 답이 음수가 되는 게 아니다(자주 틀리는 곳).</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2~4: Write in index form / in the form 2<sup>n</sup> / in the form 5<sup>n</sup></div>
+  <div class="q-ko">
+    Q2) 1/5², 1/3⁴, 1/8³, 1/4⁵, 1/10³, 1/2⁶<br>
+    Q3) 1/2, 1/4, 1/32, 1/8, 1/64, 1/256 을 2<sup>n</sup> 꼴로<br>
+    Q4) 1/125, 1/25, 1/5, 1/3125, 1/625, 1/15625 을 5<sup>n</sup> 꼴로
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    Q2) (a) 5<sup>−2</sup> (b) 3<sup>−4</sup> (c) 8<sup>−3</sup> (d) 4<sup>−5</sup> (e) 10<sup>−3</sup> (f) 2<sup>−6</sup><br>
+    Q3) (a) 2<sup>−1</sup> (b) 2<sup>−2</sup> (c) 2<sup>−5</sup> (d) 2<sup>−3</sup> (e) 2<sup>−6</sup> (f) 2<sup>−8</sup><br>
+    Q4) (a) 5<sup>−3</sup> (b) 5<sup>−2</sup> (c) 5<sup>−1</sup> (d) 5<sup>−5</sup> (e) 5<sup>−4</sup> (f) 5<sup>−6</sup>
+    <span class="how">분모를 그 밑의 거듭제곱으로 바꾸면 지수에 마이너스를 붙이면 된다. 예 32 = 2<sup>5</sup> → 1/32 = 2<sup>−5</sup>.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 5~8: 분수 ↔ 지수 꼴 바꾸기</div>
+  <div class="q-ko">
+    Q5) a<sup>−2</sup>, y<sup>−1</sup>, w<sup>−4</sup>, 2<sup>−x</sup>, 5<sup>−a</sup>, x<sup>−n</sup> 를 분수로<br>
+    Q6) 1/w², 1/2<sup>y</sup>, 1/x⁵, 1/4<sup>x</sup>, 1/y<sup>x</sup>, 1/m<sup>n</sup> 를 지수 꼴로<br>
+    Q7) 5y<sup>−2</sup>, 8c<sup>−1</sup>, (5x)<sup>−2</sup>, (2y)<sup>−3</sup>, 2x<sup>−3</sup>, (10w)<sup>−3</sup> 를 분수로<br>
+    Q8) 3/x², 5/w⁸, 2/(3y²), 1/(4x³), 6/y<sup>m</sup>, a/x<sup>n</sup> 를 지수 꼴로
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    Q5) 1/a², 1/y, 1/w⁴, 1/2<sup>x</sup>, 1/5<sup>a</sup>, 1/x<sup>n</sup><br>
+    Q6) w<sup>−2</sup>, 2<sup>−y</sup>, x<sup>−5</sup>, 4<sup>−x</sup>, y<sup>−x</sup>, m<sup>−n</sup><br>
+    Q7) 5/y², 8/c, 1/(25x²), 1/(8y³), 2/x³, 1/(1000w³)<br>
+    Q8) 3x<sup>−2</sup>, 5w<sup>−8</sup>, (2/3)y<sup>−2</sup>, (1/4)x<sup>−3</sup>, 6y<sup>−m</sup>, a·x<sup>−n</sup>
+    <span class="how">★함정: 5y<sup>−2</sup> 는 y 만 뒤집는다 → 5/y². 하지만 (5x)<sup>−2</sup> 는 괄호 전체라서 5도 제곱된다 → 1/(25x²).</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 9~10: Write each of the following as fractions (분수 지수)</div>
+  <div class="q-ko">
+    Q9) 100<sup>−1/2</sup>, 25<sup>−1/2</sup>, 9<sup>−1/2</sup>, 8<sup>−1/3</sup>, 125<sup>−1/3</sup>, 16<sup>−1/4</sup><br>
+    Q10) 8<sup>−2/3</sup>, 25<sup>−3/2</sup>, 64<sup>−2/3</sup>, 4<sup>−5/2</sup>, 81<sup>−3/4</sup>, 100000<sup>−2/5</sup>
+  </div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    Q9) 1/10, 1/5, 1/3, 1/2, 1/5, 1/2<br>
+    Q10) 1/4, 1/125, 1/16, 1/32, 1/27, 1/100
+    <span class="how">푸는 법 3단계: ① 마이너스 → 분수로 뒤집기 ② 분모의 수 = 몇 제곱근인지(1/2=√, 1/3=∛) ③ 분자의 수 = 그다음 거듭제곱.
+    예 8<sup>−2/3</sup> = 1/8<sup>2/3</sup> = 1/(∛8)² = 1/2² = 1/4.</span>
+  </div></details>
+</div>
+
+<span class="src">Worksheet · Negative Indices — Apply</span>
+
+<div class="q">
+  <div class="q-title">Question 1: Arrange in order from smallest to largest. &nbsp; 1/50, 5<sup>−2</sup>, 3/10, 2<sup>−3</sup></div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    1/50 (0.02) &lt; 5<sup>−2</sup> (0.04) &lt; 2<sup>−3</sup> (0.125) &lt; 3/10 (0.3)
+    <span class="how">전부 소수로 바꿔 비교하면 헷갈리지 않는다.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 2: Work out &nbsp; (a) 4<sup>−2</sup> × 3<sup>2</sup> &nbsp; (b) 10<sup>−1</sup> ÷ 5<sup>−2</sup> &nbsp; (c) 2<sup>−2</sup> + 3<sup>−2</sup> × 2<sup>3</sup></div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) (1/16) × 9 = 9/16<br>
+    (b) (1/10) ÷ (1/25) = (1/10) × 25 = 2.5 (= 5/2)<br>
+    (c) 1/4 + (1/9)×8 = 1/4 + 8/9 = 9/36 + 32/36 = 41/36 (= 1 5/36)
+    <span class="how">(c) 는 곱셈 먼저(BIDMAS), 그다음 더하기.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 3: Sally has completed her homework. Can you spot any mistakes? &nbsp; 4<sup>−2</sup> = −16 &nbsp;/&nbsp; 10<sup>−3</sup> = 1/30</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    둘 다 틀렸다. 4<sup>−2</sup> = 1/16 (마이너스 지수는 답을 음수로 만들지 않는다).
+    10<sup>−3</sup> = 1/10³ = 1/1000 (10×3=30 이 아니다).
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 4: Given that 2<sup>m</sup> + 2<sup>n</sup> = 9/32, work out mn</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    mn = 10
+    <span class="how">9/32 = 8/32 + 1/32 = 1/4 + 1/32 = 2<sup>−2</sup> + 2<sup>−5</sup> → m, n = −2, −5 → mn = (−2)×(−5) = 10.</span>
+  </div></details>
+</div>
+
+<div class="q">
+  <div class="q-title">Question 5: Put x<sup>−2</sup>, x<sup>0</sup>, x, x<sup>3</sup> in order, from smallest to largest, when:</div>
+  <div class="q-ko">(a) x = 2 &nbsp; (b) x = 1 &nbsp; (c) x = 0.5 &nbsp; (d) x = −0.5 &nbsp; (e) x = −1 &nbsp; (f) x = −2</div>
+  <details><summary>답·풀이 보기</summary><div class="ans">
+    (a) x = 2 → 0.25, 1, 2, 8 → x<sup>−2</sup> &lt; x<sup>0</sup> &lt; x &lt; x<sup>3</sup><br>
+    (b) x = 1 → 모두 1 (전부 같다)<br>
+    (c) x = 0.5 → 4, 1, 0.5, 0.125 → x<sup>3</sup> &lt; x &lt; x<sup>0</sup> &lt; x<sup>−2</sup><br>
+    (d) x = −0.5 → 4, 1, −0.5, −0.125 → x &lt; x<sup>3</sup> &lt; x<sup>0</sup> &lt; x<sup>−2</sup><br>
+    (e) x = −1 → 1, 1, −1, −1 → x = x<sup>3</sup> &lt; x<sup>0</sup> = x<sup>−2</sup><br>
+    (f) x = −2 → 0.25, 1, −2, −8 → x<sup>3</sup> &lt; x &lt; x<sup>−2</sup> &lt; x<sup>0</sup>
+    <span class="how">x<sup>0</sup> 은 항상 1. x<sup>−2</sup> = 1/x² 이라 x 가 음수여도 양수다. 홀수 제곱(x³)은 부호가 그대로다.</span>
+  </div></details>
+</div>
+</div>
+
+<div class="foot">
+  출처: 선생님 OneNote “SJI Year 9 Math” · CHAPTER 1 (1.1~1.3) 및 붙어 있는 워크시트(Corbettmaths 230 · 300–303 · 174 · 175)<br>
+  2단원(Expressions and formulae) · 3단원(Decimals, percentages and rounding) · 4단원(Equations and inequalities)은 다음 차례.
+</div>
+
+</div>
+</body>
+</html>
