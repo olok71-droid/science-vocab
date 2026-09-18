@@ -308,6 +308,10 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
     <div class="header-title">Decimals, percentages and rounding 소수·백분율·반올림</div>
     <div class="header-sub">📐 Maths 수학 · Unit 3 · Year 9 · Cambridge Lower Secondary</div>
   </div>
+  <div class="header-actions">
+    <a class="btn-claude grade" id="btn-grade" target="_blank" rel="noopener" href="#" title="이 단원 문제 채점">📷</a>
+    <a class="btn-claude" id="btn-ask" target="_blank" rel="noopener" href="#" title="이 단원에 대해 Claude에게 질문">💬 Claude</a>
+  </div>
 </header>
 
 <div class="tabs-wrap">
@@ -338,6 +342,27 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
     window.scrollTo({top:0, behavior:'smooth'});
   });
 });
+</script>
+<script>
+(function(){
+  var NL = "\n";
+  var askMsg = "저는 말레이시아 SJI International School 9학년(Year 9) 학생이에요. 한국인이고 수업은 영어로 들어요. Cambridge Lower Secondary Maths Stage 9를 배웁니다." + NL + NL +
+    "지금 단원: 3단원 Decimals, percentages and rounding (소수·백분율·반올림)" + NL +
+    "· 3.1 Multiplying and dividing by powers of 10" + NL +
+    "· 3.2 Multiplying and dividing decimals 소수 곱셈·나눗셈" + NL +
+    "· 3.3 Understanding compound percentages 복리" + NL +
+    "· 3.4 Upper and lower bounds 상한·하한" + NL +
+    NL +
+    "선생님이 주신 문제지는 Corbettmaths 204(Multiplying Decimals), 92(Dividing by Decimals), Compound Interest 시험형 문제, Dr Frost(Estimation and Bounds) 입니다." + NL + NL +
+    "이 단원 과외 선생님이 되어 주세요. 한국어로 물으면 한국어로 답하되 수학 용어는 영어를 같이 써 주세요. 답만 주지 말고 단계별로 풀이를 보여 주고, 마지막에 비슷한 연습문제 1개를 내 주세요. 영국식 표기를 씁니다." + NL + NL +
+    "질문 시작할게요:" + NL;
+  var gradeMsg = "저는 SJI International 9학년 학생이에요. 지금 올리는 사진은 Cambridge Lower Secondary Maths Stage 9 · 3단원 Decimals, percentages and rounding (소수·백분율·반올림) 문제를 제가 푼 것입니다." + NL + NL +
+    "채점해 주세요. 틀린 문제는 어디서 틀렸는지 한국어로 짚어 주고, 바른 풀이를 단계별로 보여 주세요. 수학 용어는 영어를 같이 써 주세요." + NL;
+  var a = document.getElementById('btn-ask');
+  var g = document.getElementById('btn-grade');
+  if (a) a.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
+  if (g) g.href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
+})();
 </script>
 </body>
 </html>

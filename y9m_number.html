@@ -1244,23 +1244,16 @@ let qAnswered = new Array(QUIZ_DATA.length).fill(null);
 (function setupClaudeLinks() {
   var NL = String.fromCharCode(10);
   var topicsList = UNIT_TOPICS.map(function(t, i) { return (i+1) + '. ' + t; }).join(NL);
-  var askMsg = "I'm a Year 8 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
-    "Current unit: " + UNIT_TITLE + NL +
-    "Topics:" + NL + topicsList + NL + NL +
-    "Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use - if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary." + NL + NL +
+  var askMsg = "저는 말레이시아 SJI International School 9학년(Year 9) 학생이에요. 한국인이고 수업은 영어로 들어요. Cambridge Lower Secondary Maths Stage 9를 배웁니다." + NL + NL +
+    "지금 단원: 1단원 Number and calculation (수와 계산)" + NL +
+    "· 1.1 Irrational numbers 무리수와 surd — 유리수/무리수 구분, 제곱수로 √ 어림하기" + NL +
+    "· 1.2 Standard form 표준형 — a x 10^n 으로 고치기, 곱셈·나눗셈·덧셈" + NL +
+    "· 1.3 Indices 지수 — 지수법칙(더하기/빼기/곱하기), 음수 지수, 분수 지수" + NL + NL +
+    "선생님이 주신 문제지는 Corbettmaths 230(Rational and Irrational), 300-303(Standard Form), 174(Laws of Indices), 175(Negative Indices) 입니다." + NL + NL +
+    "이 단원 과외 선생님이 되어 주세요. 한국어로 물으면 한국어로 답하되 수학 용어는 영어를 같이 써 주세요(예: 무리수 irrational number). 답만 주지 말고 단계별로 풀이를 보여 주고, 마지막에 비슷한 연습문제 1개를 내 주세요. 영국식 표기를 씁니다." + NL + NL +
     "질문 시작할게요:" + NL;
-  var gradeMsg = "I'm a Year 8 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
-    "Unit: " + UNIT_TITLE + NL +
-    "Topics: " + UNIT_TOPICS.join(' · ') + NL + NL +
-    "Please grade my worksheet. For each question:" + NL +
-    "- Read the problem and my answer (if any)." + NL +
-    "- Mark ✅ correct / ❌ wrong / ⚠️ partial." + NL +
-    "- Give the correct answer." + NL +
-    "- Explain mistakes in British English with a short Korean hint in parentheses for tough words." + NL + NL +
-    "End with a summary: total / correct / what to review next." + NL + NL +
-    "사진 첨부할게요!";
-  var ask = document.getElementById('btn-ask');
-  var grade = document.getElementById('btn-grade');
+  var gradeMsg = "저는 SJI International 9학년 학생이에요. 지금 올리는 사진은 Cambridge Lower Secondary Maths Stage 9 · 1단원 Number and calculation (1.1 무리수/surd, 1.2 표준형, 1.3 지수) 문제를 제가 푼 것입니다." + NL + NL +
+    "채점해 주세요. 틀린 문제는 어디서 틀렸는지 한국어로 짚어 주고, 바른 풀이를 단계별로 보여 주세요. 수학 용어는 영어를 같이 써 주세요." + NL;
   if (ask) ask.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
   if (grade) grade.href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
 })();
