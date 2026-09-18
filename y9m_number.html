@@ -1254,6 +1254,8 @@ let qAnswered = new Array(QUIZ_DATA.length).fill(null);
     "질문 시작할게요:" + NL;
   var gradeMsg = "저는 SJI International 9학년 학생이에요. 지금 올리는 사진은 Cambridge Lower Secondary Maths Stage 9 · 1단원 Number and calculation (1.1 무리수/surd, 1.2 표준형, 1.3 지수) 문제를 제가 푼 것입니다." + NL + NL +
     "채점해 주세요. 틀린 문제는 어디서 틀렸는지 한국어로 짚어 주고, 바른 풀이를 단계별로 보여 주세요. 수학 용어는 영어를 같이 써 주세요." + NL;
+  var ask = document.getElementById('btn-ask');
+  var grade = document.getElementById('btn-grade');
   if (ask) ask.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
   if (grade) grade.href = 'https://claude.ai/new?q=' + encodeURIComponent(gradeMsg);
 })();
