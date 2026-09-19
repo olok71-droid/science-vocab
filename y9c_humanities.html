@@ -512,24 +512,83 @@ const UNIT_TOPICS = [];
 let qAnswered = new Array(QUIZ_DATA.length).fill(null);
 
 // ─── claude.ai 새 창 링크 ───
+// ★이 과목은 지리(Tectonic Hazards)다. 과학 문구를 다시 넣지 마라(2026-09-19).
+//   단원 지식(KNOWLEDGE)과 단어장(VOCAB_DATA)을 통째로 실어 보내 클로드가 자료를 다 알고 시작하게 한다.
 (function setupClaudeLinks() {
   var NL = String.fromCharCode(10);
-  var topicsList = UNIT_TOPICS.map(function(t, i) { return (i+1) + '. ' + t; }).join(NL);
-  var askMsg = "I'm a Year 9 student at an international school in Malaysia, studying Cambridge Lower Secondary Science (Hodder Education). I'm Korean and learn in English." + NL + NL +
-    "Current unit: " + UNIT_TITLE + NL +
-    "Topics:" + NL + topicsList + NL + NL +
-    "Please be my tutor for THIS unit. Use British English (haemoglobin, colour, behaviour). Reply in the same language I use - if I ask in Korean, answer in Korean with English keywords; if I ask in English, give short Korean hints in parentheses for tough vocabulary." + NL + NL +
-    "질문 시작할게요:" + NL;
-  var gradeMsg = "I'm a Year 9 Cambridge Lower Secondary Science student. The worksheet I'm about to attach is from this unit:" + NL + NL +
-    "Unit: " + UNIT_TITLE + NL +
-    "Topics: " + UNIT_TOPICS.join(' · ') + NL + NL +
-    "Please grade my worksheet. For each question:" + NL +
+  var KNOWLEDGE = [
+    "== UNIT KNOWLEDGE (everything I have been taught this term) ==",
+    "",
+    "1) STRUCTURE OF THE EARTH",
+    "- Four main layers from outside in: crust, mantle, outer core, inner core.",
+    "- Crust: thin outer shell. Continental crust up to 75 km thick, mainly granite; oceanic crust up to 6 km, denser. The higher density of oceanic crust is why it subducts.",
+    "- Mantle: thickest layer, hot rock moving slowly. Convection currents here drive the plates.",
+    "- Outer core: LIQUID iron and nickel (with sulphur and oxygen). Its movement creates the Earth's magnetic field, which protects us from the solar wind.",
+    "- Inner core: SOLID, hottest (about 5,000-6,000 C) but kept solid by extreme pressure.",
+    "- Lithosphere = crust + uppermost mantle (rigid plates). Asthenosphere = soft layer underneath the plates slide on.",
+    "- We know the structure from seismic waves, which travel differently through solid and liquid layers.",
+    "",
+    "2) THE FOUR PLATE BOUNDARIES",
+    "- CONSTRUCTIVE: plates move apart (Mid-Atlantic Ridge). Magma rises, causing earthquakes and volcanoes such as Eyjafjallajokull. Magma is hot and runny, so lava travels far and builds broad, gently sloping SHIELD volcanoes.",
+    "- DESTRUCTIVE: plates move together (west coast of South America). A deep OCEAN TRENCH forms. The denser oceanic Nazca plate is SUBDUCTED beneath the continental South American plate. Friction causes strong earthquakes; the melting plate makes sticky magma that builds explosive COMPOSITE volcanoes.",
+    "- COLLISION: two continental plates of similar density meet, so neither subducts. The crust crumples and is uplifted into FOLD MOUNTAINS (Himalayas). Earthquakes yes, volcanoes NO (no new magma).",
+    "- CONSERVATIVE: plates slide past each other (San Andreas Fault, California). Stress builds for years then releases suddenly; shallow focus makes it destructive. Earthquakes yes, volcanoes NO.",
+    "- Key point: volcanoes only at constructive and destructive margins.",
+    "",
+    "3) CONTINENTAL DRIFT",
+    "- About 300 million years ago all land was joined in the supercontinent PANGAEA.",
+    "- Alfred Wegener, a German scientist in the early 1900s, first proposed continental drift.",
+    "- Evidence: coastlines fit like a jigsaw, matching fossils on separated continents, matching rocks and mountain chains, matching glacial deposits.",
+    "- Plates are moved by convection currents in the mantle (also ridge push and slab pull).",
+    "",
+    "4) TYPES OF VOLCANO",
+    "- SHIELD: made only of lava, thin and runny, flows far, wide base and gentle slopes, one large vent, found at constructive margins, gentle eruptions, no volcanic bombs. Example: Mauna Loa, Hawaii.",
+    "- COMPOSITE: layers of ash and lava, thick sticky lava like treacle, narrow base and steep slopes, several vents and parasitic cones, found at destructive margins, violent eruptions with volcanic bombs, LAHARS (mudflows of rain mixed with ash). Example: Mount Fuji, Japan.",
+    "",
+    "5) WHY SOME ERUPTIONS ARE MORE DANGEROUS",
+    "- Stages: magma type, gas, pressure, eruption style, pyroclastic flows.",
+    "- Runny magma lets gas escape gently, so eruptions are safe lava flows (Mauna Loa, Kilauea).",
+    "- Sticky magma traps gas, pressure builds, the release blasts ash, dust and rock kilometres into the air. Collapsing material races downslope as PYROCLASTIC FLOWS, the most dangerous hazard.",
+    "- Named examples: Mount Vesuvius (AD 79), Mount St. Helens (1980), Mount Pelee (1902), Mount Pinatubo, Eyjafjallajokull (2010, ash grounded European flights).",
+    "",
+    "6) IMPACTS OF VOLCANIC HAZARDS",
+    "- SOCIAL: people and communities - injuries, deaths, loss of homes, health problems.",
+    "- ECONOMIC: money, jobs, businesses - damaged roads, airports, farms, lost tourism.",
+    "- ENVIRONMENTAL: forests destroyed, air and water polluted, soil damaged.",
+    "- Enquiry question: why can one volcanic hazard have impacts on people, the economy and the environment?",
+    "",
+    "7) HOW I MUST WRITE LONG ANSWERS - PEEL",
+    "- Point: state my view. Evidence: named examples. Explain: why it matters. Link: consider the other side, then return to my point."
+  ].join(NL);
+
+  var vocab = "";
+  try {
+    vocab = VOCAB_DATA.slice(0, 50).map(function(v){ return v.en + " = " + v.ko; }).join("; ");
+  } catch (e) { vocab = ""; }
+
+  var intro = "I'm a Year 9 student at SJI International in Malaysia. I'm Korean and learn in English. This is my HUMANITIES lesson - Geography with Mr Lawrence. Term 1 unit: TECTONIC HAZARDS. This is NOT a science lesson.";
+
+  var rules = "How to reply:" + NL +
+    "- Use British English." + NL +
+    "- Answer in the same language I use. If I ask in Korean, answer in Korean but keep the key terms in English in brackets, because I must write my answers in English." + NL +
+    "- Explain fully, like a teacher, not in one line. Use the named examples above." + NL +
+    "- For long-answer questions, structure it with PEEL." + NL +
+    "- You already have my unit notes above, so do not tell me you need more information - use them.";
+
+  var askMsg = intro + NL + NL + KNOWLEDGE + NL + NL +
+    "== KEY VOCABULARY (English = Korean) ==" + NL + vocab + NL + NL +
+    rules + NL + NL + "질문 시작할게요:" + NL;
+
+  var gradeMsg = intro + NL + NL + KNOWLEDGE + NL + NL +
+    "I'm attaching a worksheet from this unit. Please grade it. For each question:" + NL +
     "- Read the problem and my answer (if any)." + NL +
-    "- Mark ✅ correct / ❌ wrong / ⚠️ partial." + NL +
-    "- Give the correct answer." + NL +
-    "- Explain mistakes in British English with a short Korean hint in parentheses for tough words." + NL + NL +
+    "- Mark correct / wrong / partial." + NL +
+    "- Give the correct answer using the unit notes above." + NL +
+    "- Explain mistakes in British English with a short Korean hint in parentheses for tough words." + NL +
+    "- If the answer needed PEEL, show me how to improve it." + NL + NL +
     "End with a summary: total / correct / what to review next." + NL + NL +
     "사진 첨부할게요!";
+
   var ask = document.getElementById('btn-ask');
   var grade = document.getElementById('btn-grade');
   if (ask) ask.href = 'https://claude.ai/new?q=' + encodeURIComponent(askMsg);
