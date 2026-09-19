@@ -36,7 +36,36 @@ b{color:var(--strong)}
 ul{margin:6px 0 4px 20px}li{margin:3px 0}
 .tip{background:rgba(109,93,252,.08);border-left:4px solid var(--purple);border-radius:10px;padding:10px 14px;margin:10px 0}
 .scroll{overflow-x:auto}
-</style></head>
+</style>
+<style>
+.qitem{border:1px solid var(--border);border-radius:14px;padding:10px 12px;margin:0 0 10px;background:#fff}
+.qhead{display:flex;align-items:center;gap:7px;margin-bottom:5px}
+.qno{background:#16223f;color:#fff;border-radius:8px;min-width:24px;height:24px;display:inline-flex;
+ align-items:center;justify-content:center;font-size:13px;font-weight:900}
+.qbadge{color:#fff;border-radius:7px;padding:2px 8px;font-size:11px;font-weight:900}
+.qcopy{margin-left:auto;background:rgba(13,148,136,.12);border:1.5px solid rgba(13,148,136,.45);color:#0d9488;
+ border-radius:9px;padding:4px 12px;font-size:12px;font-weight:900;font-family:inherit;cursor:pointer}
+.qcopy.done{background:#16a34a;color:#fff;border-color:#16a34a}
+.qen{font-size:16px;font-weight:800;color:#16223f;line-height:1.45}
+.qko{font-size:13px;font-weight:700;color:#6d5dfc;margin:1px 0 5px}
+.qopts{font-size:15px}
+.copyall{display:block;width:100%;background:#0d9488;color:#fff;border:none;border-radius:12px;
+ padding:11px;font-size:15px;font-weight:900;font-family:inherit;cursor:pointer;margin:0 0 12px}
+.copyall.done{background:#16a34a}
+</style>
+<script>
+function qFlash(b,t){var o=b.textContent;b.textContent=t;b.classList.add('done');
+ setTimeout(function(){b.textContent=o;b.classList.remove('done')},1400);}
+function qWrite(s,b,t){
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(s).then(function(){qFlash(b,t)},function(){qFallback(s,b,t)});}
+ else{qFallback(s,b,t);}}
+function qFallback(s,b,t){var a=document.createElement('textarea');a.value=s;a.style.position='fixed';a.style.opacity='0';
+ document.body.appendChild(a);a.select();a.setSelectionRange(0,999999);try{document.execCommand('copy');qFlash(b,t);}catch(e){}
+ document.body.removeChild(a);}
+function qCopy(b){qWrite(b.parentNode.querySelector('.qsrc').value,b,'복사됨');}
+function qCopyAll(b){qWrite(document.getElementById('q-all').value,b,'전체 복사됨');}
+</script>
+</head>
 <body>
 <header>
   <a class="header-back" href="y9c_humanities.html" aria-label="뒤로">←</a>
@@ -223,6 +252,155 @@ ul{margin:6px 0 4px 20px}li{margin:3px 0}
 </ul>
 
 <div class="tip">Kahoot은 안내문 9번(카드·보드게임)보다 <b>8번 Gameshow</b>에 더 맞다 — 원문이 “퀴즈쇼를 만들어 반 친구들과 해 보라”이다. 제출할 때 <b>8번</b>으로 적는 편이 맞는다.</div>
+</div>
+<div class="card">
+<h2><span class="n">11</span>Kahoot 문제 15개 Questions</h2>
+<div class="tip">쉬운 것부터 어려운 것 순서다. <b>O/X 5개</b>(1·4·8·12·15번)와 <b>4지선다 10개</b>. 초록 <b>✔</b> 표시가 정답이다. 한국어는 뜻만 적은 것이라 <b>Kahoot에는 영어만</b> 넣는다.</div>
+<textarea id="q-all" hidden>The Earth has four main layers.
+* True
+  False
+
+Which layer is the outermost layer of the Earth?
+* Crust
+  Mantle
+  Outer core
+  Inner core
+
+Which layer of the Earth is liquid?
+* Outer core
+  Inner core
+  Mantle
+  Crust
+
+The inner core is liquid.
+  True
+* False
+
+What was the supercontinent 300 million years ago called?
+* Pangaea
+  Gondwana
+  Laurasia
+  Atlantis
+
+At which plate boundary do two plates move apart?
+* Constructive
+  Destructive
+  Collision
+  Conservative
+
+Which plate boundary forms fold mountains like the Himalayas?
+* Collision
+  Constructive
+  Destructive
+  Conservative
+
+Volcanoes are found at conservative plate boundaries.
+  True
+* False
+
+Who first suggested the theory of continental drift?
+* Alfred Wegener
+  Charles Darwin
+  Isaac Newton
+  Marie Curie
+
+Which volcano has a wide base and gentle slopes?
+* Shield volcano
+  Composite volcano
+  Fold mountain
+  Ocean trench
+
+At a destructive boundary, which plate is subducted?
+* The denser oceanic plate
+  The lighter continental plate
+  Both plates
+  Neither plate
+
+Shield volcanoes are found at destructive plate boundaries.
+  True
+* False
+
+Why are eruptions with sticky magma so violent?
+* Gas is trapped and pressure builds
+  Gas escapes easily
+  The magma is very cold
+  There is no gas at all
+
+What is a lahar?
+* A mudflow of rain and ash
+  A type of runny lava
+  A deep ocean trench
+  A gentle eruption
+
+The 2010 Iceland eruption affected air travel in other countries.
+* True
+  False</textarea>
+<button class="copyall" type="button" onclick="qCopyAll(this)">📋 15문제 전체 복사</button>
+<div class="qitem"><div class="qhead"><span class="qno">1</span><span class="qbadge" style="background:#db2777">O / X</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>The Earth has four main layers.
+* True
+  False</textarea></div><div class="qen">The Earth has four main layers.</div><div class="qko">지구는 네 개의 주요 층으로 이루어져 있다.</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ True</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">참</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">False</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">거짓</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">2</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>Which layer is the outermost layer of the Earth?
+* Crust
+  Mantle
+  Outer core
+  Inner core</textarea></div><div class="qen">Which layer is the outermost layer of the Earth?</div><div class="qko">지구의 가장 바깥층은 어느 것인가?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ Crust</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">지각</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Mantle</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">맨틀</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Outer core</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">외핵</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Inner core</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">내핵</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">3</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>Which layer of the Earth is liquid?
+* Outer core
+  Inner core
+  Mantle
+  Crust</textarea></div><div class="qen">Which layer of the Earth is liquid?</div><div class="qko">지구의 층 가운데 액체인 것은?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ Outer core</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">외핵</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Inner core</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">내핵</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Mantle</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">맨틀</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Crust</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">지각</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">4</span><span class="qbadge" style="background:#db2777">O / X</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>The inner core is liquid.
+  True
+* False</textarea></div><div class="qen">The inner core is liquid.</div><div class="qko">내핵은 액체다.</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">True</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">참</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ False</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">거짓</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">5</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>What was the supercontinent 300 million years ago called?
+* Pangaea
+  Gondwana
+  Laurasia
+  Atlantis</textarea></div><div class="qen">What was the supercontinent 300 million years ago called?</div><div class="qko">3억 년 전의 초대륙 이름은?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ Pangaea</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">판게아</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Gondwana</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">곤드와나</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Laurasia</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">로라시아</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Atlantis</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">아틀란티스</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">6</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>At which plate boundary do two plates move apart?
+* Constructive
+  Destructive
+  Collision
+  Conservative</textarea></div><div class="qen">At which plate boundary do two plates move apart?</div><div class="qko">두 판이 서로 멀어지는 경계는?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ Constructive</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">건설적 경계</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Destructive</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">파괴적 경계</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Collision</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">충돌 경계</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Conservative</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">보존 경계</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">7</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>Which plate boundary forms fold mountains like the Himalayas?
+* Collision
+  Constructive
+  Destructive
+  Conservative</textarea></div><div class="qen">Which plate boundary forms fold mountains like the Himalayas?</div><div class="qko">히말라야 같은 습곡 산맥을 만드는 경계는?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ Collision</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">충돌 경계</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Constructive</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">건설적 경계</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Destructive</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">파괴적 경계</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Conservative</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">보존 경계</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">8</span><span class="qbadge" style="background:#db2777">O / X</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>Volcanoes are found at conservative plate boundaries.
+  True
+* False</textarea></div><div class="qen">Volcanoes are found at conservative plate boundaries.</div><div class="qko">보존 경계에는 화산이 있다.</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">True</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">참</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ False</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">거짓</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">9</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>Who first suggested the theory of continental drift?
+* Alfred Wegener
+  Charles Darwin
+  Isaac Newton
+  Marie Curie</textarea></div><div class="qen">Who first suggested the theory of continental drift?</div><div class="qko">대륙이동설을 처음 주장한 사람은?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ Alfred Wegener</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">알프레트 베게너</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Charles Darwin</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">찰스 다윈</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Isaac Newton</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">아이작 뉴턴</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Marie Curie</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">마리 퀴리</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">10</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>Which volcano has a wide base and gentle slopes?
+* Shield volcano
+  Composite volcano
+  Fold mountain
+  Ocean trench</textarea></div><div class="qen">Which volcano has a wide base and gentle slopes?</div><div class="qko">밑면이 넓고 경사가 완만한 화산은?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ Shield volcano</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">순상화산</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Composite volcano</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">성층화산</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Fold mountain</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">습곡 산맥</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Ocean trench</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">해구</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">11</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>At a destructive boundary, which plate is subducted?
+* The denser oceanic plate
+  The lighter continental plate
+  Both plates
+  Neither plate</textarea></div><div class="qen">At a destructive boundary, which plate is subducted?</div><div class="qko">파괴적 경계에서 아래로 섭입되는 판은?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ The denser oceanic plate</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">밀도가 큰 해양판</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">The lighter continental plate</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">가벼운 대륙판</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Both plates</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">두 판 모두</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Neither plate</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">어느 판도 아니다</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">12</span><span class="qbadge" style="background:#db2777">O / X</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>Shield volcanoes are found at destructive plate boundaries.
+  True
+* False</textarea></div><div class="qen">Shield volcanoes are found at destructive plate boundaries.</div><div class="qko">순상화산은 파괴적 경계에서 생긴다.</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">True</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">참</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ False</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">거짓</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">13</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>Why are eruptions with sticky magma so violent?
+* Gas is trapped and pressure builds
+  Gas escapes easily
+  The magma is very cold
+  There is no gas at all</textarea></div><div class="qen">Why are eruptions with sticky magma so violent?</div><div class="qko">끈끈한 마그마의 분출이 격렬한 까닭은?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ Gas is trapped and pressure builds</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">가스가 갇혀 압력이 쌓이기 때문</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">Gas escapes easily</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">가스가 쉽게 빠져나가서</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">The magma is very cold</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">마그마가 아주 차가워서</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">There is no gas at all</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">가스가 전혀 없어서</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">14</span><span class="qbadge" style="background:#0d9488">4지선다</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>What is a lahar?
+* A mudflow of rain and ash
+  A type of runny lava
+  A deep ocean trench
+  A gentle eruption</textarea></div><div class="qen">What is a lahar?</div><div class="qko">라하르란 무엇인가?</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ A mudflow of rain and ash</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">비와 화산재가 섞인 진흙 사태</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">A type of runny lava</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">묽은 용암의 한 종류</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">A deep ocean trench</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">깊은 해구</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">A gentle eruption</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">온화한 분출</span></div></div></div>
+<div class="qitem"><div class="qhead"><span class="qno">15</span><span class="qbadge" style="background:#db2777">O / X</span><button class="qcopy" type="button" onclick="qCopy(this)">복사</button><textarea class="qsrc" hidden>The 2010 Iceland eruption affected air travel in other countries.
+* True
+  False</textarea></div><div class="qen">The 2010 Iceland eruption affected air travel in other countries.</div><div class="qko">2010년 아이슬란드 분화는 다른 나라의 항공에도 영향을 주었다.</div><div class="qopts"><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;font-weight:900;color:#16a34a">✔ True</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">참</span></div><div style="display:flex;gap:8px;padding:3px 0;border-top:1px dashed rgba(36,59,107,.14)"><span style="flex:1;color:#243b6b">False</span><span style="flex:1;color:#243b6b;font-weight:700;font-size:14px">거짓</span></div></div></div>
 </div>
 </div>
 </body></html>
