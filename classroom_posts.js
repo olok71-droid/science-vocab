@@ -13,7 +13,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-18",
   "type": "과제",
   "title": "FESTIVAL TICKETS",
-  "ko": "축제 티켓 제작 과제",
+  "ko": "페스티벌 티켓 만들기",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
  },
@@ -31,7 +31,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "자료",
   "title": "2.3 Why elements react to form compounds - ionic bonds",
-  "ko": "이온결합 수업 자료",
+  "ko": "이온결합 학습자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -40,7 +40,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "자료",
   "title": "Please find all the presentations so far from this year.",
-  "ko": "올해 수업 발표자료 전체 공유",
+  "ko": "올해 수업 PPT 전체 모음",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -49,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "공지",
   "title": "FOBISIA Code Breaking Maths Challenge 2026",
-  "ko": "코드브레이킹 대회 참가, 충전된 기기 지참",
+  "ko": "코드해독 대회 참가, 충전된 기기 지참",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -58,7 +58,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "공지",
   "title": "Algorithm and Flowchart Quiz",
-  "ko": "알고리즘·순서도 퀴즈, 기호·문제해결 복습",
+  "ko": "알고리즘·순서도 퀴즈, 복습해 올 것",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -67,7 +67,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "Planning Doc",
-  "ko": "기획 문서 과제",
+  "ko": "플래닝 문서 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -76,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "공지",
   "title": "https://docs.google.com/document/d/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8/edit?usp=drivesdk",
-  "ko": "기획 문서 링크 공유",
+  "ko": "구글 문서 링크 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -103,7 +103,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-15",
   "type": "자료",
   "title": "This is a revision PPT for you to work through questions, in preparation for your CA.",
-  "ko": "CA 대비 복습 PPT 공유",
+  "ko": "CA 대비 복습 PPT",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -148,7 +148,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "alkali metals and halogens",
-  "ko": "알칼리금속·할로겐 퀴즈 풀기",
+  "ko": "알칼리금속·할로겐 퀴즈",
   "due": "2026-09-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -166,7 +166,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Cool Alkali Metal Experiments Video (by Aditya)",
-  "ko": "알칼리금속 실험 영상 공유",
+  "ko": "학생이 알칼리금속 실험 영상 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -184,7 +184,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Heads up - Common Assessment on Wednesday 30th lesson 3 - 10.55 - 11.50",
-  "ko": "공통평가 CA1 시험 예고, 3교시",
+  "ko": "공통평가1 예고, 3교시 10:55",
   "due": "2026-09-30",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -193,7 +193,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "2.2 Trends in groups within the Periodic Table",
-  "ko": "주기율표 족 경향 수업 자료",
+  "ko": "주기율표 족 경향 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -202,7 +202,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "CA1 - criteria",
-  "ko": "CA1 평가 기준표 자료",
+  "ko": "공통평가1 채점기준 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -211,7 +211,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "KLIMC  21st November - Interest Form",
-  "ko": "KLIMC 대회 참가 희망자 신청서 작성",
+  "ko": "KLIMC 대회 참가 신청서 작성",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -220,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "Week 4 Algorithm",
-  "ko": "4주차 알고리즘 과제",
+  "ko": "4주차 알고리즘 과제 제출",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4/a/ODcyOTQ0NzE0ODQw/details"
  },
@@ -238,7 +238,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Please review your team, and the rules for Thursday in the attached slides.",
-  "ko": "하우스 피구 — 하우스킷 입고 6교시 운동장 집합",
+  "ko": "하우스 피구 팀·규칙 확인, 하우스킷 입고 6교시 운동장",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -247,7 +247,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "Tutor Group Playlist",
-  "ko": "튜터 그룹 플레이리스트 자료",
+  "ko": "튜터반 음악 재생목록",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -265,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-11",
   "type": "과제",
   "title": "PRODUCT IN A TIN E-PORTFOLIO",
-  "ko": "틴 제품 이포트폴리오 제출",
+  "ko": "틴 제품 e-포트폴리오 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -292,7 +292,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "자료",
   "title": "Template for Common Assessment 1, 25/9/26",
-  "ko": "공통평가 1 서식 자료",
+  "ko": "공통평가 1 서식 배포",
   "due": "2026-09-25",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -301,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "공지",
   "title": "Your first 4 pages of your Product In A Tin e-portfolio is due on Friday, September 18.",
-  "ko": "이포트폴리오 첫 4쪽 제출 안내",
+  "ko": "e-포트폴리오 앞 4쪽 제출 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -309,8 +309,8 @@ window.CLASSROOM_POSTS = [
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-09-10",
   "type": "공지",
-  "title": "🎨 Design our new HS Outstanding Character Award certificate!",
-  "ko": "우수인성상 상장 디자인 공모",
+  "title": "Design our new HS Outstanding Character Award certificate!",
+  "ko": "우수인성상 상장 디자인 공모, 첨부 요건 확인",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -319,7 +319,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "공지",
   "title": "First 3 pages of Festival e-portfolio due next week in DT DEC class - Cover page, Moodboard, and Poster.",
-  "ko": "e포트폴리오 앞 3쪽 제출: 표지·무드보드·포스터",
+  "ko": "e포트폴리오 표지·무드보드·포스터 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
  },
@@ -337,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "자료",
   "title": "Properties of materials",
-  "ko": "물질의 성질 수업 자료",
+  "ko": "물질의 성질 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -373,7 +373,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "과제",
   "title": "Festival e-portfolio",
-  "ko": "축제 e포트폴리오 과제",
+  "ko": "페스티벌 e포트폴리오 작성",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
  },
@@ -382,7 +382,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-08",
   "type": "공지",
   "title": "Your first Continues Assessment (CA1) will be on Tuesday 22nd September 2026.",
-  "ko": "첫 평가 CA1, 첨부 CAT 문서 확인",
+  "ko": "첫 평가 CA1 안내, CAT 문서 확인",
   "due": "2026-09-22",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -399,8 +399,8 @@ window.CLASSROOM_POSTS = [
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-09-08",
   "type": "공지",
-  "title": "❗️Haze Alert – Important Reminders❗️",
-  "ko": "연무 경보 — 실내 대기, 야외활동 금지",
+  "title": "Haze Alert – Important Reminders",
+  "ko": "헤이즈 경보, 실내 대기·Y9 교실 H3-08~10",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -418,7 +418,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Genes and inheritance - check your progress",
-  "ko": "유전과 유전자 진도 점검 과제",
+  "ko": "유전과 상속 진도 점검",
   "due": "2026-09-13",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -445,7 +445,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "자료",
   "title": "7.4 Natural Selection",
-  "ko": "자연선택 수업 자료",
+  "ko": "자연선택 학습자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -454,7 +454,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "자료",
   "title": "Here are the lesson slides for the week.",
-  "ko": "이번 주 수업 슬라이드 공유",
+  "ko": "이번 주 화산 수업 슬라이드",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -463,7 +463,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-07",
   "type": "과제",
   "title": "Week 3",
-  "ko": "3주차 과제",
+  "ko": "3주차 과제 제출",
   "due": "2026-09-14",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -499,7 +499,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-04",
   "type": "과제",
   "title": "Design Brief & Customer Profile",
-  "ko": "디자인 브리프·고객 프로필 작성",
+  "ko": "디자인 브리프와 고객 프로필 작성",
   "due": "2026-09-18",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -508,16 +508,16 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-04",
   "type": "과제",
   "title": "FESTIVAL POSTER",
-  "ko": "축제 포스터 제작 과제",
+  "ko": "페스티벌 포스터 제작",
   "due": "2026-09-18",
-  "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2/a/ODc3NTMzMzAwNjQz/details"
+  "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-09-03",
   "type": "과제",
   "title": "7.3B Variation in Holly leaves - p139/140",
-  "ko": "교과서 139~140쪽 변이 과제",
+  "ko": "교재 139~140쪽 잎 변이 과제",
   "due": "2026-09-09",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -544,7 +544,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-03",
   "type": "자료",
   "title": "Tutor Representative Vote",
-  "ko": "튜터 대표 투표 안내",
+  "ko": "튜터 대표 투표",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -553,7 +553,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "과제",
   "title": "Histogram/Barchart - variation",
-  "ko": "변이 히스토그램 그리기",
+  "ko": "변이 히스토그램·막대그래프 작성",
   "due": "2026-09-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -571,7 +571,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-02",
   "type": "공지",
   "title": "Dear Students, please remember to bring your textbook to lessons today (compulsory)",
-  "ko": "수업에 교과서 필수 지참",
+  "ko": "교과서 수업 지참 필수",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -621,49 +621,13 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
  {
-  "subject": "수학 (Mr Anan)",
-  "date": "2026-08-28",
-  "type": "과제",
-  "title": "Year 9 End of Chapter Review Y9",
-  "ko": "9학년 단원 정리 복습 과제",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
- },
- {
-  "subject": "수학 (Mr Anan)",
-  "date": "2026-08-28",
-  "type": "공지",
-  "title": "Dear Students, please remember to bring your textbook to lessons today (compulsory)",
-  "ko": "수업에 교과서 필수 지참",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
- },
- {
-  "subject": "디자인 기술 (Mr Mathyk)",
-  "date": "2026-08-27",
-  "type": "과제",
-  "title": "PRODUCT IN A TIN MIND MAP",
-  "ko": "틴 제품 마인드맵 작성",
-  "due": "2026-09-18",
-  "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
- },
- {
   "subject": "휴머니티 (Mr Lawrence)",
   "date": "2026-08-26",
   "type": "과제",
   "title": "Homework",
-  "ko": "숙제 제출",
+  "ko": "휴머니티 숙제 제출",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz/a/ODI2MTE4NTYyNDg2/details"
- },
- {
-  "subject": "디자인 기술 DEC (Mr Mathyk)",
-  "date": "2026-08-26",
-  "type": "과제",
-  "title": "Festival Mood Board Assignment",
-  "ko": "축제 무드보드 과제",
-  "due": "2026-09-18",
-  "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-09-18 18:14";
+window.CLASSROOM_POSTS_AT = "2026-09-19 18:12";
