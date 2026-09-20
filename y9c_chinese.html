@@ -635,6 +635,8 @@ function stopSeq(){
   if (_audio) { _audio.pause(); _audio = null; }
   // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
   //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
+  // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
+  //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
   _seq = null;
   document.querySelectorAll('.play-all-btn').forEach(function(b){
     b.classList.remove('active'); b.textContent = '▶ 듣기';
