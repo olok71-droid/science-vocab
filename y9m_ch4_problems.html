@@ -305,5 +305,13 @@ sup{font-size:.72em;}
 </div>
 </div>
 </div>
+<script>
+/* 단원 페이지 안(iframe)에서 열릴 때는 이 페이지의 제목 줄을 숨긴다 — 단원 제목이 위에 이미 있어 두 번 나오기 때문이다. */
+if (window.self !== window.top) {
+  document.documentElement.classList.add('embedded');
+  var _h = document.querySelector('header');
+  if (_h) _h.style.display = 'none';
+}
+</script>
 </body>
 </html>

@@ -1156,7 +1156,7 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 </div>
 </div>
 <div class="tab-pane" id="tab-classroom">
-  <iframe src="y9c_math.html" style="width:100%;height:80vh;border:0;border-radius:14px;background:#fff;"></iframe>
+  <div class="quiz-wrap"><div id="cr-math"></div></div>
 </div>
 <div class="tab-pane" id="tab-teacher">
   <iframe src="y9m_ch4_problems.html" style="width:100%;height:80vh;border:0;border-radius:14px;background:#fff;"></iframe>
@@ -1468,6 +1468,33 @@ document.addEventListener('DOMContentLoaded', () => {
   a.addEventListener('error', function(){ resetLabels(); });
 })();
 
+</script>
+<script src="classroom_posts.js"></script>
+<script>
+/* 수학은 클래스룸에 공부 자료(첨부)가 올라오지 않는다 — 대표님 2026-09-22 지시로
+   '마지막 확인 날짜 + 자료 없음'을 적어 둔다. 날짜는 수집기가 쓰는 CLASSROOM_POSTS_AT 에서 읽어 저절로 바뀐다. */
+(function(){
+  var box = document.getElementById('cr-math');
+  if (!box) return;
+  var posts = (window.CLASSROOM_POSTS || []).filter(function(p){ return (p.subject||'').indexOf('수학') >= 0; });
+  var at = (window.CLASSROOM_POSTS_AT || '').split(' ')[0] || '';
+  var day = at ? at.replace(/^\d{4}-0?/, '').replace('-', '.') : '';
+  var files = posts.filter(function(p){ return p.type === '자료' || p.type === '과제'; });
+  var h = '<div class="q-card"><div class="q-num"><span>클래스룸 확인</span><span class="q-marks">' + (at || '날짜 없음') + '</span></div>';
+  if (files.length === 0) {
+    h += '<div class="q-text">' + (day ? day + '일 ' : '') + '자료 없음</div>';
+  } else {
+    h += '<div class="q-text">자료 ' + files.length + '개</div><ul>';
+    files.forEach(function(p){ h += '<li>' + p.date + ' · ' + (p.ko || p.title) + '</li>'; });
+    h += '</ul>';
+  }
+  if (posts.length) {
+    h += '<div style="margin-top:10px;font-size:13px;color:var(--muted);">선생님 공지 ' + posts.length + '개</div><ul style="margin:6px 0 0 18px;font-size:13.5px;line-height:1.7;">';
+    posts.forEach(function(p){ h += '<li>' + p.date + ' · ' + (p.ko || p.title) + '</li>'; });
+    h += '</ul>';
+  }
+  box.innerHTML = h + '</div>';
+})();
 </script>
 </body>
 </html>
