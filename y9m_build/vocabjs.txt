@@ -1,0 +1,211 @@
+function slugify(t){ return t.replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
+let _audio = null;
+function speak(text) {
+  try {
+    // ★2026-09-17: 전체듣기·토막듣기·낱개순차가 돌고 있으면 먼저 멈춘다. 안 그러면 소리가 겹친다.
+    var _ap = document.getElementById('allplay-audio');
+    if (_ap && !_ap.paused) _ap.pause();
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
+    a.onerror = () => fallbackSpeak(cleanText(text));
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(text)));
+  } catch (e) { fallbackSpeak(cleanText(text)); }
+}
+let _voices = [];
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis) { loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9;
+  const en = _voices.filter(v => normLang(v.lang).startsWith('en'));
+  const local = en.filter(v => v.localService);
+  const pool = local.length ? local : en;
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
+  if (v) { u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'en-GB'; }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
+}
+
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
+  //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  // ★2026-09-17: onended·onerror·play().catch() 가 모두 done()을 불러서 한 소리가
+  //   두 갈래로 갈라져 재생되던 것(목소리 겹침)을 막는다. 무슨 일이 나도 딱 한 번만 넘어간다.
+  var fired = false;
+  var go = function(){ if (fired) return; fired = true; if (_seq && _seq.token === token) done(); };
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = go;
+    a.onerror = go;                       // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(go);
+  } catch (e) { go(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
+/* 새로고침해도 보던 탭 그대로 — 마지막에 본 탭을 기억한다 */
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('tab_' + UNIT_ID); } catch(e){}
+  if (location.hash && location.hash.length > 1) t = location.hash.slice(1);
+  if (!t) return;
+  var btn = document.querySelector('.tab-btn[data-tab="' + t + '"]');
+  var pane = document.getElementById('tab-' + t);
+  if (!btn || !pane) return;
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  pane.classList.add('active');
+})();
+
+function annotateCounts(){ document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=document.querySelectorAll('#tab-vocab .vcard').length; }
+function numberVocab(){ let n=0; document.querySelectorAll('#tab-vocab .vcard').forEach(c => { n++; const L=c.querySelector('.vcard-left'); if(L && !L.querySelector('.vcard-num')){ const d=document.createElement('div'); d.className='vcard-num'; d.textContent=n+'번'; L.insertBefore(d, L.firstChild); } }); }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
+// 단어장: 필터 + 검색 통합
+let selectedCats = new Set();   // 비어있으면 전체. 여러 단원 다중선택
+let currentQuery = '';
+
+function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (selectedCats.size === 0 || selectedCats.has(cat));
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', !visibleByCat[target]);
+  });
+}
+
+function filterCards(cat) {
+  if (cat === 'all') { selectedCats.clear(); }
+  else { if (selectedCats.has(cat)) selectedCats.delete(cat); else selectedCats.add(cat); }
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if (b.dataset.cat === 'all') b.classList.toggle('active', selectedCats.size === 0);
+    else b.classList.toggle('active', selectedCats.has(b.dataset.cat));
+  });
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
+  annotateCounts();   // 단원별·전체 단어 수 표시
+  numberVocab();      // 단어 앞 고정 번호 (1번~)
+});
