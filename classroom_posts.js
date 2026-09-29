@@ -13,7 +13,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-29",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "읽을 책 가져오기",
+  "ko": "독서책 가져오기 과제",
   "due": "2026-09-30",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5/a/ODY5Nzk3ODUyNDMx/details"
  },
@@ -22,7 +22,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "과제",
   "title": "Scientific Investigation Review",
-  "ko": "과학 탐구 복습 퀴즈 과제",
+  "ko": "과학 탐구 복습 퀴즈 풀기",
   "due": "2026-10-05",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg3NjQ1NTUzNjI5/details"
  },
@@ -40,7 +40,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "과제",
   "title": "Science investigation - template - please fill in - upload graph here",
-  "ko": "탐구 보고서 양식 작성과 그래프 제출",
+  "ko": "탐구 서식 작성하고 그래프 올리기",
   "due": "2026-10-04",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -49,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "공지",
   "title": "Character Recognitions from Monday 21st September to today Monday 28th September.",
-  "ko": "인성 칭찬 명단 PDF 공지",
+  "ko": "인성 표창 명단 공지(PDF 첨부)",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -67,7 +67,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "과제",
   "title": "Genes and Alleles",
-  "ko": "유전자와 대립유전자 퀴즈",
+  "ko": "유전자와 대립유전자 퀴즈 풀기",
   "due": "2026-09-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -76,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "공지",
   "title": "Everyone gets note book lm",
-  "ko": "학생이 노트북 자료 링크를 공유",
+  "ko": "학생이 올린 노트북LM 링크 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -85,7 +85,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "과제",
   "title": "Atoms and Periodic Table Review",
-  "ko": "원자와 주기율표 복습 퀴즈",
+  "ko": "원자와 주기율표 복습 퀴즈 풀기",
   "due": "2026-09-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -103,7 +103,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "과제",
   "title": "inheritance worksheet",
-  "ko": "유전 학습지 과제",
+  "ko": "유전 학습지 풀기",
   "due": "2026-09-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -112,7 +112,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "자료",
   "title": "Genes and Inheritance - Recap",
-  "ko": "유전과 상속 복습 자료",
+  "ko": "유전자와 유전 정리 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -157,7 +157,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "자료",
   "title": "Tutor Prefect Vote",
-  "ko": "반 대표 투표 자료",
+  "ko": "튜터 프리펙트 투표 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -184,7 +184,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-22",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "읽을 책 가져오기",
+  "ko": "독서책 가져오기 과제",
   "due": "2026-09-23",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -202,7 +202,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Halogens Quiz",
-  "ko": "할로젠 퀴즈",
+  "ko": "할로젠 퀴즈 풀기",
   "due": "2026-09-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -211,7 +211,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Halogen Worksheet",
-  "ko": "할로젠 학습지 과제",
+  "ko": "할로젠 학습지 풀기",
   "due": "2026-09-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -220,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "자료",
   "title": "The Halogens - Group 7",
-  "ko": "7족 할로젠 원소 자료",
+  "ko": "7족 할로젠 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -229,7 +229,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Flowchart and Algorithm Unit Test",
-  "ko": "순서도·알고리즘 단원평가",
+  "ko": "순서도·알고리즘 단원평가 과제",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -283,7 +283,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "WB questions - 2.3 Why elements react to form compounds",
-  "ko": "화합물 형성 워크북 문제 풀이",
+  "ko": "워크북 2.3 문제 풀기",
   "due": "2026-09-23",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -292,7 +292,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "자료",
   "title": "2.3 Why elements react to form compounds - ionic bonds",
-  "ko": "이온결합 설명 자료",
+  "ko": "이온 결합 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -319,7 +319,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "Planning Doc",
-  "ko": "계획 문서 작성",
+  "ko": "기획 문서 작성 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -328,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "공지",
   "title": "https://docs.google.com/document/d/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8/edit?usp=drivesdk",
-  "ko": "계획 문서 링크 공유",
+  "ko": "기획 문서 링크 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -337,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "House Video Reflection task",
-  "ko": "하우스 영상 소감 쓰기",
+  "ko": "하우스 영상 성찰 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -391,7 +391,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Heads up - Common Assessment on Wednesday 30th lesson 3 - 10.55 - 11.50",
-  "ko": "공통평가 실시 안내, 3교시 수업",
+  "ko": "과학 공통평가 1 시행 안내",
   "due": "2026-09-30",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -400,7 +400,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "alkali metals and halogens",
-  "ko": "알칼리 금속과 할로젠 퀴즈",
+  "ko": "알칼리 금속과 할로젠 퀴즈 풀기",
   "due": "2026-09-24",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -409,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "Workbook Questions - 2.2 Trends in groups within Periodic Table",
-  "ko": "주기율표 족 경향 워크북 문제",
+  "ko": "워크북 2.2 문제 풀기",
   "due": "2026-09-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -418,7 +418,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Cool Alkali Metal Experiments Video (by Aditya)",
-  "ko": "학생이 알칼리 금속 실험 영상 공유",
+  "ko": "학생이 올린 알칼리 금속 실험 영상",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -427,7 +427,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "Group 1 Properities",
-  "ko": "1족 원소 성질 과제",
+  "ko": "1족 원소 성질 과제 하기",
   "due": "2026-09-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -436,7 +436,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "2.2 Trends in groups within the Periodic Table",
-  "ko": "주기율표 족 경향 자료",
+  "ko": "주기율표 족 경향 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -472,7 +472,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Please review your team, and the rules for Thursday in the attached slides.",
-  "ko": "하우스 키트 입고 6교시 운동장 집합",
+  "ko": "하우스 피구 대회, 하우스 키트 준비",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -481,7 +481,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "Tutor Group Playlist",
-  "ko": "반 재생목록 자료",
+  "ko": "튜터 그룹 플레이리스트 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -526,7 +526,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "공지",
   "title": "Design our new HS Outstanding Character Award certificate!",
-  "ko": "인성상 상장 도안 공모",
+  "ko": "인성상 상장 디자인 공모",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -603,4 +603,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-09-29 23:00";
+window.CLASSROOM_POSTS_AT = "2026-09-29 23:06";
