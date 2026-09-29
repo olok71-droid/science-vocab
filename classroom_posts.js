@@ -1,10 +1,172 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "미술",
+  "date": "2026-09-29",
+  "type": "과제",
+  "title": "Art Lesson - Tuesday 29th Sept",
+  "ko": "미술 수업 과제가 올라왔다",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
+ },
+ {
+  "subject": "튜터 (Mr Cassels)",
+  "date": "2026-09-29",
+  "type": "과제",
+  "title": "Bring your Reading Books!",
+  "ko": "읽을 책 가져오기",
+  "due": "2026-09-30",
+  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5/a/ODY5Nzk3ODUyNDMx/details"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-28",
+  "type": "과제",
+  "title": "Scientific Investigation Review",
+  "ko": "과학 탐구 복습 퀴즈 과제",
+  "due": "2026-10-05",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg3NjQ1NTUzNjI5/details"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-28",
+  "type": "자료",
+  "title": "Science Investigation - method",
+  "ko": "과학 탐구 실험 방법 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-28",
+  "type": "과제",
+  "title": "Science investigation - template - please fill in - upload graph here",
+  "ko": "탐구 보고서 양식 작성과 그래프 제출",
+  "due": "2026-10-04",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "튜터 (Mr Cassels)",
+  "date": "2026-09-28",
+  "type": "공지",
+  "title": "Character Recognitions from Monday 21st September to today Monday 28th September.",
+  "ko": "인성 칭찬 명단 PDF 공지",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
+ },
+ {
+  "subject": "휴머니티 (Mr Lawrence)",
+  "date": "2026-09-25",
+  "type": "자료",
+  "title": "Please find all the lessons for Unit 1 of Geography.",
+  "ko": "지리 1단원 수업 슬라이드 8개 첨부",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-24",
+  "type": "과제",
+  "title": "Genes and Alleles",
+  "ko": "유전자와 대립유전자 퀴즈",
+  "due": "2026-09-29",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-24",
+  "type": "공지",
+  "title": "Everyone gets note book lm",
+  "ko": "학생이 노트북 자료 링크를 공유",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-24",
+  "type": "과제",
+  "title": "Atoms and Periodic Table Review",
+  "ko": "원자와 주기율표 복습 퀴즈",
+  "due": "2026-09-29",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-24",
+  "type": "자료",
+  "title": "Revision for Assessment - Next week",
+  "ko": "평가 대비 복습 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-23",
+  "type": "과제",
+  "title": "inheritance worksheet",
+  "ko": "유전 학습지 과제",
+  "due": "2026-09-29",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-23",
+  "type": "자료",
+  "title": "Genes and Inheritance - Recap",
+  "ko": "유전과 상속 복습 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "수학 (Mr Anan)",
+  "date": "2026-09-23",
+  "type": "공지",
+  "title": "MAA's American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026",
+  "ko": "AMC 대회 11월 6일 방과후, 노트북 지참",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
+ },
+ {
+  "subject": "수학 (Mr Anan)",
+  "date": "2026-09-23",
+  "type": "공지",
+  "title": "MAA's American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026 Registration - St. Joseph's Institution International",
+  "ko": "AMC 접수 10월 9일 마감, 노트북만 가능",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
+ },
+ {
+  "subject": "음악 (Mr Everett)",
+  "date": "2026-09-23",
+  "type": "자료",
+  "title": "FOBISIA Battle of the Bands 2027",
+  "ko": "밴드 대회 안내 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
+ },
+ {
+  "subject": "드라마",
+  "date": "2026-09-23",
+  "type": "과제",
+  "title": "Playwright Profile",
+  "ko": "극작가 프로필 과제",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
+ },
+ {
+  "subject": "튜터 (Mr Cassels)",
+  "date": "2026-09-23",
+  "type": "자료",
+  "title": "Tutor Prefect Vote",
+  "ko": "반 대표 투표 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
+ },
+ {
   "subject": "수학 (Mr Anan)",
   "date": "2026-09-22",
   "type": "공지",
-  "title": "Dear High School Students,",
-  "ko": "수학 내부평가 등급 기준 안내",
+  "title": "To support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a g",
+  "ko": "수학 내부평가 성적 등급 기준 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -13,7 +175,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-22",
   "type": "공지",
   "title": "Entry Requirements for the Year 10 Accelerated Pathway (Additional Mathematics)",
-  "ko": "10학년 가속 수학반 입반 조건 안내",
+  "ko": "9학년 수학 B 이상이면 10학년 심화반 초대",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -24,14 +186,23 @@ window.CLASSROOM_POSTS = [
   "title": "Bring your Reading Books!",
   "ko": "읽을 책 가져오기",
   "due": "2026-09-23",
-  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5/a/ODczMjgxNzczMTA3/details"
+  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
+ },
+ {
+  "subject": "중국어 (Ying Ying老师)",
+  "date": "2026-09-22",
+  "type": "자료",
+  "title": "Y9 Mandarin NotebookLM revision tools",
+  "ko": "중국어 복습용 NotebookLM 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-09-21",
   "type": "과제",
   "title": "Halogens Quiz",
-  "ko": "할로젠 퀴즈 풀기",
+  "ko": "할로젠 퀴즈",
   "due": "2026-09-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -40,7 +211,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Halogen Worksheet",
-  "ko": "할로젠 워크시트 제출",
+  "ko": "할로젠 학습지 과제",
   "due": "2026-09-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -49,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "자료",
   "title": "The Halogens - Group 7",
-  "ko": "7족 할로젠 학습자료",
+  "ko": "7족 할로젠 원소 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -58,7 +229,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Flowchart and Algorithm Unit Test",
-  "ko": "순서도·알고리즘 단원평가 과제",
+  "ko": "순서도·알고리즘 단원평가",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -69,16 +240,16 @@ window.CLASSROOM_POSTS = [
   "title": "Introduction to Python Exercise 1",
   "ko": "파이썬 입문 연습문제 1 제출",
   "due": "2026-09-28",
-  "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4/a/ODg2MTQxMTM4NDc1/details"
+  "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
  {
   "subject": "디자인 기술 (Mr Mathyk)",
   "date": "2026-09-21",
   "type": "과제",
   "title": "2 Point Perspective - Bird's Eye, Worm's Eye & Eye level cuboids",
-  "ko": "2점 투시 직육면체 그리기",
+  "ko": "2점 투시 육면체 세 종류 그리기",
   "due": "2026-09-25",
-  "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5/a/ODg2MjM2Mjk5ODMw/details"
+  "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
  {
   "subject": "영어 (Mr Glanz)",
@@ -112,34 +283,25 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "WB questions - 2.3 Why elements react to form compounds",
-  "ko": "2.3 워크북 문제 풀기",
+  "ko": "화합물 형성 워크북 문제 풀이",
   "due": "2026-09-23",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODczMTE2Mjk3ODU1/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-09-17",
   "type": "자료",
   "title": "2.3 Why elements react to form compounds - ionic bonds",
-  "ko": "이온결합 학습자료",
+  "ko": "이온결합 설명 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "휴머니티 (Mr Lawrence)",
-  "date": "2026-09-17",
-  "type": "자료",
-  "title": "Please find all the presentations so far from this year.",
-  "ko": "올해 수업 발표자료 전체 모음",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
  {
   "subject": "수학 (Mr Anan)",
   "date": "2026-09-17",
   "type": "공지",
   "title": "FOBISIA Code Breaking Maths Challenge 2026",
-  "ko": "수학 수업 중 암호풀이 대회, 충전된 기기 지참",
+  "ko": "암호풀기 대회 수업 참가, 충전된 기기 지참",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -157,7 +319,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "Planning Doc",
-  "ko": "계획 문서 작성 과제",
+  "ko": "계획 문서 작성",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -166,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "공지",
   "title": "https://docs.google.com/document/d/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8/edit?usp=drivesdk",
-  "ko": "구글 문서 링크 공유",
+  "ko": "계획 문서 링크 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -175,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "House Video Reflection task",
-  "ko": "하우스 영상 소감 과제",
+  "ko": "하우스 영상 소감 쓰기",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -184,25 +346,16 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-16",
   "type": "자료",
   "title": "Super Mario Bros",
-  "ko": "슈퍼마리오 악보 자료",
+  "ko": "게임음악 단원 슈퍼마리오 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
- },
- {
-  "subject": "휴머니티 (Mr Lawrence)",
-  "date": "2026-09-15",
-  "type": "자료",
-  "title": "This is a revision PPT for you to work through questions, in preparation for your CA.",
-  "ko": "CA1 대비 복습 PPT",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
  {
   "subject": "드라마",
   "date": "2026-09-15",
   "type": "공지",
   "title": "Auditions for A Midsummer Night’s Dream High School Production",
-  "ko": "학교 연극 '한여름 밤의 꿈' 오디션 안내",
+  "ko": "학교 연극 오디션 안내, 날짜 하나 선택",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -229,17 +382,26 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-15",
   "type": "자료",
   "title": "Unit 1 Lesson 2 我的学校科目 Quizlet",
-  "ko": "1단원 2과 학교 과목 퀴즐렛 자료",
+  "ko": "1단원 2과 퀴즐렛 링크",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-09-14",
+  "type": "공지",
+  "title": "Heads up - Common Assessment on Wednesday 30th lesson 3 - 10.55 - 11.50",
+  "ko": "공통평가 실시 안내, 3교시 수업",
+  "due": "2026-09-30",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-09-14",
   "type": "과제",
   "title": "alkali metals and halogens",
-  "ko": "알칼리금속·할로젠 퀴즈",
-  "due": "2026-09-20",
+  "ko": "알칼리 금속과 할로젠 퀴즈",
+  "due": "2026-09-24",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
@@ -247,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "Workbook Questions - 2.2 Trends in groups within Periodic Table",
-  "ko": "2.2 워크북 문제 풀기",
+  "ko": "주기율표 족 경향 워크북 문제",
   "due": "2026-09-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -256,7 +418,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Cool Alkali Metal Experiments Video (by Aditya)",
-  "ko": "알칼리금속 실험 영상 공유",
+  "ko": "학생이 알칼리 금속 실험 영상 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -272,15 +434,6 @@ window.CLASSROOM_POSTS = [
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-09-14",
-  "type": "공지",
-  "title": "Heads up - Common Assessment on Wednesday 30th lesson 3 - 10.55 - 11.50",
-  "ko": "공통평가 3교시 시행 안내",
-  "due": "2026-09-30",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-14",
   "type": "자료",
   "title": "2.2 Trends in groups within the Periodic Table",
   "ko": "주기율표 족 경향 자료",
@@ -288,20 +441,11 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-14",
-  "type": "자료",
-  "title": "CA1 - criteria",
-  "ko": "공통평가1 채점기준 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
   "subject": "수학 (Mr Anan)",
   "date": "2026-09-14",
   "type": "공지",
-  "title": "KLIMC  21st November - Interest Form",
-  "ko": "KLIMC 대회 참가 희망 신청 폼 작성",
+  "title": "KLIMC 21st November - Interest Form",
+  "ko": "KLIMC 대회 참가 신청서 작성, 참가비 90링깃",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -310,7 +454,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "Week 4 Algorithm",
-  "ko": "4주차 알고리즘 과제",
+  "ko": "4주차 알고리즘 과제 제출",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -328,7 +472,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Please review your team, and the rules for Thursday in the attached slides.",
-  "ko": "하우스 킷 입고 6교시 운동장 집합",
+  "ko": "하우스 키트 입고 6교시 운동장 집합",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -337,7 +481,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "Tutor Group Playlist",
-  "ko": "튜터 그룹 플레이리스트 자료",
+  "ko": "반 재생목록 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -355,27 +499,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-11",
   "type": "과제",
   "title": "PRODUCT IN A TIN E-PORTFOLIO",
-  "ko": "깡통 제품 전자 포트폴리오 제출",
+  "ko": "깡통 속 제품 전자 포트폴리오 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-10",
-  "type": "과제",
-  "title": "Electron Shells & Valence Electrons",
-  "ko": "전자껍질·원자가전자 퀴즈",
-  "due": "2026-09-16",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-10",
-  "type": "과제",
-  "title": "Electron arrangement - fill in worksheet",
-  "ko": "전자배치 워크시트 작성",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "영어 (Mr Glanz)",
@@ -391,7 +517,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "공지",
   "title": "Your first 4 pages of your Product In A Tin e-portfolio is due on Friday, September 18.",
-  "ko": "포트폴리오 앞 4쪽 제출 안내",
+  "ko": "포트폴리오 앞 4쪽(표지·마인드맵·디자인개요·고객프로필) 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -399,8 +525,8 @@ window.CLASSROOM_POSTS = [
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-09-10",
   "type": "공지",
-  "title": "🎨 Design our new HS Outstanding Character Award certificate!",
-  "ko": "우수인성상 상장 디자인 공모",
+  "title": "Design our new HS Outstanding Character Award certificate!",
+  "ko": "인성상 상장 도안 공모",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -414,29 +540,11 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
  },
  {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-09",
-  "type": "과제",
-  "title": "Atomic Structure and Periodic Table Review",
-  "ko": "원자구조·주기율표 복습 퀴즈",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-09",
-  "type": "자료",
-  "title": "Properties of materials",
-  "ko": "물질의 성질 학습자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
   "subject": "음악 (Mr Everett)",
   "date": "2026-09-09",
   "type": "자료",
   "title": "Theory Gym Starter Activities",
-  "ko": "음악이론 준비운동 활동 자료",
+  "ko": "이론 연습 시작 활동 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -445,7 +553,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "공지",
   "title": "If you didnt manage to read more than 10, please make sure you read some more for homework so you are picking the best o",
-  "ko": "숙제로 독백을 더 읽고 마음에 드는 것 고르기",
+  "ko": "모놀로그 10편 이상 더 읽어오기",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -454,7 +562,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "자료",
   "title": "Miss Heather's Year 9 Monologue Bank",
-  "ko": "9학년 독백 모음 자료",
+  "ko": "9학년 모놀로그 자료 모음",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -472,7 +580,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-08",
   "type": "공지",
   "title": "Your first Continues Assessment (CA1) will be on Tuesday 22nd September 2026.",
-  "ko": "첫 수학 CA1 시험 안내, CAT 문서 확인",
+  "ko": "첫 평가 CA1, 첨부 CAT 문서 확인",
   "due": "2026-09-22",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -481,198 +589,18 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-08",
   "type": "과제",
   "title": "Comic Art Submission",
-  "ko": "만화 작품 제출",
+  "ko": "만화 그림 제출 과제다",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
- },
- {
-  "subject": "튜터 (Mr Cassels)",
-  "date": "2026-09-08",
-  "type": "공지",
-  "title": "❗️Haze Alert – Important Reminders❗️",
-  "ko": "연무 경보, 실내 생활 수칙 안내",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
  {
   "subject": "중국어 (Ying Ying老师)",
   "date": "2026-09-08",
   "type": "자료",
   "title": "Unit 1 Lesson 1 我的新学校 Sentence Structures",
-  "ko": "1단원 1과 새 학교 문장 구조 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-07",
-  "type": "과제",
-  "title": "Genes and inheritance - check your progress",
-  "ko": "유전 단원 점검 문제",
-  "due": "2026-09-13",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-07",
-  "type": "과제",
-  "title": "7.4 Workbook Questions - Natural selection",
-  "ko": "7.4 자연선택 워크북 문제",
-  "due": "2026-09-13",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-07",
-  "type": "과제",
-  "title": "Natural selection - Peppered Moth video and worksheet",
-  "ko": "회색가지나방 영상·워크시트",
-  "due": "2026-09-13",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-07",
-  "type": "자료",
-  "title": "7.4 Natural Selection",
-  "ko": "자연선택 학습자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "휴머니티 (Mr Lawrence)",
-  "date": "2026-09-07",
-  "type": "자료",
-  "title": "Here are the lesson slides for the week.",
-  "ko": "이번 주 수업 슬라이드 (Lesson 4)",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
- },
- {
-  "subject": "컴퓨터 과학 (Ms Meha)",
-  "date": "2026-09-07",
-  "type": "과제",
-  "title": "Week 3",
-  "ko": "3주차 과제",
-  "due": "2026-09-14",
-  "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
- },
- {
-  "subject": "미술",
-  "date": "2026-09-07",
-  "type": "과제",
-  "title": "Sketchbook Cover Design Final Check",
-  "ko": "스케치북 표지 디자인 최종 점검 제출",
-  "due": "2026-09-15",
-  "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
- },
- {
-  "subject": "라살 교육",
-  "date": "2026-09-07",
-  "type": "자료",
-  "title": "Lesson 2: The Heart of Service",
-  "ko": "2과 섬김의 마음 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
- },
- {
-  "subject": "영어 (Mr Glanz)",
-  "date": "2026-09-06",
-  "type": "과제",
-  "title": "Vocabulary HW 1",
-  "ko": "어휘 숙제 1번",
-  "due": "2026-09-09",
-  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
- },
- {
-  "subject": "디자인 기술 (Mr Mathyk)",
-  "date": "2026-09-04",
-  "type": "과제",
-  "title": "Design Brief & Customer Profile",
-  "ko": "디자인 개요와 고객 프로필 작성",
-  "due": "2026-09-18",
-  "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
- },
- {
-  "subject": "디자인 기술 DEC (Mr Mathyk)",
-  "date": "2026-09-04",
-  "type": "과제",
-  "title": "FESTIVAL POSTER",
-  "ko": "축제 포스터 제작",
-  "due": "2026-09-18",
-  "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
- },
- {
-  "subject": "휴머니티 (Mr Lawrence)",
-  "date": "2026-09-03",
-  "type": "공지",
-  "title": "Your CA1 will take place Tuesday 22nd September 2026.",
-  "ko": "지리 지각변동 단원 CA1 시험 40분",
-  "due": "2026-09-22",
-  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
- },
- {
-  "subject": "음악 (Mr Everett)",
-  "date": "2026-09-03",
-  "type": "자료",
-  "title": "Legend of Zelda scores",
-  "ko": "젤다 전설 악보 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
- },
- {
-  "subject": "튜터 (Mr Cassels)",
-  "date": "2026-09-03",
-  "type": "자료",
-  "title": "Tutor Representative Vote",
-  "ko": "튜터 대표 투표 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
- },
- {
-  "subject": "수학 (Mr Anan)",
-  "date": "2026-09-02",
-  "type": "공지",
-  "title": "Dear Students, please remember to bring your textbook to lessons today (compulsory)",
-  "ko": "수업에 교과서 필수 지참",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
- },
- {
-  "subject": "음악 (Mr Everett)",
-  "date": "2026-09-02",
-  "type": "자료",
-  "title": "🔪 Meet Chef Chop: Your AI Rhythm Tutor!",
-  "ko": "AI 리듬 튜터 셰프찹 소개",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
- },
- {
-  "subject": "음악 (Mr Everett)",
-  "date": "2026-09-02",
-  "type": "공지",
-  "title": "Reminder - please complete the Music Background and Instrument Preference assignment, if you have not already done so.",
-  "ko": "음악 경험·악기 설문 과제 완료 요청",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
- },
- {
-  "subject": "튜터 (Mr Cassels)",
-  "date": "2026-09-02",
-  "type": "과제",
-  "title": "Bring your Reading Books!",
-  "ko": "읽을 책 가져오기",
-  "due": "2026-09-09",
-  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
- },
- {
-  "subject": "중국어 (Ying Ying老师)",
-  "date": "2026-09-02",
-  "type": "자료",
-  "title": "Unit 1 Lesson 1 我的新学校 Quizlet Links",
-  "ko": "1단원 1과 새 학교 퀴즐렛 링크",
+  "ko": "1단원 1과 문장 구조 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-09-22 18:12";
+window.CLASSROOM_POSTS_AT = "2026-09-29 23:00";
