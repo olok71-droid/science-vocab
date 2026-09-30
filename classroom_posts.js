@@ -1,10 +1,28 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "휴머니티 (Mr Lawrence)",
+  "date": "2026-09-30",
+  "type": "자료",
+  "title": "Geography Unit 1 Tectonic Hazards slides",
+  "ko": "지리 1단원 지각판 재해 수업 슬라이드",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
+ },
+ {
+  "subject": "중국어 (Ying Ying老师)",
+  "date": "2026-09-30",
+  "type": "과제",
+  "title": "我今年学习的科目 One-Minute Speech Recording",
+  "ko": "올해 배우는 과목 1분 말하기 녹음 제출",
+  "due": "2026-10-09",
+  "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
+ },
+ {
   "subject": "미술",
   "date": "2026-09-29",
   "type": "과제",
   "title": "Art Lesson - Tuesday 29th Sept",
-  "ko": "미술 수업 과제가 올라왔다",
+  "ko": "미술 수업 과제가 올라왔다.",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -13,7 +31,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-29",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "독서책 가져오기",
+  "ko": "읽기 책 챙겨오기",
   "due": "2026-09-30",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5/a/ODY5Nzk3ODUyNDMx/details"
  },
@@ -22,7 +40,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "과제",
   "title": "Scientific Investigation Review",
-  "ko": "과학 탐구 복습 퀴즈 풀기",
+  "ko": "과학 탐구 복습 Wayground 퀴즈 풀기",
   "due": "2026-10-05",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg3NjQ1NTUzNjI5/details"
  },
@@ -31,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "자료",
   "title": "Science Investigation - method",
-  "ko": "과학 탐구 방법 자료",
+  "ko": "과학 탐구 실험 방법 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -40,7 +58,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "과제",
   "title": "Science investigation - template - please fill in - upload graph here",
-  "ko": "탐구 서식 작성 후 그래프 올리기",
+  "ko": "과학 탐구 양식 작성하고 그래프 업로드",
   "due": "2026-10-04",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -49,16 +67,16 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "공지",
   "title": "Character Recognitions from Monday 21st September to today Monday 28th September.",
-  "ko": "9월 21~28일 인성 표창 명단",
+  "ko": "인성 표창 명단 공지, 좋은 태도 유지 당부",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
  {
   "subject": "휴머니티 (Mr Lawrence)",
   "date": "2026-09-25",
-  "type": "자료",
+  "type": "공지",
   "title": "Please find all the lessons for Unit 1 of Geography.",
-  "ko": "지리 1단원 수업 슬라이드 8개 첨부",
+  "ko": "지리 1단원 전체 수업 자료 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -67,8 +85,8 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "과제",
   "title": "Genes and Alleles",
-  "ko": "유전자와 대립유전자 퀴즈 풀기",
-  "due": "",
+  "ko": "유전자와 대립유전자 Wayground 퀴즈",
+  "due": "2026-09-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
@@ -76,7 +94,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "공지",
   "title": "Everyone gets note book lm",
-  "ko": "학생이 공유한 노트북 링크",
+  "ko": "학생이 NotebookLM 링크 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -85,8 +103,8 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "과제",
   "title": "Atoms and Periodic Table Review",
-  "ko": "원자와 주기율표 복습 퀴즈",
-  "due": "",
+  "ko": "원자와 주기율표 복습 Wayground 퀴즈",
+  "due": "2026-09-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
@@ -103,7 +121,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "과제",
   "title": "inheritance worksheet",
-  "ko": "유전 학습지 풀기",
+  "ko": "유전 워크시트 풀기",
   "due": "2026-09-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -112,7 +130,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "자료",
   "title": "Genes and Inheritance - Recap",
-  "ko": "유전과 유전자 정리 자료",
+  "ko": "유전자와 유전 요약 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -148,7 +166,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "과제",
   "title": "Playwright Profile",
-  "ko": "극작가 프로필 과제",
+  "ko": "극작가 프로필 과제 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -184,16 +202,16 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-22",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "독서책 가져오기",
+  "ko": "읽기 책 챙겨오기",
   "due": "2026-09-23",
-  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5/a/ODY5Nzk3ODUyNDMx/details"
+  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
  {
   "subject": "중국어 (Ying Ying老师)",
   "date": "2026-09-22",
   "type": "자료",
   "title": "Y9 Mandarin NotebookLM revision tools",
-  "ko": "중국어 복습용 NotebookLM 자료",
+  "ko": "Y9 중국어 NotebookLM 복습 도구",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -202,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Halogens Quiz",
-  "ko": "할로겐 퀴즈 풀기",
+  "ko": "할로겐 Wayground 퀴즈",
   "due": "2026-09-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -211,7 +229,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Halogen Worksheet",
-  "ko": "할로겐 학습지 풀기",
+  "ko": "할로겐 워크시트 풀기",
   "due": "2026-09-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -220,7 +238,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "자료",
   "title": "The Halogens - Group 7",
-  "ko": "7족 할로겐 자료",
+  "ko": "할로겐(7족) 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -229,7 +247,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Flowchart and Algorithm Unit Test",
-  "ko": "순서도·알고리즘 단원평가",
+  "ko": "순서도·알고리즘 단원평가 과제",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -238,7 +256,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Introduction to Python Exercise 1",
-  "ko": "파이썬 입문 연습문제 1 제출",
+  "ko": "파이썬 입문 연습문제 1 과제",
   "due": "2026-09-28",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -283,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "WB questions - 2.3 Why elements react to form compounds",
-  "ko": "워크북 2.3 문제 풀기",
+  "ko": "워크북 2.3 화합물 형성 문제 풀기",
   "due": "2026-09-23",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -292,7 +310,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "자료",
   "title": "2.3 Why elements react to form compounds - ionic bonds",
-  "ko": "이온결합 자료",
+  "ko": "2.3 이온결합 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -310,8 +328,8 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "공지",
   "title": "Algorithm and Flowchart Quiz",
-  "ko": "알고리즘·순서도 퀴즈, 복습해 오기",
-  "due": "2026-09-21",
+  "ko": "수업시간에 알고리즘·순서도 퀴즈, 기호·문제해결 복습",
+  "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
  {
@@ -319,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "Planning Doc",
-  "ko": "기획 문서 작성 과제",
+  "ko": "계획 문서 작성 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -328,7 +346,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "공지",
   "title": "https://docs.google.com/document/d/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8/edit?usp=drivesdk",
-  "ko": "기획 문서 링크 공유",
+  "ko": "구글 문서 링크 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -337,7 +355,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "House Video Reflection task",
-  "ko": "하우스 영상 소감문 과제",
+  "ko": "하우스 영상 보고 소감 쓰기",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -354,8 +372,8 @@ window.CLASSROOM_POSTS = [
   "subject": "드라마",
   "date": "2026-09-15",
   "type": "공지",
-  "title": "Auditions for A Midsummer Night’s Dream High School Production",
-  "ko": "학교 연극 오디션 안내, 날짜 하나 선택",
+  "title": "Auditions for A Midsummer Night's Dream High School Production",
+  "ko": "한여름밤의 꿈 연극 오디션 참가자 모집",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -382,7 +400,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-15",
   "type": "자료",
   "title": "Unit 1 Lesson 2 我的学校科目 Quizlet",
-  "ko": "1단원 2과 퀴즐렛 링크",
+  "ko": "1단원 2과 학교 과목 Quizlet 단어",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -391,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Heads up - Common Assessment on Wednesday 30th lesson 3 - 10.55 - 11.50",
-  "ko": "공통평가 3교시, 기준 문서 확인",
+  "ko": "과학 공통평가 3교시 시행, 안내 문서 첨부",
   "due": "2026-09-30",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -400,7 +418,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "alkali metals and halogens",
-  "ko": "알칼리금속과 할로겐 퀴즈",
+  "ko": "알칼리 금속과 할로겐 Wayground 퀴즈",
   "due": "2026-09-24",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -409,7 +427,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "Workbook Questions - 2.2 Trends in groups within Periodic Table",
-  "ko": "워크북 2.2 문제 풀기",
+  "ko": "워크북 2.2 주기율표 족별 경향 문제 풀기",
   "due": "2026-09-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -418,7 +436,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Cool Alkali Metal Experiments Video (by Aditya)",
-  "ko": "알칼리금속 실험 영상 공유",
+  "ko": "학생이 알칼리 금속 실험 영상 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -436,7 +454,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "2.2 Trends in groups within the Periodic Table",
-  "ko": "주기율표 족 경향 자료",
+  "ko": "2.2 주기율표 족별 경향 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -454,7 +472,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "과제",
   "title": "Week 4 Algorithm",
-  "ko": "4주차 알고리즘 과제 제출",
+  "ko": "4주차 알고리즘 과제",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -472,7 +490,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "공지",
   "title": "Please review your team, and the rules for Thursday in the attached slides.",
-  "ko": "하우스 피구 대회, 하우스 키트 착용",
+  "ko": "피구대회 팀·규칙 확인, 하우스 체육복 준비",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -481,7 +499,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-14",
   "type": "자료",
   "title": "Tutor Group Playlist",
-  "ko": "튜터 그룹 재생목록",
+  "ko": "튜터반 플레이리스트 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -526,8 +544,8 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-10",
   "type": "공지",
   "title": "Design our new HS Outstanding Character Award certificate!",
-  "ko": "인성상 상장 디자인 공모",
-  "due": "2026-09-25",
+  "ko": "우수 인성상 상장 디자인 공모",
+  "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
  {
@@ -553,7 +571,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "공지",
   "title": "If you didnt manage to read more than 10, please make sure you read some more for homework so you are picking the best o",
-  "ko": "모놀로그 10편 이상 더 읽어오기",
+  "ko": "숙제로 독백을 더 읽고 마음에 드는 것 고르기",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -562,7 +580,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-09",
   "type": "자료",
   "title": "Miss Heather's Year 9 Monologue Bank",
-  "ko": "9학년 모놀로그 자료 모음",
+  "ko": "9학년 독백 모음 자료 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -574,33 +592,6 @@ window.CLASSROOM_POSTS = [
   "ko": "축제 e포트폴리오 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
- },
- {
-  "subject": "수학 (Mr Anan)",
-  "date": "2026-09-08",
-  "type": "공지",
-  "title": "Your first Continues Assessment (CA1) will be on Tuesday 22nd September 2026.",
-  "ko": "첫 평가 CA1, 첨부 CAT 문서 확인",
-  "due": "2026-09-22",
-  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
- },
- {
-  "subject": "미술",
-  "date": "2026-09-08",
-  "type": "과제",
-  "title": "Comic Art Submission",
-  "ko": "만화 그림 제출 과제다",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
- },
- {
-  "subject": "중국어 (Ying Ying老师)",
-  "date": "2026-09-08",
-  "type": "자료",
-  "title": "Unit 1 Lesson 1 我的新学校 Sentence Structures",
-  "ko": "1단원 1과 문장 구조 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-09-29 23:11";
+window.CLASSROOM_POSTS_AT = "2026-09-30 18:11";
