@@ -19,7 +19,7 @@ TOPICS = [
   ("Thank you for listening.", "들어 주셔서 감사합니다."),
  ]),
  ("자기소개 (1번 문제, 채점 안 됨)", [
-  ("Hi, my name is Jenny, and I'm in my forties.", "안녕하세요, 제 이름은 제니이고 40대예요."),
+  ("Hi, let me introduce myself.", "안녕하세요, 제 소개를 할게요."),
   ("I'm a cheerful and easygoing person.", "저는 밝고 느긋한 성격이에요."),
   ("In my free time, I like to watch movies and take walks in the park.", "여가 시간에는 영화 보는 것과 공원 산책을 좋아해요."),
   ("These days, I'm trying to live a healthier life.", "요즘 저는 더 건강하게 살려고 노력하고 있어요."),
