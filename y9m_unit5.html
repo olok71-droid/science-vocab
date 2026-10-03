@@ -297,6 +297,14 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 .section-header.hidden { display: none; }
 .allplay-mini{background:var(--accent);border-color:var(--accent);color:#fff;font-size:12.5px;padding:6px 13px;border-radius:15px;box-shadow:0 2px 6px rgba(13,148,136,0.35);}
 .allplay-mini.active{background:var(--purple);border-color:var(--purple);color:#fff;}
+.vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; display: flex; flex-wrap: wrap;
+  align-items: center; gap: 6px; }
+.vtool .search-input { flex: 0 1 48%; max-width: 48%; min-width: 0; padding: 8px 12px; font-size: 13px; }
+.vtool .mem-info { font-size: 12px; font-weight: 800; color: var(--strong, #16223f); white-space: nowrap; }
+.vtool .mem-info b { color: #0b4f45; font-weight: 900; }
+.vtool .blind-btn, .vtool .mem-toggle-btn { padding: 5px 10px; color: #0d5c50; border-color: rgba(13,92,80,0.55); background: rgba(255,255,255,0.85); font-weight: 900; }
+.vtool .blind-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.vtool .allplay-mini { background: var(--accent); border-color: var(--accent); color: #fff; }
 </style>
 </head>
 <body>
@@ -316,19 +324,1047 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 
 <div class="tabs-wrap">
   <div class="tabs">
-    <button class="tab-btn" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
     <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
     <button class="tab-btn" data-tab="classroom">📂 클래스룸자료</button>
-    <button class="tab-btn active" data-tab="teacher">👩‍🏫 선생님문제</button>
+    <button class="tab-btn" data-tab="teacher">👩‍🏫 선생님문제</button>
   </div>
 </div>
 
-<div class="tab-pane" id="tab-vocab"></div>
-<div class="tab-pane" id="tab-notes"></div>
+<div class="tab-pane active" id="tab-vocab">
+<div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" data-total="66" onclick="toggleAllPlay()" title="66개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9m_unit5_all.mp3"></audio><button class="blind-btn chunkplay" data-part="1" data-label="▶ 1~20" title="1~20번 단어만 듣기" onclick="playAllFrom(1)">▶ 1~20</button><button class="blind-btn chunkplay" data-part="2" data-label="▶ 21~40" title="21~40번 단어만 듣기" onclick="playAllFrom(2)">▶ 21~40</button><button class="blind-btn chunkplay" data-part="3" data-label="▶ 41~60" title="41~60번 단어만 듣기" onclick="playAllFrom(3)">▶ 41~60</button><button class="blind-btn chunkplay" data-part="4" data-label="▶ 61~66" title="61~66번 단어만 듣기" onclick="playAllFrom(4)">▶ 61~66</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div>
+  <div class="filter-wrap">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-cat="all" onclick='filterCards("all")'>전체 All</button><button class="filter-btn" data-cat="organ" onclick='filterCards("organ")'>📐 각과 관계 Angle facts</button><button class="filter-btn" data-cat="process" onclick='filterCards("process")'>∥ 평행선·삼각형·사각형 Parallel lines</button><button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>⬡ 다각형 Polygons</button><button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>📏 작도·피타고라스 Pythagoras</button>
+    </div>
+  </div>
+<div class="section-header" data-cat="organ"><h2>📐 각과 관계 Angle facts</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Angle</div>
+    <div class="vcard-ko">각</div>
+    <div class="vcard-def">The amount of turn between two lines that meet at a point.</div>
+    <div class="vcard-def-ko">한 점에서 만나는 두 선이 벌어진 정도. 단위는 도(°).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Protractor</div>
+    <div class="vcard-ko">각도기</div>
+    <div class="vcard-def">A tool for measuring and drawing angles.</div>
+    <div class="vcard-def-ko">각을 재고 그리는 도구. 눈금이 바깥·안쪽 두 줄이다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Protractor")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Acute angle</div>
+    <div class="vcard-ko">예각</div>
+    <div class="vcard-def">An angle more than 0° and less than 90°.</div>
+    <div class="vcard-def-ko">0°보다 크고 90°보다 작은 각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Acute angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Right angle</div>
+    <div class="vcard-ko">직각</div>
+    <div class="vcard-def">An angle of exactly 90°.</div>
+    <div class="vcard-def-ko">정확히 90°인 각. 모서리에 작은 네모로 표시한다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Right angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Obtuse angle</div>
+    <div class="vcard-ko">둔각</div>
+    <div class="vcard-def">An angle more than 90° and less than 180°.</div>
+    <div class="vcard-def-ko">90°보다 크고 180°보다 작은 각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Obtuse angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Straight angle</div>
+    <div class="vcard-ko">평각</div>
+    <div class="vcard-def">An angle of exactly 180°.</div>
+    <div class="vcard-def-ko">정확히 180°인 각. 일직선이다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Straight angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Reflex angle</div>
+    <div class="vcard-ko">우각</div>
+    <div class="vcard-def">An angle more than 180° and less than 360°.</div>
+    <div class="vcard-def-ko">180°보다 크고 360°보다 작은 각. 오목한 꼭짓점의 각이 이것이다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Reflex angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Full rotation</div>
+    <div class="vcard-ko">한 바퀴</div>
+    <div class="vcard-def">A complete turn of 360°.</div>
+    <div class="vcard-def-ko">한 바퀴 돈 각. 360°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Full rotation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Complementary angles</div>
+    <div class="vcard-ko">여각</div>
+    <div class="vcard-def">Two angles that add up to 90°.</div>
+    <div class="vcard-def-ko">합이 90°인 두 각. 직각 안의 각들.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Complementary angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Supplementary angles</div>
+    <div class="vcard-ko">보각</div>
+    <div class="vcard-def">Two angles that add up to 180°.</div>
+    <div class="vcard-def-ko">합이 180°인 두 각. 직선 위의 각들.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Supplementary angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Angles on a straight line</div>
+    <div class="vcard-ko">직선 위의 각</div>
+    <div class="vcard-def">Angles on a straight line add up to 180°.</div>
+    <div class="vcard-def-ko">한 직선 위에 붙은 각들. 합이 180°. 이유 쓰기에 그대로 쓰는 문장이다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Angles on a straight line")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Angles at a point</div>
+    <div class="vcard-ko">한 점 주위의 각</div>
+    <div class="vcard-def">Angles around a point add up to 360°.</div>
+    <div class="vcard-def-ko">한 점을 빙 둘러싼 각들. 합이 360°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Angles at a point")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Vertically opposite angles</div>
+    <div class="vcard-ko">맞꼭지각</div>
+    <div class="vcard-def">Angles opposite each other where two lines cross; they are equal.</div>
+    <div class="vcard-def-ko">두 직선이 엇갈릴 때 마주 보는 두 각. 크기가 같다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Vertically opposite angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Angle notation</div>
+    <div class="vcard-ko">각 기호</div>
+    <div class="vcard-def">Writing an angle with three letters, such as ∠ABC.</div>
+    <div class="vcard-def-ko">각을 세 글자로 쓰는 법. ∠ABC 또는 AB̂C.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Angle notation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Vertex</div>
+    <div class="vcard-ko">꼭짓점</div>
+    <div class="vcard-def">The point where the two arms of an angle meet.</div>
+    <div class="vcard-def-ko">각의 두 팔이 만나는 점. ∠ABC 에서는 가운데 글자 B 다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Vertex")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Arm</div>
+    <div class="vcard-ko">팔(변)</div>
+    <div class="vcard-def">One of the two lines that make an angle.</div>
+    <div class="vcard-def-ko">각을 이루는 두 선 중 하나.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Arm")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Reason</div>
+    <div class="vcard-ko">이유</div>
+    <div class="vcard-def">A written rule that explains your answer.</div>
+    <div class="vcard-def-ko">답이 왜 맞는지 쓰는 규칙 문장. 시험에서 따로 점수가 있다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Reason")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Not drawn accurately</div>
+    <div class="vcard-ko">정확히 그린 그림 아님</div>
+    <div class="vcard-def">The diagram is not to scale, so you must calculate, not measure.</div>
+    <div class="vcard-def-ko">그림이 실제 크기가 아니다. 각도기로 재지 말고 계산하라는 뜻.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Not drawn accurately")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="process"><h2>∥ 평행선·삼각형·사각형 Parallel lines</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Parallel lines</div>
+    <div class="vcard-ko">평행선</div>
+    <div class="vcard-def">Lines that never meet and stay the same distance apart.</div>
+    <div class="vcard-def-ko">절대 만나지 않는 두 직선. 그림에서 화살표(>)로 표시한다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Parallel lines")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Corresponding angles</div>
+    <div class="vcard-ko">동위각</div>
+    <div class="vcard-def">Angles in the same position at each parallel line; F-shape; they are equal.</div>
+    <div class="vcard-def-ko">평행선 위 같은 자리에 있는 각. F 모양. 크기가 같다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Corresponding angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Alternate angles</div>
+    <div class="vcard-ko">엇각</div>
+    <div class="vcard-def">Angles on opposite sides between parallel lines; Z-shape; they are equal.</div>
+    <div class="vcard-def-ko">평행선 사이에서 엇갈린 자리의 각. Z 모양. 크기가 같다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Alternate angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Co-interior angles</div>
+    <div class="vcard-ko">동측내각</div>
+    <div class="vcard-def">Angles on the same side between parallel lines; C-shape; they add up to 180°.</div>
+    <div class="vcard-def-ko">평행선 사이 같은 쪽에 있는 각. C 모양. 합이 180°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Co-interior angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Perpendicular</div>
+    <div class="vcard-ko">수직의</div>
+    <div class="vcard-def">Meeting at a right angle.</div>
+    <div class="vcard-def-ko">직각으로 만나는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Perpendicular")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Quadrilateral</div>
+    <div class="vcard-ko">사각형</div>
+    <div class="vcard-def">A shape with four straight sides.</div>
+    <div class="vcard-def-ko">곧은 변이 네 개인 도형. 네 각의 합은 360°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Quadrilateral")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Parallelogram</div>
+    <div class="vcard-ko">평행사변형</div>
+    <div class="vcard-def">A quadrilateral with two pairs of parallel sides.</div>
+    <div class="vcard-def-ko">마주 보는 변이 두 쌍 다 평행한 사각형. 마주 보는 각이 같다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Parallelogram")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Rectangle</div>
+    <div class="vcard-ko">직사각형</div>
+    <div class="vcard-def">A quadrilateral with four right angles.</div>
+    <div class="vcard-def-ko">네 각이 모두 직각인 사각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Rectangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Square</div>
+    <div class="vcard-ko">정사각형</div>
+    <div class="vcard-def">A quadrilateral with four equal sides and four right angles.</div>
+    <div class="vcard-def-ko">네 변이 같고 네 각이 직각인 사각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Square")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Rhombus</div>
+    <div class="vcard-ko">마름모</div>
+    <div class="vcard-def">A quadrilateral with four equal sides.</div>
+    <div class="vcard-def-ko">네 변의 길이가 모두 같은 사각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Rhombus")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Trapezium</div>
+    <div class="vcard-ko">사다리꼴</div>
+    <div class="vcard-def">A quadrilateral with one pair of parallel sides.</div>
+    <div class="vcard-def-ko">평행한 변이 한 쌍뿐인 사각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Trapezium")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Kite</div>
+    <div class="vcard-ko">연꼴</div>
+    <div class="vcard-def">A quadrilateral with two pairs of equal adjacent sides.</div>
+    <div class="vcard-def-ko">이웃한 변끼리 두 쌍이 같은 사각형. 연 모양.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Kite")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Diagonal</div>
+    <div class="vcard-ko">대각선</div>
+    <div class="vcard-def">A line joining two corners that are not next to each other.</div>
+    <div class="vcard-def-ko">이웃하지 않은 두 꼭짓점을 잇는 선.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Diagonal")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Symmetry</div>
+    <div class="vcard-ko">대칭</div>
+    <div class="vcard-def">When one half is a mirror image of the other.</div>
+    <div class="vcard-def-ko">반으로 접으면 꼭 맞는 성질.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Symmetry")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Opposite angles</div>
+    <div class="vcard-ko">마주 보는 각</div>
+    <div class="vcard-def">Angles facing each other in a quadrilateral.</div>
+    <div class="vcard-def-ko">사각형에서 서로 마주 보는 각. 평행사변형에서는 같다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Opposite angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Equilateral triangle</div>
+    <div class="vcard-ko">정삼각형</div>
+    <div class="vcard-def">A triangle with three equal sides; each angle is 60°.</div>
+    <div class="vcard-def-ko">세 변이 같은 삼각형. 세 각이 모두 60°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Equilateral triangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Isosceles triangle</div>
+    <div class="vcard-ko">이등변삼각형</div>
+    <div class="vcard-def">A triangle with two equal sides and two equal base angles.</div>
+    <div class="vcard-def-ko">두 변이 같은 삼각형. 두 밑각이 같다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Isosceles triangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Base angles</div>
+    <div class="vcard-ko">밑각</div>
+    <div class="vcard-def">The two equal angles at the bottom of an isosceles triangle.</div>
+    <div class="vcard-def-ko">이등변삼각형에서 같은 두 변의 밑에 있는 두 각. 크기가 같다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Base angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Angle sum of triangle</div>
+    <div class="vcard-ko">삼각형 내각의 합</div>
+    <div class="vcard-def">The three angles in a triangle add up to 180°.</div>
+    <div class="vcard-def-ko">삼각형 세 각의 합. 늘 180°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Angle sum of triangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Opposite interior angles</div>
+    <div class="vcard-ko">이웃하지 않은 두 내각</div>
+    <div class="vcard-def">The two inside angles of a triangle not next to the exterior angle.</div>
+    <div class="vcard-def-ko">외각과 붙어 있지 않은 삼각형 안쪽 두 각. 둘을 더하면 외각과 같다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Opposite interior angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="blood"><h2>⬡ 다각형 Polygons</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Polygon</div>
+    <div class="vcard-ko">다각형</div>
+    <div class="vcard-def">A closed flat shape made of straight sides.</div>
+    <div class="vcard-def-ko">곧은 변으로 둘러싸인 닫힌 평면도형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Polygon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Regular polygon</div>
+    <div class="vcard-ko">정다각형</div>
+    <div class="vcard-def">A polygon with all sides and all angles equal.</div>
+    <div class="vcard-def-ko">모든 변과 모든 각이 같은 다각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Regular polygon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Irregular polygon</div>
+    <div class="vcard-ko">정다각형이 아닌 다각형</div>
+    <div class="vcard-def">A polygon whose sides or angles are not all equal.</div>
+    <div class="vcard-def-ko">변이나 각이 다 같지는 않은 다각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Irregular polygon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Pentagon</div>
+    <div class="vcard-ko">오각형</div>
+    <div class="vcard-def">A polygon with 5 sides.</div>
+    <div class="vcard-def-ko">변이 5개. 내각의 합 540°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Pentagon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Hexagon</div>
+    <div class="vcard-ko">육각형</div>
+    <div class="vcard-def">A polygon with 6 sides.</div>
+    <div class="vcard-def-ko">변이 6개. 내각의 합 720°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Hexagon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Heptagon</div>
+    <div class="vcard-ko">칠각형</div>
+    <div class="vcard-def">A polygon with 7 sides.</div>
+    <div class="vcard-def-ko">변이 7개. 내각의 합 900°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Heptagon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Octagon</div>
+    <div class="vcard-ko">팔각형</div>
+    <div class="vcard-def">A polygon with 8 sides.</div>
+    <div class="vcard-def-ko">변이 8개. 내각의 합 1080°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Octagon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Nonagon</div>
+    <div class="vcard-ko">구각형</div>
+    <div class="vcard-def">A polygon with 9 sides.</div>
+    <div class="vcard-def-ko">변이 9개. 내각의 합 1260°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Nonagon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Decagon</div>
+    <div class="vcard-ko">십각형</div>
+    <div class="vcard-def">A polygon with 10 sides.</div>
+    <div class="vcard-def-ko">변이 10개. 내각의 합 1440°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Decagon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Dodecagon</div>
+    <div class="vcard-ko">십이각형</div>
+    <div class="vcard-def">A polygon with 12 sides.</div>
+    <div class="vcard-def-ko">변이 12개. 내각의 합 1800°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Dodecagon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Icosagon</div>
+    <div class="vcard-ko">이십각형</div>
+    <div class="vcard-def">A polygon with 20 sides.</div>
+    <div class="vcard-def-ko">변이 20개. 내각의 합 3240°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Icosagon")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Interior angle</div>
+    <div class="vcard-ko">내각</div>
+    <div class="vcard-def">An angle inside a polygon at a vertex.</div>
+    <div class="vcard-def-ko">다각형 안쪽의 각.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Interior angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Sum of interior angles</div>
+    <div class="vcard-ko">내각의 합</div>
+    <div class="vcard-def">All the interior angles added together: 180(n − 2).</div>
+    <div class="vcard-def-ko">내각을 다 더한 값. n각형이면 180 × (n − 2).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sum of interior angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Exterior angle</div>
+    <div class="vcard-ko">외각</div>
+    <div class="vcard-def">The angle between one side extended and the next side.</div>
+    <div class="vcard-def-ko">한 변을 늘인 선과 이웃 변 사이의 각. 내각 + 외각 = 180°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Exterior angle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Sum of the exterior angles</div>
+    <div class="vcard-ko">외각의 합</div>
+    <div class="vcard-def">The exterior angles of any polygon add up to 360°.</div>
+    <div class="vcard-def-ko">외각을 다 더한 값. 변이 몇 개든 늘 360°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sum of the exterior angles")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Number of sides</div>
+    <div class="vcard-ko">변의 수</div>
+    <div class="vcard-def">How many sides the polygon has, written n.</div>
+    <div class="vcard-def-ko">다각형 변의 개수. 보통 n 으로 쓴다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Number of sides")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Consecutive</div>
+    <div class="vcard-ko">연속하는</div>
+    <div class="vcard-def">Following one after another without a gap, such as 106, 107, 108.</div>
+    <div class="vcard-def-ko">빠짐없이 하나씩 이어지는 것. 106, 107, 108 처럼.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Consecutive")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="gas"><h2>📏 작도·피타고라스 Pythagoras</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Construction</div>
+    <div class="vcard-ko">작도</div>
+    <div class="vcard-def">Drawing accurately with only a ruler and compasses.</div>
+    <div class="vcard-def-ko">자와 컴퍼스만으로 정확하게 그리는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Construction")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Bisect</div>
+    <div class="vcard-ko">이등분하다</div>
+    <div class="vcard-def">To cut into two equal parts.</div>
+    <div class="vcard-def-ko">똑같이 둘로 나누는 것. 60°를 이등분하면 30°.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Bisect")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Perpendicular bisector</div>
+    <div class="vcard-ko">수직이등분선</div>
+    <div class="vcard-def">A line that cuts a segment in half at a right angle.</div>
+    <div class="vcard-def-ko">선분을 반으로 나누면서 직각으로 지나는 선.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Perpendicular bisector")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Inscribe</div>
+    <div class="vcard-ko">내접시키다</div>
+    <div class="vcard-def">To draw a shape inside a circle with every vertex on the circle.</div>
+    <div class="vcard-def-ko">꼭짓점이 모두 원 위에 오도록 원 안에 그리는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Inscribe")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Diameter</div>
+    <div class="vcard-ko">지름</div>
+    <div class="vcard-def">A straight line across a circle through its centre.</div>
+    <div class="vcard-def-ko">원의 중심을 지나 양끝이 원 위에 있는 선.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Diameter")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Pythagoras' theorem</div>
+    <div class="vcard-ko">피타고라스 정리</div>
+    <div class="vcard-def">In a right-angled triangle, a² + b² = c².</div>
+    <div class="vcard-def-ko">직각삼각형에서 두 짧은 변의 제곱의 합 = 빗변의 제곱.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Pythagoras' theorem")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Hypotenuse</div>
+    <div class="vcard-ko">빗변</div>
+    <div class="vcard-def">The longest side, opposite the right angle.</div>
+    <div class="vcard-def-ko">직각의 맞은편에 있는 가장 긴 변.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Hypotenuse")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Right-angled triangle</div>
+    <div class="vcard-ko">직각삼각형</div>
+    <div class="vcard-def">A triangle with one angle of 90°.</div>
+    <div class="vcard-def-ko">한 각이 90°인 삼각형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Right-angled triangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Decimal places</div>
+    <div class="vcard-ko">소수 자리</div>
+    <div class="vcard-def">The digits after the decimal point.</div>
+    <div class="vcard-def-ko">소수점 아래 자리. 2 d.p. 는 소수 둘째 자리까지.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Decimal places")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Perimeter</div>
+    <div class="vcard-ko">둘레</div>
+    <div class="vcard-def">The total distance around the edge of a shape.</div>
+    <div class="vcard-def-ko">도형 둘레의 길이.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Perimeter")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Area</div>
+    <div class="vcard-ko">넓이</div>
+    <div class="vcard-def">The amount of space inside a flat shape.</div>
+    <div class="vcard-def-ko">도형 안쪽 크기. 삼각형은 ½ × 밑변 × 높이.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Area")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="tab-notes">
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📐</span>
+    <div class="ch-text">
+      <h2>5.1 Angle facts</h2>
+      <span class="ch-sub">각의 종류와 각 사이의 관계</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>각의 종류 6가지 — 경계값에 주의</h3>
+  </div>
+  <div class="note-body">① 예각 <b>acute angle</b>: 0°보다 크고 90°보다 작다<br>② 직각 <b>right angle</b>: 정확히 90° (모서리에 작은 네모 표시)<br>③ 둔각 <b>obtuse angle</b>: 90°보다 크고 180°보다 작다<br>④ 평각 <b>straight angle</b>: 정확히 180° (일직선)<br>⑤ 우각 <b>reflex angle</b>: 180°보다 크고 360°보다 작다<br>⑥ 한 바퀴 <b>full rotation</b>: 360°<br><br>★ 90°는 예각도 둔각도 아니고 <b>직각</b>이다. 180°는 둔각이 아니라 <b>평각</b>이다.<br>★ 우각(reflex)은 각의 <b>바깥쪽</b>을 잰 큰 각이다. 그림에 호(arc)가 바깥쪽에 그려져 있으면 우각을 묻는 것이다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>이유(reason) 문장 4개 — 영어 그대로 외운다</h3>
+  </div>
+  <div class="note-body">시험은 답과 함께 <b>이유 reason</b> 를 영어로 쓰게 한다. 이유를 안 쓰면 답이 맞아도 점수가 깎인다.<br><br>① 여각 <b>complementary angles</b>: 직각 안의 각 → 합 90°<br>② 보각 <b>supplementary angles</b>: <b>Angles on a straight line add up to 180°.</b><br>③ 한 점 주위 <b>Angles at a point add up to 360°.</b><br>④ 맞꼭지각 <b>Vertically opposite angles are equal.</b><br><br>예) 135°와 70°가 한 점에 모여 있고 나머지가 x →<br>135 + 70 = 205 → 360 − 205 = <b>x = 155°</b><br>reason: <b>The angles at a point add up to 360°.</b></div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>각 이름은 가운데 글자가 꼭짓점이다</h3>
+  </div>
+  <div class="note-body">∠ABC, AB̂C, 말로는 "Angle ABC" 셋 다 같은 각이다.<br><b>가운데 글자 B 가 꼭짓점 vertex</b> 이고, A·C 는 두 팔 <b>arm</b> 위의 점이다.<br><br>★ 함정: ∠ABC 와 ∠BAC 는 <b>다른 각</b>이다. 꼭짓점이 B 냐 A 냐가 다르다.<br>★ 같은 각을 다른 글자로 불러도 된다. 팔 위의 점만 바뀌면 같은 각이다 (∠SQR = ∠CQR).</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>각도기로 그릴 때 — 눈금 두 줄 함정</h3>
+  </div>
+  <div class="note-body">각도기 <b>protractor</b> 에는 눈금이 바깥·안쪽 두 줄이다.<br><b>0°에서 출발한 쪽 눈금</b>을 읽어야 한다. 반대쪽을 읽으면 76° 대신 104°를 그리게 된다(180 − 76).<br><br>★ 195° 같은 우각은 각도기(180°까지)로 한 번에 못 그린다.<br>방법 1: 360 − 195 = <b>165°</b> 를 그리면 바깥쪽이 195°가 된다.<br>방법 2: 180°(일직선)에 15°를 더 그린다.<br><br>★ <b>Not drawn accurately</b> 라고 적혀 있으면 각도기로 재지 말고 <b>계산</b>해야 한다.</div>
+</div>
+</div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">∥</span>
+    <div class="ch-text">
+      <h2>5.1 Angles and parallel lines</h2>
+      <span class="ch-sub">평행선과 각</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>평행선의 각 3가지 — F·Z·C 모양</h3>
+  </div>
+  <div class="note-body">평행선 <b>parallel lines</b> 은 그림에서 <b>화살표(&gt;)</b>로 표시한다. &gt;&gt; 는 또 다른 평행선 한 쌍이다.<br><br>① 동위각 <b>corresponding angles</b> — <b>F</b> 모양 → <b>같다</b><br>② 엇각 <b>alternate angles</b> — <b>Z</b> 모양 → <b>같다</b><br>③ 동측내각 <b>co-interior angles</b> — <b>C</b> 모양 → <b>합이 180°</b><br><br>★ 가장 많이 틀리는 것: co-interior 를 "같다"고 쓰는 것. <b>같지 않고 더해서 180°</b>다.<br>★ 화살표가 없으면 평행하다고 가정하면 안 된다. 평행이라는 말이나 표시가 있어야 F·Z·C 를 쓸 수 있다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>두 단계 문제 — 이유를 단계마다 하나씩</h3>
+  </div>
+  <div class="note-body">ANB ∥ CMD, LNM 은 직선, ∠LMD = 68° 일 때 y 를 구하라.<br><br>1단계: 엇각 → 평행선 사이의 각 = 68° (<b>alternate angles are equal</b>)<br>2단계: 직선 위 → y = 180 − 68 = <b>112°</b> (<b>angles on a straight line add up to 180°</b>)<br><br>다른 풀이도 된다: ∠MNB = 112° (<b>co-interior angles add up to 180°</b>) → y = 112° (<b>vertically opposite angles are equal</b>)<br><br>★ 계산이 두 번이면 이유도 <b>두 개</b> 써야 한다. 하나만 쓰면 점수가 반만 나온다.<br><br>AB ∥ CD 에서 116° 옆 작은 삼각형:<br>180 − 116 = 64° (angles on a straight line)<br>180 − 51 − 64 = 65° (angles in a triangle)<br>x 는 그 각과 동위각 → <b>x = 65°</b> (corresponding angles are equal)</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>거꾸로 묻는 문제 — 평행한지 아닌지 증명</h3>
+  </div>
+  <div class="note-body">Nigel 은 "CD 와 EF 가 평행하다", Tim 은 "아니다"라고 한다. 누가 맞나?<br><br>같은 쪽 안의 두 각이 83° 와 97° → 83 + 97 = <b>180°</b><br>co-interior angles 의 합이 180° 이므로 <b>평행하다 → Nigel 이 맞다.</b><br><br>★ 규칙을 거꾸로 쓴다. 엇각·동위각이 같거나, 동측내각의 합이 180°이면 평행이다.<br>★ 합이 180°가 아니면(예: 83 + 96 = 179) 평행이 <b>아니다</b>.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>식이 들어간 각 — x 와 각의 크기를 헷갈리지 마라</h3>
+  </div>
+  <div class="note-body">AB ∥ CD 에서 7x − 40 과 5x + 10 이 엇각이다.<br><br>엇각은 같다 → <b>7x − 40 = 5x + 10</b><br>→ 2x = 50 → <b>x = 25</b><br>각의 크기는 7 × 25 − 40 = <b>135°</b><br><br>★ 문제가 "x 를 구하라"면 25, "각의 크기"면 135°. 무엇을 묻는지 끝까지 읽는다.<br>★ 동측내각이었다면 같다고 놓지 않고 <b>더해서 180</b>으로 식을 세운다.</div>
+</div>
+</div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🔺</span>
+    <div class="ch-text">
+      <h2>5.1 Triangles and quadrilaterals</h2>
+      <span class="ch-sub">삼각형과 사각형의 각</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>삼각형 — 합 180°, 이등변은 밑각이 같다</h3>
+  </div>
+  <div class="note-body">삼각형 세 각의 합 <b>angle sum of triangle</b> = <b>180°</b><br><br>정삼각형 <b>equilateral triangle</b>: 세 각 모두 <b>60°</b><br>이등변삼각형 <b>isosceles triangle</b>: 같은 두 변의 밑에 있는 <b>두 밑각 base angles</b> 이 같다.<br><br>꼭지각이 48° → 밑각 = (180 − 48) ÷ 2 = <b>66°</b><br><br>★ 함정: 어느 두 각이 같은지는 <b>변의 눈금 표시(|)</b>로 판단한다. 같은 표시가 된 두 변 <b>사이</b>의 각이 아니라, 그 두 변의 <b>밑</b>에 있는 두 각이 같다.<br>★ CE = ED 이면 같은 각은 ∠ECD 와 ∠EDC (꼭짓점 E 의 각이 아님).</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>삼각형의 외각 = 이웃하지 않은 두 내각의 합</h3>
+  </div>
+  <div class="note-body">한 변을 늘였을 때 생기는 바깥 각 <b>exterior angle</b> 은<br><b>붙어 있지 않은 두 내각 opposite interior angles 의 합</b>과 같다.<br><br>왜? 외각 + 옆 내각 = 180° (직선), 세 내각의 합도 180° 이니까.<br><br>예) 두 내각이 x, x 이고 외각이 120° → x + x = 120 → <b>x = 60°</b><br>예) 4x = 86 + (180 − 2x) → 6x = 266 → <b>x = 44.3°</b><br><br>reason: <b>exterior angle of a triangle equals the sum of the opposite interior angles</b></div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>사각형 — 합 360°, 평행사변형·사다리꼴·연꼴</h3>
+  </div>
+  <div class="note-body">사각형 <b>quadrilateral</b> 은 대각선 <b>diagonal</b> 하나로 삼각형 2개로 나뉜다 → 180 × 2 = <b>360°</b><br><br>평행사변형 <b>parallelogram</b>: 이웃한 두 각의 합 180° (co-interior), 마주 보는 각 <b>opposite angles</b> 은 같다.<br>→ 64° 옆 각 = 180 − 64 = <b>116°</b>, 마주 보는 각 = <b>64°</b><br><br>사다리꼴 <b>trapezium</b>: 평행한 변 사이의 두 각 합 180° → 180 − 60 = <b>120°</b><br><br>연꼴 <b>kite</b>: 대칭선 양쪽의 두 각이 같다 → (360 − 95 − 55) ÷ 2 = <b>105°</b><br><br>★ 연꼴에서 같은 두 각은 대칭선 <b>위에 있지 않은</b> 두 각이다. 95° 와 55° 처럼 대칭선 위의 두 각은 서로 다르다.</div>
+</div>
+</div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">⬡</span>
+    <div class="ch-text">
+      <h2>5.2 · 5.3 Interior and exterior angles of polygons</h2>
+      <span class="ch-sub">다각형의 내각과 외각</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>다각형 이름 — 시험에 그대로 나온다</h3>
+  </div>
+  <div class="note-body">다각형 <b>polygon</b>: 곧은 변(straight sides)으로 둘러싸인 닫힌 평면도형<br><br>5 <b>pentagon</b> · 6 <b>hexagon</b> · 7 <b>heptagon</b> · 8 <b>octagon</b><br>9 <b>nonagon</b> · 10 <b>decagon</b> · 12 <b>dodecagon</b> · 20 <b>icosagon</b><br><br>모든 변과 모든 각이 같으면 정다각형 <b>regular polygon</b>, 아니면 <b>irregular polygon</b>.<br><br>★ 헷갈리는 짝: hexagon(6) ↔ heptagon(7), nonagon(9) ↔ decagon(10).</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>내각의 합 = 180(n − 2)</h3>
+  </div>
+  <div class="note-body">n각형은 한 꼭짓점에서 대각선을 그으면 <b>삼각형 n − 2 개</b>로 나뉜다.<br>그래서 내각의 합 <b>sum of interior angles</b> = <b>180 × (n − 2)</b><br><br>오각형 3 × 180 = 540° · 육각형 720° · 팔각형 1080° · 구각형 1260° · 십각형 1440°<br><br><b>정다각형</b>의 한 내각 = 합 ÷ n<br>정오각형 540 ÷ 5 = <b>108°</b> · 정육각형 <b>120°</b> · 정팔각형 <b>135°</b> · 정십이각형 1800 ÷ 12 = <b>150°</b><br><br>★ 함정 1: 삼각형 수는 n 개가 아니라 <b>n − 2</b> 개다. 180n 으로 계산하면 틀린다.<br>★ 함정 2: ÷ n 은 <b>정다각형일 때만</b> 한다. irregular 이면 합에서 아는 각을 빼야 한다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>모르는 각 하나 구하기 — 오목한 꼭짓점은 우각</h3>
+  </div>
+  <div class="note-body">순서: ① 꼭짓점 수 n 을 센다 → ② 180(n − 2) 로 합 → ③ 아는 각을 뺀다.<br><br>육각형: 720 − (90 + 110 + 130 + 60 + 70) = <b>260°</b><br>오각형: 540 − (120 + 100 + 40 + 40) = <b>240°</b><br><br>★ 답이 180°보다 크게 나와도 틀린 게 아니다. 안으로 들어간(오목한) 꼭짓점의 각은 <b>우각 reflex angle</b> 이다.<br>★ 같은 크기의 각이 여러 개면 묶어서 나눈다: (1080 − 4 × 48) ÷ 4 = <b>222°</b></div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>외각의 합은 언제나 360°</h3>
+  </div>
+  <div class="note-body">외각 <b>exterior angle</b> = 한 변을 <b>늘인 선</b>과 이웃 변 사이의 각.<br>한 꼭짓점에서 <b>내각 + 외각 = 180°</b> (직선이니까)<br><br>다각형을 한 바퀴 돌면 360°를 돈 것이라 <b>외각의 합 = 360°</b>. 변이 몇 개든 같다.<br><br>정다각형 한 외각 = <b>360 ÷ n</b>, 한 내각 = <b>180 − 외각</b><br>정오각형: 외각 72°, 내각 108° · 정십각형: 외각 36°, 내각 144°<br><br>★ 함정: 대각선이나 안쪽으로 그은 선이 만드는 각은 외각이 <b>아니다</b>. 반드시 변을 <b>연장한</b> 선이어야 한다.<br>★ 외각을 다 모르면 외각의 합으로 푼다: c = 360 − (50 + 85 + 75 + 80) = <b>70°</b></div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 거꾸로 — 변의 수 구하기는 외각부터</h3>
+  </div>
+  <div class="note-body"><b>외각이 주어지면</b> n = 360 ÷ 외각<br>외각 15° → 360 ÷ 15 = <b>24 sides</b><br><br><b>내각이 주어지면</b> 먼저 외각으로 바꾼다 → 180 − 내각 → 360 ÷ 그 값<br>내각 144° → 외각 36° → <b>10 sides</b><br>내각 178° → 외각 2° → <b>180 sides</b><br>내각 179° → 외각 1° → <b>360 sides</b> (내각이 정수인 가장 큰 정다각형)<br><br><b>내각의 합</b>이 주어지면 180(n − 2) = 합 으로 푼다.<br>180(n − 2) = 1260 → n − 2 = 7 → <b>n = 9</b><br><br>★ 내각으로 바로 360 ÷ 144 를 하면 틀린다. 꼭 <b>외각으로 바꾼 뒤</b> 나눈다.<br>★ 360 ÷ 외각이 정수가 안 나오면 그런 정다각형은 없다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>한 점에 다각형이 모일 때 · 연속하는 수</h3>
+  </div>
+  <div class="note-body">정육각형과 정팔각형이 한 점에서 만날 때 남은 각 x:<br>한 점 주위 360° 에서 각 다각형의 <b>내각</b>을 뺀다 → 360 − 120 − 135 = <b>105°</b><br>정오각형 3개: 360 − 3 × 108 = <b>36°</b><br><br>오각형의 다섯 내각이 연속하는 정수 <b>consecutive whole numbers</b> 일 때 가장 큰 각:<br>합 540 ÷ 5 = 108 이 <b>가운데</b> 수 → 106, 107, 108, 109, 110 → <b>110°</b><br><br>★ 한 점 문제에서 외각을 빼면 틀린다. 꼭짓점에서 만나는 것은 <b>내각</b>이다.</div>
+</div>
+</div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🧭</span>
+    <div class="ch-text">
+      <h2>5.4 Constructions</h2>
+      <span class="ch-sub">작도</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>60°·30° 작도 — 컴퍼스 폭을 바꾸지 마라</h3>
+  </div>
+  <div class="note-body">작도 <b>construction</b> 는 자와 컴퍼스만으로 그린다.<br><br>60°: 선분을 긋고 한 끝에 컴퍼스를 대어 호를 그린다 → <b>같은 반지름</b>으로 호와 만난 점에서 다시 호 → 두 호의 교점과 끝점을 잇는다.<br>같은 반지름이라 세 변이 같은 정삼각형이 생기고, 그 한 각이 <b>60°</b>다.<br><br>30°: 60°를 <b>이등분 bisect</b> 한다.<br><br>★ 중간에 컴퍼스 폭이 바뀌면 정삼각형이 안 생겨 60°가 아니게 된다.<br>★ 작도 선(호)은 지우지 않고 남겨 둔다. 남은 호가 작도했다는 증거다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>90°·45° 작도 — 수직이등분선</h3>
+  </div>
+  <div class="note-body">90°: 선분의 <b>수직이등분선 perpendicular bisector</b> 을 그린다.<br>양 끝에서 <b>같은 반지름</b>(선분 길이의 반보다 크게)으로 위아래 호를 그리고, 두 교점을 잇는다.<br><br>45°: 90°를 이등분한다.<br><br>★ 반지름이 선분의 반보다 작으면 두 호가 만나지 않는다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>원 안에 정다각형 그리기 — 내접</h3>
+  </div>
+  <div class="note-body">내접 <b>inscribe</b>: 도형의 꼭짓점이 모두 원 위에 오도록 그린다.<br><br>정사각형: 원과 지름 <b>diameter</b> 을 하나 긋는다 → 그 지름의 수직이등분선(또 하나의 지름) → 두 지름이 원과 만나는 네 점을 잇는다.<br><br>정육각형: <b>반지름 그대로</b> 원 둘레를 6번 끊어 잇는다 (원 중심에서 정삼각형 6개가 생기기 때문).</div>
+</div>
+</div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📏</span>
+    <div class="ch-text">
+      <h2>5.5 Pythagoras' Theorem</h2>
+      <span class="ch-sub">피타고라스 정리</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>a² + b² = c² — c 는 직각의 맞은편</h3>
+  </div>
+  <div class="note-body">직각삼각형 <b>right-angled triangle</b> 에서 <b>a² + b² = c²</b><br>c 는 빗변 <b>hypotenuse</b> — <b>직각의 맞은편</b>에 있는 가장 긴 변.<br><br>① 빗변을 구할 때: 두 변을 제곱해 <b>더하고</b> 루트 → √(3² + 4²) = <b>5 cm</b><br>② 짧은 변을 구할 때: 빗변² 에서 아는 변² 을 <b>빼고</b> 루트 → √(8² − 5²) = <b>6.25 cm</b><br><br>★ 먼저 "x 가 직각 맞은편인가?"부터 본다. 그래야 더할지 뺄지가 정해진다.<br>★ 짧은 변을 구했는데 답이 빗변보다 길면 더해 버린 것이다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>자주 틀리는 실수 3가지 (Benjamin · Chantelle · Victor)</h3>
+  </div>
+  <div class="note-body">① <b>제곱 ≠ ×2</b>: 5² = 5 × 5 = 25 (10 아님), 13² = 169 (26 아님)<br>→ x² = 169 − 25 = 144 → <b>x = 12 cm</b><br><br>② <b>루트 ≠ ÷2</b>: x² = 400 에서 x = √400 = <b>20 cm</b> (200 아님)<br><br>③ <b>빗변을 잘못 고름</b>: 빗변이 25 cm 인데 x 를 c 로 놓았다.<br>x 는 짧은 변 → x² = 25² − 7² = 576 → <b>x = 24 cm</b></div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>단위 맞추기 · 소수 둘째 자리</h3>
+  </div>
+  <div class="note-body">변의 단위가 섞여 있으면(mm·cm·m·km) <b>먼저 같은 단위로</b> 바꾼다.<br>14 mm = 1.4 cm · 80 mm = 8 cm · 3.5 m = 350 cm · 90000 cm = 0.9 km<br><br><b>Give your answer to 2 decimal places</b> = 소수 둘째 자리까지 반올림.<br>√(40² − 37²) = √231 = 15.198… → <b>15.20 cm</b> (끝의 0 도 쓴다)<br><br>★ 반올림은 <b>마지막에 한 번</b>만 한다. 중간에 반올림하면 답이 조금씩 어긋난다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>직각삼각형인지 확인하기</h3>
+  </div>
+  <div class="note-body"><b>가장 긴 변</b>이 빗변 후보다. 짧은 두 변의 제곱의 합이 가장 긴 변의 제곱과 <b>같아야</b> 직각삼각형이다.<br><br>39² + 52² = 4225, 65² = 4225 → 같다 → <b>right angled</b><br>8² + 40² = 1664, 41² = 1681 → 다르다 → <b>not right angled</b><br>3.1² + 4.2² = 27.25, 5.3² = 28.09 → <b>not right-angled</b><br><br>★ 그림이 직각처럼 보여도(not drawn accurately) 계산으로만 판단한다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>문장제 — 직각삼각형을 찾아 그려라</h3>
+  </div>
+  <div class="note-body">사다리 9 m, 벽에서 1.5 m → 사다리가 빗변 → √(9² − 1.5²) = <b>8.87 m</b><br>정사각형 한 변 5 cm 의 대각선 → √(5² + 5²) = <b>7.07 cm</b><br>직사각형 20 × 8 의 대각선 → √(20² + 8²) = <b>21.54 cm</b><br>동쪽 50 마일, 남쪽 180 마일 → √(50² + 180²) = <b>186.82 miles</b><br><br><b>이등변·정삼각형의 높이</b>: 꼭짓점에서 밑변 한가운데로 내리므로 <b>밑변이 반으로</b> 나뉜다.<br>정삼각형 한 변 10 → 높이 √(10² − 5²) = 8.66 → 넓이 ½ × 10 × 8.66 = <b>43.30 cm²</b><br><br>★ 넓이 area 를 물으면 높이를 구한 뒤 <b>½ × 밑변 × 높이</b> 까지 해야 끝이다. 둘레 perimeter 면 세 변을 다 더한다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>☠ 함정 문제 — 답이 두 개 · 식을 세우는 피타고라스</h3>
+  </div>
+  <div class="note-body">두 변이 14 cm, 18 cm 일 때 셋째 변은 <b>두 가지</b>다.<br>18 이 빗변이 아니면 → √(14² + 18²) = <b>22.80 cm</b><br>18 이 빗변이면 → √(18² − 14²) = <b>11.31 cm</b><br><br>삼각형 두 개가 붙어 있으면 <b>공통 변을 먼저</b> 구한다.<br>BC² = 19² − 13² = 192 → AB = √(192 − 5²) = √167 = <b>12.92 cm</b> (BC² 를 루트하지 않고 그대로 쓴다)<br><br>25 피트 깃대가 부러져 끝이 밑동에서 5 피트에 닿았다.<br>서 있는 부분 a, 꺾인 부분(빗변) 25 − a<br>a² + 5² = (25 − a)² → 25 = 625 − 50a → <b>a = 12</b><br>→ <b>12 foot and 13 foot</b></div>
+</div>
+</div>
+</div>
+</div>
 <div class="tab-pane" id="tab-classroom">
   <div class="quiz-wrap"><div id="cr-math"></div></div>
 </div>
-<div class="tab-pane active" id="tab-teacher">
+<div class="tab-pane" id="tab-teacher">
   <iframe src="y9m_ch5_problems.html" style="width:100%;height:80vh;border:0;border-radius:14px;background:#fff;"></iframe>
 </div>
 
@@ -340,6 +1376,7 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top:0, behavior:'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();
   });
 });
 </script>
@@ -479,6 +1516,281 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
     playList(r.words, b);
   };
 })();
+</script>
+<script>
+const UNIT_ID = "y9m_unit5";
+function slugify(t){ return t.replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
+let _audio = null;
+function speak(text) {
+  try {
+    // ★2026-09-17: 전체듣기·토막듣기·낱개순차가 돌고 있으면 먼저 멈춘다. 안 그러면 소리가 겹친다.
+    var _ap = document.getElementById('allplay-audio');
+    if (_ap && !_ap.paused) _ap.pause();
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
+    a.onerror = () => fallbackSpeak(cleanText(text));
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(text)));
+  } catch (e) { fallbackSpeak(cleanText(text)); }
+}
+let _voices = [];
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis) { loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9;
+  const en = _voices.filter(v => normLang(v.lang).startsWith('en'));
+  const local = en.filter(v => v.localService);
+  const pool = local.length ? local : en;
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
+  if (v) { u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'en-GB'; }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
+}
+
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
+  //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  // ★2026-09-17: onended·onerror·play().catch() 가 모두 done()을 불러서 한 소리가
+  //   두 갈래로 갈라져 재생되던 것(목소리 겹침)을 막는다. 무슨 일이 나도 딱 한 번만 넘어간다.
+  var fired = false;
+  var go = function(){ if (fired) return; fired = true; if (_seq && _seq.token === token) done(); };
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = go;
+    a.onerror = go;                       // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(go);
+  } catch (e) { go(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
+/* 새로고침해도 보던 탭 그대로 — 마지막에 본 탭을 기억한다 */
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('tab_' + UNIT_ID); } catch(e){}
+  if (location.hash && location.hash.length > 1) t = location.hash.slice(1);
+  if (!t) return;
+  var btn = document.querySelector('.tab-btn[data-tab="' + t + '"]');
+  var pane = document.getElementById('tab-' + t);
+  if (!btn || !pane) return;
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  pane.classList.add('active');
+})();
+
+function annotateCounts(){ document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=document.querySelectorAll('#tab-vocab .vcard').length; }
+function numberVocab(){ let n=0; document.querySelectorAll('#tab-vocab .vcard').forEach(c => { n++; const L=c.querySelector('.vcard-left'); if(L && !L.querySelector('.vcard-num')){ const d=document.createElement('div'); d.className='vcard-num'; d.textContent=n+'번'; L.insertBefore(d, L.firstChild); } }); }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
+// 단어장: 필터 + 검색 통합
+let selectedCats = new Set();   // 비어있으면 전체. 여러 단원 다중선택
+let currentQuery = '';
+
+function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (selectedCats.size === 0 || selectedCats.has(cat));
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', !visibleByCat[target]);
+  });
+}
+
+function filterCards(cat) {
+  if (cat === 'all') { selectedCats.clear(); }
+  else { if (selectedCats.has(cat)) selectedCats.delete(cat); else selectedCats.add(cat); }
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if (b.dataset.cat === 'all') b.classList.toggle('active', selectedCats.size === 0);
+    else b.classList.toggle('active', selectedCats.has(b.dataset.cat));
+  });
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
+  annotateCounts();   // 단원별·전체 단어 수 표시
+  numberVocab();      // 단어 앞 고정 번호 (1번~)
+});
+
+</script>
+<script>
+/* 단원 전체 듣기 + 20개씩 끊어 듣기 — 미리 합쳐 둔 mp3를 재생한다.
+   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일로 합쳤다.
+   ★2026-09-17 대표님 지시: 한 번에 60몇 개는 안 외워진다 → 20개 토막 버튼 추가.
+     전체와 토막이 audio 요소 하나를 같이 쓴다 → 두 소리가 겹칠 수 없다. */
+(function(){
+  var a = document.getElementById('allplay-audio');
+  var btn = document.getElementById('allplay-btn');
+  if (!a || !btn) return;
+  var FULL = a.getAttribute('src');
+  var TOTAL = btn.getAttribute('data-total') || '';
+  var cur = 0;   // 0 = 전체, 1.. = 몇 번째 토막
+  function parts(){ return Array.prototype.slice.call(document.querySelectorAll('.chunkplay')); }
+  function resetLabels(){
+    btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active');
+    parts().forEach(function(b){ b.textContent = b.getAttribute('data-label'); b.classList.remove('active'); });
+  }
+  function activeBtn(){
+    return cur === 0 ? btn : document.querySelector('.chunkplay[data-part="' + cur + '"]');
+  }
+  function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  function playSrc(src, which, title){
+    if (typeof stopSeq === 'function') stopSeq();
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
+    if (a.getAttribute('src') !== src) { a.pause(); a.setAttribute('src', src); a.load(); }
+    cur = which;
+    try { a.currentTime = 0; } catch (e) {}   // 끝까지 들은 뒤 다시 눌러도 처음부터
+    a._title = title;
+    a.play();
+  }
+  window.playAllFrom = function(n, label){
+    var b = document.querySelector('.chunkplay[data-part="' + n + '"]');
+    if (cur === n && !a.paused) { a.pause(); return; }
+    playSrc(FULL.replace('_all.mp3', '_p' + n + '.mp3'), n, (b ? b.getAttribute('data-label').replace('▶ ','') : n + '번째') + ' 듣기');
+  };
+  window.toggleAllPlay = function(){
+    if (cur === 0 && !a.paused) { a.pause(); return; }
+    playSrc(FULL, 0, '단원 전체 듣기' + (TOTAL ? ' — ' + TOTAL + ' 단어' : ''));
+  };
+  a.addEventListener('play', function(){
+    resetLabels();
+    var b = activeBtn(); if (b) { b.textContent = '⏸ 멈춤'; b.classList.add('active'); }
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: a._title || '단원 전체 듣기', artist: UNIT_TITLE, album: 'AMY Study App'
+      });
+      navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
+      navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
+    }
+  });
+  a.addEventListener('pause', resetLabels);
+  a.addEventListener('ended', resetLabels);
+  a.addEventListener('timeupdate', function(){
+    if (a.paused) return;
+    var b = activeBtn(); if (b) b.textContent = '⏸ ' + mmss(a.currentTime);
+  });
+  a.addEventListener('error', function(){ resetLabels(); });
+})();
+
 </script>
 </body>
 </html>
