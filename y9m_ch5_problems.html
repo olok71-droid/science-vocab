@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>9학년 수학 5단원 문제 · Angles</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--pink:#db2777;--purple:#6d5dfc;
+--text:#243b6b;--strong:#16223f;--muted:#6b7a99;--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;flex-wrap:wrap;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.shot{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;margin:10px 0 14px;}
+.shot img{width:100%;height:auto;border-radius:8px;display:block;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.8;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+.chk{display:inline-block;font-size:11.5px;font-weight:800;color:#b45309;background:#fef3c7;border:1px solid #fcd34d;border-radius:6px;padding:1px 6px;}
+.tbl{border-collapse:collapse;margin:6px 0;font-size:13px;}
+.tbl td,.tbl th{border:1px solid rgba(36,59,107,.2);padding:4px 8px;text-align:center;}
+.tbl th{background:#e0f2f1;}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">📐</div>
+  <div class="header-text">
+    <div class="header-title">5단원 Angles</div>
+    <div class="header-sub">TERM 1 · 5단원 각 · 문제 + 풀이</div>
+  </div>
+</header>
+<div class="wrap">
+<div class="sec">
+<div class="sec-head"><span class="sec-no">5.1</span><span class="sec-title">Calculating angles</span><span class="sec-ko">각 계산하기</span></div>
+<div class="q">
+  <div class="q-title">STARTER: Matching Angles</div>
+  <div class="q-ko">Use a protractor of your own to measure the angles below. (각 그림과 이름을 짝지어라)</div>
+  <div class="shot"><img src="assets/y9m/ch5/n01.png" alt="STARTER: Matching Angles"></div>
+  <details><summary>풀이</summary><div class="ans">
+    1번 그림 → <b>Acute Angle</b> &nbsp; 2번 → <b>Reflex Angle</b> &nbsp; 3번 → <b>Right Angle</b> &nbsp; 4번 → <b>Obtuse Angle</b> &nbsp; 5번 → <b>Straight Angle</b> &nbsp; 6번 → <b>Full Rotation</b><br><span class="chk">⚠ 확인 필요</span> 그림이 작아 2번(reflex)·4번(obtuse)은 그림을 직접 보고 확인해라.
+    <span class="how">① 예각 acute angle: 0°보다 크고 90°보다 작다<br>② 직각 right angle: 정확히 90° (모서리에 네모 표시)<br>③ 둔각 obtuse angle: 90°보다 크고 180°보다 작다<br>④ 평각 straight angle: 180° (일직선)<br>⑤ 우각 reflex angle: 180°보다 크고 360°보다 작다<br>⑥ 한 바퀴 full rotation(revolution): 360°</span>
+  </div></details>
+</div>
+<div class="shot"><img src="assets/y9m/ch5/n04.png" alt="Terms used to talk about lines: point, line, parallel, perpendicular"></div>
+<div class="shot"><img src="assets/y9m/ch5/n06.png" alt="Terms used to talk about angles 1"></div>
+<div class="shot"><img src="assets/y9m/ch5/n07.png" alt="Terms used to talk about angles 2"></div>
+<div class="shot"><img src="assets/y9m/ch5/n08.png" alt="Terms used to talk about angles 3"></div>
+<div class="q">
+  <div class="q-title">Angle relationships — 각 사이의 관계 4가지</div>
+  <div class="shot"><img src="assets/y9m/ch5/n10.png" alt="Angle relationships — 각 사이의 관계 4가지"></div>
+  <div class="shot"><img src="assets/y9m/ch5/n12.png" alt="Angle relationships — 각 사이의 관계 4가지"></div>
+  <div class="shot"><img src="assets/y9m/ch5/n15.png" alt="Angle relationships — 각 사이의 관계 4가지"></div>
+  <div class="shot"><img src="assets/y9m/ch5/n17.png" alt="Angle relationships — 각 사이의 관계 4가지"></div>
+  <details><summary>풀이</summary><div class="ans">
+    ① <b>Complementary angles</b>(여각): 직각 안의 각들 → 합 <b>90°</b><br>② <b>Supplementary angles</b>(보각): 직선 위의 각들 → 합 <b>180°</b> (angles on a straight line)<br>③ <b>Angles round a point</b>(한 점 주위의 각) → 합 <b>360°</b><br>④ <b>Vertically opposite angles</b>(맞꼭지각) → 서로 <b>같다</b>
+    <span class="how">시험에서는 답과 함께 <b>이유(reason)</b>를 영어로 쓰라고 한다. 위 네 문장을 그대로 외워 두면 이유 쓰기가 끝난다. 예: “angles on a straight line add up to 180°”.</span>
+  </div></details>
+</div>
+<span class="src">CH3 Angle relationships · Slide 3</span>
+<div class="q">
+  <div class="q-title">Setting the Scene: Angle Notation</div>
+  <div class="q-ko">We can refer to angle ABC using …? &nbsp; How would we refer to each of the following angles 1, 2, 3? (Use ∠ABC notation)</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_rel03.png" alt="Setting the Scene: Angle Notation"></div>
+  <details><summary>풀이</summary><div class="ans">
+    각 ABC 를 부르는 법: <b>AB̂C</b> (가운데 글자에 hat) · <b>∠ABC</b> · 말로 <b>“Angle ABC”</b><br>1 → <b>∠SQR</b> 또는 <b>∠CQR</b> &nbsp; 2 → <b>∠SCR</b> &nbsp; 3 → <b>∠SPQ</b><div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/a_rel03.png" alt="answer"></div>
+    <span class="how">★ 각 이름의 <b>가운데 글자가 꼭짓점(vertex)</b>이다. 양 끝 글자는 각을 이루는 두 팔(arm) 위의 점이다.</span>
+  </div></details>
+</div>
+<span class="src">Worked Example 3</span>
+<div class="shot"><img src="assets/y9m/ch5/n19.png" alt="Worked example 3"></div>
+<div class="shot"><img src="assets/y9m/ch5/n20.png" alt="Worked example 3 answers"></div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">6. (a) Work out the size of the angle marked x. (b) Give a reason for your answer.</div>
+  <div class="q-ko">Not drawn accurately</div>
+  <div class="shot"><img src="assets/y9m/ch5/n21.png" alt="6. (a) Work out the size of the angle ma"></div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 135 + 70 = 205 → 360 − 205 = <b>x = 155°</b><br>(b) <b>The angles at a point add up to 360°.</b>
+  </div></details>
+</div>
+<span class="src">Measuring and drawing angles</span>
+<div class="shot"><img src="assets/y9m/ch5/n24.png" alt="protractor: clockwise and anti-clockwise scale"></div>
+<div class="shot"><img src="assets/y9m/ch5/n25.png" alt="measuring angles with a protractor"></div>
+<div class="shot"><img src="assets/y9m/ch5/n26.png" alt="measuring a reflex angle"></div>
+<div class="q">
+  <div class="q-title">Draw angle: a) ABC = 76° &nbsp; b) XYZ = 195°</div>
+  <div class="shot"><img src="assets/y9m/ch5/n28.png" alt="Draw angle: a) ABC = 76° &nbsp; b) XYZ ="></div>
+  <details><summary>풀이</summary><div class="ans">
+    a) B 에 각도기 중심을 대고 0°에서 출발해 76°에 점을 찍어 잇는다.<br>b) 195°는 reflex angle 이다. 360° − 195° = <b>165°</b> 를 반대쪽에 그리면 바깥쪽이 195°가 된다(또는 180°에 15°를 더 그린다).<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/n29.png" alt="answer"></div><div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/n30.png" alt="answer"></div><div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/n31.png" alt="answer"></div>
+    <span class="how">각도기에는 눈금이 두 줄(바깥·안쪽)이다. <b>0°에서 출발한 쪽 눈금</b>을 읽어야 한다.</span>
+  </div></details>
+</div>
+<span class="src">CH3 Angles and parallel lines</span>
+<div class="q">
+  <div class="q-title">Let’s get started! What special properties do the following quadrilaterals have? Illustrate with a diagram.</div>
+  <div class="q-ko">Parallelogram · Rectangle · Square · Rhombus · Trapezium · Kite</div>
+  <details><summary>풀이</summary><div class="ans">
+    <div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/a_par02.png" alt="answer"></div><div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/a_par03.png" alt="answer"></div>
+    <span class="how">변(sides)·평행(parallel)·수직(perpendicular)·각(angles)·대각선(diagonals)·대칭(symmetry) 여섯 가지로 비교한다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Angles and parallel lines — 평행선의 각 3가지</div>
+  <div class="shot"><img src="assets/y9m/ch5/n34.png" alt="Angles and parallel lines — 평행선의 각 3가지"></div>
+  <div class="shot"><img src="assets/y9m/ch5/n36.png" alt="Angles and parallel lines — 평행선의 각 3가지"></div>
+  <div class="shot"><img src="assets/y9m/ch5/n38.png" alt="Angles and parallel lines — 평행선의 각 3가지"></div>
+  <details><summary>풀이</summary><div class="ans">
+    ① <b>Corresponding angles</b>(동위각, ‘F’-shape) → <b>같다</b><br>② <b>Alternate angles</b>(엇각, ‘Z’-shape) → <b>같다</b><br>③ <b>Co-interior angles</b>(동측내각, ‘C’-shape) → 합 <b>180°</b><div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/a_par05.png" alt="answer"></div><div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/a_par07.png" alt="answer"></div>
+    <span class="how">평행선(parallel lines)은 그림에서 <b>화살표(&gt;)</b>로 표시한다. 화살표가 두 개(&gt;&gt;)면 또 다른 평행선 한 쌍이다.<br>평행사변형(parallelogram)에서는 이웃한 두 각(co-interior)의 합이 180°, 마주 보는 각(opposite angles)은 같다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity: Identify the alternate and corresponding angle for each indicated angle (use ∠ notation).</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_par08.png" alt="Learning Activity: Identify the alternat"></div>
+  <details><summary>풀이</summary><div class="ans">
+    <table class="tbl"><tr><th>#</th><th>Angle</th><th>Alternate</th><th>Corresponding</th></tr><tr><td>1</td><td>∠JNO</td><td>∠CDJ</td><td>∠PDQ or ∠GLM</td></tr><tr><td>2</td><td>∠SFH</td><td>∠FMN</td><td>∠LMR</td></tr><tr><td>3</td><td>∠DJC</td><td>∠BAC</td><td>∠WAX</td></tr><tr><td>4</td><td>∠ICD</td><td>∠TVI</td><td>∠ULM</td></tr><tr><td>5</td><td>∠HGL</td><td>∠DJI</td><td>∠NJK</td></tr></table>
+    <span class="how">답은 선생님 슬라이드에 적힌 것이다. 엇각은 Z 모양, 동위각은 F 모양을 그려서 찾는다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity i: ANB is parallel to CMD. LNM is a straight line. Angle LMD = 68°. (i) Work out the size of the angle marked y. (ii) Give reasons for your answer.</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_par09.png" alt="Learning Activity i: ANB is parallel to "></div>
+  <details><summary>풀이</summary><div class="ans">
+    (i) <b>y = 112°</b><br>(ii) “Alternate angles are equal” OR “Corresponding angles are equal” and “Angles on a straight line add up to 180°”
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity ii: [JMC 2011 Q11] The diagram shows an equilateral triangle inside a rectangle. What is the value of x + y? &nbsp; A 30 &nbsp; B 45 &nbsp; C 60 &nbsp; D 75 &nbsp; E 90</div>
+  <details><summary>풀이</summary><div class="ans">
+    <b>C (60)</b>
+    <span class="how">꼭짓점에서 직사각형 변과 평행한 선을 하나 그으면 x 와 y 가 각각 엇각(alternate angles)이 되어 정삼각형의 한 각 60° 를 둘로 나눈 것이 된다. 그래서 x + y = 60°.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Show us what you have learnt: Can you come up with an alternative explanation for why y = 112°?</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_par10.png" alt="Show us what you have learnt: Can you co"></div>
+  <details><summary>풀이</summary><div class="ans">
+    ∠MNB = 112° (co-interior angles add up to 180°)<br>y = 112° (vertically opposite angles are equal)
+  </div></details>
+</div>
+<span class="src">Worked Example 4</span>
+<div class="q">
+  <div class="q-title">Find the size of angles a, b and c in this figure.</div>
+  <div class="shot"><img src="assets/y9m/ch5/n39.png" alt="Find the size of angles a, b and c in th"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a = 47° (CAB alt SBA)<br>c = 62° (ACB alt CBT)<br>a + b + c = 180° (angles on line) → b = 180° − 47° − 62° = <b>71°</b>
+  </div></details>
+</div>
+<span class="src">Let’s do these together…</span>
+<div class="q">
+  <div class="q-title">9. Nigel says “the lines CD and EF are parallel.” Tim says “the lines CD and EF are not parallel.” Who is correct? Give a reason for your answer.</div>
+  <div class="q-ko">Diagram not drawn accurately</div>
+  <div class="shot"><img src="assets/y9m/ch5/n41.png" alt="9. Nigel says “the lines CD and EF are p"></div>
+  <details><summary>풀이</summary><div class="ans">
+    <b>Nigel</b> is correct. 83° + 97° = 180° → <b>co-interior angles add up to 180°</b>, so CD and EF are parallel.
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">11. Triangle CDE is isosceles. CD is parallel to FE. Angle CED = 30°. Work out the size of angle x.</div>
+  <div class="shot"><img src="assets/y9m/ch5/n42.png" alt="11. Triangle CDE is isosceles. CD is par"></div>
+  <details><summary>풀이</summary><div class="ans">
+    CE = ED(눈금 표시) 이므로 밑각 ∠ECD = ∠EDC = (180° − 30°) ÷ 2 = 75° (base angles of an isosceles triangle)<br>x 와 ∠ECD 는 엇각 → <b>x = 75°</b> (alternate angles are equal)
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">12. In the diagram, AB is parallel to CD. Work out the size of angle x. You must show your workings.</div>
+  <div class="q-ko">Not drawn accurately</div>
+  <div class="shot"><img src="assets/y9m/ch5/n43.png" alt="12. In the diagram, AB is parallel to CD"></div>
+  <details><summary>풀이</summary><div class="ans">
+    116° 옆의 작은 삼각형 안쪽 각 = 180° − 116° = 64° (angles on a straight line)<br>작은 삼각형의 B 쪽 각 = 180° − 51° − 64° = 65° (angles in a triangle)<br>x 는 그 각과 동위각 → <b>x = 65°</b> (corresponding angles are equal)
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">16. AB and CD are parallel lines. Work out the size of x.</div>
+  <div class="shot"><img src="assets/y9m/ch5/n44.png" alt="16. AB and CD are parallel lines. Work o"></div>
+  <details><summary>풀이</summary><div class="ans">
+    7x − 40 과 5x + 10 은 엇각(alternate angles)이라 같다.<br>7x − 40 = 5x + 10 → 2x = 50 → <b>x = 25</b> (각의 크기는 135°)
+  </div></details>
+</div>
+<span class="src">Triangles</span>
+<div class="shot"><img src="assets/y9m/ch5/n45.png" alt="Triangles classified by sides"></div>
+<div class="shot"><img src="assets/y9m/ch5/n46.png" alt="Triangles classified by angles"></div>
+<div class="shot"><img src="assets/y9m/ch5/n47.png" alt="Angles in a triangle add up to 180"></div>
+<div class="shot"><img src="assets/y9m/ch5/n48.png" alt="Exterior angle of a triangle"></div>
+<div class="q">
+  <div class="q-title">What can be said about the angles in Equilateral and Isosceles triangles?</div>
+  <details><summary>풀이</summary><div class="ans">
+    <b>Equilateral triangle</b>(정삼각형): 세 각이 모두 <b>60°</b>로 같다.<br><b>Isosceles triangle</b>(이등변삼각형): 같은 두 변의 밑에 있는 <b>두 밑각(base angles)이 같다</b>.
+    <span class="how">★ 삼각형의 외각(exterior angle)은 <b>이웃하지 않은 두 내각(opposite interior angles)의 합</b>과 같다.</span>
+  </div></details>
+</div>
+<span class="src">Worked Examples 5 · 6 · 7</span>
+<div class="shot"><img src="assets/y9m/ch5/n49.png" alt="worked example"></div>
+<div class="shot"><img src="assets/y9m/ch5/n50.png" alt="worked example"></div>
+<div class="shot"><img src="assets/y9m/ch5/n51.png" alt="worked example"></div>
+<div class="shot"><img src="assets/y9m/ch5/n52.png" alt="worked example"></div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">Find the size of angle x. (isosceles triangle MNO)</div>
+  <div class="shot"><img src="assets/y9m/ch5/n53.png" alt="Find the size of angle x. (isosceles tri"></div>
+  <details><summary>풀이</summary><div class="ans">
+    <b>x = 66°</b> — (180° − 48°) ÷ 2, base angles of an isosceles triangle
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Find the angles x (∠ADC), y and z.</div>
+  <div class="shot"><img src="assets/y9m/ch5/n54.png" alt="Find the angles x (∠ADC), y and z."></div>
+  <details><summary>풀이</summary><div class="ans">
+    x = 180° − 40° − 25° = <b>115°</b> (angle sum of triangle)<br>y = <b>65°</b> (exterior angle of triangle equal to sum of the opposite interior angles OR angles on a line)<br>z = 180° − 90° − 65° = <b>25°</b> (angle sum of triangle)
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Calculate the value of x in each case. Give reasons. &nbsp; a.</div>
+  <div class="shot"><img src="assets/y9m/ch5/n55.png" alt="Calculate the value of x in each case. G"></div>
+  <details><summary>풀이</summary><div class="ans">
+    <b>x = 60°</b> — exterior angle of Δ equal to sum of opposite interior angles, so x + x = 120°
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">b.</div>
+  <div class="shot"><img src="assets/y9m/ch5/n56.png" alt="b."></div>
+  <details><summary>풀이</summary><div class="ans">
+    4x = 86° + (180° − 2x) (exterior angle equals sum of opposite interior angles, and angle on straight line)<br>6x = 266 → <b>x = 44.3°</b>
+  </div></details>
+</div>
+<span class="src">QUADRILATERALS</span>
+<div class="shot"><img src="assets/y9m/ch5/n61.png" alt="Types of quadrilateral 1"></div>
+<div class="shot"><img src="assets/y9m/ch5/n62.png" alt="Types of quadrilateral 2"></div>
+<div class="shot"><img src="assets/y9m/ch5/n64.png" alt="angle sum of quadrilateral"></div>
+<div class="q">
+  <div class="q-title">The angle sum of a quadrilateral</div>
+  <details><summary>풀이</summary><div class="ans">
+    All quadrilaterals can be divided into two triangles by drawing one diagonal → 180° × 2 = <b>360°</b>
+    <span class="how">사각형(quadrilateral) 네 각의 합은 언제나 360°다.</span>
+  </div></details>
+</div>
+<span class="src">Worked Example 8</span>
+<div class="shot"><img src="assets/y9m/ch5/n65.png" alt="worked example 8"></div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">13. The diagram above shows a parallelogram. (a) Work out the size of the angle marked x. (b) Work out the size of the angle marked y.</div>
+  <div class="shot"><img src="assets/y9m/ch5/n66.png" alt="13. The diagram above shows a parallelog"></div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 180 − 64 = <b>116°</b> (co-interior angles) &nbsp; (b) <b>64°</b> (opposite angles of a parallelogram are equal)
+  </div></details>
+</div>
+<span class="src">Textbook Exercise 5.1: All</span>
+</div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">5.2 · 5.3</span><span class="sec-title">Interior and exterior angles of polygons</span><span class="sec-ko">다각형의 내각과 외각</span></div>
+<div class="q">
+  <div class="q-title">STARTER: What is the definition of a polygon? Name the following.</div>
+  <div class="q-ko">A six-sided polygon · A twelve-sided polygon · A seven-sided polygon · A nine-sided polygon · A five-sided polygon · A twenty-sided polygon</div>
+  <div class="shot"><img src="assets/y9m/ch5/n69.png" alt="STARTER: What is the definition of a pol"></div>
+  <div class="shot"><img src="assets/y9m/ch5/n73.png" alt="STARTER: What is the definition of a pol"></div>
+  <details><summary>풀이</summary><div class="ans">
+    <b>Polygon</b>(다각형): 곧은 변(straight sides)으로 둘러싸인 닫힌 평면도형<br>6 → <b>hexagon</b> &nbsp; 12 → <b>dodecagon</b> &nbsp; 7 → <b>heptagon</b> &nbsp; 9 → <b>nonagon</b> &nbsp; 5 → <b>pentagon</b> &nbsp; 20 → <b>icosagon</b>
+    <span class="how">A polygon with all its sides and all its angles equal is called a <b>regular polygon</b>(정다각형). 아니면 irregular polygon.</span>
+  </div></details>
+</div>
+<span class="src">CH3 Interior and Exterior Angles</span>
+<div class="q">
+  <div class="q-title">Show us what you have learnt: The interior angles of a quadrilateral add up to 360°. Find x (and y).</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_int03.png" alt="Show us what you have learnt: The interi"></div>
+  <details><summary>풀이</summary><div class="ans">
+    1) x = 360 − 90 − 90 − 50 = <b>130°</b><br>2) Parallelogram: x = <b>100°</b>, y = <b>80°</b><br>3) Trapezium: x = 180 − 60 = <b>120°</b> (co-interior angles add up to 180°)<br>4) Kite: x = (360 − 95 − 55) ÷ 2 = <b>105°</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Input: Sum of interior angles</div>
+  <div class="q-ko">Can you guess what the angles add up to in a pentagon? How would you prove it?</div>
+  <details><summary>풀이</summary><div class="ans">
+    오각형은 대각선으로 삼각형 3개로 나뉜다 → 3 × 180° = <b>540°</b><div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/a_int05.png" alt="answer"></div>
+    <span class="how">★ n각형 내각의 합 = <b>180(n − 2)</b>. 만들 수 있는 삼각형 수가 변의 수보다 2 적기 때문이다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity 1: What is the total interior, and therefore, each interior angle, of each of these regular polygons?</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_int06.png" alt="Learning Activity 1: What is the total i"></div>
+  <details><summary>풀이</summary><div class="ans">
+    <table class="tbl"><tr><th>Regular Polygon</th><th>Total sum of Interior Angles</th><th>Each Interior Angle</th></tr><tr><td>Equilateral triangle (3)</td><td>180°</td><td>60°</td></tr><tr><td>Square (4)</td><td>360°</td><td>90°</td></tr><tr><td>Pentagon (5)</td><td>540°</td><td>108°</td></tr><tr><td>Hexagon (6)</td><td>720°</td><td>120°</td></tr><tr><td>Octagon (8)</td><td>1080°</td><td>135°</td></tr><tr><td>Nonagon (9)</td><td>1260°</td><td>140°</td></tr><tr><td>Decagon (10)</td><td>1440°</td><td>144°</td></tr></table>
+    <span class="how">합 = 180(n − 2), 한 각 = 합 ÷ n</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity 2: Determine x.</div>
+  <details><summary>풀이</summary><div class="ans">
+    6-sided so total sum of interior angles: 180 × (6 − 2) = 720°<br>x = 720 − (90 + 110 + 130 + 60 + 70) = <b>260°</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity: Find x.</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_int07.png" alt="Learning Activity: Find x."></div>
+  <details><summary>풀이</summary><div class="ans">
+    왼쪽 육각형: x = 720 − (90 + 160 + 80 + 120 + 130) = <b>140°</b><br>정십이각형(regular dodecagon): x = 1800 ÷ 12 = <b>150°</b><br>오른쪽 오각형: x = 540 − (120 + 100 + 40 + 40) = <b>240°</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity 1a–f (On supplied sheet)</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_int08.png" alt="Learning Activity 1a–f (On supplied shee"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a) x = 180 − 105 = <b>75°</b> &nbsp; b) <b>x = 25°</b> (선생님 답) &nbsp; c) b = 720 − 460 = <b>260°</b><br>d) a = 900 − 800 = <b>100°</b> &nbsp; e) x = (1080 − 4 × 48) ÷ 4 = <b>222°</b> &nbsp; f) x = 1440 − 1131 = <b>309°</b>
+    <span class="how">꼭짓점 수를 먼저 세어 180(n − 2) 로 합을 구한 뒤, 아는 각을 뺀다. 오목한 꼭짓점(안으로 들어간 곳)의 각은 180°보다 큰 reflex angle 이다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity g, h, i · 2 · ☠1</div>
+  <div class="q-ko">2) The total of the interior angles of a polygon is 1260°. How many sides does it have? &nbsp; ☠1) The interior angle of a regular polygon is 179°. How many sides does it have?</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_int09.png" alt="Learning Activity g, h, i · 2 · ☠1"></div>
+  <details><summary>풀이</summary><div class="ans">
+    g) <b>x = 54°</b> (선생님 답) &nbsp; h) 정육각형 x = <b>120°</b> &nbsp; i) x = 360 − 108 = <b>252°</b><br>2) 180(n − 2) = 1260 → <b>n = 9</b><br>☠1) 180(n − 2) ÷ n = 179 → 180n − 360 = 179n → <b>n = 360</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Input: Exterior Angles — Which of these are exterior angles of the polygon?</div>
+  <details><summary>풀이</summary><div class="ans">
+    NO · <b>YES</b> · NO<br>An <b>exterior angle</b> of a polygon is an angle between the line extended from one side, and an adjacent side. At any vertex: <b>interior + exterior = 180°</b>.<br>The sum of the exterior angles of any polygon is <b>360°</b>.<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/a_int12.png" alt="answer"></div>
+    <span class="how">★ 외각은 변을 <b>연장한 선</b>과 이웃 변 사이의 각이다. 다각형을 한 바퀴 돌면 360° 를 돈 것이라 외각의 합은 변의 수와 상관없이 늘 360°다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity: Sides · Exterior Angle · Interior Angle</div>
+  <div class="q-ko">Bonus Question: What is the largest number of sides a shape can have such that its interior angle is an integer?</div>
+  <details><summary>풀이</summary><div class="ans">
+    <table class="tbl"><tr><th>Sides</th><th></th><th>Exterior Angle</th><th>Interior Angle</th></tr><tr><td>3</td><td>Equilateral triangle</td><td>120°</td><td>60°</td></tr><tr><td>4</td><td>Square</td><td>90°</td><td>90°</td></tr><tr><td>5</td><td>Pentagon</td><td>72°</td><td>108°</td></tr><tr><td>6</td><td>Hexagon</td><td>60°</td><td>120°</td></tr><tr><td>8</td><td>Octagon</td><td>45°</td><td>135°</td></tr><tr><td>9</td><td>Nonagon</td><td>40°</td><td>140°</td></tr><tr><td>10</td><td>Decagon</td><td>36°</td><td>144°</td></tr></table>Bonus: <b>360 sides</b>. The interior angle will be 179°.
+    <span class="how">정다각형 외각 = 360 ÷ n, 내각 = 180 − 외각.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Input: Number of sides of a regular polygon</div>
+  <div class="q-ko">The exterior angle of a regular polygon is 15°. How many sides does it have? &nbsp; The interior angle of a regular polygon is 144°. How many sides does it have?</div>
+  <details><summary>풀이</summary><div class="ans">
+    360 ÷ 15 = <b>24 sides</b><br>Exterior angle = 180 − 144 = 36° → n = 360 ÷ 36 = <b>10 sides</b>
+    <span class="how">거꾸로 풀 때는 <b>외각을 먼저</b> 구하고 360 을 외각으로 나눈다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity: How many sides do each of the following polygons have?</div>
+  <div class="q-ko">Exterior angle = 18° · Interior angle = 160° · Exterior angle = 45° · Interior angle = 175° · Interior angle = 150°</div>
+  <details><summary>풀이</summary><div class="ans">
+    <b>20</b> · Ext 20° → <b>18</b> · <b>8</b> · Ext 5° → <b>72</b> · Ext 30° → <b>12</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity 1–5</div>
+  <div class="q-ko">1) Determine the exterior angle of a 40-sided regular polygon. 2) Determine the interior angle of a 15-sided regular polygon. 3) The interior angle of a regular polygon is 178°. Determine how many sides it has. 4) Find c. 5) [Edexcel] The diagram shows a regular hexagon and a regular octagon. Calculate the size of the angle marked x.</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_int16.png" alt="Learning Activity 1–5"></div>
+  <details><summary>풀이</summary><div class="ans">
+    1) 360 ÷ 40 = <b>9°</b> &nbsp; 2) Ext = 24°, Int = <b>156°</b> &nbsp; 3) Ext = 2° → <b>180 sides</b><br>4) 외각의 합 360°: c = 360 − (50 + 85 + 75 + 80) = <b>70°</b><br>5) Angles around a point sum to 360°: x = 360 − 120 − 135 = <b>105°</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity 1–6 (Edexcel)</div>
+  <div class="q-ko">4) Determine how many sides a regular polygon with exterior angle 30°, 45°, 12°, 9° would have. 5) … with interior angle 156°, 162°, 144°, 175°.</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_int17.png" alt="Learning Activity 1–6 (Edexcel)"></div>
+  <details><summary>풀이</summary><div class="ans">
+    1) y = 360 ÷ 6 = <b>60°</b> &nbsp; 2) x = 180 − 360/5 = <b>108°</b><br>3) a = 360 − 90 − 80 − 80 = <b>110°</b> &nbsp; <span class="chk">슬라이드에는 100° 로 적혀 있지만 계산하면 110° 다</span><br>4) 12 sides · 8 sides · 30 sides · 40 sides &nbsp; 5) 15 sides · 20 sides · 10 sides · 72 sides<br>6) x = 360 − 90 − 108 − 108 = <b>54°</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Learning Activity 7–10</div>
+  <div class="q-ko">9) [JMO 2007 A6] The sizes in degrees of the interior angles of a pentagon are consecutive whole numbers. What is the size of the largest of these angles? &nbsp; 10) [IMC 2015 Q9] What is the value of p + q + r + s + t + u + v + w + x + y in the diagram?</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_int18.png" alt="Learning Activity 7–10"></div>
+  <details><summary>풀이</summary><div class="ans">
+    7) y = 360 − 3 × 108 = <b>36°</b> &nbsp; 8) x = 360 − 120 − 90 = <b>150°</b><br>9) 540 ÷ 5 = 108 → 106, 107, 108, 109, 110 (합 540) → <b>110°</b><br>10) 외각이 두 벌 → 360 × 2 = <b>720°</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Show us what you have learnt — Show me the correct letter</div>
+  <div class="q-ko">① What is the total exterior angle of a polygon in terms of the number of sides n? (360 / 360÷n / 360n / 180(n−2))<br>② What is the total interior angle of a 20 sided polygon? (360 / 3600 / 3240 / 6480)<br>③ The interior angle of a polygon is 178. How many sides does it have? (20 / 40 / 90 / 180)<br>④ What is the interior angle of a 90 sided regular polygon? (172° / 176° / 178° / 179°)<br>⑤ Determine the angle (29°, 120°, 105°, 61°). (215° / 223° / 225° / 235°)</div>
+  <div class="shot"><img src="assets/y9m/ch5/s_int24.png" alt="Show us what you have learnt — Show me t"></div>
+  <details><summary>풀이</summary><div class="ans">
+    ① <b>360</b> &nbsp; ② 180 × 18 = <b>3240</b> &nbsp; ③ 360 ÷ 2 = <b>180</b> &nbsp; ④ 180 − 4 = <b>176°</b> &nbsp; ⑤ 540 − 315 = <b>225°</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Extension ☠2 [UKMT] If a n-sided polygon has exactly 3 obtuse angles (i.e. 90° &lt; θ &lt; 180°), the rest acute or right-angled, then determine the possible values of n.</div>
+  <details><summary>풀이</summary><div class="ans">
+    270 &lt; 180(n − 2) &lt; 540 + 90(n − 3) → n &gt; 3.5 이고 n &lt; 7 → <b>n = 4, 5 or 6</b>
+  </div></details>
+</div>
+<span class="src">Textbook Exercise 5.2: All · Textbook Exercise 5.3: All</span>
+</div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">5.4</span><span class="sec-title">Constructions</span><span class="sec-ko">작도</span></div>
+<div class="q">
+  <div class="q-title">STARTER: 29. Which of the sectors below – A, B, C or D – should fill the empty sector in the circle?</div>
+  <div class="shot"><img src="assets/y9m/ch5/n77.png" alt="STARTER: 29. Which of the sectors below "></div>
+  <details><summary>풀이</summary><div class="ans">
+    <span class="chk">⚠ 확인 필요</span> 선생님 답이 Answer 탭에 있다고만 적혀 있어 답을 싣지 않았다. 그림을 보고 직접 확인해라.
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Construct 60 and 30 degree angles</div>
+  <details><summary>풀이</summary><div class="ans">
+    60°: 선분을 긋고 한 끝에 컴퍼스를 대어 호를 그린다 → 같은 반지름으로 호와 만나는 점에서 다시 호를 그린다 → 두 호가 만나는 점과 끝점을 이으면 <b>60°</b> (정삼각형의 한 각).<br>30°: 60° 를 <b>이등분(bisect)</b> 하면 30°.
+    <span class="how">컴퍼스 폭을 바꾸지 않는 것이 핵심이다. 같은 반지름이라 정삼각형이 생기고 그 각이 60°다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Construct 90 and 45 degree angles</div>
+  <details><summary>풀이</summary><div class="ans">
+    90°: 선분의 <b>수직이등분선(perpendicular bisector)</b>을 작도한다(양 끝에서 같은 반지름의 호 두 개 → 교점 잇기).<br>45°: 90° 를 이등분한다.
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Draw regular polygons using circles — Inscribe a square in a circle.</div>
+  <div class="shot"><img src="assets/y9m/ch5/n80.png" alt="Draw regular polygons using circles — In"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. Draw a circle and a diameter. &nbsp; b. Construct the perpendicular bisector of the diameter. &nbsp; c. The points where the diameters meet the circle are the vertices of a square.<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/n81.png" alt="answer"></div><div class="shot" style="margin:8px 0"><img src="assets/y9m/ch5/n82.png" alt="answer"></div>
+    <span class="how"><b>Inscribe</b>(내접시키다): 도형의 꼭짓점이 모두 원 위에 오도록 그린다. 정육각형은 반지름 그대로 원 둘레를 6번 끊으면 된다.</span>
+  </div></details>
+</div>
+</div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">5.5</span><span class="sec-title">Pythagoras’ Theorem</span><span class="sec-ko">피타고라스 정리</span></div>
+<div class="q">
+  <div class="q-title">STARTER: 74. Which row is wrong?</div>
+  <div class="shot"><img src="assets/y9m/ch5/n84.png" alt="STARTER: 74. Which row is wrong?"></div>
+  <details><summary>풀이</summary><div class="ans">
+    <span class="chk">⚠ 확인 필요</span> 선생님 답이 Answer 탭에 있다고만 적혀 있어 답을 싣지 않았다. 그림을 보고 직접 확인해라.
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Pythagoras’ theorem</div>
+  <div class="shot"><img src="assets/y9m/ch5/n86.png" alt="Pythagoras’ theorem"></div>
+  <div class="shot"><img src="assets/y9m/ch5/n88.png" alt="Pythagoras’ theorem"></div>
+  <div class="shot"><img src="assets/y9m/ch5/n89.png" alt="Pythagoras’ theorem"></div>
+  <details><summary>풀이</summary><div class="ans">
+    <b>a² + b² = c²</b> &nbsp; (c = <b>hypotenuse</b>, 직각의 맞은편 가장 긴 변)
+    <span class="how">① 빗변(hypotenuse)을 구할 때: 두 변을 제곱해 <b>더하고</b> 루트.<br>② 짧은 변을 구할 때: 빗변² 에서 아는 변² 을 <b>빼고</b> 루트.<br>③ 단위가 섞여 있으면(mm·cm·m·km) 먼저 <b>같은 단위로</b> 바꾼다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Checking for right-angled triangles</div>
+  <div class="shot"><img src="assets/y9m/ch5/n91.png" alt="Checking for right-angled triangles"></div>
+  <details><summary>풀이</summary><div class="ans">
+    c² = a² + b² 가 맞으면 직각삼각형, 아니면 아니다. 3.1² + 4.2² = 27.25, 5.3² = 28.09 ≠ 27.25 → not right-angled.
+  </div></details>
+</div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">Question 1: For each right angle triangle below, work out x</div>
+  <div class="shot"><img src="assets/y9m/ch5/n92.png" alt="Question 1: For each right angle triangl"></div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) √(3² + 4²) = <b>5 cm</b> &nbsp; (b) √(6² + 8²) = <b>10 cm</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 5: Calculate x. Give each answer to 2 decimal places.</div>
+  <div class="shot"><img src="assets/y9m/ch5/n93.png" alt="Question 5: Calculate x. Give each answe"></div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) √(8² − 5²) = <b>6.25 cm</b> &nbsp; (b) √(40² − 37²) = <b>15.20 cm</b>
+  </div></details>
+</div>
+<span class="src">Worksheet · Pythagoras (Corbettmaths) — Do from question 6 onwards, Apply (do all)</span>
+<div class="q">
+  <div class="q-title">Question 6: Calculate x for each right angle triangle. Give each answer to 2 decimal places.</div>
+  <div class="shot"><img src="assets/y9m/ch5/py_q6.png" alt="Question 6: Calculate x for each right a"></div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) <b>7.21 cm</b> &nbsp; (b) <b>9.75 cm</b> &nbsp; (c) <b>18.73 cm</b> &nbsp; (d) <b>2.14 km</b> &nbsp; (e) <b>37.09 m</b> &nbsp; (f) <b>21.02 cm</b> &nbsp; (g) <b>1.98 cm</b> &nbsp; (h) <b>19.67 cm</b> &nbsp; (i) <b>1.31 cm</b> &nbsp; (j) <b>13.60 cm</b> &nbsp; (k) <b>338.23 cm</b> &nbsp; (l) <b>1.35 km</b>
+    <span class="how">빗변이 x 인 것: a, d, f, j, l (더한다) / 나머지는 빼서 구한다.<br>단위 함정: (i) 14 mm = 1.4 cm 로 바꿔서 · (j) 80 mm = 8 cm 로 바꿔서 · (k) 3.5 m = 350 cm 로 바꿔서 · (l) 90000 cm = 0.9 km 로 바꿔서</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 7: Work out if each triangle below is right angled or not. The triangles are not drawn accurately.</div>
+  <div class="shot"><img src="assets/y9m/ch5/py_q7.png" alt="Question 7: Work out if each triangle be"></div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 8² + 40² = 1664, 41² = 1681 → <b>not right angled</b><br>(b) 39² + 52² = 4225, 65² = 4225 → <b>right angled</b><br>(c) 28² + 58² = 4148, 65² = 4225 → <b>not right angled</b>
+    <span class="how">가장 긴 변이 빗변 후보다. 짧은 두 변의 제곱의 합이 가장 긴 변의 제곱과 같아야 직각삼각형이다.</span>
+  </div></details>
+</div>
+<span class="src">Apply</span>
+<div class="q">
+  <div class="q-title">Question 1–2</div>
+  <div class="q-ko">1: A 9m ladder is placed against a wall. The foot of the ladder is 1.5m from the foot of the wall. How far up the wall does the ladder reach? &nbsp; 2: Shown is a square with side length 5cm. Find the length of the diagonal, x.</div>
+  <div class="shot"><img src="assets/y9m/ch5/py_ap1_2.png" alt="Question 1–2"></div>
+  <details><summary>풀이</summary><div class="ans">
+    1) √(9² − 1.5²) = <b>8.87 m</b> &nbsp; 2) √(5² + 5²) = <b>7.07 cm</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 3–6</div>
+  <div class="q-ko">3: (a) the perimeter (b) the area of the triangle. 4: A rectangle is 20cm long and 8cm wide. Find the length of the diagonal. 5: The airplane flies 50 miles East and then 180 miles South. How far is Leek from Redville directly? 6: Calculate the total amount of wire needed to make the frame (1 d.p.).</div>
+  <div class="shot"><img src="assets/y9m/ch5/py_ap3_6.png" alt="Question 3–6"></div>
+  <details><summary>풀이</summary><div class="ans">
+    3) 밑변 = √(25² − 7²) = 24 cm → (a) 25 + 7 + 24 = <b>56 cm</b> (b) ½ × 7 × 24 = <b>84 cm²</b><br>4) √(20² + 8²) = <b>21.54 cm</b> &nbsp; 5) √(50² + 180²) = <b>186.82 miles</b><br>6) 비스듬한 변 = √(12² + 6²) = 13.42 cm (14 − 8 = 6) → 14 + 8 + 12 + 13.42 = <b>47.4 cm</b>
+    <span class="how">6번은 사다리꼴 위쪽을 직각삼각형(가로 12, 세로 14 − 8 = 6)으로 보고 빗변을 구한다. 아래 두 모서리가 직각이라고 보고 계산했다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 7–10</div>
+  <div class="q-ko">7: ABC is an isosceles triangle. (a) Find h. (b) Find the area. 8: Find the area of the equilateral triangle. 9: One side is 14cm and another is 18cm. There are two possible lengths for the third side. What are they? 10: ABC and BCD are right angle triangles. Find the length of AB.</div>
+  <div class="shot"><img src="assets/y9m/ch5/py_ap7_10.png" alt="Question 7–10"></div>
+  <details><summary>풀이</summary><div class="ans">
+    7) 밑변을 반으로: h = √(9² − 2²) = <b>8.77 cm</b>, area = ½ × 4 × h = <b>17.55 cm²</b><br>8) 높이 = √(10² − 5²) = 8.66 cm → area = ½ × 10 × 8.66 = <b>43.30 cm²</b><br>9) 18 이 빗변이 아니면 √(14² + 18²) = <b>22.80 cm</b>, 18 이 빗변이면 √(18² − 14²) = <b>11.31 cm</b><br>10) BC² = 19² − 13² = 192 → AB = √(192 − 5²) = √167 = <b>12.92 cm</b>
+    <span class="how">이등변·정삼각형의 높이는 꼭짓점에서 밑변 한가운데로 내린 선이라 밑변이 반으로 나뉜다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 11: A wooden flagpole is 25 foot tall. In a storm, the flagpole is broken and its top touches the ground 5 foot from the base. Find the lengths of the segments of the flagpole.</div>
+  <div class="shot"><img src="assets/y9m/ch5/py_ap11.png" alt="Question 11: A wooden flagpole is 25 foo"></div>
+  <details><summary>풀이</summary><div class="ans">
+    서 있는 부분 = a, 꺾인 부분 = 25 − a (빗변)<br>a² + 5² = (25 − a)² → 25 = 625 − 50a → a = 12<br><b>12 foot and 13 foot</b>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 12: Benjamin has completed this question. Can you spot any mistakes?</div>
+  <div class="shot"><img src="assets/y9m/ch5/py_ap12.png" alt="Question 12: Benjamin has completed this"></div>
+  <details><summary>풀이</summary><div class="ans">
+    x² = 400 에서 √400 = <b>20 cm</b> 다. Benjamin 은 400 을 2 로 나눠 200 cm 라고 했다(제곱근 대신 반으로 나눔).
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 13–14: Can you spot any mistakes?</div>
+  <div class="shot"><img src="assets/y9m/ch5/py_ap13_14.png" alt="Question 13–14: Can you spot any mistake"></div>
+  <details><summary>풀이</summary><div class="ans">
+    13) Chantelle: 5² = 25(10 아님), 13² = 169(26 아님). 제곱을 ×2 로 했다. x² = 169 − 25 = 144 → <b>x = 12 cm</b><br>14) Victor: 빗변은 25 cm 인데 x 를 빗변(c)으로 놓았다. x 는 짧은 변이므로 x² = 25² − 7² = 576 → <b>x = 24 cm</b>
+    <span class="how">제곱은 ×2 가 아니라 자기 자신을 곱하는 것이다(5² = 5 × 5). 그리고 빗변은 항상 <b>직각의 맞은편</b>이다.</span>
+  </div></details>
+</div>
+</div>
+</div>
+<script>
+/* 단원 페이지 안(iframe)에서 열릴 때는 이 페이지의 제목 줄을 숨긴다 — 단원 제목이 위에 이미 있어 두 번 나오기 때문이다. */
+if (window.self !== window.top) {
+  document.documentElement.classList.add('embedded');
+  var _h = document.querySelector('header');
+  if (_h) _h.style.display = 'none';
+}
+</script>
+</body>
+</html>
