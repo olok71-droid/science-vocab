@@ -1,5 +1,41 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "수학 (Mr Anan)",
+  "date": "2026-10-06",
+  "type": "과제",
+  "title": "CA1 Reflection",
+  "ko": "CA1 시험 돌아보기 과제 제출",
+  "due": "2026-10-07",
+  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
+ },
+ {
+  "subject": "미술",
+  "date": "2026-10-06",
+  "type": "과제",
+  "title": "2 Samples and 3-4 photos uploaded",
+  "ko": "샘플 2개와 사진 3~4장 업로드",
+  "due": "2026-10-20",
+  "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
+ },
+ {
+  "subject": "디자인 기술 (Mr Mathyk)",
+  "date": "2026-10-06",
+  "type": "과제",
+  "title": "Tin",
+  "ko": "틴(Tin) 과제 제출",
+  "due": "2026-10-19",
+  "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
+ },
+ {
+  "subject": "튜터 (Mr Cassels)",
+  "date": "2026-10-06",
+  "type": "과제",
+  "title": "Bring your Reading Books!",
+  "ko": "독서용 책(Reading Book)을 챙겨 오기",
+  "due": "2026-10-07",
+  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5/a/ODg4MTY1NDQ1NDM3/details"
+ },
+ {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-10-05",
   "type": "과제",
@@ -13,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "과제",
   "title": "Simple and Giant structures - worksheet",
-  "ko": "단순·거대 구조 워크시트 풀기",
+  "ko": "단순·거대 구조 워크시트 제출",
   "due": "2026-10-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -22,7 +58,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "자료",
   "title": "2.4 Simple and Giant structures",
-  "ko": "2.4 단순·거대 구조 수업 자료",
+  "ko": "2.4 단순·거대 구조 수업자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -31,7 +67,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "공지",
   "title": "Mathematics: Assessment Returns",
-  "ko": "평가지와 점수는 평가 2주 뒤에 돌려줌",
+  "ko": "시험지와 점수는 시험 2주 뒤 돌려줌",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -85,7 +121,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-02",
   "type": "과제",
   "title": "Rendering different materials on 2-pt perspective objects",
-  "ko": "2점 투시 물체에 여러 재질 표현하기 과제",
+  "ko": "2점 투시 물체에 여러 재질 렌더링하기",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -103,7 +139,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-02",
   "type": "자료",
   "title": "Tutor Prefect Vote 2",
-  "ko": "튜터 반장 2차 투표",
+  "ko": "튜터 반장(Prefect) 2차 투표 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -112,7 +148,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-01",
   "type": "과제",
   "title": "Periodic Table Trends and Chemical Reactions Review",
-  "ko": "주기율표 경향·화학반응 복습 퀴즈",
+  "ko": "주기율표 경향·화학반응 복습 Wayground 퀴즈",
   "due": "2026-10-07",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -121,7 +157,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-01",
   "type": "자료",
   "title": "CA1 - Check your answers",
-  "ko": "CA1 시험 답 확인 자료",
+  "ko": "CA1 시험 정답 확인 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -148,7 +184,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-29",
   "type": "과제",
   "title": "Art Lesson - Tuesday 29th Sept",
-  "ko": "미술 수업 과제 게시",
+  "ko": "미술 수업 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -157,7 +193,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-29",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "독서책을 챙겨 오기",
+  "ko": "독서용 책(Reading Book)을 챙겨 오기",
   "due": "2026-09-30",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -184,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "과제",
   "title": "Science investigation - template - please fill in - upload graph here",
-  "ko": "탐구 양식 작성하고 그래프 올리기",
+  "ko": "탐구 양식 작성 후 그래프 업로드",
   "due": "2026-10-04",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -220,7 +256,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "공지",
   "title": "Everyone gets note book lm",
-  "ko": "모두 NotebookLM을 받으라는 학생 글",
+  "ko": "학생 글: 모두 NotebookLM 사용 가능",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -238,7 +274,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "자료",
   "title": "Revision for Assessment - Next week",
-  "ko": "다음 주 평가 대비 복습 자료",
+  "ko": "평가 대비 복습 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -247,7 +283,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "과제",
   "title": "inheritance worksheet",
-  "ko": "유전 워크시트 풀기",
+  "ko": "유전 워크시트 제출",
   "due": "2026-09-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -256,7 +292,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "자료",
   "title": "Genes and Inheritance - Recap",
-  "ko": "유전자와 유전 복습 자료",
+  "ko": "유전자와 유전 요약 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -265,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "공지",
   "title": "MAA’s American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026",
-  "ko": "AMC 10A/12A 대회 안내, 노트북 지참 필수",
+  "ko": "AMC 수학대회 방과후 실시, 노트북 지참",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -274,7 +310,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "공지",
   "title": "MAA’s American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026 Registration - St. Joseph's Institution International",
-  "ko": "AMC 대회 등록 안내, 결제 뒤 구글폼 작성",
+  "ko": "AMC 대회 결제 후 구글폼 신청, 노트북만 허용",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -301,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "자료",
   "title": "Tutor Prefect Vote",
-  "ko": "튜터 반장 투표",
+  "ko": "튜터 반장(Prefect) 투표 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -309,8 +345,8 @@ window.CLASSROOM_POSTS = [
   "subject": "수학 (Mr Anan)",
   "date": "2026-09-22",
   "type": "공지",
-  "title": "To support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a g",
-  "ko": "수학 내부평가 등급 기준표 안내",
+  "title": "Dear High School Students, To support greater clarity and consistency, the HS Mathematics Department will use the follow",
+  "ko": "수학 내부 시험 등급 기준 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -328,7 +364,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-22",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "독서책을 챙겨 오기",
+  "ko": "독서용 책(Reading Book)을 챙겨 오기",
   "due": "2026-09-23",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -346,7 +382,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Halogens Quiz",
-  "ko": "할로겐 Wayground 퀴즈",
+  "ko": "할로젠 Wayground 퀴즈",
   "due": "2026-09-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -355,7 +391,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Halogen Worksheet",
-  "ko": "할로겐 워크시트 풀기",
+  "ko": "할로젠 워크시트 제출",
   "due": "2026-09-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -364,7 +400,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "자료",
   "title": "The Halogens - Group 7",
-  "ko": "할로겐(7족) 수업 자료",
+  "ko": "할로젠(7족) 수업자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -391,7 +427,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "2 Point Perspective - Bird's Eye, Worm's Eye & Eye level cuboids",
-  "ko": "조감·앙시·눈높이 2점 투시 직육면체 그리기",
+  "ko": "2점 투시로 조감·앙시·눈높이 직육면체 그리기",
   "due": "2026-09-25",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -409,7 +445,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-18",
   "type": "자료",
   "title": "2 POINT PERSPECTIVE VIDEO",
-  "ko": "2점 투시 설명 영상 자료",
+  "ko": "2점 투시 설명 영상",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -436,7 +472,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "자료",
   "title": "2.3 Why elements react to form compounds - ionic bonds",
-  "ko": "2.3 화합물 형성·이온결합 수업 자료",
+  "ko": "2.3 이온결합 수업자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -445,7 +481,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "공지",
   "title": "FOBISIA Code Breaking Maths Challenge 2026",
-  "ko": "수학시간 코드브레이킹 대회, 충전된 기기 지참",
+  "ko": "수학 암호풀기 대회 참가, 충전된 기기 지참",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -463,7 +499,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "Planning Doc",
-  "ko": "PSHCE 계획 문서 작성",
+  "ko": "PSHCE 계획 문서 작성 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -481,7 +517,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-17",
   "type": "과제",
   "title": "House Video Reflection task",
-  "ko": "하우스 영상 보고 소감 쓰기",
+  "ko": "하우스 영상 보고 소감 쓰기 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -531,4 +567,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-06 06:57";
+window.CLASSROOM_POSTS_AT = "2026-10-06 18:11";
