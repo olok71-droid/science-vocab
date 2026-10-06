@@ -521,6 +521,22 @@ body.in-subject .cn-card { display: none; }
   font-size: 13px; line-height: 1.45; padding-left: 10px; }
 .ca-item .bul { font-size: 11px; line-height: 1.7; }
 .ca-sp { height: 11px; }
+/* ★2026-10-06 대표님 지시: 줄은 그대로 클래스룸으로 가고, 옆 '원문' 버튼은 앱 안에서 원문·번역·첨부를 띄운다(핸드폰용). */
+.cn-doc { flex: none; font-family: inherit; font-size: 10.5px; font-weight: 900; line-height: 1;
+  padding: 6px 7px; margin: 0 8px 0 4px; cursor: pointer; background: #fff;
+  border: 1.5px solid #1f4fa3; border-radius: 8px; color: #1f4fa3; }
+.cn-line.pl .cn-row { flex: 1; min-width: 0; border-top: none; }
+.pd-meta { text-align: center; font-size: 11.5px; font-weight: 700; color: #555; margin: 4px 0 14px; }
+.pd-en, .pd-ko { font-size: 13px; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+.pd-ko { color: #1f4fa3; }
+.pd-en a, .pd-ko a { color: #1f4fa3; }
+.pd-files { margin-top: 16px; display: flex; flex-direction: column; gap: 7px; }
+.pd-file { display: block; font-size: 12.5px; font-weight: 700; color: #111; text-decoration: none;
+  border: 1.5px solid #c9ccd6; border-radius: 8px; padding: 8px 10px; word-break: break-word; }
+.pd-file .k { font-size: 10px; font-weight: 900; color: #fff; background: #2e6b3a; border-radius: 5px;
+  padding: 2px 5px; margin-right: 6px; }
+.pd-file .k.w { background: #777; }
+.pd-cr { display: inline-block; margin-top: 14px; font-size: 11.5px; font-weight: 900; color: #1f4fa3; }
 /* ★2026-09-16 대표님 지시: 원문 화면은 그대로 두고, 맨 아래 가로선 하나 + 그 아래 한국어 번역. */
 .ca-hr { border: 0; border-top: 1px solid #c9ccd6; margin: 24px 0 14px; }
 .ca-ko-t { font-size: 12.5px; font-weight: 900; color: #16223f; margin-bottom: 9px; }
@@ -1165,6 +1181,7 @@ if ('serviceWorker' in navigator) {
 <!-- SW-AUTO-END -->
 <script src="classroom_posts.js"></script>
 <script src="ca_details.js"></script>
+<script src="post_details.js"></script>
 <script>
 /* 접기·펼치기 — 상태를 기억한다 */
 function applyFold(el, folded){
@@ -1322,11 +1339,61 @@ function caClose(){
 }
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') caClose(); });
 
+/* ── 클래스룸 글 원문 팝업(2026-10-06 대표님 지시) ─────────────
+   자료 = post_details.js 의 POST_DETAILS (맥 ~/classroom-sync/post_details.py 가 매일 만든다).
+   줄을 누르면 지금처럼 클래스룸으로 가고, 옆 '원문' 버튼을 누르면 여기서 원문 → 첨부 → 가로선 → 한국어 번역. */
+var PD_ROWS = [];
+function pdKey(r){ return ((r.subject||'') + '|' + (r.title||'')).replace(/'/g, ''); }
+function pdBtn(r){
+  var D = window.POST_DETAILS || {};
+  if (!D[pdKey(r)]) return '';
+  PD_ROWS.push(r);
+  return '<button class="cn-doc" type="button" onclick="event.stopPropagation();pdOpen(' + (PD_ROWS.length - 1) + ')">원문</button>';
+}
+function pdLink(t){
+  return caEsc(t).replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+}
+function pdOpen(i){
+  var r = PD_ROWS[i]; if (!r) return;
+  var d = (window.POST_DETAILS || {})[pdKey(r)]; if (!d) return;
+  var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
+  var meta = subj + ' · ' + (r.type || '') + ' · ' + (r.date || '') + (r.due ? ' · 마감 ' + r.due : '');
+  var h = '<div class="ca-bar"><button class="ca-x" type="button" onclick="caClose()">✕</button></div>' +
+          '<div class="ca-doc">' +
+          '<div class="ca-h1">' + caEsc(r.title || '') + '</div>' +
+          '<div class="pd-meta">' + caEsc(meta) + '</div>' +
+          '<div class="pd-en">' + pdLink(d.en || '') + '</div>';
+  var fs = d.files || [];
+  if (fs.length){
+    h += '<div class="pd-files">';
+    fs.forEach(function(f){
+      var href = f.local ? encodeURI(f.local) : f.url;
+      var ext = f.local ? (f.local.split('.').pop() || '').toUpperCase() : (f.kind === 'youtube' ? '영상' : (f.kind === 'form' ? '설문' : '링크'));
+      h += '<a class="pd-file" href="' + caEsc(href) + '" target="_blank" rel="noopener">' +
+           '<span class="k' + (f.local ? '' : ' w') + '">' + caEsc(ext) + '</span>' + caEsc(f.name || href) + '</a>';
+    });
+    h += '</div>';
+  }
+  h += '<a class="pd-cr" href="' + caEsc(r.url || 'https://classroom.google.com/') + '" target="_blank" rel="noopener">클래스룸에서 열기 ›</a>';
+  if (d.ko){
+    h += '<hr class="ca-hr"><div class="ca-ko-t">한국어 번역</div><div class="pd-ko">' + pdLink(d.ko) + '</div>';
+  }
+  h += '</div>';
+  var box = document.getElementById('caBox');
+  var m = document.getElementById('caModal');
+  if (!box || !m) return;
+  box.innerHTML = h;
+  box.scrollTop = 0;
+  m.classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+
 var cn2Open = false;
 function cn2Toggle(){ cn2Open = !cn2Open; cnRender(); }
 function cnRender(){
   var list = document.getElementById('cnList');
   var list2 = document.getElementById('cnList2');
+  PD_ROWS = [];
   var rows = window.CLASSROOM_POSTS || [];
   if (!list) return;
   var cls = {'공지':'t-gongji','과제':'t-gwaje','자료':'t-jaryo'};
@@ -1349,7 +1416,9 @@ function cnRender(){
       due = '<span class="cn-due' + (isPast(r.due) ? ' past' : '') + '">' + (+dd[1]) + '/' + (+dd[2]) + ' ' + wd + '</span>';
     }
     var href = r.url || 'https://classroom.google.com/';
-    return '<a class="cn-row" href="' + href + '" target="_blank" rel="noopener">' +
+    var pb = pdBtn(r);
+    return (pb ? '<div class="cn-line pl">' : '') +
+           '<a class="cn-row" href="' + href + '" target="_blank" rel="noopener">' +
            '<span class="cn-date">' + day + '</span>' +
            '<span class="cn-subj">' + subj + '</span>' +
            (withType ? '<span class="cn-tag ' + tag + '">' + (r.type || '') + '</span>' : '') +
@@ -1358,7 +1427,7 @@ function cnRender(){
              '<span class="cn-en">' + (r.title || '') + '</span>' +
              ((r.ko && r.title) ? '<span class="cn-kr">' + r.ko + '</span>' : (r.title ? '' : '<span class="cn-en">' + (r.ko||'') + '</span>')) +
            '</span>' +
-           '</a>';
+           '</a>' + (pb ? pb + '</div>' : '');
   }
   /* 과제 줄 = 마감·과목·날짜·내용 차례. 완료 체크 옆이 마감이라 헷갈리지 않는다(2026-09-09). */
   function rowHw(r){
@@ -1387,7 +1456,7 @@ function cnRender(){
     return '<div class="cn-line">' +
            '<button class="cn-chk' + (isDone ? ' on' : '') + '" type="button" title="완료" ' +
            'onclick="cnToggleDone(\'' + k + '\')">' + (isDone ? '\u2714' : '\u00A0') + '</button>' +
-           rowHw(r) + '</div>';
+           rowHw(r) + pdBtn(r) + '</div>';
   }
 
   /* 위 박스 = 과제만. 마감 빠른 순 → 이미 지난 마감 → 마감이 안 적힌 것은 가장 아래.
@@ -1414,8 +1483,13 @@ function cnRender(){
 
   /* 시험(CA) 박스 = 커먼 어세스먼트 공지만 모아 과제 바로 아래에 둔다.
      시험일이 지난 것은 저절로 빠지고, 하나도 없으면 박스 자체를 감춘다. */
+  /* ★2026-10-06 대표님 지적 — 'CA1 Reflection'(시험 돌아보기 과제)이 시험 칸에 떴다.
+     시험이 끝난 뒤 올라오는 글(돌아보기·정답 확인·점수·채점 반환·오답)은 시험이 아니다.
+     이런 글은 시험 칸에서 빼고, 과제면 과제 칸·자료면 공지·자료 칸에 그대로 남긴다. */
+  var CA_AFTER = /reflect|check\s+your\s+answer|answers?\b|feedback|result|score|return|correction|mark\s*scheme|\bRAG\b|돌아보|성찰|정답|점수|채점|오답|반환/i;
   function isCA(r){
     var t = (r.title || '') + ' ' + (r.ko || '');
+    if (CA_AFTER.test(t)) return false;
     return /\bCA\s?[1-4]\b/i.test(t) || /common\s+assessment/i.test(t) || /continu\w*\s+assessment/i.test(t);
   }
   // ★시험 글은 날짜를 못 읽었어도 박스에 띄운다. 날짜가 빈칸이라고 시험이 통째로
@@ -1478,10 +1552,14 @@ function cnRender(){
                   '</span>';
       if (di >= 0){
         CA_DETAILS[di]._url = r.url || '';
-        return '<div class="cn-row" style="cursor:pointer" onclick="caOpen(' + di + ')">' + inner + '</div>';
+        var pb0 = pdBtn(r);
+        var one = '<div class="cn-row" style="cursor:pointer" onclick="caOpen(' + di + ')">' + inner + '</div>';
+        return pb0 ? '<div class="cn-line pl">' + one + pb0 + '</div>' : one;
       }
-      return '<a class="cn-row" href="' + (r.url || 'https://classroom.google.com/') + '" target="_blank" rel="noopener">' +
+      var pb1 = pdBtn(r);
+      var a1 = '<a class="cn-row" href="' + (r.url || 'https://classroom.google.com/') + '" target="_blank" rel="noopener">' +
              inner + '</a>';
+      return pb1 ? '<div class="cn-line pl">' + a1 + pb1 + '</div>' : a1;
     }).join('');
   }
 
