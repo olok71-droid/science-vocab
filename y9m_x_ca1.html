@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>9학년 수학 CA1 · 시험 문제 + 채점표</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--pink:#db2777;--purple:#6d5dfc;
+--text:#243b6b;--strong:#16223f;--muted:#6b7a99;--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;flex-wrap:wrap;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.shot{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;margin:10px 0 14px;}
+.shot img{width:100%;height:auto;border-radius:8px;display:block;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.8;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+.chk{display:inline-block;font-size:11.5px;font-weight:800;color:#b45309;background:#fef3c7;border:1px solid #fcd34d;border-radius:6px;padding:1px 6px;}
+.tbl{border-collapse:collapse;margin:6px 0;font-size:13px;}
+.tbl td,.tbl th{border:1px solid rgba(36,59,107,.2);padding:4px 8px;text-align:center;}
+.tbl th{background:#e0f2f1;}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">📝</div>
+  <div class="header-text">
+    <div class="header-title">CA1 시험 문제</div>
+    <div class="header-sub">TERM 1 · 1단원 수와 계산 + 2단원 식과 공식 · 문제 + 풀이</div>
+  </div>
+</header>
+<div class="wrap">
+<div class="sec">
+<div class="sec-head"><span class="sec-no">1</span><span class="sec-title">Number and calculation</span><span class="sec-ko">유리수·무리수 · 표준형 · 지수법칙</span></div>
+<div class="q">
+  <div class="q-title">Q1. Circle the rational numbers. <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <div class="items"><span>π</span><span>√9</span><span>0.1111…</span><span>4</span><span>√2</span><span>1/3</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>√9, 0.1111…, 4, 1/3</b> (유리수 rational) &nbsp;/&nbsp; π, √2 는 무리수 irrational
+    <span class="how">① <b>유리수 rational number</b> = 분수 a/b (a, b 는 정수 integer, b ≠ 0) 로 쓸 수 있는 수<br>② √9 = 3 = 3/1 → 유리수<br>③ 4 = 4/1 → 유리수, 1/3 은 이미 분수 → 유리수<br>④ 0.1111… 은 순환소수 recurring decimal → 1/9 로 쓸 수 있어서 유리수<br>⑤ <b>무리수 irrational number</b> = 소수가 끝없이, 규칙 없이 이어지는 수 → π = 3.14159…, √2 = 1.41421…<br>⑥ 꿀팁: 루트 안이 <b>제곱수 square number</b>(1, 4, 9, 16, 25…)면 유리수, 아니면 무리수</span>
+    <div class="shot"><img src="assets/y9m/ca1/q01.png" alt="CA1 Q1 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Katie says “0.6666… is irrational because it is a recurring decimal”. Is Katie correct? Explain your answer. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>No.</b> Recurring decimals can be written as fractions, so they are rational. (0.6666… = 2/3)
+    <span class="how">① 순환소수 recurring decimal 은 같은 숫자가 계속 반복되는 소수다<br>② 반복되는 소수는 <b>항상 분수 fraction</b> 로 바꿀 수 있다 → 0.6666… = 6/9 = 2/3<br>③ 분수로 쓸 수 있으면 유리수 rational 이다. 그래서 Katie 는 틀렸다<br>④ 영어 답 쓰는 법: "No, because 0.6666… = 2/3, which is a fraction, so it is rational."</span>
+    <div class="shot"><img src="assets/y9m/ca1/q02.png" alt="CA1 Q2 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Write down an estimate for √20. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>4.5</b> (계산기로는 √20 = 4.472…, 4.4~4.5 정도면 된다)
+    <span class="how">① 20 양옆의 <b>제곱수 square number</b>를 찾는다: 16 &lt; 20 &lt; 25<br>② √16 = 4, √25 = 5 → √20 은 <b>4 와 5 사이</b><br>③ 20 은 16 과 25 의 거의 가운데라서 약 4.5 로 어림한다 (estimate)</span>
+    <div class="shot"><img src="assets/y9m/ca1/q03.png" alt="CA1 Q3 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q4. Circle the number in standard form. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <div class="items"><span>5.55 + 10<sup>−8</sup></span><span>36 × 10<sup>−5</sup></span><span>0.3 × 10<sup>5</sup></span><span>6.5 × 10<sup>8</sup></span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>6.5 × 10<sup>8</sup></b>
+    <span class="how">① <b>표준형 standard form</b> = <b>A × 10<sup>n</sup></b>, 이때 <b>1 ≤ A &lt; 10</b>, n 은 정수<br>② 5.55 + 10<sup>−8</sup> → 곱하기(×)가 아니라 더하기(+) 라서 X<br>③ 36 × 10<sup>−5</sup> → 36 은 10 보다 커서 X<br>④ 0.3 × 10<sup>5</sup> → 0.3 은 1 보다 작아서 X<br>⑤ 6.5 × 10<sup>8</sup> → 6.5 는 1 이상 10 미만 → O</span>
+    <div class="shot"><img src="assets/y9m/ca1/q04.png" alt="CA1 Q4 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q5. Write the following numbers in standard form. <span style="font-weight:600;color:var(--muted)">(5)</span></div>
+  <div class="items"><span><span class="tag">(a)</span> 40000</span><span><span class="tag">(b)</span> 5600</span><span><span class="tag">(c)</span> 41200000</span><span><span class="tag">(d)</span> 0.00000008</span><span><span class="tag">(e)</span> 0.000345</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) <b>4 × 10<sup>4</sup></b> &nbsp; (b) <b>5.6 × 10<sup>3</sup></b> &nbsp; (c) <b>4.12 × 10<sup>7</sup></b> &nbsp; (d) <b>8 × 10<sup>−8</sup></b> &nbsp; (e) <b>3.45 × 10<sup>−4</sup></b>
+    <span class="how">① 첫 번째 0 이 아닌 숫자 뒤에 소수점을 찍어 1~10 사이 수 A 를 만든다<br>② 소수점이 몇 칸 움직였는지 센다 = 지수 n<br>③ <b>큰 수</b>(10 이상)는 n 이 <b>양수 positive</b>: 41200000 → 4.12, 소수점 7칸 → 10<sup>7</sup><br>④ <b>작은 수</b>(1 미만)는 n 이 <b>음수 negative</b>: 0.000345 → 3.45, 소수점 4칸 → 10<sup>−4</sup><br>⑤ (d) 0.00000008 → 8 까지 8칸 → 8 × 10<sup>−8</sup></span>
+    <div class="shot"><img src="assets/y9m/ca1/q05.png" alt="CA1 Q5 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q6. (a) Write 1.52 × 10<sup>6</sup> as an ordinary number. &nbsp;(b) Write 9.8 × 10<sup>−5</sup> as an ordinary number. <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) <b>1520000</b> &nbsp; (b) <b>0.000098</b>
+    <span class="how">① <b>ordinary number</b> = 보통 수 (표준형을 풀어 쓴 수)<br>② 10<sup>6</sup> → 소수점을 <b>오른쪽으로 6칸</b>: 1.52 → 1 520 000<br>③ 10<sup>−5</sup> → 소수점을 <b>왼쪽으로 5칸</b>: 9.8 → 0.000098<br>④ 확인: 0.000098 에서 9 는 소수 다섯째 자리다</span>
+    <div class="shot"><img src="assets/y9m/ca1/q06.png" alt="CA1 Q6 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q7. Write 375 × 10<sup>6</sup> in standard form. &nbsp;Write 0.68 × 10<sup>12</sup> in standard form. <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    <b>3.75 × 10<sup>8</sup></b> &nbsp;/&nbsp; <b>6.8 × 10<sup>11</sup></b>
+    <span class="how">① 앞의 수가 1~10 사이가 아니면 고쳐야 한다. 앞을 바꾼 만큼 <b>지수를 반대로</b> 바꾼다 (값은 그대로)<br>② 375 → 3.75 는 <b>÷100</b> → 10<sup>6</sup> 은 <b>×100</b> = 10<sup>8</sup> → 3.75 × 10<sup>8</sup><br>③ 0.68 → 6.8 은 <b>×10</b> → 10<sup>12</sup> 은 <b>÷10</b> = 10<sup>11</sup> → 6.8 × 10<sup>11</sup></span>
+    <div class="shot"><img src="assets/y9m/ca1/q07.png" alt="CA1 Q7 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q8. Write these numbers in order of size, smallest to largest. <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <div class="items"><span>2.04 × 10<sup>3</sup></span><span>250</span><span>0.3 × 10<sup>3</sup></span><span>4 × 10<sup>−2</sup></span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>4 × 10<sup>−2</sup>, 250, 0.3 × 10<sup>3</sup>, 2.04 × 10<sup>3</sup></b>
+    <span class="how">① 모두 보통 수 ordinary number 로 바꿔서 비교한다<br>② 2.04 × 10<sup>3</sup> = 2040, 0.3 × 10<sup>3</sup> = 300, 4 × 10<sup>−2</sup> = 0.04<br>③ 작은 순서 ascending: 0.04 &lt; 250 &lt; 300 &lt; 2040<br>④ 답은 문제에 나온 모양 그대로 쓴다</span>
+    <div class="shot"><img src="assets/y9m/ca1/q08.png" alt="CA1 Q8 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q9. Simplify (m<sup>9</sup> × m) / m<sup>5</sup> <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>m<sup>5</sup></b>
+    <span class="how">① m 은 m<sup>1</sup> 이다 (지수가 안 보이면 1)<br>② <b>곱셈 법칙 multiplication law</b>: 밑이 같으면 지수를 더한다 → m<sup>9</sup> × m<sup>1</sup> = m<sup>10</sup><br>③ <b>나눗셈 법칙 division law</b>: 지수를 뺀다 → m<sup>10</sup> ÷ m<sup>5</sup> = m<sup>5</sup></span>
+    <div class="shot"><img src="assets/y9m/ca1/q09.png" alt="CA1 Q9 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q10. Simplify c<sup>7</sup> × (c<sup>6</sup>)<sup>4</sup> <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>c<sup>31</sup></b>
+    <span class="how">① <b>거듭제곱의 거듭제곱 power of a power</b>: 지수를 곱한다 → (c<sup>6</sup>)<sup>4</sup> = c<sup>24</sup><br>② 곱셈은 지수를 더한다 → c<sup>7</sup> × c<sup>24</sup> = c<sup>31</sup><br>③ 흔한 실수: (c<sup>6</sup>)<sup>4</sup> 를 c<sup>10</sup> 으로 더해 버리는 것</span>
+    <div class="shot"><img src="assets/y9m/ca1/q10.png" alt="CA1 Q10 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q11. Work out the value of (2<sup>9</sup> × 2<sup>−2</sup>) / 2<sup>3</sup> <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>16</b>
+    <span class="how">① 위: 2<sup>9</sup> × 2<sup>−2</sup> = 2<sup>9 + (−2)</sup> = 2<sup>7</sup><br>② 나누기: 2<sup>7</sup> ÷ 2<sup>3</sup> = 2<sup>4</sup><br>③ "value 값" 을 물었으니 끝까지 계산한다: 2<sup>4</sup> = 2 × 2 × 2 × 2 = <b>16</b><br>④ 음수 지수 negative index 를 더할 때는 빼기와 같다: 9 + (−2) = 7</span>
+    <div class="shot"><img src="assets/y9m/ca1/q11.png" alt="CA1 Q11 mark scheme"></div>
+  </div></details>
+</div>
+</div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">2</span><span class="sec-title">Expressions and formulae</span><span class="sec-ko">두 괄호 전개 · 대수분수 · 공식 대입</span></div>
+<div class="q">
+  <div class="q-title">Q12. Expand and simplify (x + 9)(x − 1) <span style="font-weight:600;color:var(--muted)">(3)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x<sup>2</sup> + 8x − 9</b>
+    <span class="how">① <b>두 괄호 전개 expanding double brackets</b>: 앞 괄호의 각 항을 뒤 괄호의 각 항에 곱한다 (FOIL)<br>② x × x = x<sup>2</sup>, x × (−1) = −x, 9 × x = +9x, 9 × (−1) = −9<br>③ 모으면 x<sup>2</sup> − x + 9x − 9<br>④ <b>같은 항 정리 collect like terms</b>: −x + 9x = 8x → x<sup>2</sup> + 8x − 9</span>
+    <div class="shot"><img src="assets/y9m/ca1/q12.png" alt="CA1 Q12 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q13. Expand and simplify (w + 3)(w + 4) + (w + 2)(w + 7) <span style="font-weight:600;color:var(--muted)">(3)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>2w<sup>2</sup> + 16w + 26</b><br><span class="chk">⚠ 확인 필요</span> 채점표 사진에서 문제 줄이 잘려, 식은 선생님 풀이(w<sup>2</sup> + 4w + 3w + 12, w<sup>2</sup> + 7w + 2w + 14)에서 거꾸로 맞췄다.
+    <span class="how">① 첫 번째: (w + 3)(w + 4) = w<sup>2</sup> + 4w + 3w + 12 = w<sup>2</sup> + 7w + 12<br>② 두 번째: (w + 2)(w + 7) = w<sup>2</sup> + 7w + 2w + 14 = w<sup>2</sup> + 9w + 14<br>③ 둘을 더한다: w<sup>2</sup> + w<sup>2</sup> = 2w<sup>2</sup>, 7w + 9w = 16w, 12 + 14 = 26<br>④ 답 2w<sup>2</sup> + 16w + 26</span>
+    <div class="shot"><img src="assets/y9m/ca1/q13.png" alt="CA1 Q13 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q14. Simplify 5/x + 7/(6x) <span style="font-weight:600;color:var(--muted)">(3)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>37 / (6x)</b>
+    <span class="how">① <b>대수분수 algebraic fractions</b> 더하기도 보통 분수처럼 <b>분모를 같게 common denominator</b> 만든다<br>② 공통 분모는 6x → 5/x 의 위아래에 6 을 곱한다: 5/x = 30/(6x)<br>③ 30/(6x) + 7/(6x) = 37/(6x)<br>④ 분모는 더하지 않는다 — 분자 numerator 만 더한다</span>
+    <div class="shot"><img src="assets/y9m/ca1/q14.png" alt="CA1 Q14 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q15. Express as a single fraction (3x + 1)/4 + (2x − 1)/3 <span style="font-weight:600;color:var(--muted)">(3)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(17x − 1) / 12</b>
+    <span class="how">① 공통 분모 common denominator = 4 × 3 = 12<br>② (3x + 1)/4 → 위아래 ×3 → (9x + 3)/12<br>③ (2x − 1)/3 → 위아래 ×4 → (8x − 4)/12<br>④ 분자를 더한다: 9x + 3 + 8x − 4 = 17x − 1<br>⑤ 괄호째로 곱해야 한다! 3 × (3x + 1) = 9x + 3 (3x 에만 곱하면 틀린다)</span>
+    <div class="shot"><img src="assets/y9m/ca1/q15.png" alt="CA1 Q15 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q16. P = 2W + 2L. Find P if W = 3 and L = 9. <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>24</b>
+    <span class="how">① <b>대입 substitution</b>: 글자 자리에 수를 넣는다<br>② 2W = 2 × 3 = 6, 2L = 2 × 9 = 18<br>③ P = 6 + 18 = 24<br>④ P = 2W + 2L 은 직사각형 둘레 perimeter 공식이다 (가로 2번 + 세로 2번)</span>
+    <div class="shot"><img src="assets/y9m/ca1/q16.png" alt="CA1 Q16 mark scheme"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q17. P = 2W + 2L. Find W if P = 30 and L = 11. <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>W = 4</b>
+    <span class="how">① 아는 수를 넣는다: 30 = 2W + 2 × 11 = 2W + 22<br>② 양변에서 22 를 뺀다: 2W = 8<br>③ 양변을 2 로 나눈다: W = 4<br>④ 확인 check: 2 × 4 + 2 × 11 = 8 + 22 = 30 ✓</span>
+    <div class="shot"><img src="assets/y9m/ca1/q17.png" alt="CA1 Q17 mark scheme"></div>
+  </div></details>
+</div>
+</div>
+</div>
+<script>
+/* 단원 페이지 안(iframe)에서 열릴 때는 이 페이지의 제목 줄을 숨긴다 — 단원 제목이 위에 이미 있어 두 번 나오기 때문이다. */
+if (window.self !== window.top) {
+  document.documentElement.classList.add('embedded');
+  var _h = document.querySelector('header');
+  if (_h) _h.style.display = 'none';
+}
+</script>
+</body>
+</html>
