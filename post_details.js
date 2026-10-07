@@ -37,12 +37,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "수학 (Mr Anan)|Dear High School Students, To support greater clarity and consistency, the HS Mathematics Department will use the follow": {
-  "en": "Dear High School Students,\n\nTo support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a general guide for internal Mathematics assessments:\n\nKey Stage 3: Year 7 to 9: \n90% to 100% = A*\n80% to 89% = A\n70% to 79% = B\n55% to 69% = C\n40% to 54% = D\n< 39% = E (the lowest exam grade reported at KS3)\nKey Stage 4: Year 10 & 11, including Year 9 assessed on IGCSE topics\n90% to 100% = A*\n75% to 89% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U\nKey Stage 5: Year 12 & 13\n85% to 100% = A* (AS maximum grade is A)\n75% to 84% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U \nThis approach is intended to provide students with clear targets, encourage students to strive for excellence and support consistent monitoring of progress throughout the academic year.\n\nKind regards,\nHS Mathematics Department",
-  "ko": "고등부 학생 여러분께,\n\n더 명확하고 일관된 기준을 위해, 고등부 수학과(HS Mathematics Department)는 교내 수학 평가(internal Mathematics assessments)에 다음 등급 기준(grade boundaries)을 일반 지침으로 사용합니다:\n\nKey Stage 3: Year 7~9: \n90%~100% = A*\n80%~89% = A\n70%~79% = B\n55%~69% = C\n40%~54% = D\n< 39% = E(KS3에서 보고되는 가장 낮은 시험 등급)\nKey Stage 4: Year 10 & 11, IGCSE 단원으로 평가받는 Year 9 포함\n90%~100% = A*\n75%~89% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n< 30% = U\nKey Stage 5: Year 12 & 13\n85%~100% = A*(AS의 최고 등급은 A)\n75%~84% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n< 30% = U \n이 방식은 학생들에게 분명한 목표를 주고, 우수한 성취를 위해 노력하도록 격려하며, 학년 내내 학업 진도(progress)를 일관되게 점검하는 데 도움을 주기 위한 것입니다.\n\n감사합니다,\n고등부 수학과(HS Mathematics Department)",
-  "files": [],
-  "at": "2026-10-06"
- },
  "수학 (Mr Anan)|Entry Requirements for the Year 10 Accelerated Pathway (Additional Mathematics)": {
   "en": "Entry Requirements for the Year 10 Accelerated Pathway (Additional Mathematics)\n\nDear Year 9 Students,\n\nWe would like to clarify the entry requirements for the Year 10 Accelerated Mathematics programme, which includes Additional Mathematics.\n\nAll Year 9 students who achieve a minimum of a Grade B in Year 9 Mathematics will be invited to join the Accelerated programme in Year 10.\n\nStudents joining the programme will receive the necessary information and guidance to help them prepare for the accelerated pathway.\n\nWe hope this clarifies the entry requirements and gives you a clear target for the year ahead. Please speak to your Mathematics teacher if you have any questions.\n\nKind regards,\nHS Mathematics Department",
   "ko": "Year 10 심화 과정(Accelerated Pathway, 추가 수학(Additional Mathematics)) 입반 조건(Entry Requirements)\n\nYear 9 학생 여러분께,\n\n추가 수학(Additional Mathematics)을 포함하는 Year 10 심화 수학 과정(Accelerated Mathematics programme)의 입반 조건을 분명히 안내하고자 합니다.\n\nYear 9 수학에서 최소 B 등급(Grade B) 이상을 받은 Year 9 학생은 모두 Year 10 심화 과정(Accelerated programme)에 초대됩니다.\n\n이 과정에 들어오는 학생은 심화 과정을 준비하는 데 필요한 정보와 안내를 받게 됩니다.\n\n이 안내로 입반 조건이 분명해지고 앞으로 한 해의 뚜렷한 목표가 되기를 바랍니다. 궁금한 점이 있으면 수학 선생님께 말씀하세요.\n\n감사합니다,\n고등부 수학과(HS Mathematics Department)",
@@ -173,25 +167,6 @@ window.POST_DETAILS = {
  "튜터 (Mr Cassels)|Planning Doc": {
   "en": "Planning Doc",
   "ko": "계획 문서(Planning Doc)",
-  "files": [],
-  "at": "2026-10-06"
- },
- "튜터 (Mr Cassels)|https://docs.google.com/document/d/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8/edit?usp=drivesdk": {
-  "en": "https://docs.google.com/document/d/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8/edit?usp=drivesdk",
-  "ko": "https://docs.google.com/document/d/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8/edit?usp=drivesdk",
-  "files": [
-   {
-    "name": "https://docs.google.com/document/d/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8/edit?usp=drivesdk",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8/edit?usp=drivesdk",
-    "local": "post_files/1ryFY96qZMi7nQ-K-ekQVRwDhy-G0nOGfutgb8DJHkz8.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "튜터 (Mr Cassels)|House Video Reflection task": {
-  "en": "House Video Reflection task\nHi all,\nPlease complete this document as a reflection task following the making of your House video.",
-  "ko": "하우스 영상 성찰 과제(House Video Reflection task)\n여러분 안녕하세요,\n하우스 영상(House video)을 만든 뒤 하는 성찰 과제(reflection task)로 이 문서를 작성해 주세요.",
   "files": [],
   "at": "2026-10-06"
  },
@@ -498,50 +473,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "과학 (Mr Phillips)|WB questions - 2.3 Why elements react to form compounds": {
-  "en": "WB questions - 2.3 Why elements react to form compounds",
-  "ko": "WB 문제 - 2.3 원소(elements)가 반응하여 화합물(compounds)을 만드는 이유",
-  "files": [
-   {
-    "name": "WB answers Topic 2.3",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1CPoEOoaSyI0o0Ascfhqhzo4NWzZy5AKHqX27TxcbVc0/edit?usp=classroom_web",
-    "local": "post_files/1CPoEOoaSyI0o0Ascfhqhzo4NWzZy5AKHqX27TxcbVc0.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|2.3 Why elements react to form compounds - ionic bonds": {
-  "en": "2.3 Why elements react to form compounds - ionic bonds",
-  "ko": "2.3 원소(elements)가 반응하여 화합물(compounds)을 만드는 이유 - 이온결합(ionic bonds)",
-  "files": [
-   {
-    "name": "C1.6 Ionic bonding.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/15VRUki9EWe1-p4LZolutH1QEw4QleStW/view?usp=classroom_web",
-    "local": "pdfs/genes/C1.6 Ionic bonding.pptx"
-   },
-   {
-    "name": "2.3 Why elements react to form compounds - ionic bonds",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1PnxEoRzHhf4IDRtE8HM_4oYTPRNSguQr/view?usp=classroom_web",
-    "local": "post_files/1PnxEoRzHhf4IDRtE8HM_4oYTPRNSguQr.pdf"
-   },
-   {
-    "name": "GCSE Chemistry - Ionic Bonding - Formation | Dot and Cross Diagrams (2027/28 exams)",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=MdU44WeiLps",
-    "local": null
-   },
-   {
-    "name": "GCSE Chemistry - Ionic Compounds - Structure | Properties | Formula (2027/28 exams)",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=ybi6kQHKVws",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
  "컴퓨터 과학 (Ms Meha)|Week 8 Python Exercise(If and Loops)": {
   "en": "Week 8 Python Exercise(If and Loops)\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
   "ko": "8주차 파이썬(Python) 연습문제(조건문과 반복문(If and Loops))\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
@@ -645,45 +576,6 @@ window.POST_DETAILS = {
     "name": "Sign in - Google Accounts",
     "kind": "web",
     "url": "https://notebook.google.com/notebook/019da2c6-3844-4a00-8d40-07d8eda59405",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
- "중국어 (Ying Ying老师)|Lesson 2 Text": {
-  "en": "Lesson 2 Text\nFor WSC students to catch up.",
-  "ko": "2과 본문(Lesson 2 Text)\nWSC 학생들이 진도를 따라잡기 위한 자료입니다.",
-  "files": [
-   {
-    "name": "Unit 1 Week5 学校科目.docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1TPUK8C1y-ZAwQKYVBRzhqm0SZWuYNcDq/view?usp=classroom_web",
-    "local": "post_files/1TPUK8C1y-ZAwQKYVBRzhqm0SZWuYNcDq.docx"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "중국어 (Ying Ying老师)|T1 CA1 Assessment Template": {
-  "en": "T1 CA1 Assessment Template",
-  "ko": "1학기(T1) CA1 평가 양식(Assessment Template)",
-  "files": [
-   {
-    "name": "Y9 Man FL CA1 template.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1hUwebw_BEAl4iplxNmpjqcFi-oeBXQ2p/view?usp=classroom_web",
-    "local": "pdfs/chinese_y9/Y9 Man FL CA1 template.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "중국어 (Ying Ying老师)|Unit 1 Lesson 2 我的学校科目 Quizlet": {
-  "en": "Unit 1 Lesson 2 我的学校科目 Quizlet",
-  "ko": "1단원 2과 我的学校科目(나의 학교 과목) Quizlet",
-  "files": [
-   {
-    "name": "Y9 Unit 1 Lesson 2 我的学校科目 Flashcards | Quizlet",
-    "kind": "web",
-    "url": "https://quizlet.com/my/1208699581/y9-unit-1-lesson-2-%E6%88%91%E7%9A%84%E5%AD%A6%E6%A0%A1%E7%A7%91%E7%9B%AE-flash-cards/?i=5znqnt&x=1qqW",
     "local": null
    }
   ],
@@ -856,35 +748,99 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-06"
  },
- "드라마|Auditions for A Midsummer Night’s Dream High School Production": {
-  "en": "Auditions for A Midsummer Night’s Dream High School Production\n\nWe are delighted to announce that SJIIS High School will be presenting William Shakespeare's most fantastical comedy, A Midsummer Night’s Dream, in May 2027. Students in Years 7-12 will have the exciting opportunity to perform not only for our school community on our Auditorium stage, but also for the wider public at the Damansara Performing Arts Centre as part of the Take to the Stage Shakespeare Festival.\n\n\nThis production is a fantastic opportunity for you to get involved in a range of roles, including acting, stage management, and design, as you work collaboratively to bring Shakespeare’s magical world of fairies, adventure, comedy, and mischief to life. \n\nIt is a particularly exciting opportunity for those of you who are IGCSE English Literature students, who will be studying the play as part of your course and for Year 7-9 students, as you can build your confidence with Shakespeare before IGCSE level. \n\nAuditions will take place across 18th and 19th November 3:30-5 pm, with you picking one of those dates only to audition. Further information about the audition process and production commitments will be shared over the coming weeks via the student Google Classroom (link attached). \n\nIf any of you would like to gain an understanding of the play before auditioning, you are encouraged to attend our Term 1 Play Preparation CCA sessions on Wednesdays. This is not mandatory; you can still audition if you haven't attended the CCA- just do your own research before the audition. You will need to sign up to the Wednesday CCA for Terms 2 and 3 if you want to be in the play though, so please check with your parents before auditioning that you will be available on Wednesdays after school in Terms 2 and 3. \n\nDuring the Term 1 CCA sessions, students will explore the characters and themes of the play, watch excerpts from professional productions, and learn useful audition techniques and tips. Students wishing to join the Term 1 Play Preparation CCA who have not already signed up should ask a parent or guardian to email me permission. \n\nEqually, if anyone would like to join the Props and Set-Making team with Miss Thomas, please see the sign-up in Term 2. We will be making everything from wands to trees, and a giant donkey’s head! \n\nIf you have any questions, please contact me at heathersmith@sji-international.edu.my\n\nLet the magic, mischief, and midsummer commence!",
-  "ko": "고등부 '한여름 밤의 꿈(A Midsummer Night’s Dream)' 공연 오디션(Auditions)\n\nSJIIS 고등부가 2027년 5월에 윌리엄 셰익스피어(William Shakespeare)의 가장 환상적인 희극(comedy)인 '한여름 밤의 꿈(A Midsummer Night’s Dream)'을 공연하게 되었음을 기쁘게 알립니다. 7~12학년(Years 7-12) 학생들은 우리 학교 강당(Auditorium) 무대에서 학교 공동체를 위해 공연할 뿐 아니라, 'Take to the Stage 셰익스피어 축제(Take to the Stage Shakespeare Festival)'의 일부로 다만사라 공연예술센터(Damansara Performing Arts Centre)에서 일반 관객 앞에서도 공연하는 신나는 기회를 갖게 됩니다.\n\n\n이 공연은 함께 협력하여 요정, 모험, 희극, 장난이 가득한 셰익스피어의 마법 같은 세계를 무대에 살려내면서, 연기(acting), 무대 감독(stage management), 디자인(design) 등 다양한 역할에 참여할 수 있는 멋진 기회입니다. \n\n특히 과정의 일부로 이 희곡을 공부하게 될 IGCSE 영문학(IGCSE English Literature) 학생들에게, 그리고 IGCSE 단계 전에 셰익스피어에 대한 자신감을 키울 수 있는 7~9학년(Year 7-9) 학생들에게 아주 신나는 기회입니다. \n\n오디션은 11월 18일과 19일 오후 3시 30분~5시에 열리며, 여러분은 그중 하루만 골라 오디션을 봅니다. 오디션 과정과 공연 참여 의무(production commitments)에 대한 자세한 정보는 앞으로 몇 주에 걸쳐 학생용 구글 클래스룸(링크 첨부)을 통해 안내하겠습니다. \n\n오디션 전에 이 희곡을 이해하고 싶은 학생은 수요일에 열리는 1학기 연극 준비 CCA(Term 1 Play Preparation CCA) 수업에 참석하기를 권합니다. 필수는 아닙니다. CCA에 참석하지 않았어도 오디션을 볼 수 있습니다. 다만 오디션 전에 스스로 조사해 오세요. 하지만 연극에 출연하고 싶다면 2학기와 3학기 수요일 CCA에 신청해야 하므로, 오디션 전에 2학기와 3학기 수요일 방과 후에 시간이 되는지 부모님과 꼭 확인하세요. \n\n1학기 CCA 수업 동안 학생들은 희곡의 등장인물(characters)과 주제(themes)를 탐구하고, 전문 공연(professional productions)의 일부 장면을 보고, 유용한 오디션 기법과 요령을 배웁니다. 1학기 연극 준비 CCA에 참여하고 싶은데 아직 신청하지 않은 학생은 부모님이나 보호자께 저에게 허락 이메일을 보내 달라고 부탁하세요. \n\n마찬가지로, 토머스 선생님(Miss Thomas)과 함께하는 소품·무대세트 제작팀(Props and Set-Making team)에 참여하고 싶은 학생은 2학기 신청 안내를 확인하세요. 요술 지팡이부터 나무, 거대한 당나귀 머리까지 모든 것을 만들 예정입니다! \n\n궁금한 점이 있으면 heathersmith@sji-international.edu.my 로 연락하세요.\n\n마법과 장난, 그리고 한여름이 시작되게 합시다!",
-  "files": [
-   {
-    "name": "heathersmith@sji-international.edu.my",
-    "kind": "web",
-    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=heathersmith%40sji-international.edu.my",
-    "local": null
-   },
-   {
-    "name": "AMND character list.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1ShfIL7vGfulLId0TC2qBCzirseCr3Cc4/view&usp=classroom_web",
-    "local": "pdfs/drama/AMND character list.png"
-   },
-   {
-    "name": "AMND audition poster updated .pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1-s3lxvgLqrIZU4A5dQV65Rhs-bBPF0QM/view?usp=classroom_web",
-    "local": "pdfs/drama/AMND audition poster updated .pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
  "디자인 기술 DEC (Mr Mathyk)|FESTIVAL TICKETS": {
   "en": "FESTIVAL TICKETS",
   "ko": "축제 티켓(festival tickets)",
   "files": [],
   "at": "2026-10-06"
+ },
+ "과학 (Mr Phillips)|Ionic or covalent": {
+  "en": "Ionic or covalent\nClick on the link below to start the game",
+  "ko": "이온결합(ionic) 또는 공유결합(covalent)\n아래 링크를 클릭해서 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=XT4JDauoz7f8uR9AUZVkQX7_HbfYuoNTR4rBqQIqug9r0yO9u2fCTnAeA5FpqKyloBeIe81KZygauJQa8vkPug5TRRxWMRK_Qi3-xtiW1NQDAQ806h2lhOIwkjYo6207ERTmLwuRdz1Tmku7RLcpPrZMT7GiCDrA4eaHlLSSL6l-zfkmyAqTbYpMSehtnjuMBk0OxQKbmfl5mWy9f73z25m5aQ.2l_xUwTq5J2tE-2mXxTMtg.L1KMjRMOYQml3d-a&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-10-07"
+ },
+ "과학 (Mr Phillips)|Properties of Covalent and Ionic Compounds": {
+  "en": "Properties of Covalent and Ionic Compounds",
+  "ko": "공유결합 화합물(covalent compounds)과 이온결합 화합물(ionic compounds)의 성질(properties)",
+  "files": [
+   {
+    "name": "Properties of Covalent and Ionic Substances.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1GL3J9Em8d_h47RiwjoOTh8oblZgefh_E/view?usp=classroom_web",
+    "local": "post_files/1GL3J9Em8d_h47RiwjoOTh8oblZgefh_E.pdf"
+   },
+   {
+    "name": "Covalent Compounds VS Ionic Compounds",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=Mxd8mxDtfAU",
+    "local": null
+   }
+  ],
+  "at": "2026-10-07"
+ },
+ "영어 (Mr Glanz)|Template for CA2": {
+  "en": "Template for CA2",
+  "ko": "CA2(Continuous Assessment 2, 2차 수행평가) 양식(template)",
+  "files": [
+   {
+    "name": "Year 9 CA2 (Writing).docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1qRgOiK_Y2w7XZDADJJZS2IJvkWk84udw/view?usp=classroom_web",
+    "local": "post_files/1qRgOiK_Y2w7XZDADJJZS2IJvkWk84udw.docx"
+   }
+  ],
+  "at": "2026-10-07"
+ },
+ "드라마|active analysis": {
+  "en": "active analysis\nsorry im not in today. \n\nplease work nicely together and include anyone in your group for peer feedback who you notice is left out. \n\ncan a few people help to hand out your monologue worksheets please and collect in end of lesson.; \n\nif you need to borrow a pencil from me, please put back after",
+  "ko": "능동적 분석(active analysis)\n미안하지만 오늘 저는 학교에 없어요. \n\n서로 사이좋게 함께 활동하고, 동료 피드백(peer feedback)을 할 때 모둠에서 소외된 친구가 보이면 꼭 함께 참여시켜 주세요. \n\n몇 사람이 독백(monologue) 활동지(worksheets)를 나눠 주고 수업이 끝날 때 걷어 주세요.; \n\n제 연필을 빌려 쓰면 쓴 뒤에 제자리에 돌려놓아 주세요.",
+  "files": [],
+  "at": "2026-10-07"
+ },
+ "튜터 (Mr Cassels)|Jaime House Activity Notice": {
+  "en": "Jaime House Activity Notice",
+  "ko": "제이미 하우스(Jaime House) 활동 안내",
+  "files": [
+   {
+    "name": "Jaime House.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1jW-HTYFuNfGgg6OtBXF9e3oEUhjm7-8A/view&usp=classroom_web",
+    "local": "post_files/1jW-HTYFuNfGgg6OtBXF9e3oEUhjm7-8A.png"
+   }
+  ],
+  "at": "2026-10-07"
+ },
+ "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative:": {
+  "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
+  "ko": "여러분 모두 좋은 하루 보내세요. 제이미 하우스 대표(Jaime House Representative) 이브라힘(Ibraheem)의 메시지입니다: \n\n이번 금요일이 제이미 데이(Jaime day)라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 Y7, Y8, Y9, Y11 튜터 그룹(tutor groups) 학생들은 제이미 데이, 성 제이미(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 면에 관한 문제로 된 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\n제이미 학생들(오직 제이미 학생만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
+  "files": [],
+  "at": "2026-10-07"
+ },
+ "중국어 (Ying Ying老师)|Languages Week 2026 Class Bee!": {
+  "en": "Languages Week 2026 Class Bee!\n同学们，please use this\nholiday to learn these 10 words related to our lessons! When we come back from\nthe midterm break, we’ll have a Class Bee on Wednesday, 21 October. 🐝 Learn the\nwords and take part in the Class Bee to earn a “stamp”! But… what is\nthis “stamp” for?  You’ll find out during\nLanguages Week when we’re back at school! 🎉",
+  "ko": "언어 주간(Languages Week) 2026 학급 단어 대회(Class Bee)!\n학생 여러분(同学们), 이번\n방학을 이용해 우리 수업과 관련된 단어 10개를 익히세요! 중간 방학(midterm break)이 끝나고\n돌아오면, 10월 21일 수요일에 학급 단어 대회(Class Bee)를 합니다. 🐝 단어를\n익히고 학급 단어 대회(Class Bee)에 참여해서 “도장(stamp)”을 받으세요! 그런데… 이\n“도장(stamp)”은 어디에 쓰는 걸까요?  그건\n학교로 돌아와서 언어 주간(Languages Week)에 알게 될 거예요! 🎉",
+  "files": [
+   {
+    "name": "Y9 Languages week Class Bee.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1G7ZsETRhh6CzwsMSDc7x72OYr3EXpDno/view?usp=classroom_web",
+    "local": "post_files/1G7ZsETRhh6CzwsMSDc7x72OYr3EXpDno.pdf"
+   }
+  ],
+  "at": "2026-10-07"
+ },
+ "수학 (Mr Anan)|To support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a g": {
+  "en": "Dear High School Students,\n\nTo support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a general guide for internal Mathematics assessments:\n\nKey Stage 3: Year 7 to 9: \n90% to 100% = A*\n80% to 89% = A\n70% to 79% = B\n55% to 69% = C\n40% to 54% = D\n< 39% = E (the lowest exam grade reported at KS3)\nKey Stage 4: Year 10 & 11, including Year 9 assessed on IGCSE topics\n90% to 100% = A*\n75% to 89% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U\nKey Stage 5: Year 12 & 13\n85% to 100% = A* (AS maximum grade is A)\n75% to 84% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U \nThis approach is intended to provide students with clear targets, encourage students to strive for excellence and support consistent monitoring of progress throughout the academic year.\n\nKind regards,\nHS Mathematics Department",
+  "ko": "고등부 학생 여러분께,\n\n더 명확하고 일관된 기준을 위해, 고등부 수학과는 교내 수학 평가(internal Mathematics assessments)에 다음 등급 경계(grade boundaries)를 일반 기준으로 사용합니다:\n\n키 스테이지 3(Key Stage 3): 7~9학년(Year 7 to 9): \n90%~100% = A*\n80%~89% = A\n70%~79% = B\n55%~69% = C\n40%~54% = D\n39% 미만 = E (KS3에서 보고되는 가장 낮은 시험 등급)\n키 스테이지 4(Key Stage 4): 10·11학년(Year 10 & 11), IGCSE 단원으로 평가받는 9학년 포함\n90%~100% = A*\n75%~89% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U\n키 스테이지 5(Key Stage 5): 12·13학년(Year 12 & 13)\n85%~100% = A* (AS 최고 등급은 A)\n75%~84% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U \n이 방식은 학생들에게 명확한 목표를 주고, 우수한 성취를 위해 노력하도록 격려하며, 학년 내내 학업 진행 상황을 일관되게 점검하기 위한 것입니다.\n\n감사합니다,\n고등부 수학과(HS Mathematics Department)",
+  "files": [],
+  "at": "2026-10-07"
  }
 };
