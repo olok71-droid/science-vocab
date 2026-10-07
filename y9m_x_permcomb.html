@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>9학년 수학 · Permutations and Combinations</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--pink:#db2777;--purple:#6d5dfc;
+--text:#243b6b;--strong:#16223f;--muted:#6b7a99;--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;flex-wrap:wrap;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.shot{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;margin:10px 0 14px;}
+.shot img{width:100%;height:auto;border-radius:8px;display:block;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.8;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+.chk{display:inline-block;font-size:11.5px;font-weight:800;color:#b45309;background:#fef3c7;border:1px solid #fcd34d;border-radius:6px;padding:1px 6px;}
+.tbl{border-collapse:collapse;margin:6px 0;font-size:13px;}
+.tbl td,.tbl th{border:1px solid rgba(36,59,107,.2);padding:4px 8px;text-align:center;}
+.tbl th{background:#e0f2f1;}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">🔢</div>
+  <div class="header-text">
+    <div class="header-title">Permutations and Combinations</div>
+    <div class="header-sub">Extension · Add Maths Chapter 10 · 순열과 조합 · 문제 + 풀이</div>
+  </div>
+</header>
+<div class="wrap">
+<div class="shot"><img src="assets/y9m/pc10/i01.png" alt="Key words: permutations, combinations"></div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">10.1</span><span class="sec-title">Factorial notation</span><span class="sec-ko">계승(팩토리얼) n!</span></div>
+<div class="q">
+  <div class="q-title">KEY: n! (n factorial)</div>
+  <div class="ans" style="margin-top:4px">
+    <span class="how" style="margin-top:0">① <b>계승 factorial</b> n! = n × (n − 1) × (n − 2) × … × 3 × 2 × 1<br>② 예: 5! = 5 × 4 × 3 × 2 × 1 = 120<br>③ 약속: <b>0! = 1</b><br>④ 큰 계승을 작은 계승으로 나눌 때는 다 곱하지 말고 <b>지운다 cancel</b>: 8!/5! = 8 × 7 × 6 × <s>5!</s>/<s>5!</s> = 8 × 7 × 6<br>⑤ 계산기 calculator 의 <b>x!</b> 키로 답을 확인할 수 있다</span>
+  </div>
+</div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 1. Find the value of</div>
+  <div class="items"><span><span class="tag">a</span> 8!/5!</span><span><span class="tag">b</span> 11!/(8!3!)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>a 336 &nbsp; b 165</b>
+    <span class="how">a ① 8! = 8 × 7 × 6 × 5!<br>② 8!/5! 에서 5! 가 위아래에서 지워진다 → 8 × 7 × 6 = <b>336</b><br>b ① 11! = 11 × 10 × 9 × 8! → 8! 를 지운다<br>② 남은 것 = (11 × 10 × 9)/3! = 990/6 = <b>165</b><br>③ 3! = 3 × 2 × 1 = 6 을 잊지 말자</span>
+    <div class="shot"><img src="assets/y9m/pc10/i21.png" alt="Worked example 1 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Exercise 10.1 Q1. Without using a calculator, find the value of each of the following. Use the x! key on your calculator to check your answers.</div>
+  <div class="items"><span><span class="tag">a</span> 7!</span><span><span class="tag">b</span> 4!/2!</span><span><span class="tag">c</span> 7!/3!</span><span><span class="tag">d</span> 8!/5!</span><span><span class="tag">e</span> 4!/(2!2!)</span><span><span class="tag">f</span> 6!/(3!2!)</span><span><span class="tag">g</span> 6!/(3!)²</span><span><span class="tag">h</span> 5!/3! × 7!/4!</span></div>
+  <div class="shot"><img src="assets/y9m/pc10/i22.png" alt="Exercise 10.1 Q1"></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>a 5040 &nbsp; b 12 &nbsp; c 840 &nbsp; d 336 &nbsp; e 6 &nbsp; f 60 &nbsp; g 20 &nbsp; h 4200</b>
+    <span class="how">a 7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040<br>b 4!/2! = 4 × 3 = 12 (2! 가 지워진다)<br>c 7!/3! = 7 × 6 × 5 × 4 = 840<br>d 8!/5! = 8 × 7 × 6 = 336<br>e 4!/(2!2!) = (4 × 3)/2 = 12/2 = 6<br>f 6!/(3!2!) = (6 × 5 × 4)/2 = 120/2 = 60<br>g 6!/(3!)² = 6!/(3! × 3!) = (6 × 5 × 4)/6 = 20<br>h 5!/3! = 5 × 4 = 20, 7!/4! = 7 × 6 × 5 = 210 → 20 × 210 = 4200<br>★ (3!)² 는 3! 를 두 번 곱한 것 = 36 이다. 3!² 를 (3²)! 로 읽으면 안 된다</span>
+    <div class="shot"><img src="assets/y9m/pc10/i23.png" alt="Exercise 10.1 Q1 answers"></div>
+  </div></details>
+</div>
+</div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">10.2</span><span class="sec-title">Arrangements</span><span class="sec-ko">줄 세우기(배열)</span></div>
+<div class="q">
+  <div class="q-title">STARTER: Activity</div>
+  <div class="shot"><img src="assets/y9m/pc10/i24.png" alt="Starter activity: select and arrange stationaries"></div>
+  <div class="items"><span>3 stationaries → select 3? arrange 3?</span><span>4 stationaries → select 3? arrange 3?</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: 3개 중 3개 — <b>고르기 select 1가지, 줄 세우기 arrange 6가지</b><br>4개 중 3개 — <b>고르기 select 4가지, 줄 세우기 arrange 24가지</b>
+    <span class="how">① 연필 A, 지우개 B, 자 C 가 있다고 하자<br>② 3개 중 3개를 <b>고르는</b> 방법: {A, B, C} 하나뿐 → 1가지<br>③ 3개를 <b>줄 세우는</b> 방법: ABC, ACB, BAC, BCA, CAB, CBA → 3 × 2 × 1 = 3! = 6가지<br>④ 4개(A, B, C, D) 중 3개를 고르는 방법: 하나씩 빼면 된다 → ABC, ABD, ACD, BCD = 4가지 (⁴C₃ = 4)<br>⑤ 4개 중 3개를 줄 세우는 방법: 첫 자리 4가지 × 둘째 3가지 × 셋째 2가지 = 24가지 (⁴P₃ = 24)<br>⑥ <b>알게 된 것 finding</b>: 고른 3개마다 줄 세우는 방법이 3! = 6가지씩 있다 → 4 × 6 = 24<br>즉 <b>순서가 중요하면 order matters → 순열 permutation</b>, <b>순서가 상관없으면 → 조합 combination</b></span>
+  </div></details>
+</div>
+<div class="shot"><img src="assets/y9m/pc10/i02.png" alt="The number of ways of arranging n distinct items in a line = n!"></div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 2. Cards: G R A D I E N T S</div>
+  <div class="shot"><img src="assets/y9m/pc10/i03.png" alt="Worked example 2 GRADIENTS"></div>
+  <div class="items" style="white-space:normal"><span style="white-space:normal"><span class="tag">a</span> Find the number of different arrangements of these nine cards if there are no restrictions.</span><br><span style="white-space:normal"><span class="tag">b</span> Find the number of arrangements that begin with GRAD.</span><br><span style="white-space:normal"><span class="tag">c</span> Find the number of arrangements that begin with G and end with S.</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>a 362 880 &nbsp; b 120 &nbsp; c 5040</b>
+    <span class="how">a ① 서로 다른 distinct 카드 9장 → 9! = <b>362 880</b><br>b ① 앞 네 자리가 G R A D 로 <b>고정 fixed</b> 되어 있다<br>② 남은 카드 I, E, N, T, S 5장만 줄 세운다 → 5! = <b>120</b><br>c ① 맨 앞 G, 맨 끝 S 고정<br>② 가운데 7장(R, A, D, I, E, N, T)을 줄 세운다 → 7! = <b>5040</b><br>★ <b>고정된 것은 빼고, 남은 것만 n! 로 센다</b></span>
+    <div class="shot"><img src="assets/y9m/pc10/i04.png" alt="Worked example 2 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 3. Four squares and three circles (seven different objects)</div>
+  <div class="items" style="white-space:normal"><span style="white-space:normal"><span class="tag">a</span> Find the number of different arrangements of these seven objects if there are no restrictions.</span><br><span style="white-space:normal"><span class="tag">b</span> Find the number of arrangements where the squares and circles alternate.</span><br><span style="white-space:normal"><span class="tag">c</span> Find the number of arrangements where all the squares are together.</span><br><span style="white-space:normal"><span class="tag">d</span> Find the number of arrangements where the squares are together and the circles are together.</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>a 5040 &nbsp; b 144 &nbsp; c 576 &nbsp; d 288</b>
+    <span class="how">a 서로 다른 7개 → 7! = <b>5040</b><br>b ① <b>번갈아 alternate</b>: 네모 4개, 동그라미 3개라 반드시 □○□○□○□ 모양이다<br>② 네모 자리 4곳에 네모를 줄 세우기 4! = 24, 동그라미 자리 3곳에 3! = 6<br>③ 24 × 6 = <b>144</b><br>c ① 네모 4개를 <b>한 덩어리 block</b> 로 묶는다 → 덩어리 1개 + 동그라미 3개 = 4개를 줄 세우기 4! = 24<br>② 덩어리 안에서 네모 4개끼리 자리 바꾸기 4! = 24<br>③ 24 × 24 = <b>576</b><br>d ① 네모 덩어리, 동그라미 덩어리 두 개 → (네모 먼저 / 동그라미 먼저) 2가지 = 2!<br>② 네모 안 4!, 동그라미 안 3!<br>③ 2 × 4! × 3! = 2 × 24 × 6 = <b>288</b> (교과서: 4! × 3! + 3! × 4! = 144 + 144)<br>★ <b>붙어 있어야 together</b> → 묶어서 한 개로 세고, 마지막에 덩어리 안 순서를 곱한다</span>
+    <div class="shot"><img src="assets/y9m/pc10/i05.png" alt="Worked example 3 with answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Exercise 10.2 Q2. Find the number of different arrangements of letters in each of the following words.</div>
+  <div class="items"><span><span class="tag">a</span> TIGER</span><span><span class="tag">b</span> OLYMPICS</span><span><span class="tag">c</span> PAINTBRUSH</span></div>
+  <div class="shot"><img src="assets/y9m/pc10/i06.png" alt="Exercise 10.2 Q2"></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>a 120 &nbsp; b 40 320 &nbsp; c 3 628 800</b>
+    <span class="how">① 먼저 글자가 <b>모두 다른지 distinct</b> 확인한다 — 세 단어 모두 같은 글자가 없다<br>a TIGER = 5글자 → 5! = 120<br>b OLYMPICS = 8글자 → 8! = 40 320<br>c PAINTBRUSH = 10글자 → 10! = 3 628 800<br>★ 같은 글자가 있는 단어(예: APPLE)는 n! 로 끝나지 않는다 — 이 단원의 n! 공식은 서로 다른 것에만 쓴다</span>
+    <div class="shot"><img src="assets/y9m/pc10/i07.png" alt="Exercise 10.2 Q2 answers"></div>
+  </div></details>
+</div>
+</div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">10.3</span><span class="sec-title">Permutations</span><span class="sec-ko">순열 ⁿPᵣ — n개 중 r개를 골라 줄 세우기</span></div>
+<div class="shot"><img src="assets/y9m/pc10/i08.png" alt="nPr = n!/(n-r)!"></div>
+<div class="q">
+  <div class="q-title">KEY: ⁿPᵣ</div>
+  <div class="ans" style="margin-top:4px">
+    <span class="how" style="margin-top:0">① <b>순열 permutation</b> = 서로 다른 n개 중에서 r개를 골라 <b>순서대로 order matters</b> 놓는 방법의 수<br>② ⁿPᵣ = n!/(n − r)! = n × (n − 1) × … (r개를 곱한다)<br>③ 예: ⁶P₃ = 6 × 5 × 4 = 120 (6부터 시작해서 3개 곱하기)<br>④ 칸 그림 box method 으로 생각해도 된다: 칸마다 "고를 수 있는 개수 choices"를 적고 곱한다<br>⑤ 계산기의 <b>nPr</b> 키: 6 [nPr] 3 = 120</span>
+  </div>
+</div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 4. A security code consists of 3 letters selected from A, B, C, D, E, F followed by 2 digits selected from 5, 6, 7, 8, 9. Find the number of possible security codes if no letter or number can be repeated.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>2400</b>
+    <span class="how">방법 1 (공식) ① 글자 6개 중 3개를 순서대로 → ⁶P₃ = 6 × 5 × 4 = 120<br>② 숫자 5개 중 2개를 순서대로 → ⁵P₂ = 5 × 4 = 20<br>③ 둘 다 해야 하니 <b>곱한다 multiply</b> → 120 × 20 = <b>2400</b><br>방법 2 (칸 그림) ① 칸 5개: [6][5][4] [5][4]<br>② 6 × 5 × 4 × 5 × 4 = 2400<br>★ <b>반복 불가 no repetition</b> → 한 번 쓰면 다음 칸 선택지가 1씩 준다<br>★ 코드는 ABC 와 CBA 가 다른 코드다 → 순서가 중요 → 순열</span>
+    <div class="shot"><img src="assets/y9m/pc10/i09.png" alt="Worked example 4 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 5. Find how many even numbers between 3000 and 4000 can be formed using the digits 1, 3, 5, 6, 7 and 9 if no number can be repeated.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>12</b>
+    <span class="how">① 3000 과 4000 사이 → 첫째 자리는 반드시 <b>3</b><br>② <b>짝수 even</b> → 끝자리는 짝수여야 하는데, 쓸 수 있는 짝수는 <b>6</b> 하나뿐<br>③ 가운데 두 칸은 남은 1, 5, 7, 9 중 2개를 순서대로 → ⁴P₂ = 4 × 3 = 12<br>④ 칸 그림: [1][4][3][1] → 1 × 4 × 3 × 1 = <b>12</b><br>⑤ 다 써 보면: 3156, 3176, 3196, 3516, 3576, 3596, 3716, 3756, 3796, 3916, 3956, 3976 (12개)<br>★ 교과서 Method 3 목록에는 3196, 3916 이 두 번 찍혀 있고 3596, 3956 이 빠져 있다 — 위 목록이 맞다(파이썬으로 전부 세어 12개 확인)<br>★ <b>조건이 있는 자리 restriction 부터 먼저 채운다</b></span>
+    <div class="shot"><img src="assets/y9m/pc10/i10.png" alt="Worked example 5 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Exercise 10.3 Q2. Find the number of different ways that 4 books chosen from 6 books be arranged on a shelf.</div>
+  <div class="shot"><img src="assets/y9m/pc10/i11.png" alt="Exercise 10.3 Q2 and Q3"></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>360</b>
+    <span class="how">① 책장에 <b>줄 세우기 arrange</b> → 순서가 중요 → 순열<br>② ⁶P₄ = 6 × 5 × 4 × 3 = <b>360</b><br>③ 칸 그림: [6][5][4][3]</span>
+    <div class="shot"><img src="assets/y9m/pc10/i12.png" alt="Exercise 10.3 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Exercise 10.3 Q3. How many different five-digit numbers can be formed from the digits 1, 2, 3, 4, 5, 6, 7, 8, 9 if no digit can be repeated?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>15 120</b>
+    <span class="how">① 12345 와 54321 은 다른 수 → 순서가 중요 → 순열<br>② 숫자 9개 중 5개 → ⁹P₅ = 9 × 8 × 7 × 6 × 5 = <b>15 120</b><br>③ 0 이 없어서 첫 자리 제한이 없다 (0 이 있으면 맨 앞에 올 수 없어서 따로 세야 한다)</span>
+  </div></details>
+</div>
+</div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">10.4</span><span class="sec-title">Combinations</span><span class="sec-ko">조합 ⁿCᵣ — n개 중 r개를 고르기만</span></div>
+<div class="shot"><img src="assets/y9m/pc10/i13.png" alt="nCr = n!/(r!(n-r)!)"></div>
+<div class="q">
+  <div class="q-title">KEY: ⁿCᵣ</div>
+  <div class="ans" style="margin-top:4px">
+    <span class="how" style="margin-top:0">① <b>조합 combination</b> = 서로 다른 n개 중 r개를 <b>고르기만 select</b> 하는 방법의 수 (순서 상관없음)<br>② ⁿCᵣ = n!/(r!(n − r)!) = ⁿPᵣ/r!<br>③ 왜 r! 로 나누나? 고른 r개를 줄 세우는 방법이 r! 가지씩 겹쳐 세어졌기 때문이다 (STARTER: 24 ÷ 3! = 4)<br>④ ⁿCᵣ = ⁿCₙ₋ᵣ (예: ⁷C₃ = ⁷C₄ = 35)<br>⑤ 계산기의 <b>nCr</b> 키<br>⑥ ★ 시험에서는 순열인지 조합인지 알려주지 않는다 — <b>"순서(배열)가 중요한가? does arrangement matter?"</b> 를 스스로 묻는다<br>&nbsp;&nbsp;· 줄 세우기·코드·번호·자리 → 순열 permutation<br>&nbsp;&nbsp;· 팀·모둠·위원회·고르기 → 조합 combination<br>⑦ "그리고 AND" → 곱하기 ×, "또는 OR(경우 나누기)" → 더하기 +</span>
+  </div>
+</div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 6. A team of 6 swimmers is to be selected from a group of 20 swimmers. Find the number of different ways in which the team can be selected.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>38 760</b>
+    <span class="how">① 팀 team 은 뽑힌 사람만 중요하고 순서는 상관없다 → 조합<br>② ²⁰C₆ = 20!/(6! × 14!) = (20 × 19 × 18 × 17 × 16 × 15)/(6 × 5 × 4 × 3 × 2 × 1) = <b>38 760</b></span>
+    <div class="shot"><img src="assets/y9m/pc10/i14.png" alt="Worked example 6 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 7. The diagram shows 2 different tents A and B. Tent A holds 3 people and tent B holds 4 people. Find the number of ways in which 7 people can be assigned to the two tents.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>35</b>
+    <span class="how">① 텐트 A 에 들어갈 3명을 고르면, 남은 4명은 저절로 텐트 B 로 간다<br>② 그러니 고르는 일은 한 번뿐 → ⁷C₃ = 35<br>③ 텐트 B 의 4명을 먼저 골라도 같다: ⁷C₄ = 35<br>★ 남은 사람을 또 고르는 수 ⁴C₄ = 1 을 곱해도 답은 같다</span>
+    <div class="shot"><img src="assets/y9m/pc10/i15.png" alt="Worked example 7 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 8. 3 coats and 2 dresses are to be selected from 9 coats and 7 dresses. Find the number of different selections that can be made.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>1764</b>
+    <span class="how">① 코트 9벌 중 3벌: ⁹C₃ = 84<br>② 드레스 7벌 중 2벌: ⁷C₂ = 21<br>③ 코트 고르기 <b>그리고 AND</b> 드레스 고르기 → 곱한다: 84 × 21 = <b>1764</b></span>
+    <div class="shot"><img src="assets/y9m/pc10/i16.png" alt="Worked example 8 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 9. A quiz team of 5 students is to be selected from 6 boys and 4 girls. Find the number of possible teams that can be selected in which there are more boys than girls.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>186</b>
+    <span class="how">① "남자가 더 많다 more boys than girls" → 5명 팀의 경우를 나눈다 cases<br>② 남 5 여 0: ⁶C₅ × ⁴C₀ = 6 × 1 = 6<br>③ 남 4 여 1: ⁶C₄ × ⁴C₁ = 15 × 4 = 60<br>④ 남 3 여 2: ⁶C₃ × ⁴C₂ = 20 × 6 = 120<br>⑤ 경우끼리는 <b>또는 OR</b> → 더한다: 6 + 60 + 120 = <b>186</b><br>★ 남 2 여 3 부터는 여자가 더 많아서 빠진다</span>
+    <div class="shot"><img src="assets/y9m/pc10/i17.png" alt="Worked example 9 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">WORKED EXAMPLE 10. Sofia has to play 5 pieces of music for her music examination. She has 13 pieces of music to choose from. There are 7 pieces written by Chopin, 4 written by Mozart and 2 written by Bach. Find the number of ways the 5 pieces can be chosen if</div>
+  <div class="items" style="white-space:normal"><span style="white-space:normal"><span class="tag">a</span> there are no restrictions</span><br><span style="white-space:normal"><span class="tag">b</span> there must be 2 pieces by Chopin, 2 pieces by Mozart and 1 piece by Bach</span><br><span style="white-space:normal"><span class="tag">c</span> there must be at least one piece by each composer.</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>a 1287 &nbsp; b 252 &nbsp; c 714</b>
+    <span class="how">a 13곡 중 5곡: ¹³C₅ = <b>1287</b><br>b ⁷C₂ × ⁴C₂ × ²C₁ = 21 × 6 × 2 = <b>252</b><br>c ① <b>적어도 하나씩 at least one</b> → 세 작곡가가 모두 1곡 이상, 합이 5곡인 경우를 다 쓴다<br>② 쇼팽3 모차르트1 바흐1: 35 × 4 × 2 = 280<br>③ 쇼팽1 모차르트3 바흐1: 7 × 4 × 2 = 56<br>④ 쇼팽2 모차르트2 바흐1: 21 × 6 × 2 = 252<br>⑤ 쇼팽2 모차르트1 바흐2: 21 × 4 × 1 = 84<br>⑥ 쇼팽1 모차르트2 바흐2: 7 × 6 × 1 = 42<br>⑦ 더한다: 280 + 56 + 252 + 84 + 42 = <b>714</b><br>★ 바흐는 2곡뿐이라 바흐 3곡 이상인 경우는 없다<br>★ 다른 방법(빼기 complement): 전체 1287 − 쇼팽 없음 ⁶C₅(6) − 모차르트 없음 ⁹C₅(126) − 바흐 없음 ¹¹C₅(462) + 쇼팽만 ⁷C₅(21, 두 번 빠져서 한 번 되돌림) = 714</span>
+    <div class="shot"><img src="assets/y9m/pc10/i18.png" alt="Worked example 10 answers"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Exercise 10.4 Q3. How many different ways are there of selecting</div>
+  <div class="items" style="white-space:normal"><span style="white-space:normal"><span class="tag">a</span> 3 photographs from 10 photographs</span><br><span style="white-space:normal"><span class="tag">b</span> 5 books from 7 books</span><br><span style="white-space:normal"><span class="tag">c</span> a team of 11 footballers from 14 footballers?</span></div>
+  <div class="shot"><img src="assets/y9m/pc10/i19.png" alt="Exercise 10.4 Q3"></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>a 120 &nbsp; b 21 &nbsp; c 364</b>
+    <span class="how">① "selecting 고르기" → 순서 상관없음 → 조합<br>a ¹⁰C₃ = (10 × 9 × 8)/(3 × 2 × 1) = 120<br>b ⁷C₅ = ⁷C₂ = (7 × 6)/2 = 21 (5개 고르기 = 안 고를 2개 고르기)<br>c ¹⁴C₁₁ = ¹⁴C₃ = (14 × 13 × 12)/6 = 364<br>★ ⁿCᵣ = ⁿCₙ₋ᵣ 를 쓰면 계산이 훨씬 짧아진다</span>
+    <div class="shot"><img src="assets/y9m/pc10/i20.png" alt="Exercise 10.4 Q3 answers"></div>
+  </div></details>
+</div>
+</div>
+</div>
+<script>
+/* 단원 페이지 안(iframe)에서 열릴 때는 이 페이지의 제목 줄을 숨긴다 — 단원 제목이 위에 이미 있어 두 번 나오기 때문이다. */
+if (window.self !== window.top) {
+  document.documentElement.classList.add('embedded');
+  var _h = document.querySelector('header');
+  if (_h) _h.style.display = 'none';
+}
+</script>
+</body>
+</html>
