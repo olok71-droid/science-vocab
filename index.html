@@ -461,7 +461,8 @@ html, body { overflow-x: hidden; }
   overflow: hidden; text-overflow: ellipsis; }
 .cn-txt { min-width: 0; white-space: normal; line-height: 1.35; }
 .cn-en { font-size: 12.5px; font-weight: 500; color: #111; }
-.cn-kr { font-size: 11px; font-weight: 500; color: #1f4fa3; margin-left: 5px; }
+.cn-kr { font-size: 11px; font-weight: 500; color: #111; margin-left: 5px; }
+.cn-subj.tutor { background: #ffc8de; color: #a1135a; border-radius: 6px; padding: 1px 4px; }
 .cn-tag { font-size: 9.5px; font-weight: 900; padding: 2px 0; border-radius: 999px; text-align: center; }
 .cn-tag.t-gongji { background: #1f4fa3; color: #fff; }
 .cn-tag.t-gwaje  { background: #b3261e; color: #fff; }
@@ -1457,7 +1458,7 @@ function cnRender(){
     return (pb ? '<div class="cn-line pl">' : '') +
            '<a class="cn-row" href="' + href + '" target="_blank" rel="noopener">' +
            '<span class="cn-date">' + day + '</span>' +
-           '<span class="cn-subj">' + subj + '</span>' +
+           '<span class="cn-subj' + (/^튜터/.test(subj) ? ' tutor' : '') + '">' + subj + '</span>' +
            (withType ? '<span class="cn-tag ' + tag + '">' + (r.type || '') + '</span>' : '') +
            due +
            '<span class="cn-txt">' +
