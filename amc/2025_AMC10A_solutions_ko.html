@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2025 AMC 10A 한국어 풀이</title>
+<style>
+ body{font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo',sans-serif;
+      max-width:980px;margin:0 auto;padding:26px 24px 70px;color:#111820;background:#fffdf8;line-height:1.7;font-size:16px}
+ h1{font-size:27px;margin:0 0 4px}
+ .sub{color:#334;margin-bottom:18px}
+ .key{background:#fff;border:1px solid #e3d9c6;border-radius:12px;padding:14px 16px;margin-bottom:22px;font-size:16px;line-height:2.1}
+ .key b{color:#12503f}
+ .s{background:#fff;border:1px solid #e6dcc9;border-left:6px solid #12503f;border-radius:10px;padding:13px 17px;margin:11px 0}
+ .no{font-weight:800;color:#12503f;font-size:17px}
+ .ans{font-weight:800;color:#b42318}
+ .mine{font-size:13px;color:#2f3a46}
+ .warn{border-left-color:#b45309;background:#fffaf0}
+</style>
+</head>
+<body>
+<h1>2025 AMC 10A — 한국어 풀이</h1>
+<p><a href="2025_AMC10A_paper.pdf" style="color:#12503f;font-weight:700">📄 원문 시험지 (영어)</a></p>
+
+<div class="key">
+<b>정답</b><br>
+1.E 2.B 3.D 4.A 5.E · 6.C 7.E 8.B 9.C 10.C · 11.E 12.D 13.D 14.B 15.A ·
+16.D 17.E 18.B 19.A 20.A · 21.C 22.B 23.D 24.C 25.A
+</div>
+
+<div class="s"><span class="no">1번</span> <span class="ans">답 E (4시 30분)</span><br>
+앤디가 출발하고 <i>t</i>시간 뒤를 보면 앤디는 8<i>t</i>, 베치는 한 시간 늦게 떠났으니 12(<i>t</i>−1)만큼 갔다. 두 거리가 같아지는 때이므로 8<i>t</i> = 12<i>t</i> − 12 → <i>t</i> = 3. 1시 30분에서 3시간 뒤 = 4시 30분.</div>
+
+<div class="s"><span class="no">2번</span> <span class="ans">답 B (4파운드)</span><br>
+처음 10파운드에는 땅콩 5, 캐슈 2, 아몬드 3파운드가 있다. 두 번째 믹스를 <i>x</i>파운드 부으면 땅콩은 5 + 0.2<i>x</i>, 전체는 10 + <i>x</i>. 땅콩이 40%가 되므로 5 + 0.2<i>x</i> = 0.4(10 + <i>x</i>) → <i>x</i> = 5. 캐슈는 2 + 0.4 × 5 = 4파운드.</div>
+
+<div class="s"><span class="no">3번</span> <span class="ans">답 D (3037개)</span><br>
+두 경우로 나눈다. ① 같은 두 변이 2025인 경우: 밑변은 1부터 2025까지 → 2025개. ② 밑변이 2025인 경우: 같은 두 변 <i>a</i>는 2<i>a</i> &gt; 2025라야 하므로 1013부터 2024까지 → 1012개. 합하면 3037개.</div>
+
+<div class="s"><span class="no">4번</span> <span class="ans">답 A (28살)</span><br>
+학생 <i>s</i>명, 교사 <i>t</i>명, <i>s</i> + <i>t</i> = 15. 애쉬 나이를 <i>A</i>라 하면 학생 쪽은 (12<i>s</i> + <i>A</i>)/(<i>s</i>+1) = 14 → <i>A</i> = 2<i>s</i> + 14, 교사 쪽은 (55<i>t</i> + <i>A</i>)/(<i>t</i>+1) = 52 → <i>A</i> = 52 − 3<i>t</i>. 두 식을 <i>s</i> = 15 − <i>t</i>로 이어 풀면 <i>t</i> = 8, <i>s</i> = 7, <i>A</i> = 28.</div>
+
+<div class="s"><span class="no">5번</span> <span class="ans">답 E (45)</span><br>
+수열은 덩어리로 끊어진다. <i>n</i>번째 덩어리는 1부터 <i>n</i>+1까지 올라갔다가 2까지 내려오며 길이가 2<i>n</i>이다. <i>n</i>번째 덩어리까지의 총 개수는 <i>n</i>(<i>n</i>+1)이므로 44번째까지 1980개, 45번째 덩어리에서 2025 − 1980 = 45번째 수다. 그 덩어리는 46까지 올라가므로 45번째 수는 올라가는 도중의 45.</div>
+
+<div class="s"><span class="no">6번</span> <span class="ans">답 C (100°)</span><br>
+정삼각형의 60°가 20°씩 셋으로 나뉜다. 만들어지는 육각형은 100°와 140°가 번갈아 놓이는 모양이고, 세 개씩 더하면 3×100 + 3×140 = 720°로 육각형 내각의 합과 맞는다. 가장 작은 각은 100°.</div>
+
+<div class="s"><span class="no">7번</span> <span class="ans">답 E (18)</span><br>
+나머지정리를 두 번 쓴다. <i>f</i>(1) = 1 + 1 + <i>a</i> + <i>b</i> = 4 → <i>a</i> + <i>b</i> = 2. <i>f</i>(2) = 8 + 4 + 2<i>a</i> + <i>b</i> = 6 → 2<i>a</i> + <i>b</i> = −6. 빼면 <i>a</i> = −8, <i>b</i> = 10 → <i>b</i> − <i>a</i> = 18.</div>
+
+<div class="s"><span class="no">8번</span> <span class="ans">답 B (1개)</span><br>
+참인 문장 수를 <i>T</i>라 하자. 첫째는 <i>T</i> ≥ 1, 둘째는 <i>T</i> ≥ 2, 셋째는 거짓이 2개 이상 즉 <i>T</i> ≤ 2, 넷째는 <i>T</i> ≤ 3일 때 참이다. <i>T</i> = 3을 넣으면 참·참·거짓·참으로 참이 정확히 3개라 앞뒤가 맞는다. 다른 값은 모순이 난다. 따라서 거짓은 1개.</div>
+
+<div class="s"><span class="no">9번</span> <span class="ans">답 C (3개)</span><br>
+조건은 <i>f</i>(1 − <i>a</i>) = 25 이므로, <i>f</i>(<i>u</i>) = 25가 되는 실수 <i>u</i>의 개수를 세면 된다. <i>f</i>(<i>u</i>) = 100<i>u</i>(<i>u</i>−1)(<i>u</i>−2)는 극대값이 약 38.5, 극소값이 약 −38.5라 <i>y</i> = 25인 가로선과 세 번 만난다.</div>
+
+<div class="s"><span class="no">10번</span> <span class="ans">답 C (32π)</span><br>
+큰 반원 반지름을 <i>R</i>, 잘라낸 작은 반원 반지름을 <i>r</i>라 하면 색칠된 넓이는 (π/2)(<i>R</i>² − <i>r</i>²)이다. 작은 반원이 현에 접하므로 <i>r</i>는 지름에서 현까지의 거리와 같고, 현의 절반이 8이므로 <i>R</i>² − <i>r</i>² = 8² = 64. 따라서 넓이는 32π.</div>
+
+<div class="s"><span class="no">11번</span> <span class="ans">답 E (149)</span><br>
+등차 쪽은 1, 1+<i>d</i>, 1+2<i>d</i>, 1+3<i>d</i>. 등비 쪽은 첫 항이 1인 정수 수열이라 공비가 정수 <i>r</i>이고 <i>z</i> = <i>r</i>³. <i>r</i>³ = 1 + 3<i>d</i>를 만족하려면 <i>r</i>를 3으로 나눈 나머지가 1이어야 하니 가장 작은 것은 <i>r</i> = 4, <i>z</i> = 64, <i>d</i> = 21. 그러면 22 + 43 + 64 + 4 + 16 = 149.</div>
+
+<div class="s"><span class="no">12번</span> <span class="ans">답 D (464가지)</span><br>
+0이 없으니 숫자는 1~9다. 짝수만인 것 {4,6,8}, 소수만인 것 {3,5,7}, 둘 다인 것 {2}, 둘 다 아닌 것 {1,9}로 나눈다. ① 2를 한 번 써서 짝수·소수를 동시에 채우는 경우: 자리 4가지 × 나머지 세 자리 2³ = 32. ② 짝수 하나와 소수 하나를 따로 쓰는 경우: 자리 4×3 = 12, 숫자 3×3 = 9, 나머지 두 자리 2² = 4 → 432. 합 464.</div>
+
+<div class="s"><span class="no">13번</span> <span class="ans">답 D (3/4)</span><br>
+색칠된 넓이는 (1 − <i>k</i>²)(1 + <i>k</i>⁴ + <i>k</i>⁸ + …) = (1 − <i>k</i>²)/(1 − <i>k</i>⁴) = 1/(1 + <i>k</i>²)이다. 이것이 0.64이므로 1 + <i>k</i>² = 1.5625 → <i>k</i>² = 0.5625 → <i>k</i> = 3/4.</div>
+
+<div class="s"><span class="no">14번</span> <span class="ans">답 B (1/5)</span><br>
+여섯 자리에 네 사람을 앉히는 경우는 6×5×4×3 = 360가지. 학생 두 명이 붙어 앉는 자리 쌍은 6가지이고, 그때 남은 네 자리에서 교사가 붙어 앉을 쌍은 3가지다. 사람 순서까지 세면 6×3×2×2 = 72. 72/360 = 1/5.</div>
+
+<div class="s warn"><span class="no">15번</span> <span class="ans">답 A (3/8)</span><br>
+그림(직사각형과 수직 조건)이 있어야 풀리는 문제다. 제가 그림 없이 풀어 쓰지는 않았고, 정답만 공식 정답표에서 확인했다.</div>
+
+<div class="s"><span class="no">16번</span> <span class="ans">답 D (17/9)</span><br>
+동전 3개를 항아리 3개에 넣는 경우는 27가지. 셋이 한 항아리(3가지)면 최대 3개, 셋이 다 다른 항아리(6가지)면 최대 1개, 나머지 18가지는 최대 2개다. 기댓값은 (3×3 + 18×2 + 6×1)/27 = 51/27 = 17/9.</div>
+
+<div class="s"><span class="no">17번</span> <span class="ans">답 E (4)</span><br>
+나머지를 뺀 273420과 272745가 모두 <i>N</i>의 배수여야 한다. 두 수의 최대공약수는 45이고, 나머지가 16·15였으니 <i>N</i>은 16보다 커야 한다. 45의 약수 중 16보다 큰 것은 45뿐이므로 <i>N</i> = 45, 십의 자리는 4.</div>
+
+<div class="s"><span class="no">18번</span> <span class="ans">답 B (−3/2)</span><br>
+각 이차식 <i>kx</i>² − 4<i>x</i> − 3의 두 근에 대해 역수의 합은 (4/<i>k</i>) ÷ (−3/<i>k</i>) = −4/3으로 <i>k</i>와 무관하다. 근은 모두 4050개이고 역수의 총합은 2025 × (−4/3) = −2700이므로 조화평균은 4050 ÷ (−2700) = −3/2.</div>
+
+<div class="s warn"><span class="no">19번</span> <span class="ans">답 A (−29)</span><br>
+줄마다 이웃끼리 더해 내려가는 배열 그림 문제다. 제가 손으로 줄을 끝까지 따라가 검산하지 않았고, 정답만 공식 정답표에서 확인했다.</div>
+
+<div class="s warn"><span class="no">20번</span> <span class="ans">답 A (119)</span><br>
+원기둥에 접하는 시선 문제로, 원문에 좌표 수치가 그림과 함께 주어진다. 제가 수치를 원문 그대로 확인하지 못해 풀이는 쓰지 않았다. 정답만 공식 정답표에서 확인했다.</div>
+
+<div class="s"><span class="no">21번</span> <span class="ans">답 C (10개)</span><br>
+11부터 20까지 열 개를 고르면 어떤 두 수를 더해도 22 이상이라 20을 넘어가므로 조건을 만족한다. 1부터 <i>n</i>까지에서는 큰 쪽 절반이 한계라 11개 이상은 만들 수 없다.</div>
+
+<div class="s"><span class="no">22번</span> <span class="ans">답 B (6/23)</span><br>
+서로 외접하는 네 원에는 데카르트의 원 정리 (∑1/<i>r</i>)² = 2∑(1/<i>r</i>²)가 성립한다. 반지름 1, 2, 3과 구하는 <i>r</i>를 넣고 풀면 <i>r</i> = 6/23이 나온다.</div>
+
+<div class="s"><span class="no">23번</span> <span class="ans">답 D (21)</span><br>
+A(0,0), B(80,0)으로 두면 AC = 75, BC = 45에서 C는 (62.5, √1718.75)이다. AB에 내린 수선은 <i>x</i> = 62.5인 세로선이고, B에서 그은 각의 이등분선을 이 선과 만나게 하면 교점은 (62.5, 11.608…)이 된다. B와의 거리는 정확히 21이다.</div>
+
+<div class="s warn"><span class="no">24번</span> <span class="ans">답 C (9,841)</span><br>
+자릿수 배열을 조건에 맞게 세는 문제다. 제가 끝까지 세어 검산하지 않았고, 정답만 공식 정답표에서 확인했다.</div>
+
+<div class="s warn"><span class="no">25번</span> <span class="ans">답 A (25)</span><br>
+정사각형 안 임의의 점에 대한 확률 문제로, 답은 <i>a</i>+<i>b</i>+<i>c</i>+<i>d</i>+<i>e</i> 형태로 묻는다. 제가 적분 구간을 직접 따져 검산하지 않았고, 정답만 공식 정답표에서 확인했다.</div>
+
+</body>
+</html>

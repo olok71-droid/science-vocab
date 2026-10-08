@@ -623,6 +623,11 @@ body.in-subject .cn-card { display: none; }
       <span class="cat-name">9학년 수학</span>
       <span class="cat-sub">Year 9 Maths</span>
     </button>
+    <button class="cat-btn" data-cat="comp" onclick="showCat('comp')">
+      <span class="cat-emoji">🏆</span>
+      <span class="cat-name">수학경시</span>
+      <span class="cat-sub">AMC 10A</span>
+    </button>
     <button class="cat-btn" data-cat="eng" onclick="showCat('eng')">
       <span class="cat-emoji">📖</span>
       <span class="cat-name">9학년 영어</span>
@@ -815,6 +820,16 @@ body.in-subject .cn-card { display: none; }
   </div>
 
   
+
+  <div class="cat-pane" id="cat-comp">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">🏆</span><span class="name-en">수학경시</span><span class="name-ko">AMC 10A</span></div>
+      <div class="units-grid">
+        <a class="unit-card ready" href="amc/2025_AMC10A_paper.pdf" target="_blank" rel="noopener"><div class="unit-name-en">2025 AMC 10A 기출</div><div class="unit-name-ko">원문 시험지 (영어) · 25문제</div><div class="unit-menu"><span class="menu-chip">PDF</span></div></a>
+        <a class="unit-card ready" href="amc/2025_AMC10A_solutions_ko.html"><div class="unit-name-en">2025 AMC 10A 풀이</div><div class="unit-name-ko">정답 + 한국어 풀이</div><div class="unit-menu"><span class="menu-chip">풀이</span></div></a>
+      </div>
+    </div>
+  </div>
 
   <div class="cat-pane" id="cat-eng">
     <div class="subject-section">
