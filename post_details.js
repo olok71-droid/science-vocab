@@ -417,62 +417,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "과학 (Mr Phillips)|Halogen Worksheet": {
-  "en": "Halogen Worksheet\ncomplete - enjoy",
-  "ko": "할로젠(halogen) 학습지\n끝까지 풀어 보세요 - 즐겁게 하세요",
-  "files": [
-   {
-    "name": "Trends in Group 7 elements .pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1F_c3MaFEKew8o3SPg5zulsZMqMzgV7xp/view?usp=classroom_web",
-    "local": "post_files/1F_c3MaFEKew8o3SPg5zulsZMqMzgV7xp.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|The Halogens - Group 7": {
-  "en": "The Halogens - Group 7",
-  "ko": "할로젠(halogens) - 7족(Group 7)",
-  "files": [
-   {
-    "name": "2.2 Halogen displacement reactions.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/14W_P2SBNvmdVyafCRuavtzHQ0bVE1Gn8/view?usp=classroom_web",
-    "local": "pdfs/genes/2.2 Halogen displacement reactions.pptx"
-   },
-   {
-    "name": "Halogen Displacement Method.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1TS4i5CDBs73HyYYbqbBIGYo4JNgNKdSm/view?usp=classroom_web",
-    "local": "post_files/1TS4i5CDBs73HyYYbqbBIGYo4JNgNKdSm.pdf"
-   },
-   {
-    "name": "Group 7 - The Halogens | Properties of Matter | Chemistry | FuseSchool",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=yW_C10cEzMk",
-    "local": null
-   },
-   {
-    "name": "The halogens - Y9 textbook.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1Njro2VubodsiHbDvf1WysbKhY_Sm3_OM/view?usp=classroom_web",
-    "local": "pdfs/genes/The halogens - Y9 textbook.pdf"
-   },
-   {
-    "name": "The genius of Mendeleev's periodic table - Lou Serico",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=fPnwBITSmgU",
-    "local": null
-   },
-   {
-    "name": "3D Periodic Table",
-    "kind": "web",
-    "url": "https://artsexperiments.withgoogle.com/periodic-table/?exp=true&lang=en",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
  "컴퓨터 과학 (Ms Meha)|Week 8 Python Exercise(If and Loops)": {
   "en": "Week 8 Python Exercise(If and Loops)\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
   "ko": "8주차 파이썬(Python) 연습문제(조건문과 반복문(If and Loops))\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
@@ -729,19 +673,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "음악 (Mr Everett)|Super Mario Bros": {
-  "en": "Super Mario Bros\nThis arrangement is available as an extension for experienced students to work on in an independent group.",
-  "ko": "슈퍼 마리오 브라더스(Super Mario Bros)\n이 편곡(arrangement)은 경험 있는 학생들이 독립된 그룹으로 연습할 수 있는 심화 과제(extension)로 제공됩니다.",
-  "files": [
-   {
-    "name": "Super Mario Bros",
-    "kind": "web",
-    "url": "https://drive.google.com/drive/folders/1VIVMq-hRYtmySbaK_AAwhDmf6VuLidd7?usp=classroom_web",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
  "드라마|Playwright Profile": {
   "en": "Playwright Profile\nLearning Question: How can understanding the playwright help us perform a monologue more effectively?\n\nYour task is to create a one-page digital Playwright Profile Sheet. Think of it as a visual fact file, mood board, or digital collage that introduces your playwright and helps you understand how their work should be performed.\n\nYour profile should be visually engaging and include a mixture of images, colours, key facts, quotations, and short written explanations. It can be made on Canva, Google Docs or Google Slides but cannot be an AI generated profile. \n\nMake sure you fact-check your information- if using AI to help you find information, ask it to provide links to its sources and make sure you take a look and check them. \n\nUPLOAD YOUR WORK TO THIS ASSIGNMENT ONCE COMPLETED\nPlaywright Profile Must Include:\n\n1. Playwright Snapshot\nInclude:\nFull name\nDate of birth (and death if applicable)\nNationality\nA photograph or portrait\n3-5 interesting facts about their life\n\n2. Other Works\nInclude:\nImages of 2-3 other plays written by the playwright\nBrief descriptions of the theme or topic of each play\nAny awards, achievements, or notable productions\n\n3. Themes and Ideas\nWhat topics does this playwright frequently explore?\nFor example:\nIdentity\nFamily\nPower\nLove\nJustice\nSocial class\nFriendship\nConflict\nPresent these visually using:\nKeywords\nImages\nSymbols\nOr \nA word cloud\n4. Style of Theatre\nResearch the style(s) the playwright is known for.\nExamples:\nNaturalism\nRealism\nComedy\nTragedy\nEpic Theatre\nPhysical Theatre\nTheatre of the Absurd\nInclude:\nA brief explanation of the style\nImages that represent the style\nExamples of how actors typically perform in this style\n\n5. Audience Impact\nConsider the playwright's intentions.\nInclude:\nWhat they want audiences to think about\nWhat they want audiences to feel\nA quotation from the playwright (if you can find one)",
   "ko": "극작가 프로필(Playwright Profile)\n학습 질문(Learning Question): 극작가(playwright)를 이해하는 것이 독백(monologue)을 더 효과적으로 공연하는 데 어떻게 도움이 될까요?\n\n여러분의 과제는 한 페이지짜리 디지털 극작가 프로필 시트(Playwright Profile Sheet)를 만드는 것입니다. 여러분의 극작가를 소개하고, 그 작품을 어떻게 공연해야 하는지 이해하는 데 도움이 되는 시각적 자료 파일(visual fact file), 무드 보드(mood board), 또는 디지털 콜라주(digital collage)라고 생각하세요.\n\n프로필은 시각적으로 흥미로워야 하며 이미지, 색깔, 핵심 사실, 인용문(quotations), 짧은 글 설명을 섞어 담아야 합니다. Canva, Google Docs 또는 Google Slides로 만들 수 있지만, AI가 만든 프로필이어서는 안 됩니다. \n\n정보가 사실인지 꼭 확인하세요(fact-check). 정보를 찾는 데 AI의 도움을 받는다면, 출처 링크를 달라고 하고 그 링크를 직접 열어 확인하세요. \n\n완성하면 이 과제에 작품을 업로드하세요\n극작가 프로필에 반드시 들어가야 할 것:\n\n1. 극작가 한눈에 보기(Playwright Snapshot)\n넣을 것:\n전체 이름\n출생일(해당되면 사망일도)\n국적\n사진 또는 초상화\n그 사람의 삶에 관한 흥미로운 사실 3~5가지\n\n2. 다른 작품(Other Works)\n넣을 것:\n그 극작가가 쓴 다른 희곡(plays) 2~3편의 이미지\n각 희곡의 주제(theme)나 화제(topic)에 대한 짧은 설명\n수상 경력, 업적, 또는 유명한 공연(notable productions)\n\n3. 주제와 생각(Themes and Ideas)\n이 극작가는 어떤 주제를 자주 다루나요?\n예를 들어:\n정체성(Identity)\n가족(Family)\n권력(Power)\n사랑(Love)\n정의(Justice)\n사회 계층(Social class)\n우정(Friendship)\n갈등(Conflict)\n이것들을 다음을 사용해 시각적으로 보여주세요:\n핵심어(Keywords)\n이미지(Images)\n상징(Symbols)\n또는 \n워드 클라우드(word cloud)\n4. 연극 양식(Style of Theatre)\n그 극작가로 유명한 양식(style)을 조사하세요.\n예:\n자연주의(Naturalism)\n사실주의(Realism)\n희극(Comedy)\n비극(Tragedy)\n서사극(Epic Theatre)\n신체극(Physical Theatre)\n부조리극(Theatre of the Absurd)\n넣을 것:\n그 양식에 대한 짧은 설명\n그 양식을 나타내는 이미지\n배우들이 보통 이 양식으로 어떻게 연기하는지에 대한 예\n\n5. 관객에게 주는 영향(Audience Impact)\n극작가의 의도(intentions)를 생각해 보세요.\n넣을 것:\n극작가가 관객이 무엇에 대해 생각하기를 바라는지\n극작가가 관객이 무엇을 느끼기를 바라는지\n극작가의 인용문(quotation)(찾을 수 있다면)",
@@ -837,10 +768,35 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-07"
  },
- "수학 (Mr Anan)|To support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a g": {
-  "en": "Dear High School Students,\n\nTo support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a general guide for internal Mathematics assessments:\n\nKey Stage 3: Year 7 to 9: \n90% to 100% = A*\n80% to 89% = A\n70% to 79% = B\n55% to 69% = C\n40% to 54% = D\n< 39% = E (the lowest exam grade reported at KS3)\nKey Stage 4: Year 10 & 11, including Year 9 assessed on IGCSE topics\n90% to 100% = A*\n75% to 89% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U\nKey Stage 5: Year 12 & 13\n85% to 100% = A* (AS maximum grade is A)\n75% to 84% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U \nThis approach is intended to provide students with clear targets, encourage students to strive for excellence and support consistent monitoring of progress throughout the academic year.\n\nKind regards,\nHS Mathematics Department",
-  "ko": "고등부 학생 여러분께,\n\n더 명확하고 일관된 기준을 위해, 고등부 수학과는 교내 수학 평가(internal Mathematics assessments)에 다음 등급 경계(grade boundaries)를 일반 기준으로 사용합니다:\n\n키 스테이지 3(Key Stage 3): 7~9학년(Year 7 to 9): \n90%~100% = A*\n80%~89% = A\n70%~79% = B\n55%~69% = C\n40%~54% = D\n39% 미만 = E (KS3에서 보고되는 가장 낮은 시험 등급)\n키 스테이지 4(Key Stage 4): 10·11학년(Year 10 & 11), IGCSE 단원으로 평가받는 9학년 포함\n90%~100% = A*\n75%~89% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U\n키 스테이지 5(Key Stage 5): 12·13학년(Year 12 & 13)\n85%~100% = A* (AS 최고 등급은 A)\n75%~84% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U \n이 방식은 학생들에게 명확한 목표를 주고, 우수한 성취를 위해 노력하도록 격려하며, 학년 내내 학업 진행 상황을 일관되게 점검하기 위한 것입니다.\n\n감사합니다,\n고등부 수학과(HS Mathematics Department)",
+ "과학 (Mr Phillips)|Periodic table - check your progress": {
+  "en": "Periodic table - check your progress\nEstigfend\nComplete Questions",
+  "ko": "주기율표(periodic table) - 진도 확인하기\nEstigfend\n문제 풀기",
   "files": [],
-  "at": "2026-10-07"
+  "at": "2026-10-08"
+ },
+ "과학 (Mr Phillips)|9C1 - Periodic Table - last lesson - revision": {
+  "en": "9C1 - Periodic Table - last lesson - revision",
+  "ko": "9C1 - 주기율표(Periodic Table) - 지난 수업 - 복습(revision)",
+  "files": [
+   {
+    "name": "The Periodic Table Song (2018 Update!) | SCIENCE SONGS",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=rz4Dd1I_fX0",
+    "local": null
+   },
+   {
+    "name": "9C1 Revision - 9E",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1xHLU88kf_dBaxzaAObV8OMDHDvB86FAx7d-MxY8fjIw/edit?usp=classroom_web",
+    "local": "post_files/1xHLU88kf_dBaxzaAObV8OMDHDvB86FAx7d-MxY8fjIw.pdf"
+   }
+  ],
+  "at": "2026-10-08"
+ },
+ "수학 (Mr Anan)|Dear High School Students,": {
+  "en": "Dear High School Students,\n\nTo support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a general guide for internal Mathematics assessments:\n\nKey Stage 3: Year 7 to 9: \n90% to 100% = A*\n80% to 89% = A\n70% to 79% = B\n55% to 69% = C\n40% to 54% = D\n< 39% = E (the lowest exam grade reported at KS3)\nKey Stage 4: Year 10 & 11, including Year 9 assessed on IGCSE topics\n90% to 100% = A*\n75% to 89% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U\nKey Stage 5: Year 12 & 13\n85% to 100% = A* (AS maximum grade is A)\n75% to 84% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U \nThis approach is intended to provide students with clear targets, encourage students to strive for excellence and support consistent monitoring of progress throughout the academic year.\n\nKind regards,\nHS Mathematics Department",
+  "ko": "고등부 학생 여러분께,\n\n더 명확하고 일관된 기준을 위해, 고등부 수학과(HS Mathematics Department)는 교내 수학 평가(internal Mathematics assessments)에 다음 등급 기준(grade boundaries)을 일반 지침으로 사용합니다:\n\n키 스테이지 3(Key Stage 3): 7학년~9학년(Year 7 to 9): \n90%~100% = A*\n80%~89% = A\n70%~79% = B\n55%~69% = C\n40%~54% = D\n39% 미만 = E (KS3에서 보고되는 가장 낮은 시험 등급)\n키 스테이지 4(Key Stage 4): 10학년·11학년(Year 10 & 11), IGCSE 단원으로 평가받는 9학년(Year 9) 포함\n90%~100% = A*\n75%~89% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U\n키 스테이지 5(Key Stage 5): 12학년·13학년(Year 12 & 13)\n85%~100% = A* (AS 최고 등급은 A)\n75%~84% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U \n이 방식은 학생들에게 명확한 목표를 제시하고, 학생들이 탁월함을 향해 노력하도록 격려하며, 학년 내내 학업 진도(progress)를 일관되게 점검하는 것을 돕기 위한 것입니다.\n\n감사합니다.\n고등부 수학과(HS Mathematics Department)",
+  "files": [],
+  "at": "2026-10-08"
  }
 };
