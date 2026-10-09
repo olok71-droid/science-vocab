@@ -43,19 +43,6 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-06"
  },
- "수학 (Mr Anan)|FOBISIA Code Breaking Maths Challenge 2026": {
-  "en": "FOBISIA Code Breaking Maths Challenge 2026\n\nNext week, you will take part in the FOBISIA Code Breaking Maths Challenge during your Mathematics lesson.\n\nYou will use your mathematical thinking, logic and perseverance to crack a series of codes and unlock each clue. You may work independently or with others, as directed by your teacher.\n\nCompetition dates: Monday, 21 September to Friday, 25 September 2026\nCompetition website: www.schoolcodebreaking.com\nChallenge levels:\nLevels 1A and 1B: Suitable for KS2 and KS3\n\nLevels 2A and 2B: More challenging and suitable for KS3 and above\n\nLevel 3: A spy-thriller challenge aimed mainly at Year 9, KS4 and above\n\nLevel 4: An extreme challenge for expert codebreakers\n\nBonus Level: Learn how Python programming can be used to crack codes. This level does not count towards the overall results.\nWhen you complete a level, you will be asked to submit your\ndetails. Please:\nEnter only one name in the name field.\n\nWrite your name exactly as you want it to appear on your certificate.\n\nUse English letters and avoid accents.\n\nSelect the correct school and year group.\n\nEnter your class exactly as instructed by your teacher.\n\nYou can also continue with the challenge at home\nStudents who successfully complete Level 2, Level 3 or Level 4 will receive a digital certificate. There are also 120\nmedals available for top-performing students, and school trophies will be awarded in three school-size categories.\n\nMore than 22,000 students from nearly 120 schools participated last year, so get ready to put your code-breaking skills to the test!\n\nPlease bring a fully charged device to your Mathematics lesson.\n\n\nGood luck, codebreakers!\n\nRegards,\nSJIIS Mathematics Department",
-  "ko": "FOBISIA 암호 해독 수학 챌린지(Code Breaking Maths Challenge) 2026\n\n다음 주에 여러분은 수학 수업 시간에 FOBISIA 암호 해독 수학 챌린지에 참여합니다.\n\n수학적 사고(mathematical thinking), 논리(logic), 끈기(perseverance)를 써서 여러 암호(codes)를 풀고 단서(clue)를 하나씩 열게 됩니다. 선생님의 지시에 따라 혼자 하거나 다른 친구들과 함께 할 수 있습니다.\n\n대회 기간: 2026년 9월 21일 월요일 ~ 9월 25일 금요일\n대회 웹사이트: www.schoolcodebreaking.com\n챌린지 레벨(Challenge levels):\n레벨 1A와 1B: KS2와 KS3에 알맞음\n\n레벨 2A와 2B: 더 어렵고 KS3 이상에 알맞음\n\n레벨 3: 주로 Year 9, KS4 이상을 대상으로 한 스파이 스릴러 챌린지\n\n레벨 4: 숙련된 암호 해독가(codebreakers)를 위한 최고 난도 챌린지\n\n보너스 레벨(Bonus Level): 파이썬 프로그래밍(Python programming)으로 암호를 푸는 방법을 배웁니다. 이 레벨은 전체 결과에 포함되지 않습니다.\n레벨을 마치면 본인\n정보를 제출하라는 요청이 나옵니다. 다음을 지켜 주세요:\n이름 칸(name field)에는 이름을 하나만 입력하세요.\n\n인증서(certificate)에 나오기를 원하는 그대로 이름을 정확히 쓰세요.\n\n영어 알파벳을 쓰고 악센트 기호는 쓰지 마세요.\n\n학교와 학년(year group)을 정확히 선택하세요.\n\n반(class)은 선생님이 지시한 그대로 정확히 입력하세요.\n\n챌린지는 집에서도 이어서 할 수 있습니다\n레벨 2, 레벨 3 또는 레벨 4를 성공적으로 마친 학생은 디지털 인증서(digital certificate)를 받습니다. 성적이 우수한 학생에게 주는 메달도 120\n개 있으며, 학교 규모별 세 부문으로 학교 트로피가 수여됩니다.\n\n작년에는 약 120개 학교에서 22,000명이 넘는 학생이 참가했으니, 암호 해독 실력을 시험할 준비를 하세요!\n\n수학 수업에 완전히 충전된 기기(device)를 가져오세요.\n\n\n암호 해독가 여러분, 행운을 빕니다!\n\n감사합니다,\nSJIIS 수학과(Mathematics Department)",
-  "files": [
-   {
-    "name": "www.schoolcodebreaking.com",
-    "kind": "web",
-    "url": "http://www.schoolcodebreaking.com/",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
  "미술|2 Samples and 3-4 photos uploaded": {
   "en": "2 Samples and 3-4 photos uploaded\nHi all, please make sure your 2 samples are complete before our next class. Meaning your pieces must:\n-fill the whole page\n-use colour or shading where appropriate\n-have outlines where appropriate\n\nPlease also make sure you have 3-4 photos uploaded to your slide. Please refer to the lesson slides 11-12 for more details if you are unsure. You DO NOT need to start drawing from your photos. We will do this next lesson.",
   "ko": "샘플(sample) 2개와 사진 3~4장 업로드\n여러분 안녕하세요, 다음 수업 전까지 샘플(sample) 2개를 꼭 완성해 오세요. 즉, 작품은 다음을 갖춰야 합니다:\n-페이지 전체를 채울 것\n-알맞은 곳에 색(colour)이나 명암(shading)을 넣을 것\n-알맞은 곳에 윤곽선(outlines)을 그릴 것\n\n또한 자기 슬라이드(slide)에 사진 3~4장을 꼭 올려 두세요. 잘 모르겠으면 수업 슬라이드(lesson slides) 11~12번에서 자세한 내용을 확인하세요. 사진을 보고 그리기는 아직 시작하지 않아도 됩니다(DO NOT need). 그건 다음 수업에서 할 것입니다.",
@@ -162,12 +149,6 @@ window.POST_DETAILS = {
     "local": null
    }
   ],
-  "at": "2026-10-06"
- },
- "튜터 (Mr Cassels)|Planning Doc": {
-  "en": "Planning Doc",
-  "ko": "계획 문서(Planning Doc)",
-  "files": [],
   "at": "2026-10-06"
  },
  "과학 (Mr Phillips)|Giant Covalent Structures": {
@@ -474,12 +455,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "컴퓨터 과학 (Ms Meha)|Algorithm and Flowchart Quiz": {
-  "en": "Algorithm and Flowchart Quiz\n\nThe Algorithm and Flowchart Quiz will be held on Monday, 21st September, during your usual class time.\nPlease revise the topics thoroughly and come prepared for the quiz. Make sure you review algorithms, flowcharts, symbols, and problem-solving.\nGood luck!",
-  "ko": "알고리즘(Algorithm)과 순서도(Flowchart) 퀴즈\n\n알고리즘(Algorithm)과 순서도(Flowchart) 퀴즈는 9월 21일 월요일, 평소 수업 시간에 실시됩니다.\n관련 주제를 꼼꼼히 복습하고 퀴즈에 대비해 오세요. 알고리즘(algorithms), 순서도(flowcharts), 기호(symbols), 문제 해결(problem-solving)을 반드시 복습하세요.\n행운을 빌어요!",
-  "files": [],
-  "at": "2026-10-06"
- },
  "중국어 (Ying Ying老师)|Unit 1 Lesson 3 参加中文夏令营 Quizlet": {
   "en": "Unit 1 Lesson 3 参加中文夏令营 Quizlet",
   "ko": "1단원 3과 参加中文夏令营(중국어 여름캠프 참가하기) Quizlet",
@@ -749,12 +724,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-07"
  },
- "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative:": {
-  "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
-  "ko": "여러분 모두 좋은 하루 보내세요. 제이미 하우스 대표(Jaime House Representative) 이브라힘(Ibraheem)의 메시지입니다: \n\n이번 금요일이 제이미 데이(Jaime day)라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 Y7, Y8, Y9, Y11 튜터 그룹(tutor groups) 학생들은 제이미 데이, 성 제이미(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 면에 관한 문제로 된 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\n제이미 학생들(오직 제이미 학생만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
-  "files": [],
-  "at": "2026-10-07"
- },
  "중국어 (Ying Ying老师)|Languages Week 2026 Class Bee!": {
   "en": "Languages Week 2026 Class Bee!\n同学们，please use this\nholiday to learn these 10 words related to our lessons! When we come back from\nthe midterm break, we’ll have a Class Bee on Wednesday, 21 October. 🐝 Learn the\nwords and take part in the Class Bee to earn a “stamp”! But… what is\nthis “stamp” for?  You’ll find out during\nLanguages Week when we’re back at school! 🎉",
   "ko": "언어 주간(Languages Week) 2026 학급 단어 대회(Class Bee)!\n학생 여러분(同学们), 이번\n방학을 이용해 우리 수업과 관련된 단어 10개를 익히세요! 중간 방학(midterm break)이 끝나고\n돌아오면, 10월 21일 수요일에 학급 단어 대회(Class Bee)를 합니다. 🐝 단어를\n익히고 학급 단어 대회(Class Bee)에 참여해서 “도장(stamp)”을 받으세요! 그런데… 이\n“도장(stamp)”은 어디에 쓰는 걸까요?  그건\n학교로 돌아와서 언어 주간(Languages Week)에 알게 될 거예요! 🎉",
@@ -766,6 +735,12 @@ window.POST_DETAILS = {
     "local": "post_files/1G7ZsETRhh6CzwsMSDc7x72OYr3EXpDno.pdf"
    }
   ],
+  "at": "2026-10-07"
+ },
+ "수학 (Mr Anan)|To support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a g": {
+  "en": "Dear High School Students,\n\nTo support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a general guide for internal Mathematics assessments:\n\nKey Stage 3: Year 7 to 9: \n90% to 100% = A*\n80% to 89% = A\n70% to 79% = B\n55% to 69% = C\n40% to 54% = D\n< 39% = E (the lowest exam grade reported at KS3)\nKey Stage 4: Year 10 & 11, including Year 9 assessed on IGCSE topics\n90% to 100% = A*\n75% to 89% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U\nKey Stage 5: Year 12 & 13\n85% to 100% = A* (AS maximum grade is A)\n75% to 84% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U \nThis approach is intended to provide students with clear targets, encourage students to strive for excellence and support consistent monitoring of progress throughout the academic year.\n\nKind regards,\nHS Mathematics Department",
+  "ko": "고등부 학생 여러분께,\n\n더 명확하고 일관된 기준을 위해, 고등부 수학과는 교내 수학 평가(internal Mathematics assessments)에 다음 등급 경계(grade boundaries)를 일반 기준으로 사용합니다:\n\n키 스테이지 3(Key Stage 3): 7~9학년(Year 7 to 9): \n90%~100% = A*\n80%~89% = A\n70%~79% = B\n55%~69% = C\n40%~54% = D\n39% 미만 = E (KS3에서 보고되는 가장 낮은 시험 등급)\n키 스테이지 4(Key Stage 4): 10·11학년(Year 10 & 11), IGCSE 단원으로 평가받는 9학년 포함\n90%~100% = A*\n75%~89% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U\n키 스테이지 5(Key Stage 5): 12·13학년(Year 12 & 13)\n85%~100% = A* (AS 최고 등급은 A)\n75%~84% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U \n이 방식은 학생들에게 명확한 목표를 주고, 우수한 성취를 위해 노력하도록 격려하며, 학년 내내 학업 진행 상황을 일관되게 점검하기 위한 것입니다.\n\n감사합니다,\n고등부 수학과(HS Mathematics Department)",
+  "files": [],
   "at": "2026-10-07"
  },
  "과학 (Mr Phillips)|Periodic table - check your progress": {
@@ -793,10 +768,92 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-08"
  },
- "수학 (Mr Anan)|Dear High School Students,": {
-  "en": "Dear High School Students,\n\nTo support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a general guide for internal Mathematics assessments:\n\nKey Stage 3: Year 7 to 9: \n90% to 100% = A*\n80% to 89% = A\n70% to 79% = B\n55% to 69% = C\n40% to 54% = D\n< 39% = E (the lowest exam grade reported at KS3)\nKey Stage 4: Year 10 & 11, including Year 9 assessed on IGCSE topics\n90% to 100% = A*\n75% to 89% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U\nKey Stage 5: Year 12 & 13\n85% to 100% = A* (AS maximum grade is A)\n75% to 84% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U \nThis approach is intended to provide students with clear targets, encourage students to strive for excellence and support consistent monitoring of progress throughout the academic year.\n\nKind regards,\nHS Mathematics Department",
-  "ko": "고등부 학생 여러분께,\n\n더 명확하고 일관된 기준을 위해, 고등부 수학과(HS Mathematics Department)는 교내 수학 평가(internal Mathematics assessments)에 다음 등급 기준(grade boundaries)을 일반 지침으로 사용합니다:\n\n키 스테이지 3(Key Stage 3): 7학년~9학년(Year 7 to 9): \n90%~100% = A*\n80%~89% = A\n70%~79% = B\n55%~69% = C\n40%~54% = D\n39% 미만 = E (KS3에서 보고되는 가장 낮은 시험 등급)\n키 스테이지 4(Key Stage 4): 10학년·11학년(Year 10 & 11), IGCSE 단원으로 평가받는 9학년(Year 9) 포함\n90%~100% = A*\n75%~89% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U\n키 스테이지 5(Key Stage 5): 12학년·13학년(Year 12 & 13)\n85%~100% = A* (AS 최고 등급은 A)\n75%~84% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U \n이 방식은 학생들에게 명확한 목표를 제시하고, 학생들이 탁월함을 향해 노력하도록 격려하며, 학년 내내 학업 진도(progress)를 일관되게 점검하는 것을 돕기 위한 것입니다.\n\n감사합니다.\n고등부 수학과(HS Mathematics Department)",
+ "휴머니티 (Mr Lawrence)|Term 1 History Homework": {
+  "en": "Term 1 History Homework\nWhat do I need to do?\n✅ Complete ONE challenge task independently by Friday 27th November 2026.\n✅ Choose any one of the 12 challenge tasks in the following slides.\n⭐ You are welcome to complete more than one task. You may work with a friend on extra tasks, but at least one task must be completed on your own.\n\nHow do I submit it?\n📅 Deadline: 27th November 2026, 5pm.\n💻 Submit your work on Google Classroom. If you have created a physical resource, hand it to your teacher and upload a photo of it to Google Classroom.\n\nWhat are we looking for?\nYour work should show high effort and creativity. You have 6 to complete it, so take your time and produce something you are proud of.\nAim to spend around 30 minutes per week working on your project.\n\nWhy is it important?\nYour teacher will review your work and it will contribute towards your End of Term Report\nYou could create something that helps you revise or a resource that could be used by future students. Excellent work may even be displayed or shared with next year's classes!",
+  "ko": "1학기 역사(History) 숙제\n무엇을 해야 하나요?\n✅ 2026년 11월 27일 금요일까지 도전 과제(challenge task) 하나를 혼자 힘으로 완성하세요.\n✅ 다음 슬라이드에 있는 12개 도전 과제(challenge task) 중 아무거나 하나를 고르세요.\n⭐ 과제를 두 개 이상 해도 좋습니다. 추가 과제는 친구와 함께 해도 되지만, 적어도 과제 하나는 반드시 혼자 완성해야 합니다.\n\n어떻게 제출하나요?\n📅 마감: 2026년 11월 27일 오후 5시.\n💻 과제를 Google Classroom에 제출하세요. 실물 자료(physical resource)를 만들었다면 선생님께 직접 내고, 그 사진을 Google Classroom에 올리세요.\n\n무엇을 보나요?\n과제에 많은 노력(effort)과 창의성(creativity)이 드러나야 합니다. 완성할 시간이 6 있으니 서두르지 말고 스스로 자랑스러운 결과물을 만드세요.\n매주 30분 정도를 프로젝트(project)에 쓰는 것을 목표로 하세요.\n\n왜 중요한가요?\n선생님이 과제를 검토하고, 그 결과가 학기말 성적표(End of Term Report)에 반영됩니다\n복습(revise)에 도움이 되는 것이나 나중 학생들이 쓸 수 있는 자료(resource)를 만들 수도 있습니다. 훌륭한 과제는 내년 반 학생들에게 전시되거나 공유될 수도 있습니다!",
+  "files": [
+   {
+    "name": "Y9 Term 1 2026 - History Home Learning",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1GeBNCzP74AKRtEXbgTyQ11i0uhroDNXH-NYJ2BwHCp0/edit?usp=classroom_web",
+    "local": "post_files/1GeBNCzP74AKRtEXbgTyQ11i0uhroDNXH-NYJ2BwHCp0.pdf"
+   }
+  ],
+  "at": "2026-10-09"
+ },
+ "휴머니티 (Mr Lawrence)|You work today is to continue reading the evidence statements to complete the question as to what life was like in Pompe": {
+  "en": "You work today is to continue reading the evidence statements to complete the question as to what life was like in Pompeii in the hours before the eruption",
+  "ko": "오늘 할 일은 증거 진술문(evidence statements)을 계속 읽고, 분화(eruption) 직전 몇 시간 동안 폼페이(Pompeii)의 생활이 어땠는지에 대한 질문을 완성하는 것입니다",
+  "files": [
+   {
+    "name": "Screenshot 2026-10-09 at 07.33.45.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1Df209IkR7wjdhUbyiWI-rg-Bq_QZzBAs/view&usp=classroom_web",
+    "local": "post_files/1Df209IkR7wjdhUbyiWI-rg-Bq_QZzBAs.png"
+   },
+   {
+    "name": "Lesson 1 - Printing.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1udRx50N7oxkJhoLFfFnzMtt-C2h4rf0L/view?usp=classroom_web",
+    "local": "post_files/1udRx50N7oxkJhoLFfFnzMtt-C2h4rf0L.pptx"
+   },
+   {
+    "name": "Lesson 1 - Why History.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/10Bdq27RV5x6e21Q6SmIflVUQE5Rpp9OU/view?usp=classroom_web",
+    "local": "post_files/10Bdq27RV5x6e21Q6SmIflVUQE5Rpp9OU.pptx"
+   }
+  ],
+  "at": "2026-10-09"
+ },
+ "영어 (Mr Glanz)|Work for 9/10/26": {
+  "en": "Work for 9/10/26\nEstigfend\nRead the story in the PDF, and complete the tasks in the Google Doc. You can type directly into it.",
+  "ko": "9/10/26 과제\nEstigfend\nPDF에 있는 이야기(story)를 읽고, Google Doc에 있는 과제(tasks)를 완성하세요. 문서에 바로 입력해도 됩니다.",
+  "files": [
+   {
+    "name": "All Summer in a Day by Ray Bradbury.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1g8PtYZIEA0oDsIbF7s4vmY7mdgtV14Dh/view?usp=classroom_web",
+    "local": "post_files/1g8PtYZIEA0oDsIbF7s4vmY7mdgtV14Dh.pdf"
+   }
+  ],
+  "at": "2026-10-09"
+ },
+ "영어 (Mr Glanz)|Hi, team. Due to the haze, the school is closed to students today.": {
+  "en": "Hi, team. Due to the haze, the school is closed to students today. I'm sorry about this, because I know you were all looking forward to getting your grades back for CA1. This will have to wait until we get back, unfortunately. I don't want to message or email you your grades, because we give assessments back in feedback lessons. This is so we don't fixate on scores and grades, but rather, teacher feedback and what can be done to improve for next time.   \n\nToday, please see the assignment above this post (it will be there before 9am). We won't be planning our stories; that will also have to wait till we get back. Please do not spend any more than an hour on this, because your other subjects will also need your attention today. \n\nI'm sad I didn't get to see you today to wish you a happy half-term break, but happy holiday nonetheless! Stay safe and healthy out there - it looks like the haze situation is going to be pretty grim until we get some serious rain. Take care, and I'll hopefully see you on the 19th!",
+  "ko": "안녕하세요, 여러분. 연무(haze) 때문에 오늘 학교는 학생 등교가 중단됩니다. 여러분 모두 CA1(지속평가 1, Continuous Assessment 1) 성적을 돌려받기를 기대하고 있었다는 걸 알기에 미안하게 생각합니다. 안타깝지만 이것은 우리가 학교로 돌아올 때까지 기다려야 합니다. 저는 성적을 메시지나 이메일로 보내고 싶지 않은데, 우리는 평가(assessments)를 피드백 수업(feedback lessons)에서 돌려주기 때문입니다. 이렇게 하는 이유는 점수와 성적에 집착하지 않고, 대신 선생님의 피드백과 다음번에 더 나아지기 위해 무엇을 할 수 있는지에 집중하기 위해서입니다.\n\n오늘은 이 게시글 위에 있는 과제(assignment)를 확인해 주세요(오전 9시 전에 올라와 있을 것입니다). 우리 이야기(stories) 구상하기(planning)는 하지 않을 것이며, 그것도 학교로 돌아올 때까지 기다려야 합니다. 오늘은 다른 과목들도 신경 써야 하니, 이 과제에 한 시간 넘게 쓰지 마세요.\n\n오늘 여러분을 만나 즐거운 중간 방학(half-term break)을 보내라고 인사하지 못해 아쉽지만, 그래도 즐거운 방학 보내세요! 밖에서 안전하고 건강하게 지내세요 - 비가 제대로 내리기 전까지는 연무(haze) 상황이 꽤 심각할 것 같습니다. 잘 지내고, 19일에 만나길 바랍니다!",
   "files": [],
-  "at": "2026-10-08"
+  "at": "2026-10-09"
+ },
+ "수학 (Mr Anan)|Haze Work!!! - Units 5.2 Interior angles of polygons & 5.3 Exterior angles of polygons": {
+  "en": "Haze Work!!! - Units 5.2 Interior angles of polygons & 5.3 Exterior angles of polygons\nDear Students,\n\nAs school is closed today due to the haze, please open up the lesson OneNote to Units 5.2 Interior angles of\npolygons & 5.3 Exterior angles of polygons (HAZE WORK!!!)\nGo through the OneNote lesson, including the powerpoint file (also attached here) and complete Textbook Exercise 5.2: All and Textbook Exercise 5.3: All\n\nAs you may have left your textbook (learner's book) at school, Exercise 5.2 and 5.3 are listed in the OneNote at the end of the unit along with the answers for you to check your work. Please submit photos of your completed work when submitting the assignment.\nWe will recap this unit before moving on to the next unit once school opens. The link to the OneNote is attached here again for your reference\nhttps://1drv.ms/o/c/b2fbb2b51b6cc561/IgDHaSMY0EjJR51lY7-4BrhNAQ-PM7nYkoBhIPtVpc0k-l8?e=aQuaZa",
+  "ko": "연무 과제!!! - 단원 5.2 다각형의 내각(Interior angles of polygons) & 5.3 다각형의 외각(Exterior angles of polygons)\n학생 여러분,\n\n오늘 연무(haze) 때문에 학교가 휴교했으니, 수업 OneNote에서 단원 5.2 다각형의 내각(Interior angles of\npolygons) & 5.3 다각형의 외각(Exterior angles of polygons) (연무 과제!!!)을 열어 보세요.\nOneNote 수업 내용을 파워포인트 파일(여기에도 첨부함)까지 포함해 끝까지 살펴보고, 교과서 연습문제 5.2(Textbook Exercise 5.2): 전부, 교과서 연습문제 5.3(Textbook Exercise 5.3): 전부를 풀어 오세요.\n\n교과서(learner's book)를 학교에 두고 왔을 수 있으니, 연습문제 5.2와 5.3을 단원 끝 OneNote에 정답과 함께 올려 두었습니다. 정답으로 자기 풀이를 확인하세요. 과제를 제출할 때 다 푼 과제 사진을 함께 제출하세요.\n학교가 다시 문을 열면 다음 단원으로 넘어가기 전에 이 단원을 복습하겠습니다. 참고하라고 OneNote 링크를 여기 다시 첨부합니다.\nhttps://1drv.ms/o/c/b2fbb2b51b6cc561/IgDHaSMY0EjJR51lY7-4BrhNAQ-PM7nYkoBhIPtVpc0k-l8?e=aQuaZa",
+  "files": [
+   {
+    "name": "SJI Year 9 Math",
+    "kind": "web",
+    "url": "https://1drv.ms/o/c/b2fbb2b51b6cc561/IgDHaSMY0EjJR51lY7-4BrhNAQ-PM7nYkoBhIPtVpc0k-l8?e=aQuaZa",
+    "local": null
+   },
+   {
+    "name": "CH3 Interior and Exterior Angles.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1evcROrU1L9btQOFt3QGr_E6Wb5sFa8Kw/view?usp=classroom_web",
+    "local": "post_files/1evcROrU1L9btQOFt3QGr_E6Wb5sFa8Kw.pptx"
+   }
+  ],
+  "at": "2026-10-09"
+ },
+ "튜터 (Mr Cassels)|Good morning Year 9! 😊": {
+  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
+  "ko": "9학년 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림입니다:\n\n선생님들이 오전 9시까지 영어(English) / 추가언어로서의 영어(EAL), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 줄 거예요\n올라온 과제를 모두 꼭 끝내세요.\n도움이 필요하면 담당 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인할 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
+  "files": [],
+  "at": "2026-10-09"
+ },
+ "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative": {
+  "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
+  "ko": "여러분 모두 안녕하세요, Jaime 하우스(house) 대표 Ibraheem의 메시지입니다: \n\n이번 주 금요일이 Jaime의 날(Jaime day)이라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 7학년(Y7), 8학년(Y8), 9학년(Y9), 11학년(Y11) 튜터 그룹(tutor groups) 학생들은 Jaime의 날, 성 Jaime(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 측면에 관한 문제로 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\nJaime 하우스 학생들(Jaime 하우스 학생들만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
+  "files": [],
+  "at": "2026-10-09"
  }
 };
