@@ -855,5 +855,24 @@ window.POST_DETAILS = {
   "ko": "여러분 모두 안녕하세요, Jaime 하우스(house) 대표 Ibraheem의 메시지입니다: \n\n이번 주 금요일이 Jaime의 날(Jaime day)이라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 7학년(Y7), 8학년(Y8), 9학년(Y9), 11학년(Y11) 튜터 그룹(tutor groups) 학생들은 Jaime의 날, 성 Jaime(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 측면에 관한 문제로 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\nJaime 하우스 학생들(Jaime 하우스 학생들만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
   "files": [],
   "at": "2026-10-09"
+ },
+ "컴퓨터 과학 (Ms Meha)|Year 9 Common Assessment Task 1 Term 1 2025": {
+  "en": "Year 9 Common Assessment Task 1 Term 1 2025\nDear Year 9 students,\nAttached is your Term 1 Common Assessment. \nPlease complete all 6 questions carefully. \nFor each question:\n\nWrite the Python code.\nTake a screenshot of your code and the output.\nPaste all screenshots (code and output for each question) in the google docs attached\nDue Date: 6th November 2026\n\nSubmit your completed Google Docs document via Google Classroom before the deadline.\n\n以下是为您翻译的中文版本：\n亲爱的九年级同学们：\n附件是你们第一学期的阶段性评估（Term 1 Common Assessment）。\n请认真完成全部 6 道题目。\n对于每道题目，请按以下要求操作：\n编写 Python 代码。\n截取你的代码以及运行输出结果（Output）的截图。\n将每道题的代码和输出截图全部粘贴至随附的 Google Docs 文档中。\n截止日期：2026 年 11 月 6 日\n请在截止日期前通过 Google Classroom 提交已完成的 Google Docs 文档。",
+  "ko": "9학년 공통 평가 과제 1(Common Assessment Task 1) 1학기 2025\n9학년 학생 여러분,\n1학기 공통 평가(Term 1 Common Assessment)를 첨부했습니다.\n6개 문제를 모두 꼼꼼히 풀어 주세요.\n각 문제마다:\n\n파이썬 코드(Python code)를 작성하세요.\n코드와 출력 결과(output)의 스크린샷(screenshot)을 찍으세요.\n모든 스크린샷(각 문제의 코드와 출력 결과)을 첨부된 구글 문서(Google Docs)에 붙여 넣으세요.\n마감일: 2026년 11월 6일\n\n완성한 구글 문서(Google Docs)를 마감 전에 구글 클래스룸(Google Classroom)으로 제출하세요.\n\n아래는 중국어로 번역한 내용입니다:\n9학년 학생 여러분:\n첨부 파일은 여러분의 1학기 공통 평가(Term 1 Common Assessment)입니다.\n6개 문제를 모두 꼼꼼히 풀어 주세요.\n각 문제는 다음과 같이 하세요:\n파이썬 코드(Python code)를 작성하세요.\n코드와 실행 출력 결과(Output)의 스크린샷(screenshot)을 찍으세요.\n각 문제의 코드와 출력 스크린샷을 모두 첨부된 구글 문서(Google Docs)에 붙여 넣으세요.\n마감일: 2026년 11월 6일\n마감일 전에 완성한 구글 문서(Google Docs)를 구글 클래스룸(Google Classroom)으로 제출하세요.",
+  "files": [
+   {
+    "name": "Year9_Python_Common Assessment  Term 1 2026",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c/edit?usp=classroom_web",
+    "local": "post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c.pdf"
+   },
+   {
+    "name": "Year9_Python_Common_Assessment_Term1_2026_Mandarin.docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/14Jkb-JU68smhCNsY9sWExloCaGFsQ4jj/view?usp=classroom_web",
+    "local": "post_files/14Jkb-JU68smhCNsY9sWExloCaGFsQ4jj.docx"
+   }
+  ],
+  "at": "2026-10-09"
  }
 };

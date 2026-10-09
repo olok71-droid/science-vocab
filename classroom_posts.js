@@ -4,7 +4,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "과제",
   "title": "Term 1 History Homework",
-  "ko": "1학기 역사 숙제 제출",
+  "ko": "1학기 역사 숙제 과제가 올라옴",
   "due": "2026-11-27",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -13,7 +13,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "공지",
   "title": "You work today is to continue reading the evidence statements to complete the question as to what life was like in Pompe",
-  "ko": "폼페이 증거 자료 읽고 PPT 속 활동지 질문 완성",
+  "ko": "폼페이 증거문 읽고 질문 완성(워크시트는 PPT)",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -22,16 +22,16 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "과제",
   "title": "Work for 9/10/26",
-  "ko": "휴교일 대체 과제",
+  "ko": "휴교일 과제, 1시간 안에 끝내기",
   "due": "2026-10-09",
-  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy/a/ODkwMTA5NTY0MDY4/details"
+  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
  {
   "subject": "영어 (Mr Glanz)",
   "date": "2026-10-09",
   "type": "공지",
   "title": "Hi, team. Due to the haze, the school is closed to students today.",
-  "ko": "연무로 휴교, 과제는 1시간 안에 끝내기",
+  "ko": "연무로 휴교, CA1 성적은 등교 후 돌려받음",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -43,6 +43,15 @@ window.CLASSROOM_POSTS = [
   "ko": "다각형 내각·외각(5.2·5.3) 과제",
   "due": "2026-10-12",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3/a/ODczOTA4Mjc4Njk5/details"
+ },
+ {
+  "subject": "컴퓨터 과학 (Ms Meha)",
+  "date": "2026-10-09",
+  "type": "과제",
+  "title": "Year 9 Common Assessment Task 1 Term 1 2025",
+  "ko": "9학년 1학기 공통평가 과제 1 게시",
+  "due": "2026-11-06",
+  "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
  {
   "subject": "튜터 (Mr Cassels)",
@@ -94,7 +103,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "자료",
   "title": "Template for CA2",
-  "ko": "CA2 시험 양식",
+  "ko": "CA2 양식 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -130,7 +139,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "자료",
   "title": "Languages Week 2026 Class Bee!",
-  "ko": "언어 주간 반별 단어 대회 안내 자료",
+  "ko": "2026 언어주간 학급 단어대회 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -211,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "과제",
   "title": "Week 8 Python Exercise(If and Loops)",
-  "ko": "파이썬 조건문·반복문 8주차 연습 과제",
+  "ko": "파이썬 조건문과 반복문 연습 과제",
   "due": "2026-10-12",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4/a/ODg4Njc1NzYzNzI0/details"
  },
@@ -229,7 +238,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "자료",
   "title": "Unit 1 Lesson 3 参加中文夏令营 Quizlet",
-  "ko": "3과 중국어 여름캠프 단어 퀴즐렛",
+  "ko": "1단원 3과 중국어 여름캠프 Quizlet 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -238,7 +247,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "자료",
   "title": "L1 Starter Task support card",
-  "ko": "수업 시작 과제 도움 카드",
+  "ko": "1과 수업 시작 활동 도움 카드",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -247,7 +256,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-02",
   "type": "과제",
   "title": "Fish cheeks narrative (Not homework!)",
-  "ko": "Fish cheeks 서사문 쓰기(숙제 아님)",
+  "ko": "Fish cheeks 이야기 수업 활동(숙제 아님)",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -301,7 +310,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-30",
   "type": "자료",
   "title": "Geography Unit 1 Tectonic Hazards slides",
-  "ko": "지리 1단원 지각 재해 슬라이드",
+  "ko": "지리 1단원 지각판 재해 슬라이드 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -310,7 +319,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-30",
   "type": "과제",
   "title": "我今年学习的科目 One-Minute Speech Recording",
-  "ko": "올해 배우는 과목 1분 말하기 녹음 제출",
+  "ko": "올해 배우는 과목 1분 말하기 녹음 과제",
   "due": "2026-10-09",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -373,7 +382,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-25",
   "type": "공지",
   "title": "Please find all the lessons for Unit 1 of Geography.",
-  "ko": "지리 1단원 전체 수업 자료 게시",
+  "ko": "지리 1단원 전체 수업 PPT 올림",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -526,7 +535,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Flowchart and Algorithm Unit Test",
-  "ko": "순서도·알고리즘 단원 시험 과제",
+  "ko": "순서도와 알고리즘 단원 평가",
   "due": "2026-09-21",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -535,7 +544,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-21",
   "type": "과제",
   "title": "Introduction to Python Exercise 1",
-  "ko": "파이썬 입문 연습문제 1 과제",
+  "ko": "파이썬 입문 연습문제 1",
   "due": "2026-09-28",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -553,7 +562,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-20",
   "type": "자료",
   "title": "The Art of Storytelling slides so far",
-  "ko": "스토리텔링 단원 수업 슬라이드",
+  "ko": "스토리텔링 단원 지금까지의 슬라이드",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -576,4 +585,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-09 12:06";
+window.CLASSROOM_POSTS_AT = "2026-10-09 18:16";
