@@ -297,6 +297,14 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 .section-header.hidden { display: none; }
 .allplay-mini{background:var(--accent);border-color:var(--accent);color:#fff;font-size:12.5px;padding:6px 13px;border-radius:15px;box-shadow:0 2px 6px rgba(13,148,136,0.35);}
 .allplay-mini.active{background:var(--purple);border-color:var(--purple);color:#fff;}
+.vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; display: flex; flex-wrap: wrap;
+  align-items: center; gap: 6px; }
+.vtool .search-input { flex: 0 1 48%; max-width: 48%; min-width: 0; padding: 8px 12px; font-size: 13px; }
+.vtool .mem-info { font-size: 12px; font-weight: 800; color: var(--strong, #16223f); white-space: nowrap; }
+.vtool .mem-info b { color: #0b4f45; font-weight: 900; }
+.vtool .blind-btn, .vtool .mem-toggle-btn { padding: 5px 10px; color: #0d5c50; border-color: rgba(13,92,80,0.55); background: rgba(255,255,255,0.85); font-weight: 900; }
+.vtool .blind-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.vtool .allplay-mini { background: var(--accent); border-color: var(--accent); color: #fff; }
 </style>
 </head>
 <body>
@@ -316,19 +324,855 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 
 <div class="tabs-wrap">
   <div class="tabs">
-    <button class="tab-btn" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
     <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
     <button class="tab-btn" data-tab="classroom">📂 클래스룸자료</button>
-    <button class="tab-btn active" data-tab="teacher">👩‍🏫 선생님문제</button>
+    <button class="tab-btn" data-tab="teacher">👩‍🏫 선생님문제</button>
   </div>
 </div>
 
-<div class="tab-pane" id="tab-vocab"></div>
-<div class="tab-pane" id="tab-notes"></div>
+<div class="tab-pane active" id="tab-vocab">
+<div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" data-total="53" onclick="toggleAllPlay()" title="53개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9m_unit7_all.mp3"></audio><button class="blind-btn chunkplay" data-part="1" data-label="▶ 1~20" title="1~20번 단어만 듣기" onclick="playAllFrom(1)">▶ 1~20</button><button class="blind-btn chunkplay" data-part="2" data-label="▶ 21~40" title="21~40번 단어만 듣기" onclick="playAllFrom(2)">▶ 21~40</button><button class="blind-btn chunkplay" data-part="3" data-label="▶ 41~53" title="41~53번 단어만 듣기" onclick="playAllFrom(3)">▶ 41~53</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div>
+  <div class="filter-wrap">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-cat="all" onclick='filterCards("all")'>전체 All</button><button class="filter-btn" data-cat="organ" onclick='filterCards("organ")'>⭕ 원 Circles</button><button class="filter-btn" data-cat="process" onclick='filterCards("process")'>🎯 반올림·거꾸로 구하기 Rounding</button><button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>🧩 복합 도형 Compound shapes</button><button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>📏 크고 작은 단위 Units</button>
+    </div>
+  </div>
+<div class="section-header" data-cat="organ"><h2>⭕ 원 Circles</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Circle</div>
+    <div class="vcard-ko">원</div>
+    <div class="vcard-def">A round shape where every point is the same distance from the centre.</div>
+    <div class="vcard-def-ko">중심에서 모든 점까지 거리가 똑같은 둥근 도형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Circle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Centre</div>
+    <div class="vcard-ko">중심</div>
+    <div class="vcard-def">The middle point of a circle.</div>
+    <div class="vcard-def-ko">원의 한가운데 점. 반지름은 여기서 잰다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Centre")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Radius</div>
+    <div class="vcard-ko">반지름</div>
+    <div class="vcard-def">The distance from the centre to the edge of a circle.</div>
+    <div class="vcard-def-ko">중심에서 원 위까지 길이. 기호 r. r = d ÷ 2.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Radius")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Diameter</div>
+    <div class="vcard-ko">지름</div>
+    <div class="vcard-def">A straight line across a circle through the centre.</div>
+    <div class="vcard-def-ko">중심을 지나 원 끝에서 끝까지 길이. 기호 d. d = 2r.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Diameter")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Circumference</div>
+    <div class="vcard-ko">원주(둘레)</div>
+    <div class="vcard-def">The distance all the way around a circle.</div>
+    <div class="vcard-def-ko">원 한 바퀴의 길이. C = πd = 2πr. 단위는 cm, m.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Circumference")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Perimeter</div>
+    <div class="vcard-ko">둘레</div>
+    <div class="vcard-def">The total distance around the edge of a shape.</div>
+    <div class="vcard-def-ko">도형 테두리 전체 길이. 원의 둘레가 circumference 다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Perimeter")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Area</div>
+    <div class="vcard-ko">넓이</div>
+    <div class="vcard-def">The amount of space inside a flat shape.</div>
+    <div class="vcard-def-ko">평면 도형 안쪽 크기. 원은 A = πr². 단위는 cm², m².</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Area")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Pi</div>
+    <div class="vcard-ko">파이(π)</div>
+    <div class="vcard-def">The number π = 3.14159…, the circumference divided by the diameter.</div>
+    <div class="vcard-def-ko">원둘레 ÷ 지름 = 3.14159… 계산기 π 버튼을 쓴다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Pi")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Irrational number</div>
+    <div class="vcard-ko">무리수</div>
+    <div class="vcard-def">A number whose decimals go on forever without repeating.</div>
+    <div class="vcard-def-ko">소수가 끝없이, 반복 없이 이어지는 수. π 가 무리수다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Irrational number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Formula</div>
+    <div class="vcard-ko">공식</div>
+    <div class="vcard-def">A rule written with letters, such as A = πr².</div>
+    <div class="vcard-def-ko">글자로 쓴 계산 규칙. C = 2πr, A = πr².</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Formula")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Revolution</div>
+    <div class="vcard-ko">회전(한 바퀴)</div>
+    <div class="vcard-def">One complete turn of a wheel.</div>
+    <div class="vcard-def-ko">바퀴가 한 바퀴 도는 것. 한 바퀴에 원둘레만큼 간다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Revolution")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Inscribed</div>
+    <div class="vcard-ko">내접한</div>
+    <div class="vcard-def">Drawn inside a shape so that it just touches the sides.</div>
+    <div class="vcard-def-ko">도형 안에 꼭 맞게 그려진 것. 정사각형에 내접한 원은 지름 = 한 변.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Inscribed")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="process"><h2>🎯 반올림·거꾸로 구하기 Rounding</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Decimal place</div>
+    <div class="vcard-ko">소수 자리</div>
+    <div class="vcard-def">A digit after the decimal point; 2 d.p. means two digits after it.</div>
+    <div class="vcard-def-ko">소수점 뒤 자리. 2 d.p. = 소수 둘째 자리까지. 37.70 의 0 도 쓴다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Decimal place")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Significant figures</div>
+    <div class="vcard-ko">유효숫자</div>
+    <div class="vcard-def">Digits counted from the first non-zero digit; 3 s.f. means three of them.</div>
+    <div class="vcard-def-ko">0 이 아닌 첫 숫자부터 센 자리. 50.265… → 3 s.f. 는 50.3.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Significant figures")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Nearest millimetre</div>
+    <div class="vcard-ko">가장 가까운 밀리미터</div>
+    <div class="vcard-def">Rounded to the nearest 1 mm, which is 0.1 cm.</div>
+    <div class="vcard-def-ko">1 mm 단위로 반올림. cm 로는 소수 첫째 자리. 4.774… cm → 4.8 cm.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Nearest millimetre")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">In terms of π</div>
+    <div class="vcard-ko">π 를 남겨서</div>
+    <div class="vcard-def">Leaving π as a symbol in the answer, such as 8π cm.</div>
+    <div class="vcard-def-ko">π 를 3.14 로 바꾸지 않고 그대로 쓴 답. 반지름 4 → C = 8π.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("In terms of π")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Exact value</div>
+    <div class="vcard-ko">정확한 값</div>
+    <div class="vcard-def">An answer that is not rounded.</div>
+    <div class="vcard-def-ko">반올림하지 않은 값. 16π cm² 는 정확한 값이다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Exact value")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Working backwards</div>
+    <div class="vcard-ko">거꾸로 구하기</div>
+    <div class="vcard-def">Using the answer to find the starting length.</div>
+    <div class="vcard-def-ko">원둘레·넓이에서 지름·반지름을 찾는 것. d = C ÷ π, r = √(A ÷ π).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Working backwards")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Round down</div>
+    <div class="vcard-ko">내림(버림)</div>
+    <div class="vcard-def">To round to the whole number below.</div>
+    <div class="vcard-def-ko">아래 정수로 자르는 것. 다 돈 바퀴 106.1 → 106, 닭 4016.67 → 4016.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Round down")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Round up</div>
+    <div class="vcard-ko">올림</div>
+    <div class="vcard-def">To round to the whole number above.</div>
+    <div class="vcard-def-ko">위 정수로 올리는 것. 씨앗 81.75 봉지 → 82 봉지.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Round up")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Complete revolutions</div>
+    <div class="vcard-ko">다 돈 바퀴 수</div>
+    <div class="vcard-def">Only the full turns of a wheel; part turns are not counted.</div>
+    <div class="vcard-def-ko">끝까지 다 돈 바퀴만 센다. 그래서 내림(round down)한다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Complete revolutions")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Percentage wasted</div>
+    <div class="vcard-ko">버린 비율(%)</div>
+    <div class="vcard-def">The wasted area divided by the original area, times 100.</div>
+    <div class="vcard-def-ko">버린 넓이 ÷ 처음 전체 넓이 × 100.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Percentage wasted")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="blood"><h2>🧩 복합 도형 Compound shapes</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Compound shape</div>
+    <div class="vcard-ko">복합 도형</div>
+    <div class="vcard-def">A shape made from two or more simple shapes.</div>
+    <div class="vcard-def-ko">간단한 도형 두 개 이상을 붙여 만든 도형. 나누고 → 각각 → 더하거나 뺀다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Compound shape")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Shaded area</div>
+    <div class="vcard-ko">색칠한 부분의 넓이</div>
+    <div class="vcard-def">The area of the coloured part of a diagram.</div>
+    <div class="vcard-def-ko">그림에서 색칠한 부분의 넓이. 보통 큰 도형 − 빈 도형.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Shaded area")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Semicircle</div>
+    <div class="vcard-ko">반원</div>
+    <div class="vcard-def">Half of a circle.</div>
+    <div class="vcard-def-ko">원의 반. 넓이 = ½ × πr². 곧은 변이 지름이다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Semicircle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Rectangle</div>
+    <div class="vcard-ko">직사각형</div>
+    <div class="vcard-def">A four-sided shape with four right angles.</div>
+    <div class="vcard-def-ko">네 각이 모두 직각인 사각형. A = bh.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Rectangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Triangle</div>
+    <div class="vcard-ko">삼각형</div>
+    <div class="vcard-def">A shape with three straight sides.</div>
+    <div class="vcard-def-ko">변이 세 개인 도형. A = ½bh. ½ 을 잊지 않는다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Triangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Right-angled triangle</div>
+    <div class="vcard-ko">직각삼각형</div>
+    <div class="vcard-def">A triangle with one angle of 90°.</div>
+    <div class="vcard-def-ko">한 각이 90° 인 삼각형. 직각을 낀 두 변으로 넓이를 구한다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Right-angled triangle")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Trapezium</div>
+    <div class="vcard-ko">사다리꼴</div>
+    <div class="vcard-def">A four-sided shape with one pair of parallel sides.</div>
+    <div class="vcard-def-ko">평행한 변이 한 쌍인 사각형. A = ½(a + b)h.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Trapezium")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Height</div>
+    <div class="vcard-ko">높이</div>
+    <div class="vcard-def">The distance measured straight up from the base.</div>
+    <div class="vcard-def-ko">밑변(base)에서 곧게 위로 잰 길이. 공식의 h.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Height")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Perpendicular</div>
+    <div class="vcard-ko">수직의</div>
+    <div class="vcard-def">At right angles (90°) to a line.</div>
+    <div class="vcard-def-ko">선과 90° 를 이루는 것. 높이는 밑변에 수직으로 잰다. 비스듬한 변은 높이가 아니다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Perpendicular")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Subtract</div>
+    <div class="vcard-ko">빼다</div>
+    <div class="vcard-def">To take one amount away from another.</div>
+    <div class="vcard-def-ko">큰 도형 넓이에서 빈 도형 넓이를 빼는 것.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Subtract")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Maximum</div>
+    <div class="vcard-ko">최대, 최대치</div>
+    <div class="vcard-def">The largest possible number.</div>
+    <div class="vcard-def-ko">가능한 가장 큰 수. 사람·동물 수는 내림한다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Maximum")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="gas"><h2>📏 크고 작은 단위 Units</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Length</div>
+    <div class="vcard-ko">길이</div>
+    <div class="vcard-def">How long something is; measured in metres.</div>
+    <div class="vcard-def-ko">얼마나 긴가. 기본 단위 metre(m).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Length")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Mass</div>
+    <div class="vcard-ko">질량</div>
+    <div class="vcard-def">How heavy something is; measured in grams.</div>
+    <div class="vcard-def-ko">얼마나 무거운가. 기본 단위 gram(g).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Mass")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Capacity</div>
+    <div class="vcard-ko">들이(용량)</div>
+    <div class="vcard-def">How much a container can hold; measured in litres.</div>
+    <div class="vcard-def-ko">그릇에 얼마나 담기나. 기본 단위 litre(L).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Capacity")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Prefix</div>
+    <div class="vcard-ko">접두어</div>
+    <div class="vcard-def">Letters in front of a unit that show how many times bigger or smaller it is.</div>
+    <div class="vcard-def-ko">단위 앞에 붙는 '몇 배' 표시. kilo, mega, micro.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Prefix")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Tonne</div>
+    <div class="vcard-ko">톤</div>
+    <div class="vcard-def">A unit of mass equal to 1000 kilograms.</div>
+    <div class="vcard-def-ko">질량 단위. 1 t = 1000 kg.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Tonne")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Tera</div>
+    <div class="vcard-ko">테라(T)</div>
+    <div class="vcard-def">A prefix meaning 10¹², a million million.</div>
+    <div class="vcard-def-ko">10¹² 배. 1조 배.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Tera")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Giga</div>
+    <div class="vcard-ko">기가(G)</div>
+    <div class="vcard-def">A prefix meaning 10⁹, a thousand million.</div>
+    <div class="vcard-def-ko">10⁹ 배. 10억 배.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Giga")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Mega</div>
+    <div class="vcard-ko">메가(M)</div>
+    <div class="vcard-def">A prefix meaning 10⁶, a million.</div>
+    <div class="vcard-def-ko">10⁶ 배. 100만 배. 대문자 M.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Mega")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Kilo</div>
+    <div class="vcard-ko">킬로(k)</div>
+    <div class="vcard-def">A prefix meaning 10³, a thousand.</div>
+    <div class="vcard-def-ko">10³ 배. 1000 배.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Kilo")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Hecto</div>
+    <div class="vcard-ko">헥토(h)</div>
+    <div class="vcard-def">A prefix meaning 10², a hundred.</div>
+    <div class="vcard-def-ko">10² 배. 100 배.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Hecto")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Centi</div>
+    <div class="vcard-ko">센티(c)</div>
+    <div class="vcard-def">A prefix meaning 10⁻², one hundredth.</div>
+    <div class="vcard-def-ko">10⁻² 배. 100 분의 1.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Centi")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Milli</div>
+    <div class="vcard-ko">밀리(m)</div>
+    <div class="vcard-def">A prefix meaning 10⁻³, one thousandth.</div>
+    <div class="vcard-def-ko">10⁻³ 배. 1000 분의 1. 소문자 m.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Milli")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Micro</div>
+    <div class="vcard-ko">마이크로(μ)</div>
+    <div class="vcard-def">A prefix meaning 10⁻⁶, one millionth.</div>
+    <div class="vcard-def-ko">10⁻⁶ 배. 100만 분의 1. 기호 μ(뮤).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Micro")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Nano</div>
+    <div class="vcard-ko">나노(n)</div>
+    <div class="vcard-def">A prefix meaning 10⁻⁹, one thousand millionth.</div>
+    <div class="vcard-def-ko">10⁻⁹ 배. 10억 분의 1.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Nano")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Microlitre</div>
+    <div class="vcard-ko">마이크로리터</div>
+    <div class="vcard-def">A very small unit of capacity; 1 μL = 0.000 001 L.</div>
+    <div class="vcard-def-ko">아주 작은 들이 단위. 1 L = 1 000 000 μL.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Microlitre")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Micrometre</div>
+    <div class="vcard-ko">마이크로미터</div>
+    <div class="vcard-def">A very small unit of length; 1 μm = 0.000 001 m.</div>
+    <div class="vcard-def-ko">아주 작은 길이 단위. 100만 분의 1 m.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Micrometre")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Megametre</div>
+    <div class="vcard-ko">메가미터</div>
+    <div class="vcard-def">A very large unit of length; 1 Mm = 1 000 000 m.</div>
+    <div class="vcard-def-ko">아주 큰 길이 단위. 2.5 Mm = 2 500 000 m.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Megametre")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Gigametre</div>
+    <div class="vcard-ko">기가미터</div>
+    <div class="vcard-def">A very large unit of length; 1 Gm = 10⁹ m.</div>
+    <div class="vcard-def-ko">아주 큰 길이 단위. 10억 m.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Gigametre")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">One millionth</div>
+    <div class="vcard-ko">100만 분의 1</div>
+    <div class="vcard-def">One part out of a million equal parts.</div>
+    <div class="vcard-def-ko">100만으로 나눈 한 조각. 1 μL 는 1 L 의 100만 분의 1.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("One millionth")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Conversion chart</div>
+    <div class="vcard-ko">단위 변환표</div>
+    <div class="vcard-def">A chart that shows how to change from one unit to another.</div>
+    <div class="vcard-def-ko">단위를 바꾸는 표. 작은 단위로 가면 곱하고, 큰 단위로 가면 나눈다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Conversion chart")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="tab-notes">
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">⭕</span>
+    <div class="ch-text">
+      <h2>7.1 Circumference and area of a circle</h2>
+      <span class="ch-sub">원의 둘레와 넓이</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>원의 낱말과 공식 두 개</h3>
+  </div>
+  <div class="note-body">① 반지름 <b>radius (r)</b> — 중심 <b>centre</b> 에서 원 위까지<br>② 지름 <b>diameter (d)</b> — 중심을 지나 끝에서 끝까지<br>&nbsp;&nbsp;→ <b>d = 2r</b>, <b>r = d ÷ 2</b><br>③ 원둘레 <b>circumference (C)</b> — 원 한 바퀴의 길이 = 원의 둘레 <b>perimeter</b><br><br>공식 <b>formulae</b><br>• <b>C = πd = 2πr</b> — 길이라서 단위 cm, m<br>• <b>A = πr²</b> — 넓이 <b>area</b> 라서 단위 cm², m²<br><br>π (<b>pi</b>) = 3.14159… 끝없이 이어지는 무리수 <b>irrational number</b> 다.<br>계산기의 <b>π 버튼</b>을 쓴다. 3.14 로 치면 답이 조금씩 어긋난다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 1 — 넓이에 지름을 그대로 넣으면 답이 4 배</h3>
+  </div>
+  <div class="note-body">넓이 공식 A = πr² 에는 꼭 <b>반지름 radius</b> 을 넣는다.<br><br>Worksheet Q4 (a): 지름 <b>diameter</b> 2 cm<br>✔ r = 2 ÷ 2 = 1 → π × 1² = <b>3.1 cm²</b><br>✘ π × 2² = 12.6 cm² ← 지름을 그대로 제곱한 틀린 답 (4 배)<br><br>Worked example 7.1 b: 지름 7 m → r = 3.5 → π × 3.5² = <b>38.5 m²</b><br><br>★ 그림에서 선이 <b>중심을 지나 끝에서 끝까지</b> 가면 지름, <b>중심에서 원까지만</b> 가면 반지름이다.<br>★ 문제를 풀기 전에 '이게 r 인가 d 인가'를 먼저 적어 둔다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 2 — πr² 는 (πr)² 가 아니다</h3>
+  </div>
+  <div class="note-body">계산 순서 <b>order of operations</b>: 제곱이 곱셈보다 먼저다.<br><br>r = 4 일 때<br>✔ π × 4² = π × 16 = <b>50.3 cm²</b><br>✘ (π × 4)² = 157.9 ← π 까지 같이 제곱한 틀린 답<br><br>★ r 을 <b>먼저 제곱</b>하고 그다음 π 를 곱한다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 3 — 반올림 자리: d.p. 와 s.f. 는 다르다</h3>
+  </div>
+  <div class="note-body">① 소수 자리 <b>decimal places (d.p.)</b> — 소수점 뒤 자리 수<br>&nbsp;&nbsp;37.699… → 2 d.p. = <b>37.70</b><br>&nbsp;&nbsp;★ 끝의 0 을 지워 37.7 로 쓰면 2 d.p. 가 아니다.<br><br>② 유효숫자 <b>significant figures (s.f.)</b> — 0 이 아닌 첫 숫자부터 센다<br>&nbsp;&nbsp;50.265… → 3 s.f. = <b>50.3</b><br>&nbsp;&nbsp;38.484… → 3 s.f. = <b>38.5</b><br><br>③ 가장 가까운 밀리미터 <b>nearest millimetre</b><br>&nbsp;&nbsp;1 cm = 10 mm 라서 cm 로는 소수 첫째 자리(1 d.p.)까지다.<br>&nbsp;&nbsp;d = 15 ÷ π = 4.774… cm → <b>4.8 cm</b> (= 48 mm)<br><br>★ 반올림은 <b>맨 마지막에 한 번만</b> 한다. 중간에 반올림하면 답이 어긋난다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>π 를 남겨서 답하기 — in terms of π</h3>
+  </div>
+  <div class="note-body">"Leave your answer <b>in terms of π</b>" = π 를 3.14 로 바꾸지 말고 글자처럼 남겨라.<br>그래서 답이 반올림 안 된 정확한 값 <b>exact value</b> 이다.<br><br>원둘레 C = πd = 2πr<br>• 지름 8 cm → <b>8π cm</b><br>• 반지름 10 cm → 2 × 10 = <b>20π cm</b><br>• 반지름 1.7 mm → <b>3.4π mm</b><br><br>넓이 A = πr²<br>• 지름 8 cm → r = 4 → <b>16π cm²</b><br>• 반지름 1 cm → 1² = 1 → <b>π cm²</b> (1π 라고 쓰지 않는다)<br><br>★ 원둘레는 반지름을 <b>두 배</b>, 넓이는 반지름을 <b>제곱</b>해서 π 앞에 쓴다. 섞지 않는다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>거꾸로 구하기 — working backwards</h3>
+  </div>
+  <div class="note-body">원둘레나 넓이를 주고 지름·반지름을 묻는 문제.<br><br>① 원둘레 → 지름: <b>d = C ÷ π</b><br>&nbsp;&nbsp;C = 12 cm → d = 12 ÷ π = <b>3.82 cm</b><br>② 원둘레 → 반지름: <b>r = C ÷ (2π)</b><br>&nbsp;&nbsp;C = 80 cm → r = 80 ÷ (2π) = <b>12.73 cm</b><br>③ 넓이 → 반지름: <b>r = √(A ÷ π)</b><br>&nbsp;&nbsp;A = 20 → r = √(20 ÷ π) = <b>2.52 cm</b><br>④ 넓이 → 지름: 반지름을 구한 뒤 <b>× 2</b><br>&nbsp;&nbsp;A = 400 → r = 11.28… → d = <b>22.57 cm</b><br><br>★ 계산기에 <b>괄호</b>를 꼭 친다: 80 ÷ (2π). 80 ÷ 2 × π 로 누르면 틀린다.<br>★ 넓이에 π 가 붙어 있으면 (36π) πr² = 36π → r² = 36 → <b>r = 6</b>. 계산기가 필요 없다.<br>★ 지름을 물었는데 반지름에서 멈추는 실수가 많다. 마지막 × 2 를 잊지 않는다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 4 — 두 단계 문제: 넓이 ↔ 원둘레</h3>
+  </div>
+  <div class="note-body">넓이를 주고 원둘레를 묻거나, 원둘레를 주고 넓이를 묻는다. 바로 못 간다.<br><br>넓이 → <b>반지름</b> → 원둘레<br>&nbsp;&nbsp;A = 40 cm² → r = √(40 ÷ π) = 3.568… → C = 2πr = <b>22.42 cm</b><br><br>원둘레 → <b>반지름</b> → 넓이<br>&nbsp;&nbsp;C = 60 cm → r = 60 ÷ (2π) = 9.549… → A = πr² = <b>286.48 cm²</b><br><br>★ 가운데 반지름 3.568… 을 3.6 으로 반올림하지 말고 계산기에 그대로 둔다(<b>ANS</b> 버튼).<br>★ 문제지에 '40cm' 라고 적혀 있어도 넓이라면 단위는 <b>cm²</b> 다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 5 — 바퀴 문제: 한 바퀴 = 원둘레, 단위 맞추기</h3>
+  </div>
+  <div class="note-body">바퀴가 한 바퀴 <b>revolution</b> 구르면 땅 위로 <b>원둘레만큼</b> 간다.<br><br>Apply Q3: 지름 62 cm 바퀴가 80 바퀴<br>&nbsp;&nbsp;거리 = π × 62 × 80 = 15582.3 cm → ÷ 100 → <b>155.8 m</b><br>&nbsp;&nbsp;★ 답을 <b>metres</b> 로 달라고 했다. cm 로 내면 틀린다.<br><br>Apply Q6: 지름 15 cm 바퀴가 50 m 간다. 몇 바퀴?<br>&nbsp;&nbsp;① 먼저 단위를 맞춘다: 50 m = <b>5000 cm</b><br>&nbsp;&nbsp;② 한 바퀴 = π × 15 = 47.12 cm<br>&nbsp;&nbsp;③ 5000 ÷ 47.12 = 106.10…<br>&nbsp;&nbsp;④ <b>complete revolutions</b> (다 돈 바퀴) → <b>106</b><br><br>★ 106.1 바퀴면 107 번째는 다 돌지 못했다. 그래서 반올림이 아니라 <b>내림 round down</b>.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 6 — 올림이냐 내림이냐는 상황이 정한다</h3>
+  </div>
+  <div class="note-body">계산 결과가 소수로 나와도 답은 사람·물건 수라 정수다. 어느 쪽으로 자를지 따진다.<br><br>① <b>내림 round down</b> — 모자라면 안 되는 자리가 '한 사람/한 마리 몫'일 때<br>&nbsp;&nbsp;• 테이블 하나에 565.5 ÷ 70 = 8.07… → <b>8명</b> (0.07명은 못 앉는다)<br>&nbsp;&nbsp;• 닭 12,050 ÷ 3 = 4016.67 → <b>4016 마리</b> (<b>maximum</b>)<br>&nbsp;&nbsp;• 다 돈 바퀴 106.1 → <b>106</b><br><br>② <b>올림 round up</b> — 덜 사면 일이 다 안 끝날 때<br>&nbsp;&nbsp;• 잔디씨 4087.67 ÷ 50 = 81.75 봉지 → <b>82 봉지</b><br>&nbsp;&nbsp;&nbsp;&nbsp;값 = 82 × £1.49 = <b>£122.18</b><br><br>★ 기계적으로 반올림(81.75 → 82 는 맞지만 8.07 → 8, 4016.67 → 4017 은 틀림)하지 말고 <b>'실제로 가능한가'</b>를 생각한다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 7 — 'Are there enough …?' 는 비교 문장으로 답한다</h3>
+  </div>
+  <div class="note-body">Apply Q8: 지름 180 cm 테이블 18 개, 손님 145 명, 한 명당 70 cm 필요<br><br>① 테이블 둘레 = π × 180 = 565.5 cm<br>② 한 테이블 = 565.5 ÷ 70 = 8.07… → <b>8명</b> (내림)<br>③ 18 × 8 = <b>144 seats</b><br>④ 144 &lt; 145<br><br>답: <b>"18 × 8 = 144 seats, but there are 145 guests, so there are not enough tables."</b><br><br>★ Yes / No 만 쓰면 점수가 안 된다. <b>두 수와 비교</b>를 같이 쓴다.<br>★ 8.07 을 그대로 18 에 곱하면 145.3 이 나와 '충분하다'는 틀린 결론이 된다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 8 — 둘레는 테두리 전부, 고리는 테두리가 두 개</h3>
+  </div>
+  <div class="note-body">둘레 <b>perimeter</b> = 모양을 한 바퀴 도는 <b>모든 테두리</b> 길이.<br><br>① 고리 <b>ring</b> 모양 (Apply Q7, 지름 8 cm·5 cm)<br>&nbsp;&nbsp;바깥 원둘레 + <b>안쪽 원둘레</b> = π × 8 + π × 5 = 13π = <b>40.84 cm</b><br>&nbsp;&nbsp;★ 안쪽 테두리를 빼먹기 쉽다.<br><br>② L 모양 (Apply Q4)<br>&nbsp;&nbsp;안쪽으로 꺾인 변을 바깥으로 밀면 큰 직사각형이 된다 → 2 × (11 + 12) = <b>46 cm</b><br>&nbsp;&nbsp;원 (r = 7) = 2π × 7 = 43.98 cm → <b>Shape A has the greatest perimeter.</b><br><br>③ 'same perimeter' (Apply Q5)<br>&nbsp;&nbsp;정사각형 4 × 60 = 240 → 2πx = 240 → x = 240 ÷ (2π) = <b>38.20 cm</b><br>&nbsp;&nbsp;★ 그림에서 x 가 중심에서 원까지면 반지름이다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 9 — 버린 비율의 분모는 처음 전체</h3>
+  </div>
+  <div class="note-body">Apply Q11: 한 변 6 cm 정사각형 금속판에서 지름 6 cm 원을 잘라낸다.<br><br>① 정사각형 = 6 × 6 = 36 cm²<br>② 원 (r = 3) = 9π = 28.27 cm²<br>③ 버린 부분 = 36 − 9π = 7.73 cm²<br>④ <b>percentage wasted</b> = 7.73 ÷ <b>36</b> × 100 = <b>21.5%</b><br><br>★ 분모는 원(28.27)이 아니라 <b>처음 금속판(36)</b>이다. 28.27 로 나누면 27.3% 로 틀린다.<br>★ 원이 정사각형 안에 꼭 맞으면(<b>inscribed</b>) 정사각형 한 변 = 원의 <b>지름</b>.</div>
+</div>
+</div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🧩</span>
+    <div class="ch-text">
+      <h2>7.2 Areas of compound shapes</h2>
+      <span class="ch-sub">복합 도형의 넓이</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>복합 도형 3단계 + 넓이 공식</h3>
+  </div>
+  <div class="note-body">복합 도형 <b>compound shape</b> = 간단한 도형 여러 개를 붙인 모양.<br><br>① 간단한 도형으로 나눈다 <b>divide</b><br>② 각각 넓이를 구한다<br>③ 더하거나 <b>add</b> 빼서 <b>subtract</b> 원하는 넓이를 구한다<br><br>넓이 공식<br>• 직사각형 <b>rectangle</b>: A = bh<br>• 삼각형 <b>triangle</b>: A = ½bh<br>• 사다리꼴 <b>trapezium</b>: A = ½(a + b)h<br>• 원 <b>circle</b>: A = πr²<br>• 반원 <b>semicircle</b>: A = ½ × πr²<br><br>★ 삼각형은 <b>½</b> 을 꼭 곱한다. 직사각형의 반이다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 1 — 그림에 없는 길이는 빼기로 찾는다</h3>
+  </div>
+  <div class="note-body">Starter a: 전체 높이 5 cm, 위 조각 높이 3 cm → 아래 조각 높이 = 5 − 3 = <b>2 cm</b><br><br>Q1 (h) T 모양<br>&nbsp;&nbsp;기둥 너비 = 20 − 7 − 6 = <b>7</b>, 막대 높이 = 16 − 9 = <b>7</b><br>&nbsp;&nbsp;20 × 7 + 7 × 9 = 140 + 63 = <b>203 cm²</b><br><br>★ <b>가로는 가로끼리, 세로는 세로끼리</b> 빼고 더한다. 가로 길이를 세로에서 빼면 안 된다.<br>★ 같은 길이를 두 번 세지 않도록 나눈 조각에 선을 그어 표시한다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 2 — 색칠한 넓이 = 큰 도형 − 빈 도형</h3>
+  </div>
+  <div class="note-body">색칠한 부분의 넓이 <b>shaded area</b> 는 대부분 <b>빼기</b>로 구한다.<br><br>Worked example 7.2 b: 원 − 삼각형 = 78.5 − 14 = <b>64.5 cm²</b><br>Q2 (b) 테두리 액자: 10 × 12 − (10 − 2.5 − 2.5) × (12 − 1 − 1) = 120 − 50 = <b>70 cm²</b><br>&nbsp;&nbsp;★ 안쪽 크기는 테두리 두께를 <b>양쪽에서</b> 뺀다 (한 번만 빼면 틀린다).<br><br>Apply Q4 (b) 고리: π × 11² − π × 9² = <b>40π = 125.66 cm²</b><br>&nbsp;&nbsp;★ π(11 − 9)² = 4π 로 계산하면 틀린다. 제곱한 뒤에 뺀다.<br><br>★ H 모양처럼 홈이 파인 도형도 '큰 직사각형 − 홈'이 더 빠르다.<br>&nbsp;&nbsp;Q1 (i): 14 × 16 − 2 × 28 = <b>168 cm²</b></div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 3 — 반원의 곧은 변이 지름이다</h3>
+  </div>
+  <div class="note-body">반원 <b>semicircle</b> 이 도형에 붙어 있으면 <b>붙어 있는 곧은 변 = 지름</b>.<br><br>Worked example 7.2 a: 9 cm 변에 반원 → r = 9 ÷ 2 = <b>4.5</b><br>&nbsp;&nbsp;½ × π × 4.5² = 31.8 → 직사각형 27 + 31.8 = <b>58.8 cm²</b><br><br>Your turn c: 4.6 cm 는 중심 점에서 아래까지 → 이번엔 <b>반지름</b>이다.<br>&nbsp;&nbsp;그래서 지름 = 9.2 cm = 삼각형 높이.<br><br>Your turn d: 28 mm + 28 mm<br>&nbsp;&nbsp;위 큰 반원은 <b>반지름</b> 28, 아래 작은 반원은 <b>지름</b> 28 (반지름 14)<br><br>★ 숫자가 같아도 <b>어디서 어디까지 잰 길이인지</b>로 r 인지 d 인지 정한다.<br>★ 반원 넓이에 <b>½</b> 을 빼먹으면 원 넓이가 되어 두 배로 틀린다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 4 — 높이는 밑변에 수직, 빗변은 쓰지 않는다</h3>
+  </div>
+  <div class="note-body">삼각형·사다리꼴의 높이 <b>height (h)</b> 는 밑변 <b>base</b> 에 <b>수직 perpendicular</b> 으로 잰다.<br><br>① 비스듬한 변 길이를 높이로 쓰면 틀린다.<br><br>② Q4 (b): 높이 12 m 가 삼각형 <b>밖</b>(밑변을 늘인 선까지)에 그려져 있어도 그대로 쓴다.<br>&nbsp;&nbsp;½ × 14.4 × 12 = 86.4 − 직사각형 10.5 = <b>75.9 m²</b><br><br>③ Q4 (c): 흰 사각형은 65 m 대각선으로 나뉜 <b>직각삼각형 right-angled triangle</b> 두 개<br>&nbsp;&nbsp;직각을 낀 두 변으로: ½ × 25 × 60 = 750, ½ × 39 × 52 = 1014<br>&nbsp;&nbsp;28 000 − 750 − 1014 = <b>26,236 m²</b><br>&nbsp;&nbsp;★ 65 m 는 빗변이라 넓이 계산에 쓰지 않는다 (함정 숫자).</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 5 — 실생활 문제는 넓이 다음 한 단계가 더 있다</h3>
+  </div>
+  <div class="note-body">Apply Q1 페인트<br>&nbsp;&nbsp;벽 = 15 × (10 − 4) + ½ × 15 × 4 = 90 + 30 = 120 m²<br>&nbsp;&nbsp;★ 전체 높이 10 m 에서 지붕 4 m 를 빼야 벽 높이 6 m 다.<br>&nbsp;&nbsp;페인트 = 8 × 16 = 128 m² → 128 ≥ 120<br>&nbsp;&nbsp;답: <b>"Yes, he has enough paint, because 128 m² is more than 120 m²."</b><br><br>Apply Q2 닭<br>&nbsp;&nbsp;밭 = 140 × 85 + ½ × 20 × 15 = 12,050 m²<br>&nbsp;&nbsp;12,050 ÷ 3 = 4016.67 → <b>maximum</b> 이니 내림 → <b>4016 chickens</b><br><br>★ 넓이만 구하고 멈추면 반쪽 답이다. 문제가 <b>무엇을 묻는지</b>(페인트가 충분한가, 닭 몇 마리) 끝까지 답한다.</div>
+</div>
+</div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📏</span>
+    <div class="ch-text">
+      <h2>7.3 Large and small units</h2>
+      <span class="ch-sub">아주 크고 아주 작은 단위</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>세 가지 양과 기본 단위</h3>
+  </div>
+  <div class="note-body">① 길이 <b>length</b> — 얼마나 긴가 → metre (m)<br>&nbsp;&nbsp;millimetres, centimetres, metres, kilometres<br>② 질량 <b>mass</b> — 얼마나 무거운가 → gram (g)<br>&nbsp;&nbsp;grams, kilograms, 톤 <b>tonne</b> (1 t = 1000 kg)<br>③ 들이 <b>capacity</b> — 그릇에 얼마나 담기나 → litre (L)<br>&nbsp;&nbsp;litres, millilitres<br><br>★ litre 는 <b>capacity</b>, gram 은 <b>mass</b> 다. 무게와 들이를 섞지 않는다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>접두어 표 — prefix 는 '몇 배' 표시</h3>
+  </div>
+  <div class="note-body">접두어 <b>prefix</b> 는 기본 단위(m, L, g) 앞에 붙는다.<br><br>• tera <b>T</b> = 10¹² (1조 배)<br>• giga <b>G</b> = 10⁹ (10억 배)<br>• mega <b>M</b> = 10⁶ (100만 배)<br>• kilo <b>k</b> = 10³ (1000 배)<br>• hecto <b>h</b> = 10² (100 배)<br>• centi <b>c</b> = 10⁻² (100 분의 1)<br>• milli <b>m</b> = 10⁻³ (1000 분의 1)<br>• micro <b>μ</b> = 10⁻⁶ (100만 분의 1)<br>• nano <b>n</b> = 10⁻⁹ (10억 분의 1)<br><br>kilo + metre = kilometre = 1000 m<br>micro + litre = microlitre = 0.000 001 L</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 1 — 대문자 M 과 소문자 m 은 완전히 다르다</h3>
+  </div>
+  <div class="note-body">• <b>M</b> = mega = <b>100만 배</b> (10⁶) → 1 Mm (megametre) = 1 000 000 m<br>• <b>m</b> = milli = <b>1000 분의 1</b> (10⁻³) → 1 mm (millimetre) = 0.001 m<br><br>둘의 차이는 10⁹ 배, 10억 배다.<br><br>★ 'Mm' 를 'mm' 로 읽으면 답이 10억 배 틀린다. <b>대소문자를 꼭 본다.</b><br>★ μ 는 그리스 글자 '뮤 mu'. 'u' 나 'm' 이 아니다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 2 — 큰 단위 → 작은 단위는 곱하고, 반대는 나눈다</h3>
+  </div>
+  <div class="note-body">단위 변환표 <b>conversion chart</b><br>mass: t —×1000→ kg —×1000→ g —×1000→ mg<br>length: km —×1000→ m —×100→ cm —×10→ mm<br>capacity: L —×1000→ mL<br><br>• 큰 단위 → 작은 단위: <b>곱한다</b><br>&nbsp;&nbsp;2.5 Mm = 2.5 × 1 000 000 = <b>2 500 000 m</b><br>• 작은 단위 → 큰 단위: <b>나눈다</b><br>&nbsp;&nbsp;6820 g = 6820 ÷ 1000 = <b>6.82 kg</b><br><br>★ 답을 보고 감으로 확인한다: 큰 단위로 바꾸면 숫자가 <b>작아져야</b> 맞다.<br>★ m → cm 는 1000 이 아니라 <b>100</b>, cm → mm 는 <b>10</b> 이다. 전부 1000 이라고 외우면 틀린다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>10 의 거듭제곱 곱셈·나눗셈 — 소수점 옮기기</h3>
+  </div>
+  <div class="note-body">× 10, × 100, × 1000 … 은 0 의 개수만큼 소수점을 옮긴다.<br><br>• 3.2 × 100 000 (0 이 5 개) → 오른쪽 5 칸 → <b>320 000</b><br>• 0.56 × 1 000 000 000 (0 이 9 개) → 오른쪽 9 칸 → <b>560 000 000</b><br>• 6820 ÷ 1000 (0 이 3 개) → 왼쪽 3 칸 → <b>6.82</b><br>• 4 500 000 ÷ 1 000 000 → 왼쪽 6 칸 → <b>4.5</b><br><br>★ 곱하면 <b>오른쪽</b>(커짐), 나누면 <b>왼쪽</b>(작아짐).<br>★ 칸이 모자라면 0 을 채운다: 0.56 → 560 000 000.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>'Describe a microlitre' — 세 가지를 쓴다</h3>
+  </div>
+  <div class="note-body">Worked example 7.3 모범답<br><br>① 무엇을 재는 단위인가: <b>A microlitre is a very small measure of capacity.</b><br>② 기호: <b>It is represented by the letters μL.</b><br>③ 기본 단위와의 관계: <b>1 μL = 0.000 001 L = 1 × 10⁻⁶ L</b><br>&nbsp;&nbsp;= <b>There are one million microlitres in a litre.</b><br>&nbsp;&nbsp;= 1 microlitre is <b>one millionth</b> of a litre.<br><br>★ '아주 작은 단위다'만 쓰면 반쪽 답이다. <b>양(capacity) · 기호(μL) · 10⁻⁶</b> 셋을 다 쓴다.<br>★ 1 L 안에 μL 가 100만 개, 1 μL 는 1 L 의 100만 분의 1. 두 말은 같은 뜻이다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 3 — 크기 순서는 숫자가 아니라 접두어로</h3>
+  </div>
+  <div class="note-body">Your turn: 8 micrometres, 8 millimetres, 8 centimetres, 8 metres, 8 kilometres, 8 gigametres<br><br>숫자(8)가 모두 같으니 <b>접두어 크기</b>만 비교한다.<br>micro (10⁻⁶) &lt; milli (10⁻³) &lt; centi (10⁻²) &lt; 기본 (1) &lt; kilo (10³) &lt; giga (10⁹)<br><br>답 (smallest first): <b>8 μm, 8 mm, 8 cm, 8 m, 8 km, 8 Gm</b><br><br>★ 'starting with the smallest' — <b>작은 것부터</b>. 순서를 거꾸로 쓰면 다 맞아도 틀린다.<br>★ 숫자가 다르면(예: 5000 mm 와 3 m) 먼저 <b>같은 단위로 바꾼 뒤</b> 비교한다.</div>
+</div>
+</div>
+</div>
+</div>
 <div class="tab-pane" id="tab-classroom">
   <div class="quiz-wrap"><div id="cr-math"></div></div>
 </div>
-<div class="tab-pane active" id="tab-teacher">
+<div class="tab-pane" id="tab-teacher">
   <iframe src="y9m_ch7_problems.html" style="width:100%;height:80vh;border:0;border-radius:14px;background:#fff;"></iframe>
 </div>
 
@@ -340,6 +1184,7 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top:0, behavior:'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();
   });
 });
 </script>
@@ -477,6 +1322,281 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
     playList(r.words, b);
   };
 })();
+</script>
+<script>
+const UNIT_ID = "y9m_unit7";
+function slugify(t){ return t.replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
+let _audio = null;
+function speak(text) {
+  try {
+    // ★2026-09-17: 전체듣기·토막듣기·낱개순차가 돌고 있으면 먼저 멈춘다. 안 그러면 소리가 겹친다.
+    var _ap = document.getElementById('allplay-audio');
+    if (_ap && !_ap.paused) _ap.pause();
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
+    a.onerror = () => fallbackSpeak(cleanText(text));
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(text)));
+  } catch (e) { fallbackSpeak(cleanText(text)); }
+}
+let _voices = [];
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis) { loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9;
+  const en = _voices.filter(v => normLang(v.lang).startsWith('en'));
+  const local = en.filter(v => v.localService);
+  const pool = local.length ? local : en;
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
+  if (v) { u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'en-GB'; }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
+}
+
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
+  //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  // ★2026-09-17: onended·onerror·play().catch() 가 모두 done()을 불러서 한 소리가
+  //   두 갈래로 갈라져 재생되던 것(목소리 겹침)을 막는다. 무슨 일이 나도 딱 한 번만 넘어간다.
+  var fired = false;
+  var go = function(){ if (fired) return; fired = true; if (_seq && _seq.token === token) done(); };
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = go;
+    a.onerror = go;                       // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(go);
+  } catch (e) { go(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
+/* 새로고침해도 보던 탭 그대로 — 마지막에 본 탭을 기억한다 */
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('tab_' + UNIT_ID); } catch(e){}
+  if (location.hash && location.hash.length > 1) t = location.hash.slice(1);
+  if (!t) return;
+  var btn = document.querySelector('.tab-btn[data-tab="' + t + '"]');
+  var pane = document.getElementById('tab-' + t);
+  if (!btn || !pane) return;
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  pane.classList.add('active');
+})();
+
+function annotateCounts(){ document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=document.querySelectorAll('#tab-vocab .vcard').length; }
+function numberVocab(){ let n=0; document.querySelectorAll('#tab-vocab .vcard').forEach(c => { n++; const L=c.querySelector('.vcard-left'); if(L && !L.querySelector('.vcard-num')){ const d=document.createElement('div'); d.className='vcard-num'; d.textContent=n+'번'; L.insertBefore(d, L.firstChild); } }); }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
+// 단어장: 필터 + 검색 통합
+let selectedCats = new Set();   // 비어있으면 전체. 여러 단원 다중선택
+let currentQuery = '';
+
+function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (selectedCats.size === 0 || selectedCats.has(cat));
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', !visibleByCat[target]);
+  });
+}
+
+function filterCards(cat) {
+  if (cat === 'all') { selectedCats.clear(); }
+  else { if (selectedCats.has(cat)) selectedCats.delete(cat); else selectedCats.add(cat); }
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if (b.dataset.cat === 'all') b.classList.toggle('active', selectedCats.size === 0);
+    else b.classList.toggle('active', selectedCats.has(b.dataset.cat));
+  });
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
+  annotateCounts();   // 단원별·전체 단어 수 표시
+  numberVocab();      // 단어 앞 고정 번호 (1번~)
+});
+
+</script>
+<script>
+/* 단원 전체 듣기 + 20개씩 끊어 듣기 — 미리 합쳐 둔 mp3를 재생한다.
+   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일로 합쳤다.
+   ★2026-09-17 대표님 지시: 한 번에 60몇 개는 안 외워진다 → 20개 토막 버튼 추가.
+     전체와 토막이 audio 요소 하나를 같이 쓴다 → 두 소리가 겹칠 수 없다. */
+(function(){
+  var a = document.getElementById('allplay-audio');
+  var btn = document.getElementById('allplay-btn');
+  if (!a || !btn) return;
+  var FULL = a.getAttribute('src');
+  var TOTAL = btn.getAttribute('data-total') || '';
+  var cur = 0;   // 0 = 전체, 1.. = 몇 번째 토막
+  function parts(){ return Array.prototype.slice.call(document.querySelectorAll('.chunkplay')); }
+  function resetLabels(){
+    btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active');
+    parts().forEach(function(b){ b.textContent = b.getAttribute('data-label'); b.classList.remove('active'); });
+  }
+  function activeBtn(){
+    return cur === 0 ? btn : document.querySelector('.chunkplay[data-part="' + cur + '"]');
+  }
+  function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  function playSrc(src, which, title){
+    if (typeof stopSeq === 'function') stopSeq();
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
+    if (a.getAttribute('src') !== src) { a.pause(); a.setAttribute('src', src); a.load(); }
+    cur = which;
+    try { a.currentTime = 0; } catch (e) {}   // 끝까지 들은 뒤 다시 눌러도 처음부터
+    a._title = title;
+    a.play();
+  }
+  window.playAllFrom = function(n, label){
+    var b = document.querySelector('.chunkplay[data-part="' + n + '"]');
+    if (cur === n && !a.paused) { a.pause(); return; }
+    playSrc(FULL.replace('_all.mp3', '_p' + n + '.mp3'), n, (b ? b.getAttribute('data-label').replace('▶ ','') : n + '번째') + ' 듣기');
+  };
+  window.toggleAllPlay = function(){
+    if (cur === 0 && !a.paused) { a.pause(); return; }
+    playSrc(FULL, 0, '단원 전체 듣기' + (TOTAL ? ' — ' + TOTAL + ' 단어' : ''));
+  };
+  a.addEventListener('play', function(){
+    resetLabels();
+    var b = activeBtn(); if (b) { b.textContent = '⏸ 멈춤'; b.classList.add('active'); }
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: a._title || '단원 전체 듣기', artist: UNIT_TITLE, album: 'AMY Study App'
+      });
+      navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
+      navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
+    }
+  });
+  a.addEventListener('pause', resetLabels);
+  a.addEventListener('ended', resetLabels);
+  a.addEventListener('timeupdate', function(){
+    if (a.paused) return;
+    var b = activeBtn(); if (b) b.textContent = '⏸ ' + mmss(a.currentTime);
+  });
+  a.addEventListener('error', function(){ resetLabels(); });
+})();
+
 </script>
 </body>
 </html>
