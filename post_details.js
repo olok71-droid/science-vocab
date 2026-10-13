@@ -74,12 +74,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "디자인 기술 (Mr Mathyk)|2 Point Perspective - Birds Eye, Worms Eye & Eye level cuboids": {
-  "en": "2 Point Perspective - Bird's Eye, Worm's Eye & Eye level cuboids",
-  "ko": "2점 투시(2 Point Perspective) - 조감도(Bird's Eye), 앙시도(Worm's Eye) 및 눈높이(Eye level) 직육면체(cuboids)",
-  "files": [],
-  "at": "2026-10-06"
- },
  "튜터 (Mr Cassels)|Bring your Reading Books!": {
   "en": "Bring your Reading Books!\nEVERYONE remembered their reading books last week. Well done guys :)\n\nRemember, you should have a reading book with you at all times. On a Wednesday particularly, tutor time will often be put aside for silent reading. Make sure you have a book that is in English. Translated books are also okay for you to bring.",
   "ko": "읽기 책(reading book)을 가져오세요!\n지난주에는 모두가 읽기 책을 잊지 않고 가져왔어요. 잘했어요, 여러분 :)\n\n기억하세요, 읽기 책은 항상 가지고 다녀야 합니다. 특히 수요일에는 튜터 시간(tutor time)을 조용히 책 읽기(silent reading)에 쓰는 경우가 많습니다. 영어로 된 책을 꼭 준비하세요. 번역본(translated books)을 가져와도 괜찮습니다.",
@@ -239,6 +233,139 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
+ "과학 (Mr Phillips)|Science Investigation - method": {
+  "en": "Science Investigation - method\nRemember the process and be able to apply for everyday science investigations",
+  "ko": "과학 탐구(Science Investigation) - 방법(method)\n과정을 기억하고 일상적인 과학 탐구(science investigations)에 적용할 수 있도록 하세요",
+  "files": [
+   {
+    "name": "🔬 KS3 Science Investigation Worksheet",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1rtT563jBE2yUeAbkAb29C5y_HDE91AjEiLdQ0sLiGfI/edit?usp=classroom_web",
+    "local": "post_files/1rtT563jBE2yUeAbkAb29C5y_HDE91AjEiLdQ0sLiGfI.pdf"
+   },
+   {
+    "name": "Independent vs Dependent Variables (Explained in 3 Minutes)",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=F9F7Xfh-VTQ",
+    "local": null
+   }
+  ],
+  "at": "2026-10-06"
+ },
+ "과학 (Mr Phillips)|Science investigation - template - please fill in - upload graph here": {
+  "en": "Science investigation - template - please fill in - upload graph here",
+  "ko": "과학 탐구(Science investigation) - 양식(template) - 작성해 주세요 - 그래프(graph)는 여기에 올리세요",
+  "files": [],
+  "at": "2026-10-06"
+ },
+ "과학 (Mr Phillips)|Genes and Alleles": {
+  "en": "Genes and Alleles\nClick on the link below to start the game",
+  "ko": "유전자(genes)와 대립유전자(alleles)\n아래 링크를 클릭해서 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=0Sai0yPtbKz5w3P6jibOn6JvgVjD0Z1hSsrNoerdnlL6J6asGh1FE3fQ10khnX-rkygQjbLcDOJuvd3OhK0b6i1CWjcary3M5_doovIZwba2oqP_UFrwcz_LjNY7P5AdqehKIvkJHYioqpAB7pg2ykBfpltf5_5xu1Rv1h3YOeyrqZFzTpp4rSmp3uS1Kx_FgqFtAxIN5Z9lbAe4w5lYsOQfcQ.16TEasdom4d-IAFDEnBDMQ.SPv7jms6430xoCJG&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-10-06"
+ },
+ "과학 (Mr Phillips)|Everyone gets note book lm": {
+  "en": "Everyone gets note book lm",
+  "ko": "모두 노트북 LM(note book lm)을 받으세요",
+  "files": [
+   {
+    "name": "Sign in - Google Accounts",
+    "kind": "web",
+    "url": "https://notebook.google.com/notebook/03e6ff97-004b-4cd3-aa3d-4baca315f2ec",
+    "local": null
+   }
+  ],
+  "at": "2026-10-06"
+ },
+ "과학 (Mr Phillips)|Atoms and Periodic Table Review": {
+  "en": "Atoms and Periodic Table Review\nClick on the link below to start the game",
+  "ko": "원자(atoms)와 주기율표(periodic table) 복습\n아래 링크를 클릭해서 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=BAJWWe51m-iniAT4K_1gA0EPbzSRwJTb-3l90VmMxg-nhwNIdjPAGIMWk-kAhHBsjCO82CUFthbIWeyOQNQPrOQJOPx9F04RZjdsZZQ8iThjy_j-SmHJrtI6c7SZwfMyl-Wl2SPNbuGmGowEEehnTtkU1XT-rTu37-m_VMF0C_pAAyv8mpokPdZ8DLlJThA5OW37fYyl3PFprKTuZUQguv8p4Q.gjv0NFi1db8oGCOdV2CYPw.Q0P8emrjiQAZK000&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-10-06"
+ },
+ "과학 (Mr Phillips)|Revision for Assessment - Next week": {
+  "en": "Revision for Assessment - Next week",
+  "ko": "평가(assessment) 대비 복습 - 다음 주",
+  "files": [
+   {
+    "name": "Y9 Science Common Assessment 1 26/27.docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1EvIzyIZNJ12xiPSoW0f_Ing_Q2of-L59/view?usp=classroom_web",
+    "local": "pdfs/genes/Y9 Science Common Assessment 1 26_27.docx"
+   },
+   {
+    "name": "Year 9 Science notes - Yu Joh",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/16NsrgHKaBkz2mO-Kn5OVR8MTvQBrAApkcZKYEvoYHl8/edit?usp=classroom_web",
+    "local": "pdfs/genes/Year 9 Science notes - Yu Joh.pdf"
+   },
+   {
+    "name": "Genetics and Heredity Flashcards | Quizlet",
+    "kind": "web",
+    "url": "https://quizlet.com/552168316/genetics-and-heredity-flash-cards/?i=7bim93&x=1jqt",
+    "local": null
+   },
+   {
+    "name": "Y9 CA1 - Keywords and definitions - please fill in",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1-sgZy4mHChqPgRw4y5JEQFk8G6P9bGVt93rV-ueyJ-k/edit?usp=classroom_web",
+    "local": "post_files/1-sgZy4mHChqPgRw4y5JEQFk8G6P9bGVt93rV-ueyJ-k.pdf"
+   }
+  ],
+  "at": "2026-10-06"
+ },
+ "과학 (Mr Phillips)|inheritance worksheet": {
+  "en": "inheritance worksheet\nTry to complete the worksheet - read the instructions carefully - check answers",
+  "ko": "유전(inheritance) 학습지\n학습지를 끝까지 풀어 보세요 - 설명을 꼼꼼히 읽으세요 - 답을 확인하세요",
+  "files": [
+   {
+    "name": "Lesson One Punnet Squares Walkthrough Worksheet - Answers.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1wcYmwBYllWIkCSoDWwSwYGj1aJYlVhoO/view?usp=classroom_web",
+    "local": "post_files/1wcYmwBYllWIkCSoDWwSwYGj1aJYlVhoO.pdf"
+   }
+  ],
+  "at": "2026-10-06"
+ },
+ "과학 (Mr Phillips)|Genes and Inheritance - Recap": {
+  "en": "Genes and Inheritance - Recap",
+  "ko": "유전자(genes)와 유전(inheritance) - 요점 정리",
+  "files": [
+   {
+    "name": "9E - 1.4 Inheritance.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1bXIoVnf4XjXo0XOQEbGPiQe9NeWLPKzu/view?usp=classroom_web",
+    "local": "pdfs/genes/9E - 1.4 Inheritance.pptx"
+   },
+   {
+    "name": "How Mendel's pea plants helped us understand genetics - Hortensia Jiménez Díaz",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=Mehz7tCxjSE",
+    "local": null
+   },
+   {
+    "name": "GCSE Biology - Genetic Diagrams | Punett Squares (2027/28 exams)",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=BtPo9F-nkho",
+    "local": null
+   }
+  ],
+  "at": "2026-10-06"
+ },
  "컴퓨터 과학 (Ms Meha)|Week 8 Python Exercise(If and Loops)": {
   "en": "Week 8 Python Exercise(If and Loops)\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
   "ko": "8주차 파이썬(Python) 연습문제(조건문과 반복문(If and Loops))\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
@@ -248,50 +375,6 @@ window.POST_DETAILS = {
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1GsicBJTsaK_dWQyU7IHDY4qWkZA0lhMI-Fhd0u6z9hA/edit?usp=classroom_web",
     "local": "pdfs/cs/Python_If_Statement.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "컴퓨터 과학 (Ms Meha)|Flowchart and Algorithm Unit Test": {
-  "en": "Flowchart and Algorithm Unit Test\nhttps://forms.gle/bUTHwf4CracYe8XU7",
-  "ko": "순서도(Flowchart)와 알고리즘(Algorithm) 단원 평가(Unit Test)\nhttps://forms.gle/bUTHwf4CracYe8XU7",
-  "files": [
-   {
-    "name": "https://forms.gle/bUTHwf4CracYe8XU7",
-    "kind": "form",
-    "url": "https://forms.gle/bUTHwf4CracYe8XU7",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
- "컴퓨터 과학 (Ms Meha)|Introduction to Python Exercise 1": {
-  "en": "Introduction to Python Exercise 1\nhttps://coder.csuk.io/coder/\n\n\nprint(\"Welcome to Python World\")\nprint(\"Hello\")\nx=5\nprint(x)\nprint(\"x\")\nx=5\ny=6\nprint(x+y)\na=\"Meha\"\nb=\"Nowshath\"\nprint(a+\" \" +b)\na=input(\"What is your name\")\nb=input(\"where are you from\")\nprint(a+\" \"+b)\n\n\nx=5\ny=6\nz=x+y\nprint(z)\nx=int(input(\"Enter your First Number\"))\ny=int(input(\"Enter your second Number\"))\nz=x+y\nprint(z)",
-  "ko": "파이썬 입문(Introduction to Python) 연습문제 1\nhttps://coder.csuk.io/coder/\n\n\nprint(\"Welcome to Python World\")\nprint(\"Hello\")\nx=5\nprint(x)\nprint(\"x\")\nx=5\ny=6\nprint(x+y)\na=\"Meha\"\nb=\"Nowshath\"\nprint(a+\" \" +b)\na=input(\"What is your name\")\nb=input(\"where are you from\")\nprint(a+\" \"+b)\n\n\nx=5\ny=6\nz=x+y\nprint(z)\nx=int(input(\"Enter your First Number\"))\ny=int(input(\"Enter your second Number\"))\nz=x+y\nprint(z)",
-  "files": [
-   {
-    "name": "https://coder.csuk.io/coder/",
-    "kind": "web",
-    "url": "https://coder.csuk.io/coder/",
-    "local": null
-   },
-   {
-    "name": "Lesson 3 - Python Data Types and Arithmetic",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1Ff-y5cLm5w-HG6QB7v7UVP1rHRiT5NpKuVNrD-aiMHI/edit?usp=classroom_web",
-    "local": "pdfs/cs/_Lesson 3 - Python Data Types and Arithmetic.pdf"
-   },
-   {
-    "name": "Lesson 2 - Python Intro Part 2",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1JA5RngpFeLZSWUsxjmRC90T6r9PQ1ixzw6ASPYa4-RE/edit?usp=classroom_web",
-    "local": "pdfs/cs/_Lesson 2 - Python Intro Part 2.pdf"
-   },
-   {
-    "name": "Lesson 1 - Introduction to Python.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1ud0FZwpsCkK3mje_ej7NHK_Bymn_s60H/view?usp=classroom_web",
-    "local": "post_files/1ud0FZwpsCkK3mje_ej7NHK_Bymn_s60H.pptx"
    }
   ],
   "at": "2026-10-06"
@@ -641,6 +724,12 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
+ "영어 (Mr Glanz)|Hi, team. Due to the haze, the school is closed to students today.": {
+  "en": "Hi, team. Due to the haze, the school is closed to students today. I'm sorry about this, because I know you were all looking forward to getting your grades back for CA1. This will have to wait until we get back, unfortunately. I don't want to message or email you your grades, because we give assessments back in feedback lessons. This is so we don't fixate on scores and grades, but rather, teacher feedback and what can be done to improve for next time.   \n\nToday, please see the assignment above this post (it will be there before 9am). We won't be planning our stories; that will also have to wait till we get back. Please do not spend any more than an hour on this, because your other subjects will also need your attention today. \n\nI'm sad I didn't get to see you today to wish you a happy half-term break, but happy holiday nonetheless! Stay safe and healthy out there - it looks like the haze situation is going to be pretty grim until we get some serious rain. Take care, and I'll hopefully see you on the 19th!",
+  "ko": "안녕하세요, 여러분. 연무(haze) 때문에 오늘 학교는 학생 등교가 중단됩니다. 여러분 모두 CA1(지속평가 1, Continuous Assessment 1) 성적을 돌려받기를 기대하고 있었다는 걸 알기에 미안하게 생각합니다. 안타깝지만 이것은 우리가 학교로 돌아올 때까지 기다려야 합니다. 저는 성적을 메시지나 이메일로 보내고 싶지 않은데, 우리는 평가(assessments)를 피드백 수업(feedback lessons)에서 돌려주기 때문입니다. 이렇게 하는 이유는 점수와 성적에 집착하지 않고, 대신 선생님의 피드백과 다음번에 더 나아지기 위해 무엇을 할 수 있는지에 집중하기 위해서입니다.\n\n오늘은 이 게시글 위에 있는 과제(assignment)를 확인해 주세요(오전 9시 전에 올라와 있을 것입니다). 우리 이야기(stories) 구상하기(planning)는 하지 않을 것이며, 그것도 학교로 돌아올 때까지 기다려야 합니다. 오늘은 다른 과목들도 신경 써야 하니, 이 과제에 한 시간 넘게 쓰지 마세요.\n\n오늘 여러분을 만나 즐거운 중간 방학(half-term break)을 보내라고 인사하지 못해 아쉽지만, 그래도 즐거운 방학 보내세요! 밖에서 안전하고 건강하게 지내세요 - 비가 제대로 내리기 전까지는 연무(haze) 상황이 꽤 심각할 것 같습니다. 잘 지내고, 19일에 만나길 바랍니다!",
+  "files": [],
+  "at": "2026-10-09"
+ },
  "수학 (Mr Anan)|Haze Work!!! - Units 5.2 Interior angles of polygons & 5.3 Exterior angles of polygons": {
   "en": "Haze Work!!! - Units 5.2 Interior angles of polygons & 5.3 Exterior angles of polygons\nDear Students,\n\nAs school is closed today due to the haze, please open up the lesson OneNote to Units 5.2 Interior angles of\npolygons & 5.3 Exterior angles of polygons (HAZE WORK!!!)\nGo through the OneNote lesson, including the powerpoint file (also attached here) and complete Textbook Exercise 5.2: All and Textbook Exercise 5.3: All\n\nAs you may have left your textbook (learner's book) at school, Exercise 5.2 and 5.3 are listed in the OneNote at the end of the unit along with the answers for you to check your work. Please submit photos of your completed work when submitting the assignment.\nWe will recap this unit before moving on to the next unit once school opens. The link to the OneNote is attached here again for your reference\nhttps://1drv.ms/o/c/b2fbb2b51b6cc561/IgDHaSMY0EjJR51lY7-4BrhNAQ-PM7nYkoBhIPtVpc0k-l8?e=aQuaZa",
   "ko": "연무 과제!!! - 단원 5.2 다각형의 내각(Interior angles of polygons) & 5.3 다각형의 외각(Exterior angles of polygons)\n학생 여러분,\n\n오늘 연무(haze) 때문에 학교가 휴교했으니, 수업 OneNote에서 단원 5.2 다각형의 내각(Interior angles of\npolygons) & 5.3 다각형의 외각(Exterior angles of polygons) (연무 과제!!!)을 열어 보세요.\nOneNote 수업 내용을 파워포인트 파일(여기에도 첨부함)까지 포함해 끝까지 살펴보고, 교과서 연습문제 5.2(Textbook Exercise 5.2): 전부, 교과서 연습문제 5.3(Textbook Exercise 5.3): 전부를 풀어 오세요.\n\n교과서(learner's book)를 학교에 두고 왔을 수 있으니, 연습문제 5.2와 5.3을 단원 끝 OneNote에 정답과 함께 올려 두었습니다. 정답으로 자기 풀이를 확인하세요. 과제를 제출할 때 다 푼 과제 사진을 함께 제출하세요.\n학교가 다시 문을 열면 다음 단원으로 넘어가기 전에 이 단원을 복습하겠습니다. 참고하라고 OneNote 링크를 여기 다시 첨부합니다.\nhttps://1drv.ms/o/c/b2fbb2b51b6cc561/IgDHaSMY0EjJR51lY7-4BrhNAQ-PM7nYkoBhIPtVpc0k-l8?e=aQuaZa",
@@ -690,11 +779,5 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-09"
- },
- "영어 (Mr Glanz)|Due to the haze, the school is closed to students today.": {
-  "en": "Hi, team. Due to the haze, the school is closed to students today. I'm sorry about this, because I know you were all looking forward to getting your grades back for CA1. This will have to wait until we get back, unfortunately. I don't want to message or email you your grades, because we give assessments back in feedback lessons. This is so we don't fixate on scores and grades, but rather, teacher feedback and what can be done to improve for next time.\n\nToday, please see the assignment above this post (it will be there before 9am). We won't be planning our stories; that will also have to wait till we get back. Please do not spend any more than an hour on this, because your other subjects will also need your attention today.\n\nI'm sad I didn't get to see you today to wish you a happy half-term break, but happy holiday nonetheless! Stay safe and healthy out there - it looks like the haze situation is going to be pretty grim until we get some serious rain. Take care, and I'll hopefully see you on the 19th!",
-  "ko": "안녕하세요, 여러분. 연무(haze) 때문에 오늘 학교는 학생들에게 문을 닫습니다. 여러분 모두 CA1 성적을 돌려받기를 기대하고 있었다는 걸 알기에 미안하게 생각합니다. 안타깝지만 이건 우리가 돌아올 때까지 기다려야 합니다. 성적을 메시지나 이메일로 보내고 싶지 않은데, 우리는 평가(assessments)를 피드백 수업(feedback lessons)에서 돌려주기 때문입니다. 이는 점수와 성적에 집착하지 않고, 대신 선생님의 피드백(feedback)과 다음번에 더 잘하기 위해 무엇을 할 수 있는지에 집중하기 위해서입니다.\n\n오늘은 이 게시글 위에 있는 과제(assignment)를 확인해 주세요(오전 9시 전에 올라와 있을 것입니다). 우리는 이야기(stories) 구상(planning)은 하지 않을 것이며, 그것도 돌아올 때까지 기다려야 합니다. 오늘은 다른 과목들도 신경 써야 하니, 이 과제에 한 시간 넘게 쓰지 마세요.\n\n오늘 여러분을 만나 즐거운 중간 방학(half-term break)을 보내라고 인사하지 못해 아쉽지만, 그래도 즐거운 방학 보내세요! 밖에서 안전하고 건강하게 지내세요 - 비가 제대로 내리기 전까지는 연무(haze) 상황이 꽤 심각할 것 같습니다. 잘 지내고, 19일에 만날 수 있기를 바랍니다!",
-  "files": [],
-  "at": "2026-10-12"
  }
 };
