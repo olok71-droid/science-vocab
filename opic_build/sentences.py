@@ -1,4 +1,4 @@
-# OPIc IM3 돌려쓰기 문장 100개. 여기만 고치고 make_opic.py 를 다시 돌린다.
+# OPIc 돌려쓰기 문장(5-5 대비). 여기만 고치고 make_opic.py 를 다시 돌린다. 새 문장은 맨 뒤에 붙여 번호를 유지한다.
 TOPICS = [
  ("만능 문장 (시작·이유·경험·마무리)", [
   ("That's a good question. Let me think about it for a second.", "좋은 질문이네요. 잠깐만 생각해 볼게요."),
@@ -147,5 +147,38 @@ TOPICS = [
   ("In Korea, the recycling rules are very strict.", "한국은 재활용 규칙이 아주 엄격해요."),
   ("I try to use a tumbler instead of paper cups.", "종이컵 대신 텀블러를 쓰려고 노력해요."),
   ("I think recycling is a small thing everyone can do for the planet.", "재활용은 누구나 지구를 위해 할 수 있는 작은 일이라고 생각해요."),
+ ]),
+ ("과거 경험 이야기 (5단계 6·9번)", [
+  ("I remember one time when something unexpected happened.", "예상치 못한 일이 있었던 때가 기억나요."),
+  ("It was about two years ago, on a hot summer day.", "2년쯤 전, 더운 여름날이었어요."),
+  ("I was with a close friend of mine at the time.", "그때 친한 친구랑 같이 있었어요."),
+  ("All of a sudden, it started to rain really hard.", "갑자기 비가 정말 세게 오기 시작했어요."),
+  ("We didn't know what to do, so we ran into a café nearby.", "어떻게 해야 할지 몰라서 근처 카페로 뛰어 들어갔어요."),
+  ("In the end, it turned out to be one of my best memories.", "결국 그게 제 최고의 추억 중 하나가 됐어요."),
+  ("I'll never forget that day.", "그날을 절대 잊지 못할 거예요."),
+ ]),
+ ("비교·변화 (5단계 14번 어드밴스)", [
+  ("Things have changed a lot compared to the past.", "예전과 비교하면 많은 게 바뀌었어요."),
+  ("In the past, people used to go to the bank in person.", "예전에는 사람들이 은행에 직접 갔어요."),
+  ("These days, most people do everything on their phones.", "요즘은 대부분 사람들이 모든 걸 휴대폰으로 해요."),
+  ("The biggest change is that everything has become more convenient.", "가장 큰 변화는 모든 게 더 편리해졌다는 거예요."),
+  ("As technology has developed, our lifestyle has changed too.", "기술이 발달하면서 우리 생활 방식도 바뀌었어요."),
+  ("When I was young, there weren't many parks in my town.", "제가 어렸을 때는 우리 동네에 공원이 별로 없었어요."),
+  ("Now there are walking trails and bike lanes everywhere.", "지금은 산책로와 자전거 도로가 어디에나 있어요."),
+  ("Back then, we watched movies only at the theater.", "그때는 영화를 극장에서만 봤어요."),
+  ("Now we can watch movies at home anytime with streaming services.", "지금은 OTT로 언제든 집에서 영화를 볼 수 있어요."),
+  ("I think these changes are mostly good, but there are some downsides.", "이런 변화는 대체로 좋지만, 단점도 좀 있다고 생각해요."),
+ ]),
+ ("사회 이슈·의견 (5단계 15번 어드밴스)", [
+  ("One issue people are worried about these days is rising housing prices.", "요즘 사람들이 걱정하는 문제 하나는 집값이 오르는 거예요."),
+  ("It's getting harder for young people to buy their own home.", "젊은 사람들이 자기 집을 사기가 점점 어려워지고 있어요."),
+  ("Another big issue is trash and plastic on beaches and in parks.", "또 다른 큰 문제는 해변과 공원의 쓰레기와 플라스틱이에요."),
+  ("Movie tickets have become so expensive that people just watch at home.", "영화표가 너무 비싸져서 사람들이 그냥 집에서 봐요."),
+  ("I recently read a news article about voice phishing scams.", "최근에 보이스피싱 사기에 대한 뉴스 기사를 읽었어요."),
+  ("Many elderly people lose money because of these scams.", "많은 어르신들이 이런 사기로 돈을 잃어요."),
+  ("Climate change is making the weather more extreme every year.", "기후변화 때문에 날씨가 해마다 더 극단적으로 변하고 있어요."),
+  ("In my opinion, the government should do more to solve this problem.", "제 생각에는 정부가 이 문제를 해결하려고 더 노력해야 해요."),
+  ("At the same time, each of us can make small changes in our daily lives.", "동시에 우리 각자도 일상에서 작은 변화를 만들 수 있어요."),
+  ("I hope things will get better in the near future.", "가까운 미래에 상황이 나아지길 바라요."),
  ]),
 ]
