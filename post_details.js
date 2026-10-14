@@ -37,12 +37,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "수학 (Mr Anan)|Entry Requirements for the Year 10 Accelerated Pathway (Additional Mathematics)": {
-  "en": "Entry Requirements for the Year 10 Accelerated Pathway (Additional Mathematics)\n\nDear Year 9 Students,\n\nWe would like to clarify the entry requirements for the Year 10 Accelerated Mathematics programme, which includes Additional Mathematics.\n\nAll Year 9 students who achieve a minimum of a Grade B in Year 9 Mathematics will be invited to join the Accelerated programme in Year 10.\n\nStudents joining the programme will receive the necessary information and guidance to help them prepare for the accelerated pathway.\n\nWe hope this clarifies the entry requirements and gives you a clear target for the year ahead. Please speak to your Mathematics teacher if you have any questions.\n\nKind regards,\nHS Mathematics Department",
-  "ko": "Year 10 심화 과정(Accelerated Pathway, 추가 수학(Additional Mathematics)) 입반 조건(Entry Requirements)\n\nYear 9 학생 여러분께,\n\n추가 수학(Additional Mathematics)을 포함하는 Year 10 심화 수학 과정(Accelerated Mathematics programme)의 입반 조건을 분명히 안내하고자 합니다.\n\nYear 9 수학에서 최소 B 등급(Grade B) 이상을 받은 Year 9 학생은 모두 Year 10 심화 과정(Accelerated programme)에 초대됩니다.\n\n이 과정에 들어오는 학생은 심화 과정을 준비하는 데 필요한 정보와 안내를 받게 됩니다.\n\n이 안내로 입반 조건이 분명해지고 앞으로 한 해의 뚜렷한 목표가 되기를 바랍니다. 궁금한 점이 있으면 수학 선생님께 말씀하세요.\n\n감사합니다,\n고등부 수학과(HS Mathematics Department)",
-  "files": [],
-  "at": "2026-10-06"
- },
  "미술|2 Samples and 3-4 photos uploaded": {
   "en": "2 Samples and 3-4 photos uploaded\nHi all, please make sure your 2 samples are complete before our next class. Meaning your pieces must:\n-fill the whole page\n-use colour or shading where appropriate\n-have outlines where appropriate\n\nPlease also make sure you have 3-4 photos uploaded to your slide. Please refer to the lesson slides 11-12 for more details if you are unsure. You DO NOT need to start drawing from your photos. We will do this next lesson.",
   "ko": "샘플(sample) 2개와 사진 3~4장 업로드\n여러분 안녕하세요, 다음 수업 전까지 샘플(sample) 2개를 꼭 완성해 오세요. 즉, 작품은 다음을 갖춰야 합니다:\n-페이지 전체를 채울 것\n-알맞은 곳에 색(colour)이나 명암(shading)을 넣을 것\n-알맞은 곳에 윤곽선(outlines)을 그릴 것\n\n또한 자기 슬라이드(slide)에 사진 3~4장을 꼭 올려 두세요. 잘 모르겠으면 수업 슬라이드(lesson slides) 11~12번에서 자세한 내용을 확인하세요. 사진을 보고 그리기는 아직 시작하지 않아도 됩니다(DO NOT need). 그건 다음 수업에서 할 것입니다.",
@@ -411,19 +405,6 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-06"
  },
- "중국어 (Ying Ying老师)|Y9 Mandarin NotebookLM revision tools": {
-  "en": "Y9 Mandarin NotebookLM revision tools",
-  "ko": "9학년 중국어(Mandarin) NotebookLM 복습 도구(revision tools)",
-  "files": [
-   {
-    "name": "Sign in - Google Accounts",
-    "kind": "web",
-    "url": "https://notebook.google.com/notebook/019da2c6-3844-4a00-8d40-07d8eda59405",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
  "영어 (Mr Glanz)|Fish cheeks narrative (Not homework!)": {
   "en": "Fish cheeks narrative (Not homework!)\nEstigfend",
   "ko": "Fish cheeks 서사문(narrative) (숙제 아님!)\nEstigfend",
@@ -665,12 +646,6 @@ window.POST_DETAILS = {
     "local": "post_files/1xHLU88kf_dBaxzaAObV8OMDHDvB86FAx7d-MxY8fjIw.pdf"
    }
   ],
-  "at": "2026-10-08"
- },
- "수학 (Mr Anan)|Dear High School Students,": {
-  "en": "Dear High School Students,\n\nTo support greater clarity and consistency, the HS Mathematics Department will use the following grade boundaries as a general guide for internal Mathematics assessments:\n\nKey Stage 3: Year 7 to 9: \n90% to 100% = A*\n80% to 89% = A\n70% to 79% = B\n55% to 69% = C\n40% to 54% = D\n< 39% = E (the lowest exam grade reported at KS3)\nKey Stage 4: Year 10 & 11, including Year 9 assessed on IGCSE topics\n90% to 100% = A*\n75% to 89% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U\nKey Stage 5: Year 12 & 13\n85% to 100% = A* (AS maximum grade is A)\n75% to 84% = A\n60% to 74% = B\n50% to 59% = C\n40% to 49% = D\n30% to 39% = E \n< 30% = U \nThis approach is intended to provide students with clear targets, encourage students to strive for excellence and support consistent monitoring of progress throughout the academic year.\n\nKind regards,\nHS Mathematics Department",
-  "ko": "고등부 학생 여러분께,\n\n더 명확하고 일관된 기준을 위해, 고등부 수학과(HS Mathematics Department)는 교내 수학 평가(internal Mathematics assessments)에 다음 등급 기준(grade boundaries)을 일반 지침으로 사용합니다:\n\n키 스테이지 3(Key Stage 3): 7학년~9학년(Year 7 to 9): \n90%~100% = A*\n80%~89% = A\n70%~79% = B\n55%~69% = C\n40%~54% = D\n39% 미만 = E (KS3에서 보고되는 가장 낮은 시험 등급)\n키 스테이지 4(Key Stage 4): 10학년·11학년(Year 10 & 11), IGCSE 단원으로 평가받는 9학년(Year 9) 포함\n90%~100% = A*\n75%~89% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U\n키 스테이지 5(Key Stage 5): 12학년·13학년(Year 12 & 13)\n85%~100% = A* (AS 최고 등급은 A)\n75%~84% = A\n60%~74% = B\n50%~59% = C\n40%~49% = D\n30%~39% = E \n30% 미만 = U \n이 방식은 학생들에게 명확한 목표를 제시하고, 학생들이 탁월함을 향해 노력하도록 격려하며, 학년 내내 학업 진도(progress)를 일관되게 점검하는 것을 돕기 위한 것입니다.\n\n감사합니다.\n고등부 수학과(HS Mathematics Department)",
-  "files": [],
   "at": "2026-10-08"
  },
  "휴머니티 (Mr Lawrence)|Term 1 History Homework": {

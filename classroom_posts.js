@@ -40,7 +40,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "과제",
   "title": "Haze Work!!! - Units 5.2 Interior angles of polygons & 5.3 Exterior angles of polygons",
-  "ko": "다각형 내각·외각(5.2·5.3) 연휴 과제",
+  "ko": "다각형 내각·외각 단원 휴교 과제",
   "due": "2026-10-12",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -49,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "과제",
   "title": "Year 9 Common Assessment Task 1 Term 1 2025",
-  "ko": "9학년 공통평가 과제 1 (1학기)",
+  "ko": "9학년 1학기 공통평가 과제 1",
   "due": "2026-11-06",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -67,7 +67,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-08",
   "type": "과제",
   "title": "Periodic table - check your progress",
-  "ko": "주기율표 학습 점검 과제",
+  "ko": "주기율표 단원 학습 점검 과제",
   "due": "2026-10-21",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -76,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-08",
   "type": "자료",
   "title": "9C1 - Periodic Table - last lesson - revision",
-  "ko": "주기율표 단원 마지막 수업 복습 자료",
+  "ko": "주기율표 마지막 수업 복습 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -85,16 +85,16 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "과제",
   "title": "Ionic or covalent",
-  "ko": "이온·공유 결합 구분 퀴즈(Wayground)",
+  "ko": "이온결합·공유결합 구분 퀴즈(Wayground)",
   "due": "2026-10-20",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg5NTY4NDk0MTQ5/details"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-10-07",
   "type": "자료",
   "title": "Properties of Covalent and Ionic Compounds",
-  "ko": "공유·이온 화합물의 성질 자료",
+  "ko": "공유·이온 화합물의 성질 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -157,9 +157,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-06",
   "type": "과제",
   "title": "2 Samples and 3-4 photos uploaded",
-  "ko": "샘플 2개와 사진 3~4장 업로드",
+  "ko": "작품 샘플 2개와 사진 3~4장 올리기",
   "due": "2026-10-20",
-  "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
+  "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1/a/ODg5Mjg3OTkyMTk4/details"
  },
  {
   "subject": "디자인 기술 (Mr Mathyk)",
@@ -184,7 +184,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "과제",
   "title": "Giant Covalent Structures",
-  "ko": "거대 공유 구조 퀴즈(Wayground)",
+  "ko": "거대 공유결합 구조 퀴즈(Wayground)",
   "due": "2026-10-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg5MDMxNzg5MTkx/details"
  },
@@ -193,7 +193,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "과제",
   "title": "Simple and Giant structures - worksheet",
-  "ko": "단순·거대 구조 워크시트 과제",
+  "ko": "단순·거대 구조 학습지 풀기",
   "due": "2026-10-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODczNzY5MDE1ODAw/details"
  },
@@ -211,7 +211,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "공지",
   "title": "Mathematics: Assessment Returns",
-  "ko": "시험지·점수는 보통 시험 2주 뒤 돌려줌",
+  "ko": "채점된 시험지와 점수는 시험 2주 뒤 돌려줌",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -301,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-01",
   "type": "자료",
   "title": "CA1 - Check your answers",
-  "ko": "CA1 시험 답 확인 자료",
+  "ko": "CA1 평가 답안 확인 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -328,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-29",
   "type": "과제",
   "title": "Art Lesson - Tuesday 29th Sept",
-  "ko": "9월 29일 화요일 미술 수업 과제",
+  "ko": "미술 수업 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -355,7 +355,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "자료",
   "title": "Science Investigation - method",
-  "ko": "과학 탐구 방법 안내 자료",
+  "ko": "과학 탐구 실험 방법 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -391,7 +391,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "과제",
   "title": "Genes and Alleles",
-  "ko": "유전자와 대립유전자 퀴즈",
+  "ko": "유전자와 대립유전자 퀴즈(Wayground)",
   "due": "2026-10-09",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -409,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "과제",
   "title": "Atoms and Periodic Table Review",
-  "ko": "원자·주기율표 복습 퀴즈",
+  "ko": "원자·주기율표 복습 퀴즈(Wayground)",
   "due": "2026-10-09",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -418,7 +418,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-24",
   "type": "자료",
   "title": "Revision for Assessment - Next week",
-  "ko": "다음 주 평가 대비 복습 자료",
+  "ko": "평가 대비 복습 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -427,7 +427,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "과제",
   "title": "inheritance worksheet",
-  "ko": "유전 워크시트 과제",
+  "ko": "유전 학습지 풀기",
   "due": "2026-09-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -436,7 +436,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "자료",
   "title": "Genes and Inheritance - Recap",
-  "ko": "유전자와 유전 요약 정리 자료",
+  "ko": "유전자와 유전 요약 복습 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -445,7 +445,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "공지",
   "title": "MAA’s American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026",
-  "ko": "AMC 대회 방과후 교내 시행, 노트북 지참",
+  "ko": "AMC 대회 방과후 교내 실시, 노트북 지참",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -454,7 +454,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-23",
   "type": "공지",
   "title": "MAA’s American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026 Registration - St. Joseph's Institution International",
-  "ko": "AMC 대회 접수 안내, 결제 뒤 구글폼 작성",
+  "ko": "AMC 대회 신청 안내, 노트북으로만 응시",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -484,42 +484,6 @@ window.CLASSROOM_POSTS = [
   "ko": "튜터 반장 투표",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
- },
- {
-  "subject": "수학 (Mr Anan)",
-  "date": "2026-09-22",
-  "type": "공지",
-  "title": "Dear High School Students,",
-  "ko": "수학 내부시험 학년별 등급 기준 안내",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
- },
- {
-  "subject": "수학 (Mr Anan)",
-  "date": "2026-09-22",
-  "type": "공지",
-  "title": "Entry Requirements for the Year 10 Accelerated Pathway (Additional Mathematics)",
-  "ko": "9학년 수학 B 이상이면 10학년 심화반 초대",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
- },
- {
-  "subject": "튜터 (Mr Cassels)",
-  "date": "2026-09-22",
-  "type": "과제",
-  "title": "Bring your Reading Books!",
-  "ko": "독서책 가져오기 (준비물: 독서책)",
-  "due": "2026-09-23",
-  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
- },
- {
-  "subject": "중국어 (Ying Ying老师)",
-  "date": "2026-09-22",
-  "type": "자료",
-  "title": "Y9 Mandarin NotebookLM revision tools",
-  "ko": "9학년 중국어 NotebookLM 복습 도구",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-13 18:12";
+window.CLASSROOM_POSTS_AT = "2026-10-14 18:10";
