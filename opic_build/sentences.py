@@ -132,8 +132,8 @@ TOPICS = [
   ("These days, a lot of new buildings are going up.", "요즘 새 건물이 많이 들어서고 있어요."),
  ]),
  ("날씨·계절 (돌발 단골)", [
-  ("It's hot and humid almost all year round here.", "여기는 거의 일 년 내내 덥고 습해요."),
-  ("In the rainy season, it rains heavily almost every afternoon.", "우기에는 거의 매일 오후에 비가 많이 와요."),
+  ("In Korea, summer is hot and humid, and winter is very cold.", "한국은 여름에는 덥고 습하고, 겨울에는 아주 추워요."),
+  ("During the rainy season in July, it rains a lot for a few weeks.", "7월 장마철에는 몇 주 동안 비가 많이 와요."),
   ("I always carry an umbrella with me.", "저는 항상 우산을 가지고 다녀요."),
   ("Korea has four distinct seasons.", "한국은 사계절이 뚜렷해요."),
   ("My favorite season is autumn because the weather is cool and clear.", "제가 제일 좋아하는 계절은 가을이에요. 날씨가 선선하고 맑거든요."),
