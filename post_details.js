@@ -12,31 +12,6 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-06"
  },
- "수학 (Mr Anan)|MAA’s American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026": {
-  "en": "MAA’s American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026\n\nFurther information:\n1. The competition will most likely be held after school (4pm) in one of the classrooms at SJI on the 6th of November 2026\n2. Students who register for the competition are required to bring your own laptop to access the competition (Tablets, phones and iPads are not allowed)",
-  "ko": "MAA 미국 수학 경시대회 10A/12A(MAA’s American Mathematics Contests 10A/12A, MAA-AMC 10A/12A) 2026\n\n추가 안내:\n1. 대회는 2026년 11월 6일 방과 후(오후 4시)에 SJI 교실 중 한 곳에서 열릴 가능성이 높습니다\n2. 대회에 등록한 학생은 대회에 접속하기 위해 본인 노트북(laptop)을 가져와야 합니다(태블릿, 휴대폰, 아이패드는 허용되지 않습니다)",
-  "files": [],
-  "at": "2026-10-06"
- },
- "수학 (Mr Anan)|MAA’s American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026 Registration - St. Josephs Institution International": {
-  "en": "MAA’s American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) 2026 Registration - St. Joseph's Institution International School\n\nThis registration is only opened for students studying in Malaysia.\n\nMAA’s American Mathematics Contests 10A/12A (MAA-AMC 10A/12A) is open to ALL Year 8 to 12 (Secondary 2 to A-Lvls/STPM) students studying in Malaysia.\n\nYear Level: 8 to 12 (Secondary 2 to A-Levels/STPM), According to School Year Level in August 2026\nLanguage(s): English\n𝗖𝗢𝗡𝗧𝗘𝗦𝗧 𝗗𝗔𝗧𝗘 for St. Joseph's Institution International School Only: 6 November 2026 (Online with Physical Proctoring)\n𝗥𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗶𝗼𝗻 𝗖𝗟𝗢𝗦𝗜𝗡𝗚: 9 October 2026!\n\nVisit our website for Contest Info: https://smo-testing.com/maa-amc/\n\n\n**Only Laptop/ Desktop is allowed to access contest\nplatform. Tablets and iPads are not allowed.\n\n***Please ensure student year levels and school names\nprovided are accurate.\n\n****To Student's studying outside of Malaysia, kindly\ncontact your respective Country Partners. No refunds will be\nentertained after payment.\n\n*****Contest entry is available on a first come first\nserved basis, so register as soon as possible to avoid disappointment.\n\nPlease remember to fill in the Google Registration Form after payment. Refer to your Catalog receipt in your email for the link. Thank you.",
-  "ko": "MAA 미국 수학 경시대회 10A/12A(MAA’s American Mathematics Contests 10A/12A, MAA-AMC 10A/12A) 2026 등록(Registration) - 세인트조셉 인스티튜션 국제학교(St. Joseph's Institution International School)\n\n이 등록은 말레이시아에서 공부하는 학생에게만 열려 있습니다.\n\nMAA 미국 수학 경시대회 10A/12A(MAA-AMC 10A/12A)는 말레이시아에서 공부하는 Year 8~12(Secondary 2~A-Level/STPM) 학생 모두에게 열려 있습니다.\n\n학년(Year Level): 8~12(Secondary 2~A-Level/STPM), 2026년 8월 기준 학교 학년에 따름\n언어(Language): 영어(English)\n세인트조셉 인스티튜션 국제학교 전용 대회 날짜(CONTEST DATE): 2026년 11월 6일(온라인 응시, 현장 감독관 있음(Physical Proctoring))\n등록 마감(Registration CLOSING): 2026년 10월 9일!\n\n대회 정보는 저희 웹사이트를 방문하세요: https://smo-testing.com/maa-amc/\n\n\n**대회 플랫폼(contest\nplatform)에는 노트북/데스크톱으로만 접속할 수 있습니다. 태블릿과 아이패드는 허용되지 않습니다.\n\n***입력한 학생 학년과 학교 이름이\n정확한지 꼭 확인해 주세요.\n\n****말레이시아 밖에서 공부하는 학생은\n각 나라의 협력 기관(Country Partners)에 문의해 주세요. 결제 후에는 환불이\n되지 않습니다.\n\n*****대회 참가는 선착순(first come first\nserved)이니, 놓치지 않도록 되도록 빨리 등록하세요.\n\n결제 후 구글 등록 양식(Google Registration Form)을 꼭 작성해 주세요. 링크는 이메일로 받은 Catalog 영수증을 참고하세요. 감사합니다.",
-  "files": [
-   {
-    "name": "https://smo-testing.com/maa-amc/",
-    "kind": "web",
-    "url": "https://smo-testing.com/maa-amc/",
-    "local": null
-   },
-   {
-    "name": "MAA-AMC 10A/12A 2026 Reg-St. Joseph Intl",
-    "kind": "web",
-    "url": "https://catalog.billplz.com/smo/link/amc10a12a-stjoseph",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
  "미술|2 Samples and 3-4 photos uploaded": {
   "en": "2 Samples and 3-4 photos uploaded\nHi all, please make sure your 2 samples are complete before our next class. Meaning your pieces must:\n-fill the whole page\n-use colour or shading where appropriate\n-have outlines where appropriate\n\nPlease also make sure you have 3-4 photos uploaded to your slide. Please refer to the lesson slides 11-12 for more details if you are unsure. You DO NOT need to start drawing from your photos. We will do this next lesson.",
   "ko": "샘플(sample) 2개와 사진 3~4장 업로드\n여러분 안녕하세요, 다음 수업 전까지 샘플(sample) 2개를 꼭 완성해 오세요. 즉, 작품은 다음을 갖춰야 합니다:\n-페이지 전체를 채울 것\n-알맞은 곳에 색(colour)이나 명암(shading)을 넣을 것\n-알맞은 곳에 윤곽선(outlines)을 그릴 것\n\n또한 자기 슬라이드(slide)에 사진 3~4장을 꼭 올려 두세요. 잘 모르겠으면 수업 슬라이드(lesson slides) 11~12번에서 자세한 내용을 확인하세요. 사진을 보고 그리기는 아직 시작하지 않아도 됩니다(DO NOT need). 그건 다음 수업에서 할 것입니다.",
@@ -109,19 +84,6 @@ window.POST_DETAILS = {
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1vkzVs9q8Y56BnuS6DIQ7OrOxM3AOF7ab/view?usp=classroom_web",
     "local": "pdfs/tutor/21st to 28th.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "튜터 (Mr Cassels)|Tutor Prefect Vote": {
-  "en": "Tutor Prefect Vote\nTutor Prefect Vote\nhttps://docs.google.com/forms/d/e/1FAIpQLScbcT7zr1MOj3OLqX3DLA3sKhOUwUdE3twLmaZGukSCv8ByBA/viewform?usp=header",
-  "ko": "튜터 반장 투표(Tutor Prefect Vote)\n튜터 반장 투표(Tutor Prefect Vote)\nhttps://docs.google.com/forms/d/e/1FAIpQLScbcT7zr1MOj3OLqX3DLA3sKhOUwUdE3twLmaZGukSCv8ByBA/viewform?usp=header",
-  "files": [
-   {
-    "name": "Tutor Prefect Vote",
-    "kind": "form",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLScbcT7zr1MOj3OLqX3DLA3sKhOUwUdE3twLmaZGukSCv8ByBA/viewform?usp=header",
-    "local": null
    }
   ],
   "at": "2026-10-06"
@@ -322,44 +284,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "과학 (Mr Phillips)|inheritance worksheet": {
-  "en": "inheritance worksheet\nTry to complete the worksheet - read the instructions carefully - check answers",
-  "ko": "유전(inheritance) 학습지\n학습지를 끝까지 풀어 보세요 - 설명을 꼼꼼히 읽으세요 - 답을 확인하세요",
-  "files": [
-   {
-    "name": "Lesson One Punnet Squares Walkthrough Worksheet - Answers.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1wcYmwBYllWIkCSoDWwSwYGj1aJYlVhoO/view?usp=classroom_web",
-    "local": "post_files/1wcYmwBYllWIkCSoDWwSwYGj1aJYlVhoO.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|Genes and Inheritance - Recap": {
-  "en": "Genes and Inheritance - Recap",
-  "ko": "유전자(genes)와 유전(inheritance) - 요점 정리",
-  "files": [
-   {
-    "name": "9E - 1.4 Inheritance.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1bXIoVnf4XjXo0XOQEbGPiQe9NeWLPKzu/view?usp=classroom_web",
-    "local": "pdfs/genes/9E - 1.4 Inheritance.pptx"
-   },
-   {
-    "name": "How Mendel's pea plants helped us understand genetics - Hortensia Jiménez Díaz",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=Mehz7tCxjSE",
-    "local": null
-   },
-   {
-    "name": "GCSE Biology - Genetic Diagrams | Punett Squares (2027/28 exams)",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=BtPo9F-nkho",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
  "컴퓨터 과학 (Ms Meha)|Week 8 Python Exercise(If and Loops)": {
   "en": "Week 8 Python Exercise(If and Loops)\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
   "ko": "8주차 파이썬(Python) 연습문제(조건문과 반복문(If and Loops))\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
@@ -519,31 +443,6 @@ window.POST_DETAILS = {
     "local": "pdfs/humanities/PW Lesson 9 - Why do people choose to live in areas of tectonic hazards_.pptx"
    }
   ],
-  "at": "2026-10-06"
- },
- "음악 (Mr Everett)|FOBISIA Battle of the Bands 2027": {
-  "en": "FOBISIA Battle of the Bands 2027\nAre you ready to take the stage?\n\nWe are thrilled to invite student rock and pop bands to enter the 2027 FOBISIA Battle of the Bands, hosted by The British School Guangzhou in China!\n\nWhether you have been rehearsing together for months or are forming a new line-up this term, this is your chance to showcase your musical talent, represent our school, and potentially perform live in China this coming January.\n\nCompetition Categories\n\nLower Secondary (KS3): Ages 11–14 (Years 7–9)\nUpper Secondary (KS4 & KS5): Ages 14–18 (Years 10–13)\nOur school can register up to 2 bands per category (4 bands total).\n\nHow It Works & Key Dates\nStep 1: Express Your Interest (By Wednesday, 30th September)\n\nComplete this google form by Wednesday, 30th September to register your band or individual interest.\n\nIf you are looking for band members, let us know on the form so we can help connect you!\n\nStep 2: Selection & Audition Recording (By Sunday, 18th October)\nBased on interest and category limits, the Music Department will confirm our school's entry bands by Monday, 5th October.\n\nSelected bands will work with the Music Department to rehearse and record a video submission, due by 18th October.\n\nStep 3: The Live Finals in Guangzhou, China (21st–24th January 2027)\nIf your band is selected as an international finalist by the FOBISIA judges on 28th October, you will travel to Guangzhou, China in January for workshops, soundchecks, and the Live Final performance!\n\nImportant Note on Travel & Commitment\nReaching the Live Finals in China is an incredible opportunity, but it does involve travel. If selected for the live finals, students will need parental consent and there will be associated travel costs (including flights, accommodation, visa fees, and a festival entry fee covering on-site meals, airport transfers, and workshops). Please discuss this with your parents before signing up.\n\nGot questions or need help finding a band? Stop by the Music Department or send an email. Let’s make some noise!",
-  "ko": "FOBISIA 밴드 경연대회(Battle of the Bands) 2027\n무대에 설 준비가 되었나요?\n\n중국 광저우 브리티시 스쿨(The British School Guangzhou)이 주최하는 2027 FOBISIA 밴드 경연대회(Battle of the Bands)에 학생 록(rock)·팝(pop) 밴드의 참가를 초대하게 되어 무척 기쁩니다!\n\n몇 달 동안 함께 리허설(rehearsal)을 해 왔든, 이번 학기에 새 멤버 구성(line-up)을 꾸리든, 이번이 여러분의 음악적 재능을 보여 주고, 우리 학교를 대표하고, 다가오는 1월에 중국에서 라이브(live) 공연을 할 수도 있는 기회입니다.\n\n경연 부문(Competition Categories)\n\n중등 저학년(Lower Secondary, KS3): 11–14세 (7–9학년)\n중등 고학년(Upper Secondary, KS4 & KS5): 14–18세 (10–13학년)\n우리 학교는 부문마다 최대 2개 밴드(총 4개 밴드)까지 등록할 수 있습니다.\n\n진행 방식과 주요 날짜\n1단계: 참가 의사 밝히기 (9월 30일 수요일까지)\n\n밴드 또는 개인 참가 의사를 등록하려면 9월 30일 수요일까지 이 구글 폼을 작성하세요.\n\n밴드 멤버를 찾고 있다면 폼에 알려 주세요. 연결해 드릴 수 있도록 돕겠습니다!\n\n2단계: 선발 및 오디션 녹화(Audition Recording) (10월 18일 일요일까지)\n참가 의사와 부문별 인원 제한을 바탕으로, 음악과(Music Department)가 10월 5일 월요일까지 우리 학교 참가 밴드를 확정합니다.\n\n선발된 밴드는 음악과와 함께 리허설하고 제출용 영상을 녹화하며, 마감은 10월 18일입니다.\n\n3단계: 중국 광저우 라이브 결선(Live Finals) (2027년 1월 21일–24일)\n10월 28일에 FOBISIA 심사위원이 여러분의 밴드를 국제 결선 진출팀(international finalist)으로 선정하면, 1월에 중국 광저우로 가서 워크숍(workshop), 사운드체크(soundcheck), 라이브 결선 공연(Live Final performance)에 참여합니다!\n\n이동과 참여 약속에 관한 중요 안내\n중국 라이브 결선에 진출하는 것은 놀라운 기회이지만, 이동이 필요합니다. 라이브 결선에 선발되면 학생은 부모 동의가 필요하고, 관련 이동 비용(항공권, 숙박, 비자 비용, 그리고 현장 식사·공항 이동·워크숍을 포함하는 페스티벌 참가비)이 듭니다. 신청하기 전에 부모님과 상의하세요.\n\n질문이 있거나 밴드 찾는 데 도움이 필요한가요? 음악과에 들르거나 이메일을 보내세요. 신나게 소리를 내 봅시다!",
-  "files": [
-   {
-    "name": "Battle of the Bands Competitions 2026/27",
-    "kind": "form",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSdSdVGCdvyRj8otS1mOww5qxNsuGS6-cG3175YTXXYKfhcJwQ/viewform",
-    "local": null
-   },
-   {
-    "name": "FOBISIA BOtB 2027_BSG_Flyer (1).pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1szGGOsFYMnTy_9dV1O9uxr7KF6kTsSJO/view?usp=classroom_web",
-    "local": "pdfs/music/FOBISIA BOtB 2027_BSG_Flyer (1).pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "드라마|Playwright Profile": {
-  "en": "Playwright Profile\nLearning Question: How can understanding the playwright help us perform a monologue more effectively?\n\nYour task is to create a one-page digital Playwright Profile Sheet. Think of it as a visual fact file, mood board, or digital collage that introduces your playwright and helps you understand how their work should be performed.\n\nYour profile should be visually engaging and include a mixture of images, colours, key facts, quotations, and short written explanations. It can be made on Canva, Google Docs or Google Slides but cannot be an AI generated profile. \n\nMake sure you fact-check your information- if using AI to help you find information, ask it to provide links to its sources and make sure you take a look and check them. \n\nUPLOAD YOUR WORK TO THIS ASSIGNMENT ONCE COMPLETED\nPlaywright Profile Must Include:\n\n1. Playwright Snapshot\nInclude:\nFull name\nDate of birth (and death if applicable)\nNationality\nA photograph or portrait\n3-5 interesting facts about their life\n\n2. Other Works\nInclude:\nImages of 2-3 other plays written by the playwright\nBrief descriptions of the theme or topic of each play\nAny awards, achievements, or notable productions\n\n3. Themes and Ideas\nWhat topics does this playwright frequently explore?\nFor example:\nIdentity\nFamily\nPower\nLove\nJustice\nSocial class\nFriendship\nConflict\nPresent these visually using:\nKeywords\nImages\nSymbols\nOr \nA word cloud\n4. Style of Theatre\nResearch the style(s) the playwright is known for.\nExamples:\nNaturalism\nRealism\nComedy\nTragedy\nEpic Theatre\nPhysical Theatre\nTheatre of the Absurd\nInclude:\nA brief explanation of the style\nImages that represent the style\nExamples of how actors typically perform in this style\n\n5. Audience Impact\nConsider the playwright's intentions.\nInclude:\nWhat they want audiences to think about\nWhat they want audiences to feel\nA quotation from the playwright (if you can find one)",
-  "ko": "극작가 프로필(Playwright Profile)\n학습 질문(Learning Question): 극작가(playwright)를 이해하는 것이 독백(monologue)을 더 효과적으로 공연하는 데 어떻게 도움이 될까요?\n\n여러분의 과제는 한 페이지짜리 디지털 극작가 프로필 시트(Playwright Profile Sheet)를 만드는 것입니다. 여러분의 극작가를 소개하고, 그 작품을 어떻게 공연해야 하는지 이해하는 데 도움이 되는 시각적 자료 파일(visual fact file), 무드 보드(mood board), 또는 디지털 콜라주(digital collage)라고 생각하세요.\n\n프로필은 시각적으로 흥미로워야 하며 이미지, 색깔, 핵심 사실, 인용문(quotations), 짧은 글 설명을 섞어 담아야 합니다. Canva, Google Docs 또는 Google Slides로 만들 수 있지만, AI가 만든 프로필이어서는 안 됩니다. \n\n정보가 사실인지 꼭 확인하세요(fact-check). 정보를 찾는 데 AI의 도움을 받는다면, 출처 링크를 달라고 하고 그 링크를 직접 열어 확인하세요. \n\n완성하면 이 과제에 작품을 업로드하세요\n극작가 프로필에 반드시 들어가야 할 것:\n\n1. 극작가 한눈에 보기(Playwright Snapshot)\n넣을 것:\n전체 이름\n출생일(해당되면 사망일도)\n국적\n사진 또는 초상화\n그 사람의 삶에 관한 흥미로운 사실 3~5가지\n\n2. 다른 작품(Other Works)\n넣을 것:\n그 극작가가 쓴 다른 희곡(plays) 2~3편의 이미지\n각 희곡의 주제(theme)나 화제(topic)에 대한 짧은 설명\n수상 경력, 업적, 또는 유명한 공연(notable productions)\n\n3. 주제와 생각(Themes and Ideas)\n이 극작가는 어떤 주제를 자주 다루나요?\n예를 들어:\n정체성(Identity)\n가족(Family)\n권력(Power)\n사랑(Love)\n정의(Justice)\n사회 계층(Social class)\n우정(Friendship)\n갈등(Conflict)\n이것들을 다음을 사용해 시각적으로 보여주세요:\n핵심어(Keywords)\n이미지(Images)\n상징(Symbols)\n또는 \n워드 클라우드(word cloud)\n4. 연극 양식(Style of Theatre)\n그 극작가로 유명한 양식(style)을 조사하세요.\n예:\n자연주의(Naturalism)\n사실주의(Realism)\n희극(Comedy)\n비극(Tragedy)\n서사극(Epic Theatre)\n신체극(Physical Theatre)\n부조리극(Theatre of the Absurd)\n넣을 것:\n그 양식에 대한 짧은 설명\n그 양식을 나타내는 이미지\n배우들이 보통 이 양식으로 어떻게 연기하는지에 대한 예\n\n5. 관객에게 주는 영향(Audience Impact)\n극작가의 의도(intentions)를 생각해 보세요.\n넣을 것:\n극작가가 관객이 무엇에 대해 생각하기를 바라는지\n극작가가 관객이 무엇을 느끼기를 바라는지\n극작가의 인용문(quotation)(찾을 수 있다면)",
-  "files": [],
   "at": "2026-10-06"
  },
  "과학 (Mr Phillips)|Ionic or covalent": {
