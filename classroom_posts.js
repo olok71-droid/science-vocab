@@ -385,42 +385,6 @@ window.CLASSROOM_POSTS = [
   "ko": "지리 1단원 전체 수업 슬라이드를 올렸다",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-24",
-  "type": "과제",
-  "title": "Genes and Alleles",
-  "ko": "유전자와 대립유전자 퀴즈(Wayground)",
-  "due": "2026-10-09",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-24",
-  "type": "공지",
-  "title": "Everyone gets note book lm",
-  "ko": "학생이 NotebookLM 링크 공유",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-24",
-  "type": "과제",
-  "title": "Atoms and Periodic Table Review",
-  "ko": "원자·주기율표 복습 퀴즈(Wayground)",
-  "due": "2026-10-09",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-09-24",
-  "type": "자료",
-  "title": "Revision for Assessment - Next week",
-  "ko": "평가 대비 복습 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-15 18:09";
+window.CLASSROOM_POSTS_AT = "2026-10-16 18:09";
