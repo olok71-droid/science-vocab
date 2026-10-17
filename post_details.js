@@ -320,61 +320,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "휴머니티 (Mr Lawrence)|Please find all the lessons for Unit 1 of Geography.": {
-  "en": "Dear year 9,\n\nPlease find all the lessons for Unit 1 of Geography.\n\nThanks,\n\nMr. Lawrence",
-  "ko": "9학년 여러분,\n\n지리(Geography) 1단원의 모든 수업 자료를 확인하세요.\n\n고마워요,\n\nLawrence 선생님",
-  "files": [
-   {
-    "name": "PW Lessons 1 - What is happening beneath our feet_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1JT0mMhcYNJz2BDxTCDmwJIJq9UoBJ8xd/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lessons 1 & 2 - What is happening beneath our feet_.pptx"
-   },
-   {
-    "name": "PW Lesson 2 - What happens at Plate Boundaries_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1cec_MXoBURfHmmFLE8gh2I8DErQruxJH/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 2 - What happens at Plate Boundaries_.pptx"
-   },
-   {
-    "name": "PW Lesson 3 - How do we know the plates are moving_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1_FEYzj3LXkNBHNI_AJmz5KdJQ2pTY9E4/view?usp=classroom_web",
-    "local": "post_files/1_FEYzj3LXkNBHNI_AJmz5KdJQ2pTY9E4.pptx"
-   },
-   {
-    "name": "PW Lesson 4 - What makes volcanoes hazardous_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/18A_c52zc-oKhiUtzwHnMZOhCRT47m0Ko/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 7 & 8 - What makes volcanoes hazardous_.pptx"
-   },
-   {
-    "name": "PW Lesson 5 - Volcanic Hazards & Impacts.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1T5DzK7AxJrOVvxO4X9E-laQHZkKesd5l/view?usp=classroom_web",
-    "local": null
-   },
-   {
-    "name": "PW Lesson 6 - Why is Japan so vulnerable to Earthquakes_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vZAOgmIfnoptFp12F7PXNNvKOf7AvYmS/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 6 - Why is Japan so vulnerable to Earthquakes_.pptx"
-   },
-   {
-    "name": "PW Lesson 8 - How do we measure the impact of earthquakes_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1X2UUbWAKxL0RQXqR4VvAIX_XgRt9OWZQ/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 8 - How do we measure the impact of earthquakes_.pptx"
-   },
-   {
-    "name": "PW Lesson 9 - Why do people choose to live in areas of tectonic hazards_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1Nn9VPpv9cpI3BVmWwHoEQlZh__dUrFAj/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 9 - Why do people choose to live in areas of tectonic hazards_.pptx"
-   }
-  ],
-  "at": "2026-10-06"
- },
  "과학 (Mr Phillips)|Ionic or covalent": {
   "en": "Ionic or covalent\nClick on the link below to start the game",
   "ko": "이온결합(ionic) 또는 공유결합(covalent)\n아래 링크를 클릭해서 게임을 시작하세요",

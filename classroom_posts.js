@@ -85,7 +85,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "과제",
   "title": "Ionic or covalent",
-  "ko": "이온결합·공유결합 구분 퀴즈(Wayground)",
+  "ko": "이온·공유결합 구분 Wayground 퀴즈",
   "due": "2026-10-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg5NTY4NDk0MTQ5/details"
  },
@@ -94,7 +94,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "자료",
   "title": "Properties of Covalent and Ionic Compounds",
-  "ko": "공유·이온 화합물의 성질 수업 자료",
+  "ko": "공유·이온 화합물의 성질 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -184,16 +184,16 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "과제",
   "title": "Giant Covalent Structures",
-  "ko": "거대 공유결합 구조 퀴즈(Wayground)",
+  "ko": "거대 공유결합 구조 Wayground 퀴즈",
   "due": "2026-10-18",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg5MDMxNzg5MTkx/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-10-05",
   "type": "과제",
   "title": "Simple and Giant structures - worksheet",
-  "ko": "단순·거대 구조 학습지 풀기",
+  "ko": "단순·거대 구조 워크시트 풀기",
   "due": "2026-10-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODczNzY5MDE1ODAw/details"
  },
@@ -301,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-01",
   "type": "자료",
   "title": "CA1 - Check your answers",
-  "ko": "CA1 평가 답안 확인 자료",
+  "ko": "CA1 시험 답안 확인 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -346,7 +346,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "과제",
   "title": "Scientific Investigation Review",
-  "ko": "과학 탐구 복습 퀴즈(Wayground)",
+  "ko": "과학 탐구 복습 Wayground 퀴즈",
   "due": "2026-10-05",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -364,7 +364,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "과제",
   "title": "Science investigation - template - please fill in - upload graph here",
-  "ko": "탐구 양식 작성 후 그래프 업로드",
+  "ko": "탐구 양식 작성하고 그래프 올리기",
   "due": "2026-10-04",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -376,15 +376,6 @@ window.CLASSROOM_POSTS = [
   "ko": "인성 우수 학생 명단 PDF 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
- },
- {
-  "subject": "휴머니티 (Mr Lawrence)",
-  "date": "2026-09-25",
-  "type": "공지",
-  "title": "Please find all the lessons for Unit 1 of Geography.",
-  "ko": "지리 1단원 전체 수업 슬라이드를 올렸다",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-16 18:09";
+window.CLASSROOM_POSTS_AT = "2026-10-17 18:09";
