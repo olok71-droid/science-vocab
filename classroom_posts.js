@@ -69,7 +69,7 @@ window.CLASSROOM_POSTS = [
   "title": "Periodic table - check your progress",
   "ko": "주기율표 단원 학습 점검 과제",
   "due": "2026-10-21",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg5ODQxNzEzMTU5/details"
  },
  {
   "subject": "과학 (Mr Phillips)",
@@ -85,7 +85,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "과제",
   "title": "Ionic or covalent",
-  "ko": "이온·공유결합 구분 Wayground 퀴즈",
+  "ko": "이온결합·공유결합 구분 Wayground 퀴즈",
   "due": "2026-10-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODg5NTY4NDk0MTQ5/details"
  },
@@ -166,7 +166,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-06",
   "type": "과제",
   "title": "Tin",
-  "ko": "Product in a Tin 프로젝트 틴 과제 제출",
+  "ko": "틴 과제 제출",
   "due": "2026-10-19",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5/a/ODcwMDU5OTgwNzc2/details"
  },
@@ -193,9 +193,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "과제",
   "title": "Simple and Giant structures - worksheet",
-  "ko": "단순·거대 구조 워크시트 풀기",
+  "ko": "단순·거대 구조 학습지 풀기",
   "due": "2026-10-18",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODczNzY5MDE1ODAw/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
@@ -265,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-02",
   "type": "과제",
   "title": "Rendering different materials on 2-pt perspective objects",
-  "ko": "2점 투시 물체에 여러 재질 렌더링하기",
+  "ko": "2점 투시 물체에 여러 재질 표현하기",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -274,7 +274,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-02",
   "type": "자료",
   "title": "RENDERING DIFFERENT MATERIALS - DT",
-  "ko": "재질별 렌더링 방법 수업 자료",
+  "ko": "여러 재질 렌더링 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -364,7 +364,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-09-28",
   "type": "과제",
   "title": "Science investigation - template - please fill in - upload graph here",
-  "ko": "탐구 양식 작성하고 그래프 올리기",
+  "ko": "탐구 양식 작성 후 그래프 업로드",
   "due": "2026-10-04",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -378,4 +378,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-17 18:09";
+window.CLASSROOM_POSTS_AT = "2026-10-18 18:10";
