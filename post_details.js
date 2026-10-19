@@ -498,12 +498,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
- "튜터 (Mr Cassels)|Good morning Year 9! 😊": {
-  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
-  "ko": "9학년 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림입니다:\n\n선생님들이 오전 9시까지 영어(English) / 추가언어로서의 영어(EAL), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 줄 거예요\n올라온 과제를 모두 꼭 끝내세요.\n도움이 필요하면 담당 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인할 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
-  "files": [],
-  "at": "2026-10-09"
- },
  "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative": {
   "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
   "ko": "여러분 모두 안녕하세요, Jaime 하우스(house) 대표 Ibraheem의 메시지입니다: \n\n이번 주 금요일이 Jaime의 날(Jaime day)이라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 7학년(Y7), 8학년(Y8), 9학년(Y9), 11학년(Y11) 튜터 그룹(tutor groups) 학생들은 Jaime의 날, 성 Jaime(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 측면에 관한 문제로 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\nJaime 하우스 학생들(Jaime 하우스 학생들만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
@@ -528,5 +522,125 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-09"
+ },
+ "과학 (Mr Phillips)|Electricity video": {
+  "en": "Electricity video",
+  "ko": "전기(electricity) 영상",
+  "files": [
+   {
+    "name": "Sci Eye Electricity S096LS44 S120LS44",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=o0iPDPsXO4c",
+    "local": null
+   },
+   {
+    "name": "Electricity Answers - on video",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1tegjxxQd5-__BiaMVc4D7vHeWQMPmhmSlX_iPIeKzYk/edit?usp=classroom_web",
+    "local": "post_files/1tegjxxQd5-__BiaMVc4D7vHeWQMPmhmSlX_iPIeKzYk.pdf"
+   }
+  ],
+  "at": "2026-10-19"
+ },
+ "과학 (Mr Phillips)|Matching the Circuit symbols": {
+  "en": "Matching the Circuit symbols\nFill in the blanks",
+  "ko": "회로 기호(circuit symbols) 짝짓기\n빈칸 채우기(fill in the blanks)",
+  "files": [],
+  "at": "2026-10-19"
+ },
+ "과학 (Mr Phillips)|Electricity - Circuits and Symbols": {
+  "en": "Electricity - Circuits and Symbols\nRemember the symbols used to represent components used in electric circuits",
+  "ko": "전기(electricity) - 회로(circuits)와 기호(symbols)\n전기 회로(electric circuits)에 쓰이는 부품(components)을 나타내는 기호(symbols)를 기억하세요",
+  "files": [
+   {
+    "name": "9.1 Basic circuits",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1YDwYPJucvVXXd41vyPBVSdi3XihGprxkS2FWUDjm9Z0/edit?usp=classroom_web",
+    "local": "post_files/1YDwYPJucvVXXd41vyPBVSdi3XihGprxkS2FWUDjm9Z0.pdf"
+   },
+   {
+    "name": "Circuit Components and Symbols - GCSE Physics",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=ZP30SB0tQdU",
+    "local": null
+   },
+   {
+    "name": "9.1 Parallel Circuits",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1rWV4rzh7a_rvMjE-iqecIJelv-me1nJE/view?usp=classroom_web",
+    "local": "post_files/1rWV4rzh7a_rvMjE-iqecIJelv-me1nJE.pdf"
+   },
+   {
+    "name": "‪Circuit Construction Kit: DC‬",
+    "kind": "web",
+    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
+    "local": null
+   }
+  ],
+  "at": "2026-10-19"
+ },
+ "영어 (Mr Glanz)|CA1 Feedback lesson": {
+  "en": "CA1 Feedback lesson",
+  "ko": "CA1 피드백 수업",
+  "files": [
+   {
+    "name": "GGL Y9 CA1 Feedback lesson.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1Cs95vG_lmURvAMb9sAsRvhKS0WeC8y4_/view?usp=classroom_web",
+    "local": "post_files/1Cs95vG_lmURvAMb9sAsRvhKS0WeC8y4_.pptx"
+   }
+  ],
+  "at": "2026-10-19"
+ },
+ "수학 (Mr Anan)|Your 2nd Continues Assessment (CA2) will be on Tuesday 3rd November 2026.": {
+  "en": "Your 2nd Continues Assessment (CA2) will be on Tuesday 3rd November 2026. Read the CAT attached for further details.\n\nDescription of assessment\n40 Minutes, 33 Marks\nCalculator\nSkills/Long answer/Short answer\n\nFocus of assessment:\nNumber and Algebra\n\nSkills being assessed: \nChapter 3: Decimals, percentages and rounding\nChapter 4: Equations and inequalities\nChapter 5: Angles\nChapter 6: Statistical Investigations",
+  "ko": "두 번째 수시평가(2nd Continues Assessment, CA2)는 2026년 11월 3일 화요일에 있습니다. 자세한 내용은 첨부된 평가 안내문(CAT)을 읽으세요.\n\n평가 안내\n40분, 33점\n계산기(Calculator) 사용\n기능(Skills)/서술형(Long answer)/단답형(Short answer)\n\n평가 중점:\n수와 대수(Number and Algebra)\n\n평가 범위: \n3단원: 소수(Decimals), 백분율(percentages), 반올림(rounding)\n4단원: 방정식(Equations)과 부등식(inequalities)\n5단원: 각(Angles)\n6단원: 통계 조사(Statistical Investigations)",
+  "files": [
+   {
+    "name": "Y9 CAT 2026_27 Term 1 CA2.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1D4gNL6E0lNgb1ukUQLSMKvEz4yXUuyO8/view?usp=classroom_web",
+    "local": "post_files/1D4gNL6E0lNgb1ukUQLSMKvEz4yXUuyO8.pdf"
+   }
+  ],
+  "at": "2026-10-19"
+ },
+ "컴퓨터 과학 (Ms Meha)|Python Loop": {
+  "en": "Python Loop\nEstigfend\nWhile and For Loop",
+  "ko": "파이썬 반복문(Python Loop)\nEstigfend\nWhile 반복문(While Loop)과 For 반복문(For Loop)",
+  "files": [
+   {
+    "name": "Loop",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1ih9uDETPp0VXhrmU-dxITvnPLmd3OXPWOUIS_ioXi9k/edit?usp=classroom_web",
+    "local": "post_files/1ih9uDETPp0VXhrmU-dxITvnPLmd3OXPWOUIS_ioXi9k.pdf"
+   }
+  ],
+  "at": "2026-10-19"
+ },
+ "라살 교육|STEP 1: LEDU TALK MAKING": {
+  "en": "STEP 1: LEDU TALK MAKING\n1.1 Identify Your Core Message & Experiences\nFind Your Core Message: Review your reflections. What is the single biggest lesson or central insight about faith or life that you want your audience to take away? Select Key Experiences: Choose the 1-3 most powerful moments, challenges, or triumphs from your own experiences that clearly illustrate this core message.",
+  "ko": "1단계: LEDU 강연 만들기(LEDU TALK MAKING)\n1.1 핵심 메시지(Core Message)와 경험(Experiences) 정하기\n핵심 메시지 찾기(Find Your Core Message): 자신이 쓴 성찰(reflections)을 다시 살펴보세요. 청중(audience)이 꼭 얻어 갔으면 하는 신앙(faith)이나 삶에 대한 가장 큰 교훈(lesson) 하나, 또는 핵심 통찰(central insight)은 무엇인가요? 주요 경험 고르기(Select Key Experiences): 이 핵심 메시지를 분명하게 보여 주는, 자신의 경험 중 가장 강렬했던 순간(moments)·어려움(challenges)·성취(triumphs)를 1~3개 고르세요.",
+  "files": [],
+  "at": "2026-10-19"
+ },
+ "튜터 (Mr Cassels)|Mid term Check in": {
+  "en": "Mid term Check in\nPlease take time to complete the attached form. Answer it honestly and thoughtfully. There are no wrong answers. Add as much detail as you possibly can.",
+  "ko": "중간 점검(Mid term Check in)\n시간을 내어 첨부된 양식을 작성해 주세요. 정직하고 신중하게 답해 주세요. 틀린 답은 없습니다. 최대한 자세하게 적어 주세요.",
+  "files": [
+   {
+    "name": "Year 9 - Term 1 check-in",
+    "kind": "form",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSe63wD1yoa7pMVt6LmWsuU-FBTB-0rSnAK578u7QGo6kxwoWg/viewform?usp=publish-editor",
+    "local": null
+   }
+  ],
+  "at": "2026-10-19"
+ },
+ "튜터 (Mr Cassels)|Good morning Year 9!": {
+  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
+  "ko": "9학년(Year 9) 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림이에요:\n\n선생님들이 오전 9시까지 영어(English) / EAL(English as an Additional Language), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 주실 거예요\n올라온 과제를 모두 꼭 끝내 주세요.\n도움이 필요하면 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인하실 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 나오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
+  "files": [],
+  "at": "2026-10-19"
  }
 };
