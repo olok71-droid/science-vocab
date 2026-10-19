@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>영어 CA1 시험 결과 · 9학년 · AMY Study App</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e3f2ee; --card: #ffffff; --card2: #eef3fb;
+  --accent: #0d9488; --green: #16a34a; --yellow: #c97a06; --pink: #db2777;
+  --orange: #ea580c; --purple: #6d5dfc; --text: #243b6b; --strong: #16223f;
+  --muted: #6b7a99; --border: rgba(36,59,107,0.12);
+  --teacher: #9333ea; --mine: #15803d;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Nunito','Noto Sans KR',sans-serif; min-height: 100vh;
+  background-image: linear-gradient(150deg, #d6f5ec 0%, #dceff0 32%, #e4e9fb 70%, #e7e2fb 100%); background-attachment: fixed; }
+header { background: rgba(255,255,255,0.82); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  padding: 14px 18px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 10px; }
+.header-back { font-size: 22px; color: var(--accent); width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(20,184,166,0.08); text-decoration: none; flex-shrink:0; }
+.header-icon { font-size: 24px; line-height:1; flex-shrink:0; }
+.header-text { flex: 1; min-width:0; }
+.header-title { font-size: 16px; font-weight: 900; color: var(--strong); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.header-sub { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+.wrap { overflow-wrap: anywhere; max-width: 760px; margin: 0 auto; padding: 16px 16px 60px; }
+.score-row { display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
+.score-big { background: var(--card); border:1px solid var(--border); border-radius:16px; padding:14px 18px; flex:1; min-width:160px; }
+.score-big .n { font-size: 30px; font-weight: 900; color: var(--strong); }
+.score-big .n small { font-size: 16px; color: var(--muted); }
+.score-big .g { display:inline-block; margin-left:8px; background:#fef3c7; color:#b45309; font-weight:900; border-radius:8px; padding:2px 10px; font-size:15px; vertical-align:middle; }
+.score-big .l { font-size: 12px; color: var(--muted); font-weight:700; }
+
+.tabs { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0,1fr); gap: 3px; background: var(--card); border-radius: 14px; padding: 4px; border: 1px solid var(--border); margin-bottom: 14px; position: sticky; top: 62px; z-index: 50; }
+.tab-btn { background: transparent; border: none; color: var(--muted); padding: 10px 2px; border-radius: 10px; font-size: 11px; font-weight: 800; cursor: pointer; font-family: inherit; white-space: normal; word-break: keep-all; line-height:1.25; }
+.tab-btn .e { display:block; font-size:16px; }
+.tab-btn.active { background: rgba(20,184,166,0.16); color: var(--accent); box-shadow: 0 0 0 1px rgba(20,184,166,0.3); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px 18px; margin-bottom: 14px; }
+.card h2 { font-size: 16px; font-weight: 900; color: var(--strong); margin-bottom: 10px; }
+.card h3 { font-size: 14px; font-weight: 900; color: var(--accent); margin: 14px 0 6px; }
+.card p, .card li { font-size: 14px; line-height: 1.75; }
+.card ul, .card ol { padding-left: 20px; }
+.en { font-size: 14.5px; line-height: 1.8; color: var(--strong); }
+.en p { margin-bottom: 10px; }
+.ko { font-size: 13.5px; line-height: 1.8; color: #333; }
+.ko p { margin-bottom: 8px; }
+hr.split { border: none; border-top: 1.5px solid var(--border); margin: 14px 0; }
+.tag { display:inline-block; font-size:10.5px; font-weight:900; border-radius:7px; padding:2px 8px; margin-right:4px; vertical-align:middle; }
+.tag.p { background:#dbeafe; color:#1d4ed8; } .tag.e { background:#fce7f3; color:#be185d; }
+.tag.x { background:#dcfce7; color:#15803d; } .tag.l { background:#fef3c7; color:#b45309; }
+.q { background: #f8fafc; border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 0 10px 10px 0; margin: 8px 0; }
+.passage-title { font-size: 15px; font-weight: 900; color: var(--strong); margin-bottom: 8px; }
+.chosen { display:inline-block; font-size:11px; font-weight:900; background:#fef3c7; color:#b45309; border-radius:8px; padding:2px 8px; margin-left:6px; }
+u { text-decoration-color: var(--pink); text-decoration-thickness: 2px; }
+
+/* 내 답안 + 선생님 펜 */
+.ans { font-size: 14.5px; line-height: 2.05; color: var(--strong); }
+.ans p { margin-bottom: 14px; }
+.del { text-decoration: line-through; color: #9aa3b8; }
+.tc { color: var(--teacher); font-weight: 800; font-style: italic; background: rgba(147,51,234,0.07); border-radius: 5px; padding: 0 4px; }
+.tc-big { display:block; color: var(--teacher); font-weight: 900; font-style: italic; margin: 4px 0 8px; font-size: 15px; }
+.mine { color: var(--mine); }
+.legend { font-size: 12px; color: var(--muted); margin-bottom: 10px; line-height:1.7; }
+.mark-list li { margin-bottom: 10px; }
+.mark-list .tc { font-style: normal; }
+
+/* 채점표 */
+table.rub { width:100%; border-collapse: collapse; font-size: 12.5px; }
+table.rub th, table.rub td { border: 1px solid var(--border); padding: 8px; vertical-align: top; line-height:1.55; }
+table.rub th { background: #f1f5f9; font-weight: 900; color: var(--strong); text-align:left; }
+table.rub td.hit { background: #fef9c3; font-weight: 700; }
+.rub-scroll { overflow-x: auto; }
+.tcomment { background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 12px; padding: 12px 14px; color: #9d174d; font-size: 14px; line-height: 1.75; }
+
+/* 고쳐 쓴 답안 */
+.lvl { display:inline-block; font-size:12px; font-weight:900; border-radius:9px; padding:3px 10px; margin-bottom:8px; }
+.lvl.b { background:#dbeafe; color:#1d4ed8; } .lvl.a { background:#ede9fe; color:#6d28d9; }
+.fix-tbl { width:100%; border-collapse: collapse; font-size: 13px; }
+.fix-tbl td, .fix-tbl th { border-bottom: 1px solid var(--border); padding: 8px 6px; vertical-align: top; line-height:1.55; }
+.fix-tbl th { text-align:left; color: var(--muted); font-size: 11.5px; }
+.fix-tbl .bad { color: #b91c1c; } .fix-tbl .good { color: var(--green); font-weight: 800; }
+.tech { display:grid; grid-template-columns: 1fr; gap: 8px; }
+.tech div { background:#f8fafc; border-radius:10px; padding:9px 12px; font-size:13.5px; line-height:1.6; }
+.tech b { color: var(--strong); }
+
+/* 다시 쓰기 */
+.chk label { display:flex; gap:8px; align-items:flex-start; font-size:14px; line-height:1.6; margin-bottom:6px; cursor:pointer; }
+.chk input { margin-top:5px; width:16px; height:16px; flex-shrink:0; }
+textarea.rw { width:100%; min-height: 220px; border:1.5px solid var(--border); border-radius:12px; padding:12px 14px; font-size:15px; line-height:1.7; font-family: inherit; color: var(--strong); resize: vertical; outline:none; }
+textarea.rw:focus { border-color: var(--accent); background: #fbfffe; }
+.rw-label { font-size: 13px; font-weight: 900; color: var(--strong); margin: 12px 0 6px; display:flex; justify-content:space-between; }
+.rw-label span { color: var(--muted); font-weight: 700; }
+.btn-row { display:flex; gap:8px; flex-wrap:wrap; margin-top: 12px; }
+.btn { border:none; border-radius:10px; padding:10px 14px; font-size:13px; font-weight:800; cursor:pointer; font-family:inherit; text-decoration:none; display:inline-block; }
+.btn.grade { background: rgba(109,93,252,0.14); color: var(--purple); border:1.5px solid rgba(109,93,252,0.4); }
+.btn.copy { background: rgba(13,148,136,0.12); color: var(--accent); border:1.5px solid rgba(13,148,136,0.4); }
+.btn.clear { background: #f1f5f9; color: var(--muted); }
+details { margin-top: 8px; }
+details summary { cursor:pointer; font-weight:800; color: var(--accent); font-size:13.5px; }
+.saved { font-size: 12px; color: var(--muted); margin-top: 6px; min-height: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html" aria-label="홈">←</a>
+  <div class="header-icon">📊</div>
+  <div class="header-text">
+    <div class="header-title">영어 CA1 시험 결과</div>
+    <div class="header-sub">Year 9 · The Art of Storytelling · Common Assessment 1</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="score-row">
+  <div class="score-big"><div class="l">점수 Score</div><div class="n">8<small> / 16</small><span class="g">C</span></div></div>
+  <div class="score-big"><div class="l">네 영역 모두</div><div class="n" style="font-size:20px;padding-top:6px">5–8점 칸</div></div>
+  <div class="score-big"><div class="l">다음 시험</div><div class="n" style="font-size:20px;padding-top:6px">CA2 · 10/26</div></div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="paper"><span class="e">📝</span>시험지</button>
+  <button class="tab-btn" data-tab="mine"><span class="e">✍️</span>내 답안</button>
+  <button class="tab-btn" data-tab="teacher"><span class="e">🖍️</span>선생님 채점</button>
+  <button class="tab-btn" data-tab="model"><span class="e">✨</span>고쳐 쓴 답안</button>
+  <button class="tab-btn" data-tab="rewrite"><span class="e">✏️</span>다시 쓰기</button>
+</div>
+
+<!-- ================= 1. 시험지 ================= -->
+<div class="tab-pane active" id="tab-paper">
+  <div class="card">
+    <h2>문제 Question</h2>
+    <div class="en">
+      <p><b>Year 9, Term One — The Art of Storytelling: Narrative Fiction, Common Assessment 1</b></p>
+      <p>Select ONE opening passage for ‘The Bridge’ that you find most interesting. Then, answer the following question:</p>
+      <div class="q"><b>How does the writer make this an engaging opening for a story?</b></div>
+      <p>Consider:<br>
+      • What do you find engaging about this opening?<br>
+      • How does the writer make it engaging? What methods does the writer use?<br>
+      • Why is this an effective way to start a story?</p>
+      <p><b>You should aim to write two analytical paragraphs.</b></p>
+    </div>
+    <hr class="split">
+    <div class="ko">
+      <p>‘The Bridge(다리)’의 도입부 세 개 중 가장 흥미로운 것 하나를 골라 다음 질문에 답하세요.</p>
+      <p><b>작가는 어떻게 이 도입부를 독자가 빠져드는(engaging) 이야기의 시작으로 만들었나요?</b></p>
+      <p>생각해 볼 것: ① 이 도입부의 어떤 점이 흥미로운가? ② 작가는 어떻게 흥미롭게 만들었나? 어떤 방법(기법)을 썼나? ③ 왜 이것이 이야기를 시작하는 효과적인 방법인가?</p>
+      <p>분석 문단 두 개를 쓰는 것이 목표입니다.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="passage-title">Opening A <span class="chosen">내가 고른 도입부</span></div>
+    <div class="en">
+      <p><u>“Ruthie, come on out here!”</u> Amos shouted. He was standing in the yard next to his horse.</p>
+      <p>Ruth appeared in the doorway. She was carrying <u>Tom the baby</u> and <u>Maisie, aged four</u>, stood half behind her, clinging on to her apron almost for protection. Ruth reached up and pushed back a wisp of straggly hair. “I was changing Tom,” she called quietly.</p>
+      <p>“Come on here,” Amos repeated. He expected her to come when he called and she always did.</p>
+      <p>Amos Turley was <u>stocky</u> with <u>broad shoulders</u> and <u>large hands</u>. His head seemed square under his wide hat and he looked at you with a direct no-nonsense stare. He was a man you didn’t want to get into an argument with.</p>
+      <p>Ruth had been pretty once, but hard work and looking after others had taken their toll – first her younger brothers and sisters, then Amos, then Amos and the children. Her hair had become <u>dull and lifeless</u>, her face <u>tired and bony</u>, with lines growing downwards from the corners of her mouth.</p>
+      <p>“You know I’ll be gone for at least three months,” said Amos. “Washington is a long way and the business will take time. I’ve left enough money for you to live okay if you’re careful.”</p>
+      <p>He reached down to stroke Tom’s head. The boy would be like him – he was already big for his age and he looked at you unblinking. Amos reached for Maisie, but she flinched and hid behind her mother. Ruth he didn’t touch. “Well, g’bye.” He swung up onto his horse and rode off without a backward look.</p>
+    </div>
+    <hr class="split">
+    <div class="ko">
+      <p>“루시, 이리 좀 나와!” 에이머스가 소리쳤다. 그는 마당에서 말 옆에 서 있었다.</p>
+      <p>루스가 문간에 나타났다. 아기 톰을 안고 있었고, 네 살 메이지는 거의 몸을 숨기듯 엄마 앞치마를 붙잡고 반쯤 뒤에 서 있었다. 루스는 손을 올려 흐트러진 머리카락 한 가닥을 넘겼다. “톰 기저귀 갈고 있었어요.” 그녀가 조용히 대답했다.</p>
+      <p>“이리 와.” 에이머스가 다시 말했다. 그는 자기가 부르면 아내가 오리라 여겼고, 그녀는 언제나 그랬다.</p>
+      <p>에이머스 털리는 다부진 체격에 어깨가 넓고 손이 컸다. 넓은 모자 아래 머리는 네모나 보였고, 사람을 똑바로, 빈틈없이 쏘아보았다. 말다툼은 피하고 싶은 그런 남자였다.</p>
+      <p>루스도 한때는 예뻤다. 하지만 고된 일과 남을 돌보는 일이 그녀를 갉아먹었다. 처음엔 어린 동생들, 그다음엔 에이머스, 그다음엔 에이머스와 아이들. 머리카락은 윤기 없이 푸석해졌고, 얼굴은 지치고 앙상했으며, 입꼬리에서 아래로 주름이 내려가고 있었다.</p>
+      <p>“알다시피 적어도 석 달은 걸릴 거야.” 에이머스가 말했다. “워싱턴은 멀고 일도 시간이 걸려. 아껴 쓰면 살 만큼은 돈을 두고 가.”</p>
+      <p>그는 몸을 숙여 톰의 머리를 쓰다듬었다. 아들은 그를 닮을 것이다. 벌써 나이에 비해 컸고, 눈 하나 깜빡이지 않고 사람을 쳐다봤다. 에이머스가 메이지에게 손을 뻗었지만 아이는 움찔하며 엄마 뒤로 숨었다. 루스에게는 손도 대지 않았다. “그럼, 간다.” 그는 말에 훌쩍 올라타 뒤 한 번 돌아보지 않고 떠났다.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="passage-title">Opening B</div>
+    <div class="en">
+      <p>Robert stood by his wife’s grave. It was just a mound of earth and stones the length and width of her body, and a plain wooden cross with her name and dates. He clenched his fists and took a deep breath which gasped in his throat. You might have thought it was grief but it wasn’t. It was something more deadly than grief. It was anger that his most precious possession – his wife and the mother of his children – had been taken from him. Someone was going to suffer for this. He wouldn’t rest until he found out who it was and made them pay.</p>
+    </div>
+    <hr class="split">
+    <div class="ko">
+      <p>로버트는 아내의 무덤 옆에 서 있었다. 그녀 몸 길이와 너비만 한 흙과 돌 더미, 그리고 이름과 날짜가 적힌 소박한 나무 십자가가 전부였다. 그는 주먹을 꽉 쥐고 숨을 깊이 들이쉬었는데, 숨이 목에 걸려 헐떡였다. 슬픔이라고 생각했을지도 모르지만 아니었다. 슬픔보다 더 위험한 것이었다. 가장 소중한 것, 아내이자 아이들의 엄마를 빼앗겼다는 분노였다. 누군가는 이 대가를 치를 것이다. 그는 그게 누군지 찾아내 갚아 줄 때까지 쉬지 않을 것이다.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="passage-title">Opening C</div>
+    <div class="en">
+      <p>Mary hid in the darkness below the bridge. A mist was rising from the river and the outlines of the bridge were becoming fainter. She thanked God for the mist and for the cloudy sky which meant no moonlight. There were no lights on the bridge – anyone crossing at night had to carry a light or feel their way. In complete darkness she might be able to slip across and get home before her husband returned, if she could get past the soldier.</p>
+      <p>A sudden flare of light above her head took her by surprise. The soldier was leaning against the parapet of the bridge and lighting a cigarette. She could make out his rifle leaning against the parapet too. She knew they weren’t supposed to smoke on duty. This was a good sign. The soldier was a slacker. Perhaps she could talk to him, persuade him to let her cross. She would be nice to him, <i>really</i> nice, perhaps agree to meet him again if he let her cross. Why shouldn’t he let an unarmed woman across, especially one who was friendly to him? It was now or never, while he was still smoking. She scrambled up the bank and onto the bridge…</p>
+    </div>
+    <hr class="split">
+    <div class="ko">
+      <p>메리는 다리 아래 어둠 속에 숨어 있었다. 강에서 안개가 피어올라 다리의 윤곽이 점점 흐려지고 있었다. 그녀는 안개와, 달빛을 가려 주는 흐린 하늘에 감사했다. 다리 위에는 불빛이 없었다. 밤에 건너는 사람은 등불을 들거나 더듬어 가야 했다. 완전한 어둠 속이라면 남편이 돌아오기 전에 몰래 건너 집에 갈 수 있을지도 몰랐다. 군인만 지나칠 수 있다면.</p>
+      <p>머리 위에서 갑자기 불빛이 번쩍여 그녀는 깜짝 놀랐다. 군인이 다리 난간에 기대 담배에 불을 붙이고 있었다. 그의 소총도 난간에 기대어 있는 게 보였다. 근무 중엔 담배를 피우면 안 된다는 걸 그녀는 알았다. 좋은 징조였다. 그 군인은 게으름뱅이였다. 말을 걸어 건너게 해 달라고 설득할 수 있을지도 몰랐다. 친절하게, <i>정말</i> 친절하게 굴고, 건너게 해 주면 다시 만나자는 약속도 할 수 있었다. 무기도 없는 여자를, 그것도 자기에게 상냥한 여자를 왜 못 건너게 하겠는가? 그가 아직 담배를 피우는 지금이 아니면 기회는 없었다. 그녀는 둑을 기어올라 다리 위로 올라섰다…</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 2. 내 답안 ================= -->
+<div class="tab-pane" id="tab-mine">
+  <div class="card">
+    <h2>시험지에 쓴 계획 Plan</h2>
+    <div class="ans">
+      <p><b>Opening A:</b><br>
+      Point → This is an effective opening because it makes the reader engaging<br>
+      Evidence → starts with a talking<br>
+      Analyse → Dialogue<br>
+      R →</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>답안 Answer</h2>
+    <div class="legend">
+      철자는 쓴 그대로 옮겼다 · <span class="del">회색 줄</span> = 내가 지운 것 · <span class="tc">보라색</span> = 선생님 펜 · <span class="mine">초록색</span> = 돌려받은 뒤 내가 쓴 돌아보기
+    </div>
+    <div class="ans">
+      <p>I think the opening A <span class="del">has an</span> <span class="tc">is the most</span> effective opening because it makes the reader engaging <span class="tc">using</span> by a dialogue. It starts with a quote like “Ruthie, come on out here!”. Since it starts by the talk of the characters like a hook <span class="tc">✓ point</span>, it makes the reader to be cirious about what happened before and the future. By starting with the dialogue which is (not a <span class="del">chrono</span> cholonogical order) <span class="tc">In medias res.</span> Therefore, I think the <span class="del">opening of</span> exposition of the <span class="del">B</span> opening A is more engaging than others because it is starting with a dialogue.
+      <span class="tc-big">What about the dialogue, though? How does it help us understand the characters?</span></p>
+
+      <p>Secondly, I think opening A is an effective opening because it starts in a <span class="tc">⭕</span>cholonogical order <span class="tc">→ It doesn’t though.</span> It is starting from the first of the story and goes through like how the time goes. <span class="tc">Vague.</span> And also it is saying ‘Amos reached for Maisie, but she finched and hid behind her mother.’ <span class="del">This opening is going on like a cholonogical order so it has a clear story without any confusion.</span> Also the writer is trying to show and not tell for Maisie’s <span class="tc">personality</span> and by reading this readers can think that Maise is not that close with her father or is a bit shy. Show don’t tell skill help readers to think so it make it more engaging. Thus, I think the opening A is more engaging because it is going through by a cholonogical order and using ‘show don’t tell’ skill.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>내가 쓴 돌아보기 Reflection</h2>
+    <div class="ans mine">
+      <p>• To improve this, I will write more about how it helps to understand the characters by showing examples like when he was saying he was actually talking about himself.</p>
+      <p>• I now realise that I was soppose to write in medias res not the cholonogical because it was talking about a dialogue and what is not going to be after a start with a dialogue.</p>
+    </div>
+    <hr class="split">
+    <div class="ko">
+      <p>• 고치려면, 인물을 이해하는 데 (대화가) 어떻게 도움이 되는지 예를 들어 더 쓰겠다. 예를 들면 그가 말할 때 사실은 자기 자신에 대해 말하고 있었던 부분처럼.</p>
+      <p>• 대화로 시작했으니 연대순(chronological)이 아니라 인 메디아스 레스(in medias res)라고 썼어야 했다는 것을 이제 알았다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 3. 선생님 채점 ================= -->
+<div class="tab-pane" id="tab-teacher">
+  <div class="card">
+    <h2>선생님 코멘트 Teacher Comment</h2>
+    <div class="tcomment">
+      <b>Teacher Comment:</b> Some good points here, some of which are based on evidence. Some understanding of characters and relationships ‘beneath the surface’ are touched on. About two techniques mentioned. Statement of opinion is present.<br><br>
+      <b>Action Target:</b> All AOs have been addressed, but only at a bare minimum. You need to expand / qualify what you write, i.e. say why the writer’s techniques work to create an engaging opening. For such a long opening, more evidence could have been used.<br><br>
+      <b>Score: 8/16 – C</b>
+    </div>
+    <hr class="split">
+    <div class="ko">
+      <p><b>선생님 코멘트:</b> 좋은 지적이 몇 가지 있고, 그중 일부는 근거를 바탕으로 했다. 인물과 관계를 ‘겉 아래’까지 이해한 부분이 조금 보인다. 기법은 두 가지 정도 언급했다. 자기 의견이 드러나 있다.</p>
+      <p><b>목표:</b> 모든 평가 영역(AO)을 다루기는 했지만 최소한으로만 했다. 쓴 내용을 더 넓히고 이유를 붙여야 한다. 즉, 작가의 기법이 <b>왜</b> 흥미로운 도입부를 만드는지 말해야 한다. 이렇게 긴 도입부라면 근거(인용)를 더 많이 쓸 수 있었다.</p>
+      <p><b>점수: 16점 만점에 8점 – C</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>답안에 적힌 선생님 펜 풀이</h2>
+    <ol class="mark-list">
+      <li><span class="tc">is the most</span> / <span class="tc">using</span><br>
+      “has an effective opening”을 “<b>is the most effective opening</b>”으로, “by a dialogue”를 “<b>using dialogue</b>”로 고쳐 주셨다. 도입부는 효과적인 도입부를 ‘가진(has)’ 게 아니라 그 자체가(is) 도입부다. 또 셋 중에서 골랐으니 “가장(the most)”이 맞다.</li>
+      <li><span class="tc">✓ point</span><br>
+      “대화로 시작해서 hook(낚싯바늘)처럼 독자를 끌어당긴다”는 부분이 좋은 지적(point)이라는 표시다.</li>
+      <li><span class="tc">In medias res.</span><br>
+      라틴어로 ‘한가운데로’. 이야기를 처음부터가 아니라 <b>사건 한복판에서 바로 시작</b>하는 기법이다. 소개도 설명도 없이 에이머스가 소리치는 장면으로 툭 들어가니까 이 도입부는 in medias res다. 내가 괄호에 쓴 “not a chronological order”를 정확한 용어로 바꿔 주신 것.</li>
+      <li><span class="tc">What about the dialogue, though? How does it help us understand the characters?</span><br>
+      “그래서 그 대화가 어떻다는 거야? 대화가 인물을 이해하는 데 어떻게 도움이 되지?” — 첫 문단의 가장 큰 구멍이다. ‘대화로 시작한다’까지만 말하고, 그 대화에서 <b>에이머스는 명령하고 루스는 조용히 따른다</b>는 것(인물·관계)을 안 썼다.</li>
+      <li><span class="tc">⭕ chronological order → It doesn’t though.</span><br>
+      “그런데 그렇지 않은데?” 두 번째 문단의 주장 자체가 틀렸다는 뜻이다. 첫 문단에서 in medias res라고 해 놓고 두 번째 문단에서 연대순이라고 해서 앞뒤가 안 맞았다. 게다가 도입부 중간에는 “Ruth had been pretty once…”처럼 <b>과거로 돌아가는 설명</b>도 있다.</li>
+      <li><span class="tc">Vague.</span><br>
+      “막연하다.” “starting from the first of the story and goes through like how the time goes”는 무엇이 어떻게 효과적인지 구체적으로 말하지 않는다.</li>
+      <li><span class="tc">personality</span><br>
+      “show and not tell for Maisie’s ___” 빈자리에 무엇을 보여 주는지(성격, personality) 써 넣으셨다. 무엇을 ‘보여 주는지’를 꼭 이름 붙여야 한다.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>채점표 Mark Scheme</h2>
+    <div class="legend">노란 칸 = 받은 칸(네 영역 모두 5–8점)</div>
+    <div class="rub-scroll">
+    <table class="rub">
+      <tr><th>Skill (AO)</th><th>13–16</th><th>9–12</th><th>5–8</th><th>1–4</th></tr>
+      <tr><th>AO1 Knowledge of Text</th>
+        <td>Demonstrates precise knowledge of the chosen opening, supporting ideas with careful and highly relevant quotations and references.</td>
+        <td>Demonstrates sound knowledge of the chosen opening, supporting ideas with mostly relevant textual evidence.</td>
+        <td class="hit">Demonstrates some knowledge of the chosen opening, using some supporting textual details.</td>
+        <td>Demonstrates basic knowledge of the chosen opening, making a little supporting reference to the text.</td></tr>
+      <tr><th>AO2 Understanding of Characters, Situations, Themes</th>
+        <td>Shows clear and perceptive understanding of characters, situations or themes in the opening, exploring deeper meanings and implications related to the narrative’s start.</td>
+        <td>Shows clear understanding of characters, situations or themes, and begins to explore deeper implications.</td>
+        <td class="hit">Shows some understanding of characters, situations or themes, focusing mostly on straightforward meanings.</td>
+        <td>Makes some relevant comments about characters, situations or themes, but these may remain surface-level.</td></tr>
+      <tr><th>AO3 Writer’s Methods: Language, Structure, Form</th>
+        <td>Makes a developed and insightful response to how and why the writer uses language, structure, and narrative techniques to create an engaging opening.</td>
+        <td>Makes a clear response to how the writer uses language, structure, or techniques to engage the reader.</td>
+        <td class="hit">Makes some reference to language or structure, with some attempt to explain how these create effect.</td>
+        <td>Shows a basic understanding of surface meaning, with simple comments about language or structure.</td></tr>
+      <tr><th>AO4 Personal Response</th>
+        <td>Makes a well-developed, thoughtful, and relevant personal response, clearly explaining why this opening is an effective way to begin a narrative.</td>
+        <td>Makes a reasonably developed and relevant personal response, explaining why the opening is effective.</td>
+        <td class="hit">Begins to develop a relevant personal response, offering some explanation of effectiveness.</td>
+        <td>Attempts a basic personal response, though explanation of effectiveness may be limited.</td></tr>
+    </table>
+    </div>
+    <hr class="split">
+    <div class="ko">
+      <p><b>한 칸 올라가려면 (5–8 → 9–12)</b></p>
+      <p><b>AO1 원문 지식:</b> 인용을 ‘조금’이 아니라 문단마다 2~3개씩, 주장에 딱 맞는 것으로 넣는다.</p>
+      <p><b>AO2 인물·상황 이해:</b> “메이지가 아빠랑 안 친하다”처럼 겉뜻에서 멈추지 말고, 그게 이 가족에 대해 무엇을 암시하는지(아빠를 무서워한다 → 집안에서 에이머스가 어떤 사람인지)까지 간다.</p>
+      <p><b>AO3 작가의 방법:</b> 기법 이름(dialogue, in medias res, show don’t tell)을 대는 데서 끝내지 말고, 그 기법이 <b>독자에게 어떤 효과</b>를 주는지 “This makes the reader…”로 설명한다.</p>
+      <p><b>AO4 개인 반응:</b> “I think it is engaging”만 쓰지 말고 <b>왜</b> 이게 이야기를 시작하는 좋은 방법인지(독자가 궁금해하는 질문이 생긴다, 루스가 안쓰러워진다) 이유를 붙인다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 4. 고쳐 쓴 답안 ================= -->
+<div class="tab-pane" id="tab-model">
+  <div class="card">
+    <h2>문단 짜는 법 PEEL</h2>
+    <p><span class="tag p">P</span><b>Point</b> 주장 — 작가가 무슨 기법으로 무엇을 하는지 한 문장<br>
+    <span class="tag e">E</span><b>Evidence</b> 근거 — 원문 인용 “…” (짧게, 여러 개)<br>
+    <span class="tag x">E</span><b>Explain</b> 설명 — 이 인용이 인물·관계에 대해 무엇을 보여 주는지, 독자에게 어떤 효과가 있는지<br>
+    <span class="tag l">L</span><b>Link</b> 연결 — 그래서 왜 흥미로운 도입부인지 질문으로 돌아가기</p>
+    <p style="margin-top:8px">내 답안은 P와 E(인용 1~2개)까지는 있었고, <b>Explain이 거의 없었다</b>. 선생님 코멘트 “say why the writer’s techniques work”가 바로 이 Explain을 말한다.</p>
+  </div>
+
+  <div class="card">
+    <span class="lvl b">9–12점 수준 · B</span>
+    <h2>내 문장을 살려서 한 칸 올린 답안</h2>
+    <div class="en">
+      <p><span class="tag p">P</span>Opening A is the most engaging opening because the writer starts <i>in medias res</i>, using dialogue: <span class="tag e">E</span>“Ruthie, come on out here!” <span class="tag x">E</span>Instead of describing the setting first, the writer drops us straight into the middle of a scene, so the reader immediately wants to know who Amos and Ruth are and why he is shouting. The dialogue also helps us understand the characters. <span class="tag e">E</span>Amos gives short commands like “Come on here,” and the writer adds, “He expected her to come when he called and she always did.” <span class="tag x">E</span>This shows that Amos is controlling and that Ruth always obeys him, so we can already see an unequal relationship between husband and wife. <span class="tag l">L</span>This makes the opening engaging because the reader feels sorry for Ruth and wants to find out what will happen to her while he is away.</p>
+      <p><span class="tag p">P</span>The writer also uses ‘show, don’t tell’ to reveal the characters’ feelings. <span class="tag e">E</span>When Amos reaches for his daughter, “she flinched and hid behind her mother.” <span class="tag x">E</span>The writer does not tell us that Maisie is afraid of her father, but the verb “flinched” shows that she is scared of him, as if she expects to be hurt. <span class="tag e">E</span>Then the writer writes, “Ruth he didn’t touch.” <span class="tag x">E</span>This short sentence shows that Amos has no affection for his wife. <span class="tag e">E</span>Finally, he “rode off without a backward look,” <span class="tag x">E</span>which shows that he does not care about leaving his family. <span class="tag l">L</span>These details make the opening engaging because the reader has to work out the relationships for themselves, and it makes us wonder how Ruth will survive alone for “at least three months.”</p>
+    </div>
+    <hr class="split">
+    <div class="ko">
+      <p>도입부 A가 가장 흥미로운 도입부인 이유는 작가가 대화를 써서 인 메디아스 레스(이야기 한복판)로 시작하기 때문이다. “루시, 이리 좀 나와!” 배경을 먼저 설명하는 대신 작가는 우리를 곧장 장면 한가운데로 떨어뜨린다. 그래서 독자는 곧바로 에이머스와 루스가 누구인지, 그가 왜 소리치는지 알고 싶어진다. 대화는 인물을 이해하는 데도 도움이 된다. 에이머스는 “이리 와” 같은 짧은 명령을 하고, 작가는 “그는 자기가 부르면 아내가 오리라 여겼고, 그녀는 언제나 그랬다”라고 덧붙인다. 이것은 에이머스가 통제하려는 사람이고 루스는 늘 그에게 복종한다는 것을 보여 준다. 그래서 우리는 벌써 남편과 아내 사이가 평등하지 않다는 것을 알 수 있다. 이 때문에 독자는 루스를 안쓰럽게 여기고, 남편이 없는 동안 그녀에게 무슨 일이 일어날지 알고 싶어지므로 흥미로운 도입부가 된다.</p>
+      <p>작가는 또 ‘말하지 말고 보여 주기(show, don’t tell)’로 인물의 감정을 드러낸다. 에이머스가 딸에게 손을 뻗자 “아이는 움찔하며 엄마 뒤로 숨었다.” 작가는 메이지가 아빠를 무서워한다고 말해 주지 않는다. 하지만 ‘움찔했다(flinched)’라는 동사는 마치 맞을 것처럼 아이가 아빠를 겁낸다는 것을 보여 준다. 이어서 작가는 “루스에게는 손도 대지 않았다”라고 쓴다. 이 짧은 문장은 에이머스가 아내에게 애정이 없다는 것을 보여 준다. 마지막으로 그는 “뒤 한 번 돌아보지 않고 떠났다.” 가족을 두고 떠나는 것을 아무렇지 않게 여긴다는 뜻이다. 이런 세부 묘사는 독자가 인물 관계를 스스로 알아내게 하고, 루스가 “적어도 석 달” 동안 혼자 어떻게 버틸지 궁금하게 만들기 때문에 도입부를 흥미롭게 한다.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="lvl a">13–16점 수준 · A</span>
+    <h2>최고 칸 답안</h2>
+    <div class="en">
+      <p><span class="tag p">P</span>The writer creates an engaging opening by beginning <i>in medias res</i> with Amos’s shouted command, <span class="tag e">E</span>“Ruthie, come on out here!” <span class="tag x">E</span>This throws the reader straight into a domestic scene without any introduction, so we immediately start asking questions about who these people are and what is happening. More importantly, the dialogue establishes the power dynamic between husband and wife. <span class="tag e">E</span>Amos speaks almost entirely in imperatives (“Come on here,” he repeats), while Ruth answers “quietly” that she was “changing Tom.” <span class="tag x">E</span>The contrast between his loud orders and her quiet explanation suggests that she is submissive and perhaps afraid to displease him. <span class="tag e">E</span>The narrator’s comment, “He expected her to come when he called and she always did,” <span class="tag x">E</span>confirms this: the phrase “she always did” implies years of obedience. Even the name “Ruthie” can be read as patronising rather than affectionate. <span class="tag l">L</span>As a result, the reader sympathises with Ruth from the very first lines and begins to question whether this marriage is a happy one, which makes us want to read on.</p>
+      <p><span class="tag p">P</span>The writer also builds the characters through contrast and ‘show, don’t tell’. <span class="tag e">E</span>Amos is “stocky with broad shoulders and large hands” and has a “direct no-nonsense stare”, <span class="tag x">E</span>and the narrator’s direct address, “He was a man you didn’t want to get into an argument with,” pulls the reader into the scene and makes him seem intimidating. <span class="tag e">E</span>By contrast, Ruth’s hair is “dull and lifeless” and her face “tired and bony”, <span class="tag x">E</span>suggesting that years of caring for others have drained her. The family’s reactions reveal even more. <span class="tag e">E</span>Maisie “flinched and hid behind her mother”, <span class="tag x">E</span>which implies fear rather than shyness, and the unusual word order of “Ruth he didn’t touch” places Ruth at the front of the sentence to emphasise how coldly he ignores her. <span class="tag e">E</span>Finally, he leaves “without a backward look.” <span class="tag l">L</span>I find this an effective way to start a story because it ends with Ruth alone with two small children and limited money (“if you’re careful”), so the reader is left wondering whether she will cope — and whether his absence might actually be a relief.</p>
+    </div>
+    <hr class="split">
+    <div class="ko">
+      <p>작가는 에이머스가 소리쳐 내리는 명령 “루시, 이리 좀 나와!”로 이야기 한복판에서 시작해 흥미로운 도입부를 만든다. 아무 소개 없이 독자를 곧장 한 가정의 장면으로 던져 넣기 때문에, 우리는 바로 이 사람들이 누구이고 무슨 일이 벌어지는지 묻기 시작한다. 더 중요한 것은 이 대화가 남편과 아내 사이의 힘의 관계(power dynamic)를 세운다는 점이다. 에이머스는 거의 명령문(imperatives)으로만 말하고(“이리 와”를 되풀이한다), 루스는 “톰 기저귀 갈고 있었어요”라고 “조용히” 대답한다. 그의 큰 소리 명령과 그녀의 조용한 해명이 대조를 이루어, 루스가 순종적이고 어쩌면 남편 기분을 상하게 할까 두려워한다는 것을 암시한다. “그는 자기가 부르면 아내가 오리라 여겼고, 그녀는 언제나 그랬다”라는 서술자의 말이 이를 확인해 준다. “그녀는 언제나 그랬다”라는 구절은 오랜 세월의 복종을 암시한다. ‘루시(Ruthie)’라는 애칭조차 다정함이 아니라 깔보는 말투로 읽힐 수 있다. 그 결과 독자는 첫 줄부터 루스에게 공감하고 이 결혼이 행복한지 의심하게 되며, 그래서 계속 읽고 싶어진다.</p>
+      <p>작가는 또 대조와 ‘말하지 말고 보여 주기’로 인물을 만든다. 에이머스는 “다부진 체격에 어깨가 넓고 손이 컸고” “빈틈없이 쏘아보는 눈빛”을 가졌다. 서술자가 독자에게 직접 말을 거는 “말다툼은 피하고 싶은 그런 남자였다”는 독자를 장면 안으로 끌어들이고 그를 위협적으로 보이게 한다. 반대로 루스의 머리카락은 “윤기 없이 푸석하고” 얼굴은 “지치고 앙상하다”. 오랜 세월 남을 돌보느라 기운이 다 빠졌다는 것을 암시한다. 가족의 반응은 더 많은 것을 드러낸다. 메이지가 “움찔하며 엄마 뒤로 숨었다”는 것은 수줍음이 아니라 두려움을 암시한다. 또 “Ruth he didn’t touch”라는 특이한 어순은 루스를 문장 맨 앞에 두어, 그가 아내를 얼마나 차갑게 무시하는지 강조한다. 마지막으로 그는 “뒤 한 번 돌아보지 않고” 떠난다. 나는 이것이 이야기를 시작하는 효과적인 방법이라고 생각한다. 도입부가 어린아이 둘과 넉넉지 않은 돈(“아껴 쓰면”)만 남은 루스의 모습으로 끝나기 때문에, 독자는 그녀가 버텨 낼 수 있을지, 그리고 어쩌면 남편이 없는 편이 오히려 다행인 건 아닐지 궁금해하게 된다.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>내 문장 → 고친 문장</h2>
+    <table class="fix-tbl">
+      <tr><th>내가 쓴 것</th><th>고친 것</th><th>왜</th></tr>
+      <tr><td class="bad">it makes the reader engaging</td><td class="good">it engages the reader / it makes the opening engaging</td><td>engaging(흥미를 끄는)은 독자가 아니라 글을 꾸미는 말이다.</td></tr>
+      <tr><td class="bad">makes the reader to be curious</td><td class="good">makes the reader curious</td><td>make + 사람 + 형용사. to be를 빼야 한다.</td></tr>
+      <tr><td class="bad">by a dialogue</td><td class="good">using dialogue</td><td>선생님이 고쳐 주신 부분. dialogue는 보통 a 없이 쓴다.</td></tr>
+      <tr><td class="bad">it starts in a chronological order</td><td class="good">it starts in medias res</td><td>대화로 장면 한복판에서 시작 → in medias res. 중간에 과거 이야기(“Ruth had been pretty once”)도 나와서 연대순이 아니다.</td></tr>
+      <tr><td class="bad">Maisie is not that close with her father or is a bit shy</td><td class="good">Maisie is afraid of her father</td><td>‘flinched(움찔하다)’는 맞을 것 같을 때 하는 몸짓 → 수줍음보다 두려움. 겉뜻 아래를 읽어야 AO2 점수가 오른다.</td></tr>
+      <tr><td class="bad">Show don’t tell skill help readers</td><td class="good">This ‘show, don’t tell’ technique helps readers…</td><td>주어가 하나(skill)이니 helps. skill보다 technique가 맞는 말.</td></tr>
+      <tr><td class="bad">it make it more engaging</td><td class="good">it makes the opening more engaging</td><td>it 뒤에는 makes. it을 두 번 쓰면 무엇을 가리키는지 헷갈린다.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>철자 Spelling</h2>
+    <table class="fix-tbl">
+      <tr><th>내가 쓴 것</th><th>맞는 철자</th><th>뜻</th></tr>
+      <tr><td class="bad">cholonogical</td><td class="good">chronological</td><td>시간 순서대로의</td></tr>
+      <tr><td class="bad">Diologe / Dieologe</td><td class="good">dialogue</td><td>대화</td></tr>
+      <tr><td class="bad">cirious</td><td class="good">curious</td><td>궁금한</td></tr>
+      <tr><td class="bad">finched</td><td class="good">flinched</td><td>움찔했다</td></tr>
+      <tr><td class="bad">Maise</td><td class="good">Maisie</td><td>인물 이름은 원문 그대로</td></tr>
+      <tr><td class="bad">qwote / qwoute</td><td class="good">quote</td><td>인용(하다)</td></tr>
+      <tr><td class="bad">soppose</td><td class="good">supposed (to)</td><td>~하기로 되어 있는</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>쓸 수 있는 기법 단어 Techniques</h2>
+    <div class="tech">
+      <div><b>in medias res</b> 인 메디아스 레스 — 사건 한복판에서 시작. 효과: 독자가 곧바로 질문을 품게 된다.</div>
+      <div><b>dialogue</b> 대화 — 인물이 어떻게 말하는지(명령·조용한 대답)로 성격과 관계를 보여 준다.</div>
+      <div><b>imperative</b> 명령문 — “Come on here.” 말하는 사람의 힘·통제를 보여 준다.</div>
+      <div><b>characterisation</b> 인물 묘사 — 외모·행동·말로 인물을 만드는 것.</div>
+      <div><b>show, don’t tell</b> 보여 주기 — 감정을 직접 말하지 않고 행동(flinched)으로 보여 준다.</div>
+      <div><b>contrast</b> 대조 — 다부진 에이머스 vs 지친 루스. 둘의 차이로 관계가 드러난다.</div>
+      <div><b>short sentence</b> 짧은 문장 — “Ruth he didn’t touch.” 강조, 충격.</div>
+      <div><b>direct address</b> 독자에게 말 걸기 — “a man <i>you</i> didn’t want to…” 독자를 장면 안으로 끌어들인다.</div>
+      <div><b>power dynamic</b> 힘의 관계 — 누가 명령하고 누가 따르는지.</div>
+      <div><b>foreshadowing</b> 복선 — “at least three months”, “if you’re careful” → 앞으로 힘든 일이 생길 것 같은 예감.</div>
+    </div>
+    <h3>설명할 때 쓰는 말</h3>
+    <p>This shows that… · This suggests that… · This implies… · The word “___” makes the reader feel… · As a result, the reader wants to find out… · This is effective because…</p>
+  </div>
+</div>
+
+<!-- ================= 5. 다시 쓰기 ================= -->
+<div class="tab-pane" id="tab-rewrite">
+  <div class="card">
+    <h2>다시 써 보기</h2>
+    <div class="q"><b>How does the writer make this an engaging opening for a story?</b><br>(Opening A · two analytical paragraphs)</div>
+    <details><summary>Opening A 원문 펼치기</summary>
+      <div class="en" id="rwPassage" style="margin-top:8px"></div>
+    </details>
+  </div>
+
+  <div class="card chk">
+    <h2>쓰기 전·후 체크</h2>
+    <label><input type="checkbox" data-k="c1"> 첫 문장에 기법 이름을 넣었다 (in medias res / dialogue / show, don’t tell…)</label>
+    <label><input type="checkbox" data-k="c2"> 문단마다 인용 “…”을 2개 이상 넣었다</label>
+    <label><input type="checkbox" data-k="c3"> 인용마다 This shows / suggests… 로 설명을 붙였다</label>
+    <label><input type="checkbox" data-k="c4"> 대화가 인물(에이머스·루스·메이지)과 관계를 어떻게 보여 주는지 썼다</label>
+    <label><input type="checkbox" data-k="c5"> “chronological order”라고 쓰지 않았다</label>
+    <label><input type="checkbox" data-k="c6"> 문단 끝에 왜 흥미로운 도입부인지(독자가 무엇을 궁금해하는지) 연결했다</label>
+    <label><input type="checkbox" data-k="c7"> 철자 확인: chronological · dialogue · curious · flinched · Maisie</label>
+  </div>
+
+  <div class="card">
+    <div class="rw-label">Paragraph 1 <span id="wc1">0 words</span></div>
+    <textarea class="rw" id="rw1" placeholder="Opening A is the most engaging opening because the writer..."></textarea>
+    <div class="rw-label">Paragraph 2 <span id="wc2">0 words</span></div>
+    <textarea class="rw" id="rw2" placeholder="The writer also uses..."></textarea>
+    <div class="saved" id="savedMsg"></div>
+    <div class="btn-row">
+      <a class="btn grade" id="btnGrade" href="#" target="_blank" rel="noopener">🤖 클로드에게 채점받기</a>
+      <button class="btn copy" id="btnCopy" type="button">📋 복사</button>
+      <button class="btn clear" id="btnClear" type="button">지우기</button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// 탭
+document.querySelectorAll('.tab-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.tab-btn').forEach(function(x){ x.classList.remove('active'); });
+    document.querySelectorAll('.tab-pane').forEach(function(x){ x.classList.remove('active'); });
+    b.classList.add('active');
+    document.getElementById('tab-' + b.dataset.tab).classList.add('active');
+    window.scrollTo({top:0});
+  });
+});
+
+// 다시 쓰기 탭: 원문 복사해 넣기
+(function(){
+  var src = document.querySelector('#tab-paper .card:nth-of-type(2) .en');
+  if (src) document.getElementById('rwPassage').innerHTML = src.innerHTML;
+})();
+
+// 저장 (이 기기에만)
+var KEY = 'y9e_result_ca1_';
+function load(k){ try { return localStorage.getItem(KEY + k); } catch(e){ return null; } }
+function save(k, v){ try { localStorage.setItem(KEY + k, v); return true; } catch(e){ return false; } }
+function wc(s){ s = s.trim(); return s ? s.split(/\s+/).length : 0; }
+
+var rw1 = document.getElementById('rw1'), rw2 = document.getElementById('rw2');
+rw1.value = load('p1') || '';
+rw2.value = load('p2') || '';
+function refresh(){
+  document.getElementById('wc1').textContent = wc(rw1.value) + ' words';
+  document.getElementById('wc2').textContent = wc(rw2.value) + ' words';
+}
+var timer = null;
+function onInput(){
+  refresh();
+  clearTimeout(timer);
+  timer = setTimeout(function(){
+    var ok = save('p1', rw1.value) && save('p2', rw2.value);
+    document.getElementById('savedMsg').textContent = ok ? '이 기기에 저장됨' : '';
+  }, 400);
+}
+rw1.addEventListener('input', onInput);
+rw2.addEventListener('input', onInput);
+refresh();
+
+document.querySelectorAll('.chk input').forEach(function(c){
+  c.checked = load(c.dataset.k) === '1';
+  c.addEventListener('change', function(){ save(c.dataset.k, c.checked ? '1' : '0'); });
+});
+
+// 클로드 채점
+var RUBRIC = 'AO1 Knowledge of Text: quotations and references. AO2 Understanding of characters, situations, themes: deeper meanings beneath the surface. AO3 Writer\'s methods (language, structure, narrative techniques): explain how AND why they engage the reader. AO4 Personal response: explain why this is an effective way to begin a narrative. Bands: 13-16, 9-12, 5-8, 1-4 for each AO; overall score out of 16.';
+function gradeUrl(){
+  var txt = (rw1.value.trim() + '\n\n' + rw2.value.trim()).trim();
+  var prompt = 'I am a Year 9 student at an international school (my first language is Korean). This is my rewrite for an English Common Assessment.\n\n'
+    + 'Question: "How does the writer make this an engaging opening for a story?" (Opening A of "The Bridge": Amos shouts "Ruthie, come on out here!", Ruth and children Tom and Maisie, Amos leaves for Washington for three months without a backward look.) Aim: two analytical paragraphs.\n\n'
+    + 'Mark scheme: ' + RUBRIC + '\n\n'
+    + 'My previous score was 8/16 (C). Teacher target: expand and explain WHY the techniques work; use more evidence; explain how the dialogue helps us understand the characters; it is in medias res, not chronological.\n\n'
+    + 'Please mark my rewrite: give a band for each AO and a total out of 16, point out what improved, and give 3 specific fixes. Explain in English with short Korean hints in brackets.\n\n'
+    + 'My rewrite:\n' + (txt || '(empty)');
+  return 'https://claude.ai/new?q=' + encodeURIComponent(prompt);
+}
+document.getElementById('btnGrade').addEventListener('click', function(){ this.href = gradeUrl(); });
+document.getElementById('btnCopy').addEventListener('click', function(){
+  var txt = (rw1.value.trim() + '\n\n' + rw2.value.trim()).trim();
+  if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function(){ document.getElementById('savedMsg').textContent = '복사됨'; });
+});
+document.getElementById('btnClear').addEventListener('click', function(){
+  rw1.value = ''; rw2.value = ''; save('p1',''); save('p2',''); refresh();
+  document.getElementById('savedMsg').textContent = '지웠음';
+});
+</script>
+</body>
+</html>
