@@ -75,19 +75,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "튜터 (Mr Cassels)|Character Recognitions from Monday 21st September to today Monday 28th September.": {
-  "en": "Character Recognitions from Monday 21st September to today Monday 28th September. \n\nKeep up your positive behaviours and demonstrating the virtues.",
-  "ko": "9월 21일 월요일부터 오늘 9월 28일 월요일까지의 인성 표창(Character Recognitions)입니다.\n\n앞으로도 긍정적인 행동(positive behaviours)과 덕목(virtues)을 실천하는 모습을 계속 보여 주세요.",
-  "files": [
-   {
-    "name": "21st to 28th.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vkzVs9q8Y56BnuS6DIQ7OrOxM3AOF7ab/view?usp=classroom_web",
-    "local": "pdfs/tutor/21st to 28th.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
  "과학 (Mr Phillips)|Giant Covalent Structures": {
   "en": "Giant Covalent Structures\nClick on the link below to start the game",
   "ko": "거대 공유 구조(Giant Covalent Structures)\n아래 링크를 눌러 게임을 시작하세요",
@@ -173,44 +160,6 @@ window.POST_DETAILS = {
  "과학 (Mr Phillips)|CA1 - Check your answers": {
   "en": "CA1 - Check your answers",
   "ko": "CA1 - 답 확인하기",
-  "files": [],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|Scientific Investigation Review": {
-  "en": "Scientific Investigation Review\nClick on the link below to start the game",
-  "ko": "과학 탐구(Scientific Investigation) 복습\n아래 링크를 눌러 게임을 시작하세요",
-  "files": [
-   {
-    "name": "Quizizz is now Wayground | Teacher AI and Resources",
-    "kind": "web",
-    "url": "https://wayground.com/join?c=K12rVPviztl1lCLkSoMTsjw7vXAqOtWo9U4r6M3r0pKedhX0Dxg7IyLwhxo3ay0tn8j4c-SZ_lnjs5LNTBdldLquzp8qYLb1IGA5505-IFeCtRqdF2i5CfL9d8cqNJx1j-ptZhuqYEo6l8bYYCELDE781-0JG9etyxNL0JprG0c-adWYDoHoxLyADxd-upWLRxmOFqZa9OFky6YtnGNmDn8nCw.DccirKEPWAHP5-5RWT7vxw.kr_qC7Ty5_f-xJ6P&linktype=web",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|Science Investigation - method": {
-  "en": "Science Investigation - method\nRemember the process and be able to apply for everyday science investigations",
-  "ko": "과학 탐구(Science Investigation) - 방법(method)\n과정을 기억하고 일상적인 과학 탐구(science investigations)에 적용할 수 있도록 하세요",
-  "files": [
-   {
-    "name": "🔬 KS3 Science Investigation Worksheet",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1rtT563jBE2yUeAbkAb29C5y_HDE91AjEiLdQ0sLiGfI/edit?usp=classroom_web",
-    "local": "post_files/1rtT563jBE2yUeAbkAb29C5y_HDE91AjEiLdQ0sLiGfI.pdf"
-   },
-   {
-    "name": "Independent vs Dependent Variables (Explained in 3 Minutes)",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=F9F7Xfh-VTQ",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|Science investigation - template - please fill in - upload graph here": {
-  "en": "Science investigation - template - please fill in - upload graph here",
-  "ko": "과학 탐구(Science investigation) - 양식(template) - 작성해 주세요 - 그래프(graph)는 여기에 올리세요",
   "files": [],
   "at": "2026-10-06"
  },
@@ -642,5 +591,60 @@ window.POST_DETAILS = {
   "ko": "9학년(Year 9) 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림이에요:\n\n선생님들이 오전 9시까지 영어(English) / EAL(English as an Additional Language), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 주실 거예요\n올라온 과제를 모두 꼭 끝내 주세요.\n도움이 필요하면 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인하실 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 나오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
   "files": [],
   "at": "2026-10-19"
+ },
+ "휴머니티 (Mr Lawrence)|Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)": {
+  "en": "Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)\nIf you are at home you can watch the youtube video on imperialism, answer the multiple choice questions and then memorise the MAINS (the reasons behind the start of WW1)",
+  "ko": "오늘 수업에서 우리는 제국주의(Imperialism)와 제1차 세계대전(World War 1, WW1)이 시작된 이유에 대해 배웠습니다\n집에 있다면 제국주의(imperialism)에 관한 유튜브 영상을 보고, 객관식 문제(multiple choice questions)에 답한 다음, MAINS(제1차 세계대전(WW1)이 시작된 이유)를 외우세요",
+  "files": [
+   {
+    "name": "European Empires - Bilingual EAL Worksheet.docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1jhd4eVP7FBrPqd3pL8THc9RtPo9Judgs/view?usp=classroom_web",
+    "local": "post_files/1jhd4eVP7FBrPqd3pL8THc9RtPo9Judgs.docx"
+   },
+   {
+    "name": "Imperialism & WWI History Worksheet SC.docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1peqUT1A_45m8DFv-t2H3BfJUejqC6s_B/view?usp=classroom_web",
+    "local": "post_files/1peqUT1A_45m8DFv-t2H3BfJUejqC6s_B.docx"
+   },
+   {
+    "name": "Lesson 1 - Guided Reading & Storyboard.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1QNfCt7YJToNh76P_s9sYz_cBQa9hPuX1/view?usp=classroom_web",
+    "local": "post_files/1QNfCt7YJToNh76P_s9sYz_cBQa9hPuX1.pptx"
+   },
+   {
+    "name": "Lesson 1 - Video Sheet.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1WWny7Ujoi1hWP17tCEWysaTZv3SIeFZX/view?usp=classroom_web",
+    "local": "post_files/1WWny7Ujoi1hWP17tCEWysaTZv3SIeFZX.pptx"
+   },
+   {
+    "name": "PW Lesson 1 - Printing.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1F7NvcZYiPBJ946s9GVmA_m9XO4JOuHCj/view?usp=classroom_web",
+    "local": "post_files/1F7NvcZYiPBJ946s9GVmA_m9XO4JOuHCj.pptx"
+   },
+   {
+    "name": "PW Lessons 1 & 2 -  The Long Fuse - Europe in 1914.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1ZBnEy1W_wre_QN-54ORD62IM99vNZ6O3/view?usp=classroom_web",
+    "local": "post_files/1ZBnEy1W_wre_QN-54ORD62IM99vNZ6O3.pptx"
+   }
+  ],
+  "at": "2026-10-20"
+ },
+ "미술|Haze - 20/10 Lesson": {
+  "en": "Haze - 20/10 Lesson\nHi everyone, \n\nFor today's lesson, please refer to slide 12 on the lesson slides. The task is to complete:\n\n1) one direct, realistic copy of one of your photos using only pencil sketching and shading.\n2) one copy of your photo in the artist's style. This should be fully coloured or shaded in with outlines. \n\nBoth of these artworks should be A6 in size.\n\nThank you!",
+  "ko": "Haze - 20/10 수업\n여러분 안녕하세요, \n\n오늘 수업은 수업 슬라이드(lesson slides)의 12번 슬라이드를 참고하세요. 해야 할 과제는 다음과 같습니다:\n\n1) 연필 스케치(pencil sketching)와 명암 넣기(shading)만 사용해서, 여러분의 사진 중 한 장을 그대로 사실적으로 따라 그린 그림(direct, realistic copy) 한 점.\n2) 여러분의 사진을 그 작가의 화풍(artist's style)으로 따라 그린 그림 한 점. 이 그림은 윤곽선(outlines)과 함께 색을 완전히 칠하거나(fully coloured) 명암을 완전히 넣어야(shaded in) 합니다. \n\n두 작품 모두 A6 크기(A6 in size)여야 합니다.\n\n감사합니다!",
+  "files": [],
+  "at": "2026-10-20"
+ },
+ "드라마|i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.": {
+  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\ni seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
+  "ko": "여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\n여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학 동안 집에 가져갔다면 내일 꼭 가져오세요.",
+  "files": [],
+  "at": "2026-10-20"
  }
 };
