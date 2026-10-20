@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>9학년 수학 Exit Tickets · 1~15단원</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--pink:#db2777;--purple:#6d5dfc;
+--text:#243b6b;--strong:#16223f;--muted:#6b7a99;--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;flex-wrap:wrap;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.shot{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;margin:10px 0 14px;}
+.shot img{width:100%;height:auto;border-radius:8px;display:block;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.8;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+.chk{display:inline-block;font-size:11.5px;font-weight:800;color:#b45309;background:#fef3c7;border:1px solid #fcd34d;border-radius:6px;padding:1px 6px;}
+.tbl{border-collapse:collapse;margin:6px 0;font-size:13px;}
+.tbl td,.tbl th{border:1px solid rgba(36,59,107,.2);padding:4px 8px;text-align:center;}
+.tbl th{background:#e0f2f1;}
+.chap{margin:30px 0 4px;padding:8px 12px;border-radius:12px;background:rgba(13,148,136,.1);font-size:15px;font-weight:900;color:var(--strong);}
+.chap span{font-size:12px;font-weight:700;color:var(--muted);margin-left:6px;}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">🎫</div>
+  <div class="header-text">
+    <div class="header-title">Exit Tickets</div>
+    <div class="header-sub">1~15단원 · 수업 끝 확인 문제 · 문제 + 풀이</div>
+  </div>
+</header>
+<div class="wrap">
+<div class="chap">CHAPTER 1 · Number and calculation<span>수와 계산</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">1.1</span><span class="sec-title">Irrational numbers (including surds)</span><span class="sec-ko">무리수(근호 포함)</span></div>
+<div class="q">
+  <div class="q-title">Q1. Classify −3/4, √49 and √10 as rational or irrational.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>−3/4 rational · √49 rational (= 7) · √10 irrational</b>
+    <span class="how">① <b>유리수 rational number</b> = 분수 a/b (a, b 는 정수 integer, b ≠ 0) 로 쓸 수 있는 수<br>② −3/4 는 이미 분수 → 유리수<br>③ √49 = 7 = 7/1 → 유리수 (49 는 <b>제곱수 square number</b>)<br>④ √10 = 3.16227… 소수가 끝없이, 규칙 없이 이어진다 → <b>무리수 irrational number</b> (10 은 제곱수가 아님)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Between which two consecutive integers does ∛150 lie? Show how you know.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Between 5 and 6, because 5³ = 125 and 6³ = 216.</b>
+    <span class="how">① <b>세제곱근 cube root</b> ∛150 = 세 번 곱해서 150 이 되는 수<br>② <b>세제곱수 cube number</b>를 늘어놓는다: 4³ = 64, 5³ = 125, 6³ = 216<br>③ 125 &lt; 150 &lt; 216 이므로 5 &lt; ∛150 &lt; 6<br>④ <b>연속한 정수 consecutive integers</b> = 5 와 6</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A calculator displays 3.1415927. Does this prove the exact number is rational? Explain.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>No. A rounded or truncated display does not show every digit of the exact number.</b>
+    <span class="how">① 계산기 화면은 자릿수가 정해져 있어서 그 뒤를 <b>반올림 rounded</b> 하거나 <b>잘라 truncated</b> 보여 준다<br>② 3.1415927 은 사실 π = 3.14159265358979… 를 줄인 것일 수 있다 → π 는 무리수<br>③ 그래서 화면에 보이는 몇 자리만으로는 유리수인지 무리수인지 <b>증명 prove</b> 할 수 없다<br>④ 정확한 값 exact value(√, π, 분수)로 판단해야 한다</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">1.2</span><span class="sec-title">Standard form</span><span class="sec-ko">표준형</span></div>
+<div class="q">
+  <div class="q-title">Q1. Write 0.000078 in standard form.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>7.8 × 10⁻⁵</b>
+    <span class="how">① <b>표준형 standard form</b> = A × 10ⁿ (1 ≤ A &lt; 10, n 은 정수)<br>② 0.000078 → 7.8 이 되도록 소수점을 오른쪽으로 5칸 옮긴다<br>③ 오른쪽으로 옮겼으니 지수는 <b>음수 negative</b> → 7.8 × 10⁻⁵</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Write 4.6 × 10⁶ as an ordinary number.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>4,600,000</b>
+    <span class="how">① 10⁶ 을 곱하면 소수점이 오른쪽으로 6칸 간다<br>② 4.6 → 46 (1칸) → 4,600,000 (6칸, 빈칸은 0 으로 채운다)<br>③ <b>보통 수 ordinary number</b> = 4,600,000</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Which is greater: 9.3 × 10⁷ or 9.3 × 10⁶? How many times greater?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>9.3 × 10⁷; it is 10 times greater.</b>
+    <span class="how">① 앞의 수(9.3)가 같으면 <b>10의 지수 power of 10</b>가 큰 쪽이 크다 → 10⁷ &gt; 10⁶<br>② 몇 배인지: (9.3 × 10⁷) ÷ (9.3 × 10⁶) = 10⁷⁻⁶ = 10¹ = 10<br>③ 답: 9.3 × 10⁷ 이 <b>10배 10 times</b> 크다</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">1.3</span><span class="sec-title">Indices</span><span class="sec-ko">지수</span></div>
+<div class="q">
+  <div class="q-title">Q1. Simplify x³ × x⁵ and y⁷ ÷ y².</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x⁸ and y⁵</b>
+    <span class="how">① <b>곱셈 법칙 multiplication law</b>: 밑 base 이 같으면 지수를 더한다 → x³ × x⁵ = x³⁺⁵ = x⁸<br>② <b>나눗셈 법칙 division law</b>: 밑이 같으면 지수를 뺀다 → y⁷ ÷ y² = y⁷⁻² = y⁵</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Work out 5⁰ and 2⁻³.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>1 and 1/8</b>
+    <span class="how">① <b>0 지수 zero index</b>: 0 이 아닌 수의 0제곱은 항상 1 → 5⁰ = 1<br>② <b>음의 지수 negative index</b> = 역수 reciprocal → 2⁻³ = 1/2³ = 1/8</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Simplify (a³)⁴. Explain why the indices multiply rather than add.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>a¹²; the power a³ is multiplied by itself four times, so 3 + 3 + 3 + 3 = 12.</b>
+    <span class="how">① (a³)⁴ = a³ × a³ × a³ × a³ (a³ 을 4번 곱한다)<br>② 곱셈 법칙으로 지수를 더하면 3 + 3 + 3 + 3 = 12<br>③ 3 을 4번 더한 것 = 3 × 4 → 그래서 <b>거듭제곱의 거듭제곱 power of a power</b>은 지수를 곱한다 → a¹²</span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 2 · Expressions and formulae<span>식과 공식</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">2.1</span><span class="sec-title">Substituting into expressions</span><span class="sec-ko">식에 수 대입하기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Find 4a − 3 when a = −2.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>−11</b>
+    <span class="how">① <b>대입 substitute</b>: a 자리에 (−2) 를 괄호째 넣는다 → 4 × (−2) − 3<br>② 4 × (−2) = −8<br>③ −8 − 3 = <b>−11</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find 3x² − 2x when x = −2.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>16</b>
+    <span class="how">① 3 × (−2)² − 2 × (−2)<br>② <b>계산 순서 order of operations</b>: 지수 index 먼저 → (−2)² = 4<br>③ 3 × 4 = 12, 2 × (−2) = −4<br>④ 12 − (−4) = 12 + 4 = <b>16</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A student says 2(−3)² = −18. Correct the answer and explain the mistake.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>18; square −3 first to get 9, then multiply by 2.</b>
+    <span class="how">① 계산 순서(BIDMAS): 괄호·지수가 곱셈보다 먼저<br>② (−3)² = (−3) × (−3) = +9 (음수 × 음수 = 양수)<br>③ 2 × 9 = <b>18</b><br>④ 학생은 −3 을 제곱할 때 부호를 잘못 남겨 −9 로 계산했다</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">2.2</span><span class="sec-title">Constructing expressions</span><span class="sec-ko">식 세우기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Write “five less than three times n” as an expression.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>3n − 5</b>
+    <span class="how">① three times n = 3n (n 의 3배)<br>② five less than ~ = ~ 에서 5 를 뺀다 → 3n − 5<br>③ 주의: “5 − 3n” 이 아니다. <b>less than</b> 은 순서가 거꾸로다</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. A rectangle has sides 3x + 4 and x − 2. Write and simplify its perimeter.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>2(3x + 4) + 2(x − 2) = 8x + 4</b>
+    <span class="how">① <b>둘레 perimeter</b> = 네 변의 합 = 2 × 가로 + 2 × 세로<br>② 2(3x + 4) + 2(x − 2) = 6x + 8 + 2x − 4<br>③ <b>동류항 like terms</b> 끼리 모은다: 6x + 2x = 8x, 8 − 4 = 4<br>④ 답: <b>8x + 4</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A taxi charges RM5 plus RM2 per kilometre. Write an expression for k kilometres and explain the 5.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>5 + 2k; 5 is the fixed starting charge.</b>
+    <span class="how">① 1km 마다 RM2 → k km 면 2k<br>② 처음에 무조건 내는 RM5 를 더한다 → 5 + 2k<br>③ 5 는 한 km 도 안 가도 내는 <b>기본요금 fixed starting charge</b>이다</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">2.3</span><span class="sec-title">Expressions and indices</span><span class="sec-ko">문자식과 지수</span></div>
+<div class="q">
+  <div class="q-title">Q1. Simplify a⁵ × a² and b⁹ ÷ b⁴.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>a⁷; b⁵</b>
+    <span class="how">① 같은 문자의 곱 → 지수 더하기: a⁵⁺² = a⁷<br>② 같은 문자의 나눗셈 → 지수 빼기: b⁹⁻⁴ = b⁵</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Simplify (x²)³.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x⁶</b>
+    <span class="how">① <b>power of a power</b> → 지수끼리 곱한다<br>② 2 × 3 = 6 → x⁶</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Can you simplify x³ + x² to x⁵? Explain.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>No. Index addition applies to multiplication of powers with the same base, not addition of terms.</b>
+    <span class="how">① 지수를 더하는 법칙은 <b>곱하기 multiplication</b>일 때만 쓴다 (x³ × x² = x⁵)<br>② x³ + x² 는 <b>더하기 addition</b>이고, x³ 과 x² 은 <b>동류항 like terms</b>이 아니라서 합칠 수 없다<br>③ 예: x = 2 이면 x³ + x² = 8 + 4 = 12 인데 x⁵ = 32 → 다르다</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">2.4</span><span class="sec-title">Expanding the product of two linear expressions</span><span class="sec-ko">두 일차식의 곱 전개</span></div>
+<div class="q">
+  <div class="q-title">Q1. Expand (x + 2)(x + 4).</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x² + 6x + 8</b>
+    <span class="how">① <b>전개 expand</b>: 앞 괄호의 각 항 term 을 뒤 괄호의 각 항에 모두 곱한다<br>② x·x = x², x·4 = 4x, 2·x = 2x, 2·4 = 8<br>③ 4x + 2x = 6x → <b>x² + 6x + 8</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Expand and simplify (2x − 3)(x + 5).</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>2x² + 7x − 15</b>
+    <span class="how">① 2x·x = 2x², 2x·5 = 10x, (−3)·x = −3x, (−3)·5 = −15<br>② 10x − 3x = 7x 로 <b>간단히 simplify</b><br>③ 답: <b>2x² + 7x − 15</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A student writes (x + 3)(x − 3) = x² − 9x. Explain the error and give the correct answer.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>The middle terms cancel; the correct answer is x² − 9.</b>
+    <span class="how">① 전개: x² − 3x + 3x − 9<br>② 가운데 −3x 와 +3x 가 <b>서로 없어진다 cancel</b><br>③ 정답: <b>x² − 9</b> (이것이 <b>제곱의 차 difference of two squares</b>)<br>④ 학생은 마지막 3 × 3 = 9 에 x 를 잘못 붙였다</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">2.5</span><span class="sec-title">Simplifying algebraic fractions</span><span class="sec-ko">분수식 간단히 하기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Find a common denominator for x/3 and x/4.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>12</b>
+    <span class="how">① <b>공통분모 common denominator</b> = 두 분모 3 과 4 로 모두 나누어떨어지는 수<br>② 가장 작은 것 = 최소공배수 LCM(3, 4) = <b>12</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Simplify x/3 + x/4.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>7x/12</b>
+    <span class="how">① 분모를 12 로 맞춘다: x/3 = 4x/12, x/4 = 3x/12<br>② 분자 numerator 끼리 더한다: 4x + 3x = 7x<br>③ 답: <b>7x/12</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A student writes x/3 + x/4 = 2x/7. Explain the mistake.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Numerators can only be added after the fractions have the same denominator; the correct answer is 7x/12.</b>
+    <span class="how">① 학생은 분자끼리(x + x = 2x), 분모끼리(3 + 4 = 7) 더했다 → 틀린 방법<br>② 분모 denominator 는 더하지 않는다. 먼저 분모를 같게 만든 뒤 분자만 더한다<br>③ 정답: <b>7x/12</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">2.6</span><span class="sec-title">Deriving and using formulae</span><span class="sec-ko">공식 만들고 쓰기</span></div>
+<div class="q">
+  <div class="q-title">Q1. A worker receives a fixed RM50 plus RM12 per hour h. Write a formula for pay P.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>P = 50 + 12h</b>
+    <span class="how">① 1시간마다 RM12 → h 시간이면 12h<br>② 고정 fixed 으로 받는 RM50 을 더한다<br>③ <b>공식 formula</b>: <b>P = 50 + 12h</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find P when h = 7.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>RM134</b>
+    <span class="how">① h = 7 을 대입: P = 50 + 12 × 7<br>② 12 × 7 = 84<br>③ 50 + 84 = <b>RM134</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Rearrange P = 50 + 12h to make h the subject; find h when P = RM170.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>h = (P − 50)/12; h = 10 hours</b>
+    <span class="how">① <b>주어 바꾸기 change the subject</b>: h 만 남기기<br>② 양쪽에서 50 을 뺀다: P − 50 = 12h<br>③ 양쪽을 12 로 나눈다: <b>h = (P − 50)/12</b><br>④ P = 170 → h = (170 − 50)/12 = 120/12 = <b>10 hours</b></span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 3 · Decimals, percentages and rounding<span>소수·백분율·반올림</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">3.1</span><span class="sec-title">Multiplying and dividing by powers of 10</span><span class="sec-ko">10의 거듭제곱으로 곱하고 나누기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Calculate 4.72 × 100 and 4.72 ÷ 100.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>472 and 0.0472</b>
+    <span class="how">① × 100 → 숫자가 커진다, 소수점이 오른쪽으로 2칸 → 472<br>② ÷ 100 → 숫자가 작아진다, 소수점이 왼쪽으로 2칸 → 0.0472</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Calculate 8.5 × 10⁻².</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>0.085</b>
+    <span class="how">① 10⁻² = 1/100 = 0.01<br>② × 10⁻² 는 ÷ 100 과 같다 → 소수점이 왼쪽으로 2칸<br>③ 8.5 → <b>0.085</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Evaluate 0.36 ÷ 0.01 and explain why the answer is larger.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>36; dividing by 0.01 counts the number of hundredths, equivalent to multiplying by 100.</b>
+    <span class="how">① 0.01 = 1/100 이므로 ÷ 0.01 = × 100<br>② 0.36 × 100 = <b>36</b><br>③ 뜻: 0.36 안에 0.01(<b>백분의 일 hundredth</b>)이 몇 개 들어 있나 → 36개<br>④ 1보다 작은 수로 나누면 답이 원래보다 커진다</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">3.2</span><span class="sec-title">Multiplying and dividing decimals</span><span class="sec-ko">소수의 곱셈과 나눗셈</span></div>
+<div class="q">
+  <div class="q-title">Q1. Work out 1.2 × 0.35.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>0.42</b>
+    <span class="how">① 소수점을 빼고 정수로 곱한다: 12 × 35 = 420<br>② 소수 자릿수 decimal places 를 센다: 1.2(1자리) + 0.35(2자리) = 3자리<br>③ 420 → 0.420 = <b>0.42</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Work out 5.46 ÷ 0.7.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>7.8</b>
+    <span class="how">① <b>나누는 수 divisor</b>를 정수로 만든다: 0.7 × 10 = 7<br>② 나뉘는 수도 똑같이 × 10: 5.46 × 10 = 54.6<br>③ 54.6 ÷ 7 = <b>7.8</b> (같은 수를 곱해도 몫은 같다 → <b>equivalent</b> division)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Without a calculator, state whether 8 ÷ 0.4 is greater or smaller than 8, then calculate it.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Greater; 20</b>
+    <span class="how">① 0 과 1 사이의 수로 <b>나누면</b> 답이 <b>커진다 greater</b> (0.4 가 8 안에 여러 번 들어가니까)<br>② 8 ÷ 0.4 = 80 ÷ 4 = <b>20</b><br>③ 반대로 0 과 1 사이의 수를 <b>곱하면</b> 작아진다 (8 × 0.4 = 3.2)</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">3.3</span><span class="sec-title">Understanding compound percentages</span><span class="sec-ko">복리 백분율 이해하기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Write the multiplier for a 12% decrease.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>0.88</b>
+    <span class="how">① <b>배수 multiplier</b> = 100% 에서 바뀐 % 를 소수로<br>② 12% 줄면 남는 것 = 100% − 12% = 88%<br>③ 88% = <b>0.88</b> (늘면 1 + 0.12 = 1.12)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. RM1000 increases by 5% each year for two years. Find its value.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>RM1102.50</b>
+    <span class="how">① 5% 증가 increase → multiplier 1.05<br>② 2년이니까 두 번 곱한다: 1000 × 1.05² = 1000 × 1.1025<br>③ = <b>RM1102.50</b><br>④ 첫 해 1050, 둘째 해는 1050 의 5% (52.50)가 붙는다 → 이것이 <b>복리 compound</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A price rises by 10%, then falls by 10%. Is it back to its starting value? Demonstrate with RM100.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>No; RM100 → RM110 → RM99. The second 10% is of RM110.</b>
+    <span class="how">① RM100 × 1.10 = RM110<br>② RM110 × 0.90 = RM99<br>③ 두 번째 10% 는 처음 100 이 아니라 <b>새 금액 new amount</b> 110 의 10% (= 11) 이라서 더 많이 빠진다<br>④ 답: <b>No</b>, RM99 가 된다 (1.1 × 0.9 = 0.99)</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">3.4</span><span class="sec-title">Understanding upper and lower bound</span><span class="sec-ko">상한과 하한</span></div>
+<div class="q">
+  <div class="q-title">Q1. A length rounds to 8 cm to the nearest centimetre. What is the half-step?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>0.5 cm</b>
+    <span class="how">① <b>반올림 단위 rounding interval</b> = 1 cm<br>② 그 절반 = <b>half-step</b> = 1 ÷ 2 = <b>0.5 cm</b><br>③ 그래서 실제 길이는 8 − 0.5 = 7.5 cm 이상, 8 + 0.5 = 8.5 cm 미만</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Write the bounds for a value that rounds to 7.3 to the nearest 0.1.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>7.25 ≤ x &lt; 7.35</b>
+    <span class="how">① 단위 0.1 의 절반 = 0.05<br>② <b>하한 lower bound</b> = 7.3 − 0.05 = 7.25 (포함 ≤)<br>③ <b>상한 upper bound</b> = 7.3 + 0.05 = 7.35 (7.35 는 7.4 로 반올림되니까 포함 안 함 &lt;)<br>④ <b>7.25 ≤ x &lt; 7.35</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A square has side length 8 cm to the nearest centimetre. Give the lower and upper bounds for its area.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>56.25 cm² ≤ area &lt; 72.25 cm² (from 7.5 ≤ side &lt; 8.5)</b>
+    <span class="how">① 한 변: 7.5 ≤ side &lt; 8.5<br>② 넓이 area = 변 × 변<br>③ 가장 작은 넓이 = 7.5² = 56.25 cm²<br>④ 가장 큰 넓이 = 8.5² = 72.25 cm²<br>⑤ <b>56.25 cm² ≤ area &lt; 72.25 cm²</b></span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 4 · Equations and inequalities<span>방정식과 부등식</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">4.1</span><span class="sec-title">Constructing and solving equations</span><span class="sec-ko">방정식 세우고 풀기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Solve 5x − 7 = 2x + 8.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x = 5</b>
+    <span class="how">① x 를 한쪽으로: 양쪽에서 2x 를 뺀다 → 3x − 7 = 8<br>② 양쪽에 7 을 더한다 → 3x = 15<br>③ 양쪽을 3 으로 나눈다 → <b>x = 5</b><br>④ 확인 check: 5·5 − 7 = 18, 2·5 + 8 = 18 ✓</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Solve 3(x + 2) = 2x + 11.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x = 5</b>
+    <span class="how">① 괄호를 <b>전개 expand</b>: 3x + 6 = 2x + 11<br>② 양쪽에서 2x 를 뺀다: x + 6 = 11<br>③ <b>x = 5</b><br>④ 확인: 3(7) = 21, 10 + 11 = 21 ✓</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Three consecutive integers add to 72. Form an equation and find the numbers.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x + (x + 1) + (x + 2) = 72; 23, 24, 25</b>
+    <span class="how">① <b>연속한 정수 consecutive integers</b> = x, x + 1, x + 2<br>② 합: x + (x + 1) + (x + 2) = 72 → 3x + 3 = 72<br>③ 3x = 69 → x = 23<br>④ 세 수: <b>23, 24, 25</b> (23 + 24 + 25 = 72 ✓)</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">4.2</span><span class="sec-title">Simultaneous equations</span><span class="sec-ko">연립방정식</span></div>
+<div class="q">
+  <div class="q-title">Q1. Does (3, 2) satisfy x + y = 5 and 2x − y = 4?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Yes: 3 + 2 = 5 and 2(3) − 2 = 4.</b>
+    <span class="how">① x = 3, y = 2 를 두 식에 넣어 본다<br>② 3 + 2 = 5 ✓<br>③ 2 × 3 − 2 = 4 ✓<br>④ 두 식을 <b>동시에 만족 satisfy both</b> → 이것이 연립방정식의 <b>해 solution</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Solve 2x + y = 11 and x − y = 1.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x = 4, y = 3</b>
+    <span class="how">① <b>가감법 elimination</b>: 두 식을 더하면 y 가 없어진다<br>② (2x + y) + (x − y) = 11 + 1 → 3x = 12 → x = 4<br>③ x − y = 1 에 넣기 → 4 − y = 1 → y = 3<br>④ <b>x = 4, y = 3</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Solve 3x + 2y = 16 and x + y = 6; check your answer in both equations.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x = 4, y = 2; 12 + 4 = 16 and 4 + 2 = 6</b>
+    <span class="how">① <b>대입법 substitution</b>: x + y = 6 → y = 6 − x<br>② 3x + 2(6 − x) = 16 → 3x + 12 − 2x = 16 → x = 4<br>③ y = 6 − 4 = 2<br>④ 확인 check: 3(4) + 2(2) = 12 + 4 = 16 ✓, 4 + 2 = 6 ✓</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">4.3</span><span class="sec-title">Inequalities</span><span class="sec-ko">부등식</span></div>
+<div class="q">
+  <div class="q-title">Q1. Solve 2x + 3 ≤ 11.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x ≤ 4</b>
+    <span class="how">① 방정식과 같은 방법 balancing: 양쪽에서 3 을 뺀다 → 2x ≤ 8<br>② 양쪽을 2 로 나눈다 → <b>x ≤ 4</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Solve −2x + 5 &lt; 11.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x &gt; −3</b>
+    <span class="how">① 양쪽에서 5 를 뺀다 → −2x &lt; 6<br>② 양쪽을 <b>−2 로 나눈다</b> → 음수 negative number 로 나누면 <b>부등호 방향을 뒤집는다 reverse the sign</b><br>③ <b>x &gt; −3</b><br>④ 확인: x = 0 이면 −0 + 5 = 5 &lt; 11 ✓ (0 &gt; −3 맞음)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Describe the number-line graph of x &gt; −3, including whether −3 is included.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Open circle at −3, shaded/arrow to the right; −3 is not included.</b>
+    <span class="how">① &gt; (초과) 이므로 −3 은 <b>포함되지 않는다 not included</b> → <b>빈 동그라미 open circle</b><br>② ≥ 였다면 −3 포함 → 꽉 찬 동그라미 closed circle<br>③ −3 보다 큰 수 → <b>오른쪽 to the right</b> 으로 화살표</span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 5 · Angles<span>각</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">5.1</span><span class="sec-title">Calculating angles</span><span class="sec-ko">각 계산하기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Two adjacent angles on a straight line are 47° and x°. Find x.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x = 133°</b>
+    <span class="how">① <b>직선 위의 각 angles on a straight line</b>의 합 = 180°<br>② x = 180° − 47° = <b>133°</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. A triangle has angles 38°, 67° and y°. Find y. A quadrilateral has three angles 90°, 110°, 75°; find the fourth.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>y = 75°; fourth quadrilateral angle = 85°</b>
+    <span class="how">① <b>삼각형 triangle</b> 내각의 합 = 180° → y = 180° − 38° − 67° = <b>75°</b><br>② <b>사각형 quadrilateral</b> 내각의 합 = 360° → 360° − 90° − 110° − 75° = <b>85°</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Two parallel lines are cut by a transversal. An alternate interior angle is 64°. Find its alternate partner and explain.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>64°; alternate interior angles between parallel lines are equal.</b>
+    <span class="how">① <b>평행선 parallel lines</b> 을 <b>횡단선 transversal</b>이 자르면 Z 모양이 생긴다<br>② Z 의 안쪽 두 각 = <b>엇각 alternate angles</b> → 서로 같다<br>③ 답: <b>64°</b>, 이유: alternate angles are equal</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">5.2</span><span class="sec-title">Interior angles of polygons + 5.3 Exterior angles of polygons</span><span class="sec-ko">다각형의 내각·외각</span></div>
+<div class="q">
+  <div class="q-title">Q1. Find the interior-angle sum of a hexagon.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(6 − 2) × 180° = 720°</b>
+    <span class="how">① n 각형 <b>내각의 합 interior angle sum</b> = (n − 2) × 180° (삼각형 n − 2 개로 나뉘니까)<br>② <b>육각형 hexagon</b> n = 6 → 4 × 180° = <b>720°</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find one exterior and one interior angle of a regular octagon.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Exterior 45°; interior 135°</b>
+    <span class="how">① <b>외각의 합 exterior angles</b>은 어떤 다각형이든 360°<br>② <b>정팔각형 regular octagon</b> → 외각 하나 = 360° ÷ 8 = <b>45°</b><br>③ 내각 + 외각 = 180° (한 직선) → 내각 = 180° − 45° = <b>135°</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A regular polygon has an exterior angle of 24°. How many sides does it have?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>360°/24° = 15 sides</b>
+    <span class="how">① 정다각형 외각 = 360° ÷ 변의 수<br>② 거꾸로: 변의 수 = 360° ÷ 외각 = 360 ÷ 24 = <b>15 sides</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">5.4</span><span class="sec-title">Constructions</span><span class="sec-ko">작도</span></div>
+<div class="q">
+  <div class="q-title">Q1. With a compass and straightedge, construct 60° from a given ray. Show construction arcs.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Correct 60° construction with equal-radius arcs.</b>
+    <span class="how">① 반직선 ray 의 끝점 O 에 <b>컴퍼스 compass</b>를 대고 호 arc 를 그려 반직선과 만나는 점 A 를 찍는다<br>② 컴퍼스 너비를 <b>그대로 same radius</b> 두고 A 에서 호를 그려 첫 호와 만나는 점 B 를 찍는다<br>③ O 와 B 를 <b>자 straightedge</b>로 잇는다 → ∠AOB = 60°<br>④ 이유: OA = OB = AB 라서 <b>정삼각형 equilateral triangle</b> → 각마다 60°<br>⑤ 작도 호 construction arcs 는 지우지 않는다</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Bisect your 60° angle. State the new angle and show the arcs.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>30°, with angle-bisector arcs.</b>
+    <span class="how">① <b>각의 이등분 angle bisector</b>: 꼭짓점 O 에서 호를 그려 두 변과 만나는 점 P, Q<br>② P 와 Q 에서 같은 반지름으로 호를 그려 만나는 점 R<br>③ O 와 R 을 잇는다 → 60° 가 반으로 나뉘어 <b>30°</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Explain how to mark the six vertices of a regular hexagon on a circle using a compass.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Set compass to circle radius and step that distance around the circumference six times.</b>
+    <span class="how">① 원을 그린 컴퍼스 너비(<b>반지름 radius</b>)를 바꾸지 않는다<br>② 원 위 한 점에서 시작해 그 너비로 <b>원둘레 circumference</b> 위를 차례로 6번 찍는다<br>③ 이유: 중심과 이웃한 두 점이 모두 반지름 길이 → 정삼각형 6개 → 중심각 60° × 6 = 360°<br>④ 여섯 점을 이으면 <b>정육각형 regular hexagon</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">5.5</span><span class="sec-title">Pythagoras' Theorem</span><span class="sec-ko">피타고라스 정리</span></div>
+<div class="q">
+  <div class="q-title">Q1. Name the hypotenuse in a right-angled triangle with sides 6 cm, 8 cm and 10 cm.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>10 cm</b>
+    <span class="how">① <b>빗변 hypotenuse</b> = <b>직각 right angle</b>의 맞은편, 가장 긴 변<br>② 6² + 8² = 36 + 64 = 100 = 10² ✓<br>③ 답: <b>10 cm</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. The hypotenuse is 13 cm and one shorter side is 5 cm. Find the other side.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>√(13² − 5²) = 12 cm</b>
+    <span class="how">① a² + b² = c² (c = 빗변)<br>② 짧은 변 구하기 → 빼기: b² = 13² − 5² = 169 − 25 = 144<br>③ b = √144 = <b>12 cm</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Can Pythagoras’ theorem be used directly for a triangle with no right angle? Explain.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>No; the theorem applies to right-angled triangles.</b>
+    <span class="how">① 피타고라스 정리는 <b>직각삼각형 right-angled triangle</b>에서만 성립한다<br>② 직각이 없으면 a² + b² = c² 가 맞지 않는다<br>③ 답: <b>No</b></span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 6 · Statistical investigations<span>통계 조사</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">6.1</span><span class="sec-title">Data collection and sampling</span><span class="sec-ko">자료 수집과 표본</span></div>
+<div class="q">
+  <div class="q-title">Q1. A school has 800 students and surveys 80. Identify the population and sample.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Population = 800 students; sample = 80 surveyed</b>
+    <span class="how">① <b>모집단 population</b> = 알고 싶은 전체 → 학교 학생 800명<br>② <b>표본 sample</b> = 실제로 조사한 일부 → 80명</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Suggest how to select 80 students from different year groups fairly.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Use an appropriately stratified/random selection across year groups.</b>
+    <span class="how">① <b>무작위 표본 random sample</b>: 이름을 뽑기처럼 골라 모두가 뽑힐 기회가 같게 한다<br>② <b>층화 표본 stratified sample</b>: 학년 year group 마다 학생 수 비율대로 뽑는다<br>&nbsp;&nbsp;예) 한 학년이 200명(전체의 1/4)이면 80 × 1/4 = 20명<br>③ 그래야 표본이 전체를 <b>대표 represent</b> 한다</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Why might surveying only the school basketball team give a poor estimate of the school’s average height?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>The basketball team is not representative; players may be taller than typical students.</b>
+    <span class="how">① 농구부는 키 큰 학생이 많다<br>② 그래서 학교 전체를 <b>대표하지 않는다 not representative</b><br>③ 평균 키가 실제보다 크게 나온다 → <b>편향 biased</b> 된 표본</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">6.2</span><span class="sec-title">Bias</span><span class="sec-ko">편향</span></div>
+<div class="q">
+  <div class="q-title">Q1. What is leading about “Don’t you agree our school lunches are excellent?”</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>It suggests the preferred answer and uses a positive judgement.</b>
+    <span class="how">① <b>유도 질문 leading question</b> = 원하는 답 쪽으로 끌고 가는 질문<br>② “Don’t you agree” → 동의하라고 미는 말<br>③ “excellent” → 이미 좋은 평가 positive judgement 가 들어 있다</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. A survey on gaming time is given only to members of a gaming club. Why is the sample biased?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Gaming-club members are likely to play more than the wider student population.</b>
+    <span class="how">① 게임 동아리 학생은 보통 게임을 더 많이 한다<br>② 학생 전체 wider student population 보다 게임 시간이 길게 나온다<br>③ 그래서 <b>편향된 표본 biased sample</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Rewrite the school-lunch question so that it is neutral.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>For example: “How would you rate school lunches?” with balanced response choices.</b>
+    <span class="how">① <b>중립 neutral</b> 질문 = 어느 쪽 답도 밀지 않는다<br>② 예: “How would you rate school lunches?”<br>③ 보기도 <b>균형 balanced</b> 있게: Very good / Good / OK / Poor / Very poor</span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 7 · Shapes and measurements<span>도형과 측정</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">7.1</span><span class="sec-title">Circumference and area of a circle</span><span class="sec-ko">원의 둘레와 넓이</span></div>
+<div class="q">
+  <div class="q-title">Q1. A circle has radius 7 cm. Find its diameter.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>14 cm</b>
+    <span class="how">① <b>지름 diameter</b> = <b>반지름 radius</b> × 2<br>② 7 × 2 = <b>14 cm</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. For the same circle, give its circumference and area in terms of π.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>C = 14π cm; A = 49π cm²</b>
+    <span class="how">① <b>둘레 circumference</b> C = πd = π × 14 = <b>14π cm</b><br>② <b>넓이 area</b> A = πr² = π × 7² = <b>49π cm²</b><br>③ in terms of π = π 를 계산하지 말고 그대로 남긴다</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. If the radius of a circle doubles, what happens to its circumference and its area?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Circumference doubles and area becomes four times as large.</b>
+    <span class="how">① C = 2πr → r 이 2배면 C 도 <b>2배 doubles</b><br>② A = πr² → r 이 2배면 (2r)² = 4r² → A 는 <b>4배 four times</b><br>③ 예: r = 1 → A = π, r = 2 → A = 4π</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">7.2</span><span class="sec-title">Areas of compound shapes</span><span class="sec-ko">복합 도형의 넓이</span></div>
+<div class="q">
+  <div class="q-title">Q1. A 10 cm × 6 cm rectangle has a semicircle attached along its 6 cm side. What is the semicircle’s radius?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>3 cm</b>
+    <span class="how">① 반원 semicircle 의 <b>지름 diameter</b> = 붙은 변 = 6 cm<br>② 반지름 = 6 ÷ 2 = <b>3 cm</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find the total area of the combined shape in terms of π.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>60 + 9π/2 cm²</b>
+    <span class="how">① <b>복합 도형 compound shape</b> → 간단한 도형으로 나눈다<br>② 직사각형 rectangle = 10 × 6 = 60 cm²<br>③ 반원 = ½ × π × 3² = 9π/2 cm²<br>④ 더한다 add: <b>60 + 9π/2 cm²</b> (≈ 74.1 cm²)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A circle of radius 2 cm is cut out of a 10 cm × 6 cm rectangle. Find the remaining area.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>60 − 4π cm²; subtract the hole.</b>
+    <span class="how">① 직사각형 = 60 cm²<br>② 구멍 hole 인 원 = π × 2² = 4π cm²<br>③ 잘라 낸 부분은 <b>뺀다 subtract</b>: <b>60 − 4π cm²</b> (≈ 47.4 cm²)<br>④ 붙이면 더하고, 잘라 내면 뺀다</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">7.3</span><span class="sec-title">Large and small units</span><span class="sec-ko">큰 단위와 작은 단위</span></div>
+<div class="q">
+  <div class="q-title">Q1. Convert 3.6 km to metres.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>3600 m</b>
+    <span class="how">① 1 km = 1000 m<br>② 큰 단위 → 작은 단위: <b>곱한다</b> → 3.6 × 1000 = <b>3600 m</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Convert 2.4 tonnes to kilograms and 750 mL to litres.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>2400 kg; 0.75 L</b>
+    <span class="how">① 1 tonne = 1000 kg → 2.4 × 1000 = <b>2400 kg</b><br>② 1 L = 1000 mL → 작은 단위 → 큰 단위: <b>나눈다</b> → 750 ÷ 1000 = <b>0.75 L</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Which is larger: 0.003 km or 250 cm? Show both in metres.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>0.003 km = 3 m; 250 cm = 2.5 m; so 0.003 km is larger.</b>
+    <span class="how">① 같은 단위 metres 로 바꿔야 비교할 수 있다<br>② 0.003 km × 1000 = 3 m<br>③ 250 cm ÷ 100 = 2.5 m<br>④ 3 m &gt; 2.5 m → <b>0.003 km</b> 가 더 크다</span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 8 · Fractions<span>분수</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">8.1</span><span class="sec-title">Fractions and recurring decimals</span><span class="sec-ko">분수와 순환소수</span></div>
+<div class="q">
+  <div class="q-title">Q1. Classify 0.375 and 0.272727… as terminating or recurring.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>0.375 terminates; 0.272727… recurs.</b>
+    <span class="how">① <b>유한소수 terminating decimal</b> = 끝이 있는 소수 → 0.375 (= 3/8)<br>② <b>순환소수 recurring decimal</b> = 같은 숫자 묶음이 끝없이 반복 → 0.272727… (27 반복, = 3/11)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Write 1/8 and 2/3 as decimals.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>0.125 and 0.6666… (0.6 recurring)</b>
+    <span class="how">① 1 ÷ 8 = <b>0.125</b> (끝난다)<br>② 2 ÷ 3 = 0.6666… 6 이 끝없이 → <b>0.6 recurring</b> (6 위에 점 ·)<br>③ 꿀팁: 분모를 소인수분해해서 2 와 5 만 있으면 유한소수, 다른 소수(3 등)가 있으면 순환소수</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Write 0.181818… as a fraction in simplest form.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>18/99 = 2/11</b>
+    <span class="how">① x = 0.181818… 로 둔다<br>② 두 자리(18)가 반복되니 100 을 곱한다: 100x = 18.181818…<br>③ 빼면: 100x − x = 18 → 99x = 18 → x = 18/99<br>④ <b>기약분수 simplest form</b>: 18 과 99 를 9 로 나눈다 → <b>2/11</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">8.2</span><span class="sec-title">Fractions and the correct order of operations</span><span class="sec-ko">분수와 계산 순서</span></div>
+<div class="q">
+  <div class="q-title">Q1. Calculate 1/2 + (3/4 × 2/3).</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>1/2 + 1/2 = 1</b>
+    <span class="how">① 괄호 brackets 먼저: 3/4 × 2/3 = 6/12 = 1/2<br>② 1/2 + 1/2 = <b>1</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Calculate (1/2 + 3/4) × 2/3.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>5/4 × 2/3 = 5/6</b>
+    <span class="how">① 괄호 먼저: 1/2 + 3/4 = 2/4 + 3/4 = 5/4<br>② 5/4 × 2/3 = 10/12 = <b>5/6</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Why are the answers to Questions 1 and 2 different?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Brackets make the addition happen first in Question 2; multiplication comes first in Question 1.</b>
+    <span class="how">① <b>계산 순서 order of operations</b> (BIDMAS): 괄호 → 지수 → 곱셈·나눗셈 → 덧셈·뺄셈<br>② 1번: 곱셈이 먼저(괄호 안이 곱셈)<br>③ 2번: 괄호 때문에 덧셈이 먼저<br>④ 같은 수라도 순서가 다르면 답이 달라진다</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">8.3</span><span class="sec-title">Multiplying fractions</span><span class="sec-ko">분수의 곱셈</span></div>
+<div class="q">
+  <div class="q-title">Q1. Calculate 3/5 × 10/9.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>2/3</b>
+    <span class="how">① 분자끼리, 분모끼리 곱한다: (3 × 10)/(5 × 9) = 30/45<br>② 약분 simplify (15로 나눔) → <b>2/3</b><br>③ 먼저 약분 cancel 해도 된다: 3 과 9 → 1 과 3, 10 과 5 → 2 와 1 → 2/3</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Calculate 1 1/2 × 2/3.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>3/2 × 2/3 = 1</b>
+    <span class="how">① <b>대분수 mixed number</b>는 먼저 <b>가분수 improper fraction</b>로 바꾼다: 1 1/2 = 3/2<br>② 3/2 × 2/3 = 6/6 = <b>1</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Show a quick way to calculate 7/12 × 18/21 without multiplying large numbers first.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Cancel 7 with 21 and 18 with 12; result = 1/2.</b>
+    <span class="how">① <b>곱하기 전에 약분 cancel before multiplying</b><br>② 7 과 21 → 7 로 나눔 → 1 과 3<br>③ 18 과 12 → 6 으로 나눔 → 3 과 2<br>④ 남은 것: (1 × 3)/(2 × 3) = 3/6 = <b>1/2</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">8.4</span><span class="sec-title">Dividing fractions</span><span class="sec-ko">분수의 나눗셈</span></div>
+<div class="q">
+  <div class="q-title">Q1. What is the reciprocal of 3/7?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>7/3</b>
+    <span class="how">① <b>역수 reciprocal</b> = 분자와 분모를 뒤집은 수 (곱하면 1)<br>② 3/7 → <b>7/3</b> (3/7 × 7/3 = 1)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Calculate 5/6 ÷ 10/9.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>5/6 × 9/10 = 3/4</b>
+    <span class="how">① 나눗셈 → 나누는 수의 역수를 곱한다 (KFC: Keep, Flip, Change)<br>② 5/6 × 9/10 = 45/60<br>③ 약분 → <b>3/4</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. There are 2 1/3 litres of juice. How many 1/6-litre cups can be filled?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>7/3 ÷ 1/6 = 14 cups</b>
+    <span class="how">① 2 1/3 = 7/3 (가분수 improper fraction)<br>② 몇 컵? → 나눗셈: 7/3 ÷ 1/6 = 7/3 × 6/1 = 42/3 = <b>14 cups</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">8.5</span><span class="sec-title">Making calculations easier</span><span class="sec-ko">계산을 쉽게 하기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Calculate 25 × 0.16 without long multiplication.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>4</b>
+    <span class="how">① 0.16 = 4 × 0.04, 25 × 4 = 100 을 이용<br>② 25 × 0.16 = 25 × 4 × 0.04 = 100 × 0.04 = <b>4</b><br>③ 또는 0.16 = 16/100 → 25 × 16/100 = 400/100 = 4</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Work out 3/8 + 5/12 using a suitable denominator.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>19/24</b>
+    <span class="how">① 8 과 12 의 <b>최소공배수 LCM</b> = 24 (96 보다 작아서 계산이 쉽다)<br>② 3/8 = 9/24, 5/12 = 10/24<br>③ 9/24 + 10/24 = <b>19/24</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Explain why 4 × 0.25 × 13 can be done as (4 × 0.25) × 13 and evaluate it.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Multiplication can be regrouped (associative property); the answer is 13.</b>
+    <span class="how">① 곱셈은 묶는 순서를 바꿔도 답이 같다 → <b>결합법칙 associative property</b><br>② 4 × 0.25 = 1 먼저 계산<br>③ 1 × 13 = <b>13</b></span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 9 · Sequences and functions<span>수열과 함수</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">9.1</span><span class="sec-title">Generating sequences</span><span class="sec-ko">수열 만들기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Write the next two terms of 7, 11, 15, 19, …</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>23, 27</b>
+    <span class="how">① 이웃한 <b>항 term</b>의 차 difference = +4<br>② 19 + 4 = 23, 23 + 4 = 27</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Is 2, 5, 10, 17, 26, … linear or non-linear?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Non-linear</b>
+    <span class="how">① 차를 구한다: +3, +5, +7, +9<br>② 차가 일정하지 않다 → <b>비선형 non-linear</b><br>③ (두 번째 차는 모두 +2 → 제곱수열 quadratic, n² + 1)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Explain how the differences help you classify 4, 9, 14, 19, …</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>First differences are all +5, so it is linear.</b>
+    <span class="how">① <b>첫 번째 차 first differences</b>: +5, +5, +5<br>② 차가 일정 constant → <b>선형 linear</b> (등차수열 arithmetic sequence)</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">9.2</span><span class="sec-title">Using the nth term</span><span class="sec-ko">n번째 항 쓰기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Find the 10th term of 4n + 3.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>43</b>
+    <span class="how">① <b>n번째 항 nth term</b> 4n + 3 에 n = 10 대입<br>② 4 × 10 + 3 = <b>43</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find the nth term of 6, 10, 14, 18, …</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>4n + 2</b>
+    <span class="how">① 차 = +4 → 4n 으로 시작<br>② 4n 은 4, 8, 12, … → 실제 수열과 비교하면 2씩 크다<br>③ <b>4n + 2</b> (확인: n = 1 → 6 ✓)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Find the nth term of 3, 6, 11, 18, … and then find the 12th term.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>n² + 2; 12th term = 146</b>
+    <span class="how">① 차: +3, +5, +7 → 두 번째 차 second difference = +2 → n² 이 들어 있다<br>② n² 은 1, 4, 9, 16 → 수열과 비교하면 모두 2씩 크다 → <b>n² + 2</b><br>③ 12번째: 12² + 2 = 144 + 2 = <b>146</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">9.3</span><span class="sec-title">Representing functions</span><span class="sec-ko">함수 나타내기</span></div>
+<div class="q">
+  <div class="q-title">Q1. A machine squares its input, then adds 4. What is the output when the input is 3?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>13</b>
+    <span class="how">① <b>함수 기계 function machine</b>: 입력 input → 제곱 → +4 → 출력 output<br>② 3² = 9, 9 + 4 = <b>13</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Write this function using x for the input and y for the output.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>y = x² + 4</b>
+    <span class="how">① 입력 x 를 제곱 → x²<br>② 4 를 더함 → x² + 4<br>③ 출력 y: <b>y = x² + 4</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. The same machine outputs 29. Find the positive input and explain your steps.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>5; subtract 4 to get 25, then take the positive square root.</b>
+    <span class="how">① 거꾸로 가기 = <b>역연산 inverse operations</b>을 반대 순서로<br>② +4 의 반대: 29 − 4 = 25<br>③ 제곱의 반대: √25 = 5 (양수 positive)<br>④ 답: <b>5</b></span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 10 · Graphs<span>그래프</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">10.1</span><span class="sec-title">Functions + 10.2 Plotting graphs</span><span class="sec-ko">함수 + 그래프 그리기</span></div>
+<div class="q">
+  <div class="q-title">Q1. A bike costs RM10 to hire plus RM3 per hour h. Write a rule for cost C.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>C = 10 + 3h</b>
+    <span class="how">① 1시간마다 RM3 → 3h<br>② 기본 RM10 을 더한다 → <b>C = 10 + 3h</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find C for h = 0, 2 and 4; plot these three points on a set of axes.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Points (0, 10), (2, 16), (4, 22) on a straight line.</b>
+    <span class="how">① h = 0 → C = 10<br>② h = 2 → C = 10 + 6 = 16<br>③ h = 4 → C = 10 + 12 = 22<br>④ 점 (0, 10), (2, 16), (4, 22) 를 찍으면 <b>직선 straight line</b> 이 된다 (가로축 h, 세로축 C)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. What does the point (0, 10) mean in this situation?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>It is the fixed RM10 charge even with zero hours of hire.</b>
+    <span class="how">① h = 0 → 한 시간도 안 빌렸을 때<br>② C = 10 → 그래도 내는 <b>고정 요금 fixed charge</b> RM10<br>③ 그래프에서 이 점이 <b>y절편 y-intercept</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">10.3</span><span class="sec-title">Gradient and intercepts</span><span class="sec-ko">기울기와 절편</span></div>
+<div class="q">
+  <div class="q-title">Q1. State the gradient and y-intercept of y = −2x + 7.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>m = −2; c = 7</b>
+    <span class="how">① <b>y = mx + c</b> 꼴: m = <b>기울기 gradient</b>, c = <b>y절편 y-intercept</b><br>② m = −2 (오른쪽으로 갈수록 내려감), c = 7</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find the equation of the line through (2, 7) and (5, 16).</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Gradient = 3; y = 3x + 1</b>
+    <span class="how">① 기울기 = y 의 변화 ÷ x 의 변화 = (16 − 7)/(5 − 2) = 9/3 = 3<br>② y = 3x + c 에 (2, 7) 대입: 7 = 6 + c → c = 1<br>③ <b>y = 3x + 1</b> (확인: x = 5 → 16 ✓)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Rearrange 2y = 6x − 8 to the form y = mx + c and identify m and c.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>y = 3x − 4; m = 3, c = −4</b>
+    <span class="how">① y 앞의 2 를 없애려면 양쪽을 2 로 나눈다<br>② y = 3x − 4<br>③ <b>m = 3, c = −4</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">10.4</span><span class="sec-title">Interpreting graphs</span><span class="sec-ko">그래프 해석하기</span></div>
+<div class="q">
+  <div class="q-title">Q1. A distance–time line passes through (0 s, 0 m) and (5 s, 40 m). How far is travelled in 5 s?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>40 m</b>
+    <span class="how">① <b>거리-시간 그래프 distance–time graph</b>: 가로 = 시간, 세로 = 거리<br>② 5 s 일 때 거리 = <b>40 m</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Assuming constant speed, how long does 24 m take?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>3 s</b>
+    <span class="how">① <b>일정한 속력 constant speed</b> → 1초에 40 ÷ 5 = 8 m<br>② 24 m ÷ 8 m/s = <b>3 s</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Calculate the speed and write an equation for distance d after t seconds.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>8 m/s; d = 8t</b>
+    <span class="how">① <b>속력 speed</b> = 거리 ÷ 시간 = 40 ÷ 5 = <b>8 m/s</b> (그래프의 기울기 gradient)<br>② 원점을 지나는 직선 → <b>d = 8t</b></span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 11 · Ratio and proportion<span>비와 비례</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">11.1</span><span class="sec-title">Using ratios</span><span class="sec-ko">비 사용하기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Simplify 18:24.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>3:4</b>
+    <span class="how">① 두 수의 <b>최대공약수 HCF</b> = 6<br>② 18 ÷ 6 = 3, 24 ÷ 6 = 4 → <b>3:4</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Share RM240 in the ratio 3:5.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>RM90 and RM150</b>
+    <span class="how">① 전체 몫 parts = 3 + 5 = 8<br>② 1몫 = 240 ÷ 8 = 30<br>③ 3 × 30 = <b>RM90</b>, 5 × 30 = <b>RM150</b> (합 240 ✓)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A recipe needs 2 parts strawberries to 1 part raspberries. If there are 600 g of fruit, how much of each is needed?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>400 g strawberries and 200 g raspberries</b>
+    <span class="how">① 비 ratio 2:1 → 전체 3몫<br>② 1몫 = 600 ÷ 3 = 200 g<br>③ 딸기 2 × 200 = <b>400 g</b>, 라즈베리 <b>200 g</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">11.2</span><span class="sec-title">Direct and inverse proportion</span><span class="sec-ko">정비례와 반비례</span></div>
+<div class="q">
+  <div class="q-title">Q1. Four litres of juice cost RM14. Find the cost of 7 litres at the same rate.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>RM24.50</b>
+    <span class="how">① <b>정비례 direct proportion</b>: 양이 늘면 값도 같은 비율로 는다<br>② 1 L = 14 ÷ 4 = RM3.50 (<b>단위 방법 unitary method</b>)<br>③ 7 L = 7 × 3.50 = <b>RM24.50</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Four workers take 12 days for a task. If they all work at the same rate, is the time direct or inverse to the number of workers?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Inverse proportion</b>
+    <span class="how">① 일꾼이 많아지면 걸리는 날은 <b>줄어든다</b><br>② 하나가 늘 때 다른 하나가 줄어 곱이 일정 → <b>반비례 inverse proportion</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. How many days would six equally efficient workers take for the same task?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>4 × 12 ÷ 6 = 8 days</b>
+    <span class="how">① 전체 일의 양 = 4명 × 12일 = 48 <b>일꾼-일 worker-days</b><br>② 6명이면 48 ÷ 6 = <b>8 days</b></span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 12 · Probability<span>확률</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">12.1</span><span class="sec-title">Mutually exclusive events</span><span class="sec-ko">배반 사건</span></div>
+<div class="q">
+  <div class="q-title">Q1. A fair die is rolled. What is P(3)?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>1/6</b>
+    <span class="how">① <b>공정한 주사위 fair die</b> → 6개 결과가 모두 같은 확률<br>② 3 이 나오는 경우 1개 → P(3) = <b>1/6</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Are “rolling a 3” and “rolling an even number” mutually exclusive? Explain.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Yes; 3 is not an even number.</b>
+    <span class="how">① <b>배반 사건 mutually exclusive events</b> = 동시에 일어날 수 없는 사건<br>② 짝수 even = 2, 4, 6 → 3 은 들어 있지 않다<br>③ 한 번에 둘 다 나올 수 없다 → <b>Yes</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Find P(3 or even number) for one roll of a fair die.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>1/6 + 3/6 = 4/6 = 2/3</b>
+    <span class="how">① 배반 사건이면 “또는 or” 확률은 <b>더한다</b>: P(A or B) = P(A) + P(B)<br>② P(3) = 1/6, P(even) = 3/6<br>③ 1/6 + 3/6 = 4/6 = <b>2/3</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">12.3</span><span class="sec-title">Combined events</span><span class="sec-ko">복합 사건</span></div>
+<div class="q">
+  <div class="q-title">Q1. Two fair coins are tossed. List all four equally likely ordered outcomes.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>HH, HT, TH, TT</b>
+    <span class="how">① H = 앞면 heads, T = 뒷면 tails<br>② 첫 동전 × 둘째 동전 = 2 × 2 = 4가지 <b>결과 outcomes</b><br>③ <b>HH, HT, TH, TT</b> (HT 와 TH 는 다른 결과)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find P(two heads).</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>1/4</b>
+    <span class="how">① 4가지 중 HH 는 1가지<br>② P(HH) = <b>1/4</b> (= 1/2 × 1/2)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Find P(exactly one head) and explain which outcomes count.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>1/2; the favourable outcomes are HT and TH.</b>
+    <span class="how">① 앞면이 딱 하나 exactly one = <b>HT, TH</b> (원하는 결과 favourable outcomes)<br>② 2/4 = <b>1/2</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">12.4</span><span class="sec-title">Chance experiments</span><span class="sec-ko">확률 실험</span></div>
+<div class="q">
+  <div class="q-title">Q1. An event occurs 9 times in 30 trials. Find its relative frequency.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>9/30 = 0.3</b>
+    <span class="how">① <b>상대도수 relative frequency</b> = 일어난 횟수 ÷ 전체 시행 횟수 trials<br>② 9 ÷ 30 = <b>0.3</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. In another 70 trials it occurs 21 times. Find its relative frequency for all 100 trials.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(9 + 21)/100 = 0.3</b>
+    <span class="how">① 전부 합친다: 횟수 9 + 21 = 30, 시행 30 + 70 = 100<br>② 30 ÷ 100 = <b>0.3</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Why might 100 trials be more useful than 10 for estimating a probability?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>More trials generally reduce the effect of random variation and make estimates more stable.</b>
+    <span class="how">① 몇 번만 하면 우연 <b>random variation</b> 때문에 결과가 많이 흔들린다<br>② 시행을 많이 할수록 상대도수가 실제 확률에 가까워지고 <b>안정된다 more stable</b><br>③ 그래서 100번이 더 <b>믿을 만한 estimate</b></span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 13 · Position and transformation<span>위치와 변환</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">13.1</span><span class="sec-title">Bearings and scale drawings</span><span class="sec-ko">방위각과 축척도</span></div>
+<div class="q">
+  <div class="q-title">Q1. A direction is 70° clockwise from north. Write the bearing.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>070°</b>
+    <span class="how">① <b>방위각 bearing</b> = 북쪽 north 에서 <b>시계 방향 clockwise</b> 으로 잰 각<br>② 항상 <b>세 자리 three figures</b>로 쓴다 → <b>070°</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. A map uses 1 cm : 2 km. What does 3.5 cm represent?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>7 km</b>
+    <span class="how">① <b>축척 scale</b> 1 cm = 2 km<br>② 3.5 × 2 = <b>7 km</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A destination is 3.5 cm away on bearing 070°. Describe its real location from the starting point.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>7 km away on bearing 070° (clockwise from north).</b>
+    <span class="how">① 거리: 3.5 cm → 7 km<br>② 방향: 북쪽에서 시계 방향 70°<br>③ <b>7 km away on a bearing of 070°</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">13.2</span><span class="sec-title">Points on a line segment</span><span class="sec-ko">선분 위의 점</span></div>
+<div class="q">
+  <div class="q-title">Q1. Find the midpoint of A(2, 3) and B(10, 11).</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(6, 7)</b>
+    <span class="how">① <b>중점 midpoint</b> = 좌표의 평균 average<br>② x: (2 + 10)/2 = 6, y: (3 + 11)/2 = 7<br>③ <b>(6, 7)</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find the point one quarter of the way from A to B.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(4, 5)</b>
+    <span class="how">① A 에서 B 까지 가는 양 = (10 − 2, 11 − 3) = (8, 8)<br>② 1/4 만큼 = (2, 2)<br>③ A 에 더한다: (2 + 2, 3 + 2) = <b>(4, 5)</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Find the point three quarters of the way from A to B and explain your method.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(8, 9); add three quarters of (8, 8) to A(2, 3).</b>
+    <span class="how">① 가는 양 (8, 8) 의 3/4 = (6, 6)<br>② A(2, 3) 에 더한다: (2 + 6, 3 + 6) = <b>(8, 9)</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">13.3</span><span class="sec-title">Transformation</span><span class="sec-ko">변환</span></div>
+<div class="q">
+  <div class="q-title">Q1. Point P(2, 1) is reflected in the x-axis. Give its image.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(2, −1)</b>
+    <span class="how">① <b>x축 대칭 reflect in the x-axis</b> → x 그대로, y 부호만 바뀜<br>② (2, 1) → <b>(2, −1)</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Translate P(2, 1) by vector (−3, 4). Give its image.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(−1, 5)</b>
+    <span class="how">① <b>평행이동 translate</b> 벡터 vector (−3, 4) = 왼쪽 3, 위로 4<br>② (2 − 3, 1 + 4) = <b>(−1, 5)</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Start at P(2, 1); first reflect in the x-axis, then translate by (−3, 4). Give the final point.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(−1, 3)</b>
+    <span class="how">① 먼저 대칭: (2, 1) → (2, −1)<br>② 다음 평행이동: (2 − 3, −1 + 4) = <b>(−1, 3)</b><br>③ 순서가 바뀌면 답이 달라질 수 있다 (먼저 이동 → (−1, 5) → 대칭 → (−1, −5))</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">13.3</span><span class="sec-title">Enlarging shapes</span><span class="sec-ko">도형 확대</span></div>
+<div class="q">
+  <div class="q-title">Q1. An enlargement has centre O(0, 0) and scale factor 2. What is the image of (1, 3)?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(2, 6)</b>
+    <span class="how">① <b>확대 enlargement</b> 중심이 원점 O 이면 좌표에 <b>배율 scale factor</b>을 곱한다<br>② (1 × 2, 3 × 2) = <b>(2, 6)</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Under the same enlargement, find the images of (−2, 1) and (3, −1).</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(−4, 2) and (6, −2)</b>
+    <span class="how">① (−2 × 2, 1 × 2) = <b>(−4, 2)</b><br>② (3 × 2, −1 × 2) = <b>(6, −2)</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. What happens to a shape’s side lengths and angles when enlarged by scale factor 2?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Side lengths double; corresponding angles stay equal.</b>
+    <span class="how">① 변의 길이 side lengths → 모두 2배<br>② 각 angles → 그대로 (모양이 같은 <b>닮은 도형 similar shape</b>)</span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 14 · Volume, surface area and symmetry<span>부피·겉넓이·대칭</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">14.1</span><span class="sec-title">Calculating the volume of prisms</span><span class="sec-ko">각기둥의 부피</span></div>
+<div class="q">
+  <div class="q-title">Q1. A prism has cross-sectional area 18 cm² and length 7 cm. Find its volume.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>126 cm³</b>
+    <span class="how">① <b>각기둥 prism</b> 부피 volume = <b>단면적 cross-sectional area</b> × 길이 length<br>② 18 × 7 = <b>126 cm³</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Find the volume of a cylinder of radius 3 cm and height 5 cm in terms of π.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>45π cm³</b>
+    <span class="how">① <b>원기둥 cylinder</b> 부피 = πr²h<br>② π × 3² × 5 = π × 9 × 5 = <b>45π cm³</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. If a cylinder’s radius doubles but its height stays fixed, how does its volume change?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>It becomes four times as large because radius is squared.</b>
+    <span class="how">① V = πr²h 에서 r 이 <b>제곱 squared</b> 되어 있다<br>② r → 2r 이면 r² → 4r²<br>③ 부피는 <b>4배 four times</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">14.2</span><span class="sec-title">Calculating the surface area of triangular prisms, pyramids and cylinders</span><span class="sec-ko">삼각기둥·각뿔·원기둥의 겉넓이</span></div>
+<div class="q">
+  <div class="q-title">Q1. How many triangular faces and rectangular faces does a triangular prism have?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Two triangles and three rectangles</b>
+    <span class="how">① <b>삼각기둥 triangular prism</b>: 양 끝 면 2개 = 삼각형 triangle<br>② 옆면 3개 = 직사각형 rectangle<br>③ 모두 5면 faces</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. A prism has a 3–4–5 right-triangle cross-section and length 10 cm. Find its total surface area.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>2 × (3 × 4/2) + (3 + 4 + 5) × 10 = 132 cm²</b>
+    <span class="how">① 삼각형 2개: 2 × (½ × 3 × 4) = 2 × 6 = 12 cm²<br>② 직사각형 3개: 3 × 10 + 4 × 10 + 5 × 10 = (3 + 4 + 5) × 10 = 120 cm²<br>③ <b>겉넓이 surface area</b> = 12 + 120 = <b>132 cm²</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Find the total surface area of a closed cylinder with r = 2 cm and h = 5 cm, in terms of π.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>2π(2²) + 2π(2)(5) = 28π cm²</b>
+    <span class="how">① 위·아래 원 2개: 2 × πr² = 2 × π × 4 = 8π<br>② 옆면 curved surface 을 펼치면 직사각형: 둘레 2πr × 높이 h = 2π × 2 × 5 = 20π<br>③ 합: 8π + 20π = <b>28π cm²</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">14.3</span><span class="sec-title">Symmetry in 3D shapes</span><span class="sec-ko">입체도형의 대칭</span></div>
+<div class="q">
+  <div class="q-title">Q1. What does a plane of symmetry do to a 3D solid?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Divides the solid into two mirror-image halves.</b>
+    <span class="how">① <b>대칭면 plane of symmetry</b> = 입체를 자르는 평면<br>② 잘린 두 쪽이 거울에 비친 듯 똑같다 → <b>mirror-image halves</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. How many planes of symmetry does a rectangular cuboid with three unequal dimensions have?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>3</b>
+    <span class="how">① 가로·세로·높이가 모두 다른 <b>직육면체 cuboid</b><br>② 각 방향의 가운데를 자르는 면 3개만 대칭면<br>③ 대각선으로 자르면 두 쪽이 같지 않다 → <b>3</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Which has more planes of symmetry: a cube or that rectangular cuboid? State the numbers.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Cube: 9; rectangular cuboid with unequal dimensions: 3.</b>
+    <span class="how">① <b>정육면체 cube</b>: 가운데를 자르는 면 3개 + 마주 보는 모서리를 잇는 대각선 면 6개 = <b>9</b><br>② 직육면체(세 길이 다름): <b>3</b><br>③ 정육면체가 더 많다</span>
+  </div></details>
+</div>
+</div>
+<div class="chap">CHAPTER 15 · Interpreting and discussing results<span>결과 해석하기</span></div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">15.1</span><span class="sec-title">Interpreting and drawing frequency polygons</span><span class="sec-ko">도수다각형 읽고 그리기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Find the midpoints of 0–10, 10–20 and 20–30.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>5, 15, 25</b>
+    <span class="how">① <b>계급의 중앙값 midpoint</b> = (아래 끝 + 위 끝) ÷ 2<br>② (0 + 10)/2 = 5, (10 + 20)/2 = 15, (20 + 30)/2 = 25</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Their frequencies are 2, 5 and 3. State the points to plot, then join them.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(5, 2), (15, 5), (25, 3), joined in order with straight lines.</b>
+    <span class="how">① 점 = (중앙값 midpoint, 도수 frequency)<br>② (5, 2), (15, 5), (25, 3)<br>③ 차례대로 <b>직선 straight lines</b> 으로 잇는다 → <b>도수다각형 frequency polygon</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Which class has the greatest frequency, and how do you know?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>10–20; it has the highest plotted frequency, 5.</b>
+    <span class="how">① 가장 높은 점 = (15, 5)<br>② 15 는 10–20 계급 class 의 중앙값<br>③ 답: <b>10–20</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">15.2</span><span class="sec-title">Scatter graphs</span><span class="sec-ko">산점도</span></div>
+<div class="q">
+  <div class="q-title">Q1. Plot the points (1, 8), (2, 6), (3, 4) and (4, 2).</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Correctly plotted four points.</b>
+    <span class="how">① 가로축 x, 세로축 y 에 네 점을 찍는다<br>② 점들이 오른쪽 아래로 내려가는 한 줄 위에 있다 (y = 10 − 2x)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Describe the correlation and give a reason.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Negative; y falls as x increases.</b>
+    <span class="how">① x 가 커질수록 y 가 작아진다<br>② → <b>음의 상관관계 negative correlation</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Use the pattern to estimate y when x = 2.5. Is this interpolation or extrapolation?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>y ≈ 5; interpolation because 2.5 lies within the observed x-range.</b>
+    <span class="how">① x 가 1 늘 때 y 가 2 준다 → x = 2.5 는 2 와 3 사이 → y 는 6 과 4 사이 → <b>y ≈ 5</b><br>② 2.5 는 자료 범위(1~4) 안 → <b>내삽 interpolation</b><br>③ 범위 밖(예: x = 10)을 예측하면 <b>외삽 extrapolation</b> (덜 믿을 만함)</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">15.3</span><span class="sec-title">Back-to-back stem-and-leaf diagrams</span><span class="sec-ko">양쪽 줄기와 잎 그림</span></div>
+<div class="q">
+  <div class="q-title">Q1. For scores 12, 14, 17, 21, 23 and 25, state the stems and leaves.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Stems 1, 2; Group A: for 1 → 2, 4, 7 and 2 → 1, 3, 5; key 1|2 = 12</b>
+    <span class="how">① <b>줄기 stem</b> = 십의 자리, <b>잎 leaf</b> = 일의 자리<br>② 줄기 1: 잎 2, 4, 7 (12, 14, 17)<br>③ 줄기 2: 잎 1, 3, 5 (21, 23, 25)<br>④ <b>열쇠 key</b>: 1|2 = 12 를 꼭 적는다</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Add a second group with scores 11, 15, 16, 22, 24 and 29 on the opposite side, keeping leaves in order.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Group B: for stem 1 leaves 1, 5, 6; stem 2 leaves 2, 4, 9 (reverse display order on the left).</b>
+    <span class="how">① <b>양쪽 back-to-back</b> 그림: 줄기는 가운데, A 는 오른쪽, B 는 왼쪽<br>② 줄기 1: B 잎 1, 5, 6 / 줄기 2: B 잎 2, 4, 9<br>③ 왼쪽 잎은 줄기에서 멀어질수록 커지게 <b>거꾸로</b> 쓴다:<br><table class="tbl"><tr><th>Group B</th><th>stem</th><th>Group A</th></tr><tr><td>6 5 1</td><td>1</td><td>2 4 7</td></tr><tr><td>9 4 2</td><td>2</td><td>1 3 5</td></tr></table></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Find the median score of each group. Which is higher?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>A median = (17 + 21)/2 = 19; B median = (16 + 22)/2 = 19; neither is higher.</b>
+    <span class="how">① 6개씩이라 <b>중앙값 median</b> = 3번째와 4번째의 평균<br>② A: 12, 14, <u>17</u>, <u>21</u>, 23, 25 → (17 + 21)/2 = 19<br>③ B: 11, 15, <u>16</u>, <u>22</u>, 24, 29 → (16 + 22)/2 = 19<br>④ 둘 다 19 → <b>neither is higher</b> (같다)</span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">15.4</span><span class="sec-title">Calculating statistics for grouped data</span><span class="sec-ko">묶음 자료의 통계</span></div>
+<div class="q">
+  <div class="q-title">Q1. Classes 0–10, 10–20 and 20–30 have frequencies 2, 3 and 1. State the modal class.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>10–20</b>
+    <span class="how">① <b>최빈 계급 modal class</b> = 도수 frequency 가 가장 큰 계급<br>② 도수 3 → <b>10–20</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. Use the midpoints to estimate the mean.</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>(2×5 + 3×15 + 1×25)/6 = 80/6 ≈ 13.3</b>
+    <span class="how">① 중앙값 midpoints: 5, 15, 25<br>② 중앙값 × 도수: 2×5 = 10, 3×15 = 45, 1×25 = 25 → 합 80<br>③ 전체 도수 = 2 + 3 + 1 = 6<br>④ <b>평균 추정값 estimated mean</b> = 80 ÷ 6 ≈ <b>13.3</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. Why is the calculated mean an estimate rather than an exact value?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>We do not know the exact original values within each class; midpoints are used as substitutes.</b>
+    <span class="how">① 묶음 자료 grouped data 는 각 계급 안의 실제 값을 모른다<br>② 그래서 모든 값을 중앙값 midpoint 이라고 <b>가정</b>하고 계산했다<br>③ 실제 평균과 조금 다를 수 있다 → <b>추정값 estimate</b></span>
+  </div></details>
+</div>
+<div class="sec-head"><span class="sec-no">15.5</span><span class="sec-title">Representing data (Project Australia)</span><span class="sec-ko">자료 나타내기</span></div>
+<div class="q">
+  <div class="q-title">Q1. Would monthly rainfall measurements be numerical or categorical data?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Numerical (quantitative) data</b>
+    <span class="how">① 강수량은 mm 로 재는 숫자 → <b>수치형 자료 numerical (quantitative) data</b><br>② 색깔·나라 이름처럼 종류로 나누는 것은 <b>범주형 categorical</b></span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2. To show how rainfall changes over 12 months, would you choose a line graph or a pie chart? Why?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>Line graph, because it displays change over time.</b>
+    <span class="how">① 시간에 따른 변화 change over time → <b>꺾은선 그래프 line graph</b><br>② <b>원그래프 pie chart</b>는 전체 중 비율 proportion 을 보여 줄 때 쓴다</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3. A graph starts its vertical axis at 95 rather than 0. Why might this exaggerate a small difference?</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>The shortened axis makes small changes appear visually large.</b>
+    <span class="how">① 세로축 vertical axis 이 0 이 아닌 95 에서 시작하면 아래가 잘려 있다<br>② 예: 96 과 98 은 실제로 약 2% 차이인데 막대 높이는 1 대 3 처럼 보인다<br>③ 작은 차이가 <b>과장 exaggerate</b> 되어 보인다 → <b>오해하게 만드는 그래프 misleading graph</b></span>
+  </div></details>
+</div>
+</div>
+</div>
+<script>
+/* 단원 페이지 안(iframe)에서 열릴 때는 이 페이지의 제목 줄을 숨긴다 — 단원 제목이 위에 이미 있어 두 번 나오기 때문이다. */
+if (window.self !== window.top) {
+  document.documentElement.classList.add('embedded');
+  var _h = document.querySelector('header');
+  if (_h) _h.style.display = 'none';
+}
+</script>
+</body>
+</html>
