@@ -18,12 +18,6 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-06"
  },
- "미술|Art Lesson - Tuesday 29th Sept": {
-  "en": "Art Lesson - Tuesday 29th Sept\nY9 Art\n\nGood Morning. Ms AiLeen is absent today. \n\nYou will be working on your sample pieces for your comic art board. You will need an A5 and an A6 by next week's lesson.\nThese are pieces selected by students from your chosen comic artist. \nYou can access any media materials required to make an accurate copy of the artist’s work. \n\nYou are responsible for time management to ensure you have enough time to clean up your chosen media as expected. \n\nMs Parker will be available in E4-07 for any specialist requests.\n\nYou can review slides 9-10 in the lesson slides on GC.\n\nDevices are required for research and visual reference only; once you have selected your piece, you can move your device away to make space to complete your sample piece. If you already have a printed reference, then keep your device away. You can listen to music as long as it is quiet, you are using earphones, and you are focused.",
-  "ko": "미술 수업 - 9월 29일 화요일\n9학년(Y9) 미술\n\n좋은 아침입니다. AiLeen 선생님은 오늘 결석하셨습니다. \n\n여러분은 코믹 아트 보드(comic art board)에 들어갈 샘플 작품(sample pieces)을 작업합니다. 다음 주 수업까지 A5 한 장과 A6 한 장이 필요합니다.\n이 작품들은 학생이 직접 고른 만화 작가(comic artist)의 작품 중에서 선택한 것입니다. \n작가 작품을 정확하게 따라 그리는 데(accurate copy) 필요한 재료(media materials)는 무엇이든 사용할 수 있습니다. \n\n고른 재료를 정해진 대로 정리할 시간이 충분하도록 시간 관리(time management)는 스스로 책임져야 합니다. \n\nParker 선생님이 E4-07에서 전문적인 요청(specialist requests)을 도와주실 수 있습니다.\n\nGC(구글 클래스룸)에 있는 수업 슬라이드(lesson slides) 9~10번을 다시 볼 수 있습니다.\n\n기기(devices)는 자료 조사(research)와 시각 참고자료(visual reference)용으로만 씁니다. 작품을 고르고 나면 기기를 치워서 샘플 작품을 완성할 공간을 만드세요. 이미 인쇄한 참고자료(printed reference)가 있으면 기기는 치워 두세요. 소리가 작고, 이어폰을 쓰고, 집중하고 있다면 음악을 들어도 됩니다.",
-  "files": [],
-  "at": "2026-10-06"
- },
  "디자인 기술 (Mr Mathyk)|Rendering different materials on 2-pt perspective objects": {
   "en": "Rendering different materials on 2-pt perspective objects",
   "ko": "2점 투시(2-pt perspective) 물체에 여러 가지 재질(materials) 렌더링(rendering)하기",
@@ -447,6 +441,12 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
+ "튜터 (Mr Cassels)|Good morning Year 9! 😊": {
+  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
+  "ko": "9학년 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림입니다:\n\n선생님들이 오전 9시까지 영어(English) / 추가언어로서의 영어(EAL), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 줄 거예요\n올라온 과제를 모두 꼭 끝내세요.\n도움이 필요하면 담당 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인할 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
+  "files": [],
+  "at": "2026-10-09"
+ },
  "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative": {
   "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
   "ko": "여러분 모두 안녕하세요, Jaime 하우스(house) 대표 Ibraheem의 메시지입니다: \n\n이번 주 금요일이 Jaime의 날(Jaime day)이라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 7학년(Y7), 8학년(Y8), 9학년(Y9), 11학년(Y11) 튜터 그룹(tutor groups) 학생들은 Jaime의 날, 성 Jaime(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 측면에 관한 문제로 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\nJaime 하우스 학생들(Jaime 하우스 학생들만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
@@ -586,12 +586,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-19"
  },
- "튜터 (Mr Cassels)|Good morning Year 9!": {
-  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
-  "ko": "9학년(Year 9) 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림이에요:\n\n선생님들이 오전 9시까지 영어(English) / EAL(English as an Additional Language), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 주실 거예요\n올라온 과제를 모두 꼭 끝내 주세요.\n도움이 필요하면 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인하실 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 나오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
-  "files": [],
-  "at": "2026-10-19"
- },
  "휴머니티 (Mr Lawrence)|Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)": {
   "en": "Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)\nIf you are at home you can watch the youtube video on imperialism, answer the multiple choice questions and then memorise the MAINS (the reasons behind the start of WW1)",
   "ko": "오늘 수업에서 우리는 제국주의(Imperialism)와 제1차 세계대전(World War 1, WW1)이 시작된 이유에 대해 배웠습니다\n집에 있다면 제국주의(imperialism)에 관한 유튜브 영상을 보고, 객관식 문제(multiple choice questions)에 답한 다음, MAINS(제1차 세계대전(WW1)이 시작된 이유)를 외우세요",
@@ -641,10 +635,123 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-20"
  },
- "드라마|i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.": {
-  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\ni seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
-  "ko": "여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\n여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학 동안 집에 가져갔다면 내일 꼭 가져오세요.",
+ "과학 (Mr Phillips)|electrical circuits and symbols": {
+  "en": "electrical circuits and symbols\nClick on the link below to start the game",
+  "ko": "전기 회로(electrical circuits)와 기호(symbols)\n아래 링크를 클릭해 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=h8iiwbAcHOtA-6o6LmNMqV5ZEgdaCHaxiuWv8nnlx4mtf0isPNKoiVAkXnnxNUda1WWa7NuVTWInUjpmX-ZBphj7y3j42BuqeCCGfjpMrQ-azvOvSvTcl8Tomp2qpgBlBtYLGTaBvNHWGKmh3lYM4_ZtaaHS8HZYUmxsWkuLQeEHrzKT5NtUWXXRb_cWp-rakD_UYnHVov6RM02-p_cLw6JiHQ.EqKwRws7_9_n5NDHd57osA.UAiW-PVUKHOA5ijF&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-10-21"
+ },
+ "과학 (Mr Phillips)|Circuit experiment": {
+  "en": "Circuit experiment",
+  "ko": "회로 실험(Circuit experiment)",
   "files": [],
-  "at": "2026-10-20"
+  "at": "2026-10-21"
+ },
+ "과학 (Mr Phillips)|Electric current - circuits recap": {
+  "en": "Electric current - circuits recap",
+  "ko": "전류(Electric current) - 회로(circuits) 복습",
+  "files": [
+   {
+    "name": "GCSE Physics - Series Circuits (2027/28 exams)",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=Hk4JEB5DITw",
+    "local": null
+   },
+   {
+    "name": "Current | Electricity | Physics | FuseSchool",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=enuNdK426Wo",
+    "local": null
+   }
+  ],
+  "at": "2026-10-21"
+ },
+ "휴머니티 (Mr Lawrence)|Today in class, we read through the case study about Imperialism and answered the questions on the sheet.": {
+  "en": "Today in class, we read through the case study about Imperialism and answered the questions on the sheet.\n\nWe also watched the youtube video on slide 14 and answered those questions",
+  "ko": "오늘 수업에서 우리는 제국주의(Imperialism)에 관한 사례 연구(case study)를 함께 읽고 학습지의 질문에 답했습니다.\n\n또한 14번 슬라이드에 있는 유튜브 영상을 보고 그 질문들에 답했습니다",
+  "files": [
+   {
+    "name": "Screenshot 2026-10-21 at 10.25.03.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1S0tOylzonETShpb9ebrbkeWG6J1Ecdm_/view&usp=classroom_web",
+    "local": "post_files/1S0tOylzonETShpb9ebrbkeWG6J1Ecdm_.png"
+   },
+   {
+    "name": "Screenshot 2026-10-21 at 10.25.16.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1kOMAryPfIFhyIwUDAYUPj19YqHamBymG/view?usp=classroom_web",
+    "local": "post_files/1kOMAryPfIFhyIwUDAYUPj19YqHamBymG.png"
+   }
+  ],
+  "at": "2026-10-21"
+ },
+ "휴머니티 (Mr Lawrence)|Term 1 Common Assessment 2 Year 9 History": {
+  "en": "Term 1 Common Assessment 2\nYear 9 History\n\nFocus of assessment:\nYear 9 History Unit 2 - World War 1\n\n\nDate of Assessment: Tuesday 3rd November 2026\nDescription of assessment\nThis will be a 40-minute written assessment covering the key knowledge and skills developed during the Causes of the First World War unit. The assessment will include key term definitions, knowledge questions, source-based questions and an extended written response using historical evidence to explain and evaluate the MAINS causes of the First World War.\nAssessment objectives\nKnowledge and Understanding: Demonstrate knowledge and understanding of the MAINS causes of the First World War and the key events, people and developments that increased tensions in Europe before 1914.\nSource Analysis and Interpretation: Use historical sources to identify relevant information and explain how it helps us understand the causes of the First World War.\nHistorical Explanation and Judgement: Explain how different causes contributed to the outbreak of war and make a justified judgement about which cause was the most important.\nMarking criteria\nDemonstrates accurate historical knowledge and understanding of the MAINS causes.\nUses relevant historical facts, people and events to support answers.\nIdentifies and interprets relevant information from historical sources.\nExplains how different factors increased tensions and contributed to the outbreak of war.\nUses appropriate historical terminology.\nDevelops clear, well-structured explanations and supports judgements with relevant evidence.\n\nSkills being assessed and success criteria\nRecall and explain the five MAINS causes: Militarism, Alliance System, Imperialism, Nationalism and Significant Individuals.\nDemonstrate knowledge of key events and developments leading to the First World War.\nIdentify and use relevant evidence from historical sources.\nExplain how and why tensions between European countries increased before 1914.\nConstruct clear, developed historical explanations using evidence.\nWrite a well-supported PEEL paragraph and justify a judgement about the most important cause of the First World War.\n\nSuggested Revision Approaches\nReview the relevant History lessons, notes and resources on Google Classroom.\nRevise the five MAINS causes, ensuring you can define and explain each one, using key examples such as the arms race, European alliances, imperial competition, nationalism, the assassination of Archduke Franz Ferdinand and the Blank Cheque.\nTest yourself on key historical knowledge, people, events and decisions without looking at your notes.\nPractise answering source-based questions and writing clear historical explanations using PEEL, supporting your ideas with accurate evidence and a justified judgement.\nReview the KS3 Humanities Toolkit, Humanities Exam Command Words and KS3 Humanities Practical Revision Tips resources on Google Classroom under Support Materials to help you prepare effectively.",
+  "ko": "1학기 공통 평가(Common Assessment) 2\n9학년 역사(History)\n\n평가 중점:\n9학년 역사 2단원 - 제1차 세계대전(World War 1)\n\n\n평가 날짜: 2026년 11월 3일 화요일\n평가 설명\n이 평가는 40분 동안 치르는 서술형 평가로, 제1차 세계대전의 원인(Causes of the First World War) 단원에서 익힌 핵심 지식과 기술을 다룹니다. 평가에는 핵심 용어 정의(key term definitions), 지식 문제(knowledge questions), 사료 기반 문제(source-based questions), 그리고 역사적 증거(historical evidence)를 사용해 제1차 세계대전의 MAINS 원인(MAINS causes)을 설명하고 평가하는 장문 서술형 답안(extended written response)이 포함됩니다.\n평가 목표\n지식과 이해(Knowledge and Understanding): 제1차 세계대전의 MAINS 원인(MAINS causes)과, 1914년 이전 유럽의 긴장(tensions)을 높인 주요 사건·인물·변화에 대한 지식과 이해를 보여준다.\n사료 분석과 해석(Source Analysis and Interpretation): 역사 사료(historical sources)를 사용해 관련 정보를 찾아내고, 그것이 제1차 세계대전의 원인을 이해하는 데 어떻게 도움이 되는지 설명한다.\n역사적 설명과 판단(Historical Explanation and Judgement): 여러 원인이 전쟁 발발(outbreak of war)에 어떻게 기여했는지 설명하고, 어떤 원인이 가장 중요했는지에 대해 근거 있는 판단(justified judgement)을 내린다.\n채점 기준\nMAINS 원인(MAINS causes)에 대한 정확한 역사 지식과 이해를 보여준다.\n관련된 역사적 사실·인물·사건을 사용해 답을 뒷받침한다.\n역사 사료(historical sources)에서 관련 정보를 찾아내고 해석한다.\n여러 요인(factors)이 어떻게 긴장(tensions)을 높이고 전쟁 발발(outbreak of war)에 기여했는지 설명한다.\n적절한 역사 용어(historical terminology)를 사용한다.\n명확하고 짜임새 있는 설명을 전개하고, 관련 증거(evidence)로 판단을 뒷받침한다.\n\n평가하는 기술과 성공 기준\n다섯 가지 MAINS 원인을 떠올리고 설명한다: 군국주의(Militarism), 동맹 체제(Alliance System), 제국주의(Imperialism), 민족주의(Nationalism), 주요 인물(Significant Individuals).\n제1차 세계대전으로 이어진 주요 사건과 변화에 대한 지식을 보여준다.\n역사 사료(historical sources)에서 관련 증거(evidence)를 찾아 사용한다.\n1914년 이전 유럽 국가들 사이의 긴장(tensions)이 어떻게, 왜 높아졌는지 설명한다.\n증거를 사용해 명확하고 충분히 전개된 역사적 설명을 구성한다.\n근거가 잘 뒷받침된 PEEL 문단(PEEL paragraph)을 쓰고, 제1차 세계대전의 가장 중요한 원인에 대한 판단을 정당화(justify)한다.\n\n권장 복습 방법\n구글 클래스룸에 있는 관련 역사 수업·노트·자료를 복습한다.\n다섯 가지 MAINS 원인을 복습하고, 군비 경쟁(arms race), 유럽의 동맹(European alliances), 제국 간 경쟁(imperial competition), 민족주의(nationalism), 프란츠 페르디난트 대공 암살(assassination of Archduke Franz Ferdinand), 백지수표(Blank Cheque) 같은 핵심 예시를 사용해 각각을 정의하고 설명할 수 있도록 한다.\n노트를 보지 않고 핵심 역사 지식·인물·사건·결정에 대해 스스로 시험해 본다.\n사료 기반 문제(source-based questions)에 답하는 연습과, PEEL을 사용해 명확한 역사적 설명을 쓰는 연습을 하고, 정확한 증거와 근거 있는 판단(justified judgement)으로 생각을 뒷받침한다.\n효과적으로 준비할 수 있도록 구글 클래스룸의 Support Materials 아래에 있는 KS3 Humanities Toolkit, Humanities Exam Command Words, KS3 Humanities Practical Revision Tips 자료를 복습한다.",
+  "files": [
+   {
+    "name": "Year 9 History T1 CAT2  2026",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI/edit?usp=classroom_web",
+    "local": "post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf"
+   }
+  ],
+  "at": "2026-10-21"
+ },
+ "음악 (Mr Everett)|Term 1 Lessons": {
+  "en": "Term 1 Lessons",
+  "ko": "1학기 수업 자료(Term 1 Lessons)",
+  "files": [
+   {
+    "name": "Lesson 3",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1Ye1geZHBgMzhbZ-TTxYDtGQBPBN2avSq8Cib5mCtcUs/edit?usp=classroom_web",
+    "local": "post_files/1Ye1geZHBgMzhbZ-TTxYDtGQBPBN2avSq8Cib5mCtcUs.pdf"
+   },
+   {
+    "name": "Lesson 8",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1JilF0R4ENZJjQir1XCMfq59I-8_rr8OaYaSxADOk_oQ/edit?usp=classroom_web",
+    "local": "post_files/1JilF0R4ENZJjQir1XCMfq59I-8_rr8OaYaSxADOk_oQ.pdf"
+   },
+   {
+    "name": "Lesson 7",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA/edit?usp=classroom_web",
+    "local": "post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA.pdf"
+   },
+   {
+    "name": "Lesson 6",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1dPdF6dB20VDxvb8IV6l-LShhQdU5StQSD7ntKvypFSU/edit?usp=classroom_web",
+    "local": "post_files/1dPdF6dB20VDxvb8IV6l-LShhQdU5StQSD7ntKvypFSU.pdf"
+   },
+   {
+    "name": "Lesson 5",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM/edit?usp=classroom_web",
+    "local": "post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM.pdf"
+   },
+   {
+    "name": "Lesson 4",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4/edit?usp=classroom_web",
+    "local": "post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4.pdf"
+   }
+  ],
+  "at": "2026-10-21"
+ },
+ "드라마|i seem to be missing most of your monologue work": {
+  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
+  "ko": "여러분의 독백(monologue) 과제를 대부분 제가 받지 못한 것 같습니다: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학(holidays) 동안 집에 가져갔다면 내일 꼭 가지고 오세요.",
+  "files": [],
+  "at": "2026-10-21"
  }
 };
