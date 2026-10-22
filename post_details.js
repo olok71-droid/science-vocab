@@ -196,71 +196,10 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "중국어 (Ying Ying老师)|我今年学习的科目 One-Minute Speech Recording": {
-  "en": "我今年学习的科目 One-Minute Speech Recording\n你好！Please upload your one-minute Chinese speech about your school subjects here.\n\nWhat to do:\n1. Use your Week 7 Writing worksheet. Make sure your speech answers all six questions on page 1.\n2. Read your speech aloud once to practise.\n3. Record yourself speaking for about one minute.\n- MacBook: QuickTime Player > File > New Audio Recording, or the Voice Memos app\n- iPad or phone: the Voice Memos app\n4. Click \"Add or create\" > \"File\", choose your recording, then click \"Turn in\".\n\n加油！\n\nYing Ying老师",
-  "ko": "我今年学习的科目(올해 내가 배우는 과목) 1분 말하기 녹음(One-Minute Speech Recording)\n你好(안녕하세요)！학교 과목(school subjects)에 대한 1분 중국어 말하기를 여기에 올려 주세요.\n\n할 일:\n1. 7주차 쓰기 활동지(Week 7 Writing worksheet)를 사용하세요. 말하기가 1쪽의 질문 여섯 개에 모두 답하는지 확인하세요.\n2. 연습으로 말하기 원고를 소리 내어 한 번 읽으세요.\n3. 약 1분 동안 말하는 것을 녹음하세요.\n- 맥북: QuickTime Player > File > New Audio Recording, 또는 음성 메모(Voice Memos) 앱\n- 아이패드나 휴대폰: 음성 메모(Voice Memos) 앱\n4. \"Add or create\" > \"File\"을 누르고 녹음 파일을 고른 뒤 \"Turn in\"(제출)을 누르세요.\n\n加油(힘내요)！\n\nYing Ying 선생님(老师)",
-  "files": [],
-  "at": "2026-10-06"
- },
  "영어 (Mr Glanz)|Fish cheeks narrative (Not homework!)": {
   "en": "Fish cheeks narrative (Not homework!)\nEstigfend",
   "ko": "Fish cheeks 서사문(narrative) (숙제 아님!)\nEstigfend",
   "files": [],
-  "at": "2026-10-06"
- },
- "휴머니티 (Mr Lawrence)|Geography Unit 1 Tectonic Hazards slides": {
-  "en": "Geography Unit 1 Tectonic Hazards slides\nSlides for all of Geography Unit 1 Tectonic Hazards",
-  "ko": "지리 1단원 지각판 재해(Tectonic Hazards) 슬라이드\n지리 1단원 지각판 재해(Tectonic Hazards) 전체 슬라이드",
-  "files": [
-   {
-    "name": "PW Lessons 1 - What is happening beneath our feet_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1zWIrTSM_l91rdowmuiSDMPUfGV7Ky4XU/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lessons 1 & 2 - What is happening beneath our feet_.pptx"
-   },
-   {
-    "name": "PW Lesson 2 - What happens at Plate Boundaries_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1-5Jk7PLVdDnUTOoOR4Hpsc3Yd-zgEhuW/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 2 - What happens at Plate Boundaries_.pptx"
-   },
-   {
-    "name": "PW Lesson 3 - How do we know the plates are moving_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1sL2cP9bRB-5ijpxzBd1lp8tOFxERb2dW/view?usp=classroom_web",
-    "local": "post_files/1_FEYzj3LXkNBHNI_AJmz5KdJQ2pTY9E4.pptx"
-   },
-   {
-    "name": "PW Lesson 4 - What makes volcanoes hazardous_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1nukeerjKOXPJCg-8cooir9F7mRQJCvtC/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 7 & 8 - What makes volcanoes hazardous_.pptx"
-   },
-   {
-    "name": "PW Lesson 5 - Volcanic Hazards & Impacts.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1z4hvctMgE-mYgmgEBI6_xO-yykyS6mlA/view?usp=classroom_web",
-    "local": null
-   },
-   {
-    "name": "PW Lesson 6 - Why is Japan so vulnerable to Earthquakes_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1qceO0s20Dj0jC6RNt0UJCAVaZyLrYg6P/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 6 - Why is Japan so vulnerable to Earthquakes_.pptx"
-   },
-   {
-    "name": "PW Lesson 8 - How do we measure the impact of earthquakes_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1nrEE0CBLGF_QF5shge9LneXYbpQmK3it/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 8 - How do we measure the impact of earthquakes_.pptx"
-   },
-   {
-    "name": "PW Lesson 9 - Why do people choose to live in areas of tectonic hazards_.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1lR-kOIWiqCZi7L6cuLSaVzMwEFzaEXA2/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 9 - Why do people choose to live in areas of tectonic hazards_.pptx"
-   }
-  ],
   "at": "2026-10-06"
  },
  "과학 (Mr Phillips)|Ionic or covalent": {
@@ -635,6 +574,12 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-20"
  },
+ "드라마|i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.": {
+  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\ni seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
+  "ko": "여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\n여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학 동안 집에 가져갔다면 내일 꼭 가져오세요.",
+  "files": [],
+  "at": "2026-10-20"
+ },
  "과학 (Mr Phillips)|electrical circuits and symbols": {
   "en": "electrical circuits and symbols\nClick on the link below to start the game",
   "ko": "전기 회로(electrical circuits)와 기호(symbols)\n아래 링크를 클릭해 게임을 시작하세요",
@@ -748,10 +693,42 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "드라마|i seem to be missing most of your monologue work": {
-  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
-  "ko": "여러분의 독백(monologue) 과제를 대부분 제가 받지 못한 것 같습니다: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학(holidays) 동안 집에 가져갔다면 내일 꼭 가지고 오세요.",
+ "과학 (Mr Phillips)|Parallel Circuits - workbook questions": {
+  "en": "Parallel Circuits - workbook questions",
+  "ko": "병렬 회로(Parallel Circuits) - 워크북 문제(workbook questions)",
   "files": [],
-  "at": "2026-10-21"
+  "at": "2026-10-22"
+ },
+ "과학 (Mr Phillips)|Voltage in Parallel Circuits - building practical circuits": {
+  "en": "Voltage in Parallel Circuits - building practical circuits",
+  "ko": "병렬 회로의 전압(Voltage in Parallel Circuits) - 실습 회로 만들기(building practical circuits)",
+  "files": [
+   {
+    "name": "P1.3 Voltage in parallel circuits",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1qwGehDxdmAq6OiNko5i4q4eYihhfxUxH5pFzpwBVYts/edit?usp=classroom_web",
+    "local": "post_files/1qwGehDxdmAq6OiNko5i4q4eYihhfxUxH5pFzpwBVYts.pdf"
+   },
+   {
+    "name": "GCSE Physics - Parallel Circuits (2027/28 exams)",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=GIvE5Zlpea8",
+    "local": null
+   }
+  ],
+  "at": "2026-10-22"
+ },
+ "튜터 (Mr Cassels)|PSHE - Y9 - 22/10/26": {
+  "en": "PSHE - Y9 - 22/10/26\nPlease use this doc to work through today's session.",
+  "ko": "PSHE(개인·사회·보건 교육) - 9학년(Y9) - 22/10/26\n오늘 수업은 이 문서를 사용해서 진행하세요.",
+  "files": [
+   {
+    "name": "Lesson 8 - Exploring Career Pathways",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1KBj-SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY/edit?usp=classroom_web",
+    "local": "post_files/1KBj-SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY.pdf"
+   }
+  ],
+  "at": "2026-10-22"
  }
 };
