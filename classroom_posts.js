@@ -1,5 +1,23 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "미술",
+  "date": "2026-10-23",
+  "type": "공지",
+  "title": "Year 9 Sip and Paint",
+  "ko": "미술시간에 부모님과 함께 그림 그리는 행사",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
+ },
+ {
+  "subject": "디자인 기술 DEC (Mr Mathyk)",
+  "date": "2026-10-23",
+  "type": "자료",
+  "title": "MR. MATHYK'S FESTIVAL E-PORTFOLIO",
+  "ko": "선생님의 축제 e-포트폴리오 자료 게시",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
+ },
+ {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-10-22",
   "type": "과제",
@@ -31,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-21",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "Wayground 전기회로와 기호 퀴즈",
+  "ko": "전기회로와 기호 Wayground 퀴즈 풀기",
   "due": "2026-10-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODkzNDczODkyNTY0/details"
  },
@@ -40,7 +58,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-21",
   "type": "과제",
   "title": "Circuit experiment",
-  "ko": "회로 실험 과제",
+  "ko": "회로 실험 과제 제출",
   "due": "2026-10-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -58,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-21",
   "type": "공지",
   "title": "Today in class, we read through the case study about Imperialism and answered the questions on the sheet.",
-  "ko": "제국주의 사례 읽고 문제 풀고 영상 문제 답함",
+  "ko": "제국주의 사례 읽고 문제 풀이, 14번 영상 문제",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -66,8 +84,8 @@ window.CLASSROOM_POSTS = [
   "subject": "휴머니티 (Mr Lawrence)",
   "date": "2026-10-21",
   "type": "공지",
-  "title": "Term 1 Common Assessment 2 Year 9 History",
-  "ko": "역사 1차대전 원인 40분 서술형 평가",
+  "title": "Term 1 Common Assessment 2 - Year 9 History",
+  "ko": "역사 CA2 시험(1차대전 원인 MAINS, 40분)",
   "due": "2026-11-03",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -85,7 +103,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-20",
   "type": "공지",
   "title": "Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)",
-  "ko": "제국주의와 1차대전 원인 수업, MAINS 암기",
+  "ko": "제국주의·1차대전 원인 수업, MAINS 외우기",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -94,7 +112,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-20",
   "type": "과제",
   "title": "Haze - 20/10 Lesson",
-  "ko": "연무(헤이즈) 관련 수업 과제",
+  "ko": "연무로 인한 10/20 수업 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -103,7 +121,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-20",
   "type": "공지",
   "title": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.",
-  "ko": "모놀로그 과제 미제출자, 집에 있으면 선생님 책상에",
+  "ko": "집에 가져간 독백 과제물을 가져와 선생님 책상에 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -112,7 +130,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-20",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "준비물: 독서용 책 챙겨 오기",
+  "ko": "준비물: 읽을 책을 챙겨 오기",
   "due": "2026-10-21",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -157,7 +175,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "공지",
   "title": "Your 2nd Continues Assessment (CA2) will be on Tuesday 3rd November 2026.",
-  "ko": "CA2 시험 안내, 계산기·기하세트 준비",
+  "ko": "CA2 평가 안내, 계산기·기하 세트 지참",
   "due": "2026-11-03",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -184,7 +202,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "과제",
   "title": "Mid term Check in",
-  "ko": "중간 점검 과제 제출",
+  "ko": "중간 점검 설문 작성",
   "due": "2026-10-22",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -202,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "공지",
   "title": "You work today is to continue reading the evidence statements to complete the question as to what life was like in Pompe",
-  "ko": "폼페이 분화 직전 생활 자료 읽고 문제 완성",
+  "ko": "폼페이 분화 직전 생활 증거 읽고 문제 완성",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
  },
@@ -229,7 +247,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "과제",
   "title": "Haze Work!!! - Units 5.2 Interior angles of polygons & 5.3 Exterior angles of polygons",
-  "ko": "다각형 내각·외각 휴교 과제",
+  "ko": "다각형 내각·외각 연습 과제",
   "due": "2026-10-12",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -246,8 +264,8 @@ window.CLASSROOM_POSTS = [
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-10-09",
   "type": "공지",
-  "title": "Good morning Year 9! 😊",
-  "ko": "오전 9시까지 올라온 과목별 과제 모두 하기",
+  "title": "Good morning Year 9!",
+  "ko": "원격수업일, 오전 9시까지 올라오는 과제를 모두 하기",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -265,7 +283,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-08",
   "type": "자료",
   "title": "9C1 - Periodic Table - last lesson - revision",
-  "ko": "주기율표 단원 마지막 수업 복습 자료",
+  "ko": "주기율표 단원 마지막 복습 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -274,7 +292,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "과제",
   "title": "Ionic or covalent",
-  "ko": "Wayground 이온·공유결합 구별 퀴즈",
+  "ko": "이온결합·공유결합 구분 퀴즈",
   "due": "2026-10-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -283,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "자료",
   "title": "Properties of Covalent and Ionic Compounds",
-  "ko": "공유·이온 화합물 성질 자료",
+  "ko": "공유·이온 화합물의 성질 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -301,7 +319,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "과제",
   "title": "active analysis",
-  "ko": "액티브 분석 과제 제출",
+  "ko": "액티브 분석 과제",
   "due": "2026-10-07",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -310,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "공지",
   "title": "Jaime House Activity Notice",
-  "ko": "제이미 하우스 활동 안내 이미지",
+  "ko": "하이메 하우스 활동 안내 그림",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -319,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "공지",
   "title": "Good day to you all, a message from Ibraheem Jaime House Representative",
-  "ko": "제이미데이 카훗 퀴즈, 제이미 학생은 하우스복·빨간 소품",
+  "ko": "하이메 데이 카훗 퀴즈, 하이메 학생은 하우스 체육복과 빨간 소품",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -337,7 +355,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-06",
   "type": "과제",
   "title": "CA1 Reflection",
-  "ko": "CA1 시험 돌아보기 과제",
+  "ko": "CA1 평가 돌아보기 과제",
   "due": "2026-10-07",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -346,7 +364,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-06",
   "type": "과제",
   "title": "2 Samples and 3-4 photos uploaded",
-  "ko": "샘플 2개와 사진 3~4장 업로드하기",
+  "ko": "샘플 2개와 사진 3~4장 올리기",
   "due": "2026-10-20",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -364,7 +382,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-06",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "준비물: 독서용 책 챙겨 오기",
+  "ko": "준비물: 읽을 책을 챙겨 오기",
   "due": "2026-10-07",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -373,7 +391,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "과제",
   "title": "Giant Covalent Structures",
-  "ko": "Wayground 거대 공유결합 구조 퀴즈",
+  "ko": "거대 공유결합 구조 퀴즈",
   "due": "2026-10-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -400,7 +418,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "공지",
   "title": "Mathematics: Assessment Returns",
-  "ko": "시험지·점수는 시험 2주 뒤 돌려줌",
+  "ko": "평가지·점수는 시험 2주 뒤 돌려줌",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -418,7 +436,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "공지",
   "title": "Character Recognitions for 21-Sep-2026 - 05-Oct-2026",
-  "ko": "9/21~10/5 인성 칭찬 명단 PDF",
+  "ko": "인성 칭찬 명단 PDF 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -475,24 +493,6 @@ window.CLASSROOM_POSTS = [
   "ko": "튜터 반장 2차 투표",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-01",
-  "type": "과제",
-  "title": "Periodic Table Trends and Chemical Reactions Review",
-  "ko": "Wayground 주기율표 경향·화학반응 복습 퀴즈",
-  "due": "2026-10-07",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-01",
-  "type": "자료",
-  "title": "CA1 - Check your answers",
-  "ko": "CA1 시험 답 확인 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-22 18:12";
+window.CLASSROOM_POSTS_AT = "2026-10-23 18:12";

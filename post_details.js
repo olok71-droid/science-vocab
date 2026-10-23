@@ -138,25 +138,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-06"
  },
- "과학 (Mr Phillips)|Periodic Table Trends and Chemical Reactions Review": {
-  "en": "Periodic Table Trends and Chemical Reactions Review\nClick on the link below to start the game",
-  "ko": "주기율표 경향(Periodic Table Trends)과 화학 반응(Chemical Reactions) 복습\n아래 링크를 눌러 게임을 시작하세요",
-  "files": [
-   {
-    "name": "Quizizz is now Wayground | Teacher AI and Resources",
-    "kind": "web",
-    "url": "https://wayground.com/join?c=VOJJXkwIZs7okKANLYmjds2VRoIm4VwcyUkeBWkVKSNzGumupPjDK6dqGvD_j2JsbI1wsqJOrWCpQ1yn5X233tK38c4pdo24Vh6ErITrvpiv0jCLWKJX23wbeWP1hU-QvdqjOfz_AaQqr-42-4I9LoKI7NOLGA_I-tZOXBN8ARK7wfKYxsu8UplToauwo5jX-Xwz92nRebDYn33ogEWifIIQXA.q3hy-wIkg_LlUzOb9OP4kA.SdVMB-D3ZwUKxT03&linktype=web",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|CA1 - Check your answers": {
-  "en": "CA1 - Check your answers",
-  "ko": "CA1 - 답 확인하기",
-  "files": [],
-  "at": "2026-10-06"
- },
  "컴퓨터 과학 (Ms Meha)|Week 8 Python Exercise(If and Loops)": {
   "en": "Week 8 Python Exercise(If and Loops)\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
   "ko": "8주차 파이썬(Python) 연습문제(조건문과 반복문(If and Loops))\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
@@ -380,12 +361,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
- "튜터 (Mr Cassels)|Good morning Year 9! 😊": {
-  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
-  "ko": "9학년 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림입니다:\n\n선생님들이 오전 9시까지 영어(English) / 추가언어로서의 영어(EAL), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 줄 거예요\n올라온 과제를 모두 꼭 끝내세요.\n도움이 필요하면 담당 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인할 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
-  "files": [],
-  "at": "2026-10-09"
- },
  "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative": {
   "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
   "ko": "여러분 모두 안녕하세요, Jaime 하우스(house) 대표 Ibraheem의 메시지입니다: \n\n이번 주 금요일이 Jaime의 날(Jaime day)이라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 7학년(Y7), 8학년(Y8), 9학년(Y9), 11학년(Y11) 튜터 그룹(tutor groups) 학생들은 Jaime의 날, 성 Jaime(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 측면에 관한 문제로 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\nJaime 하우스 학생들(Jaime 하우스 학생들만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
@@ -525,6 +500,12 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-19"
  },
+ "튜터 (Mr Cassels)|Good morning Year 9!": {
+  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
+  "ko": "9학년(Year 9) 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림이에요:\n\n선생님들이 오전 9시까지 영어(English) / EAL(English as an Additional Language), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 주실 거예요\n올라온 과제를 모두 꼭 끝내 주세요.\n도움이 필요하면 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인하실 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 나오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
+  "files": [],
+  "at": "2026-10-19"
+ },
  "휴머니티 (Mr Lawrence)|Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)": {
   "en": "Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)\nIf you are at home you can watch the youtube video on imperialism, answer the multiple choice questions and then memorise the MAINS (the reasons behind the start of WW1)",
   "ko": "오늘 수업에서 우리는 제국주의(Imperialism)와 제1차 세계대전(World War 1, WW1)이 시작된 이유에 대해 배웠습니다\n집에 있다면 제국주의(imperialism)에 관한 유튜브 영상을 보고, 객관식 문제(multiple choice questions)에 답한 다음, MAINS(제1차 세계대전(WW1)이 시작된 이유)를 외우세요",
@@ -637,19 +618,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "휴머니티 (Mr Lawrence)|Term 1 Common Assessment 2 Year 9 History": {
-  "en": "Term 1 Common Assessment 2\nYear 9 History\n\nFocus of assessment:\nYear 9 History Unit 2 - World War 1\n\n\nDate of Assessment: Tuesday 3rd November 2026\nDescription of assessment\nThis will be a 40-minute written assessment covering the key knowledge and skills developed during the Causes of the First World War unit. The assessment will include key term definitions, knowledge questions, source-based questions and an extended written response using historical evidence to explain and evaluate the MAINS causes of the First World War.\nAssessment objectives\nKnowledge and Understanding: Demonstrate knowledge and understanding of the MAINS causes of the First World War and the key events, people and developments that increased tensions in Europe before 1914.\nSource Analysis and Interpretation: Use historical sources to identify relevant information and explain how it helps us understand the causes of the First World War.\nHistorical Explanation and Judgement: Explain how different causes contributed to the outbreak of war and make a justified judgement about which cause was the most important.\nMarking criteria\nDemonstrates accurate historical knowledge and understanding of the MAINS causes.\nUses relevant historical facts, people and events to support answers.\nIdentifies and interprets relevant information from historical sources.\nExplains how different factors increased tensions and contributed to the outbreak of war.\nUses appropriate historical terminology.\nDevelops clear, well-structured explanations and supports judgements with relevant evidence.\n\nSkills being assessed and success criteria\nRecall and explain the five MAINS causes: Militarism, Alliance System, Imperialism, Nationalism and Significant Individuals.\nDemonstrate knowledge of key events and developments leading to the First World War.\nIdentify and use relevant evidence from historical sources.\nExplain how and why tensions between European countries increased before 1914.\nConstruct clear, developed historical explanations using evidence.\nWrite a well-supported PEEL paragraph and justify a judgement about the most important cause of the First World War.\n\nSuggested Revision Approaches\nReview the relevant History lessons, notes and resources on Google Classroom.\nRevise the five MAINS causes, ensuring you can define and explain each one, using key examples such as the arms race, European alliances, imperial competition, nationalism, the assassination of Archduke Franz Ferdinand and the Blank Cheque.\nTest yourself on key historical knowledge, people, events and decisions without looking at your notes.\nPractise answering source-based questions and writing clear historical explanations using PEEL, supporting your ideas with accurate evidence and a justified judgement.\nReview the KS3 Humanities Toolkit, Humanities Exam Command Words and KS3 Humanities Practical Revision Tips resources on Google Classroom under Support Materials to help you prepare effectively.",
-  "ko": "1학기 공통 평가(Common Assessment) 2\n9학년 역사(History)\n\n평가 중점:\n9학년 역사 2단원 - 제1차 세계대전(World War 1)\n\n\n평가 날짜: 2026년 11월 3일 화요일\n평가 설명\n이 평가는 40분 동안 치르는 서술형 평가로, 제1차 세계대전의 원인(Causes of the First World War) 단원에서 익힌 핵심 지식과 기술을 다룹니다. 평가에는 핵심 용어 정의(key term definitions), 지식 문제(knowledge questions), 사료 기반 문제(source-based questions), 그리고 역사적 증거(historical evidence)를 사용해 제1차 세계대전의 MAINS 원인(MAINS causes)을 설명하고 평가하는 장문 서술형 답안(extended written response)이 포함됩니다.\n평가 목표\n지식과 이해(Knowledge and Understanding): 제1차 세계대전의 MAINS 원인(MAINS causes)과, 1914년 이전 유럽의 긴장(tensions)을 높인 주요 사건·인물·변화에 대한 지식과 이해를 보여준다.\n사료 분석과 해석(Source Analysis and Interpretation): 역사 사료(historical sources)를 사용해 관련 정보를 찾아내고, 그것이 제1차 세계대전의 원인을 이해하는 데 어떻게 도움이 되는지 설명한다.\n역사적 설명과 판단(Historical Explanation and Judgement): 여러 원인이 전쟁 발발(outbreak of war)에 어떻게 기여했는지 설명하고, 어떤 원인이 가장 중요했는지에 대해 근거 있는 판단(justified judgement)을 내린다.\n채점 기준\nMAINS 원인(MAINS causes)에 대한 정확한 역사 지식과 이해를 보여준다.\n관련된 역사적 사실·인물·사건을 사용해 답을 뒷받침한다.\n역사 사료(historical sources)에서 관련 정보를 찾아내고 해석한다.\n여러 요인(factors)이 어떻게 긴장(tensions)을 높이고 전쟁 발발(outbreak of war)에 기여했는지 설명한다.\n적절한 역사 용어(historical terminology)를 사용한다.\n명확하고 짜임새 있는 설명을 전개하고, 관련 증거(evidence)로 판단을 뒷받침한다.\n\n평가하는 기술과 성공 기준\n다섯 가지 MAINS 원인을 떠올리고 설명한다: 군국주의(Militarism), 동맹 체제(Alliance System), 제국주의(Imperialism), 민족주의(Nationalism), 주요 인물(Significant Individuals).\n제1차 세계대전으로 이어진 주요 사건과 변화에 대한 지식을 보여준다.\n역사 사료(historical sources)에서 관련 증거(evidence)를 찾아 사용한다.\n1914년 이전 유럽 국가들 사이의 긴장(tensions)이 어떻게, 왜 높아졌는지 설명한다.\n증거를 사용해 명확하고 충분히 전개된 역사적 설명을 구성한다.\n근거가 잘 뒷받침된 PEEL 문단(PEEL paragraph)을 쓰고, 제1차 세계대전의 가장 중요한 원인에 대한 판단을 정당화(justify)한다.\n\n권장 복습 방법\n구글 클래스룸에 있는 관련 역사 수업·노트·자료를 복습한다.\n다섯 가지 MAINS 원인을 복습하고, 군비 경쟁(arms race), 유럽의 동맹(European alliances), 제국 간 경쟁(imperial competition), 민족주의(nationalism), 프란츠 페르디난트 대공 암살(assassination of Archduke Franz Ferdinand), 백지수표(Blank Cheque) 같은 핵심 예시를 사용해 각각을 정의하고 설명할 수 있도록 한다.\n노트를 보지 않고 핵심 역사 지식·인물·사건·결정에 대해 스스로 시험해 본다.\n사료 기반 문제(source-based questions)에 답하는 연습과, PEEL을 사용해 명확한 역사적 설명을 쓰는 연습을 하고, 정확한 증거와 근거 있는 판단(justified judgement)으로 생각을 뒷받침한다.\n효과적으로 준비할 수 있도록 구글 클래스룸의 Support Materials 아래에 있는 KS3 Humanities Toolkit, Humanities Exam Command Words, KS3 Humanities Practical Revision Tips 자료를 복습한다.",
-  "files": [
-   {
-    "name": "Year 9 History T1 CAT2  2026",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI/edit?usp=classroom_web",
-    "local": "post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf"
-   }
-  ],
-  "at": "2026-10-21"
- },
  "음악 (Mr Everett)|Term 1 Lessons": {
   "en": "Term 1 Lessons",
   "ko": "1학기 수업 자료(Term 1 Lessons)",
@@ -730,5 +698,44 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-22"
+ },
+ "미술|Year 9 Sip and Paint": {
+  "en": "Year 9 Sip and Paint\n\nDear Y9 students, \n\nWe will be having our annual sip and paint event on Monday 2/11 and Tuesday 3/11. This is an event where your parents and guardians will be invited to join in your art class, and create a festive painting together with you. It is a great chance to show off all the skills you've learned so far in KS3 and Y9, and will also be a good opportunity to do something creative with your family. \n\nThe event will take place during your normal art lessons. Please make sure to clarify this with your parents if there is any confusion.\n\nPlease let me know if you have any questions!\nMs. Aileen",
+  "ko": "9학년 십 앤 페인트(Sip and Paint)\n\n9학년 학생 여러분께,\n\n11월 2일 월요일과 11월 3일 화요일에 매년 하는 십 앤 페인트(sip and paint) 행사를 엽니다. 이 행사에는 부모님과 보호자분들을 미술 수업에 초대해, 여러분과 함께 축제 분위기의 그림(festive painting)을 그립니다. 지금까지 KS3(Key Stage 3)와 9학년에서 배운 모든 기술을 뽐낼 좋은 기회이고, 가족과 함께 창의적인 활동을 해 볼 좋은 기회이기도 합니다.\n\n행사는 평소 미술 수업 시간에 열립니다. 헷갈리는 점이 있으면 꼭 부모님께 이 내용을 분명히 알려 드리세요.\n\n궁금한 점이 있으면 알려 주세요!\nAileen 선생님",
+  "files": [
+   {
+    "name": "Screenshot 2026-10-23 at 10.07.10 AM.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1XrecH5joDXSH4ijV36PQ1bP7ShCbAKsc/view&usp=classroom_web",
+    "local": "post_files/1XrecH5joDXSH4ijV36PQ1bP7ShCbAKsc.png"
+   }
+  ],
+  "at": "2026-10-23"
+ },
+ "디자인 기술 DEC (Mr Mathyk)|MR. MATHYKS FESTIVAL E-PORTFOLIO": {
+  "en": "MR. MATHYK'S FESTIVAL E-PORTFOLIO",
+  "ko": "매시크 선생님의 축제 전자 포트폴리오(E-PORTFOLIO)",
+  "files": [
+   {
+    "name": "Amazingly Simple Graphic Design Software – Canva",
+    "kind": "web",
+    "url": "https://canva.link/o3ozrcinuau6xz8",
+    "local": null
+   }
+  ],
+  "at": "2026-10-23"
+ },
+ "휴머니티 (Mr Lawrence)|Term 1 Common Assessment 2 - Year 9 History": {
+  "en": "Term 1 Common Assessment 2 \nYear 9 History\n\nFocus of assessment:\nYear 9 History Unit 2 - World War 1\n\n\nDate of Assessment: Tuesday 3rd November 2026\nDescription of assessment\nThis will be a 40-minute written assessment covering the key knowledge and skills developed during the Causes of the First World War unit. The assessment will include key term definitions, knowledge questions, source-based questions and an extended written response using historical evidence to explain and evaluate the MAINS causes of the First World War.\nAssessment objectives\nKnowledge and Understanding: Demonstrate knowledge and understanding of the MAINS causes of the First World War and the key events, people and developments that increased tensions in Europe before 1914.\nSource Analysis and Interpretation: Use historical sources to identify relevant information and explain how it helps us understand the causes of the First World War.\nHistorical Explanation and Judgement: Explain how different causes contributed to the outbreak of war and make a justified judgement about which cause was the most important.\nMarking criteria\nDemonstrates accurate historical knowledge and understanding of the MAINS causes.\nUses relevant historical facts, people and events to support answers.\nIdentifies and interprets relevant information from historical sources.\nExplains how different factors increased tensions and contributed to the outbreak of war.\nUses appropriate historical terminology.\nDevelops clear, well-structured explanations and supports judgements with relevant evidence.\n\nSkills being assessed and success criteria\nRecall and explain the five MAINS causes: Militarism, Alliance System, Imperialism, Nationalism and Significant Individuals.\nDemonstrate knowledge of key events and developments leading to the First World War.\nIdentify and use relevant evidence from historical sources.\nExplain how and why tensions between European countries increased before 1914.\nConstruct clear, developed historical explanations using evidence.\nWrite a well-supported PEEL paragraph and justify a judgement about the most important cause of the First World War.\n\nSuggested Revision Approaches\nReview the relevant History lessons, notes and resources on Google Classroom.\nRevise the five MAINS causes, ensuring you can define and explain each one, using key examples such as the arms race, European alliances, imperial competition, nationalism, the assassination of Archduke Franz Ferdinand and the Blank Cheque.\nTest yourself on key historical knowledge, people, events and decisions without looking at your notes.\nPractise answering source-based questions and writing clear historical explanations using PEEL, supporting your ideas with accurate evidence and a justified judgement.\nReview the KS3 Humanities Toolkit, Humanities Exam Command Words and KS3 Humanities Practical Revision Tips resources on Google Classroom under Support Materials to help you prepare effectively.",
+  "ko": "1학기 공통평가(Common Assessment) 2 \n9학년 역사(History)\n\n평가 범위:\n9학년 역사 2단원 - 제1차 세계대전(World War 1)\n\n\n평가 날짜: 2026년 11월 3일 화요일\n평가 설명\n이 평가는 40분 서술형 평가로, 제1차 세계대전의 원인(Causes of the First World War) 단원에서 익힌 핵심 지식과 기술을 다룹니다. 평가에는 핵심 용어 정의(key term definitions), 지식 문제(knowledge questions), 사료 기반 문제(source-based questions), 그리고 역사적 증거(historical evidence)를 사용해 제1차 세계대전의 MAINS 원인(MAINS causes)을 설명하고 평가하는 긴 서술형 답안(extended written response)이 포함됩니다.\n평가 목표\n지식과 이해(Knowledge and Understanding): 제1차 세계대전의 MAINS 원인과, 1914년 이전 유럽의 긴장(tensions)을 높인 주요 사건·인물·변화에 대한 지식과 이해를 보여준다.\n사료 분석과 해석(Source Analysis and Interpretation): 역사 사료(historical sources)를 사용해 관련 정보를 찾아내고, 그것이 제1차 세계대전의 원인을 이해하는 데 어떻게 도움이 되는지 설명한다.\n역사적 설명과 판단(Historical Explanation and Judgement): 여러 원인이 전쟁 발발(outbreak of war)에 어떻게 기여했는지 설명하고, 어떤 원인이 가장 중요했는지에 대해 근거 있는 판단(justified judgement)을 내린다.\n채점 기준\nMAINS 원인에 대한 정확한 역사 지식과 이해를 보여준다.\n관련된 역사적 사실·인물·사건을 사용해 답을 뒷받침한다.\n역사 사료에서 관련 정보를 찾아내고 해석한다.\n여러 요인(factors)이 어떻게 긴장을 높이고 전쟁 발발에 기여했는지 설명한다.\n적절한 역사 용어(historical terminology)를 사용한다.\n명확하고 짜임새 있는 설명을 전개하고, 관련 증거(evidence)로 판단을 뒷받침한다.\n\n평가하는 기술과 성공 기준(success criteria)\n다섯 가지 MAINS 원인을 기억하고 설명한다: 군국주의(Militarism), 동맹 체제(Alliance System), 제국주의(Imperialism), 민족주의(Nationalism), 중요 인물(Significant Individuals).\n제1차 세계대전으로 이어진 주요 사건과 변화에 대한 지식을 보여준다.\n역사 사료에서 관련 증거를 찾아 사용한다.\n1914년 이전 유럽 국가들 사이의 긴장이 어떻게, 왜 높아졌는지 설명한다.\n증거를 사용해 명확하고 발전된 역사적 설명을 구성한다.\n근거가 탄탄한 PEEL 문단(PEEL paragraph)을 쓰고, 제1차 세계대전의 가장 중요한 원인에 대한 판단을 정당화한다.\n\n추천 복습 방법\n구글 클래스룸에 있는 관련 역사 수업·노트·자료를 복습한다.\n다섯 가지 MAINS 원인을 복습하고, 군비 경쟁(arms race), 유럽 동맹(European alliances), 제국 간 경쟁(imperial competition), 민족주의(nationalism), 프란츠 페르디난트 대공 암살(assassination of Archduke Franz Ferdinand), 백지수표(Blank Cheque) 같은 핵심 예시를 사용해 각각을 정의하고 설명할 수 있도록 한다.\n노트를 보지 않고 핵심 역사 지식·인물·사건·결정에 대해 스스로 시험해 본다.\n사료 기반 문제에 답하는 연습을 하고, PEEL을 사용해 명확한 역사적 설명을 쓰며, 정확한 증거와 근거 있는 판단으로 생각을 뒷받침한다.\n효과적으로 준비할 수 있도록 구글 클래스룸의 Support Materials 아래에 있는 KS3 Humanities Toolkit, Humanities Exam Command Words, KS3 Humanities Practical Revision Tips 자료를 복습한다.",
+  "files": [
+   {
+    "name": "Year 9 History T1 CAT2  2026",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI/edit?usp=classroom_web",
+    "local": "post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf"
+   }
+  ],
+  "at": "2026-10-23"
  }
 };
