@@ -18,25 +18,6 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-06"
  },
- "디자인 기술 (Mr Mathyk)|Rendering different materials on 2-pt perspective objects": {
-  "en": "Rendering different materials on 2-pt perspective objects",
-  "ko": "2점 투시(2-pt perspective) 물체에 여러 가지 재질(materials) 렌더링(rendering)하기",
-  "files": [],
-  "at": "2026-10-06"
- },
- "디자인 기술 (Mr Mathyk)|RENDERING DIFFERENT MATERIALS - DT": {
-  "en": "RENDERING DIFFERENT MATERIALS - DT\nA bit long of a video but it shows how to render different materials, which you will need to know for the DT Exam later on.",
-  "ko": "여러 가지 재질(materials) 렌더링(rendering)하기 - 디자인 기술(DT)\n영상이 조금 길지만 여러 가지 재질(materials)을 렌더링(render)하는 방법을 보여 주며, 이는 나중에 디자인 기술 시험(DT Exam)을 위해 알아야 할 내용입니다.",
-  "files": [
-   {
-    "name": "D&T lesson 3D shapes part 2 Rendering Textures",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=R56xJevEpuk",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
  "튜터 (Mr Cassels)|Bring your Reading Books!": {
   "en": "Bring your Reading Books!\nEVERYONE remembered their reading books last week. Well done guys :)\n\nRemember, you should have a reading book with you at all times. On a Wednesday particularly, tutor time will often be put aside for silent reading. Make sure you have a book that is in English. Translated books are also okay for you to bring.",
   "ko": "읽기 책(reading book)을 가져오세요!\n지난주에는 모두가 읽기 책을 잊지 않고 가져왔어요. 잘했어요, 여러분 :)\n\n기억하세요, 읽기 책은 항상 가지고 다녀야 합니다. 특히 수요일에는 튜터 시간(tutor time)을 조용히 책 읽기(silent reading)에 쓰는 경우가 많습니다. 영어로 된 책을 꼭 준비하세요. 번역본(translated books)을 가져와도 괜찮습니다.",
@@ -52,19 +33,6 @@ window.POST_DETAILS = {
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1CVzNS4mnriFVdWgGB6vqiJO15pGVl_Ax/view?usp=classroom_web",
     "local": "pdfs/tutor/21-Sep-2026 - 05-Oct-2026.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "튜터 (Mr Cassels)|Tutor Prefect Vote 2": {
-  "en": "Tutor Prefect Vote 2\nTutor Prefect Vote\nhttps://docs.google.com/forms/d/e/1FAIpQLSfk1lLVgVqRCG8qEvL6yD1Wxp9SnO3Pl49l7D18xNnxRlvKTw/viewform?usp=publish-editor",
-  "ko": "튜터 반장 투표(Tutor Prefect Vote) 2\n튜터 반장 투표(Tutor Prefect Vote)\nhttps://docs.google.com/forms/d/e/1FAIpQLSfk1lLVgVqRCG8qEvL6yD1Wxp9SnO3Pl49l7D18xNnxRlvKTw/viewform?usp=publish-editor",
-  "files": [
-   {
-    "name": "Tutor Prefect Vote",
-    "kind": "form",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfk1lLVgVqRCG8qEvL6yD1Wxp9SnO3Pl49l7D18xNnxRlvKTw/viewform?usp=publish-editor",
-    "local": null
    }
   ],
   "at": "2026-10-06"
@@ -175,12 +143,6 @@ window.POST_DETAILS = {
     "local": "post_files/1WVDVnRHlZQZsflYi1T40KNRMVplCsnyh.pdf"
    }
   ],
-  "at": "2026-10-06"
- },
- "영어 (Mr Glanz)|Fish cheeks narrative (Not homework!)": {
-  "en": "Fish cheeks narrative (Not homework!)\nEstigfend",
-  "ko": "Fish cheeks 서사문(narrative) (숙제 아님!)\nEstigfend",
-  "files": [],
   "at": "2026-10-06"
  },
  "과학 (Mr Phillips)|Ionic or covalent": {
@@ -555,12 +517,6 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-20"
  },
- "드라마|i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.": {
-  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\ni seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
-  "ko": "여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\n여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학 동안 집에 가져갔다면 내일 꼭 가져오세요.",
-  "files": [],
-  "at": "2026-10-20"
- },
  "과학 (Mr Phillips)|electrical circuits and symbols": {
   "en": "electrical circuits and symbols\nClick on the link below to start the game",
   "ko": "전기 회로(electrical circuits)와 기호(symbols)\n아래 링크를 클릭해 게임을 시작하세요",
@@ -659,6 +615,12 @@ window.POST_DETAILS = {
     "local": "post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4.pdf"
    }
   ],
+  "at": "2026-10-21"
+ },
+ "드라마|i seem to be missing most of your monologue work": {
+  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
+  "ko": "여러분의 독백(monologue) 과제를 대부분 제가 받지 못한 것 같습니다: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학(holidays) 동안 집에 가져갔다면 내일 꼭 가지고 오세요.",
+  "files": [],
   "at": "2026-10-21"
  },
  "과학 (Mr Phillips)|Parallel Circuits - workbook questions": {
