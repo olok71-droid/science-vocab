@@ -4,7 +4,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-23",
   "type": "공지",
   "title": "Year 9 Sip and Paint",
-  "ko": "미술시간에 부모님과 함께 그림 그리는 행사",
+  "ko": "학부모와 함께 그림 그리는 행사, 미술시간에 진행",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -40,7 +40,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-22",
   "type": "과제",
   "title": "PSHE - Y9 - 22/10/26",
-  "ko": "9학년 PSHE 수업 과제가 올라왔어요",
+  "ko": "9학년 PSHE 수업 과제가 올라옴",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -49,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-21",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "전기회로와 기호 Wayground 퀴즈",
+  "ko": "전기회로와 기호 퀴즈(Wayground)",
   "due": "2026-10-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODkzNDczODkyNTY0/details"
  },
@@ -112,7 +112,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-20",
   "type": "과제",
   "title": "Haze - 20/10 Lesson",
-  "ko": "연무로 인한 수업 과제",
+  "ko": "연무로 인한 10/20 수업 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -130,7 +130,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-20",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "준비물: 읽을 책(독서책) 가져오기",
+  "ko": "독서책을 챙겨 오기",
   "due": "2026-10-21",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -139,7 +139,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "과제",
   "title": "Electricity video",
-  "ko": "전기 영상 시청 과제",
+  "ko": "전기 영상 보기 과제",
   "due": "2026-10-25",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -157,7 +157,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "자료",
   "title": "Electricity - Circuits and Symbols",
-  "ko": "전기 회로와 기호 수업 자료",
+  "ko": "전기 회로와 기호 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -175,7 +175,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "공지",
   "title": "Your 2nd Continues Assessment (CA2) will be on Tuesday 3rd November 2026.",
-  "ko": "CA2 시험, 계산기·기하세트 준비",
+  "ko": "CA2 시험, 계산기·기하세트 지참",
   "due": "2026-11-03",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -193,7 +193,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "과제",
   "title": "STEP 1: LEDU TALK MAKING",
-  "ko": "LEDU 토크 1단계 만들기 질문 답하기",
+  "ko": "LEDU 토크 만들기 1단계 질문에 답하기",
   "due": "2026-10-19",
   "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
  },
@@ -202,7 +202,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "과제",
   "title": "Mid term Check in",
-  "ko": "중간 점검 설문 과제를 제출하세요",
+  "ko": "중간 점검 설문 제출하기",
   "due": "2026-10-22",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -247,7 +247,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "과제",
   "title": "Haze Work!!! - Units 5.2 Interior angles of polygons & 5.3 Exterior angles of polygons",
-  "ko": "다각형 내각·외각 휴교 과제",
+  "ko": "다각형 내각·외각 단원 과제",
   "due": "2026-10-12",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -256,7 +256,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "과제",
   "title": "Year 9 Common Assessment Task 1 Term 1 2025",
-  "ko": "9학년 1학기 공통평가 과제 1",
+  "ko": "9학년 1학기 공통평가 1차 과제",
   "due": "2026-11-06",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -264,8 +264,8 @@ window.CLASSROOM_POSTS = [
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-10-09",
   "type": "공지",
-  "title": "Good morning Year 9!",
-  "ko": "등교 없는 날, 선생님 과제를 모두 하세요",
+  "title": "Good morning Year 9! 😊",
+  "ko": "등교 없는 날, 9시까지 올라온 과제 모두 하기",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -301,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "자료",
   "title": "Properties of Covalent and Ionic Compounds",
-  "ko": "공유·이온 화합물 성질 자료",
+  "ko": "공유·이온 화합물의 성질 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -328,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "공지",
   "title": "Jaime House Activity Notice",
-  "ko": "Jaime 하우스 활동 안내 그림 공지",
+  "ko": "제이미 하우스 활동 안내 그림",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -337,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "공지",
   "title": "Good day to you all, a message from Ibraheem Jaime House Representative",
-  "ko": "Jaime 데이 카훗 퀴즈, Jaime생은 하우스복+빨간 소품",
+  "ko": "제이미데이 카훗 퀴즈, 제이미생은 하우스복+빨간 장식",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -346,7 +346,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "자료",
   "title": "Languages Week 2026 Class Bee!",
-  "ko": "언어 주간 반 대항 퀴즈대회 자료",
+  "ko": "언어 주간 학급 단어 대회 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -373,7 +373,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-06",
   "type": "과제",
   "title": "Tin",
-  "ko": "틴(Tin) 과제 제출",
+  "ko": "Tin 과제 제출",
   "due": "2026-10-19",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
  },
@@ -382,7 +382,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-06",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "준비물: 읽을 책(독서책) 가져오기",
+  "ko": "독서책을 챙겨 오기",
   "due": "2026-10-07",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -409,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "자료",
   "title": "2.4 Simple and Giant structures",
-  "ko": "단순·거대 구조 수업 자료",
+  "ko": "2.4 단순·거대 구조 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -436,7 +436,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "공지",
   "title": "Character Recognitions for 21-Sep-2026 - 05-Oct-2026",
-  "ko": "인성 우수 학생 명단 PDF 공지",
+  "ko": "9/21~10/5 인성 칭찬 명단 PDF",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -445,7 +445,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "자료",
   "title": "Unit 1 Lesson 3 参加中文夏令营 Quizlet",
-  "ko": "1단원 3과 중국어 여름캠프 Quizlet",
+  "ko": "3과 중국어 여름캠프 Quizlet 단어 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -454,9 +454,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "자료",
   "title": "L1 Starter Task support card",
-  "ko": "1과 도입 활동 도움 카드",
+  "ko": "1과 시작 활동 도움 카드",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-24 18:12";
+window.CLASSROOM_POSTS_AT = "2026-10-25 18:12";

@@ -323,6 +323,12 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
+ "튜터 (Mr Cassels)|Good morning Year 9! 😊": {
+  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
+  "ko": "9학년 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림입니다:\n\n선생님들이 오전 9시까지 영어(English) / 추가언어로서의 영어(EAL), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 줄 거예요\n올라온 과제를 모두 꼭 끝내세요.\n도움이 필요하면 담당 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인할 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
+  "files": [],
+  "at": "2026-10-09"
+ },
  "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative": {
   "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
   "ko": "여러분 모두 안녕하세요, Jaime 하우스(house) 대표 Ibraheem의 메시지입니다: \n\n이번 주 금요일이 Jaime의 날(Jaime day)이라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 7학년(Y7), 8학년(Y8), 9학년(Y9), 11학년(Y11) 튜터 그룹(tutor groups) 학생들은 Jaime의 날, 성 Jaime(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 측면에 관한 문제로 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\nJaime 하우스 학생들(Jaime 하우스 학생들만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
@@ -460,12 +466,6 @@ window.POST_DETAILS = {
     "local": null
    }
   ],
-  "at": "2026-10-19"
- },
- "튜터 (Mr Cassels)|Good morning Year 9!": {
-  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
-  "ko": "9학년(Year 9) 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림이에요:\n\n선생님들이 오전 9시까지 영어(English) / EAL(English as an Additional Language), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 주실 거예요\n올라온 과제를 모두 꼭 끝내 주세요.\n도움이 필요하면 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인하실 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 나오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
-  "files": [],
   "at": "2026-10-19"
  },
  "휴머니티 (Mr Lawrence)|Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)": {
