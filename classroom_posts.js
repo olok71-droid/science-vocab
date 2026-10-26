@@ -1,5 +1,14 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "중국어 (Ying Ying老师)",
+  "date": "2026-10-26",
+  "type": "자료",
+  "title": "Lesson 4 中文短期培训班 Quizlet",
+  "ko": "4과 중국어 단기연수반 퀴즐렛 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
+ },
+ {
   "subject": "미술",
   "date": "2026-10-23",
   "type": "공지",
@@ -157,7 +166,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "자료",
   "title": "Electricity - Circuits and Symbols",
-  "ko": "전기 회로와 기호 자료",
+  "ko": "전기 회로와 기호 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -256,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "과제",
   "title": "Year 9 Common Assessment Task 1 Term 1 2025",
-  "ko": "9학년 1학기 공통평가 1차 과제",
+  "ko": "9학년 1학기 공통평가 과제 1",
   "due": "2026-11-06",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -292,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "과제",
   "title": "Ionic or covalent",
-  "ko": "이온결합·공유결합 구분 퀴즈",
+  "ko": "이온·공유 결합 구분 퀴즈",
   "due": "2026-10-20",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -346,7 +355,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-07",
   "type": "자료",
   "title": "Languages Week 2026 Class Bee!",
-  "ko": "언어 주간 학급 단어 대회 자료",
+  "ko": "2026 언어주간 반 대항 비 대회 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -391,7 +400,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "과제",
   "title": "Giant Covalent Structures",
-  "ko": "거대 공유결합 구조 퀴즈",
+  "ko": "거대 공유 구조 퀴즈",
   "due": "2026-10-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -409,7 +418,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "자료",
   "title": "2.4 Simple and Giant structures",
-  "ko": "2.4 단순·거대 구조 자료",
+  "ko": "단순·거대 구조 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -445,7 +454,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "자료",
   "title": "Unit 1 Lesson 3 参加中文夏令营 Quizlet",
-  "ko": "3과 중국어 여름캠프 Quizlet 단어 자료",
+  "ko": "3과 중국어 여름캠프 참가 퀴즐렛",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -454,9 +463,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-05",
   "type": "자료",
   "title": "L1 Starter Task support card",
-  "ko": "1과 시작 활동 도움 카드",
+  "ko": "1과 도입 활동 도움 카드",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-25 18:12";
+window.CLASSROOM_POSTS_AT = "2026-10-26 18:10";

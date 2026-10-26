@@ -699,5 +699,18 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-23"
+ },
+ "중국어 (Ying Ying老师)|Lesson 4 中文短期培训班 Quizlet": {
+  "en": "Lesson 4 中文短期培训班 Quizlet",
+  "ko": "4과 중국어 단기 연수반(中文短期培训班) 퀴즐렛(Quizlet)",
+  "files": [
+   {
+    "name": "Y9 Unit 1 Lesson 4 中文短期培训班 Short-term Chinese course Flashcards | Quizlet",
+    "kind": "web",
+    "url": "https://quizlet.com/my/1227086408/y9-unit-1-lesson-4-%E4%B8%AD%E6%96%87%E7%9F%AD%E6%9C%9F%E5%9F%B9%E8%AE%AD%E7%8F%AD-short-term-chinese-course-flash-cards/?i=5znqnt&x=1qqW",
+    "local": null
+   }
+  ],
+  "at": "2026-10-26"
  }
 };
