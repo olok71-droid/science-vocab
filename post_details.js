@@ -6,12 +6,6 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-06"
  },
- "수학 (Mr Anan)|Mathematics: Assessment Returns": {
-  "en": "Mathematics: Assessment Returns\nDear Students,\n\nPlease take note of the following Mathematics Department arrangements:\n\nAssessment papers and scores: As a general guideline, marked assessment papers will be returned and scores shared two weeks after the assessment date. Where school breaks affect this timeline, papers may be returned and scores shared earlier on a case-by-case basis.",
-  "ko": "수학(Mathematics): 평가 결과 반환(Assessment Returns)\n학생 여러분께,\n\n수학과의 다음 안내 사항을 참고해 주세요:\n\n평가 시험지와 점수(Assessment papers and scores): 일반적인 기준으로, 채점된 평가 시험지는 평가일로부터 2주 뒤에 돌려주고 점수도 그때 알려줍니다. 학교 방학이 이 일정에 영향을 주는 경우, 경우에 따라 시험지를 더 일찍 돌려주고 점수를 알려줄 수 있습니다.",
-  "files": [],
-  "at": "2026-10-06"
- },
  "미술|2 Samples and 3-4 photos uploaded": {
   "en": "2 Samples and 3-4 photos uploaded\nHi all, please make sure your 2 samples are complete before our next class. Meaning your pieces must:\n-fill the whole page\n-use colour or shading where appropriate\n-have outlines where appropriate\n\nPlease also make sure you have 3-4 photos uploaded to your slide. Please refer to the lesson slides 11-12 for more details if you are unsure. You DO NOT need to start drawing from your photos. We will do this next lesson.",
   "ko": "샘플(sample) 2개와 사진 3~4장 업로드\n여러분 안녕하세요, 다음 수업 전까지 샘플(sample) 2개를 꼭 완성해 오세요. 즉, 작품은 다음을 갖춰야 합니다:\n-페이지 전체를 채울 것\n-알맞은 곳에 색(colour)이나 명암(shading)을 넣을 것\n-알맞은 곳에 윤곽선(outlines)을 그릴 것\n\n또한 자기 슬라이드(slide)에 사진 3~4장을 꼭 올려 두세요. 잘 모르겠으면 수업 슬라이드(lesson slides) 11~12번에서 자세한 내용을 확인하세요. 사진을 보고 그리기는 아직 시작하지 않아도 됩니다(DO NOT need). 그건 다음 수업에서 할 것입니다.",
@@ -22,127 +16,6 @@ window.POST_DETAILS = {
   "en": "Bring your Reading Books!\nEVERYONE remembered their reading books last week. Well done guys :)\n\nRemember, you should have a reading book with you at all times. On a Wednesday particularly, tutor time will often be put aside for silent reading. Make sure you have a book that is in English. Translated books are also okay for you to bring.",
   "ko": "읽기 책(reading book)을 가져오세요!\n지난주에는 모두가 읽기 책을 잊지 않고 가져왔어요. 잘했어요, 여러분 :)\n\n기억하세요, 읽기 책은 항상 가지고 다녀야 합니다. 특히 수요일에는 튜터 시간(tutor time)을 조용히 책 읽기(silent reading)에 쓰는 경우가 많습니다. 영어로 된 책을 꼭 준비하세요. 번역본(translated books)을 가져와도 괜찮습니다.",
   "files": [],
-  "at": "2026-10-06"
- },
- "튜터 (Mr Cassels)|Character Recognitions for 21-Sep-2026 - 05-Oct-2026": {
-  "en": "Character Recognitions for 21-Sep-2026 - 05-Oct-2026\n\nKeep up the positive characters!",
-  "ko": "2026년 9월 21일 - 2026년 10월 5일 인성 표창(Character Recognitions)\n\n앞으로도 긍정적인 인성(positive characters)을 계속 보여 주세요!",
-  "files": [
-   {
-    "name": "21-Sep-2026 - 05-Oct-2026.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1CVzNS4mnriFVdWgGB6vqiJO15pGVl_Ax/view?usp=classroom_web",
-    "local": "pdfs/tutor/21-Sep-2026 - 05-Oct-2026.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|Giant Covalent Structures": {
-  "en": "Giant Covalent Structures\nClick on the link below to start the game",
-  "ko": "거대 공유 구조(Giant Covalent Structures)\n아래 링크를 눌러 게임을 시작하세요",
-  "files": [
-   {
-    "name": "Quizizz is now Wayground | Teacher AI and Resources",
-    "kind": "web",
-    "url": "https://wayground.com/join?c=57OBHj9Z3UKPUe5_BWItIXGp8HwtbAzPCMMq29krUX1fx44IEFAF2nY1Ck6Oz_48Gk-75VTwYk8zw6MRpULQ2OJ28VKTxnj4oZ8sXwlG6e3PDXImQhtJ0GXMn87JfozajSRCugnqHX2WSRTZgGhvbAiVSY_X_l5WSPZDYbcfYzweu62RVCyuMlZZdI-nd_FzGzcwetNzWQFgyI0om6nPxFTkcA._rofEVgb8BD_h9dwrexdbg.I9B6RHWQXTa_7QoQ&linktype=web",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|Simple and Giant structures - worksheet": {
-  "en": "Simple and Giant structures - worksheet\nPlease complete - :)",
-  "ko": "단순 구조와 거대 구조(Simple and Giant structures) - 학습지(worksheet)\n완성해 주세요 - :)",
-  "files": [
-   {
-    "name": "Stage 9 Lower Secondary Science Worksheet: Covalent, Ionic, and Giant Structures: - answers",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1ZZ3Rytr6ksFY2f61s94kFoxcYbk26Iz5770vZG4XZX0/edit?usp=classroom_web",
-    "local": "post_files/1ZZ3Rytr6ksFY2f61s94kFoxcYbk26Iz5770vZG4XZX0.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|2.4 Simple and Giant structures": {
-  "en": "2.4 Simple and Giant structures",
-  "ko": "2.4 단순 구조와 거대 구조(Simple and Giant structures)",
-  "files": [
-   {
-    "name": "2.4 Simple and giant structures",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1aB-tQQ-hB6ExQlCnajnW8FMFZeKycvL8/view?usp=classroom_web",
-    "local": "post_files/1aB-tQQ-hB6ExQlCnajnW8FMFZeKycvL8.pdf"
-   },
-   {
-    "name": "GCSE Chemistry - Types of Covalent Structures: Simple Molecular & Giant Covalent Structures",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=SxuldWdqFB0",
-    "local": null
-   },
-   {
-    "name": "1.7 Covalent bonding.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1prVCYJElS60izPaHjNhVoQo-2XqNqtp4/view?usp=classroom_web",
-    "local": "pdfs/genes/1.7 Covalent bonding.pptx"
-   },
-   {
-    "name": "GCSE Chemistry - Diamond & Graphite - Structure | Properties (2027/28 exams)",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=RVV8pncaA7A",
-    "local": null
-   },
-   {
-    "name": "Giant Ionic Structures or Lattices | Properties of Matter | Chemistry | FuseSchool",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=PNKsbnH1vw8",
-    "local": null
-   },
-   {
-    "name": "Electron Configuration Diagrams | Properties of Matter | Chemistry | FuseSchool",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=hSkJzE2Vz_w",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
- "컴퓨터 과학 (Ms Meha)|Week 8 Python Exercise(If and Loops)": {
-  "en": "Week 8 Python Exercise(If and Loops)\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
-  "ko": "8주차 파이썬(Python) 연습문제(조건문과 반복문(If and Loops))\nbase=int(input(\"base\"))\nheight=int(input(\"height\"))\narea =(base*height/2)\nprint(area)",
-  "files": [
-   {
-    "name": "Python_If_Statement",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1GsicBJTsaK_dWQyU7IHDY4qWkZA0lhMI-Fhd0u6z9hA/edit?usp=classroom_web",
-    "local": "pdfs/cs/Python_If_Statement.pdf"
-   }
-  ],
-  "at": "2026-10-06"
- },
- "중국어 (Ying Ying老师)|Unit 1 Lesson 3 参加中文夏令营 Quizlet": {
-  "en": "Unit 1 Lesson 3 参加中文夏令营 Quizlet",
-  "ko": "1단원 3과 参加中文夏令营(중국어 여름캠프 참가하기) Quizlet",
-  "files": [
-   {
-    "name": "Unit 1 Lesson 3 参加中文夏令营 Flashcards | Quizlet",
-    "kind": "web",
-    "url": "https://quizlet.com/my/1217853378/unit-1-lesson-3-%E5%8F%82%E5%8A%A0%E4%B8%AD%E6%96%87%E5%A4%8F%E4%BB%A4%E8%90%A5-flash-cards/?i=5znqnt&x=1jqW",
-    "local": null
-   }
-  ],
-  "at": "2026-10-06"
- },
- "중국어 (Ying Ying老师)|L1 Starter Task support card": {
-  "en": "L1 Starter Task support card",
-  "ko": "1차시 도입 활동(Starter Task) 도움 카드(support card)",
-  "files": [
-   {
-    "name": "U1 L3 Wk8 Lesson 1 Starter Support Card 你看到了什么.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1WVDVnRHlZQZsflYi1T40KNRMVplCsnyh/view?usp=classroom_web",
-    "local": "post_files/1WVDVnRHlZQZsflYi1T40KNRMVplCsnyh.pdf"
-   }
-  ],
   "at": "2026-10-06"
  },
  "과학 (Mr Phillips)|Ionic or covalent": {
@@ -323,12 +196,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
- "튜터 (Mr Cassels)|Good morning Year 9! 😊": {
-  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
-  "ko": "9학년 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림입니다:\n\n선생님들이 오전 9시까지 영어(English) / 추가언어로서의 영어(EAL), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 줄 거예요\n올라온 과제를 모두 꼭 끝내세요.\n도움이 필요하면 담당 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인할 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
-  "files": [],
-  "at": "2026-10-09"
- },
  "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative": {
   "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
   "ko": "여러분 모두 안녕하세요, Jaime 하우스(house) 대표 Ibraheem의 메시지입니다: \n\n이번 주 금요일이 Jaime의 날(Jaime day)이라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 7학년(Y7), 8학년(Y8), 9학년(Y9), 11학년(Y11) 튜터 그룹(tutor groups) 학생들은 Jaime의 날, 성 Jaime(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 측면에 관한 문제로 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\nJaime 하우스 학생들(Jaime 하우스 학생들만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
@@ -468,48 +335,11 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-19"
  },
- "휴머니티 (Mr Lawrence)|Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)": {
-  "en": "Today in class we learnt about Imperialism and the reasons behind the start of World War 1 (WW1)\nIf you are at home you can watch the youtube video on imperialism, answer the multiple choice questions and then memorise the MAINS (the reasons behind the start of WW1)",
-  "ko": "오늘 수업에서 우리는 제국주의(Imperialism)와 제1차 세계대전(World War 1, WW1)이 시작된 이유에 대해 배웠습니다\n집에 있다면 제국주의(imperialism)에 관한 유튜브 영상을 보고, 객관식 문제(multiple choice questions)에 답한 다음, MAINS(제1차 세계대전(WW1)이 시작된 이유)를 외우세요",
-  "files": [
-   {
-    "name": "European Empires - Bilingual EAL Worksheet.docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1jhd4eVP7FBrPqd3pL8THc9RtPo9Judgs/view?usp=classroom_web",
-    "local": "post_files/1jhd4eVP7FBrPqd3pL8THc9RtPo9Judgs.docx"
-   },
-   {
-    "name": "Imperialism & WWI History Worksheet SC.docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1peqUT1A_45m8DFv-t2H3BfJUejqC6s_B/view?usp=classroom_web",
-    "local": "post_files/1peqUT1A_45m8DFv-t2H3BfJUejqC6s_B.docx"
-   },
-   {
-    "name": "Lesson 1 - Guided Reading & Storyboard.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1QNfCt7YJToNh76P_s9sYz_cBQa9hPuX1/view?usp=classroom_web",
-    "local": "post_files/1QNfCt7YJToNh76P_s9sYz_cBQa9hPuX1.pptx"
-   },
-   {
-    "name": "Lesson 1 - Video Sheet.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1WWny7Ujoi1hWP17tCEWysaTZv3SIeFZX/view?usp=classroom_web",
-    "local": "post_files/1WWny7Ujoi1hWP17tCEWysaTZv3SIeFZX.pptx"
-   },
-   {
-    "name": "PW Lesson 1 - Printing.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1F7NvcZYiPBJ946s9GVmA_m9XO4JOuHCj/view?usp=classroom_web",
-    "local": "post_files/1F7NvcZYiPBJ946s9GVmA_m9XO4JOuHCj.pptx"
-   },
-   {
-    "name": "PW Lessons 1 & 2 -  The Long Fuse - Europe in 1914.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1ZBnEy1W_wre_QN-54ORD62IM99vNZ6O3/view?usp=classroom_web",
-    "local": "post_files/1ZBnEy1W_wre_QN-54ORD62IM99vNZ6O3.pptx"
-   }
-  ],
-  "at": "2026-10-20"
+ "튜터 (Mr Cassels)|Good morning Year 9!": {
+  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
+  "ko": "9학년(Year 9) 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림이에요:\n\n선생님들이 오전 9시까지 영어(English) / EAL(English as an Additional Language), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 주실 거예요\n올라온 과제를 모두 꼭 끝내 주세요.\n도움이 필요하면 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인하실 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 나오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
+  "files": [],
+  "at": "2026-10-19"
  },
  "미술|Haze - 20/10 Lesson": {
   "en": "Haze - 20/10 Lesson\nHi everyone, \n\nFor today's lesson, please refer to slide 12 on the lesson slides. The task is to complete:\n\n1) one direct, realistic copy of one of your photos using only pencil sketching and shading.\n2) one copy of your photo in the artist's style. This should be fully coloured or shaded in with outlines. \n\nBoth of these artworks should be A6 in size.\n\nThank you!",
@@ -570,6 +400,19 @@ window.POST_DETAILS = {
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1kOMAryPfIFhyIwUDAYUPj19YqHamBymG/view?usp=classroom_web",
     "local": "post_files/1kOMAryPfIFhyIwUDAYUPj19YqHamBymG.png"
+   }
+  ],
+  "at": "2026-10-21"
+ },
+ "휴머니티 (Mr Lawrence)|Term 1 Common Assessment 2 Year 9 History": {
+  "en": "Term 1 Common Assessment 2\nYear 9 History\n\nFocus of assessment:\nYear 9 History Unit 2 - World War 1\n\n\nDate of Assessment: Tuesday 3rd November 2026\nDescription of assessment\nThis will be a 40-minute written assessment covering the key knowledge and skills developed during the Causes of the First World War unit. The assessment will include key term definitions, knowledge questions, source-based questions and an extended written response using historical evidence to explain and evaluate the MAINS causes of the First World War.\nAssessment objectives\nKnowledge and Understanding: Demonstrate knowledge and understanding of the MAINS causes of the First World War and the key events, people and developments that increased tensions in Europe before 1914.\nSource Analysis and Interpretation: Use historical sources to identify relevant information and explain how it helps us understand the causes of the First World War.\nHistorical Explanation and Judgement: Explain how different causes contributed to the outbreak of war and make a justified judgement about which cause was the most important.\nMarking criteria\nDemonstrates accurate historical knowledge and understanding of the MAINS causes.\nUses relevant historical facts, people and events to support answers.\nIdentifies and interprets relevant information from historical sources.\nExplains how different factors increased tensions and contributed to the outbreak of war.\nUses appropriate historical terminology.\nDevelops clear, well-structured explanations and supports judgements with relevant evidence.\n\nSkills being assessed and success criteria\nRecall and explain the five MAINS causes: Militarism, Alliance System, Imperialism, Nationalism and Significant Individuals.\nDemonstrate knowledge of key events and developments leading to the First World War.\nIdentify and use relevant evidence from historical sources.\nExplain how and why tensions between European countries increased before 1914.\nConstruct clear, developed historical explanations using evidence.\nWrite a well-supported PEEL paragraph and justify a judgement about the most important cause of the First World War.\n\nSuggested Revision Approaches\nReview the relevant History lessons, notes and resources on Google Classroom.\nRevise the five MAINS causes, ensuring you can define and explain each one, using key examples such as the arms race, European alliances, imperial competition, nationalism, the assassination of Archduke Franz Ferdinand and the Blank Cheque.\nTest yourself on key historical knowledge, people, events and decisions without looking at your notes.\nPractise answering source-based questions and writing clear historical explanations using PEEL, supporting your ideas with accurate evidence and a justified judgement.\nReview the KS3 Humanities Toolkit, Humanities Exam Command Words and KS3 Humanities Practical Revision Tips resources on Google Classroom under Support Materials to help you prepare effectively.",
+  "ko": "1학기 공통 평가(Common Assessment) 2\n9학년 역사(History)\n\n평가 중점:\n9학년 역사 2단원 - 제1차 세계대전(World War 1)\n\n\n평가 날짜: 2026년 11월 3일 화요일\n평가 설명\n이 평가는 40분 동안 치르는 서술형 평가로, 제1차 세계대전의 원인(Causes of the First World War) 단원에서 익힌 핵심 지식과 기술을 다룹니다. 평가에는 핵심 용어 정의(key term definitions), 지식 문제(knowledge questions), 사료 기반 문제(source-based questions), 그리고 역사적 증거(historical evidence)를 사용해 제1차 세계대전의 MAINS 원인(MAINS causes)을 설명하고 평가하는 장문 서술형 답안(extended written response)이 포함됩니다.\n평가 목표\n지식과 이해(Knowledge and Understanding): 제1차 세계대전의 MAINS 원인(MAINS causes)과, 1914년 이전 유럽의 긴장(tensions)을 높인 주요 사건·인물·변화에 대한 지식과 이해를 보여준다.\n사료 분석과 해석(Source Analysis and Interpretation): 역사 사료(historical sources)를 사용해 관련 정보를 찾아내고, 그것이 제1차 세계대전의 원인을 이해하는 데 어떻게 도움이 되는지 설명한다.\n역사적 설명과 판단(Historical Explanation and Judgement): 여러 원인이 전쟁 발발(outbreak of war)에 어떻게 기여했는지 설명하고, 어떤 원인이 가장 중요했는지에 대해 근거 있는 판단(justified judgement)을 내린다.\n채점 기준\nMAINS 원인(MAINS causes)에 대한 정확한 역사 지식과 이해를 보여준다.\n관련된 역사적 사실·인물·사건을 사용해 답을 뒷받침한다.\n역사 사료(historical sources)에서 관련 정보를 찾아내고 해석한다.\n여러 요인(factors)이 어떻게 긴장(tensions)을 높이고 전쟁 발발(outbreak of war)에 기여했는지 설명한다.\n적절한 역사 용어(historical terminology)를 사용한다.\n명확하고 짜임새 있는 설명을 전개하고, 관련 증거(evidence)로 판단을 뒷받침한다.\n\n평가하는 기술과 성공 기준\n다섯 가지 MAINS 원인을 떠올리고 설명한다: 군국주의(Militarism), 동맹 체제(Alliance System), 제국주의(Imperialism), 민족주의(Nationalism), 주요 인물(Significant Individuals).\n제1차 세계대전으로 이어진 주요 사건과 변화에 대한 지식을 보여준다.\n역사 사료(historical sources)에서 관련 증거(evidence)를 찾아 사용한다.\n1914년 이전 유럽 국가들 사이의 긴장(tensions)이 어떻게, 왜 높아졌는지 설명한다.\n증거를 사용해 명확하고 충분히 전개된 역사적 설명을 구성한다.\n근거가 잘 뒷받침된 PEEL 문단(PEEL paragraph)을 쓰고, 제1차 세계대전의 가장 중요한 원인에 대한 판단을 정당화(justify)한다.\n\n권장 복습 방법\n구글 클래스룸에 있는 관련 역사 수업·노트·자료를 복습한다.\n다섯 가지 MAINS 원인을 복습하고, 군비 경쟁(arms race), 유럽의 동맹(European alliances), 제국 간 경쟁(imperial competition), 민족주의(nationalism), 프란츠 페르디난트 대공 암살(assassination of Archduke Franz Ferdinand), 백지수표(Blank Cheque) 같은 핵심 예시를 사용해 각각을 정의하고 설명할 수 있도록 한다.\n노트를 보지 않고 핵심 역사 지식·인물·사건·결정에 대해 스스로 시험해 본다.\n사료 기반 문제(source-based questions)에 답하는 연습과, PEEL을 사용해 명확한 역사적 설명을 쓰는 연습을 하고, 정확한 증거와 근거 있는 판단(justified judgement)으로 생각을 뒷받침한다.\n효과적으로 준비할 수 있도록 구글 클래스룸의 Support Materials 아래에 있는 KS3 Humanities Toolkit, Humanities Exam Command Words, KS3 Humanities Practical Revision Tips 자료를 복습한다.",
+  "files": [
+   {
+    "name": "Year 9 History T1 CAT2  2026",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI/edit?usp=classroom_web",
+    "local": "post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf"
    }
   ],
   "at": "2026-10-21"
@@ -687,19 +530,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-23"
  },
- "휴머니티 (Mr Lawrence)|Term 1 Common Assessment 2 - Year 9 History": {
-  "en": "Term 1 Common Assessment 2 \nYear 9 History\n\nFocus of assessment:\nYear 9 History Unit 2 - World War 1\n\n\nDate of Assessment: Tuesday 3rd November 2026\nDescription of assessment\nThis will be a 40-minute written assessment covering the key knowledge and skills developed during the Causes of the First World War unit. The assessment will include key term definitions, knowledge questions, source-based questions and an extended written response using historical evidence to explain and evaluate the MAINS causes of the First World War.\nAssessment objectives\nKnowledge and Understanding: Demonstrate knowledge and understanding of the MAINS causes of the First World War and the key events, people and developments that increased tensions in Europe before 1914.\nSource Analysis and Interpretation: Use historical sources to identify relevant information and explain how it helps us understand the causes of the First World War.\nHistorical Explanation and Judgement: Explain how different causes contributed to the outbreak of war and make a justified judgement about which cause was the most important.\nMarking criteria\nDemonstrates accurate historical knowledge and understanding of the MAINS causes.\nUses relevant historical facts, people and events to support answers.\nIdentifies and interprets relevant information from historical sources.\nExplains how different factors increased tensions and contributed to the outbreak of war.\nUses appropriate historical terminology.\nDevelops clear, well-structured explanations and supports judgements with relevant evidence.\n\nSkills being assessed and success criteria\nRecall and explain the five MAINS causes: Militarism, Alliance System, Imperialism, Nationalism and Significant Individuals.\nDemonstrate knowledge of key events and developments leading to the First World War.\nIdentify and use relevant evidence from historical sources.\nExplain how and why tensions between European countries increased before 1914.\nConstruct clear, developed historical explanations using evidence.\nWrite a well-supported PEEL paragraph and justify a judgement about the most important cause of the First World War.\n\nSuggested Revision Approaches\nReview the relevant History lessons, notes and resources on Google Classroom.\nRevise the five MAINS causes, ensuring you can define and explain each one, using key examples such as the arms race, European alliances, imperial competition, nationalism, the assassination of Archduke Franz Ferdinand and the Blank Cheque.\nTest yourself on key historical knowledge, people, events and decisions without looking at your notes.\nPractise answering source-based questions and writing clear historical explanations using PEEL, supporting your ideas with accurate evidence and a justified judgement.\nReview the KS3 Humanities Toolkit, Humanities Exam Command Words and KS3 Humanities Practical Revision Tips resources on Google Classroom under Support Materials to help you prepare effectively.",
-  "ko": "1학기 공통평가(Common Assessment) 2 \n9학년 역사(History)\n\n평가 범위:\n9학년 역사 2단원 - 제1차 세계대전(World War 1)\n\n\n평가 날짜: 2026년 11월 3일 화요일\n평가 설명\n이 평가는 40분 서술형 평가로, 제1차 세계대전의 원인(Causes of the First World War) 단원에서 익힌 핵심 지식과 기술을 다룹니다. 평가에는 핵심 용어 정의(key term definitions), 지식 문제(knowledge questions), 사료 기반 문제(source-based questions), 그리고 역사적 증거(historical evidence)를 사용해 제1차 세계대전의 MAINS 원인(MAINS causes)을 설명하고 평가하는 긴 서술형 답안(extended written response)이 포함됩니다.\n평가 목표\n지식과 이해(Knowledge and Understanding): 제1차 세계대전의 MAINS 원인과, 1914년 이전 유럽의 긴장(tensions)을 높인 주요 사건·인물·변화에 대한 지식과 이해를 보여준다.\n사료 분석과 해석(Source Analysis and Interpretation): 역사 사료(historical sources)를 사용해 관련 정보를 찾아내고, 그것이 제1차 세계대전의 원인을 이해하는 데 어떻게 도움이 되는지 설명한다.\n역사적 설명과 판단(Historical Explanation and Judgement): 여러 원인이 전쟁 발발(outbreak of war)에 어떻게 기여했는지 설명하고, 어떤 원인이 가장 중요했는지에 대해 근거 있는 판단(justified judgement)을 내린다.\n채점 기준\nMAINS 원인에 대한 정확한 역사 지식과 이해를 보여준다.\n관련된 역사적 사실·인물·사건을 사용해 답을 뒷받침한다.\n역사 사료에서 관련 정보를 찾아내고 해석한다.\n여러 요인(factors)이 어떻게 긴장을 높이고 전쟁 발발에 기여했는지 설명한다.\n적절한 역사 용어(historical terminology)를 사용한다.\n명확하고 짜임새 있는 설명을 전개하고, 관련 증거(evidence)로 판단을 뒷받침한다.\n\n평가하는 기술과 성공 기준(success criteria)\n다섯 가지 MAINS 원인을 기억하고 설명한다: 군국주의(Militarism), 동맹 체제(Alliance System), 제국주의(Imperialism), 민족주의(Nationalism), 중요 인물(Significant Individuals).\n제1차 세계대전으로 이어진 주요 사건과 변화에 대한 지식을 보여준다.\n역사 사료에서 관련 증거를 찾아 사용한다.\n1914년 이전 유럽 국가들 사이의 긴장이 어떻게, 왜 높아졌는지 설명한다.\n증거를 사용해 명확하고 발전된 역사적 설명을 구성한다.\n근거가 탄탄한 PEEL 문단(PEEL paragraph)을 쓰고, 제1차 세계대전의 가장 중요한 원인에 대한 판단을 정당화한다.\n\n추천 복습 방법\n구글 클래스룸에 있는 관련 역사 수업·노트·자료를 복습한다.\n다섯 가지 MAINS 원인을 복습하고, 군비 경쟁(arms race), 유럽 동맹(European alliances), 제국 간 경쟁(imperial competition), 민족주의(nationalism), 프란츠 페르디난트 대공 암살(assassination of Archduke Franz Ferdinand), 백지수표(Blank Cheque) 같은 핵심 예시를 사용해 각각을 정의하고 설명할 수 있도록 한다.\n노트를 보지 않고 핵심 역사 지식·인물·사건·결정에 대해 스스로 시험해 본다.\n사료 기반 문제에 답하는 연습을 하고, PEEL을 사용해 명확한 역사적 설명을 쓰며, 정확한 증거와 근거 있는 판단으로 생각을 뒷받침한다.\n효과적으로 준비할 수 있도록 구글 클래스룸의 Support Materials 아래에 있는 KS3 Humanities Toolkit, Humanities Exam Command Words, KS3 Humanities Practical Revision Tips 자료를 복습한다.",
-  "files": [
-   {
-    "name": "Year 9 History T1 CAT2  2026",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI/edit?usp=classroom_web",
-    "local": "post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf"
-   }
-  ],
-  "at": "2026-10-23"
- },
  "중국어 (Ying Ying老师)|Lesson 4 中文短期培训班 Quizlet": {
   "en": "Lesson 4 中文短期培训班 Quizlet",
   "ko": "4과 중국어 단기 연수반(中文短期培训班) 퀴즐렛(Quizlet)",
@@ -712,5 +542,147 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-26"
+ },
+ "휴머니티 (Mr Lawrence)|Lessons 1-5 of WW1": {
+  "en": "Lessons 1-5 of WW1",
+  "ko": "제1차 세계대전(WW1) 1~5차시 수업",
+  "files": [
+   {
+    "name": "Lesson 1 - Guided Reading & Storyboard.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1eqNhKfsFbF_coZTFuke3k0gpWJBVBQvP/view?usp=classroom_web",
+    "local": "pdfs/humanities/Lesson 1 - Guided Reading & Storyboard.pptx"
+   },
+   {
+    "name": "Lesson 1 - Video Sheet.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1r3uxcOG_VGVuD13RPVaw9R0BgWV4QFlW/view?usp=classroom_web",
+    "local": "pdfs/humanities/Lesson 1 - Video Sheet.pptx"
+   },
+   {
+    "name": "PW Lesson 1 - Printing.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1Y1Dd0U6u_PY5Y--E0ahY-G77m9D8jSfF/view?usp=classroom_web",
+    "local": "pdfs/humanities/PW Lesson 1 - Printing.pptx"
+   },
+   {
+    "name": "PW Lessons 1 & 2 -  The Long Fuse - Europe in 1914.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1xtOWJ2WQIoxPwdhaXj53hahNaGoknvxB/view?usp=classroom_web",
+    "local": "post_files/1xtOWJ2WQIoxPwdhaXj53hahNaGoknvxB.pptx"
+   },
+   {
+    "name": "Lesson 3 - Friends and Foes_ The Alliance System.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1IglMZuyBejw1Un_wz0hexsthim9Dxajm/view?usp=classroom_web",
+    "local": "pdfs/humanities/Lesson 3 - Friends and Foes_ The Alliance System.pptx"
+   },
+   {
+    "name": "Lesson 3 - Info.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1dWyz61QZOnkICaa0HRokSaknPik7IZoT/view?usp=classroom_web",
+    "local": "pdfs/humanities/Lesson 3 - Info.pptx"
+   },
+   {
+    "name": "Lesson 3 - Printing.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1uQmExo8Hi0mkCpKPxXajQ7cjv16Z2sf7/view?usp=classroom_web",
+    "local": "pdfs/humanities/Lesson 3 - Printing.pptx"
+   },
+   {
+    "name": "PW Lesson 4 - Guided Reading.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1emZpxj2sS3juy2yv3Oq6jpN9LQOP1hFa/view?usp=classroom_web",
+    "local": null
+   },
+   {
+    "name": "PW Lesson 4 & 5 - Militarism and the Arms Race.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1rIjr5648_7AG7-FwAWveT_CeBSKtsnh1/view?usp=classroom_web",
+    "local": null
+   },
+   {
+    "name": "PW Lesson 5 - Printing.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1F1rLA1NAWjuglzvEpdIgL9tVVAoVMS4U/view?usp=classroom_web",
+    "local": "pdfs/humanities/PW Lesson 5 - Printing.pptx"
+   },
+   {
+    "name": "PW Lesson 5 - Printing  -  Repaired.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/18ty8wYXf2E8RA12SOqu83pXDdPZA1R8E/view?usp=classroom_web",
+    "local": "pdfs/humanities/PW Lesson 5 - Printing  -  Repaired.pptx"
+   },
+   {
+    "name": "PW Lesson 5 - The Assassination of Archduke Franz Ferdinand  -  Repaired.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1_Rb_avUo730vOP6JF3IYGbFQJ4GNLHKo/view?usp=classroom_web",
+    "local": "pdfs/humanities/PW Lesson 5 - The Assassination of Archduke Franz Ferdinand  -  Repaired.pptx"
+   }
+  ],
+  "at": "2026-10-27"
+ },
+ "튜터 (Mr Cassels)|I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int": {
+  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
+  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 정보를 알려드리게 되어 기쁩니다.\n\n'갈등 속의 사람과 지구(People and Planet in Conflict)'를 주제로 한 이 대회는 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 누구나 참가할 수 있습니다.  에세이 제목(essay titles), 분량(length), 제출 방법(submission details)의 자세한 내용은 첨부 파일에 있습니다. \n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n문의: Karina Mariadas, k.mariadas@elc.edu.my",
+  "files": [
+   {
+    "name": "k.mariadas@elc.edu.my",
+    "kind": "web",
+    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
+    "local": null
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
+    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
+    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
+   }
+  ],
+  "at": "2026-10-27"
+ },
+ "튜터 (Mr Cassels)|Rewards between 21st September and today!": {
+  "en": "Rewards between 21st September and today! \nThe next Rewards Slips for Skip the Line or Lift Pass will be handed out on Wednesday 11th and Thursday 12th November for the top students.",
+  "ko": "9월 21일부터 오늘까지의 보상(Rewards)! \n줄 서지 않기(Skip the Line) 또는 엘리베이터 이용권(Lift Pass)을 받을 수 있는 다음 보상 쪽지(Rewards Slips)는 11월 11일 수요일과 11월 12일 목요일에 우수 학생(top students)에게 나눠 줄 예정입니다.",
+  "files": [
+   {
+    "name": "21-Sep-2026 - 27-Oct-2026.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8/view?usp=classroom_web",
+    "local": "post_files/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8.pdf"
+   }
+  ],
+  "at": "2026-10-27"
+ },
+ "음악 (Mr Everett)|FOBISIA Online Guitar Solo Competition": {
+  "en": "FOBISIA Online Guitar Solo Competition\nStudents can register your interest and submit your performance details to represent SJIIS in the FOBISIA Online Guitar Solo competition.\n\nComplete attached form as soon as you decide you would like to compete.\n\nPerformance Video Deadline: Monday 9th November 2026\n\nSubmissions can be of any genre. \n\nMax length 4mins",
+  "ko": "FOBISIA 온라인 기타 독주 대회(FOBISIA Online Guitar Solo Competition)\n학생들은 FOBISIA 온라인 기타 독주(guitar solo) 대회에 SJIIS 대표로 나가고 싶다는 뜻을 등록하고 연주(performance) 세부 정보를 제출할 수 있습니다.\n\n대회에 나가기로 정하면 바로 첨부된 양식을 작성하세요.\n\n연주 영상 마감(Performance Video Deadline): 2026년 11월 9일 월요일\n\n어떤 장르(genre)로든 제출할 수 있습니다. \n\n최대 길이 4분",
+  "files": [
+   {
+    "name": "Google Forms: Sign-in",
+    "kind": "form",
+    "url": "https://forms.gle/YvhH4JnJF1A251Wx5",
+    "local": null
+   },
+   {
+    "name": "FOBISIA Online Guitar Solo comp criteria.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1cWz8kWvWuMAHG_hAyAWt5KwXgu46EGdL/view?usp=classroom_web",
+    "local": "post_files/1cWz8kWvWuMAHG_hAyAWt5KwXgu46EGdL.png"
+   },
+   {
+    "name": "FOBISIA Online Guitar Solo.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7/view?usp=classroom_web",
+    "local": "post_files/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7.pdf"
+   }
+  ],
+  "at": "2026-10-27"
  }
 };
