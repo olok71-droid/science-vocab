@@ -494,6 +494,7 @@ html, body { overflow-x: hidden; }
 .ca-when { font-size: 11px; font-weight: 900; letter-spacing: -0.3px; background: #ffe08a; color: #4a3200;
   border-radius: 6px; padding: 2px 0; text-align: center; }
 .ca-day { font-size: 11.5px; font-weight: 900; color: #b3261e; text-align: center; }
+.ca-when.dl { line-height: 1.2; padding: 2px 0; }
 .fold-bar .fold-arrow { margin-left: 8px; }
 body.in-subject .cn-card { display: none; }
 
@@ -665,12 +666,17 @@ body.in-subject .cn-card { display: none; }
       <span class="cat-name">9학년 영어</span>
       <span class="cat-sub">Year 9 English</span>
     </button>
-    <!-- 2026-09-14 대표님 지시: 단원 구분이 생기기 전까지 휴머니티는 누르면 바로 학습 자료로 간다.
-       (단원 카드가 생기면 아래 cat-pane #cat-hum 을 다시 쓰고 이 onclick 을 showCat('hum') 으로 되돌린다) -->
-    <button class="cat-btn" data-cat="hum" onclick="location.href='y9c_humanities.html'">
+    <!-- 2026-10-27 대표님 지시 "휴머니티는 지오그라피랑 히스토리랑 나눠줘": 휴머니티 타일 하나를 지리·역사 두 과목으로 나눴다.
+       (2026-09-14 '휴머니티 타일 → y9c_humanities.html 바로 가기' 결정은 이 지시로 대체됨. 옛 주소는 지리·역사 안내 페이지로 남김) -->
+    <button class="cat-btn" data-cat="geo" onclick="showCat('geo')">
       <span class="cat-emoji">🌍</span>
-      <span class="cat-name">9학년 휴머니티</span>
-      <span class="cat-sub">Humanities · 지리+역사</span>
+      <span class="cat-name">9학년 지리</span>
+      <span class="cat-sub">Geography</span>
+    </button>
+    <button class="cat-btn" data-cat="his" onclick="showCat('his')">
+      <span class="cat-emoji">📜</span>
+      <span class="cat-name">9학년 역사</span>
+      <span class="cat-sub">History</span>
     </button>
     <button class="cat-btn" data-cat="chin" onclick="showCat('chin')">
       <span class="cat-emoji">🐼</span>
@@ -893,20 +899,26 @@ body.in-subject .cn-card { display: none; }
   <div class="cat-pane" id="cat-eng">
     <div class="subject-section">
       <div class="subject-label"><span class="icon">📖</span><span class="name-en">9학년 영어</span><span class="name-ko">Year 9 English</span></div>
-      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="now term-start"><td class="t-term" rowspan="2">TERM 1</td><td class="t-en"><span class="now-b">📍 지금 배우는 중</span>The Art of Storytelling — Narrative Fiction<span class="ca-b">CA1 · 9/25</span><span class="ca-b">CA2 · 10/26</span></td><td class="t-ko">이야기의 기술 — 서사 소설</td></tr><tr><td class="t-en">Make Your Voice Heard — Speech Writing</td><td class="t-ko">목소리를 내라 — 연설문 쓰기</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 2</td><td class="t-en">Prose Study — Animal Farm</td><td class="t-ko">소설 정독 — 동물농장</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 3</td><td class="t-en">Drama — An Inspector Calls</td><td class="t-ko">희곡 — 이너스펙터 콜스</td></tr><tr class="term-start"><td class="t-term" rowspan="1">ALL YEAR</td><td class="t-en">Vocabulary — "Remember, Spell, Define"</td><td class="t-ko">어휘 (외우고 · 철자 쓰고 · 뜻 쓰기 숙제)</td></tr></tbody></table></div><div class="units-grid"><a class="unit-card ready" href="y9c_english.html"><div class="unit-name-en">클래스룸 자료</div><div class="unit-name-ko">9학년 영어 · 선생님이 올린 자료</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9e_exam.html"><div class="unit-name-en">시험 대비</div><div class="unit-name-ko">CA1 · 9월 25일 금요일</div><div class="unit-menu"><span class="menu-chip">시험대비</span></div></a><a class="unit-card ready" href="y9e_result.html"><div class="unit-name-en">시험 결과</div><div class="unit-name-ko">CA1 · 8/16 · 고쳐 쓴 답안·다시 쓰기</div><div class="unit-menu"><span class="menu-chip">시험결과</span></div></a></div>
+      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="now term-start"><td class="t-term" rowspan="2">TERM 1</td><td class="t-en"><span class="now-b">📍 지금 배우는 중</span>The Art of Storytelling — Narrative Fiction<span class="ca-b">CA1 · 9/25</span><span class="ca-b">CA2 · 10/30</span></td><td class="t-ko">이야기의 기술 — 서사 소설</td></tr><tr><td class="t-en">Make Your Voice Heard — Speech Writing</td><td class="t-ko">목소리를 내라 — 연설문 쓰기</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 2</td><td class="t-en">Prose Study — Animal Farm</td><td class="t-ko">소설 정독 — 동물농장</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 3</td><td class="t-en">Drama — An Inspector Calls</td><td class="t-ko">희곡 — 이너스펙터 콜스</td></tr><tr class="term-start"><td class="t-term" rowspan="1">ALL YEAR</td><td class="t-en">Vocabulary — "Remember, Spell, Define"</td><td class="t-ko">어휘 (외우고 · 철자 쓰고 · 뜻 쓰기 숙제)</td></tr></tbody></table></div><div class="units-grid"><a class="unit-card ready" href="y9c_english.html"><div class="unit-name-en">클래스룸 자료</div><div class="unit-name-ko">9학년 영어 · 선생님이 올린 자료</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a><a class="unit-card ready" href="y9e_exam.html"><div class="unit-name-en">시험 대비</div><div class="unit-name-ko">CA1 · 9월 25일 금요일</div><div class="unit-menu"><span class="menu-chip">시험대비</span></div></a><a class="unit-card ready" href="y9e_result.html"><div class="unit-name-en">시험 결과</div><div class="unit-name-ko">CA1 · 8/16 · 고쳐 쓴 답안·다시 쓰기</div><div class="unit-menu"><span class="menu-chip">시험결과</span></div></a></div>
 
     </div>
   </div>
 
-  <div class="cat-pane" id="cat-hum">
+  <div class="cat-pane" id="cat-geo">
     <div class="subject-section">
-      <div class="subject-label"><span class="icon">🌍</span><span class="name-en">9학년 휴머니티</span><span class="name-ko">Humanities · 지리 + 역사</span></div>
-      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="now term-start"><td class="t-term" rowspan="2">TERM 1</td><td class="t-en"><span class="now-b">📍 지금 배우는 중</span>1. Tectonic Hazards<span class="subj-b geo">지리</span><span class="ca-b">CA1 · 9/22</span></td><td class="t-ko">지각 재해</td></tr><tr><td class="t-en">2. World War One<span class="subj-b his">역사</span><span class="ca-b">CA2 · 11/3</span></td><td class="t-ko">제1차 세계대전</td></tr><tr class="term-start"><td class="t-term" rowspan="2">TERM 2</td><td class="t-en">3. Climate Change<span class="subj-b geo">지리</span></td><td class="t-ko">기후변화</td></tr><tr><td class="t-en">4. The Holocaust<span class="subj-b his">역사</span></td><td class="t-ko">홀로코스트</td></tr><tr class="term-start"><td class="t-term" rowspan="2">TERM 3</td><td class="t-en">5. International Development<span class="subj-b geo">지리</span></td><td class="t-ko">국제 개발</td></tr><tr><td class="t-en">6. World War Two<span class="subj-b his">역사</span></td><td class="t-ko">제2차 세계대전</td></tr></tbody></table></div><div class="units-grid"><a class="unit-card ready" href="y9c_humanities.html"><div class="unit-name-en">클래스룸 자료</div><div class="unit-name-ko">휴머니티 · 선생님이 올린 자료</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a></div>
+      <div class="subject-label"><span class="icon">🌍</span><span class="name-en">9학년 지리</span><span class="name-ko">Geography · Mr Lawrence</span></div>
+      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="now term-start"><td class="t-term" rowspan="1">TERM 1</td><td class="t-en"><span class="now-b">📍 지금 배우는 중</span>1. Tectonic Hazards<span class="ca-b">CA1 · 9/22</span></td><td class="t-ko">지각 재해</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 2</td><td class="t-en">2. Climate Change</td><td class="t-ko">기후변화</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 3</td><td class="t-en">3. International Development</td><td class="t-ko">국제 개발</td></tr></tbody></table></div><div class="units-grid"><a class="unit-card ready" href="y9c_geography.html"><div class="unit-name-en">클래스룸 자료</div><div class="unit-name-ko">지리 · 선생님이 올린 자료</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a></div>
 
     </div>
   </div>
 
-  
+  <div class="cat-pane" id="cat-his">
+    <div class="subject-section">
+      <div class="subject-label"><span class="icon">📜</span><span class="name-en">9학년 역사</span><span class="name-ko">History · Mr Lawrence</span></div>
+      <div class="cur-body"><div class="cur-title">📅 2026/27 진도표 — 올해 배우는 순서</div><table class="curtbl"><tbody><tr class="now term-start"><td class="t-term" rowspan="1">TERM 1</td><td class="t-en"><span class="now-b">📍 지금 배우는 중</span>1. World War One<span class="ca-b">CA2 · 11/3</span></td><td class="t-ko">제1차 세계대전</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 2</td><td class="t-en">2. The Holocaust</td><td class="t-ko">홀로코스트</td></tr><tr class="term-start"><td class="t-term" rowspan="1">TERM 3</td><td class="t-en">3. World War Two</td><td class="t-ko">제2차 세계대전</td></tr></tbody></table></div><div class="units-grid"><a class="unit-card ready" href="y9c_history.html"><div class="unit-name-en">클래스룸 자료</div><div class="unit-name-ko">역사 · 선생님이 올린 자료</div><div class="unit-menu"><span class="menu-chip">클래스룸자료</span></div></a></div>
+
+    </div>
+  </div>
 
   <div class="cat-pane" id="cat-chin">
     <div class="subject-section">
@@ -1363,11 +1375,40 @@ function caDetailIndex(r){
   }
   return -1;
 }
-/* 시험일이 글에 안 적혀 있을 때 안내문에서 날짜를 가져오려고 과목만으로 찾는다. */
-function caDetailBySubj(subject){
-  var base = caBaseSubj(subject);
+/* ★2026-10-27 대표님 지시 "휴머니티는 지오그라피랑 히스토리랑 나눠줘".
+   클래스룸 반은 하나(휴머니티)라 글마다 지리인지 역사인지 가려 과목 칸에 '지리'/'역사'로 보여 준다.
+   글에 part(collect_posts.py 가 붙임)가 있으면 그것을 쓰고, 없으면 제목·요약 낱말로 가린다.
+   저장 키(keyOf)는 그대로 '휴머니티|제목'이라 과제 완료 체크는 그대로 남는다.
+   낱말 목록은 ~/classroom-sync/hum_part.py 와 같게 둔다. */
+var HUM_HIS = /histor|역사|\bww ?(1|i|one)\b|world war|great war|imperialis|empire|제국|alliance|동맹|entente|militaris|군국|arms race|군비|nationalis|민족주의|assassinat|암살|franz|ferdinand|sarajevo|kaiser|dreadnought|holocaust|홀로코스트|세계대전|\bmains\b|why history|historical/i;
+var HUM_GEO = /geograph|지리|tectonic|지각|volcan|화산|earthquake|지진|plate boundar|판 경계|hazard|재해|climate|기후변화|global warming|international development|국제 개발|population|인구|fieldwork|답사/i;
+function humPart(r){
+  if (r.part) return r.part;
+  var t = (r.title || '') + ' ' + (r.ko || '');
+  var h = HUM_HIS.test(t), g = HUM_GEO.test(t);
+  if (h && !g) return '역사';
+  if (g && !h) return '지리';
+  return '';
+}
+function subjLabel(r){
+  var b = caBaseSubj(r.subject);
+  if (b === '휴머니티'){ var p = humPart(r); if (p) return p; }
+  return b;
+}
+/* 시험일이 글에 안 적혀 있을 때 안내문에서 날짜를 가져온다.
+   ★2026-10-27: 옛 코드는 과목 이름만 보고 첫 안내문을 골라, 영어 'Template for CA2' 글이 CA1(9/25) 날짜를 받아
+   '지난 시험'으로 숨었다. 글에 적힌 시험 번호(CA2)와 휴머니티의 지리/역사를 함께 맞춘다. */
+function caDetailFor(r){
+  var base = caBaseSubj(r.subject);
+  var t = (r.title || '') + ' ' + (r.ko || '');
+  var m = t.match(/\bCA\s?([1-4])\b/i) || t.match(/common\s+assessment\s+([1-4])/i);
+  var part = base === '휴머니티' ? humPart(r) : '';
   for (var i = 0; i < CA_DETAILS.length; i++){
-    if (base === CA_DETAILS[i].subj) return CA_DETAILS[i];
+    var d = CA_DETAILS[i];
+    if (base !== d.subj) continue;
+    if (m && d.ca && String(d.ca) !== m[1]) continue;
+    if (part && d.part && d.part !== part) continue;
+    return d;
   }
   return null;
 }
@@ -1452,7 +1493,7 @@ function pdLink(t){
 function pdOpen(i){
   var r = PD_ROWS[i]; if (!r) return;
   var d = (window.POST_DETAILS || {})[pdKey(r)]; if (!d) return;
-  var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
+  var subj = subjLabel(r);
   var meta = subj + ' · ' + (r.type || '') + ' · ' + (r.date || '') + (r.due ? ' · 마감 ' + r.due : '');
   var h = '<div class="ca-bar"><button class="ca-x" type="button" onclick="caClose()">✕</button></div>' +
           '<div class="ca-doc">' +
@@ -1504,7 +1545,7 @@ function cnRender(){
     var d = (r.date || '').split('-');
     var day = d.length === 3 ? (+d[1]) + '/' + (+d[2]) : '';
     var tag = cls[r.type] || 't-jaryo';
-    var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
+    var subj = subjLabel(r);
     var due = '<span class="cn-due none"></span>';
     if (r.due){
       var dd = r.due.split('-');
@@ -1529,7 +1570,7 @@ function cnRender(){
   function rowHw(r){
     var d = (r.date || '').split('-');
     var day = d.length === 3 ? (+d[1]) + '/' + (+d[2]) : '';
-    var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
+    var subj = subjLabel(r);
     var due = '<span class="cn-due none"></span>';
     if (r.due){
       var dd = r.due.split('-');
@@ -1597,9 +1638,18 @@ function cnRender(){
   var caRows = rows.filter(isCA).map(function(r){
     var o = {}; for (var k in r) o[k] = r[k];
     o._hadDue = !!r.due;
-    if (!o.due){ var dd = caDetailBySubj(o.subject); if (dd && dd.due) o.due = dd.due; }
+    if (!o.due){ var dd = caDetailFor(o); if (dd && dd.due) o.due = dd.due; }
     return o;
   }).filter(function(r){ return !r.due || !isPast(r.due); });
+  /* ★2026-10-27 대표님 "영어 시험은 시험 스케줄 안에 넣어 놔, 마감은 10월 30 금요일".
+     시험 안내문(CA_DETAILS)에 아직 안 지난 시험일이 있으면, 그 시험 글이 21일이 지나 목록에서 빠졌어도 시험 칸에 띄운다. */
+  CA_DETAILS.forEach(function(d){
+    if (!d.due || isPast(d.due)) return;
+    var has = caRows.some(function(r){ return caBaseSubj(r.subject) === d.subj && r.due === d.due; });
+    if (has) return;
+    caRows.push({subject: d.subj, part: d.part || '', type: '공지', due: d.due, url: d._url || '', _hadDue: true,
+                 title: d.rowTitle || ('CA' + (d.ca || '') + ' · ' + (d.head || '')), ko: d.rowKo || ''});
+  });
   caRows.sort(function(a, b){
     if (a._hadDue !== b._hadDue) return a._hadDue ? -1 : 1;
     if (a.type !== b.type) return a.type === '공지' ? -1 : (b.type === '공지' ? 1 : 0);
@@ -1637,14 +1687,19 @@ function cnRender(){
         when = (+dd[1]) + '/' + (+dd[2]) + ' ' + wd;
         day = (n === 0 ? 'D-DAY' : 'D-' + n);
       }
-      var subj = (r.subject || '').replace(/\s*\([^)]*\)\s*$/, '');
+      var subj = subjLabel(r);
       var di = caDetailIndex(r);              /* 선생님 안내문(CAT)이 있나 */
       if (di >= 0 && caFirstDoc < 0) caFirstDoc = di;
+      /* ★2026-10-27: 시험일이 아니라 제출 마감인 시험(영어 CA2 글쓰기)은 '마감'을 붙이고, 안내문에 적어 둔 시험 이름을 보여 준다. */
+      var cd = di >= 0 ? CA_DETAILS[di] : null;
+      var wcls = 'ca-when';
+      if (cd && cd.dueLabel && when){ when = cd.dueLabel + '<br>' + when; wcls += ' dl'; }
+      var ttl = (cd && cd.rowTitle) || r.title || '', tko = (cd && cd.rowKo) || r.ko || '';
       var inner = '<span class="cn-subj">' + subj + '</span>' +
-                  '<span class="ca-when">' + when + '</span>' +
+                  '<span class="' + wcls + '">' + when + '</span>' +
                   '<span class="ca-day">' + day + '</span>' +
-                  '<span class="cn-txt"><span class="cn-en">' + (r.title || '') + '</span>' +
-                    (r.ko ? '<span class="cn-kr">' + r.ko + '</span>' : '') +
+                  '<span class="cn-txt"><span class="cn-en">' + ttl + '</span>' +
+                    (tko ? '<span class="cn-kr">' + tko + '</span>' : '') +
                   '</span>';
       if (di >= 0){
         CA_DETAILS[di]._url = r.url || '';

@@ -16,6 +16,9 @@ pages = sorted(glob.glob(os.path.join(APP, "y9c_*.html"))) + [os.path.join(APP, 
 for p in pages:
     s = open(p, encoding="utf-8").read()
     name = os.path.basename(p)
+    if 'data-moved="' in s:   # 2026-10-27 휴머니티 → 지리·역사로 옮긴 옛 주소 안내 페이지
+        print(f"↪ {name}: 옮긴 주소 안내 페이지 ({re.search(r'data-moved=\"([^\"]+)', s).group(1)})")
+        continue
     problems = []
     for t in TABS:
         if f'id="tab-{t}"' not in s:
