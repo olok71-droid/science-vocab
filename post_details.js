@@ -1,17 +1,5 @@
 /* 클래스룸 글 원문·번역·첨부 — ~/classroom-sync/post_details.py 가 만든다. 손으로 고치지 마라. */
 window.POST_DETAILS = {
- "수학 (Mr Anan)|CA1 Reflection": {
-  "en": "CA1 Reflection\nLO: To reflect on my assessment performance, identify\ngaps in my understanding, and determine how I can improve.\n\nSteps:\n\nOpen GC to fill in your RAG\nanalysis.\nOpen Metacognition reflection\nsheet at the back of your workbook to fill in actual score and reflection\nUpon receiving your paper,\nfill in both (1) and (2), take your time to jot down your reflections\nWe will discuss selected\nquestions\nKeep your paper, don't loose\nit.",
-  "ko": "CA1 성찰(Reflection)\n학습 목표(LO): 나의 평가(assessment) 결과를 되돌아보고, 내 이해에서\n부족한 부분(gaps)을 찾고, 어떻게 향상할 수 있을지 정한다.\n\n단계(Steps):\n\nGC(구글 클래스룸)를 열어 RAG\n분석(RAG analysis)을 작성하세요.\n워크북 뒤쪽에 있는 메타인지 성찰(Metacognition reflection)\n시트를 열어 실제 점수(actual score)와 성찰을 적으세요\n시험지를 받으면,\n(1)과 (2)를 모두 채우고, 시간을 들여 성찰한 내용을 적으세요\n선택한\n문제들을 함께 토론할 것입니다\n시험지를 잘 보관하고, 잃어버리지\n마세요.",
-  "files": [],
-  "at": "2026-10-06"
- },
- "미술|2 Samples and 3-4 photos uploaded": {
-  "en": "2 Samples and 3-4 photos uploaded\nHi all, please make sure your 2 samples are complete before our next class. Meaning your pieces must:\n-fill the whole page\n-use colour or shading where appropriate\n-have outlines where appropriate\n\nPlease also make sure you have 3-4 photos uploaded to your slide. Please refer to the lesson slides 11-12 for more details if you are unsure. You DO NOT need to start drawing from your photos. We will do this next lesson.",
-  "ko": "샘플(sample) 2개와 사진 3~4장 업로드\n여러분 안녕하세요, 다음 수업 전까지 샘플(sample) 2개를 꼭 완성해 오세요. 즉, 작품은 다음을 갖춰야 합니다:\n-페이지 전체를 채울 것\n-알맞은 곳에 색(colour)이나 명암(shading)을 넣을 것\n-알맞은 곳에 윤곽선(outlines)을 그릴 것\n\n또한 자기 슬라이드(slide)에 사진 3~4장을 꼭 올려 두세요. 잘 모르겠으면 수업 슬라이드(lesson slides) 11~12번에서 자세한 내용을 확인하세요. 사진을 보고 그리기는 아직 시작하지 않아도 됩니다(DO NOT need). 그건 다음 수업에서 할 것입니다.",
-  "files": [],
-  "at": "2026-10-06"
- },
  "튜터 (Mr Cassels)|Bring your Reading Books!": {
   "en": "Bring your Reading Books!\nEVERYONE remembered their reading books last week. Well done guys :)\n\nRemember, you should have a reading book with you at all times. On a Wednesday particularly, tutor time will often be put aside for silent reading. Make sure you have a book that is in English. Translated books are also okay for you to bring.",
   "ko": "읽기 책(reading book)을 가져오세요!\n지난주에는 모두가 읽기 책을 잊지 않고 가져왔어요. 잘했어요, 여러분 :)\n\n기억하세요, 읽기 책은 항상 가지고 다녀야 합니다. 특히 수요일에는 튜터 시간(tutor time)을 조용히 책 읽기(silent reading)에 쓰는 경우가 많습니다. 영어로 된 책을 꼭 준비하세요. 번역본(translated books)을 가져와도 괜찮습니다.",
@@ -80,6 +68,12 @@ window.POST_DETAILS = {
     "local": "post_files/1jW-HTYFuNfGgg6OtBXF9e3oEUhjm7-8A.png"
    }
   ],
+  "at": "2026-10-07"
+ },
+ "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative:": {
+  "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
+  "ko": "여러분 모두 좋은 하루 보내세요. 제이미 하우스 대표(Jaime House Representative) 이브라힘(Ibraheem)의 메시지입니다: \n\n이번 금요일이 제이미 데이(Jaime day)라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 Y7, Y8, Y9, Y11 튜터 그룹(tutor groups) 학생들은 제이미 데이, 성 제이미(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 면에 관한 문제로 된 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\n제이미 학생들(오직 제이미 학생만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
+  "files": [],
   "at": "2026-10-07"
  },
  "중국어 (Ying Ying老师)|Languages Week 2026 Class Bee!": {
@@ -194,12 +188,6 @@ window.POST_DETAILS = {
     "local": "post_files/1evcROrU1L9btQOFt3QGr_E6Wb5sFa8Kw.pptx"
    }
   ],
-  "at": "2026-10-09"
- },
- "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative": {
-  "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
-  "ko": "여러분 모두 안녕하세요, Jaime 하우스(house) 대표 Ibraheem의 메시지입니다: \n\n이번 주 금요일이 Jaime의 날(Jaime day)이라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 7학년(Y7), 8학년(Y8), 9학년(Y9), 11학년(Y11) 튜터 그룹(tutor groups) 학생들은 Jaime의 날, 성 Jaime(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 측면에 관한 문제로 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\nJaime 하우스 학생들(Jaime 하우스 학생들만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
-  "files": [],
   "at": "2026-10-09"
  },
  "컴퓨터 과학 (Ms Meha)|Year 9 Common Assessment Task 1 Term 1 2025": {
@@ -684,5 +672,62 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-27"
+ },
+ "과학 (Mr Phillips)|Ohms Law": {
+  "en": "Ohm's Law\nClick on the link below to start the game",
+  "ko": "옴의 법칙(Ohm's Law)\n아래 링크를 눌러 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=h_bdxV3PLQp0Os_DkGyCvBlUJXv_RYUYVs1rJcDEdmV3I3Z8zPYKetZOmwfAT5JpGJ3fochKoyGzvs0bVkEuex2czTWcODIbktcdqg_JlGwXfksd3WSPoRvzbWUZe_k81lJDhwGMxqlpg86XNUPI-pHmxLyTo4HCoc1_25hW7sw1cIg6-3-4vbEqPDjJrnk6M3O5eiznGngeEd7QbuuOply5-Q.vJjyzgUe9UFxi2_w38cPWw.prr_SzRpjaBmJV-l&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-10-28"
+ },
+ "과학 (Mr Phillips)|Resistance - workbook Questions": {
+  "en": "Resistance - workbook Questions",
+  "ko": "저항(Resistance) - 워크북 문제",
+  "files": [],
+  "at": "2026-10-28"
+ },
+ "과학 (Mr Phillips)|Resistance": {
+  "en": "Resistance",
+  "ko": "저항(Resistance)",
+  "files": [
+   {
+    "name": "9.3 Resistance",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1TgvMkA3YZaG21hwxqAYY514-gQjgy8oj/view?usp=classroom_web",
+    "local": "post_files/1TgvMkA3YZaG21hwxqAYY514-gQjgy8oj.pdf"
+   },
+   {
+    "name": "Voltage and Resistance - GCSE Physics",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=EcqPg2Ym5NU",
+    "local": null
+   },
+   {
+    "name": "Resistance Connection - Javalab",
+    "kind": "web",
+    "url": "https://javalab.org/en/resistance_connection_en/",
+    "local": null
+   }
+  ],
+  "at": "2026-10-28"
+ },
+ "중국어 (Ying Ying老师)|Lesson 4 Grammar Slides (既...又....、除此以外, 还）": {
+  "en": "Lesson 4 Grammar Slides (既...又....、除此以外, 还）",
+  "ko": "4과(Lesson 4) 문법(grammar) 슬라이드 (既...又....、除此以外, 还）",
+  "files": [
+   {
+    "name": "U1 L4 grammar slides.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1kazIOcH1wkhMAbfW5z3PEJk24cj-Fxam/view?usp=classroom_web",
+    "local": "pdfs/chinese_y9/U1 L4 grammar slides.pdf"
+   }
+  ],
+  "at": "2026-10-28"
  }
 };
