@@ -1,7 +1,7 @@
 // 공부기록 — 서정이가 앱에서 한 공부를 Supabase amy_study_log 에 남긴다.
 // 페이지 맨 끝에서 불러 온다(그래야 페이지의 함수들을 감쌀 수 있다).
 // 남기는 것: 화면별 머문 시간(time) · 외운 단어(mem/unmem) · 발음 들은 단어(say)
-//          · 전체/부분 듣기(listen) · 단어시험(spell) · 서술형 문제(quiz/rate) · 객관식 퀴즈(pick)
+//          · 듣기 시간(listen: 전체/부분/이어 듣기) · 단어시험(spell) · 서술형 문제(quiz/rate) · 객관식 퀴즈(pick)
 (function(){
   // 페이지의 다른 스크립트가 다 읽힌 뒤에 시작한다(그래야 함수를 감쌀 수 있다).
   function start(){
@@ -35,24 +35,32 @@
   }
 
   // ── 보낼 줄 모으기 ──
-  // 인터넷이 끊겨 못 보낸 줄은 폰에 두었다가 다음에 같이 보낸다.
-  var Q = [];
-  try { Q = JSON.parse(ls('amy_log_q') || '[]') || []; } catch(e){ Q = []; }
-  function saveQ(){ lsSet('amy_log_q', JSON.stringify(Q.slice(-500))); }
+  // 줄은 바로 폰(localStorage)에 넣고, 보낸 줄만 cid로 골라 지운다. 탭이 여러 개여도 서로 덮어쓰지 않는다.
+  // 인터넷이 끊겨 못 보낸 줄은 다음에 같이 보낸다. 같은 줄이 두 번 가도 cid 때문에 한 번만 들어간다.
+  function loadQ(){ try { return JSON.parse(ls('amy_log_q') || '[]') || []; } catch(e){ return []; } }
+  function saveQ(q){ lsSet('amy_log_q', JSON.stringify(q.slice(-1000))); }
   function add(kind, detail, n){
-    Q.push({ cid: DEV + '-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7), ts: new Date().toISOString(), day: kstDay(), dev: DEV, page: PAGE, title: TITLE,
+    var q = loadQ();
+    q.push({ cid: DEV + '-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7), ts: new Date().toISOString(), day: kstDay(), dev: DEV, page: PAGE, title: TITLE,
              kind: kind, detail: detail == null ? null : String(detail).slice(0, 300), n: n == null ? null : Math.round(n) });
-    saveQ();
+    saveQ(q);
   }
+  // keepalive 요청은 본문 64KB까지라 25줄씩 나눠 보낸다(한 줄 최대 약 1.5KB).
   var sending = false;
   function flush(){
-    if (sending || !Q.length || !navigator.onLine) return;
-    var rows = Q.slice(0, 200);
+    if (sending || !navigator.onLine) return;
+    var rows = loadQ().slice(0, 25);
+    if (!rows.length) return;
     sending = true;
     fetch(URL + 'amy_study_log?on_conflict=cid', { method: 'POST', keepalive: true, headers: head({ Prefer: 'return=minimal,resolution=ignore-duplicates' }), body: JSON.stringify(rows) })
-      .then(function(r){ if (r.ok) { Q = Q.slice(rows.length); saveQ(); } })
-      .catch(function(){})
-      .then(function(){ sending = false; });
+      .then(function(r){
+        if (!r.ok) return false;
+        var sent = {}; rows.forEach(function(x){ sent[x.cid] = 1; });
+        saveQ(loadQ().filter(function(x){ return !sent[x.cid]; }));
+        return true;
+      })
+      .catch(function(){ return false; })
+      .then(function(ok){ sending = false; if (ok && loadQ().length) setTimeout(flush, 300); });
   }
 
   // ── 화면별 머문 시간 ──
@@ -67,8 +75,12 @@
     return '';
   }
   var acc = {}, last = Date.now(), lastAct = Date.now();
-  ['pointerdown', 'keydown', 'scroll', 'touchstart', 'input'].forEach(function(ev){
-    window.addEventListener(ev, function(){ lastAct = Date.now(); }, { passive: true, capture: true });
+  var lastTap = 0, lastTapEl = null;   // 마지막으로 손가락으로 누른 때와 누른 것
+  ['pointerdown', 'keydown', 'scroll', 'touchstart', 'input', 'click'].forEach(function(ev){
+    window.addEventListener(ev, function(e){
+      lastAct = Date.now();
+      if (ev === 'pointerdown' || ev === 'click' || ev === 'touchstart' || ev === 'keydown') { lastTap = Date.now(); lastTapEl = e.target; }
+    }, { passive: true, capture: true });
   });
   function tick(){
     var now = Date.now(), dt = now - last; last = now;
@@ -86,15 +98,34 @@
   setInterval(tick, 1000);
   setInterval(function(){ dumpTime(); flush(); }, 60e3);
   document.addEventListener('visibilitychange', function(){
-    if (document.visibilityState === 'hidden') { dumpTime(); flush(); }
+    if (document.visibilityState === 'hidden') { dumpTime(); seqDump(); flush(); }
     else { last = Date.now(); lastAct = Date.now(); flush(); }
   });
-  window.addEventListener('pagehide', function(){ dumpTime(); flush(); });
+  window.addEventListener('pagehide', function(){ dumpTime(); seqDump(); flush(); });
+  window.addEventListener('online', flush);
 
   // ── 단어 이름 찾기 ──
+  // from: 'opic'(OPIc 문장 번호) · 'jenny'(제니 단어장 번호) · 없으면 단어 카드(slug)부터 찾는다.
   function slug(t){ return (t || '').replace(/~/g, '').replace(/\//g, ' ').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, ''); }
-  function wordOf(x){
-    // 1) 단어 카드(slug)
+  function fromOpic(x){
+    try {
+      if (typeof OPIC === 'undefined') return null;
+      for (var g = 0; g < OPIC.length; g++) {
+        var it = (OPIC[g].items || []).find(function(o){ return String(o.n) === String(x); });
+        if (it) return it.en + (it.ko ? ' · ' + it.ko : '');
+      }
+    } catch(e){}
+    return null;
+  }
+  function fromData(x){
+    try {
+      if (typeof DATA === 'undefined' || !DATA.find) return null;
+      var d = DATA.find(function(o){ return String(o.id) === String(x); });
+      if (d) return (d.en || d.hz || d.w || '') + (d.ko ? ' · ' + d.ko : '');
+    } catch(e){}
+    return null;
+  }
+  function fromCard(x){
     var cards = document.querySelectorAll('.vcard');
     for (var i = 0; i < cards.length; i++) {
       var en = cards[i].querySelector('.vcard-en');
@@ -103,22 +134,11 @@
         return en.textContent.trim() + (ko ? ' · ' + ko.textContent.trim() : '');
       }
     }
-    // 2) 제니 단어장(DATA) · OPIc 문장(OPIC)
-    try {
-      if (typeof DATA !== 'undefined' && DATA.find) {
-        var d = DATA.find(function(o){ return String(o.id) === String(x); });
-        if (d) return (d.en || d.hz || d.w || '') + (d.ko ? ' · ' + d.ko : '');
-      }
-    } catch(e){}
-    try {
-      if (typeof OPIC !== 'undefined') {
-        for (var g = 0; g < OPIC.length; g++) {
-          var it = (OPIC[g].items || []).find(function(o){ return String(o.n) === String(x); });
-          if (it) return it.en + (it.ko ? ' · ' + it.ko : '');
-        }
-      }
-    } catch(e){}
-    return String(x).replace(/_/g, ' ');
+    return null;
+  }
+  function wordOf(x, from){
+    var r = from === 'opic' ? fromOpic(x) : from === 'jenny' ? fromData(x) : (fromCard(x) || fromData(x));
+    return r || String(x).replace(/_/g, ' ');
   }
 
   // ── 외운 단어: memv_ 저장을 지켜본다 ──
@@ -127,7 +147,8 @@
     Storage.prototype.setItem = function(k, v){
       if (this === window.localStorage && typeof k === 'string' && k.indexOf('memv_') === 0) {
         try {
-          var before = JSON.parse(origSet && this.getItem(k) || '[]') || [];
+          var from = k === 'memv_opic' ? 'opic' : k === 'memv_jenny' ? 'jenny' : null;
+          var before = JSON.parse(this.getItem(k) || '[]') || [];
           var after = JSON.parse(v || '[]') || [];
           var b = {}, a = {};
           before.forEach(function(x){ b[x] = 1; });
@@ -135,8 +156,8 @@
           var plus = after.filter(function(x){ return !b[x]; });
           var minus = before.filter(function(x){ return !a[x]; });
           if (plus.length + minus.length <= 10) {
-            plus.forEach(function(x){ add('mem', wordOf(x), 1); });
-            minus.forEach(function(x){ add('unmem', wordOf(x), 1); });
+            plus.forEach(function(x){ add('mem', wordOf(x, from), 1); });
+            minus.forEach(function(x){ add('unmem', wordOf(x, from), 1); });
           } else if (minus.length && !after.length) {
             add('unmem', '외움 표시 모두 지움', minus.length);
           }
@@ -146,51 +167,90 @@
     };
   } catch(e){}
 
-  // ── 발음 들은 단어 · 전체/부분 듣기 ──
+  // ── 발음 들은 단어 ──
+  // 손으로 단어 하나를 눌러 들은 것만 '발음 들은 단어'로 남긴다.
+  // 전체·부분 듣기 버튼으로 이어서 나오는 소리는 단어로 남기지 않고 듣기 시간으로 센다.
+  function tappedOne(){
+    if (Date.now() - lastTap > 1500 || !lastTapEl || !lastTapEl.closest) return false;
+    var b = lastTapEl.closest('button,a,[onclick]');
+    if (!b) return true;
+    if (/듣기|▶/.test(b.textContent || '') || /chunkplay/.test(b.className || '')) return false;
+    return !/^\s*(playAll|toggleAllPlay|togglePlayAll|playSection|playDay|opDrill|opPlayAll|playList)/.test(b.getAttribute('onclick') || '');
+  }
   var lastSay = {}, noSay = false;
   function say(word){
-    if (noSay) return;
+    if (noSay || !tappedOne()) return;
     var w = (word || '').trim(); if (!w) return;
     var now = Date.now();
-    if (lastSay[w] && now - lastSay[w] < 1500) return;   // 같은 단어가 두 길로 겹쳐 들어오는 것 한 번만
+    if (lastSay[w] && now - lastSay[w] < 1500) return;   // 같은 단어가 두 길(speak·재생)로 겹쳐 들어오는 것 한 번만
     lastSay[w] = now;
     add('say', w, 1);
   }
   if (typeof window.speak === 'function') {
     var origSpeak = window.speak;
-    window.speak = function(text){ try { say(wordOf(slug(text)) || text); } catch(e){} return origSpeak.apply(this, arguments); };
+    window.speak = function(text){ try { say(wordOf(slug(text))); } catch(e){} return origSpeak.apply(this, arguments); };
+  }
+
+  // ── 듣기 시간 ──
+  // 합친 mp3(전체 _all · 부분 _pN)는 실제로 소리가 난 시간을 그 이름으로 센다(화면이 꺼져도 센다).
+  // 한 재생기에서 주소만 바꿔 다른 토막을 틀어도, 바뀌는 순간(emptied·abort) 앞 토막을 끊어 따로 센다.
+  function chunkLabel(src){
+    var f = src.split('/').pop() || '', m;
+    if (/_all\.mp3$/.test(f)) return '전체 듣기';
+    if ((m = src.match(/\/audio\/[^\/]+_p(\d+)\.mp3$/))) return '부분 듣기 ' + m[1];
+    return null;
+  }
+  function clipWord(src){
+    var m;
+    if (/\/audio\/sci\//.test(src)) return wordOf((src.split('/').pop() || '').replace(/\.mp3$/, ''));
+    if ((m = src.match(/\/audio\/jenny\/w(\d+)\.mp3$/))) return wordOf(m[1], 'jenny');
+    if ((m = src.match(/\/audio\/opic\/e(\d+)\.mp3$/))) return wordOf(m[1], 'opic');
+    return null;
+  }
+  function srcOf(el){ try { return decodeURIComponent((el.currentSrc || el.src || '').split('?')[0]); } catch(e){ return el.currentSrc || el.src || ''; } }
+
+  // 낱개 소리를 이어서 튼 시간(외운 단어가 있을 때의 전체 듣기, 제니·OPIc 이어듣기)
+  var seqSec = 0, seqTimer = null;
+  function seqAdd(sec){
+    seqSec += sec;
+    clearTimeout(seqTimer);
+    seqTimer = setTimeout(function(){ seqDump(); flush(); }, 20e3);
+  }
+  function seqDump(){ if (seqSec >= 3) add('listen', '이어 듣기', seqSec); seqSec = 0; }
+
+  function track(el){
+    if (el.__amyT) return;
+    var st = el.__amyT = { t: null, label: null, seq: false };
+    el.addEventListener('playing', function(){
+      var label = chunkLabel(srcOf(el)), seq = !label && !el.__amyTap;
+      if (st.t != null) {
+        if (label === st.label && seq === st.seq) return;   // 끊겼다 다시 나온 같은 소리(버퍼링)는 이어서 센다
+        stop();
+      }
+      st.label = label; st.seq = seq;
+      st.t = (label || seq) ? Date.now() : null;
+    });
+    function stop(){
+      if (st.t == null) return;
+      var sec = (Date.now() - st.t) / 1000; st.t = null;
+      if (st.label) { if (sec >= 3) { add('listen', st.label, sec); flush(); } }
+      else if (st.seq) seqAdd(sec);
+    }
+    ['pause', 'ended', 'emptied', 'abort', 'error'].forEach(function(ev){ el.addEventListener(ev, stop); });
+    window.addEventListener('pagehide', stop);
   }
   try {
     var origPlay = HTMLMediaElement.prototype.play;
     HTMLMediaElement.prototype.play = function(){
       try {
-        var src = decodeURIComponent((this.currentSrc || this.src || '').split('?')[0]);
-        var f = src.split('/').pop() || '';
-        var m;
-        if (/_all\.mp3$/.test(f)) { listenStart(this, '전체 듣기'); }
-        else if ((m = src.match(/\/audio\/[^\/]+_p(\d+)\.mp3$/))) { listenStart(this, '부분 듣기 ' + m[1]); }
-        else if (/\/audio\/sci\//.test(src)) { say(wordOf(f.replace(/\.mp3$/, ''))); }
-        else if (/\/audio\/jenny\/w(\d+)\.mp3$/.test(src)) { say(wordOf(src.match(/w(\d+)\.mp3$/)[1])); }
-        else if (/\/audio\/opic\/e(\d+)\.mp3$/.test(src)) { say(wordOf(src.match(/e(\d+)\.mp3$/)[1])); }
+        this.__amyTap = tappedOne();
+        track(this);
+        var w = clipWord(srcOf(this));
+        if (w && this.__amyTap) say(w);
       } catch(e){}
       return origPlay.apply(this, arguments);
     };
   } catch(e){}
-  // 합친 mp3를 실제로 들은 시간(화면이 꺼져도 센다)
-  function listenStart(el, label){
-    if (el.__amyL) { el.__amyL.label = label; return; }
-    var st = { label: label, t: null };
-    el.__amyL = st;
-    el.addEventListener('playing', function(){ st.t = Date.now(); });
-    function stop(){
-      if (st.t == null) return;
-      var sec = (Date.now() - st.t) / 1000; st.t = null;
-      if (sec >= 3) { add('listen', st.label, sec); flush(); }
-    }
-    el.addEventListener('pause', stop);
-    el.addEventListener('ended', stop);
-    window.addEventListener('pagehide', stop);
-  }
 
   // ── 단어시험(스펠링) ──
   if (typeof window.updateSpellStats === 'function') {
@@ -213,10 +273,11 @@
     var origSA = window.showAnswer;
     window.showAnswer = function(){
       try {
+        // 틀려서 정답이 저절로 나온 경우(wrong이 이미 늘었음)는 '틀림' 하나로만 남긴다.
         if (typeof spellState !== 'undefined' && spellState && spellState.current && !spellState.revealed && spellState.wrong === pw)
           add('spell', spellState.current.en + (spellState.current.ko ? ' · ' + spellState.current.ko : ''), -1);
       } catch(e){}
-      noSay = true;
+      noSay = true;   // 정답 보기의 자동 발음은 '발음 들은 단어'가 아니다
       try { return origSA.apply(this, arguments); } finally { noSay = false; }
     };
   }

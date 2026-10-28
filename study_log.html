@@ -112,7 +112,7 @@ function studentDevs(){ return DEVS.filter(function(d){return d.student;}).map(f
 function loadRows(){
   var all=[], step=1000;
   function page(off){
-    var q = URL+'amy_study_log?select=*&day=gte.'+state.from+'&day=lte.'+state.to+'&order=ts.asc';
+    var q = URL+'amy_study_log?select=*&day=gte.'+state.from+'&day=lte.'+state.to+'&order=ts.asc,id.asc';
     return fetch(q,{headers:H({Range:off+'-'+(off+step-1),'Range-Unit':'items'})}).then(function(r){return r.json();}).then(function(j){
       if(!Array.isArray(j)) return all;
       all = all.concat(j);
@@ -161,7 +161,7 @@ function render(){
   rows.forEach(function(r){ r._s = subjOf(r); });
 
   // 과목 탭: 기록이 있는 과목 먼저, 첫 화면 차례대로
-  var has={}; rows.forEach(function(r){ has[r._s]=(has[r._s]||0)+(r.kind==='time'||r.kind==='listen'?r.n||0:0); });
+  var has={}; rows.forEach(function(r){ has[r._s]=(has[r._s]||0)+(r.kind==='time'?r.n||0:0); });
   var names=['전체'].concat(SUBJ_LIST.concat(Object.keys(has).filter(function(s){return SUBJ_LIST.indexOf(s)<0;})).filter(function(s){return has[s]!=null;}));
   if (names.indexOf(state.subj)<0) state.subj='전체';
   var tb=document.getElementById('tabs');
@@ -178,19 +178,19 @@ function count(rows,kind){ return rows.filter(function(r){return r.kind===kind;}
 
 function renderAll(rows){
   var by={}; rows.forEach(function(r){ (by[r._s]=by[r._s]||[]).push(r); });
-  var total=sum(rows,'time')+sum(rows,'listen');
-  var h='<div class="card"><h2>'+(state.from===state.to?state.to:state.from+' ~ '+state.to)+' 합계 '+mins(total)+'</h2>';
+  var h='<div class="card"><h2>'+(state.from===state.to?state.to:state.from+' ~ '+state.to)+' · 화면 본 시간 '+mins(sum(rows,'time'))+'</h2>';
+  if(sum(rows,'listen')) h+='<div class="muted" style="margin:-4px 0 8px">듣기 '+mins(sum(rows,'listen'))+' (화면을 켜 두고 들은 시간은 위 시간과 겹칩니다)</div>';
   h+='<table>';
   Object.keys(by).sort(function(a,b){return (sum(by[b],'time')+sum(by[b],'listen'))-(sum(by[a],'time')+sum(by[a],'listen'));}).forEach(function(s){
     var R=by[s], sp=R.filter(function(r){return r.kind==='spell';});
     var ok=sp.filter(function(r){return r.n===1;}).length;
     var d=[];
     if(sum(R,'listen')) d.push('듣기 '+mins(sum(R,'listen')));
-    if(count(R,'mem')) d.push('외운 단어 '+count(R,'mem'));
+    var nm=netMem(R).mem.length; if(nm) d.push('외운 단어 '+nm);
     if(uniq(R,'say')) d.push('발음 들은 단어 '+uniq(R,'say'));
     if(sp.length) d.push('단어시험 '+ok+'/'+sp.length+' 맞음');
     if(count(R,'quiz')+count(R,'pick')) d.push('문제 '+(count(R,'quiz')+count(R,'pick')));
-    h+='<tr><td><a href="#" data-s="'+esc(s)+'" style="color:inherit;font-weight:900">'+esc(s)+'</a>'+(d.length?'<div class="muted">'+d.join(' · ')+'</div>':'')+'</td><td class="num"><b>'+mins(sum(R,'time'))+'</b></td></tr>';
+    h+='<tr><td><a href="#" data-s="'+esc(s)+'" style="color:inherit;font-weight:900">'+esc(s)+'</a>'+(d.length?'<div class="muted">'+d.join(' · ')+'</div>':'')+'</td><td class="num"><b>'+(sum(R,'time')?mins(sum(R,'time')):'')+'</b></td></tr>';
   });
   h+='</table></div>';
   // 시간 순서
@@ -199,6 +199,11 @@ function renderAll(rows){
   h+='</table></div>';
   setTimeout(function(){ document.querySelectorAll('#out a[data-s]').forEach(function(a){ a.onclick=function(e){ e.preventDefault(); state.subj=a.dataset.s; render(); window.scrollTo({top:0}); }; }); },0);
   return h;
+}
+function netMem(R){
+  var last={}, order=[];
+  R.forEach(function(r){ if(r.kind==='mem'||r.kind==='unmem'){ if(!(r.detail in last)) order.push(r.detail); last[r.detail]=r.kind; } });
+  return { mem:order.filter(function(w){return last[w]==='mem';}), un:order.filter(function(w){return last[w]==='unmem';}) };
 }
 function uniq(R,kind){ var o={}; R.forEach(function(r){ if(r.kind===kind) o[r.detail]=1; }); return Object.keys(o).length; }
 
@@ -214,7 +219,7 @@ function timeline(rows){
     cur.last=new Date(r.ts);
     if(r.kind==='time') cur.sec+=r.n||0;
     if(r.kind==='listen') cur.listen+=r.n||0;
-    if(r.kind==='mem') cur.mem++;
+    if(r.kind==='mem') cur.mem++; if(r.kind==='unmem') cur.mem--;
     if(r.kind==='say') cur.say[r.detail]=1;
     if(r.kind==='spell') cur.spell++;
     if(r.kind==='quiz'||r.kind==='pick') cur.quiz++;
@@ -223,7 +228,7 @@ function timeline(rows){
     var p=[esc(c.unit)];
     if(c.sec) p.push(mins(c.sec));
     if(c.listen) p.push('듣기 '+mins(c.listen));
-    if(c.mem) p.push('외움 '+c.mem);
+    if(c.mem>0) p.push('외움 '+c.mem);
     var ns=Object.keys(c.say).length; if(ns) p.push('발음 '+ns+'단어');
     if(c.spell) p.push('단어시험 '+c.spell);
     if(c.quiz) p.push('문제 '+c.quiz);
@@ -248,15 +253,15 @@ function renderSubject(R, s){
 
   Object.keys(units).forEach(function(u){
     var U=units[u].rows;
-    var mem=U.filter(function(r){return r.kind==='mem';}), un=U.filter(function(r){return r.kind==='unmem';});
+    var nmU=netMem(U), mem=nmU.mem, un=nmU.un;
     var say={}; U.forEach(function(r){ if(r.kind==='say') say[r.detail]=(say[r.detail]||0)+1; });
     var sp={}; U.forEach(function(r){ if(r.kind==='spell'){ (sp[r.detail]=sp[r.detail]||[]).push(r.n); } });
     var qz=U.filter(function(r){return r.kind==='quiz';}), rt=U.filter(function(r){return r.kind==='rate';}), pk=U.filter(function(r){return r.kind==='pick';});
     var ls=U.filter(function(r){return r.kind==='listen';});
     if(!(mem.length||un.length||Object.keys(say).length||Object.keys(sp).length||qz.length||rt.length||pk.length||ls.length)) return;
     h+='<div class="card"><h2>'+esc(u)+'</h2>';
-    if(mem.length){ h+='<h3>외운 단어로 체크 '+mem.length+'개</h3><div class="chips">'+mem.map(function(r){return '<span class="chip">'+esc(r.detail)+'</span>';}).join('')+'</div>'; }
-    if(un.length){ h+='<h3>외움 표시를 다시 푼 단어 '+un.length+'개</h3><div class="chips">'+un.map(function(r){return '<span class="chip">'+esc(r.detail)+(r.n>1?' ('+r.n+')':'')+'</span>';}).join('')+'</div>'; }
+    if(mem.length){ h+='<h3>외운 단어 '+mem.length+'개</h3><div class="chips">'+mem.map(function(w){return '<span class="chip">'+esc(w)+'</span>';}).join('')+'</div>'; }
+    if(un.length){ h+='<h3>외움 표시를 다시 푼 단어 '+un.length+'개</h3><div class="chips">'+un.map(function(w){return '<span class="chip">'+esc(w)+'</span>';}).join('')+'</div>'; }
     if(Object.keys(sp).length){
       h+='<h3>단어시험</h3><table><tr><th>단어</th><th>결과</th></tr>';
       Object.keys(sp).forEach(function(w){ h+='<tr><td>'+esc(w)+'</td><td>'+sp[w].map(function(n){ return n===1?'<span class="ok">맞음</span>':n===0?'<span class="no">틀림</span>':'<span class="gv">정답 봄</span>'; }).join(' ')+'</td></tr>'; });
