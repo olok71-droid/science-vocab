@@ -7,6 +7,8 @@
   function start(){
   if (window.__amyStudyLog) return;
   window.__amyStudyLog = true;
+  // 맥 자동화(헤드리스 크롬·검사 도구)가 연 것은 기록하지 않는다
+  if (navigator.webdriver || /HeadlessChrome/.test(navigator.userAgent)) return;
 
   var URL = 'https://pwbnbooyhujyzbmaydtp.supabase.co/rest/v1/';
   var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3Ym5ib295aHVqeXpibWF5ZHRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4MTU0NTQsImV4cCI6MjA5NjM5MTQ1NH0.BwKTVgnswWqPlAdclwMpso6kcEA2x0d502CXv2DvBIE';
