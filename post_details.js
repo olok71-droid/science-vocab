@@ -6,89 +6,6 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-10-06"
  },
- "과학 (Mr Phillips)|Ionic or covalent": {
-  "en": "Ionic or covalent\nClick on the link below to start the game",
-  "ko": "이온결합(ionic) 또는 공유결합(covalent)\n아래 링크를 클릭해서 게임을 시작하세요",
-  "files": [
-   {
-    "name": "Quizizz is now Wayground | Teacher AI and Resources",
-    "kind": "web",
-    "url": "https://wayground.com/join?c=XT4JDauoz7f8uR9AUZVkQX7_HbfYuoNTR4rBqQIqug9r0yO9u2fCTnAeA5FpqKyloBeIe81KZygauJQa8vkPug5TRRxWMRK_Qi3-xtiW1NQDAQ806h2lhOIwkjYo6207ERTmLwuRdz1Tmku7RLcpPrZMT7GiCDrA4eaHlLSSL6l-zfkmyAqTbYpMSehtnjuMBk0OxQKbmfl5mWy9f73z25m5aQ.2l_xUwTq5J2tE-2mXxTMtg.L1KMjRMOYQml3d-a&linktype=web",
-    "local": null
-   }
-  ],
-  "at": "2026-10-07"
- },
- "과학 (Mr Phillips)|Properties of Covalent and Ionic Compounds": {
-  "en": "Properties of Covalent and Ionic Compounds",
-  "ko": "공유결합 화합물(covalent compounds)과 이온결합 화합물(ionic compounds)의 성질(properties)",
-  "files": [
-   {
-    "name": "Properties of Covalent and Ionic Substances.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1GL3J9Em8d_h47RiwjoOTh8oblZgefh_E/view?usp=classroom_web",
-    "local": "post_files/1GL3J9Em8d_h47RiwjoOTh8oblZgefh_E.pdf"
-   },
-   {
-    "name": "Covalent Compounds VS Ionic Compounds",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=Mxd8mxDtfAU",
-    "local": null
-   }
-  ],
-  "at": "2026-10-07"
- },
- "영어 (Mr Glanz)|Template for CA2": {
-  "en": "Template for CA2",
-  "ko": "CA2(Continuous Assessment 2, 2차 수행평가) 양식(template)",
-  "files": [
-   {
-    "name": "Year 9 CA2 (Writing).docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1qRgOiK_Y2w7XZDADJJZS2IJvkWk84udw/view?usp=classroom_web",
-    "local": "post_files/1qRgOiK_Y2w7XZDADJJZS2IJvkWk84udw.docx"
-   }
-  ],
-  "at": "2026-10-07"
- },
- "드라마|active analysis": {
-  "en": "active analysis\nsorry im not in today. \n\nplease work nicely together and include anyone in your group for peer feedback who you notice is left out. \n\ncan a few people help to hand out your monologue worksheets please and collect in end of lesson.; \n\nif you need to borrow a pencil from me, please put back after",
-  "ko": "능동적 분석(active analysis)\n미안하지만 오늘 저는 학교에 없어요. \n\n서로 사이좋게 함께 활동하고, 동료 피드백(peer feedback)을 할 때 모둠에서 소외된 친구가 보이면 꼭 함께 참여시켜 주세요. \n\n몇 사람이 독백(monologue) 활동지(worksheets)를 나눠 주고 수업이 끝날 때 걷어 주세요.; \n\n제 연필을 빌려 쓰면 쓴 뒤에 제자리에 돌려놓아 주세요.",
-  "files": [],
-  "at": "2026-10-07"
- },
- "튜터 (Mr Cassels)|Jaime House Activity Notice": {
-  "en": "Jaime House Activity Notice",
-  "ko": "제이미 하우스(Jaime House) 활동 안내",
-  "files": [
-   {
-    "name": "Jaime House.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1jW-HTYFuNfGgg6OtBXF9e3oEUhjm7-8A/view&usp=classroom_web",
-    "local": "post_files/1jW-HTYFuNfGgg6OtBXF9e3oEUhjm7-8A.png"
-   }
-  ],
-  "at": "2026-10-07"
- },
- "튜터 (Mr Cassels)|Good day to you all, a message from Ibraheem Jaime House Representative:": {
-  "en": "Good day to you all, a message from Ibraheem Jaime House Representative: \n\nI'm writing to inform you that this coming Friday is Jaime day, and us house captains have been organizing a nice short tutor time activity. On Friday, students in tutor groups in Y7, Y8, Y9, Y11 will be participating in a kahoot (trivia-style quiz) with questions regarding Jaime day, St. Jaime and other aspects of lasallian spirit. \n\nJaime students (ONLY JAIME STUDENTS) can come to school in their house kit + any red adornment to promote house spirit.",
-  "ko": "여러분 모두 좋은 하루 보내세요. 제이미 하우스 대표(Jaime House Representative) 이브라힘(Ibraheem)의 메시지입니다: \n\n이번 금요일이 제이미 데이(Jaime day)라는 것을 알려드리려고 글을 씁니다. 저희 하우스 캡틴(house captains)들이 짧고 즐거운 튜터 시간(tutor time) 활동을 준비해 왔습니다. 금요일에 Y7, Y8, Y9, Y11 튜터 그룹(tutor groups) 학생들은 제이미 데이, 성 제이미(St. Jaime), 그리고 라살 정신(lasallian spirit)의 여러 면에 관한 문제로 된 카훗(kahoot, 상식 퀴즈 형식의 퀴즈)에 참여합니다. \n\n제이미 학생들(오직 제이미 학생만)은 하우스 정신(house spirit)을 북돋우기 위해 하우스 체육복(house kit)에 빨간색 장식을 아무거나 더해 입고 등교할 수 있습니다.",
-  "files": [],
-  "at": "2026-10-07"
- },
- "중국어 (Ying Ying老师)|Languages Week 2026 Class Bee!": {
-  "en": "Languages Week 2026 Class Bee!\n同学们，please use this\nholiday to learn these 10 words related to our lessons! When we come back from\nthe midterm break, we’ll have a Class Bee on Wednesday, 21 October. 🐝 Learn the\nwords and take part in the Class Bee to earn a “stamp”! But… what is\nthis “stamp” for?  You’ll find out during\nLanguages Week when we’re back at school! 🎉",
-  "ko": "언어 주간(Languages Week) 2026 학급 단어 대회(Class Bee)!\n학생 여러분(同学们), 이번\n방학을 이용해 우리 수업과 관련된 단어 10개를 익히세요! 중간 방학(midterm break)이 끝나고\n돌아오면, 10월 21일 수요일에 학급 단어 대회(Class Bee)를 합니다. 🐝 단어를\n익히고 학급 단어 대회(Class Bee)에 참여해서 “도장(stamp)”을 받으세요! 그런데… 이\n“도장(stamp)”은 어디에 쓰는 걸까요?  그건\n학교로 돌아와서 언어 주간(Languages Week)에 알게 될 거예요! 🎉",
-  "files": [
-   {
-    "name": "Y9 Languages week Class Bee.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1G7ZsETRhh6CzwsMSDc7x72OYr3EXpDno/view?usp=classroom_web",
-    "local": "post_files/1G7ZsETRhh6CzwsMSDc7x72OYr3EXpDno.pdf"
-   }
-  ],
-  "at": "2026-10-07"
- },
  "과학 (Mr Phillips)|Periodic table - check your progress": {
   "en": "Periodic table - check your progress\nEstigfend\nComplete Questions",
   "ko": "주기율표(periodic table) - 진도 확인하기\nEstigfend\n문제 풀기",
@@ -188,6 +105,12 @@ window.POST_DETAILS = {
     "local": "post_files/1evcROrU1L9btQOFt3QGr_E6Wb5sFa8Kw.pptx"
    }
   ],
+  "at": "2026-10-09"
+ },
+ "튜터 (Mr Cassels)|Good morning Year 9! 😊": {
+  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
+  "ko": "9학년 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림입니다:\n\n선생님들이 오전 9시까지 영어(English) / 추가언어로서의 영어(EAL), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 줄 거예요\n올라온 과제를 모두 꼭 끝내세요.\n도움이 필요하면 담당 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인할 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
+  "files": [],
   "at": "2026-10-09"
  },
  "컴퓨터 과학 (Ms Meha)|Year 9 Common Assessment Task 1 Term 1 2025": {
@@ -323,15 +246,15 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-19"
  },
- "튜터 (Mr Cassels)|Good morning Year 9!": {
-  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
-  "ko": "9학년(Year 9) 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림이에요:\n\n선생님들이 오전 9시까지 영어(English) / EAL(English as an Additional Language), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 주실 거예요\n올라온 과제를 모두 꼭 끝내 주세요.\n도움이 필요하면 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인하실 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 나오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
-  "files": [],
-  "at": "2026-10-19"
- },
  "미술|Haze - 20/10 Lesson": {
   "en": "Haze - 20/10 Lesson\nHi everyone, \n\nFor today's lesson, please refer to slide 12 on the lesson slides. The task is to complete:\n\n1) one direct, realistic copy of one of your photos using only pencil sketching and shading.\n2) one copy of your photo in the artist's style. This should be fully coloured or shaded in with outlines. \n\nBoth of these artworks should be A6 in size.\n\nThank you!",
   "ko": "Haze - 20/10 수업\n여러분 안녕하세요, \n\n오늘 수업은 수업 슬라이드(lesson slides)의 12번 슬라이드를 참고하세요. 해야 할 과제는 다음과 같습니다:\n\n1) 연필 스케치(pencil sketching)와 명암 넣기(shading)만 사용해서, 여러분의 사진 중 한 장을 그대로 사실적으로 따라 그린 그림(direct, realistic copy) 한 점.\n2) 여러분의 사진을 그 작가의 화풍(artist's style)으로 따라 그린 그림 한 점. 이 그림은 윤곽선(outlines)과 함께 색을 완전히 칠하거나(fully coloured) 명암을 완전히 넣어야(shaded in) 합니다. \n\n두 작품 모두 A6 크기(A6 in size)여야 합니다.\n\n감사합니다!",
+  "files": [],
+  "at": "2026-10-20"
+ },
+ "드라마|i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.": {
+  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\ni seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
+  "ko": "여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\n여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학 동안 집에 가져갔다면 내일 꼭 가져오세요.",
   "files": [],
   "at": "2026-10-20"
  },
@@ -446,12 +369,6 @@ window.POST_DETAILS = {
     "local": "post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4.pdf"
    }
   ],
-  "at": "2026-10-21"
- },
- "드라마|i seem to be missing most of your monologue work": {
-  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
-  "ko": "여러분의 독백(monologue) 과제를 대부분 제가 받지 못한 것 같습니다: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학(holidays) 동안 집에 가져갔다면 내일 꼭 가지고 오세요.",
-  "files": [],
   "at": "2026-10-21"
  },
  "과학 (Mr Phillips)|Parallel Circuits - workbook questions": {
@@ -729,5 +646,57 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-28"
+ },
+ "과학 (Mr Phillips)|CA2 - 11th November": {
+  "en": "CA2 - 11th November",
+  "ko": "CA2 - 11월 11일",
+  "files": [
+   {
+    "name": "CA2 Template Y9 Science Common Assessment 26/27.docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG/view?usp=classroom_web",
+    "local": "post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG.docx"
+   }
+  ],
+  "at": "2026-10-29"
+ },
+ "드라마|Drama Cover lesson Thursday 29th October": {
+  "en": "Drama Cover lesson Thursday 29th October\nYou shouldn't have anything on your device other than these slides and a translator app (although there are support sheets with translations on my desk).\n\nI have asked the cover teacher to confiscate any devices with anything else on.\n\n\nPlease fold your worksheets neatly back inside your A3 sheet by the end of the lesson and pass them back to the students who handed them out.",
+  "ko": "드라마 대체 수업(Cover lesson) 10월 29일 목요일\n기기에는 이 슬라이드와 번역 앱 말고는 아무것도 켜져 있으면 안 됩니다(번역이 들어 있는 보조 자료(support sheets)가 제 책상 위에 있기는 합니다).\n\n대체 수업 선생님(cover teacher)께 다른 것이 켜져 있는 기기는 모두 압수해 달라고 부탁해 두었습니다.\n\n\n수업이 끝날 때까지 활동지(worksheets)를 A3 용지(A3 sheet) 안에 다시 깔끔하게 접어 넣고, 나눠 준 학생에게 돌려주세요.",
+  "files": [
+   {
+    "name": "Year 9 cover lesson w/c/ 26th oct",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1adh-rcMkXf2I_BWXuAd91cyX0JYsfXouA7FwFMMg0go/edit?usp=classroom_web",
+    "local": "post_files/1adh-rcMkXf2I_BWXuAd91cyX0JYsfXouA7FwFMMg0go.pdf"
+   }
+  ],
+  "at": "2026-10-29"
+ },
+ "튜터 (Mr Cassels)|UNITY WEEK CHESS!": {
+  "en": "UNITY WEEK CHESS! \n\nGet involved with Mr Hember.",
+  "ko": "유니티 위크 체스(UNITY WEEK CHESS)! \n\n헴버 선생님(Mr Hember)과 함께 참여하세요.",
+  "files": [
+   {
+    "name": "Unity Week - Chess",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/13t91YWHvr-4o1u8A7NXsvwRXEWy--m9WVPsBgHP3OrM/edit?usp=classroom_web",
+    "local": "post_files/13t91YWHvr-4o1u8A7NXsvwRXEWy--m9WVPsBgHP3OrM.pdf"
+   }
+  ],
+  "at": "2026-10-29"
+ },
+ "중국어 (Ying Ying老师)|T1 CA2 template - Writing Assessment": {
+  "en": "T1 CA2 template - Writing Assessment",
+  "ko": "T1 CA2 양식 - 쓰기 평가(Writing Assessment)",
+  "files": [
+   {
+    "name": "Y9 Man FL CA2 Writing.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1zi16CAHFVP6Vig6W20zqky85qsEFM0cZ/view?usp=classroom_web",
+    "local": "post_files/1zi16CAHFVP6Vig6W20zqky85qsEFM0cZ.pdf"
+   }
+  ],
+  "at": "2026-10-29"
  }
 };
