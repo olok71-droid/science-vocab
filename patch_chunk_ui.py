@@ -206,6 +206,16 @@ def patch(page):
     if OLD_STOP in s: s = s.replace(OLD_STOP, NEW_STOP, 1); notes.append('stopSeq')
     if OLD_SPEAK in s: s = s.replace(OLD_SPEAK, NEW_SPEAK, 1); notes.append('speak')
 
+    # ④ 2026-10-30: '외운 단어 빼고 듣기' 블록은 반드시 전체듣기 블록보다 뒤에 있어야 한다.
+    #    앞에 있으면 전체듣기 블록이 toggleAllPlay 를 다시 덮어써서 외운 단어까지 다 나온다
+    #    (수학 5~8단원에서 실제로 그랬다). 앞에 있으면 맨 뒤(studylog.js 앞 또는 </body> 앞)로 옮긴다.
+    m = re.search(r"<script>\s*/\* ★2026-09-26 대표님 지시: '외운 단어'.*?</script>\s*", s, re.S)
+    k = s.rfind("window.toggleAllPlay = function(){\n    if (cur === 0")
+    if m and k > m.start():
+        blk = m.group(0); s = s[:m.start()] + s[m.end():]
+        anchor = '<script src="studylog.js"></script>' if '<script src="studylog.js"></script>' in s else '</body>'
+        s = s.replace(anchor, blk.rstrip() + '\n' + anchor, 1); notes.append('외운단어 블록 뒤로')
+
     if s != s0:
         open(page, 'w', encoding='utf-8').write(s)
     return (n, nchunk, notes)
