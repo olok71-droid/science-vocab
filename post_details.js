@@ -1,36 +1,5 @@
 /* 클래스룸 글 원문·번역·첨부 — ~/classroom-sync/post_details.py 가 만든다. 손으로 고치지 마라. */
 window.POST_DETAILS = {
- "튜터 (Mr Cassels)|Bring your Reading Books!": {
-  "en": "Bring your Reading Books!\nEVERYONE remembered their reading books last week. Well done guys :)\n\nRemember, you should have a reading book with you at all times. On a Wednesday particularly, tutor time will often be put aside for silent reading. Make sure you have a book that is in English. Translated books are also okay for you to bring.",
-  "ko": "읽기 책(reading book)을 가져오세요!\n지난주에는 모두가 읽기 책을 잊지 않고 가져왔어요. 잘했어요, 여러분 :)\n\n기억하세요, 읽기 책은 항상 가지고 다녀야 합니다. 특히 수요일에는 튜터 시간(tutor time)을 조용히 책 읽기(silent reading)에 쓰는 경우가 많습니다. 영어로 된 책을 꼭 준비하세요. 번역본(translated books)을 가져와도 괜찮습니다.",
-  "files": [],
-  "at": "2026-10-06"
- },
- "과학 (Mr Phillips)|Periodic table - check your progress": {
-  "en": "Periodic table - check your progress\nEstigfend\nComplete Questions",
-  "ko": "주기율표(periodic table) - 진도 확인하기\nEstigfend\n문제 풀기",
-  "files": [],
-  "at": "2026-10-08"
- },
- "과학 (Mr Phillips)|9C1 - Periodic Table - last lesson - revision": {
-  "en": "9C1 - Periodic Table - last lesson - revision",
-  "ko": "9C1 - 주기율표(Periodic Table) - 지난 수업 - 복습(revision)",
-  "files": [
-   {
-    "name": "The Periodic Table Song (2018 Update!) | SCIENCE SONGS",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=rz4Dd1I_fX0",
-    "local": null
-   },
-   {
-    "name": "9C1 Revision - 9E",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1xHLU88kf_dBaxzaAObV8OMDHDvB86FAx7d-MxY8fjIw/edit?usp=classroom_web",
-    "local": "post_files/1xHLU88kf_dBaxzaAObV8OMDHDvB86FAx7d-MxY8fjIw.pdf"
-   }
-  ],
-  "at": "2026-10-08"
- },
  "휴머니티 (Mr Lawrence)|Term 1 History Homework": {
   "en": "Term 1 History Homework\nWhat do I need to do?\n✅ Complete ONE challenge task independently by Friday 27th November 2026.\n✅ Choose any one of the 12 challenge tasks in the following slides.\n⭐ You are welcome to complete more than one task. You may work with a friend on extra tasks, but at least one task must be completed on your own.\n\nHow do I submit it?\n📅 Deadline: 27th November 2026, 5pm.\n💻 Submit your work on Google Classroom. If you have created a physical resource, hand it to your teacher and upload a photo of it to Google Classroom.\n\nWhat are we looking for?\nYour work should show high effort and creativity. You have 6 to complete it, so take your time and produce something you are proud of.\nAim to spend around 30 minutes per week working on your project.\n\nWhy is it important?\nYour teacher will review your work and it will contribute towards your End of Term Report\nYou could create something that helps you revise or a resource that could be used by future students. Excellent work may even be displayed or shared with next year's classes!",
   "ko": "1학기 역사(History) 숙제\n무엇을 해야 하나요?\n✅ 2026년 11월 27일 금요일까지 도전 과제(challenge task) 하나를 혼자 힘으로 완성하세요.\n✅ 다음 슬라이드에 있는 12개 도전 과제(challenge task) 중 아무거나 하나를 고르세요.\n⭐ 과제를 두 개 이상 해도 좋습니다. 추가 과제는 친구와 함께 해도 되지만, 적어도 과제 하나는 반드시 혼자 완성해야 합니다.\n\n어떻게 제출하나요?\n📅 마감: 2026년 11월 27일 오후 5시.\n💻 과제를 Google Classroom에 제출하세요. 실물 자료(physical resource)를 만들었다면 선생님께 직접 내고, 그 사진을 Google Classroom에 올리세요.\n\n무엇을 보나요?\n과제에 많은 노력(effort)과 창의성(creativity)이 드러나야 합니다. 완성할 시간이 6 있으니 서두르지 말고 스스로 자랑스러운 결과물을 만드세요.\n매주 30분 정도를 프로젝트(project)에 쓰는 것을 목표로 하세요.\n\n왜 중요한가요?\n선생님이 과제를 검토하고, 그 결과가 학기말 성적표(End of Term Report)에 반영됩니다\n복습(revise)에 도움이 되는 것이나 나중 학생들이 쓸 수 있는 자료(resource)를 만들 수도 있습니다. 훌륭한 과제는 내년 반 학생들에게 전시되거나 공유될 수도 있습니다!",
@@ -103,31 +72,6 @@ window.POST_DETAILS = {
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1evcROrU1L9btQOFt3QGr_E6Wb5sFa8Kw/view?usp=classroom_web",
     "local": "post_files/1evcROrU1L9btQOFt3QGr_E6Wb5sFa8Kw.pptx"
-   }
-  ],
-  "at": "2026-10-09"
- },
- "튜터 (Mr Cassels)|Good morning Year 9! 😊": {
-  "en": "Good morning Year 9! 😊\nA few reminders for today:\n\nYour teachers will set work by 9:00am for English / EAL, Maths, Science and Humanities\nPlease make sure you complete all the work set.\nIf you need help, email your teachers or tutors. They will be checking emails throughout the day.\nYou can also message me if you need support.\nRemember, even though you aren't in school, I am still here for you!\nHave a good day!",
-  "ko": "9학년 여러분, 좋은 아침이에요! 😊\n오늘 몇 가지 알림입니다:\n\n선생님들이 오전 9시까지 영어(English) / 추가언어로서의 영어(EAL), 수학(Maths), 과학(Science), 인문학(Humanities) 과제를 올려 줄 거예요\n올라온 과제를 모두 꼭 끝내세요.\n도움이 필요하면 담당 선생님이나 튜터(tutor)에게 이메일을 보내세요. 하루 종일 이메일을 확인할 거예요.\n도움이 필요하면 저에게 메시지를 보내도 돼요.\n학교에 오지 않더라도 저는 여전히 여러분 곁에 있다는 걸 기억하세요!\n좋은 하루 보내세요!",
-  "files": [],
-  "at": "2026-10-09"
- },
- "컴퓨터 과학 (Ms Meha)|Year 9 Common Assessment Task 1 Term 1 2025": {
-  "en": "Year 9 Common Assessment Task 1 Term 1 2025\nDear Year 9 students,\nAttached is your Term 1 Common Assessment. \nPlease complete all 6 questions carefully. \nFor each question:\n\nWrite the Python code.\nTake a screenshot of your code and the output.\nPaste all screenshots (code and output for each question) in the google docs attached\nDue Date: 6th November 2026\n\nSubmit your completed Google Docs document via Google Classroom before the deadline.\n\n以下是为您翻译的中文版本：\n亲爱的九年级同学们：\n附件是你们第一学期的阶段性评估（Term 1 Common Assessment）。\n请认真完成全部 6 道题目。\n对于每道题目，请按以下要求操作：\n编写 Python 代码。\n截取你的代码以及运行输出结果（Output）的截图。\n将每道题的代码和输出截图全部粘贴至随附的 Google Docs 文档中。\n截止日期：2026 年 11 月 6 日\n请在截止日期前通过 Google Classroom 提交已完成的 Google Docs 文档。",
-  "ko": "9학년 공통 평가 과제 1(Common Assessment Task 1) 1학기 2025\n9학년 학생 여러분,\n1학기 공통 평가(Term 1 Common Assessment)를 첨부했습니다.\n6개 문제를 모두 꼼꼼히 풀어 주세요.\n각 문제마다:\n\n파이썬 코드(Python code)를 작성하세요.\n코드와 출력 결과(output)의 스크린샷(screenshot)을 찍으세요.\n모든 스크린샷(각 문제의 코드와 출력 결과)을 첨부된 구글 문서(Google Docs)에 붙여 넣으세요.\n마감일: 2026년 11월 6일\n\n완성한 구글 문서(Google Docs)를 마감 전에 구글 클래스룸(Google Classroom)으로 제출하세요.\n\n아래는 중국어로 번역한 내용입니다:\n9학년 학생 여러분:\n첨부 파일은 여러분의 1학기 공통 평가(Term 1 Common Assessment)입니다.\n6개 문제를 모두 꼼꼼히 풀어 주세요.\n각 문제는 다음과 같이 하세요:\n파이썬 코드(Python code)를 작성하세요.\n코드와 실행 출력 결과(Output)의 스크린샷(screenshot)을 찍으세요.\n각 문제의 코드와 출력 스크린샷을 모두 첨부된 구글 문서(Google Docs)에 붙여 넣으세요.\n마감일: 2026년 11월 6일\n마감일 전에 완성한 구글 문서(Google Docs)를 구글 클래스룸(Google Classroom)으로 제출하세요.",
-  "files": [
-   {
-    "name": "Year9_Python_Common Assessment  Term 1 2026",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c/edit?usp=classroom_web",
-    "local": "post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c.pdf"
-   },
-   {
-    "name": "Year9_Python_Common_Assessment_Term1_2026_Mandarin.docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/14Jkb-JU68smhCNsY9sWExloCaGFsQ4jj/view?usp=classroom_web",
-    "local": "post_files/14Jkb-JU68smhCNsY9sWExloCaGFsQ4jj.docx"
    }
   ],
   "at": "2026-10-09"
@@ -214,50 +158,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-19"
  },
- "컴퓨터 과학 (Ms Meha)|Python Loop": {
-  "en": "Python Loop\nEstigfend\nWhile and For Loop",
-  "ko": "파이썬 반복문(Python Loop)\nEstigfend\nWhile 반복문(While Loop)과 For 반복문(For Loop)",
-  "files": [
-   {
-    "name": "Loop",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1ih9uDETPp0VXhrmU-dxITvnPLmd3OXPWOUIS_ioXi9k/edit?usp=classroom_web",
-    "local": "post_files/1ih9uDETPp0VXhrmU-dxITvnPLmd3OXPWOUIS_ioXi9k.pdf"
-   }
-  ],
-  "at": "2026-10-19"
- },
- "라살 교육|STEP 1: LEDU TALK MAKING": {
-  "en": "STEP 1: LEDU TALK MAKING\n1.1 Identify Your Core Message & Experiences\nFind Your Core Message: Review your reflections. What is the single biggest lesson or central insight about faith or life that you want your audience to take away? Select Key Experiences: Choose the 1-3 most powerful moments, challenges, or triumphs from your own experiences that clearly illustrate this core message.",
-  "ko": "1단계: LEDU 강연 만들기(LEDU TALK MAKING)\n1.1 핵심 메시지(Core Message)와 경험(Experiences) 정하기\n핵심 메시지 찾기(Find Your Core Message): 자신이 쓴 성찰(reflections)을 다시 살펴보세요. 청중(audience)이 꼭 얻어 갔으면 하는 신앙(faith)이나 삶에 대한 가장 큰 교훈(lesson) 하나, 또는 핵심 통찰(central insight)은 무엇인가요? 주요 경험 고르기(Select Key Experiences): 이 핵심 메시지를 분명하게 보여 주는, 자신의 경험 중 가장 강렬했던 순간(moments)·어려움(challenges)·성취(triumphs)를 1~3개 고르세요.",
-  "files": [],
-  "at": "2026-10-19"
- },
- "튜터 (Mr Cassels)|Mid term Check in": {
-  "en": "Mid term Check in\nPlease take time to complete the attached form. Answer it honestly and thoughtfully. There are no wrong answers. Add as much detail as you possibly can.",
-  "ko": "중간 점검(Mid term Check in)\n시간을 내어 첨부된 양식을 작성해 주세요. 정직하고 신중하게 답해 주세요. 틀린 답은 없습니다. 최대한 자세하게 적어 주세요.",
-  "files": [
-   {
-    "name": "Year 9 - Term 1 check-in",
-    "kind": "form",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSe63wD1yoa7pMVt6LmWsuU-FBTB-0rSnAK578u7QGo6kxwoWg/viewform?usp=publish-editor",
-    "local": null
-   }
-  ],
-  "at": "2026-10-19"
- },
- "미술|Haze - 20/10 Lesson": {
-  "en": "Haze - 20/10 Lesson\nHi everyone, \n\nFor today's lesson, please refer to slide 12 on the lesson slides. The task is to complete:\n\n1) one direct, realistic copy of one of your photos using only pencil sketching and shading.\n2) one copy of your photo in the artist's style. This should be fully coloured or shaded in with outlines. \n\nBoth of these artworks should be A6 in size.\n\nThank you!",
-  "ko": "Haze - 20/10 수업\n여러분 안녕하세요, \n\n오늘 수업은 수업 슬라이드(lesson slides)의 12번 슬라이드를 참고하세요. 해야 할 과제는 다음과 같습니다:\n\n1) 연필 스케치(pencil sketching)와 명암 넣기(shading)만 사용해서, 여러분의 사진 중 한 장을 그대로 사실적으로 따라 그린 그림(direct, realistic copy) 한 점.\n2) 여러분의 사진을 그 작가의 화풍(artist's style)으로 따라 그린 그림 한 점. 이 그림은 윤곽선(outlines)과 함께 색을 완전히 칠하거나(fully coloured) 명암을 완전히 넣어야(shaded in) 합니다. \n\n두 작품 모두 A6 크기(A6 in size)여야 합니다.\n\n감사합니다!",
-  "files": [],
-  "at": "2026-10-20"
- },
- "드라마|i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.": {
-  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\ni seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
-  "ko": "여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray.\n여러분의 독백(monologue) 과제 대부분이 저한테 없는 것 같아요: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학 동안 집에 가져갔다면 내일 꼭 가져오세요.",
-  "files": [],
-  "at": "2026-10-20"
- },
  "과학 (Mr Phillips)|electrical circuits and symbols": {
   "en": "electrical circuits and symbols\nClick on the link below to start the game",
   "ko": "전기 회로(electrical circuits)와 기호(symbols)\n아래 링크를 클릭해 게임을 시작하세요",
@@ -328,49 +228,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "음악 (Mr Everett)|Term 1 Lessons": {
-  "en": "Term 1 Lessons",
-  "ko": "1학기 수업 자료(Term 1 Lessons)",
-  "files": [
-   {
-    "name": "Lesson 3",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1Ye1geZHBgMzhbZ-TTxYDtGQBPBN2avSq8Cib5mCtcUs/edit?usp=classroom_web",
-    "local": "post_files/1Ye1geZHBgMzhbZ-TTxYDtGQBPBN2avSq8Cib5mCtcUs.pdf"
-   },
-   {
-    "name": "Lesson 8",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1JilF0R4ENZJjQir1XCMfq59I-8_rr8OaYaSxADOk_oQ/edit?usp=classroom_web",
-    "local": "post_files/1JilF0R4ENZJjQir1XCMfq59I-8_rr8OaYaSxADOk_oQ.pdf"
-   },
-   {
-    "name": "Lesson 7",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA/edit?usp=classroom_web",
-    "local": "post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA.pdf"
-   },
-   {
-    "name": "Lesson 6",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1dPdF6dB20VDxvb8IV6l-LShhQdU5StQSD7ntKvypFSU/edit?usp=classroom_web",
-    "local": "post_files/1dPdF6dB20VDxvb8IV6l-LShhQdU5StQSD7ntKvypFSU.pdf"
-   },
-   {
-    "name": "Lesson 5",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM/edit?usp=classroom_web",
-    "local": "post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM.pdf"
-   },
-   {
-    "name": "Lesson 4",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4/edit?usp=classroom_web",
-    "local": "post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4.pdf"
-   }
-  ],
-  "at": "2026-10-21"
- },
  "과학 (Mr Phillips)|Parallel Circuits - workbook questions": {
   "en": "Parallel Circuits - workbook questions",
   "ko": "병렬 회로(Parallel Circuits) - 워크북 문제(workbook questions)",
@@ -395,58 +252,6 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-22"
- },
- "튜터 (Mr Cassels)|PSHE - Y9 - 22/10/26": {
-  "en": "PSHE - Y9 - 22/10/26\nPlease use this doc to work through today's session.",
-  "ko": "PSHE(개인·사회·보건 교육) - 9학년(Y9) - 22/10/26\n오늘 수업은 이 문서를 사용해서 진행하세요.",
-  "files": [
-   {
-    "name": "Lesson 8 - Exploring Career Pathways",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1KBj-SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY/edit?usp=classroom_web",
-    "local": "post_files/1KBj-SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY.pdf"
-   }
-  ],
-  "at": "2026-10-22"
- },
- "미술|Year 9 Sip and Paint": {
-  "en": "Year 9 Sip and Paint\n\nDear Y9 students, \n\nWe will be having our annual sip and paint event on Monday 2/11 and Tuesday 3/11. This is an event where your parents and guardians will be invited to join in your art class, and create a festive painting together with you. It is a great chance to show off all the skills you've learned so far in KS3 and Y9, and will also be a good opportunity to do something creative with your family. \n\nThe event will take place during your normal art lessons. Please make sure to clarify this with your parents if there is any confusion.\n\nPlease let me know if you have any questions!\nMs. Aileen",
-  "ko": "9학년 십 앤 페인트(Sip and Paint)\n\n9학년 학생 여러분께,\n\n11월 2일 월요일과 11월 3일 화요일에 매년 하는 십 앤 페인트(sip and paint) 행사를 엽니다. 이 행사에는 부모님과 보호자분들을 미술 수업에 초대해, 여러분과 함께 축제 분위기의 그림(festive painting)을 그립니다. 지금까지 KS3(Key Stage 3)와 9학년에서 배운 모든 기술을 뽐낼 좋은 기회이고, 가족과 함께 창의적인 활동을 해 볼 좋은 기회이기도 합니다.\n\n행사는 평소 미술 수업 시간에 열립니다. 헷갈리는 점이 있으면 꼭 부모님께 이 내용을 분명히 알려 드리세요.\n\n궁금한 점이 있으면 알려 주세요!\nAileen 선생님",
-  "files": [
-   {
-    "name": "Screenshot 2026-10-23 at 10.07.10 AM.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1XrecH5joDXSH4ijV36PQ1bP7ShCbAKsc/view&usp=classroom_web",
-    "local": "post_files/1XrecH5joDXSH4ijV36PQ1bP7ShCbAKsc.png"
-   }
-  ],
-  "at": "2026-10-23"
- },
- "디자인 기술 DEC (Mr Mathyk)|MR. MATHYKS FESTIVAL E-PORTFOLIO": {
-  "en": "MR. MATHYK'S FESTIVAL E-PORTFOLIO",
-  "ko": "매시크 선생님의 축제 전자 포트폴리오(E-PORTFOLIO)",
-  "files": [
-   {
-    "name": "Amazingly Simple Graphic Design Software – Canva",
-    "kind": "web",
-    "url": "https://canva.link/o3ozrcinuau6xz8",
-    "local": null
-   }
-  ],
-  "at": "2026-10-23"
- },
- "중국어 (Ying Ying老师)|Lesson 4 中文短期培训班 Quizlet": {
-  "en": "Lesson 4 中文短期培训班 Quizlet",
-  "ko": "4과 중국어 단기 연수반(中文短期培训班) 퀴즐렛(Quizlet)",
-  "files": [
-   {
-    "name": "Y9 Unit 1 Lesson 4 中文短期培训班 Short-term Chinese course Flashcards | Quizlet",
-    "kind": "web",
-    "url": "https://quizlet.com/my/1227086408/y9-unit-1-lesson-4-%E4%B8%AD%E6%96%87%E7%9F%AD%E6%9C%9F%E5%9F%B9%E8%AE%AD%E7%8F%AD-short-term-chinese-course-flash-cards/?i=5znqnt&x=1qqW",
-    "local": null
-   }
-  ],
-  "at": "2026-10-26"
  },
  "휴머니티 (Mr Lawrence)|Lessons 1-5 of WW1": {
   "en": "Lessons 1-5 of WW1",
@@ -527,69 +332,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
- "튜터 (Mr Cassels)|I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int": {
-  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
-  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 정보를 알려드리게 되어 기쁩니다.\n\n'갈등 속의 사람과 지구(People and Planet in Conflict)'를 주제로 한 이 대회는 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 누구나 참가할 수 있습니다.  에세이 제목(essay titles), 분량(length), 제출 방법(submission details)의 자세한 내용은 첨부 파일에 있습니다. \n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n문의: Karina Mariadas, k.mariadas@elc.edu.my",
-  "files": [
-   {
-    "name": "k.mariadas@elc.edu.my",
-    "kind": "web",
-    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
-    "local": null
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
-    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
-    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
-   }
-  ],
-  "at": "2026-10-27"
- },
- "튜터 (Mr Cassels)|Rewards between 21st September and today!": {
-  "en": "Rewards between 21st September and today! \nThe next Rewards Slips for Skip the Line or Lift Pass will be handed out on Wednesday 11th and Thursday 12th November for the top students.",
-  "ko": "9월 21일부터 오늘까지의 보상(Rewards)! \n줄 서지 않기(Skip the Line) 또는 엘리베이터 이용권(Lift Pass)을 받을 수 있는 다음 보상 쪽지(Rewards Slips)는 11월 11일 수요일과 11월 12일 목요일에 우수 학생(top students)에게 나눠 줄 예정입니다.",
-  "files": [
-   {
-    "name": "21-Sep-2026 - 27-Oct-2026.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8/view?usp=classroom_web",
-    "local": "post_files/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8.pdf"
-   }
-  ],
-  "at": "2026-10-27"
- },
- "음악 (Mr Everett)|FOBISIA Online Guitar Solo Competition": {
-  "en": "FOBISIA Online Guitar Solo Competition\nStudents can register your interest and submit your performance details to represent SJIIS in the FOBISIA Online Guitar Solo competition.\n\nComplete attached form as soon as you decide you would like to compete.\n\nPerformance Video Deadline: Monday 9th November 2026\n\nSubmissions can be of any genre. \n\nMax length 4mins",
-  "ko": "FOBISIA 온라인 기타 독주 대회(FOBISIA Online Guitar Solo Competition)\n학생들은 FOBISIA 온라인 기타 독주(guitar solo) 대회에 SJIIS 대표로 나가고 싶다는 뜻을 등록하고 연주(performance) 세부 정보를 제출할 수 있습니다.\n\n대회에 나가기로 정하면 바로 첨부된 양식을 작성하세요.\n\n연주 영상 마감(Performance Video Deadline): 2026년 11월 9일 월요일\n\n어떤 장르(genre)로든 제출할 수 있습니다. \n\n최대 길이 4분",
-  "files": [
-   {
-    "name": "Google Forms: Sign-in",
-    "kind": "form",
-    "url": "https://forms.gle/YvhH4JnJF1A251Wx5",
-    "local": null
-   },
-   {
-    "name": "FOBISIA Online Guitar Solo comp criteria.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1cWz8kWvWuMAHG_hAyAWt5KwXgu46EGdL/view?usp=classroom_web",
-    "local": "post_files/1cWz8kWvWuMAHG_hAyAWt5KwXgu46EGdL.png"
-   },
-   {
-    "name": "FOBISIA Online Guitar Solo.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7/view?usp=classroom_web",
-    "local": "post_files/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7.pdf"
-   }
-  ],
-  "at": "2026-10-27"
- },
  "과학 (Mr Phillips)|Ohms Law": {
   "en": "Ohm's Law\nClick on the link below to start the game",
   "ko": "옴의 법칙(Ohm's Law)\n아래 링크를 눌러 게임을 시작하세요",
@@ -634,19 +376,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-28"
  },
- "중국어 (Ying Ying老师)|Lesson 4 Grammar Slides (既...又....、除此以外, 还）": {
-  "en": "Lesson 4 Grammar Slides (既...又....、除此以外, 还）",
-  "ko": "4과(Lesson 4) 문법(grammar) 슬라이드 (既...又....、除此以外, 还）",
-  "files": [
-   {
-    "name": "U1 L4 grammar slides.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1kazIOcH1wkhMAbfW5z3PEJk24cj-Fxam/view?usp=classroom_web",
-    "local": "pdfs/chinese_y9/U1 L4 grammar slides.pdf"
-   }
-  ],
-  "at": "2026-10-28"
- },
  "과학 (Mr Phillips)|CA2 - 11th November": {
   "en": "CA2 - 11th November",
   "ko": "CA2 - 11월 11일",
@@ -656,45 +385,6 @@ window.POST_DETAILS = {
     "kind": "drive",
     "url": "https://drive.google.com/file/d/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG/view?usp=classroom_web",
     "local": "post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG.docx"
-   }
-  ],
-  "at": "2026-10-29"
- },
- "드라마|Drama Cover lesson Thursday 29th October": {
-  "en": "Drama Cover lesson Thursday 29th October\nYou shouldn't have anything on your device other than these slides and a translator app (although there are support sheets with translations on my desk).\n\nI have asked the cover teacher to confiscate any devices with anything else on.\n\n\nPlease fold your worksheets neatly back inside your A3 sheet by the end of the lesson and pass them back to the students who handed them out.",
-  "ko": "드라마 대체 수업(Cover lesson) 10월 29일 목요일\n기기에는 이 슬라이드와 번역 앱 말고는 아무것도 켜져 있으면 안 됩니다(번역이 들어 있는 보조 자료(support sheets)가 제 책상 위에 있기는 합니다).\n\n대체 수업 선생님(cover teacher)께 다른 것이 켜져 있는 기기는 모두 압수해 달라고 부탁해 두었습니다.\n\n\n수업이 끝날 때까지 활동지(worksheets)를 A3 용지(A3 sheet) 안에 다시 깔끔하게 접어 넣고, 나눠 준 학생에게 돌려주세요.",
-  "files": [
-   {
-    "name": "Year 9 cover lesson w/c/ 26th oct",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1adh-rcMkXf2I_BWXuAd91cyX0JYsfXouA7FwFMMg0go/edit?usp=classroom_web",
-    "local": "post_files/1adh-rcMkXf2I_BWXuAd91cyX0JYsfXouA7FwFMMg0go.pdf"
-   }
-  ],
-  "at": "2026-10-29"
- },
- "튜터 (Mr Cassels)|UNITY WEEK CHESS!": {
-  "en": "UNITY WEEK CHESS! \n\nGet involved with Mr Hember.",
-  "ko": "유니티 위크 체스(UNITY WEEK CHESS)! \n\n헴버 선생님(Mr Hember)과 함께 참여하세요.",
-  "files": [
-   {
-    "name": "Unity Week - Chess",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/13t91YWHvr-4o1u8A7NXsvwRXEWy--m9WVPsBgHP3OrM/edit?usp=classroom_web",
-    "local": "post_files/13t91YWHvr-4o1u8A7NXsvwRXEWy--m9WVPsBgHP3OrM.pdf"
-   }
-  ],
-  "at": "2026-10-29"
- },
- "중국어 (Ying Ying老师)|T1 CA2 template - Writing Assessment": {
-  "en": "T1 CA2 template - Writing Assessment",
-  "ko": "T1 CA2 양식 - 쓰기 평가(Writing Assessment)",
-  "files": [
-   {
-    "name": "Y9 Man FL CA2 Writing.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1zi16CAHFVP6Vig6W20zqky85qsEFM0cZ/view?usp=classroom_web",
-    "local": "post_files/1zi16CAHFVP6Vig6W20zqky85qsEFM0cZ.pdf"
    }
   ],
   "at": "2026-10-29"
