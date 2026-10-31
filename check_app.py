@@ -6,6 +6,9 @@
 사용: check_app.py           — 모든 문제를 보여 준다
       check_app.py --block   — '두 벌'·'없는 mp3'·'JS 문법 오류'가 하나라도 있으면 종료코드 1 (깃 커밋 전 검사가 쓴다)"""
 import re, glob, os, sys, subprocess, tempfile, collections
+import shutil
+# 맥 자동 실행(launchd·깃 커밋 전 검사)에는 PATH 에 node 가 없다 → 경로를 직접 찾는다(2026-10-31 점검 '앱 검사: ?' 원인)
+NODE = shutil.which('node') or next((p for p in ('/usr/local/bin/node', '/opt/homebrew/bin/node') if os.path.exists(p)), 'node')
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 BUILTIN={'window','document','alert','confirm','console','event'}
 BLOCK={'두 벌','없는 mp3','JS 문법 오류'}
@@ -40,7 +43,7 @@ for f in sorted(glob.glob('*.html')):
     if inline.strip():
         with tempfile.NamedTemporaryFile('w',suffix='.js',delete=False,encoding='utf-8') as t:
             t.write(inline); path=t.name
-        r=subprocess.run(['node','--check',path],capture_output=True,text=True)
+        r=subprocess.run([NODE,'--check',path],capture_output=True,text=True)
         if r.returncode: bad.append((f,'JS 문법 오류',r.stderr.strip().splitlines()[0][:90]))
         os.unlink(path)
     # 4) 같은 기능 두 벌 — 페이지 안 인라인 + 불러 쓰는 .js 를 합쳐서 센다
