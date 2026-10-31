@@ -1262,6 +1262,8 @@ function stopSeq(){
   if (_audio) { _audio.pause(); _audio = null; }
   // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
   //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
+  // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
+  //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
   _seq = null;
   document.querySelectorAll('.play-all-btn').forEach(function(b){
     b.classList.remove('active'); b.textContent = '▶ 듣기';
@@ -1589,152 +1591,7 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
-<script>
-/* 단원 전체 듣기 + 20개씩 끊어 듣기 — 미리 합쳐 둔 mp3를 재생한다.
-   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일로 합쳤다.
-   ★2026-09-17 대표님 지시: 한 번에 60몇 개는 안 외워진다 → 20개 토막 버튼 추가.
-     전체와 토막이 audio 요소 하나를 같이 쓴다 → 두 소리가 겹칠 수 없다. */
-(function(){
-  var a = document.getElementById('allplay-audio');
-  var btn = document.getElementById('allplay-btn');
-  if (!a || !btn) return;
-  var FULL = a.getAttribute('src');
-  var TOTAL = btn.getAttribute('data-total') || '';
-  var cur = 0;   // 0 = 전체, 1.. = 몇 번째 토막
-  function parts(){ return Array.prototype.slice.call(document.querySelectorAll('.chunkplay')); }
-  function resetLabels(){
-    btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active');
-    parts().forEach(function(b){ b.textContent = b.getAttribute('data-label'); b.classList.remove('active'); });
-  }
-  function activeBtn(){
-    return cur === 0 ? btn : document.querySelector('.chunkplay[data-part="' + cur + '"]');
-  }
-  function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
-  function playSrc(src, which, title){
-    if (typeof stopSeq === 'function') stopSeq();
-    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
-    if (a.getAttribute('src') !== src) { a.pause(); a.setAttribute('src', src); a.load(); }
-    cur = which;
-    try { a.currentTime = 0; } catch (e) {}   // 끝까지 들은 뒤 다시 눌러도 처음부터
-    a._title = title;
-    a.play();
-  }
-  window.playAllFrom = function(n, label){
-    var b = document.querySelector('.chunkplay[data-part="' + n + '"]');
-    if (cur === n && !a.paused) { a.pause(); return; }
-    playSrc(FULL.replace('_all.mp3', '_p' + n + '.mp3'), n, (b ? b.getAttribute('data-label').replace('▶ ','') : n + '번째') + ' 듣기');
-  };
-  window.toggleAllPlay = function(){
-    if (cur === 0 && !a.paused) { a.pause(); return; }
-    playSrc(FULL, 0, '단원 전체 듣기' + (TOTAL ? ' — ' + TOTAL + ' 단어' : ''));
-  };
-  a.addEventListener('play', function(){
-    resetLabels();
-    var b = activeBtn(); if (b) { b.textContent = '⏸ 멈춤'; b.classList.add('active'); }
-    if ('mediaSession' in navigator) {
-      navigator.mediaSession.metadata = new MediaMetadata({
-        title: a._title || '단원 전체 듣기', artist: UNIT_TITLE, album: 'AMY Study App'
-      });
-      navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
-      navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
-    }
-  });
-  a.addEventListener('pause', resetLabels);
-  a.addEventListener('ended', resetLabels);
-  a.addEventListener('timeupdate', function(){
-    if (a.paused) return;
-    var b = activeBtn(); if (b) b.textContent = '⏸ ' + mmss(a.currentTime);
-  });
-  a.addEventListener('error', function(){ resetLabels(); });
-})();
-</script>
-<script>
-/* ★2026-09-26 대표님 지시: '외운 단어'로 체크한 것은 전체 듣기·부분 듣기에서 들리지 않는다.
-   합쳐 둔 mp3 는 통짜라 중간을 건너뛸 수 없다 → 외운 단어가 하나라도 있으면 그 단원(또는 그 토막)은
-   낱개 발음을 이어서 들려준다. 외운 단어가 없으면 예전처럼 합친 mp3 를 튼다(화면을 꺼도 계속 나온다). */
-(function(){
-  var btn = document.getElementById('allplay-btn');
-  var a   = document.getElementById('allplay-audio');
-  if (!btn) return;
-  var seq = null, cur = null, curBtn = null;
-  function slug(t){ return (t||'').replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
-  function cards(){ return Array.prototype.slice.call(document.querySelectorAll('#tab-vocab .vcard')); }
-  function isMem(c){ return c.classList.contains('memorized'); }
-  function enOf(c){ var e = c.querySelector('.vcard-en'); return e ? (e.textContent||'').trim() : ''; }
-  function labelOf(b){ return b === btn ? '▶ 전체 듣기' : (b.getAttribute('data-label') || '▶'); }
-  function stop(){
-    if (cur) { try { cur.pause(); } catch(e){} cur = null; }
-    seq = null;
-    if (curBtn) { curBtn.textContent = labelOf(curBtn); curBtn.classList.remove('active'); curBtn = null; }
-  }
-  window.stopVisibleSeq = stop;
-  function playList(words, b){
-    var i = 0, token = {};
-    seq = token; curBtn = b;
-    b.textContent = '⏸ 멈춤'; b.classList.add('active');
-    (function next(){
-      if (seq !== token) return;
-      if (i >= words.length) { stop(); return; }   // 끝나면 멈춘다
-      var sl = slug(words[i]);
-      var koDone = false, enDone = false;
-      var ko = new Audio('audio/sci_ko/' + sl + '.mp3');
-      cur = ko;
-      var afterEn = function(){
-        if (enDone) return; enDone = true;
-        if (seq === token) { i++; next(); }
-      };
-      var afterKo = function(){
-        if (koDone) return; koDone = true;
-        if (seq !== token) return;
-        var en = new Audio('audio/sci/' + sl + '.mp3');
-        cur = en;
-        en.onended = afterEn; en.onerror = afterEn;
-        en.play().catch(afterEn);
-      };
-      ko.onended = afterKo; ko.onerror = afterKo;
-      ko.play().catch(afterKo);
-    })();
-  }
-  /* 토막 버튼 라벨('1~20')에서 몇 번째~몇 번째 단어인지 읽는다 */
-  function rangeOf(b){
-    var m = (b.getAttribute('data-label') || '').match(/(\d+)\s*~\s*(\d+)/);
-    return m ? [parseInt(m[1],10), parseInt(m[2],10)] : null;
-  }
-  function pick(from, to){            // 1-based, 없으면 전체
-    var all = cards();
-    var part = (from && to) ? all.slice(from - 1, to) : all;
-    var out = [], memCount = 0;
-    part.forEach(function(c){
-      if (c.classList.contains('hidden')) return;
-      if (isMem(c)) { memCount++; return; }
-      var en = enOf(c); if (en) out.push(en);
-    });
-    return { words: out, mem: memCount };
-  }
-  var origToggle = window.toggleAllPlay;
-  var origFrom   = window.playAllFrom;
-  window.toggleAllPlay = function(){
-    if (seq && curBtn === btn) { stop(); return; }
-    stop();
-    var r = pick(null, null);
-    if (!r.mem) { if (origToggle) origToggle(); return; }   // 외운 단어 없음 → 합친 mp3
-    if (a && !a.paused) a.pause();
-    if (!r.words.length) return;
-    playList(r.words, btn);
-  };
-  window.playAllFrom = function(n, label){
-    var b = document.querySelector('.chunkplay[data-part="' + n + '"]');
-    if (seq && curBtn === b) { stop(); return; }
-    stop();
-    var rg = b ? rangeOf(b) : null;
-    var r = pick(rg ? rg[0] : null, rg ? rg[1] : null);
-    if (!r.mem) { if (origFrom) origFrom(n, label); return; }
-    if (a && !a.paused) a.pause();
-    if (!r.words.length || !b) return;
-    playList(r.words, b);
-  };
-})();
-</script>
+<script src="listen.js"></script>
 <script src="studylog.js"></script>
 </body>
 </html>

@@ -31,63 +31,10 @@ def ranges(n):
     return out
 
 
-NEW_ALL = r'''/* 단원 전체 듣기 + 20개씩 끊어 듣기 — 미리 합쳐 둔 mp3를 재생한다.
-   ★JS로 곡을 넘기는 방식은 아이폰 화면이 꺼지면 멈춘다(애플 확인). 그래서 파일로 합쳤다.
-   ★2026-09-17 대표님 지시: 한 번에 60몇 개는 안 외워진다 → 20개 토막 버튼 추가.
-     전체와 토막이 audio 요소 하나를 같이 쓴다 → 두 소리가 겹칠 수 없다. */
-(function(){
-  var a = document.getElementById('allplay-audio');
-  var btn = document.getElementById('allplay-btn');
-  if (!a || !btn) return;
-  var FULL = a.getAttribute('src');
-  var TOTAL = btn.getAttribute('data-total') || '';
-  var cur = 0;   // 0 = 전체, 1.. = 몇 번째 토막
-  function parts(){ return Array.prototype.slice.call(document.querySelectorAll('.chunkplay')); }
-  function resetLabels(){
-    btn.textContent = '▶ 전체 듣기'; btn.classList.remove('active');
-    parts().forEach(function(b){ b.textContent = b.getAttribute('data-label'); b.classList.remove('active'); });
-  }
-  function activeBtn(){
-    return cur === 0 ? btn : document.querySelector('.chunkplay[data-part="' + cur + '"]');
-  }
-  function mmss(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
-  function playSrc(src, which, title){
-    if (typeof stopSeq === 'function') stopSeq();
-    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
-    if (a.getAttribute('src') !== src) { a.pause(); a.setAttribute('src', src); a.load(); }
-    cur = which;
-    try { a.currentTime = 0; } catch (e) {}   // 끝까지 들은 뒤 다시 눌러도 처음부터
-    a._title = title;
-    a.play();
-  }
-  window.playAllFrom = function(n, label){
-    var b = document.querySelector('.chunkplay[data-part="' + n + '"]');
-    if (cur === n && !a.paused) { a.pause(); return; }
-    playSrc(FULL.replace('_all.mp3', '_p' + n + '.mp3'), n, (b ? b.getAttribute('data-label').replace('▶ ','') : n + '번째') + ' 듣기');
-  };
-  window.toggleAllPlay = function(){
-    if (cur === 0 && !a.paused) { a.pause(); return; }
-    playSrc(FULL, 0, '단원 전체 듣기' + (TOTAL ? ' — ' + TOTAL + ' 단어' : ''));
-  };
-  a.addEventListener('play', function(){
-    resetLabels();
-    var b = activeBtn(); if (b) { b.textContent = '⏸ 멈춤'; b.classList.add('active'); }
-    if ('mediaSession' in navigator) {
-      navigator.mediaSession.metadata = new MediaMetadata({
-        title: a._title || '단원 전체 듣기', artist: UNIT_TITLE, album: 'AMY Study App'
-      });
-      navigator.mediaSession.setActionHandler('play',  function(){ a.play(); });
-      navigator.mediaSession.setActionHandler('pause', function(){ a.pause(); });
-    }
-  });
-  a.addEventListener('pause', resetLabels);
-  a.addEventListener('ended', resetLabels);
-  a.addEventListener('timeupdate', function(){
-    if (a.paused) return;
-    var b = activeBtn(); if (b) b.textContent = '⏸ ' + mmss(a.currentTime);
-  });
-  a.addEventListener('error', function(){ resetLabels(); });
-})();'''
+# 전체듣기·토막듣기·외운단어 빼기 코드는 listen.js 한 곳에 있다(2026-10-31, 페이지마다 두 벌이던 것을 합침).
+LISTEN_TAG = '<script src="listen.js"></script>'
+OLD_ALL = re.compile(r"<script>\s*/\* 단원 전체 듣기 \+ 20개씩.*?</script>\n?", re.S)
+OLD_MEM = re.compile(r"<script>\s*/\* ★2026-09-26 대표님 지시: '외운 단어'.*?</script>\n?", re.S)
 
 # playFileSeq: onended·onerror·catch 가 done()을 여러 번 부르던 것을 한 번으로
 OLD_SEQ = re.compile(r"function playFileSeq\(src, token, done\)\{.*?\n\}", re.S)
@@ -180,24 +127,33 @@ def patch(page):
     rs = ranges(n)            # make_chunk_audio.py 와 똑같은 규칙이어야 한다
     nchunk = len(rs)
 
-    # ① 토막 버튼 — audio 태그 바로 뒤에
-    if nchunk and 'chunkplay' not in s:
-        btns = ''
-        for k, (a1, b1) in enumerate(rs):
-            lab = '▶ %d~%d' % (a1, b1)
-            btns += ('<button class="blind-btn chunkplay" data-part="%d" data-label="%s" '
-                     'title="%d~%d번 단어만 듣기" onclick="playAllFrom(%d)">%s</button>'
-                     % (k + 1, lab, a1, b1, k + 1, lab))
-        s, c = re.subn(r'(<audio id="allplay-audio"[^>]*></audio>)', r'\1' + btns, s, count=1)
-        if c: notes.append('토막버튼 %d개' % nchunk)
+    # ① 토막 버튼 — 이 페이지 단어 수로 늘 다시 만든다(다른 페이지 틀에서 복사된 버튼이 남지 않게)
+    s = re.sub(r'<button class="blind-btn chunkplay"[^>]*>[^<]*</button>', '', s)
+    btns = ''
+    for k, (a1, b1) in enumerate(rs):
+        lab = '▶ %d~%d' % (a1, b1)
+        btns += ('<button class="blind-btn chunkplay" data-part="%d" data-label="%s" '
+                 'title="%d~%d번 단어만 듣기" onclick="playAllFrom(%d)">%s</button>'
+                 % (k + 1, lab, a1, b1, k + 1, lab))
+    if btns:
+        s = re.sub(r'(<audio id="allplay-audio"[^>]*></audio>)', lambda m: m.group(1) + btns, s, count=1)
+    notes.append('토막버튼 %d개' % nchunk)
 
     # 단어 수를 버튼에 심어 둔다(잠금화면 제목용)
     if 'data-total=' not in s:
         s = s.replace('id="allplay-btn"', 'id="allplay-btn" data-total="%d"' % n, 1)
+    else:
+        s = re.sub(r'data-total="\d+"', 'data-total="%d"' % n, s, count=1)
 
-    # ② 전체듣기 블록 교체
-    s2, c = re.subn(r"/\* 단원 전체 듣기.*?\n\}\)\(\);", lambda m: NEW_ALL, s, count=1, flags=re.S)
-    if c: s, _ = s2, notes.append('전체듣기 교체')
+    # ② 듣기 코드는 listen.js 하나 — 페이지 안의 옛 두 벌이 있으면 지우고 그 자리에 태그 하나
+    if LISTEN_TAG not in s:
+        m = OLD_ALL.search(s) or OLD_MEM.search(s)
+        pos = m.start() if m else s.rfind('<script src="studylog.js"></script>')
+        if pos < 0: pos = s.rfind('</body>')
+        s = s[:pos] + LISTEN_TAG + '\n' + s[pos:]
+    s = OLD_ALL.sub('', s); s = OLD_MEM.sub('', s)
+    if s.count('window.toggleAllPlay = function'):
+        raise RuntimeError(os.path.basename(page) + ': 듣기 코드가 페이지 안에 남아 있다(두 벌 금지)')
 
     # ③ 버그 수정 셋
     s2, c = OLD_SEQ.subn(lambda m: NEW_SEQ, s, count=1)
@@ -205,16 +161,6 @@ def patch(page):
     if OLD_LIST in s: s = s.replace(OLD_LIST, NEW_LIST, 1); notes.append('낱개순차')
     if OLD_STOP in s: s = s.replace(OLD_STOP, NEW_STOP, 1); notes.append('stopSeq')
     if OLD_SPEAK in s: s = s.replace(OLD_SPEAK, NEW_SPEAK, 1); notes.append('speak')
-
-    # ④ 2026-10-30: '외운 단어 빼고 듣기' 블록은 반드시 전체듣기 블록보다 뒤에 있어야 한다.
-    #    앞에 있으면 전체듣기 블록이 toggleAllPlay 를 다시 덮어써서 외운 단어까지 다 나온다
-    #    (수학 5~8단원에서 실제로 그랬다). 앞에 있으면 맨 뒤(studylog.js 앞 또는 </body> 앞)로 옮긴다.
-    m = re.search(r"<script>\s*/\* ★2026-09-26 대표님 지시: '외운 단어'.*?</script>\s*", s, re.S)
-    k = s.rfind("window.toggleAllPlay = function(){\n    if (cur === 0")
-    if m and k > m.start():
-        blk = m.group(0); s = s[:m.start()] + s[m.end():]
-        anchor = '<script src="studylog.js"></script>' if '<script src="studylog.js"></script>' in s else '</body>'
-        s = s.replace(anchor, blk.rstrip() + '\n' + anchor, 1); notes.append('외운단어 블록 뒤로')
 
     if s != s0:
         open(page, 'w', encoding='utf-8').write(s)

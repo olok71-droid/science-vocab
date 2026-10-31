@@ -77,12 +77,8 @@
     return '';
   }
   var acc = {}, last = Date.now(), lastAct = Date.now();
-  var lastTap = 0, lastTapEl = null;   // 마지막으로 손가락으로 누른 때와 누른 것
   ['pointerdown', 'keydown', 'scroll', 'touchstart', 'input', 'click'].forEach(function(ev){
-    window.addEventListener(ev, function(e){
-      lastAct = Date.now();
-      if (ev === 'pointerdown' || ev === 'click' || ev === 'touchstart' || ev === 'keydown') { lastTap = Date.now(); lastTapEl = e.target; }
-    }, { passive: true, capture: true });
+    window.addEventListener(ev, function(){ lastAct = Date.now(); }, { passive: true, capture: true });
   });
   function tick(){
     var now = Date.now(), dt = now - last; last = now;
@@ -100,10 +96,10 @@
   setInterval(tick, 1000);
   setInterval(function(){ dumpTime(); flush(); }, 60e3);
   document.addEventListener('visibilitychange', function(){
-    if (document.visibilityState === 'hidden') { dumpTime(); seqDump(); flush(); }
+    if (document.visibilityState === 'hidden') { dumpTime(); flush(); }
     else { last = Date.now(); lastAct = Date.now(); flush(); }
   });
-  window.addEventListener('pagehide', function(){ dumpTime(); seqDump(); flush(); });
+  window.addEventListener('pagehide', function(){ dumpTime(); flush(); });
   window.addEventListener('online', flush);
 
   // ── 단어 이름 찾기 ──
@@ -143,192 +139,124 @@
     return r || String(x).replace(/_/g, ' ');
   }
 
-  // ── 외운 단어: memv_ 저장을 지켜본다 ──
-  try {
-    var origSet = Storage.prototype.setItem;
-    Storage.prototype.setItem = function(k, v){
-      if (this === window.localStorage && typeof k === 'string' && k.indexOf('memv_') === 0) {
-        try {
-          var from = k === 'memv_opic' ? 'opic' : k === 'memv_jenny' ? 'jenny' : null;
-          var before = JSON.parse(this.getItem(k) || '[]') || [];
-          var after = JSON.parse(v || '[]') || [];
-          var b = {}, a = {};
-          before.forEach(function(x){ b[x] = 1; });
-          after.forEach(function(x){ a[x] = 1; });
-          var plus = after.filter(function(x){ return !b[x]; });
-          var minus = before.filter(function(x){ return !a[x]; });
-          if (plus.length + minus.length <= 10) {
-            plus.forEach(function(x){ add('mem', wordOf(x, from), 1); });
-            minus.forEach(function(x){ add('unmem', wordOf(x, from), 1); });
-          } else if (minus.length && !after.length) {
-            add('unmem', '외움 표시 모두 지움', minus.length);
-          }
-        } catch(e){}
-      }
-      return origSet.apply(this, arguments);
-    };
-  } catch(e){}
+  // ── 아래부터는 페이지의 기능을 덮어쓰지 않는다 ──
+  // ★2026-10-31: 예전엔 speak·updateSpellStats 같은 페이지 기능을 같은 이름으로 다시 만들어 감쌌다(덧붙이기).
+  //   지금은 버튼 누름(click)과 화면 변화를 옆에서 지켜보기만 한다. 페이지 기능은 한 벌 그대로다.
 
-  // ── 발음 들은 단어 ──
-  // 손으로 단어 하나를 눌러 들은 것만 '발음 들은 단어'로 남긴다.
-  // 전체·부분 듣기 버튼으로 이어서 나오는 소리는 단어로 남기지 않고 듣기 시간으로 센다.
-  function tappedOne(){
-    if (Date.now() - lastTap > 1500 || !lastTapEl || !lastTapEl.closest) return false;
-    var b = lastTapEl.closest('button,a,[onclick]');
-    if (!b) return true;
-    if (/듣기|▶/.test(b.textContent || '') || /chunkplay/.test(b.className || '')) return false;
-    return !/^\s*(playAll|toggleAllPlay|togglePlayAll|playSection|playDay|opDrill|opPlayAll|playList)/.test(b.getAttribute('onclick') || '');
+  function memSnapshot(){
+    var o = {};
+    try { for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (k && k.indexOf('memv_') === 0) o[k] = ls(k) || '[]'; } } catch(e){}
+    return o;
   }
-  var lastSay = {}, noSay = false;
+  function memDiff(before){
+    var after = memSnapshot(), keys = {};
+    for (var k in before) keys[k] = 1;
+    for (var k2 in after) keys[k2] = 1;
+    Object.keys(keys).forEach(function(k){
+      if ((before[k] || '[]') === (after[k] || '[]')) return;
+      var from = k === 'memv_opic' ? 'opic' : k === 'memv_jenny' ? 'jenny' : null;
+      var b = [], a = [];
+      try { b = JSON.parse(before[k] || '[]') || []; a = JSON.parse(after[k] || '[]') || []; } catch(e){ return; }
+      var B = {}, A = {};
+      b.forEach(function(x){ B[x] = 1; }); a.forEach(function(x){ A[x] = 1; });
+      var plus = a.filter(function(x){ return !B[x]; }), minus = b.filter(function(x){ return !A[x]; });
+      if (plus.length + minus.length <= 10) {
+        plus.forEach(function(x){ add('mem', wordOf(x, from), 1); });
+        minus.forEach(function(x){ add('unmem', wordOf(x, from), 1); });
+      } else if (minus.length && !a.length) {
+        add('unmem', '외움 표시 모두 지움', minus.length);
+      }
+    });
+  }
+
+  // ── 발음 들은 단어(손으로 단어 하나를 눌렀을 때만) ──
+  var lastSay = {};
   function say(word){
-    if (noSay || !tappedOne()) return;
     var w = (word || '').trim(); if (!w) return;
     var now = Date.now();
-    if (lastSay[w] && now - lastSay[w] < 1500) return;   // 같은 단어가 두 길(speak·재생)로 겹쳐 들어오는 것 한 번만
+    if (lastSay[w] && now - lastSay[w] < 1500) return;
     lastSay[w] = now;
     add('say', w, 1);
   }
-  if (typeof window.speak === 'function') {
-    var origSpeak = window.speak;
-    window.speak = function(text){ try { say(wordOf(slug(text))); } catch(e){} return origSpeak.apply(this, arguments); };
+  function argOf(oc, fn){
+    var m = oc.match(new RegExp(fn + "\\(\\s*(['\"]?)(.*?)\\1\\s*[,)]"));
+    return m ? m[2] : null;
   }
-
-  // ── 듣기 시간 ──
-  // 합친 mp3(전체 _all · 부분 _pN)는 실제로 소리가 난 시간을 그 이름으로 센다(화면이 꺼져도 센다).
-  // 한 재생기에서 주소만 바꿔 다른 토막을 틀어도, 바뀌는 순간(emptied·abort) 앞 토막을 끊어 따로 센다.
-  function chunkLabel(src){
-    var f = src.split('/').pop() || '', m;
-    if (/_all\.mp3$/.test(f)) return '전체 듣기';
-    if ((m = src.match(/\/audio\/[^\/]+_p(\d+)\.mp3$/))) return '부분 듣기 ' + m[1];
-    return null;
-  }
-  function clipWord(src){
-    var m;
-    if (/\/audio\/sci\//.test(src)) return wordOf((src.split('/').pop() || '').replace(/\.mp3$/, ''));
-    if ((m = src.match(/\/audio\/jenny\/w(\d+)\.mp3$/))) return wordOf(m[1], 'jenny');
-    if ((m = src.match(/\/audio\/opic\/e(\d+)\.mp3$/))) return wordOf(m[1], 'opic');
-    return null;
-  }
-  function srcOf(el){ try { return decodeURIComponent((el.currentSrc || el.src || '').split('?')[0]); } catch(e){ return el.currentSrc || el.src || ''; } }
-
-  // 낱개 소리를 이어서 튼 시간(외운 단어가 있을 때의 전체 듣기, 제니·OPIc 이어듣기)
-  var seqSec = 0, seqTimer = null;
-  function seqAdd(sec){
-    seqSec += sec;
-    clearTimeout(seqTimer);
-    seqTimer = setTimeout(function(){ seqDump(); flush(); }, 20e3);
-  }
-  function seqDump(){ if (seqSec >= 3) add('listen', '이어 듣기', seqSec); seqSec = 0; }
-
-  function track(el){
-    if (el.__amyT) return;
-    var st = el.__amyT = { t: null, label: null, seq: false };
-    el.addEventListener('playing', function(){
-      var label = chunkLabel(srcOf(el)), seq = !label && !el.__amyTap;
-      if (st.t != null) {
-        if (label === st.label && seq === st.seq) return;   // 끊겼다 다시 나온 같은 소리(버퍼링)는 이어서 센다
-        stop();
-      }
-      st.label = label; st.seq = seq;
-      st.t = (label || seq) ? Date.now() : null;
-    });
-    function stop(){
-      if (st.t == null) return;
-      var sec = (Date.now() - st.t) / 1000; st.t = null;
-      if (st.label) { if (sec >= 3) { add('listen', st.label, sec); flush(); } }
-      else if (st.seq) seqAdd(sec);
-    }
-    ['pause', 'ended', 'emptied', 'abort', 'error'].forEach(function(ev){ el.addEventListener(ev, stop); });
-    window.addEventListener('pagehide', stop);
-  }
-  try {
-    var origPlay = HTMLMediaElement.prototype.play;
-    HTMLMediaElement.prototype.play = function(){
-      try {
-        this.__amyTap = tappedOne();
-        track(this);
-        var w = clipWord(srcOf(this));
-        if (w && this.__amyTap) say(w);
-      } catch(e){}
-      return origPlay.apply(this, arguments);
-    };
-  } catch(e){}
-
-  // ── 단어시험(스펠링) ──
-  if (typeof window.updateSpellStats === 'function') {
-    var origUSS = window.updateSpellStats, pc = null, pw = null;
-    window.updateSpellStats = function(){
-      try {
-        if (typeof spellState !== 'undefined' && spellState) {
-          var c = spellState.correct || 0, w = spellState.wrong || 0;
-          var cur = spellState.current;
-          var name = cur ? (cur.en + (cur.ko ? ' · ' + cur.ko : '')) : '';
-          if (pc != null && c > pc) add('spell', name, 1);
-          if (pw != null && w > pw) add('spell', name, 0);
-          pc = c; pw = w;
-        }
-      } catch(e){}
-      return origUSS.apply(this, arguments);
-    };
-  }
-  if (typeof window.showAnswer === 'function' && typeof window.updateSpellStats === 'function') {
-    var origSA = window.showAnswer;
-    window.showAnswer = function(){
-      try {
-        // 틀려서 정답이 저절로 나온 경우(wrong이 이미 늘었음)는 '틀림' 하나로만 남긴다.
-        if (typeof spellState !== 'undefined' && spellState && spellState.current && !spellState.revealed && spellState.wrong === pw)
-          add('spell', spellState.current.en + (spellState.current.ko ? ' · ' + spellState.current.ko : ''), -1);
-      } catch(e){}
-      noSay = true;   // 정답 보기의 자동 발음은 '발음 들은 단어'가 아니다
-      try { return origSA.apply(this, arguments); } finally { noSay = false; }
-    };
-  }
-
-  // ── 서술형 문제(모범답안 보기 · 스스로 채점) ──
   function qText(qi){
     var c = document.getElementById('q-card-' + qi);
     var t = c && c.querySelector('.q-text');
-    return t ? t.textContent.replace(/\s+/g, ' ').trim() : ('문제 ' + (qi + 1));
+    return t ? t.textContent.replace(/\s+/g, ' ').trim() : ('문제 ' + (parseInt(qi, 10) + 1));
   }
-  if (typeof window.showModel === 'function') {
-    var origSM = window.showModel;
-    window.showModel = function(qi){
-      try {
-        var c = document.getElementById('q-card-' + qi);
-        var ta = c && c.querySelector('textarea');
-        add('quiz', qText(qi), ta ? ta.value.trim().length : null);
-      } catch(e){}
-      return origSM.apply(this, arguments);
-    };
-  }
-  if (typeof window.rateSelf === 'function') {
-    var origRS = window.rateSelf;
-    window.rateSelf = function(qi, level){
-      try {
-        var c = document.getElementById('q-card-' + qi);
-        var b = c && c.querySelector('.q-self-rate .rate-' + level);
-        add('rate', qText(qi) + ' ⇒ ' + (b ? b.textContent.trim() : level), null);
-      } catch(e){}
-      return origRS.apply(this, arguments);
-    };
+  function spellName(){
+    try { var c = (typeof spellState !== 'undefined' && spellState) ? spellState.current : null; return c ? c.en + (c.ko ? ' · ' + c.ko : '') : ''; } catch(e){ return ''; }
   }
 
-  // ── 객관식 퀴즈(중국어 등) ──
-  if (typeof window.answerQuiz === 'function') {
-    var origAQ = window.answerQuiz;
-    window.answerQuiz = function(){
-      var ok0 = null, cur = null, done = true;
-      try { if (typeof quiz !== 'undefined') { ok0 = quiz.ok; cur = quiz.cur; done = quiz.answered; } } catch(e){}
-      var r = origAQ.apply(this, arguments);
-      try {
-        if (!done && cur) {
-          var name = (cur.hz || cur.en || '') + (cur.py ? ' (' + cur.py + ')' : '') + (cur.ko ? ' · ' + cur.ko : '');
-          add('pick', name, quiz.ok > ok0 ? 1 : 0);
-        }
-      } catch(e){}
-      return r;
+  // 버튼을 누르는 순간(페이지 기능이 돌기 전)과 돈 뒤를 본다
+  document.addEventListener('click', function(e){
+    var el = e.target && e.target.closest ? e.target.closest('[onclick]') : null;
+    var oc = el ? (el.getAttribute('onclick') || '') : '';
+    var before = memSnapshot();
+    var v;
+    if ((v = argOf(oc, 'speak')) !== null) say(wordOf(slug(v)));
+    else if ((v = oc.match(/new Audio\(['"]audio\/sci\/([^'"]+)\.mp3['"]\)/))) say(wordOf(v[1]));
+    else if (/playClip\(\s*['"]w['"]/.test(oc) && (v = oc.match(/playClip\([^,]+,\s*(\d+)/))) say(wordOf(v[1], 'jenny'));
+    else if ((v = argOf(oc, 'opPlay')) !== null) say(wordOf(v, 'opic'));
+    else if ((v = argOf(oc, 'showModel')) !== null) {
+      var c = document.getElementById('q-card-' + v), ta = c && c.querySelector('textarea');
+      add('quiz', qText(v), ta ? ta.value.trim().length : null);
+    }
+    else if ((v = argOf(oc, 'rateSelf')) !== null) add('rate', qText(v) + ' ⇒ ' + (el.textContent || '').trim(), null);
+    else if (/^\s*showAnswer\(/.test(oc)) {
+      try { if (typeof spellState !== 'undefined' && spellState && spellState.current && !spellState.revealed) add('spell', spellName(), -1); } catch(err){}
+    }
+    else if (/^\s*answerQuiz\(/.test(oc)) {
+      var q0 = null;
+      try { if (typeof quiz !== 'undefined' && quiz && !quiz.answered && quiz.cur) q0 = { ok: quiz.ok, cur: quiz.cur }; } catch(err){}
+      if (q0) setTimeout(function(){
+        try { var d = q0.cur; add('pick', (d.hz || d.en || '') + (d.py ? ' (' + d.py + ')' : '') + (d.ko ? ' · ' + d.ko : ''), quiz.ok > q0.ok ? 1 : 0); } catch(err){}
+      }, 0);
+    }
+    setTimeout(function(){ memDiff(before); }, 0);
+  }, true);
+
+  // ── 단어시험: 맞음·틀림 숫자 칸이 바뀌는 것을 본다 ──
+  ['sp-correct', 'sp-wrong'].forEach(function(id){
+    var box = document.getElementById(id);
+    if (!box || !window.MutationObserver) return;
+    var prev = parseInt(box.textContent, 10) || 0;
+    new MutationObserver(function(){
+      var now = parseInt(box.textContent, 10) || 0;
+      if (now > prev) add('spell', spellName(), id === 'sp-correct' ? 1 : 0);
+      prev = now;
+    }).observe(box, { childList: true, characterData: true, subtree: true });
+  });
+
+  // ── 듣기 시간 ──
+  // 합친 mp3(전체 _all · 부분 _pN)는 화면에 있는 재생기(allplay-audio)를 지켜본다(화면이 꺼져도 센다).
+  var ap = document.getElementById('allplay-audio');
+  if (ap) {
+    var st = { t: null, label: null };
+    var label = function(){
+      var src = decodeURIComponent((ap.currentSrc || ap.src || '').split('?')[0]), m;
+      if (/_all\.mp3$/.test(src)) return '전체 듣기';
+      if ((m = src.match(/_p(\d+)\.mp3$/))) return '부분 듣기 ' + m[1];
+      return null;
     };
+    var stop = function(){
+      if (st.t == null) return;
+      var sec = (Date.now() - st.t) / 1000; st.t = null;
+      if (sec >= 3) { add('listen', st.label, sec); flush(); }
+    };
+    ap.addEventListener('playing', function(){
+      var l = label();
+      if (st.t != null && l === st.label) return;   // 끊겼다 다시 나온 같은 소리는 이어서 센다
+      stop(); st.label = l; st.t = l ? Date.now() : null;
+    });
+    ['pause', 'ended', 'emptied', 'abort', 'error'].forEach(function(ev){ ap.addEventListener(ev, stop); });
+    window.addEventListener('pagehide', stop);
   }
+  // 낱개 발음 이어 듣기(외운 단어가 있을 때)는 듣기를 맡은 listen.js 가 끝날 때 알려 준다.
+  window.amyLogListen = function(label, sec){ if (sec >= 3) { add('listen', label, sec); flush(); } };
 
   flush();
   }
