@@ -4,7 +4,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-31",
   "type": "과제",
   "title": "STRUCTURE OF LEDU TALKS",
-  "ko": "LEDU 토크 구성 과제",
+  "ko": "LEDU 토크 구성 과제가 올라왔다",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
  },
@@ -13,7 +13,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "과제",
   "title": "NARRATIVE COMMON ASSESSMENT",
-  "ko": "서사문 공통평가 과제 제출",
+  "ko": "서사문 공통평가 과제",
   "due": "2026-10-30",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -22,7 +22,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "공지",
   "title": "Dear Students, as homework this week, please complete the revision worksheet given in Friday's lesson to help you prepar",
-  "ko": "CA2 대비 복습 워크시트 숙제 완성",
+  "ko": "CA2 대비 복습 워크시트 숙제 완료",
   "due": "2026-11-03",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -31,7 +31,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "공지",
   "title": "Maths Week 2026: Get Involved!",
-  "ko": "수학주간 미스터리·도형 추정 대회 참여 안내",
+  "ko": "수학주간 미스터리·도형 추정 행사 참여 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -40,7 +40,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "자료",
   "title": "Answers for worksheet",
-  "ko": "CA2 복습 워크시트 정답 PDF 게시",
+  "ko": "CA2 복습 워크시트 풀이 답안 PDF",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -49,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "자료",
   "title": "Keyboard Notes",
-  "ko": "키보드 음표 자료 게시",
+  "ko": "키보드 악보 자료 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -340,7 +340,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "공지",
   "title": "Your 2nd Continues Assessment (CA2) will be on Tuesday 3rd November 2026.",
-  "ko": "CA2 시험 40분 33점, 계산기 지참",
+  "ko": "CA2 시험 안내(3~6장), 계산기 지참",
   "due": "2026-11-03",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -391,4 +391,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4/a/ODI2NTgyNjIzMTI1/details"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-10-31 20:15";
+window.CLASSROOM_POSTS_AT = "2026-11-01 18:54";

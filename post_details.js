@@ -604,5 +604,68 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-29"
+ },
+ "영어 (Mr Glanz)|NARRATIVE COMMON ASSESSMENT": {
+  "en": "NARRATIVE COMMON ASSESSMENT\nPlease type your final copy of your story directly into the attached doc. Make sure you click submit / turn in before 3:30pm, or I will not be able to mark it.",
+  "ko": "서사문 공통 평가(NARRATIVE COMMON ASSESSMENT)\n이야기의 최종본(final copy)을 첨부된 문서에 바로 입력하세요. 오후 3시 30분 전에 반드시 제출(submit / turn in)을 누르세요. 그렇지 않으면 채점할 수 없습니다.",
+  "files": [],
+  "at": "2026-11-01"
+ },
+ "수학 (Mr Anan)|Dear Students, as homework this week, please complete the revision worksheet given in Fridays lesson to help you prepar": {
+  "en": "Dear Students, as homework this week, please complete the revision worksheet given in Friday's lesson to help you prepare for CA2 next Tuesday.",
+  "ko": "학생 여러분, 이번 주 숙제로 다음 주 화요일 CA2(평가)를 준비할 수 있도록 금요일 수업 때 나눠 준 복습 학습지(revision worksheet)를 완성해 오세요.",
+  "files": [],
+  "at": "2026-11-01"
+ },
+ "수학 (Mr Anan)|Maths Week 2026: Get Involved!": {
+  "en": "Maths Week 2026: Get Involved!\n\nDear Students,\n\nWe are excited to announce Maths Week 2026, taking place from 2nd to 6th November!\n\nThroughout the week, we have planned a range of exciting activities designed to challenge your thinking, spark your curiosity and show you that Mathematics goes far beyond the classroom.\n\nRead on to discover what's happening and how you can get involved!\n\n1. The Great Maths Mystery - FOUR SUSPECTS. FIVE DAYS. ONE CULPRIT.\n\nThe Maths Department needs your help! Our prized Golden Calculator has mysteriously vanished from its display cabinet, and four teachers are under suspicion!\n\nMeet the suspects:\nMr Boyce\nMr Hember\nMr Lim\nMr Ovenden\n\nEach suspect has an alibi, but can you work out who is telling the truth?\n\nThroughout Maths Week, new clues and evidence will be released daily during tutor time and via Google Classroom. Your mission is to crack mathematical codes, examine the evidence, question the alibis and identify the culprit.\n\nPut your logical reasoning, code-breaking and problem-solving skills to the test as you piece together the mystery.\n\nRemember: Don't accuse anyone without evidence!\n\nWill you be the detective who solves the case? Go through these slides to be ready to investigate: The Great Maths Mystery\n\n2. Maths Week Shape Estimation Challenge\n\nHow good are your estimation skills?\n\nThree posters, labelled Monday, Wednesday and Friday, will be displayed on the Mathematics bulletin board along the Maths corridor, beside Mr Hember's classroom.\n\nYour challenge is to estimate the number of shapes on each poster and submit your answers using the Google Form below.\n\nSubmit your answers (only once for all three estimation) via the Google Form below\nSubmission deadline: Friday, 6th November 2026, at 3:00 pm.\n\n3. Mathematics Competition Questions as Lesson Starters\n\nThroughout Maths Week, your teachers will introduce actual Mathematics competition questions as lesson starters.\n\nThese questions will challenge you to think critically, explore different approaches and apply your mathematical knowledge in unfamiliar situations, beyond the usual examination-style questions.\n\nDiscuss your ideas with your classmates, challenge one another's reasoning and discover new ways of thinking mathematically!\n\n4. American Mathematics Competition (AMC)\n\nFor the first time, SJIIS will be participating in the American Mathematics Competition (AMC)!\n\nStudents who have registered will take part in the competition on Friday, 6th November 2026, bringing our Maths\nWeek celebrations to an exciting conclusion.\n\nWe wish all participants the very best as they take on this international mathematical challenge!\n\nLet's make Maths Week 2026 a week of curiosity, creativity and mathematical discovery!\nWhether you are solving a challenging problem, estimating shapes or exploring a new mathematical idea, we encourage everyone to get involved.\n\nThe Mathematics Department\nhttps://forms.gle/raf3W2zSivDaad8W8",
+  "ko": "수학 주간(Maths Week) 2026: 함께 참여하세요!\n\n학생 여러분,\n\n11월 2일부터 6일까지 열리는 수학 주간(Maths Week) 2026을 알리게 되어 기쁩니다!\n\n한 주 동안 여러분의 생각에 도전하고, 호기심을 일깨우고, 수학(Mathematics)이 교실을 훨씬 넘어선다는 것을 보여 줄 다양하고 신나는 활동을 준비했습니다.\n\n어떤 활동이 있는지, 어떻게 참여할 수 있는지 아래에서 확인하세요!\n\n1. 위대한 수학 미스터리(The Great Maths Mystery) - 용의자 넷. 닷새. 범인 하나.\n\n수학과가 여러분의 도움이 필요합니다! 우리의 소중한 황금 계산기(Golden Calculator)가 진열장에서 수수께끼처럼 사라졌고, 선생님 네 분이 의심을 받고 있습니다!\n\n용의자를 소개합니다:\nBoyce 선생님\nHember 선생님\nLim 선생님\nOvenden 선생님\n\n용의자마다 알리바이(alibi)가 있습니다. 누가 진실을 말하고 있는지 알아낼 수 있나요?\n\n수학 주간 동안 매일 튜터 시간(tutor time)과 구글 클래스룸을 통해 새로운 단서와 증거가 공개됩니다. 여러분의 임무는 수학 암호(mathematical codes)를 풀고, 증거를 살피고, 알리바이를 따져 보고, 범인(culprit)을 찾아내는 것입니다.\n\n미스터리를 맞춰 가면서 논리적 추론(logical reasoning), 암호 해독(code-breaking), 문제 해결(problem-solving) 실력을 시험해 보세요.\n\n기억하세요: 증거 없이 누구도 고발하지 마세요!\n\n사건을 해결하는 탐정은 여러분이 될까요? 수사 준비를 위해 이 슬라이드를 살펴보세요: The Great Maths Mystery\n\n2. 수학 주간 도형 어림하기 챌린지(Shape Estimation Challenge)\n\n여러분의 어림하기(estimation) 실력은 얼마나 좋을까요?\n\n월요일·수요일·금요일이라고 적힌 포스터 세 장이 수학 복도, Hember 선생님 교실 옆에 있는 수학 게시판에 붙습니다.\n\n여러분의 도전 과제는 포스터마다 도형(shapes)이 몇 개인지 어림하고, 아래 구글 폼으로 답을 제출하는 것입니다.\n\n아래 구글 폼으로 답을 제출하세요(세 개 어림 모두 한 번에, 한 번만)\n제출 마감: 2026년 11월 6일 금요일 오후 3시.\n\n3. 수업 시작 문제로 나오는 수학 경시대회 문제(Mathematics Competition Questions)\n\n수학 주간 동안 선생님들이 실제 수학 경시대회 문제를 수업 시작 문제(lesson starters)로 내 주십니다.\n\n이 문제들은 평소의 시험식 문제를 넘어, 비판적으로 생각하고(think critically), 여러 가지 접근법을 탐구하고, 익숙하지 않은 상황에 수학 지식을 적용하도록 여러분에게 도전할 것입니다.\n\n반 친구들과 생각을 나누고, 서로의 추론(reasoning)을 따져 보고, 수학적으로 생각하는 새로운 방법을 발견하세요!\n\n4. 미국 수학 경시대회(American Mathematics Competition, AMC)\n\nSJIIS가 처음으로 미국 수학 경시대회(AMC)에 참가합니다!\n\n신청한 학생들은 2026년 11월 6일 금요일에 대회에 참가하며, 이것으로 수학\n주간 행사가 신나게 마무리됩니다.\n\n이 국제 수학 도전에 나서는 모든 참가자에게 행운을 빕니다!\n\n수학 주간 2026을 호기심과 창의성, 수학적 발견의 한 주로 만들어 봅시다!\n어려운 문제를 풀든, 도형을 어림하든, 새로운 수학 아이디어를 탐구하든, 모두 참여하기를 바랍니다.\n\n수학과(The Mathematics Department)\nhttps://forms.gle/raf3W2zSivDaad8W8",
+  "files": [
+   {
+    "name": "The Great Maths Mystery",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU/edit?usp=classroom_web",
+    "local": "post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU.pdf"
+   },
+   {
+    "name": "Google Forms: Sign-in",
+    "kind": "form",
+    "url": "https://forms.gle/raf3W2zSivDaad8W8",
+    "local": null
+   }
+  ],
+  "at": "2026-11-01"
+ },
+ "수학 (Mr Anan)|Answers for worksheet": {
+  "en": "Answers for worksheet",
+  "ko": "학습지(worksheet) 답안",
+  "files": [
+   {
+    "name": "Y9_CA2_120min_Worked_Answers.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/12zSocJXEf-c9mSDgzUojrEuqpYMDcESJ/view?usp=classroom_web",
+    "local": "post_files/12zSocJXEf-c9mSDgzUojrEuqpYMDcESJ.pdf"
+   }
+  ],
+  "at": "2026-11-01"
+ },
+ "라살 교육|STRUCTURE OF LEDU TALKS": {
+  "en": "STRUCTURE OF LEDU TALKS\nClick the link below and work on your LEDU Talks Structure. Follow the instructions found in the Worksheet.",
+  "ko": "LEDU 토크 구성(STRUCTURE OF LEDU TALKS)\n아래 링크를 눌러 LEDU 토크 구성(LEDU Talks Structure)을 작성하세요. 워크시트(Worksheet)에 있는 지시사항을 따르세요.",
+  "files": [],
+  "at": "2026-11-01"
+ },
+ "음악 (Mr Everett)|Keyboard Notes": {
+  "en": "Keyboard Notes",
+  "ko": "건반 음이름(Keyboard Notes)",
+  "files": [
+   {
+    "name": "Grand Staff Guide.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1vwwtLLRvkZqduAMgC_JUs9s_Bu_LkHzs/view?usp=classroom_web",
+    "local": "pdfs/music/Grand Staff Guide.pdf"
+   }
+  ],
+  "at": "2026-11-01"
  }
 };
