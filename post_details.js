@@ -433,31 +433,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
- "튜터 (Mr Cassels)|I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int": {
-  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
-  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 정보를 알려드리게 되어 기쁩니다.\n\n'갈등 속의 사람과 지구(People and Planet in Conflict)'를 주제로 한 이 대회는 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 누구나 참가할 수 있습니다.  에세이 제목(essay titles), 분량(length), 제출 방법(submission details)의 자세한 내용은 첨부 파일에 있습니다. \n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n문의: Karina Mariadas, k.mariadas@elc.edu.my",
-  "files": [
-   {
-    "name": "k.mariadas@elc.edu.my",
-    "kind": "web",
-    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
-    "local": null
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
-    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
-    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
-   }
-  ],
-  "at": "2026-10-27"
- },
  "튜터 (Mr Cassels)|Rewards between 21st September and today!": {
   "en": "Rewards between 21st September and today! \nThe next Rewards Slips for Skip the Line or Lift Pass will be handed out on Wednesday 11th and Thursday 12th November for the top students.",
   "ko": "9월 21일부터 오늘까지의 보상(Rewards)! \n줄 서지 않기(Skip the Line) 또는 엘리베이터 이용권(Lift Pass)을 받을 수 있는 다음 보상 쪽지(Rewards Slips)는 11월 11일 수요일과 11월 12일 목요일에 우수 학생(top students)에게 나눠 줄 예정입니다.",
@@ -667,5 +642,138 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-11-01"
+ },
+ "과학 (Mr Phillips)|9 Electricity - Check your Progress": {
+  "en": "9 Electricity - Check your Progress",
+  "ko": "9 전기(Electricity) - 학습 진도 점검(Check your Progress)",
+  "files": [
+   {
+    "name": "‪Circuit Construction Kit: DC‬",
+    "kind": "web",
+    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
+    "local": null
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "과학 (Mr Phillips)|upload resistance graph - here": {
+  "en": "upload resistance graph - here",
+  "ko": "저항(resistance) 그래프 업로드 - 여기에",
+  "files": [],
+  "at": "2026-11-02"
+ },
+ "과학 (Mr Phillips)|9.4 Practical Circuits workbook questions": {
+  "en": "9.4 Practical Circuits workbook questions",
+  "ko": "9.4 실용 회로(Practical Circuits) 워크북 문제",
+  "files": [
+   {
+    "name": "9.4 Practical circuits - answers",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4/edit?usp=classroom_web",
+    "local": "post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4.pdf"
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "과학 (Mr Phillips)|9.4 Practical Circuits": {
+  "en": "9.4 Practical Circuits",
+  "ko": "9.4 실용 회로(Practical Circuits)",
+  "files": [
+   {
+    "name": "9.4 Practical circuits",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni/view?usp=classroom_web",
+    "local": "post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni.pdf"
+   },
+   {
+    "name": "Series and Parallel Circuits | Electricity | Physics | FuseSchool",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=8Z0jhQeYDUE",
+    "local": null
+   },
+   {
+    "name": "‪Circuit Construction Kit: DC‬",
+    "kind": "web",
+    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
+    "local": null
+   },
+   {
+    "name": "Resistors Explained & Ohm's Law Made Simple! | What Are Resistors? & How Do Resistors Work?",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=x6jajfprWZo",
+    "local": null
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "수학 (Mr Anan)|MONDAY MATHS MYSTERY CHALLENGE": {
+  "en": "MONDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve",
+  "ko": "월요일 수학 미스터리 챌린지(MONDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(GOLDEN MATHS CALCULATOR)가 도난당했다!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 한다!\n1. 첨부된 슬라이드를 살펴보고 오늘의 퍼즐을 찾는다\n2. 답이 나오면 첨부된 구글 폼(google form) 링크로 제출한다\n3. 매일 새로운 단서(clue)가 구글 클래스룸(google classrooms)에 올라오니 풀어 보아라",
+  "files": [
+   {
+    "name": "MONDAY MATHS WEEK MYSTERY.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5/view?usp=classroom_web",
+    "local": "post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5.pptx"
+   },
+   {
+    "name": "MONDAYS MATHS MYSTERY ANSWER",
+    "kind": "form",
+    "url": "https://forms.gle/MM5jARBPDzLABMKw7",
+    "local": null
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "컴퓨터 과학 (Ms Meha)|Common Assessment 1 Guide": {
+  "en": "Common Assessment 1 Guide",
+  "ko": "공통 평가(Common Assessment) 1 안내",
+  "files": [
+   {
+    "name": "Year9_Python_EAL_Support_Guide.docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1FF-qD4hdGi5IgxI25zwHd-1sPJKOa7a4/view?usp=classroom_web",
+    "local": "post_files/1FF-qD4hdGi5IgxI25zwHd-1sPJKOa7a4.docx"
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "튜터 (Mr Cassels)|MONDAY MATHS MYSTERY CHALLENGE": {
+  "en": "MONDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve\nMONDAYS MATHS MYSTERY ANSWER\nhttps://docs.google.com/forms/d/e/1FAIpQLSe5ffCHYFlyx6Xfphfa5UNatoOEFZCgpIAgzCWXtMUNRuYSGw/viewform",
+  "ko": "월요일 수학 미스터리 챌린지(MONDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(calculator)를 도둑맞았습니다!\n누가 훔쳐 갔는지 알아내려면 날마다 퍼즐(puzzle)을 풀어야 합니다!\n1. 첨부된 슬라이드를 훑어보고 오늘의 퍼즐(puzzle)을 찾으세요\n2. 답을 구했으면 첨부된 구글 폼 링크로 제출하세요\n3. 날마다 여러분의 구글 클래스룸에 풀어야 할 새 단서(clue)가 올라옵니다\n월요일 수학 미스터리 정답(MONDAYS MATHS MYSTERY ANSWER)\nhttps://docs.google.com/forms/d/e/1FAIpQLSe5ffCHYFlyx6Xfphfa5UNatoOEFZCgpIAgzCWXtMUNRuYSGw/viewform",
+  "files": [
+   {
+    "name": "MONDAYS MATHS MYSTERY ANSWER",
+    "kind": "form",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSe5ffCHYFlyx6Xfphfa5UNatoOEFZCgpIAgzCWXtMUNRuYSGw/viewform",
+    "local": null
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "튜터 (Mr Cassels)|Humanities and Social Science Essay Competition 2026-27": {
+  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
+  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 안내를 전하게 되어 기쁩니다.\n\n이 대회는 '갈등 속의 인간과 지구(People and Planet in Conflict)'를 주제로 하며, 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 참가할 수 있습니다. 에세이 제목(essay titles), 분량(length), 제출 방법(submission details)에 관한 자세한 내용은 첨부 파일에서 볼 수 있습니다.\n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n연락처: Karina Mariadas, k.mariadas@elc.edu.my",
+  "files": [
+   {
+    "name": "k.mariadas@elc.edu.my",
+    "kind": "web",
+    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
+    "local": null
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
+    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
+    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
+   }
+  ],
+  "at": "2026-11-02"
  }
 };
