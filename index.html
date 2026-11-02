@@ -564,6 +564,19 @@ body.in-subject .cn-card { display: none; }
 
 <div class="container">
 
+  <div class="tt-card" id="ttCard">
+    <div class="fold-bar" onclick="toggleFold('ttCard')">
+      <span class="fold-name">🗓 시간표</span>
+      <span class="fold-arrow">▾</span>
+    </div>
+    <div class="fold-body">
+      <div class="tt-bar"><button class="tt-toggle" id="ttToggle" type="button">넓게 보기</button></div>
+      <div class="tt-scroll">
+        <table class="tt-table" id="ttTable"></table>
+      </div>
+    </div>
+  </div>
+
   <div class="cn-card gw" id="cnCard">
     <div class="fold-bar" onclick="toggleFold('cnCard')">
       <span class="fold-name">클래스룸 과제</span>
@@ -629,19 +642,6 @@ body.in-subject .cn-card { display: none; }
   (function(){var t=new Date();var k=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
   document.querySelectorAll('#asCard tr[data-end]').forEach(function(r){if(r.getAttribute('data-end')<k)r.classList.add('as-past');});})();
   </script>
-
-  <div class="tt-card" id="ttCard">
-    <div class="fold-bar" onclick="toggleFold('ttCard')">
-      <span class="fold-name">🗓 시간표</span>
-      <span class="fold-arrow">▾</span>
-    </div>
-    <div class="fold-body">
-      <div class="tt-bar"><button class="tt-toggle" id="ttToggle" type="button">넓게 보기</button></div>
-      <div class="tt-scroll">
-        <table class="tt-table" id="ttTable"></table>
-      </div>
-    </div>
-  </div>
 
 <button class="backb" id="backBtn" type="button" onclick="backToSubjects()">← 과목 고르기</button>
   <div class="cat-grid">
@@ -1760,7 +1760,7 @@ function cnRender(){
   var cn = document.getElementById('cnCard'); if (cn) initFold(cn, false);
   var cnca = document.getElementById('cnCardCA'); if (cnca) initFold(cnca, false);
   var cn2 = document.getElementById('cnCard2'); if (cn2) initFold(cn2, false);
-  var tt = document.getElementById('ttCard'); if (tt) initFold(tt, false);
+  var tt = document.getElementById('ttCard'); if (tt) applyFold(tt, true);   // ★2026-11-02 대표님: 시간표는 맨 위, 열 때마다 접힌 채로
 })();
 
 /* 과목 진도표도 접기 */
