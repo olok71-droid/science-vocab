@@ -215,19 +215,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "휴머니티 (Mr Lawrence)|Term 1 Common Assessment 2 Year 9 History": {
-  "en": "Term 1 Common Assessment 2\nYear 9 History\n\nFocus of assessment:\nYear 9 History Unit 2 - World War 1\n\n\nDate of Assessment: Tuesday 3rd November 2026\nDescription of assessment\nThis will be a 40-minute written assessment covering the key knowledge and skills developed during the Causes of the First World War unit. The assessment will include key term definitions, knowledge questions, source-based questions and an extended written response using historical evidence to explain and evaluate the MAINS causes of the First World War.\nAssessment objectives\nKnowledge and Understanding: Demonstrate knowledge and understanding of the MAINS causes of the First World War and the key events, people and developments that increased tensions in Europe before 1914.\nSource Analysis and Interpretation: Use historical sources to identify relevant information and explain how it helps us understand the causes of the First World War.\nHistorical Explanation and Judgement: Explain how different causes contributed to the outbreak of war and make a justified judgement about which cause was the most important.\nMarking criteria\nDemonstrates accurate historical knowledge and understanding of the MAINS causes.\nUses relevant historical facts, people and events to support answers.\nIdentifies and interprets relevant information from historical sources.\nExplains how different factors increased tensions and contributed to the outbreak of war.\nUses appropriate historical terminology.\nDevelops clear, well-structured explanations and supports judgements with relevant evidence.\n\nSkills being assessed and success criteria\nRecall and explain the five MAINS causes: Militarism, Alliance System, Imperialism, Nationalism and Significant Individuals.\nDemonstrate knowledge of key events and developments leading to the First World War.\nIdentify and use relevant evidence from historical sources.\nExplain how and why tensions between European countries increased before 1914.\nConstruct clear, developed historical explanations using evidence.\nWrite a well-supported PEEL paragraph and justify a judgement about the most important cause of the First World War.\n\nSuggested Revision Approaches\nReview the relevant History lessons, notes and resources on Google Classroom.\nRevise the five MAINS causes, ensuring you can define and explain each one, using key examples such as the arms race, European alliances, imperial competition, nationalism, the assassination of Archduke Franz Ferdinand and the Blank Cheque.\nTest yourself on key historical knowledge, people, events and decisions without looking at your notes.\nPractise answering source-based questions and writing clear historical explanations using PEEL, supporting your ideas with accurate evidence and a justified judgement.\nReview the KS3 Humanities Toolkit, Humanities Exam Command Words and KS3 Humanities Practical Revision Tips resources on Google Classroom under Support Materials to help you prepare effectively.",
-  "ko": "1학기 공통 평가(Common Assessment) 2\n9학년 역사(History)\n\n평가 중점:\n9학년 역사 2단원 - 제1차 세계대전(World War 1)\n\n\n평가 날짜: 2026년 11월 3일 화요일\n평가 설명\n이 평가는 40분 동안 치르는 서술형 평가로, 제1차 세계대전의 원인(Causes of the First World War) 단원에서 익힌 핵심 지식과 기술을 다룹니다. 평가에는 핵심 용어 정의(key term definitions), 지식 문제(knowledge questions), 사료 기반 문제(source-based questions), 그리고 역사적 증거(historical evidence)를 사용해 제1차 세계대전의 MAINS 원인(MAINS causes)을 설명하고 평가하는 장문 서술형 답안(extended written response)이 포함됩니다.\n평가 목표\n지식과 이해(Knowledge and Understanding): 제1차 세계대전의 MAINS 원인(MAINS causes)과, 1914년 이전 유럽의 긴장(tensions)을 높인 주요 사건·인물·변화에 대한 지식과 이해를 보여준다.\n사료 분석과 해석(Source Analysis and Interpretation): 역사 사료(historical sources)를 사용해 관련 정보를 찾아내고, 그것이 제1차 세계대전의 원인을 이해하는 데 어떻게 도움이 되는지 설명한다.\n역사적 설명과 판단(Historical Explanation and Judgement): 여러 원인이 전쟁 발발(outbreak of war)에 어떻게 기여했는지 설명하고, 어떤 원인이 가장 중요했는지에 대해 근거 있는 판단(justified judgement)을 내린다.\n채점 기준\nMAINS 원인(MAINS causes)에 대한 정확한 역사 지식과 이해를 보여준다.\n관련된 역사적 사실·인물·사건을 사용해 답을 뒷받침한다.\n역사 사료(historical sources)에서 관련 정보를 찾아내고 해석한다.\n여러 요인(factors)이 어떻게 긴장(tensions)을 높이고 전쟁 발발(outbreak of war)에 기여했는지 설명한다.\n적절한 역사 용어(historical terminology)를 사용한다.\n명확하고 짜임새 있는 설명을 전개하고, 관련 증거(evidence)로 판단을 뒷받침한다.\n\n평가하는 기술과 성공 기준\n다섯 가지 MAINS 원인을 떠올리고 설명한다: 군국주의(Militarism), 동맹 체제(Alliance System), 제국주의(Imperialism), 민족주의(Nationalism), 주요 인물(Significant Individuals).\n제1차 세계대전으로 이어진 주요 사건과 변화에 대한 지식을 보여준다.\n역사 사료(historical sources)에서 관련 증거(evidence)를 찾아 사용한다.\n1914년 이전 유럽 국가들 사이의 긴장(tensions)이 어떻게, 왜 높아졌는지 설명한다.\n증거를 사용해 명확하고 충분히 전개된 역사적 설명을 구성한다.\n근거가 잘 뒷받침된 PEEL 문단(PEEL paragraph)을 쓰고, 제1차 세계대전의 가장 중요한 원인에 대한 판단을 정당화(justify)한다.\n\n권장 복습 방법\n구글 클래스룸에 있는 관련 역사 수업·노트·자료를 복습한다.\n다섯 가지 MAINS 원인을 복습하고, 군비 경쟁(arms race), 유럽의 동맹(European alliances), 제국 간 경쟁(imperial competition), 민족주의(nationalism), 프란츠 페르디난트 대공 암살(assassination of Archduke Franz Ferdinand), 백지수표(Blank Cheque) 같은 핵심 예시를 사용해 각각을 정의하고 설명할 수 있도록 한다.\n노트를 보지 않고 핵심 역사 지식·인물·사건·결정에 대해 스스로 시험해 본다.\n사료 기반 문제(source-based questions)에 답하는 연습과, PEEL을 사용해 명확한 역사적 설명을 쓰는 연습을 하고, 정확한 증거와 근거 있는 판단(justified judgement)으로 생각을 뒷받침한다.\n효과적으로 준비할 수 있도록 구글 클래스룸의 Support Materials 아래에 있는 KS3 Humanities Toolkit, Humanities Exam Command Words, KS3 Humanities Practical Revision Tips 자료를 복습한다.",
-  "files": [
-   {
-    "name": "Year 9 History T1 CAT2  2026",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI/edit?usp=classroom_web",
-    "local": "post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf"
-   }
-  ],
-  "at": "2026-10-21"
- },
  "음악 (Mr Everett)|Term 1 Lessons": {
   "en": "Term 1 Lessons",
   "ko": "1학기 수업 자료(Term 1 Lessons)",
@@ -429,6 +416,31 @@ window.POST_DETAILS = {
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1_Rb_avUo730vOP6JF3IYGbFQJ4GNLHKo/view?usp=classroom_web",
     "local": "pdfs/humanities/PW Lesson 5 - The Assassination of Archduke Franz Ferdinand  -  Repaired.pptx"
+   }
+  ],
+  "at": "2026-10-27"
+ },
+ "튜터 (Mr Cassels)|I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int": {
+  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
+  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 정보를 알려드리게 되어 기쁩니다.\n\n'갈등 속의 사람과 지구(People and Planet in Conflict)'를 주제로 한 이 대회는 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 누구나 참가할 수 있습니다.  에세이 제목(essay titles), 분량(length), 제출 방법(submission details)의 자세한 내용은 첨부 파일에 있습니다. \n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n문의: Karina Mariadas, k.mariadas@elc.edu.my",
+  "files": [
+   {
+    "name": "k.mariadas@elc.edu.my",
+    "kind": "web",
+    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
+    "local": null
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
+    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
+    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
    }
   ],
   "at": "2026-10-27"
@@ -751,29 +763,61 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-02"
  },
- "튜터 (Mr Cassels)|Humanities and Social Science Essay Competition 2026-27": {
-  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
-  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 안내를 전하게 되어 기쁩니다.\n\n이 대회는 '갈등 속의 인간과 지구(People and Planet in Conflict)'를 주제로 하며, 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 참가할 수 있습니다. 에세이 제목(essay titles), 분량(length), 제출 방법(submission details)에 관한 자세한 내용은 첨부 파일에서 볼 수 있습니다.\n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n연락처: Karina Mariadas, k.mariadas@elc.edu.my",
+ "휴머니티 (Mr Lawrence)|Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.": {
+  "en": "Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.\n\nMr. Lawrence",
+  "ko": "혹시 오늘(11월 3일 화요일) 수업에 없었던 학생을 위해 알립니다. 공통평가(CA, Common Assessment)는 11월 4일 수요일에 실시됩니다.\n\n로렌스 선생님(Mr. Lawrence)",
+  "files": [],
+  "at": "2026-11-03"
+ },
+ "휴머니티 (Mr Lawrence)|Term 1 Common Assessment 2": {
+  "en": "Term 1 Common Assessment 2\nYear 9 History\n\nFocus of assessment:\nYear 9 History Unit 2 - World War 1\n\n\nDate of Assessment: Tuesday 3rd November 2026\nDescription of assessment\nThis will be a 40-minute written assessment covering the key knowledge and skills developed during the Causes of the First World War unit. The assessment will include key term definitions, knowledge questions, source-based questions and an extended written response using historical evidence to explain and evaluate the MAINS causes of the First World War.\nAssessment objectives\nKnowledge and Understanding: Demonstrate knowledge and understanding of the MAINS causes of the First World War and the key events, people and developments that increased tensions in Europe before 1914.\nSource Analysis and Interpretation: Use historical sources to identify relevant information and explain how it helps us understand the causes of the First World War.\nHistorical Explanation and Judgement: Explain how different causes contributed to the outbreak of war and make a justified judgement about which cause was the most important.\nMarking criteria\nDemonstrates accurate historical knowledge and understanding of the MAINS causes.\nUses relevant historical facts, people and events to support answers.\nIdentifies and interprets relevant information from historical sources.\nExplains how different factors increased tensions and contributed to the outbreak of war.\nUses appropriate historical terminology.\nDevelops clear, well-structured explanations and supports judgements with relevant evidence.\n\nSkills being assessed and success criteria\nRecall and explain the five MAINS causes: Militarism, Alliance System, Imperialism, Nationalism and Significant Individuals.\nDemonstrate knowledge of key events and developments leading to the First World War.\nIdentify and use relevant evidence from historical sources.\nExplain how and why tensions between European countries increased before 1914.\nConstruct clear, developed historical explanations using evidence.\nWrite a well-supported PEEL paragraph and justify a judgement about the most important cause of the First World War.\n\nSuggested Revision Approaches\nReview the relevant History lessons, notes and resources on Google Classroom.\nRevise the five MAINS causes, ensuring you can define and explain each one, using key examples such as the arms race, European alliances, imperial competition, nationalism, the assassination of Archduke Franz Ferdinand and the Blank Cheque.\nTest yourself on key historical knowledge, people, events and decisions without looking at your notes.\nPractise answering source-based questions and writing clear historical explanations using PEEL, supporting your ideas with accurate evidence and a justified judgement.\nReview the KS3 Humanities Toolkit, Humanities Exam Command Words and KS3 Humanities Practical Revision Tips resources on Google Classroom under Support Materials to help you prepare effectively.",
+  "ko": "1학기 공통평가 2 (Term 1 Common Assessment 2)\n9학년 역사 (Year 9 History)\n\n평가 범위:\n9학년 역사 2단원 - 제1차 세계대전(World War 1)\n\n\n평가 날짜: 2026년 11월 3일 화요일\n평가 설명\n40분 동안 보는 서술형 평가로, 제1차 세계대전의 원인(Causes of the First World War) 단원에서 배운 핵심 지식과 기능을 다룹니다. 평가에는 핵심 용어 정의(key term definitions), 지식 문제(knowledge questions), 자료 기반 문제(source-based questions), 그리고 역사적 증거(historical evidence)를 사용해 제1차 세계대전의 MAINS 원인(MAINS causes)을 설명하고 평가하는 긴 서술형 답안(extended written response)이 포함됩니다.\n평가 목표\n지식과 이해(Knowledge and Understanding): 제1차 세계대전의 MAINS 원인과, 1914년 이전 유럽의 긴장(tensions)을 높인 주요 사건·인물·변화에 대한 지식과 이해를 보여 준다.\n자료 분석과 해석(Source Analysis and Interpretation): 역사 자료(historical sources)를 사용해 관련 정보를 찾아내고, 그것이 제1차 세계대전의 원인을 이해하는 데 어떻게 도움이 되는지 설명한다.\n역사적 설명과 판단(Historical Explanation and Judgement): 여러 원인이 전쟁 발발(outbreak of war)에 어떻게 영향을 주었는지 설명하고, 어떤 원인이 가장 중요했는지 근거 있는 판단(justified judgement)을 내린다.\n채점 기준\nMAINS 원인에 대한 정확한 역사 지식과 이해를 보여 준다.\n관련된 역사적 사실·인물·사건을 사용해 답을 뒷받침한다.\n역사 자료에서 관련 정보를 찾아내고 해석한다.\n여러 요인(factors)이 어떻게 긴장을 높이고 전쟁 발발에 영향을 주었는지 설명한다.\n알맞은 역사 용어(historical terminology)를 사용한다.\n명확하고 짜임새 있는 설명을 쓰고, 관련 증거로 판단을 뒷받침한다.\n\n평가하는 기능과 성공 기준\n다섯 가지 MAINS 원인을 떠올리고 설명한다: 군국주의(Militarism), 동맹 체제(Alliance System), 제국주의(Imperialism), 민족주의(Nationalism), 주요 인물(Significant Individuals).\n제1차 세계대전으로 이어진 주요 사건과 변화에 대한 지식을 보여 준다.\n역사 자료에서 관련 증거를 찾아 사용한다.\n1914년 이전 유럽 국가들 사이의 긴장이 어떻게, 왜 높아졌는지 설명한다.\n증거를 사용해 명확하고 깊이 있는 역사적 설명을 쓴다.\n근거가 잘 갖춰진 PEEL 문단(PEEL paragraph)을 쓰고, 제1차 세계대전의 가장 중요한 원인에 대한 판단을 정당화한다.\n\n추천 복습 방법\n구글 클래스룸(Google Classroom)에 있는 관련 역사 수업, 노트, 자료를 다시 본다.\n다섯 가지 MAINS 원인을 복습하고, 각각을 정의하고 설명할 수 있도록 한다. 군비 경쟁(arms race), 유럽의 동맹(European alliances), 제국 간 경쟁(imperial competition), 민족주의(nationalism), 프란츠 페르디난트 대공 암살(assassination of Archduke Franz Ferdinand), 백지수표(Blank Cheque) 같은 핵심 예시를 사용한다.\n노트를 보지 않고 핵심 역사 지식, 인물, 사건, 결정에 대해 스스로 시험해 본다.\n자료 기반 문제에 답하는 연습과, PEEL을 사용해 명확한 역사적 설명을 쓰는 연습을 하고, 정확한 증거와 근거 있는 판단으로 생각을 뒷받침한다.\n효과적으로 준비할 수 있도록 구글 클래스룸의 지원 자료(Support Materials)에 있는 KS3 인문학 툴킷(KS3 Humanities Toolkit), 인문학 시험 지시어(Humanities Exam Command Words), KS3 인문학 실전 복습 팁(KS3 Humanities Practical Revision Tips) 자료를 살펴본다.",
   "files": [
    {
-    "name": "k.mariadas@elc.edu.my",
-    "kind": "web",
-    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
+    "name": "Year 9 History T1 CAT2  2026",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI/edit?usp=classroom_web",
+    "local": "post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf"
+   }
+  ],
+  "at": "2026-11-03"
+ },
+ "영어 (Mr Glanz)|The Adria Richards story:": {
+  "en": "The Adria Richards story:",
+  "ko": "에이드리아 리처즈(Adria Richards) 이야기:",
+  "files": [
+   {
+    "name": "Screenshot 2026-11-03 at 15.16.42.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/19X7bxipBm16t1GgegeDA5gqxRD1L-ZEV/view?usp=classroom_web",
+    "local": "post_files/19X7bxipBm16t1GgegeDA5gqxRD1L-ZEV.png"
+   }
+  ],
+  "at": "2026-11-03"
+ },
+ "영어 (Mr Glanz)|Make your voice heard, vocab homework 1": {
+  "en": "Make your voice heard, vocab homework 1\nPlease complete this before Thursday's lesson - we'll have a spelling test on the words then.",
+  "ko": "목소리를 내세요(Make your voice heard), 어휘 숙제(vocab homework) 1\n목요일 수업 전까지 이것을 끝내 주세요 - 그때 이 단어들로 철자 시험(spelling test)을 볼 거예요.",
+  "files": [],
+  "at": "2026-11-03"
+ },
+ "수학 (Mr Anan)|TUESDAY MATHS MYSTERY CHALLENGE": {
+  "en": "TUESDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve",
+  "ko": "화요일 수학 미스터리 챌린지(TUESDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(GOLDEN MATHS CALCULATOR)를 누군가 훔쳐 갔어요!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 해요!\n1. 첨부된 슬라이드(slides)를 보고 오늘의 퍼즐을 찾으세요\n2. 답을 찾으면 첨부된 구글 폼(google form) 링크로 제출하세요\n3. 매일 새로운 단서(clue)가 구글 클래스룸(google classrooms)에 올라오니 풀어 보세요",
+  "files": [
+   {
+    "name": "TUESDAYS MATHS MYSTERY ANSWER",
+    "kind": "form",
+    "url": "https://forms.gle/snjvCtVa84cZWiL89",
     "local": null
    },
    {
-    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
+    "name": "TUESDAY MATHS WEEK MYSTERY.pptx",
     "kind": "drive",
-    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
-    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
-    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
+    "url": "https://drive.google.com/file/d/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7/view?usp=classroom_web",
+    "local": "post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7.pptx"
    }
   ],
-  "at": "2026-11-02"
+  "at": "2026-11-03"
  }
 };
