@@ -38,62 +38,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
- "과학 (Mr Phillips)|Electricity video": {
-  "en": "Electricity video",
-  "ko": "전기(electricity) 영상",
-  "files": [
-   {
-    "name": "Sci Eye Electricity S096LS44 S120LS44",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=o0iPDPsXO4c",
-    "local": null
-   },
-   {
-    "name": "Electricity Answers - on video",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1tegjxxQd5-__BiaMVc4D7vHeWQMPmhmSlX_iPIeKzYk/edit?usp=classroom_web",
-    "local": "post_files/1tegjxxQd5-__BiaMVc4D7vHeWQMPmhmSlX_iPIeKzYk.pdf"
-   }
-  ],
-  "at": "2026-10-19"
- },
- "과학 (Mr Phillips)|Matching the Circuit symbols": {
-  "en": "Matching the Circuit symbols\nFill in the blanks",
-  "ko": "회로 기호(circuit symbols) 짝짓기\n빈칸 채우기(fill in the blanks)",
-  "files": [],
-  "at": "2026-10-19"
- },
- "과학 (Mr Phillips)|Electricity - Circuits and Symbols": {
-  "en": "Electricity - Circuits and Symbols\nRemember the symbols used to represent components used in electric circuits",
-  "ko": "전기(electricity) - 회로(circuits)와 기호(symbols)\n전기 회로(electric circuits)에 쓰이는 부품(components)을 나타내는 기호(symbols)를 기억하세요",
-  "files": [
-   {
-    "name": "9.1 Basic circuits",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1YDwYPJucvVXXd41vyPBVSdi3XihGprxkS2FWUDjm9Z0/edit?usp=classroom_web",
-    "local": "post_files/1YDwYPJucvVXXd41vyPBVSdi3XihGprxkS2FWUDjm9Z0.pdf"
-   },
-   {
-    "name": "Circuit Components and Symbols - GCSE Physics",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=ZP30SB0tQdU",
-    "local": null
-   },
-   {
-    "name": "9.1 Parallel Circuits",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1rWV4rzh7a_rvMjE-iqecIJelv-me1nJE/view?usp=classroom_web",
-    "local": "post_files/1rWV4rzh7a_rvMjE-iqecIJelv-me1nJE.pdf"
-   },
-   {
-    "name": "‪Circuit Construction Kit: DC‬",
-    "kind": "web",
-    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
-    "local": null
-   }
-  ],
-  "at": "2026-10-19"
- },
  "영어 (Mr Glanz)|CA1 Feedback lesson": {
   "en": "CA1 Feedback lesson",
   "ko": "CA1 피드백 수업",
@@ -103,19 +47,6 @@ window.POST_DETAILS = {
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1Cs95vG_lmURvAMb9sAsRvhKS0WeC8y4_/view?usp=classroom_web",
     "local": "post_files/1Cs95vG_lmURvAMb9sAsRvhKS0WeC8y4_.pptx"
-   }
-  ],
-  "at": "2026-10-19"
- },
- "수학 (Mr Anan)|Your 2nd Continues Assessment (CA2) will be on Tuesday 3rd November 2026.": {
-  "en": "Your 2nd Continues Assessment (CA2) will be on Tuesday 3rd November 2026. Read the CAT attached for further details.\n\nDescription of assessment\n40 Minutes, 33 Marks\nCalculator\nSkills/Long answer/Short answer\n\nFocus of assessment:\nNumber and Algebra\n\nSkills being assessed: \nChapter 3: Decimals, percentages and rounding\nChapter 4: Equations and inequalities\nChapter 5: Angles\nChapter 6: Statistical Investigations",
-  "ko": "두 번째 수시평가(2nd Continues Assessment, CA2)는 2026년 11월 3일 화요일에 있습니다. 자세한 내용은 첨부된 평가 안내문(CAT)을 읽으세요.\n\n평가 안내\n40분, 33점\n계산기(Calculator) 사용\n기능(Skills)/서술형(Long answer)/단답형(Short answer)\n\n평가 중점:\n수와 대수(Number and Algebra)\n\n평가 범위: \n3단원: 소수(Decimals), 백분율(percentages), 반올림(rounding)\n4단원: 방정식(Equations)과 부등식(inequalities)\n5단원: 각(Angles)\n6단원: 통계 조사(Statistical Investigations)",
-  "files": [
-   {
-    "name": "Y9 CAT 2026_27 Term 1 CA2.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1D4gNL6E0lNgb1ukUQLSMKvEz4yXUuyO8/view?usp=classroom_web",
-    "local": "post_files/1D4gNL6E0lNgb1ukUQLSMKvEz4yXUuyO8.pdf"
    }
   ],
   "at": "2026-10-19"
@@ -914,5 +845,119 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-11-04"
+ },
+ "수학 (Mr Anan)|MATHS MYSTERY SOLVED": {
+  "en": "MATHS MYSTERY SOLVED\n\nGo through the slides to see who stole the Golden Maths Calculator... were you right?",
+  "ko": "수학 미스터리 해결\n\n슬라이드를 넘겨 보면서 누가 황금 수학 계산기(Golden Maths Calculator)를 훔쳤는지 확인해 보세요... 여러분이 맞혔나요?",
+  "files": [
+   {
+    "name": "FRIDAY MATHS WEEK MYSTERY.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1M9_1YN27oFBgCQeFoUBqys9PZJfJwfF1/view?usp=classroom_web",
+    "local": "post_files/1M9_1YN27oFBgCQeFoUBqys9PZJfJwfF1.pptx"
+   }
+  ],
+  "at": "2026-11-06"
+ },
+ "수학 (Mr Anan)|Heare are the answers for the UKMT Intermediate Math Challenge.": {
+  "en": "Heare are the answers for the UKMT Intermediate Math Challenge.",
+  "ko": "UKMT 중급 수학 챌린지(UKMT Intermediate Math Challenge) 정답입니다.",
+  "files": [
+   {
+    "name": "IMC_Solutions_2026.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1IOqAMoeVKYa-k0dKLgD4zZ0vbLKuk9ma/view?usp=classroom_web",
+    "local": "post_files/1IOqAMoeVKYa-k0dKLgD4zZ0vbLKuk9ma.pdf"
+   }
+  ],
+  "at": "2026-11-06"
+ },
+ "수학 (Mr Anan)|Homework/Classwork - UKMT Intermediate Math Challenge": {
+  "en": "Homework/Classwork - UKMT Intermediate Math Challenge\nDear Students,\n\nAs we are very comfortable in the completion of our Year 9 Syllabus, we will spend lesson time today to work on the attached UKMT Intermediate Math Challenge competition questions as part of Maths Week. Please complete as much as you can and submit with a screenshot by the due date. I will post the answers shortly for you to check.",
+  "ko": "숙제/수업 과제 - UKMT 중급 수학 챌린지(UKMT Intermediate Math Challenge)\n학생 여러분께,\n\n9학년 교육과정(Year 9 Syllabus)을 여유 있게 마무리하고 있으므로, 오늘 수업 시간에는 수학 주간(Maths Week) 활동으로 첨부된 UKMT 중급 수학 챌린지(UKMT Intermediate Math Challenge) 대회 문제를 풀겠습니다. 최대한 많이 풀고 마감일까지 스크린샷과 함께 제출하세요. 확인할 수 있도록 곧 정답을 올리겠습니다.",
+  "files": [],
+  "at": "2026-11-06"
+ },
+ "수학 (Mr Anan)|THURSDAYS MATHS MYSTERY CHALLENGE": {
+  "en": "THURSDAY'S MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve\nTHURSDAYS MATHS MYSTERY ANSWER\nhttps://forms.gle/8Saf2PdaFDbRdTVx5",
+  "ko": "목요일 수학 미스터리 챌린지\n\n황금 수학 계산기(Golden Maths Calculator)를 도둑맞았습니다!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 합니다!\n1. 첨부된 슬라이드를 보고 오늘의 퍼즐을 찾으세요\n2. 답을 구하면 첨부된 구글 폼(google form) 링크로 제출하세요\n3. 매일 여러분의 구글 클래스룸에 풀어야 할 새로운 단서(clue)가 올라옵니다\n목요일 수학 미스터리 정답 제출\nhttps://forms.gle/8Saf2PdaFDbRdTVx5",
+  "files": [
+   {
+    "name": "THURSDAY MATHS WEEK MYSTERY.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6/view?usp=classroom_web",
+    "local": "post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6.pptx"
+   },
+   {
+    "name": "THURSDAYS MATHS MYSTERY ANSWER",
+    "kind": "form",
+    "url": "https://forms.gle/8Saf2PdaFDbRdTVx5",
+    "local": null
+   }
+  ],
+  "at": "2026-11-06"
+ },
+ "과학 (Mr Phillips)|Noble Gases": {
+  "en": "Noble Gases\nClick on the link below to start the game",
+  "ko": "비활성 기체(Noble Gases)\n아래 링크를 눌러 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=6mJhCyFre4oBSN0r-MjgqPNjjnq5K2csEGb-kFxZXFC0k8Sepq8Fc3gpmCEvJHZ8nVViH7d1Yqgr5b2U4PFeacWtC_8EfYfHC868PU74yFtannkBgBVkVdwAXgFf0YBB3qWIEC1YoxcLpuaCeF_a1QGwgxtdWunu35vT8OjTErtBWgxD9gttdzPAwOHUBR5SH-ystSAgnqV3Du4dvgq7BmdF_w._1J9trbjPbz7MbdfLuGeVw.IcpgBrehStPUqP7S&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-11-06"
+ },
+ "과학 (Mr Phillips)|Noble gas - wordsearch": {
+  "en": "Noble gas - wordsearch",
+  "ko": "비활성 기체(noble gas) - 단어 찾기(wordsearch)",
+  "files": [],
+  "at": "2026-11-06"
+ },
+ "과학 (Mr Phillips)|Periodic Table crossword": {
+  "en": "Periodic Table crossword",
+  "ko": "주기율표(Periodic Table) 십자말풀이(crossword)",
+  "files": [
+   {
+    "name": "Crossword answers",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1BkH5jC2iYwUFP7EXe8alUf7ofwIVYfPrQjUDSRshlZc/edit?usp=classroom_web",
+    "local": "post_files/1BkH5jC2iYwUFP7EXe8alUf7ofwIVYfPrQjUDSRshlZc.pdf"
+   }
+  ],
+  "at": "2026-11-06"
+ },
+ "과학 (Mr Phillips)|Revision - Group 7 and Group 8 elements": {
+  "en": "Revision - Group 7 and Group 8 elements",
+  "ko": "복습(Revision) - 7족(Group 7)과 8족(Group 8) 원소(elements)",
+  "files": [
+   {
+    "name": "C1.5 Group 0 elements",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1Yxx-E69HQDFs6H1r48P_nuAEJ9MuGcFHgUM82KjXyw8/edit?usp=classroom_web",
+    "local": "post_files/1Yxx-E69HQDFs6H1r48P_nuAEJ9MuGcFHgUM82KjXyw8.pdf"
+   },
+   {
+    "name": "2.2 Halogen displacement reactions 9E .pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1VZHT9um1YekDpj5ux9ZXrN_neKVN1Whg/view?usp=classroom_web",
+    "local": "post_files/1VZHT9um1YekDpj5ux9ZXrN_neKVN1Whg.pptx"
+   },
+   {
+    "name": "Noble Gases - The Gases In Group 18 | Properties of Matter | Chemistry | FuseSchool",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=qNaBMvJXdJ4",
+    "local": null
+   }
+  ],
+  "at": "2026-11-06"
+ },
+ "튜터 (Mr Cassels)|Greetings from Leave a Nest Malaysia!": {
+  "en": "Greetings from Leave a Nest Malaysia!\nWe would like to invite students from your school, aged , to join , a hands-on workshop held in conjunction with .\nStudents will explore microplastics through sand extraction activities, group discussions and simple actions for responsible plastic use. The workshop offers an opportunity to connect classroom science with environmental issues while encouraging curiosity and teamwork.\n📅 11 November 2026\n⏰ 10:00 AM–12:30 PM\n📍 IMU University, Bukit Jalil\n\nRM45 per participant\nLunch and e-certificate provided\nLimited to 30 participants\nThere will also be a .\nParticipants are encouraged to bring for recycling or proper disposal.",
+  "ko": "Leave a Nest Malaysia에서 인사드립니다!\n귀교의  세 학생들을 와 연계해 열리는 직접 해 보는 워크숍인 에 초대하고자 합니다.\n학생들은 모래 추출 활동, 모둠 토론, 책임 있는 플라스틱 사용을 위한 간단한 실천을 통해 미세플라스틱(microplastics)을 탐구합니다. 이 워크숍은 교실에서 배운 과학을 환경 문제(environmental issues)와 연결하는 기회가 되며, 호기심과 협동심을 북돋워 줍니다.\n📅 2026년 11월 11일\n⏰ 오전 10:00–오후 12:30\n📍 IMU University, Bukit Jalil\n\n참가자 1인당 RM45\n점심과 전자 수료증 제공\n참가 인원 30명 한정\n도 있을 예정입니다.\n참가자들은 재활용(recycling) 또는 올바른 폐기(proper disposal)를 위해 를 가져오시길 권장합니다.",
+  "files": [],
+  "at": "2026-11-06"
  }
 };
