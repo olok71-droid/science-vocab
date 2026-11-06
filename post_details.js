@@ -959,5 +959,18 @@ window.POST_DETAILS = {
   "ko": "Leave a Nest Malaysia에서 인사드립니다!\n귀교의  세 학생들을 와 연계해 열리는 직접 해 보는 워크숍인 에 초대하고자 합니다.\n학생들은 모래 추출 활동, 모둠 토론, 책임 있는 플라스틱 사용을 위한 간단한 실천을 통해 미세플라스틱(microplastics)을 탐구합니다. 이 워크숍은 교실에서 배운 과학을 환경 문제(environmental issues)와 연결하는 기회가 되며, 호기심과 협동심을 북돋워 줍니다.\n📅 2026년 11월 11일\n⏰ 오전 10:00–오후 12:30\n📍 IMU University, Bukit Jalil\n\n참가자 1인당 RM45\n점심과 전자 수료증 제공\n참가 인원 30명 한정\n도 있을 예정입니다.\n참가자들은 재활용(recycling) 또는 올바른 폐기(proper disposal)를 위해 를 가져오시길 권장합니다.",
   "files": [],
   "at": "2026-11-06"
+ },
+ "음악 (Mr Everett)|Term 1 Common Assessment Template": {
+  "en": "Term 1 Common Assessment Template",
+  "ko": "1학기 공통 평가(Common Assessment) 양식(Template)",
+  "files": [
+   {
+    "name": "Term 1 Music Y9 CAT Performance",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1-H7BbUFNwXdItjKsKd0SwG4zCC6cixtB1UpcFMglF9o/edit?usp=classroom_web",
+    "local": "post_files/1-H7BbUFNwXdItjKsKd0SwG4zCC6cixtB1UpcFMglF9o.pdf"
+   }
+  ],
+  "at": "2026-11-06"
  }
 };

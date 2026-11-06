@@ -9,11 +9,20 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
  {
+  "subject": "음악 (Mr Everett)",
+  "date": "2026-11-06",
+  "type": "자료",
+  "title": "Term 1 Common Assessment Template",
+  "ko": "1학기 공통평가 양식 자료 게시",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
+ },
+ {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble Gases",
-  "ko": "Wayground(Quizizz)로 비활성 기체 퀴즈 풀기",
+  "ko": "Wayground로 비활성 기체 퀴즈 풀기",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -148,7 +157,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "공지",
   "title": "The Adria Richards story:",
-  "ko": "Adria Richards 이야기 사진 공유",
+  "ko": "Adria Richards 이야기 이미지 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -157,7 +166,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "과제",
   "title": "Make your voice heard, vocab homework 1",
-  "ko": "'Make your voice heard' 단원 어휘 숙제 1",
+  "ko": "'목소리를 내라' 단원 어휘 숙제 1",
   "due": "2026-11-05",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -184,7 +193,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9 Electricity - Check your Progress",
-  "ko": "전기 단원 학습 점검 과제",
+  "ko": "9단원 전기 단원 점검 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk3MDE1NjE4MTI2/details"
  },
@@ -193,7 +202,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "upload resistance graph - here",
-  "ko": "저항 그래프를 여기에 올리기",
+  "ko": "저항 그래프를 올리는 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -202,7 +211,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9.4 Practical Circuits workbook questions",
-  "ko": "9.4 실용 회로 워크북 문제 풀기",
+  "ko": "9.4 실제 회로 워크북 문제 풀기",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk3MDE2NzU4MjQ2/details"
  },
@@ -211,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "자료",
   "title": "9.4 Practical Circuits",
-  "ko": "9.4 실용 회로 수업 자료",
+  "ko": "9.4 실제 회로 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -256,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "과제",
   "title": "NARRATIVE COMMON ASSESSMENT",
-  "ko": "서사문 공통평가 과제 제출",
+  "ko": "서사문 공통평가 제출",
   "due": "2026-10-30",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -292,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "자료",
   "title": "Keyboard Notes",
-  "ko": "키보드 악보 자료 게시",
+  "ko": "키보드 음표 자료 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -301,7 +310,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-29",
   "type": "공지",
   "title": "CA2 - 11th November",
-  "ko": "CA2 과학 공통평가 안내와 범위 양식 파일",
+  "ko": "과학 CA2 공통평가 안내, 양식 첨부",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -446,7 +455,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-22",
   "type": "자료",
   "title": "Voltage in Parallel Circuits - building practical circuits",
-  "ko": "병렬회로 전압과 실제 회로 만들기 자료",
+  "ko": "병렬회로 전압과 회로 만들기 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -547,7 +556,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "자료",
   "title": "CA1 Feedback lesson",
-  "ko": "CA1 평가 피드백 수업 자료",
+  "ko": "CA1 피드백 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -598,4 +607,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-06 07:46";
+window.CLASSROOM_POSTS_AT = "2026-11-06 08:56";
