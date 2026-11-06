@@ -972,5 +972,31 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-11-06"
+ },
+ "튜터 (Mr Cassels)|Congratulations to the following students.": {
+  "en": "Congratulations to the following students. Collect your Lift Pass or Skip the Line passes next week!",
+  "ko": "다음 학생들을 축하합니다. 다음 주에 리프트 패스(Lift Pass) 또는 줄 서지 않기 패스(Skip the Line passes)를 받아 가세요!",
+  "files": [
+   {
+    "name": "Rewards Slips - Character Recognitions.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-/view&usp=classroom_web",
+    "local": "post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-.png"
+   }
+  ],
+  "at": "2026-11-06"
+ },
+ "튜터 (Mr Cassels)|SJIIS Red Packet Design Competition": {
+  "en": "SJIIS Red Packet Design Competition\n\nTo celebrate the upcoming Year of the Goat, we are holding a red packet design competition for HS and ES. The competition will run from 9/11/26 to 23/11/26, and all further details can be found in the canva linked to this post. \n\nWinning designs will be made into red packets that you can preorder at the Christmas Bazaar this year!\n\nPlease contact Ms. Aileen if you have any questions.",
+  "ko": "SJIIS 홍바오(Red Packet) 디자인 대회\n\n다가오는 양의 해(Year of the Goat)를 기념하여, 고등부(HS)와 초등부(ES)를 대상으로 홍바오(red packet) 디자인 대회를 엽니다. 대회는 26년 11월 9일(9/11/26)부터 26년 11월 23일(23/11/26)까지 진행되며, 자세한 내용은 모두 이 게시물에 연결된 캔바(canva)에서 확인할 수 있습니다.\n\n우승한 디자인은 홍바오(red packets)로 만들어지며, 올해 크리스마스 바자회(Christmas Bazaar)에서 미리 주문할 수 있습니다!\n\n궁금한 점이 있으면 Aileen 선생님(Ms. Aileen)께 문의하세요.",
+  "files": [
+   {
+    "name": "Lunar New Year a Time of Celebration and Joy Educational Presentation.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS/view?usp=classroom_web",
+    "local": "post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS.pdf"
+   }
+  ],
+  "at": "2026-11-06"
  }
 };

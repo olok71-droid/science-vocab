@@ -18,6 +18,24 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
  {
+  "subject": "튜터 (Mr Cassels)",
+  "date": "2026-11-06",
+  "type": "공지",
+  "title": "Congratulations to the following students.",
+  "ko": "수상 학생은 다음 주 리프트·줄서기 면제 패스 수령",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
+ },
+ {
+  "subject": "튜터 (Mr Cassels)",
+  "date": "2026-11-06",
+  "type": "공지",
+  "title": "SJIIS Red Packet Design Competition",
+  "ko": "설맞이 홍빠오 디자인 대회 참가 안내",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
+ },
+ {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-11-05",
   "type": "과제",
@@ -85,7 +103,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "공지",
   "title": "Greetings from Leave a Nest Malaysia!",
-  "ko": "미세플라스틱 체험 워크숍 참가 안내(RM45)",
+  "ko": "미세플라스틱 워크숍 참가 모집(참가비 RM45)",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -166,7 +184,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "과제",
   "title": "Make your voice heard, vocab homework 1",
-  "ko": "Make your voice heard 어휘 숙제 1",
+  "ko": "'Make your voice heard' 어휘 숙제 1",
   "due": "2026-11-05",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -247,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "공지",
   "title": "MONDAY MATHS MYSTERY CHALLENGE",
-  "ko": "수학 미스터리 퍼즐 풀고 구글폼으로 답 제출",
+  "ko": "매일 수학 퍼즐 풀고 구글폼으로 답 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -265,7 +283,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "과제",
   "title": "NARRATIVE COMMON ASSESSMENT",
-  "ko": "서사문 공통평가 과제",
+  "ko": "서사문 공통평가 제출",
   "due": "2026-10-30",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -392,7 +410,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-27",
   "type": "공지",
   "title": "Humanities and Social Science Essay Competition 2026-27",
-  "ko": "인문사회 에세이 대회 참가 안내",
+  "ko": "9학년 이상 인문사회 에세이 대회 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -401,7 +419,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-27",
   "type": "공지",
   "title": "Rewards between 21st September and today!",
-  "ko": "상점 순위 공개, 상위 학생 보상 쪽지 지급 예정",
+  "ko": "보상 현황 공유, 상위 학생 패스 지급 예정",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -464,7 +482,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-22",
   "type": "과제",
   "title": "PSHE - Y9 - 22/10/26",
-  "ko": "PSHE 수업 과제",
+  "ko": "9학년 PSHE 수업 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -547,7 +565,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-20",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "독서용 책 챙겨 오기",
+  "ko": "독서책 챙겨 오기(준비물: 독서책)",
   "due": "2026-10-21",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -583,7 +601,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-19",
   "type": "과제",
   "title": "Mid term Check in",
-  "ko": "중간 점검 설문 제출",
+  "ko": "중간 점검 설문 작성",
   "due": "2026-10-22",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -607,4 +625,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-06 10:10";
+window.CLASSROOM_POSTS_AT = "2026-11-06 17:33";
