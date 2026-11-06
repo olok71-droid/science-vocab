@@ -166,7 +166,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "과제",
   "title": "Make your voice heard, vocab homework 1",
-  "ko": "'목소리를 내라' 단원 어휘 숙제 1",
+  "ko": "Make your voice heard 어휘 숙제 1",
   "due": "2026-11-05",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -265,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "과제",
   "title": "NARRATIVE COMMON ASSESSMENT",
-  "ko": "서사문 공통평가 제출",
+  "ko": "서사문 공통평가 과제",
   "due": "2026-10-30",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -607,4 +607,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-06 08:56";
+window.CLASSROOM_POSTS_AT = "2026-11-06 10:10";
