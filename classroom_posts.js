@@ -4,7 +4,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-06",
   "type": "공지",
   "title": "MATHS MYSTERY SOLVED",
-  "ko": "슬라이드로 황금계산기 도둑 정답 확인",
+  "ko": "슬라이드로 황금 계산기 도둑 정답 확인",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -21,8 +21,8 @@ window.CLASSROOM_POSTS = [
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-11-06",
   "type": "공지",
-  "title": "Congratulations to the following students.",
-  "ko": "수상 학생은 다음 주 Lift Pass·Skip the Line 수령",
+  "title": "Congratulations to the following students. Collect your Lift Pass or Skip the Line passes next week!",
+  "ko": "수상 학생 축하, 리프트·줄서기 면제 패스 수령",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -31,7 +31,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-06",
   "type": "공지",
   "title": "SJIIS Red Packet Design Competition",
-  "ko": "고등·초등 대상 홍빠오 디자인 대회 안내",
+  "ko": "세뱃돈 봉투(홍바오) 디자인 대회 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -40,7 +40,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble Gases",
-  "ko": "Wayground(퀴즈) 비활성 기체 과제",
+  "ko": "웨이그라운드(퀴즈) 비활성 기체 과제",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk3NzU4MDI2NTYw/details"
  },
@@ -49,7 +49,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble gas - wordsearch",
-  "ko": "비활성 기체 단어찾기 과제",
+  "ko": "비활성 기체 낱말 찾기 과제",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODgzMjY3NDIwODg2/details"
  },
@@ -76,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "자료",
   "title": "Heare are the answers for the UKMT Intermediate Math Challenge.",
-  "ko": "UKMT 중급 수학 챌린지 정답 PDF",
+  "ko": "UKMT 중급 수학 챌린지 정답 PDF 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -85,7 +85,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Homework/Classwork - UKMT Intermediate Math Challenge",
-  "ko": "UKMT 중급 수학 챌린지 과제 제출",
+  "ko": "UKMT 중급 수학 챌린지 숙제·수업과제",
   "due": "2026-11-13",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3/a/ODk3NzUxNTMzNzA3/details"
  },
@@ -94,7 +94,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "공지",
   "title": "THURSDAY'S MATHS MYSTERY CHALLENGE",
-  "ko": "목요일 수학 미스터리 퍼즐 풀고 폼으로 답 제출",
+  "ko": "목요일 수학 미스터리 퍼즐 풀고 폼 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -103,7 +103,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "공지",
   "title": "Greetings from Leave a Nest Malaysia!",
-  "ko": "미세플라스틱 워크숍 참가 안내, 참가비 RM45",
+  "ko": "미세플라스틱 체험 워크숍 참가 안내, 참가비 RM45",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -130,7 +130,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-04",
   "type": "공지",
   "title": "WEDNESDAY MATHS MYSTERY CHALLENGE",
-  "ko": "수요일 수학 미스터리 퍼즐 풀고 폼으로 답 제출",
+  "ko": "수요일 수학 미스터리 퍼즐 풀고 폼 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -193,7 +193,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "공지",
   "title": "TUESDAY MATHS MYSTERY CHALLENGE",
-  "ko": "화요일 수학 미스터리 퍼즐 풀고 폼으로 답 제출",
+  "ko": "화요일 수학 미스터리 퍼즐 풀고 폼 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -202,7 +202,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "Wayground 전기회로·기호 과제",
+  "ko": "웨이그라운드(퀴즈) 전기회로와 기호 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -220,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "upload resistance graph - here",
-  "ko": "저항 그래프 업로드 과제",
+  "ko": "저항 그래프를 올리는 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -229,7 +229,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9.4 Practical Circuits workbook questions",
-  "ko": "9.4 실용 회로 워크북 문제 과제",
+  "ko": "9.4 실제 회로 워크북 문제 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -238,7 +238,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "자료",
   "title": "9.4 Practical Circuits",
-  "ko": "9.4 실용 회로 수업 자료",
+  "ko": "9.4 실제 회로 수업 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -247,7 +247,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "공지",
   "title": "MONDAY MATHS MYSTERY CHALLENGE",
-  "ko": "월요일 수학 미스터리 퍼즐 풀고 폼으로 답 제출",
+  "ko": "월요일 수학 미스터리 퍼즐 풀고 폼 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -265,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "공지",
   "title": "MONDAY MATHS MYSTERY CHALLENGE",
-  "ko": "매일 수학 퍼즐 풀고 구글폼으로 답 제출",
+  "ko": "수학 미스터리 퍼즐 풀고 구글폼으로 답 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -292,7 +292,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "공지",
   "title": "Dear Students, as homework this week, please complete the revision worksheet given in Friday's lesson to help you prepar",
-  "ko": "CA2 대비로 수업에서 받은 복습지 풀기",
+  "ko": "CA2 대비 수업 때 받은 복습 학습지 완성",
   "due": "2026-11-03",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -301,7 +301,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "공지",
   "title": "Maths Week 2026: Get Involved!",
-  "ko": "수학주간 미스터리·도형 어림 대회·AMC 안내",
+  "ko": "수학 주간 미스터리·도형 추정·AMC 행사 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -310,7 +310,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "자료",
   "title": "Answers for worksheet",
-  "ko": "CA2 복습지 풀이 답안 PDF",
+  "ko": "CA2 복습 학습지 풀이 답안 PDF 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -319,7 +319,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "자료",
   "title": "Keyboard Notes",
-  "ko": "키보드 계이름 자료",
+  "ko": "키보드 음 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -328,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-29",
   "type": "공지",
   "title": "CA2 - 11th November",
-  "ko": "과학 CA2 시험 안내와 양식 파일",
+  "ko": "과학 CA2 공통평가 안내와 양식 파일",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -355,7 +355,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-29",
   "type": "공지",
   "title": "UNITY WEEK CHESS!",
-  "ko": "유니티 위크 체스 행사 참여 안내",
+  "ko": "유니티 위크 체스 행사 참가 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -364,7 +364,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-28",
   "type": "과제",
   "title": "Ohm's Law",
-  "ko": "Wayground 옴의 법칙 과제",
+  "ko": "웨이그라운드(퀴즈) 옴의 법칙 과제",
   "due": "2026-10-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -409,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-10-27",
   "type": "공지",
-  "title": "Humanities and Social Science Essay Competition 2026-27",
+  "title": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int",
   "ko": "9학년 이상 인문사회 에세이 대회 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
@@ -419,7 +419,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-27",
   "type": "공지",
   "title": "Rewards between 21st September and today!",
-  "ko": "보상 현황 공유, 상위 학생에 패스 지급 예정",
+  "ko": "보상 현황 공유, 상위 학생에게 패스 배부 예정",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -473,7 +473,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-22",
   "type": "자료",
   "title": "Voltage in Parallel Circuits - building practical circuits",
-  "ko": "병렬회로 전압·실습 회로 만들기 자료",
+  "ko": "병렬회로 전압과 실제 회로 만들기 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -491,7 +491,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-21",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "Wayground 전기회로·기호 과제",
+  "ko": "웨이그라운드(퀴즈) 전기회로와 기호 과제",
   "due": "2026-10-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -509,7 +509,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-21",
   "type": "자료",
   "title": "Electric current - circuits recap",
-  "ko": "전류·회로 복습 자료",
+  "ko": "전류와 회로 복습 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -565,7 +565,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-20",
   "type": "과제",
   "title": "Bring your Reading Books!",
-  "ko": "준비물: 읽기 책 가져오기",
+  "ko": "준비물: 읽기 책 지참",
   "due": "2026-10-21",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -625,4 +625,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4/a/ODI2NTgyNjIzMTI1/details"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-07 18:07";
+window.CLASSROOM_POSTS_AT = "2026-11-08 04:21";

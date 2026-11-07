@@ -351,6 +351,31 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
+ "튜터 (Mr Cassels)|I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int": {
+  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
+  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 정보를 알려드리게 되어 기쁩니다.\n\n'갈등 속의 사람과 지구(People and Planet in Conflict)'를 주제로 한 이 대회는 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 누구나 참가할 수 있습니다.  에세이 제목(essay titles), 분량(length), 제출 방법(submission details)의 자세한 내용은 첨부 파일에 있습니다. \n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n문의: Karina Mariadas, k.mariadas@elc.edu.my",
+  "files": [
+   {
+    "name": "k.mariadas@elc.edu.my",
+    "kind": "web",
+    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
+    "local": null
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
+    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
+    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
+   }
+  ],
+  "at": "2026-10-27"
+ },
  "튜터 (Mr Cassels)|Rewards between 21st September and today!": {
   "en": "Rewards between 21st September and today! \nThe next Rewards Slips for Skip the Line or Lift Pass will be handed out on Wednesday 11th and Thursday 12th November for the top students.",
   "ko": "9월 21일부터 오늘까지의 보상(Rewards)! \n줄 서지 않기(Skip the Line) 또는 엘리베이터 이용권(Lift Pass)을 받을 수 있는 다음 보상 쪽지(Rewards Slips)는 11월 11일 수요일과 11월 12일 목요일에 우수 학생(top students)에게 나눠 줄 예정입니다.",
@@ -669,31 +694,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-02"
  },
- "튜터 (Mr Cassels)|Humanities and Social Science Essay Competition 2026-27": {
-  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
-  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 안내를 전하게 되어 기쁩니다.\n\n이 대회는 '갈등 속의 인간과 지구(People and Planet in Conflict)'를 주제로 하며, 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 참가할 수 있습니다. 에세이 제목(essay titles), 분량(length), 제출 방법(submission details)에 관한 자세한 내용은 첨부 파일에서 볼 수 있습니다.\n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n연락처: Karina Mariadas, k.mariadas@elc.edu.my",
-  "files": [
-   {
-    "name": "k.mariadas@elc.edu.my",
-    "kind": "web",
-    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
-    "local": null
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
-    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
-    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
-   }
-  ],
-  "at": "2026-11-02"
- },
  "휴머니티 (Mr Lawrence)|Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.": {
   "en": "Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.\n\nMr. Lawrence",
   "ko": "혹시 오늘(11월 3일 화요일) 수업에 없었던 학생을 위해 알립니다. 공통평가(CA, Common Assessment)는 11월 4일 수요일에 실시됩니다.\n\n로렌스 선생님(Mr. Lawrence)",
@@ -973,19 +973,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-06"
  },
- "튜터 (Mr Cassels)|Congratulations to the following students.": {
-  "en": "Congratulations to the following students. Collect your Lift Pass or Skip the Line passes next week!",
-  "ko": "다음 학생들을 축하합니다. 다음 주에 리프트 패스(Lift Pass) 또는 줄 서지 않기 패스(Skip the Line passes)를 받아 가세요!",
-  "files": [
-   {
-    "name": "Rewards Slips - Character Recognitions.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-/view&usp=classroom_web",
-    "local": "post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-.png"
-   }
-  ],
-  "at": "2026-11-06"
- },
  "튜터 (Mr Cassels)|SJIIS Red Packet Design Competition": {
   "en": "SJIIS Red Packet Design Competition\n\nTo celebrate the upcoming Year of the Goat, we are holding a red packet design competition for HS and ES. The competition will run from 9/11/26 to 23/11/26, and all further details can be found in the canva linked to this post. \n\nWinning designs will be made into red packets that you can preorder at the Christmas Bazaar this year!\n\nPlease contact Ms. Aileen if you have any questions.",
   "ko": "SJIIS 홍바오(Red Packet) 디자인 대회\n\n다가오는 양의 해(Year of the Goat)를 기념하여, 고등부(HS)와 초등부(ES)를 대상으로 홍바오(red packet) 디자인 대회를 엽니다. 대회는 26년 11월 9일(9/11/26)부터 26년 11월 23일(23/11/26)까지 진행되며, 자세한 내용은 모두 이 게시물에 연결된 캔바(canva)에서 확인할 수 있습니다.\n\n우승한 디자인은 홍바오(red packets)로 만들어지며, 올해 크리스마스 바자회(Christmas Bazaar)에서 미리 주문할 수 있습니다!\n\n궁금한 점이 있으면 Aileen 선생님(Ms. Aileen)께 문의하세요.",
@@ -998,5 +985,18 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-11-06"
+ },
+ "튜터 (Mr Cassels)|Congratulations to the following students. Collect your Lift Pass or Skip the Line passes next week!": {
+  "en": "Congratulations to the following students. Collect your Lift Pass or Skip the Line passes next week!",
+  "ko": "다음 학생들을 축하합니다. 다음 주에 리프트 패스(Lift Pass) 또는 줄 서기 면제 패스(Skip the Line passes)를 받아 가세요!",
+  "files": [
+   {
+    "name": "Rewards Slips - Character Recognitions.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-/view&usp=classroom_web",
+    "local": "post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-.png"
+   }
+  ],
+  "at": "2026-11-08"
  }
 };
