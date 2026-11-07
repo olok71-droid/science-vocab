@@ -40,18 +40,18 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble Gases",
-  "ko": "Wayground(Quizizz)로 비활성 기체 퀴즈 풀기",
+  "ko": "Wayground(퀴즈) 비활성 기체 과제",
   "due": "2026-11-11",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk3NzU4MDI2NTYw/details"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble gas - wordsearch",
-  "ko": "비활성 기체 낱말 찾기 과제",
+  "ko": "비활성 기체 단어찾기 과제",
   "due": "2026-11-11",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODgzMjY3NDIwODg2/details"
  },
  {
   "subject": "과학 (Mr Phillips)",
@@ -112,9 +112,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-04",
   "type": "과제",
   "title": "Revision Questions on Periodic Table",
-  "ko": "주기율표 복습 문제 풀기",
+  "ko": "주기율표 복습 문제 과제",
   "due": "2026-11-10",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODI2ODI2MjQ5MDA2/details"
  },
  {
   "subject": "과학 (Mr Phillips)",
@@ -202,25 +202,25 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "Wayground(Quizizz)로 전기회로와 기호 퀴즈 풀기",
+  "ko": "Wayground 전기회로·기호 과제",
   "due": "2026-11-08",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk3MDEzODAzNzU0/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-11-02",
   "type": "과제",
   "title": "9 Electricity - Check your Progress",
-  "ko": "9단원 전기 학습 점검 문제 풀기",
+  "ko": "9단원 전기 학습 점검 과제",
   "due": "2026-11-08",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk3MDE1NjE4MTI2/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-11-02",
   "type": "과제",
   "title": "upload resistance graph - here",
-  "ko": "저항 그래프를 여기에 올리기",
+  "ko": "저항 그래프 업로드 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -229,9 +229,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9.4 Practical Circuits workbook questions",
-  "ko": "9.4 실용 회로 워크북 문제 풀기",
+  "ko": "9.4 실용 회로 워크북 문제 과제",
   "due": "2026-11-08",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk3MDE2NzU4MjQ2/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
@@ -328,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-29",
   "type": "공지",
   "title": "CA2 - 11th November",
-  "ko": "과학 CA2 공통평가 안내와 양식 파일",
+  "ko": "과학 CA2 시험 안내와 양식 파일",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -364,7 +364,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-28",
   "type": "과제",
   "title": "Ohm's Law",
-  "ko": "Wayground(Quizizz)로 옴의 법칙 퀴즈 풀기",
+  "ko": "Wayground 옴의 법칙 과제",
   "due": "2026-10-29",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -373,7 +373,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-28",
   "type": "과제",
   "title": "Resistance - workbook Questions",
-  "ko": "저항 워크북 문제 풀기",
+  "ko": "저항 워크북 문제 과제",
   "due": "2026-11-03",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -464,7 +464,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-22",
   "type": "과제",
   "title": "Parallel Circuits - workbook questions",
-  "ko": "병렬회로 워크북 문제 풀기",
+  "ko": "병렬회로 워크북 문제 과제",
   "due": "2026-10-28",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -473,7 +473,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-22",
   "type": "자료",
   "title": "Voltage in Parallel Circuits - building practical circuits",
-  "ko": "병렬회로 전압과 실제 회로 만들기 자료",
+  "ko": "병렬회로 전압·실습 회로 만들기 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -491,7 +491,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-21",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "Wayground(Quizizz)로 전기회로와 기호 퀴즈 풀기",
+  "ko": "Wayground 전기회로·기호 과제",
   "due": "2026-10-27",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -509,7 +509,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-21",
   "type": "자료",
   "title": "Electric current - circuits recap",
-  "ko": "전류와 회로 복습 자료",
+  "ko": "전류·회로 복습 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -625,4 +625,4 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4/a/ODI2NTgyNjIzMTI1/details"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-07 09:31";
+window.CLASSROOM_POSTS_AT = "2026-11-07 18:07";
