@@ -38,51 +38,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
- "영어 (Mr Glanz)|CA1 Feedback lesson": {
-  "en": "CA1 Feedback lesson",
-  "ko": "CA1 피드백 수업",
-  "files": [
-   {
-    "name": "GGL Y9 CA1 Feedback lesson.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1Cs95vG_lmURvAMb9sAsRvhKS0WeC8y4_/view?usp=classroom_web",
-    "local": "post_files/1Cs95vG_lmURvAMb9sAsRvhKS0WeC8y4_.pptx"
-   }
-  ],
-  "at": "2026-10-19"
- },
- "컴퓨터 과학 (Ms Meha)|Python Loop": {
-  "en": "Python Loop\nEstigfend\nWhile and For Loop",
-  "ko": "파이썬 반복문(Python Loop)\nEstigfend\nWhile 반복문(While Loop)과 For 반복문(For Loop)",
-  "files": [
-   {
-    "name": "Loop",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1ih9uDETPp0VXhrmU-dxITvnPLmd3OXPWOUIS_ioXi9k/edit?usp=classroom_web",
-    "local": "post_files/1ih9uDETPp0VXhrmU-dxITvnPLmd3OXPWOUIS_ioXi9k.pdf"
-   }
-  ],
-  "at": "2026-10-19"
- },
- "라살 교육|STEP 1: LEDU TALK MAKING": {
-  "en": "STEP 1: LEDU TALK MAKING\n1.1 Identify Your Core Message & Experiences\nFind Your Core Message: Review your reflections. What is the single biggest lesson or central insight about faith or life that you want your audience to take away? Select Key Experiences: Choose the 1-3 most powerful moments, challenges, or triumphs from your own experiences that clearly illustrate this core message.",
-  "ko": "1단계: LEDU 강연 만들기(LEDU TALK MAKING)\n1.1 핵심 메시지(Core Message)와 경험(Experiences) 정하기\n핵심 메시지 찾기(Find Your Core Message): 자신이 쓴 성찰(reflections)을 다시 살펴보세요. 청중(audience)이 꼭 얻어 갔으면 하는 신앙(faith)이나 삶에 대한 가장 큰 교훈(lesson) 하나, 또는 핵심 통찰(central insight)은 무엇인가요? 주요 경험 고르기(Select Key Experiences): 이 핵심 메시지를 분명하게 보여 주는, 자신의 경험 중 가장 강렬했던 순간(moments)·어려움(challenges)·성취(triumphs)를 1~3개 고르세요.",
-  "files": [],
-  "at": "2026-10-19"
- },
- "튜터 (Mr Cassels)|Mid term Check in": {
-  "en": "Mid term Check in\nPlease take time to complete the attached form. Answer it honestly and thoughtfully. There are no wrong answers. Add as much detail as you possibly can.",
-  "ko": "중간 점검(Mid term Check in)\n시간을 내어 첨부된 양식을 작성해 주세요. 정직하고 신중하게 답해 주세요. 틀린 답은 없습니다. 최대한 자세하게 적어 주세요.",
-  "files": [
-   {
-    "name": "Year 9 - Term 1 check-in",
-    "kind": "form",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSe63wD1yoa7pMVt6LmWsuU-FBTB-0rSnAK578u7QGo6kxwoWg/viewform?usp=publish-editor",
-    "local": null
-   }
-  ],
-  "at": "2026-10-19"
- },
  "미술|Haze - 20/10 Lesson": {
   "en": "Haze - 20/10 Lesson\nHi everyone, \n\nFor today's lesson, please refer to slide 12 on the lesson slides. The task is to complete:\n\n1) one direct, realistic copy of one of your photos using only pencil sketching and shading.\n2) one copy of your photo in the artist's style. This should be fully coloured or shaded in with outlines. \n\nBoth of these artworks should be A6 in size.\n\nThank you!",
   "ko": "Haze - 20/10 수업\n여러분 안녕하세요, \n\n오늘 수업은 수업 슬라이드(lesson slides)의 12번 슬라이드를 참고하세요. 해야 할 과제는 다음과 같습니다:\n\n1) 연필 스케치(pencil sketching)와 명암 넣기(shading)만 사용해서, 여러분의 사진 중 한 장을 그대로 사실적으로 따라 그린 그림(direct, realistic copy) 한 점.\n2) 여러분의 사진을 그 작가의 화풍(artist's style)으로 따라 그린 그림 한 점. 이 그림은 윤곽선(outlines)과 함께 색을 완전히 칠하거나(fully coloured) 명암을 완전히 넣어야(shaded in) 합니다. \n\n두 작품 모두 A6 크기(A6 in size)여야 합니다.\n\n감사합니다!",
@@ -97,31 +52,6 @@ window.POST_DETAILS = {
     "name": "Quizizz is now Wayground | Teacher AI and Resources",
     "kind": "web",
     "url": "https://wayground.com/join?c=h8iiwbAcHOtA-6o6LmNMqV5ZEgdaCHaxiuWv8nnlx4mtf0isPNKoiVAkXnnxNUda1WWa7NuVTWInUjpmX-ZBphj7y3j42BuqeCCGfjpMrQ-azvOvSvTcl8Tomp2qpgBlBtYLGTaBvNHWGKmh3lYM4_ZtaaHS8HZYUmxsWkuLQeEHrzKT5NtUWXXRb_cWp-rakD_UYnHVov6RM02-p_cLw6JiHQ.EqKwRws7_9_n5NDHd57osA.UAiW-PVUKHOA5ijF&linktype=web",
-    "local": null
-   }
-  ],
-  "at": "2026-10-21"
- },
- "과학 (Mr Phillips)|Circuit experiment": {
-  "en": "Circuit experiment",
-  "ko": "회로 실험(Circuit experiment)",
-  "files": [],
-  "at": "2026-10-21"
- },
- "과학 (Mr Phillips)|Electric current - circuits recap": {
-  "en": "Electric current - circuits recap",
-  "ko": "전류(Electric current) - 회로(circuits) 복습",
-  "files": [
-   {
-    "name": "GCSE Physics - Series Circuits (2027/28 exams)",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=Hk4JEB5DITw",
-    "local": null
-   },
-   {
-    "name": "Current | Electricity | Physics | FuseSchool",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=enuNdK426Wo",
     "local": null
    }
   ],
@@ -194,31 +124,6 @@ window.POST_DETAILS = {
   "ko": "여러분의 독백(monologue) 과제를 대부분 제가 받지 못한 것 같습니다: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학(holidays) 동안 집에 가져갔다면 내일 꼭 가지고 오세요.",
   "files": [],
   "at": "2026-10-21"
- },
- "과학 (Mr Phillips)|Parallel Circuits - workbook questions": {
-  "en": "Parallel Circuits - workbook questions",
-  "ko": "병렬 회로(Parallel Circuits) - 워크북 문제(workbook questions)",
-  "files": [],
-  "at": "2026-10-22"
- },
- "과학 (Mr Phillips)|Voltage in Parallel Circuits - building practical circuits": {
-  "en": "Voltage in Parallel Circuits - building practical circuits",
-  "ko": "병렬 회로의 전압(Voltage in Parallel Circuits) - 실습 회로 만들기(building practical circuits)",
-  "files": [
-   {
-    "name": "P1.3 Voltage in parallel circuits",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1qwGehDxdmAq6OiNko5i4q4eYihhfxUxH5pFzpwBVYts/edit?usp=classroom_web",
-    "local": "post_files/1qwGehDxdmAq6OiNko5i4q4eYihhfxUxH5pFzpwBVYts.pdf"
-   },
-   {
-    "name": "GCSE Physics - Parallel Circuits (2027/28 exams)",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=GIvE5Zlpea8",
-    "local": null
-   }
-  ],
-  "at": "2026-10-22"
  },
  "튜터 (Mr Cassels)|PSHE - Y9 - 22/10/26": {
   "en": "PSHE - Y9 - 22/10/26\nPlease use this doc to work through today's session.",
@@ -414,50 +319,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
- "과학 (Mr Phillips)|Ohms Law": {
-  "en": "Ohm's Law\nClick on the link below to start the game",
-  "ko": "옴의 법칙(Ohm's Law)\n아래 링크를 눌러 게임을 시작하세요",
-  "files": [
-   {
-    "name": "Quizizz is now Wayground | Teacher AI and Resources",
-    "kind": "web",
-    "url": "https://wayground.com/join?c=h_bdxV3PLQp0Os_DkGyCvBlUJXv_RYUYVs1rJcDEdmV3I3Z8zPYKetZOmwfAT5JpGJ3fochKoyGzvs0bVkEuex2czTWcODIbktcdqg_JlGwXfksd3WSPoRvzbWUZe_k81lJDhwGMxqlpg86XNUPI-pHmxLyTo4HCoc1_25hW7sw1cIg6-3-4vbEqPDjJrnk6M3O5eiznGngeEd7QbuuOply5-Q.vJjyzgUe9UFxi2_w38cPWw.prr_SzRpjaBmJV-l&linktype=web",
-    "local": null
-   }
-  ],
-  "at": "2026-10-28"
- },
- "과학 (Mr Phillips)|Resistance - workbook Questions": {
-  "en": "Resistance - workbook Questions",
-  "ko": "저항(Resistance) - 워크북 문제",
-  "files": [],
-  "at": "2026-10-28"
- },
- "과학 (Mr Phillips)|Resistance": {
-  "en": "Resistance",
-  "ko": "저항(Resistance)",
-  "files": [
-   {
-    "name": "9.3 Resistance",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1TgvMkA3YZaG21hwxqAYY514-gQjgy8oj/view?usp=classroom_web",
-    "local": "post_files/1TgvMkA3YZaG21hwxqAYY514-gQjgy8oj.pdf"
-   },
-   {
-    "name": "Voltage and Resistance - GCSE Physics",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=EcqPg2Ym5NU",
-    "local": null
-   },
-   {
-    "name": "Resistance Connection - Javalab",
-    "kind": "web",
-    "url": "https://javalab.org/en/resistance_connection_en/",
-    "local": null
-   }
-  ],
-  "at": "2026-10-28"
- },
  "중국어 (Ying Ying老师)|Lesson 4 Grammar Slides (既...又....、除此以外, 还）": {
   "en": "Lesson 4 Grammar Slides (既...又....、除此以外, 还）",
   "ko": "4과(Lesson 4) 문법(grammar) 슬라이드 (既...又....、除此以外, 还）",
@@ -470,19 +331,6 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-28"
- },
- "과학 (Mr Phillips)|CA2 - 11th November": {
-  "en": "CA2 - 11th November",
-  "ko": "CA2 - 11월 11일",
-  "files": [
-   {
-    "name": "CA2 Template Y9 Science Common Assessment 26/27.docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG/view?usp=classroom_web",
-    "local": "post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG.docx"
-   }
-  ],
-  "at": "2026-10-29"
  },
  "드라마|Drama Cover lesson Thursday 29th October": {
   "en": "Drama Cover lesson Thursday 29th October\nYou shouldn't have anything on your device other than these slides and a translator app (although there are support sheets with translations on my desk).\n\nI have asked the cover teacher to confiscate any devices with anything else on.\n\n\nPlease fold your worksheets neatly back inside your A3 sheet by the end of the lesson and pass them back to the students who handed them out.",
@@ -614,37 +462,6 @@ window.POST_DETAILS = {
     "kind": "gdoc",
     "url": "https://docs.google.com/document/d/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4/edit?usp=classroom_web",
     "local": "post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4.pdf"
-   }
-  ],
-  "at": "2026-11-02"
- },
- "과학 (Mr Phillips)|9.4 Practical Circuits": {
-  "en": "9.4 Practical Circuits",
-  "ko": "9.4 실용 회로(Practical Circuits)",
-  "files": [
-   {
-    "name": "9.4 Practical circuits",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni/view?usp=classroom_web",
-    "local": "post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni.pdf"
-   },
-   {
-    "name": "Series and Parallel Circuits | Electricity | Physics | FuseSchool",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=8Z0jhQeYDUE",
-    "local": null
-   },
-   {
-    "name": "‪Circuit Construction Kit: DC‬",
-    "kind": "web",
-    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
-    "local": null
-   },
-   {
-    "name": "Resistors Explained & Ohm's Law Made Simple! | What Are Resistors? & How Do Resistors Work?",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=x6jajfprWZo",
-    "local": null
    }
   ],
   "at": "2026-11-02"

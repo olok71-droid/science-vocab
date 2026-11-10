@@ -40,9 +40,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble Gases",
-  "ko": "Wayground(퀴즈)로 비활성 기체 과제 풀기",
+  "ko": "Wayground(퀴즈) 비활성 기체 과제",
   "due": "2026-11-11",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk3NzU4MDI2NTYw/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
@@ -51,7 +51,7 @@ window.CLASSROOM_POSTS = [
   "title": "Noble gas - wordsearch",
   "ko": "비활성 기체 낱말 찾기 과제",
   "due": "2026-11-11",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODgzMjY3NDIwODg2/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
@@ -114,7 +114,7 @@ window.CLASSROOM_POSTS = [
   "title": "Revision Questions on Periodic Table",
   "ko": "주기율표 복습 문제 풀기",
   "due": "2026-11-10",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODI2ODI2MjQ5MDA2/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
@@ -157,7 +157,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-04",
   "type": "자료",
   "title": "T1 CA2 Revision notes",
-  "ko": "1학기 CA2 시험 복습 노트 자료",
+  "ko": "1학기 CA2 시험 복습 노트 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -184,7 +184,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "과제",
   "title": "Make your voice heard, vocab homework 1",
-  "ko": "'Make your voice heard' 어휘 숙제 1",
+  "ko": "Make your voice heard 단어 숙제 1",
   "due": "2026-11-05",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -202,7 +202,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "Wayground(퀴즈)로 전기회로와 기호 과제",
+  "ko": "Wayground(퀴즈) 전기 회로와 기호 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -211,7 +211,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9 Electricity - Check your Progress",
-  "ko": "전기 단원 학습 점검 과제",
+  "ko": "9단원 전기 학습 점검 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -220,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "upload resistance graph - here",
-  "ko": "저항 그래프를 올리는 과제",
+  "ko": "저항 그래프를 올려 제출",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -231,15 +231,6 @@ window.CLASSROOM_POSTS = [
   "title": "9.4 Practical Circuits workbook questions",
   "ko": "9.4 실용 회로 워크북 문제 풀기",
   "due": "2026-11-08",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-11-02",
-  "type": "자료",
-  "title": "9.4 Practical Circuits",
-  "ko": "9.4 실용 회로 수업 자료",
-  "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
@@ -254,9 +245,9 @@ window.CLASSROOM_POSTS = [
  {
   "subject": "컴퓨터 과학 (Ms Meha)",
   "date": "2026-11-02",
-  "type": "자료",
+  "type": "공지",
   "title": "Common Assessment 1 Guide",
-  "ko": "공통평가1 대비 파이썬 학습 안내서 자료",
+  "ko": "공통평가1 대비 파이썬 학습 안내서 첨부",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -283,7 +274,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "과제",
   "title": "NARRATIVE COMMON ASSESSMENT",
-  "ko": "서사문 공통평가 과제",
+  "ko": "서사문 공통평가 제출",
   "due": "2026-10-30",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -319,18 +310,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "자료",
   "title": "Keyboard Notes",
-  "ko": "키보드 음 자료",
+  "ko": "키보드 음이름 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-29",
-  "type": "공지",
-  "title": "CA2 - 11th November",
-  "ko": "CA2 과학 공통평가 안내와 양식 첨부",
-  "due": "2026-11-11",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "드라마",
@@ -346,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-29",
   "type": "자료",
   "title": "T1 CA2 template - Writing Assessment",
-  "ko": "1학기 CA2 쓰기 평가 양식 자료",
+  "ko": "1학기 CA2 쓰기 평가 양식 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -360,38 +342,11 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
  {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-28",
-  "type": "과제",
-  "title": "Ohm's Law",
-  "ko": "Wayground(퀴즈)로 옴의 법칙 과제",
-  "due": "2026-10-29",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-28",
-  "type": "과제",
-  "title": "Resistance - workbook Questions",
-  "ko": "저항 워크북 문제 풀기",
-  "due": "2026-11-03",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-28",
-  "type": "자료",
-  "title": "Resistance",
-  "ko": "저항 수업 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
   "subject": "중국어 (Ying Ying老师)",
   "date": "2026-10-28",
   "type": "자료",
   "title": "Lesson 4 Grammar Slides (既...又....、除此以外, 还）",
-  "ko": "4과 문법 슬라이드(既又·除此以外) 자료",
+  "ko": "4과 문법 슬라이드 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -437,7 +392,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-26",
   "type": "자료",
   "title": "Lesson 4 中文短期培训班 Quizlet",
-  "ko": "4과 중국어 단기연수반 퀴즐렛 단어 자료",
+  "ko": "4과 단어 Quizlet 링크 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -460,24 +415,6 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
  },
  {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-22",
-  "type": "과제",
-  "title": "Parallel Circuits - workbook questions",
-  "ko": "병렬회로 워크북 문제 풀기",
-  "due": "2026-10-28",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-22",
-  "type": "자료",
-  "title": "Voltage in Parallel Circuits - building practical circuits",
-  "ko": "병렬회로 전압과 실습 회로 만들기 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-10-22",
   "type": "과제",
@@ -485,33 +422,6 @@ window.CLASSROOM_POSTS = [
   "ko": "9학년 PSHE 수업 과제",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-21",
-  "type": "과제",
-  "title": "electrical circuits and symbols",
-  "ko": "Wayground(퀴즈)로 전기회로와 기호 과제",
-  "due": "2026-10-27",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-21",
-  "type": "과제",
-  "title": "Circuit experiment",
-  "ko": "회로 실험 과제",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-21",
-  "type": "자료",
-  "title": "Electric current - circuits recap",
-  "ko": "전류와 회로 복습 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "휴머니티 (Mr Lawrence)",
@@ -570,42 +480,6 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
  {
-  "subject": "영어 (Mr Glanz)",
-  "date": "2026-10-19",
-  "type": "자료",
-  "title": "CA1 Feedback lesson",
-  "ko": "CA1 피드백 수업 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
- },
- {
-  "subject": "컴퓨터 과학 (Ms Meha)",
-  "date": "2026-10-19",
-  "type": "과제",
-  "title": "Python Loop",
-  "ko": "파이썬 반복문 과제 제출",
-  "due": "2026-10-26",
-  "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
- },
- {
-  "subject": "라살 교육",
-  "date": "2026-10-19",
-  "type": "과제",
-  "title": "STEP 1: LEDU TALK MAKING",
-  "ko": "LEDU 토크 만들기 1단계 질문 답하기",
-  "due": "2026-10-19",
-  "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
- },
- {
-  "subject": "튜터 (Mr Cassels)",
-  "date": "2026-10-19",
-  "type": "과제",
-  "title": "Mid term Check in",
-  "ko": "중간 점검 과제 제출",
-  "due": "2026-10-22",
-  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
- },
- {
   "subject": "휴머니티 (Mr Lawrence)",
   "date": "2026-10-09",
   "type": "과제",
@@ -620,9 +494,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-09",
   "type": "과제",
   "title": "Year 9 Common Assessment Task 1 Term 1 2025",
-  "ko": "9학년 1학기 공통평가 과제1 제출",
+  "ko": "9학년 1학기 공통평가 과제1",
   "due": "2026-11-13",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4/a/ODI2NTgyNjIzMTI1/details"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-09 18:07";
+window.CLASSROOM_POSTS_AT = "2026-11-10 18:08";
