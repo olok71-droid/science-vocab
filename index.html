@@ -530,6 +530,11 @@ body.in-subject .cn-card { display: none; }
 .pd-ko { color: #1f4fa3; }
 .pd-en a, .pd-ko a { color: #1f4fa3; }
 .pd-files { margin-top: 16px; display: flex; flex-direction: column; gap: 7px; }
+.pd-att { margin: 6px 0 10px; }
+.pd-att-t { font-size: 12.5px; font-weight: 800; color: #111; margin: 4px 0 6px; }
+.pd-att .pg { margin: 0 0 10px; }
+.pd-att .pg img { display: block; width: 100%; height: auto; border: 1px solid #e5e5e5; border-radius: 8px; }
+.pd-att .pg-txt { font-size: 13px; line-height: 1.6; color: #222; margin-top: 6px; }
 .pd-file { display: block; font-size: 12.5px; font-weight: 700; color: #111; text-decoration: none;
   border: 1.5px solid #c9ccd6; border-radius: 8px; padding: 8px 10px; word-break: break-word; }
 .pd-file .k { font-size: 10px; font-weight: 900; color: #fff; background: #2e6b3a; border-radius: 5px;
@@ -1421,6 +1426,18 @@ function pdOpen(i){
   if (fs.length){
     h += '<div class="pd-files">';
     fs.forEach(function(f){
+      /* ★2026-11-11 대표님 "눌러서 여는 것은 만들지 마. 그냥 눈에 보여야 돼": 첨부 파일은 창 안에 쪽 그림(+한국어)으로 보인다. 파일 링크는 두지 않는다. */
+      if (f.pages && f.pages.length){
+        h += '<div class="pd-att"><div class="pd-att-t">' + caEsc(f.name || '') + '</div>';
+        f.pages.forEach(function(p){
+          h += '<div class="pg"><img src="' + caEsc(encodeURI(p.src)) + '" alt="" loading="lazy">' +
+               ((p.tr || p.note) ? '<div class="pg-txt">' + (p.tr ? '<div class="pg-tr">' + p.tr + '</div>' : '') + (p.note ? '<p>' + p.note + '</p>' : '') + '</div>' : '') +
+               '</div>';
+        });
+        h += '</div>';
+        return;
+      }
+      if (f.local) return;
       var href = f.local ? encodeURI(f.local) : f.url;
       var ext = f.local ? (f.local.split('.').pop() || '').toUpperCase() : (f.kind === 'youtube' ? '영상' : (f.kind === 'form' ? '설문' : '링크'));
       h += '<a class="pd-file" href="' + caEsc(href) + '" target="_blank" rel="noopener">' +
