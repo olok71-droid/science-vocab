@@ -14,7 +14,7 @@ window.POST_DETAILS = {
     "name": "Y9 Term 1 2026 - History Home Learning",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1GeBNCzP74AKRtEXbgTyQ11i0uhroDNXH-NYJ2BwHCp0/edit?usp=classroom_web",
-    "local": "post_files/1GeBNCzP74AKRtEXbgTyQ11i0uhroDNXH-NYJ2BwHCp0.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1GeBNCzP74AKRtEXbgTyQ11i0uhroDNXH-NYJ2BwHCp0.pdf"
    }
   ],
   "at": "2026-10-09"
@@ -27,13 +27,13 @@ window.POST_DETAILS = {
     "name": "Year9_Python_Common Assessment  Term 1 2026",
     "kind": "gdoc",
     "url": "https://docs.google.com/document/d/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c/edit?usp=classroom_web",
-    "local": "post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c.pdf"
    },
    {
     "name": "Year9_Python_Common_Assessment_Term1_2026_Mandarin.docx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/14Jkb-JU68smhCNsY9sWExloCaGFsQ4jj/view?usp=classroom_web",
-    "local": "post_files/14Jkb-JU68smhCNsY9sWExloCaGFsQ4jj.docx"
+    "local": "https://science-vocab-files.pages.dev/post_files/14Jkb-JU68smhCNsY9sWExloCaGFsQ4jj.docx"
    }
   ],
   "at": "2026-10-09"
@@ -65,13 +65,13 @@ window.POST_DETAILS = {
     "name": "Screenshot 2026-10-21 at 10.25.03.png",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1S0tOylzonETShpb9ebrbkeWG6J1Ecdm_/view&usp=classroom_web",
-    "local": "post_files/1S0tOylzonETShpb9ebrbkeWG6J1Ecdm_.png"
+    "local": "https://science-vocab-files.pages.dev/post_files/1S0tOylzonETShpb9ebrbkeWG6J1Ecdm_.png"
    },
    {
     "name": "Screenshot 2026-10-21 at 10.25.16.png",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1kOMAryPfIFhyIwUDAYUPj19YqHamBymG/view?usp=classroom_web",
-    "local": "post_files/1kOMAryPfIFhyIwUDAYUPj19YqHamBymG.png"
+    "local": "https://science-vocab-files.pages.dev/post_files/1kOMAryPfIFhyIwUDAYUPj19YqHamBymG.png"
    }
   ],
   "at": "2026-10-21"
@@ -84,37 +84,37 @@ window.POST_DETAILS = {
     "name": "Lesson 3",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1Ye1geZHBgMzhbZ-TTxYDtGQBPBN2avSq8Cib5mCtcUs/edit?usp=classroom_web",
-    "local": "post_files/1Ye1geZHBgMzhbZ-TTxYDtGQBPBN2avSq8Cib5mCtcUs.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1Ye1geZHBgMzhbZ-TTxYDtGQBPBN2avSq8Cib5mCtcUs.pdf"
    },
    {
     "name": "Lesson 8",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1JilF0R4ENZJjQir1XCMfq59I-8_rr8OaYaSxADOk_oQ/edit?usp=classroom_web",
-    "local": "post_files/1JilF0R4ENZJjQir1XCMfq59I-8_rr8OaYaSxADOk_oQ.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1JilF0R4ENZJjQir1XCMfq59I-8_rr8OaYaSxADOk_oQ.pdf"
    },
    {
     "name": "Lesson 7",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA/edit?usp=classroom_web",
-    "local": "post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA.pdf"
    },
    {
     "name": "Lesson 6",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1dPdF6dB20VDxvb8IV6l-LShhQdU5StQSD7ntKvypFSU/edit?usp=classroom_web",
-    "local": "post_files/1dPdF6dB20VDxvb8IV6l-LShhQdU5StQSD7ntKvypFSU.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1dPdF6dB20VDxvb8IV6l-LShhQdU5StQSD7ntKvypFSU.pdf"
    },
    {
     "name": "Lesson 5",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM/edit?usp=classroom_web",
-    "local": "post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM.pdf"
    },
    {
     "name": "Lesson 4",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4/edit?usp=classroom_web",
-    "local": "post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4.pdf"
    }
   ],
   "at": "2026-10-21"
@@ -133,7 +133,7 @@ window.POST_DETAILS = {
     "name": "Lesson 8 - Exploring Career Pathways",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1KBj-SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY/edit?usp=classroom_web",
-    "local": "post_files/1KBj-SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1KBj-SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY.pdf"
    }
   ],
   "at": "2026-10-22"
@@ -146,7 +146,7 @@ window.POST_DETAILS = {
     "name": "Screenshot 2026-10-23 at 10.07.10 AM.png",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1XrecH5joDXSH4ijV36PQ1bP7ShCbAKsc/view&usp=classroom_web",
-    "local": "post_files/1XrecH5joDXSH4ijV36PQ1bP7ShCbAKsc.png"
+    "local": "https://science-vocab-files.pages.dev/post_files/1XrecH5joDXSH4ijV36PQ1bP7ShCbAKsc.png"
    }
   ],
   "at": "2026-10-23"
@@ -185,43 +185,43 @@ window.POST_DETAILS = {
     "name": "Lesson 1 - Guided Reading & Storyboard.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1eqNhKfsFbF_coZTFuke3k0gpWJBVBQvP/view?usp=classroom_web",
-    "local": "pdfs/humanities/Lesson 1 - Guided Reading & Storyboard.pptx"
+    "local": "https://science-vocab-files.pages.dev/pdfs/humanities/Lesson 1 - Guided Reading & Storyboard.pdf"
    },
    {
     "name": "Lesson 1 - Video Sheet.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1r3uxcOG_VGVuD13RPVaw9R0BgWV4QFlW/view?usp=classroom_web",
-    "local": "pdfs/humanities/Lesson 1 - Video Sheet.pptx"
+    "local": "https://science-vocab-files.pages.dev/pdfs/humanities/Lesson 1 - Video Sheet.pdf"
    },
    {
     "name": "PW Lesson 1 - Printing.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1Y1Dd0U6u_PY5Y--E0ahY-G77m9D8jSfF/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 1 - Printing.pptx"
+    "local": "https://science-vocab-files.pages.dev/pdfs/humanities/PW Lesson 1 - Printing.pdf"
    },
    {
     "name": "PW Lessons 1 & 2 -  The Long Fuse - Europe in 1914.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1xtOWJ2WQIoxPwdhaXj53hahNaGoknvxB/view?usp=classroom_web",
-    "local": "post_files/1xtOWJ2WQIoxPwdhaXj53hahNaGoknvxB.pptx"
+    "local": "https://science-vocab-files.pages.dev/post_files/1xtOWJ2WQIoxPwdhaXj53hahNaGoknvxB.pdf"
    },
    {
     "name": "Lesson 3 - Friends and Foes_ The Alliance System.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1IglMZuyBejw1Un_wz0hexsthim9Dxajm/view?usp=classroom_web",
-    "local": "pdfs/humanities/Lesson 3 - Friends and Foes_ The Alliance System.pptx"
+    "local": "https://science-vocab-files.pages.dev/pdfs/humanities/Lesson 3 - Friends and Foes_ The Alliance System.pdf"
    },
    {
     "name": "Lesson 3 - Info.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1dWyz61QZOnkICaa0HRokSaknPik7IZoT/view?usp=classroom_web",
-    "local": "pdfs/humanities/Lesson 3 - Info.pptx"
+    "local": "https://science-vocab-files.pages.dev/pdfs/humanities/Lesson 3 - Info.pdf"
    },
    {
     "name": "Lesson 3 - Printing.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1uQmExo8Hi0mkCpKPxXajQ7cjv16Z2sf7/view?usp=classroom_web",
-    "local": "pdfs/humanities/Lesson 3 - Printing.pptx"
+    "local": "https://science-vocab-files.pages.dev/pdfs/humanities/Lesson 3 - Printing.pdf"
    },
    {
     "name": "PW Lesson 4 - Guided Reading.pptx",
@@ -239,19 +239,19 @@ window.POST_DETAILS = {
     "name": "PW Lesson 5 - Printing.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1F1rLA1NAWjuglzvEpdIgL9tVVAoVMS4U/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 5 - Printing.pptx"
+    "local": "https://science-vocab-files.pages.dev/pdfs/humanities/PW Lesson 5 - Printing.pdf"
    },
    {
     "name": "PW Lesson 5 - Printing  -  Repaired.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/18ty8wYXf2E8RA12SOqu83pXDdPZA1R8E/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 5 - Printing  -  Repaired.pptx"
+    "local": "https://science-vocab-files.pages.dev/pdfs/humanities/PW Lesson 5 - Printing  -  Repaired.pdf"
    },
    {
     "name": "PW Lesson 5 - The Assassination of Archduke Franz Ferdinand  -  Repaired.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1_Rb_avUo730vOP6JF3IYGbFQJ4GNLHKo/view?usp=classroom_web",
-    "local": "pdfs/humanities/PW Lesson 5 - The Assassination of Archduke Franz Ferdinand  -  Repaired.pptx"
+    "local": "https://science-vocab-files.pages.dev/pdfs/humanities/PW Lesson 5 - The Assassination of Archduke Franz Ferdinand  -  Repaired.pdf"
    }
   ],
   "at": "2026-10-27"
@@ -270,13 +270,13 @@ window.POST_DETAILS = {
     "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
-    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf"
    },
    {
     "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
-    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf"
    }
   ],
   "at": "2026-10-27"
@@ -289,7 +289,7 @@ window.POST_DETAILS = {
     "name": "21-Sep-2026 - 27-Oct-2026.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8/view?usp=classroom_web",
-    "local": "post_files/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8.pdf"
    }
   ],
   "at": "2026-10-27"
@@ -308,13 +308,13 @@ window.POST_DETAILS = {
     "name": "FOBISIA Online Guitar Solo comp criteria.png",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1cWz8kWvWuMAHG_hAyAWt5KwXgu46EGdL/view?usp=classroom_web",
-    "local": "post_files/1cWz8kWvWuMAHG_hAyAWt5KwXgu46EGdL.png"
+    "local": "https://science-vocab-files.pages.dev/post_files/1cWz8kWvWuMAHG_hAyAWt5KwXgu46EGdL.png"
    },
    {
     "name": "FOBISIA Online Guitar Solo.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7/view?usp=classroom_web",
-    "local": "post_files/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7.pdf"
    }
   ],
   "at": "2026-10-27"
@@ -327,7 +327,7 @@ window.POST_DETAILS = {
     "name": "U1 L4 grammar slides.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1kazIOcH1wkhMAbfW5z3PEJk24cj-Fxam/view?usp=classroom_web",
-    "local": "pdfs/chinese_y9/U1 L4 grammar slides.pdf"
+    "local": "https://science-vocab-files.pages.dev/pdfs/chinese_y9/U1 L4 grammar slides.pdf"
    }
   ],
   "at": "2026-10-28"
@@ -340,7 +340,7 @@ window.POST_DETAILS = {
     "name": "Year 9 cover lesson w/c/ 26th oct",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1adh-rcMkXf2I_BWXuAd91cyX0JYsfXouA7FwFMMg0go/edit?usp=classroom_web",
-    "local": "post_files/1adh-rcMkXf2I_BWXuAd91cyX0JYsfXouA7FwFMMg0go.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1adh-rcMkXf2I_BWXuAd91cyX0JYsfXouA7FwFMMg0go.pdf"
    }
   ],
   "at": "2026-10-29"
@@ -353,7 +353,7 @@ window.POST_DETAILS = {
     "name": "Unity Week - Chess",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/13t91YWHvr-4o1u8A7NXsvwRXEWy--m9WVPsBgHP3OrM/edit?usp=classroom_web",
-    "local": "post_files/13t91YWHvr-4o1u8A7NXsvwRXEWy--m9WVPsBgHP3OrM.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/13t91YWHvr-4o1u8A7NXsvwRXEWy--m9WVPsBgHP3OrM.pdf"
    }
   ],
   "at": "2026-10-29"
@@ -366,7 +366,7 @@ window.POST_DETAILS = {
     "name": "Y9 Man FL CA2 Writing.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1zi16CAHFVP6Vig6W20zqky85qsEFM0cZ/view?usp=classroom_web",
-    "local": "post_files/1zi16CAHFVP6Vig6W20zqky85qsEFM0cZ.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1zi16CAHFVP6Vig6W20zqky85qsEFM0cZ.pdf"
    }
   ],
   "at": "2026-10-29"
@@ -391,7 +391,7 @@ window.POST_DETAILS = {
     "name": "The Great Maths Mystery",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU/edit?usp=classroom_web",
-    "local": "post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU.pdf"
    },
    {
     "name": "Google Forms: Sign-in",
@@ -410,7 +410,7 @@ window.POST_DETAILS = {
     "name": "Y9_CA2_120min_Worked_Answers.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/12zSocJXEf-c9mSDgzUojrEuqpYMDcESJ/view?usp=classroom_web",
-    "local": "post_files/12zSocJXEf-c9mSDgzUojrEuqpYMDcESJ.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/12zSocJXEf-c9mSDgzUojrEuqpYMDcESJ.pdf"
    }
   ],
   "at": "2026-11-01"
@@ -429,7 +429,7 @@ window.POST_DETAILS = {
     "name": "Grand Staff Guide.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1vwwtLLRvkZqduAMgC_JUs9s_Bu_LkHzs/view?usp=classroom_web",
-    "local": "pdfs/music/Grand Staff Guide.pdf"
+    "local": "https://science-vocab-files.pages.dev/pdfs/music/Grand Staff Guide.pdf"
    }
   ],
   "at": "2026-11-01"
@@ -461,7 +461,7 @@ window.POST_DETAILS = {
     "name": "9.4 Practical circuits - answers",
     "kind": "gdoc",
     "url": "https://docs.google.com/document/d/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4/edit?usp=classroom_web",
-    "local": "post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4.pdf"
    }
   ],
   "at": "2026-11-02"
@@ -474,7 +474,7 @@ window.POST_DETAILS = {
     "name": "MONDAY MATHS WEEK MYSTERY.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5/view?usp=classroom_web",
-    "local": "post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5.pptx"
+    "local": "https://science-vocab-files.pages.dev/post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5.pdf"
    },
    {
     "name": "MONDAYS MATHS MYSTERY ANSWER",
@@ -493,7 +493,7 @@ window.POST_DETAILS = {
     "name": "Year9_Python_EAL_Support_Guide.docx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1FF-qD4hdGi5IgxI25zwHd-1sPJKOa7a4/view?usp=classroom_web",
-    "local": "post_files/1FF-qD4hdGi5IgxI25zwHd-1sPJKOa7a4.docx"
+    "local": "https://science-vocab-files.pages.dev/post_files/1FF-qD4hdGi5IgxI25zwHd-1sPJKOa7a4.docx"
    }
   ],
   "at": "2026-11-02"
@@ -525,7 +525,7 @@ window.POST_DETAILS = {
     "name": "Year 9 History T1 CAT2  2026",
     "kind": "gdoc",
     "url": "https://docs.google.com/document/d/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI/edit?usp=classroom_web",
-    "local": "post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf"
    }
   ],
   "at": "2026-11-03"
@@ -538,7 +538,7 @@ window.POST_DETAILS = {
     "name": "Screenshot 2026-11-03 at 15.16.42.png",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/19X7bxipBm16t1GgegeDA5gqxRD1L-ZEV/view?usp=classroom_web",
-    "local": "post_files/19X7bxipBm16t1GgegeDA5gqxRD1L-ZEV.png"
+    "local": "https://science-vocab-files.pages.dev/post_files/19X7bxipBm16t1GgegeDA5gqxRD1L-ZEV.png"
    }
   ],
   "at": "2026-11-03"
@@ -563,7 +563,7 @@ window.POST_DETAILS = {
     "name": "TUESDAY MATHS WEEK MYSTERY.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7/view?usp=classroom_web",
-    "local": "post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7.pptx"
+    "local": "https://science-vocab-files.pages.dev/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7.pdf"
    }
   ],
   "at": "2026-11-03"
@@ -576,7 +576,7 @@ window.POST_DETAILS = {
     "name": "answers to all the questions on periodic trends",
     "kind": "gdoc",
     "url": "https://docs.google.com/document/d/1hVe-oZyd6r4DlA9CdaaX9D_yBH9L47u1nSAwvx7tek4/edit?usp=classroom_web",
-    "local": "post_files/1hVe-oZyd6r4DlA9CdaaX9D_yBH9L47u1nSAwvx7tek4.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1hVe-oZyd6r4DlA9CdaaX9D_yBH9L47u1nSAwvx7tek4.pdf"
    }
   ],
   "at": "2026-11-04"
@@ -589,13 +589,13 @@ window.POST_DETAILS = {
     "name": "CA2 Template Y9 Science Common Assessment 26/27.docx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG/view?usp=classroom_web",
-    "local": "post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG.docx"
+    "local": "https://science-vocab-files.pages.dev/post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG.docx"
    },
    {
     "name": "C1.3 Group 1 elements",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1nQHDc1SOzlHLqNMfEShnbQf9-hGXRG6720hBYJbl3H4/edit?usp=classroom_web",
-    "local": "post_files/1nQHDc1SOzlHLqNMfEShnbQf9-hGXRG6720hBYJbl3H4.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1nQHDc1SOzlHLqNMfEShnbQf9-hGXRG6720hBYJbl3H4.pdf"
    },
    {
     "name": "GCSE Chemistry: Exam Revision | The Periodic Table",
@@ -620,7 +620,7 @@ window.POST_DETAILS = {
     "name": "WEDNESDAY MATHS WEEK MYSTERY.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7/view?usp=classroom_web",
-    "local": "post_files/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7.pptx"
+    "local": "https://science-vocab-files.pages.dev/post_files/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7.pdf"
    },
    {
     "name": "WEDNESDAYS MATHS MYSTERY ANSWER",
@@ -645,7 +645,7 @@ window.POST_DETAILS = {
     "name": "9E 9C 9B MATHYK DT CA Y9 Term1b - Common Assessment Template.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/15RprvIJqc15TeiitujVp6TNYqz3yJWal/view?usp=classroom_web",
-    "local": "post_files/15RprvIJqc15TeiitujVp6TNYqz3yJWal.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/15RprvIJqc15TeiitujVp6TNYqz3yJWal.pdf"
    }
   ],
   "at": "2026-11-04"
@@ -658,7 +658,7 @@ window.POST_DETAILS = {
     "name": "Y9 CA2 Revision Notes.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1iQgu-5bTyUGvayfPuogn0SoB1KjJW0Pd/view?usp=classroom_web",
-    "local": "post_files/1iQgu-5bTyUGvayfPuogn0SoB1KjJW0Pd.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1iQgu-5bTyUGvayfPuogn0SoB1KjJW0Pd.pdf"
    }
   ],
   "at": "2026-11-04"
@@ -671,7 +671,7 @@ window.POST_DETAILS = {
     "name": "FRIDAY MATHS WEEK MYSTERY.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1M9_1YN27oFBgCQeFoUBqys9PZJfJwfF1/view?usp=classroom_web",
-    "local": "post_files/1M9_1YN27oFBgCQeFoUBqys9PZJfJwfF1.pptx"
+    "local": "https://science-vocab-files.pages.dev/post_files/1M9_1YN27oFBgCQeFoUBqys9PZJfJwfF1.pdf"
    }
   ],
   "at": "2026-11-06"
@@ -684,7 +684,7 @@ window.POST_DETAILS = {
     "name": "IMC_Solutions_2026.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1IOqAMoeVKYa-k0dKLgD4zZ0vbLKuk9ma/view?usp=classroom_web",
-    "local": "post_files/1IOqAMoeVKYa-k0dKLgD4zZ0vbLKuk9ma.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1IOqAMoeVKYa-k0dKLgD4zZ0vbLKuk9ma.pdf"
    }
   ],
   "at": "2026-11-06"
@@ -703,7 +703,7 @@ window.POST_DETAILS = {
     "name": "THURSDAY MATHS WEEK MYSTERY.pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6/view?usp=classroom_web",
-    "local": "post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6.pptx"
+    "local": "https://science-vocab-files.pages.dev/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6.pdf"
    },
    {
     "name": "THURSDAYS MATHS MYSTERY ANSWER",
@@ -741,7 +741,7 @@ window.POST_DETAILS = {
     "name": "Crossword answers",
     "kind": "gdoc",
     "url": "https://docs.google.com/document/d/1BkH5jC2iYwUFP7EXe8alUf7ofwIVYfPrQjUDSRshlZc/edit?usp=classroom_web",
-    "local": "post_files/1BkH5jC2iYwUFP7EXe8alUf7ofwIVYfPrQjUDSRshlZc.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1BkH5jC2iYwUFP7EXe8alUf7ofwIVYfPrQjUDSRshlZc.pdf"
    }
   ],
   "at": "2026-11-06"
@@ -754,13 +754,13 @@ window.POST_DETAILS = {
     "name": "C1.5 Group 0 elements",
     "kind": "gslides",
     "url": "https://docs.google.com/presentation/d/1Yxx-E69HQDFs6H1r48P_nuAEJ9MuGcFHgUM82KjXyw8/edit?usp=classroom_web",
-    "local": "post_files/1Yxx-E69HQDFs6H1r48P_nuAEJ9MuGcFHgUM82KjXyw8.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1Yxx-E69HQDFs6H1r48P_nuAEJ9MuGcFHgUM82KjXyw8.pdf"
    },
    {
     "name": "2.2 Halogen displacement reactions 9E .pptx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1VZHT9um1YekDpj5ux9ZXrN_neKVN1Whg/view?usp=classroom_web",
-    "local": "post_files/1VZHT9um1YekDpj5ux9ZXrN_neKVN1Whg.pptx"
+    "local": "https://science-vocab-files.pages.dev/post_files/1VZHT9um1YekDpj5ux9ZXrN_neKVN1Whg.pdf"
    },
    {
     "name": "Noble Gases - The Gases In Group 18 | Properties of Matter | Chemistry | FuseSchool",
@@ -785,7 +785,7 @@ window.POST_DETAILS = {
     "name": "Term 1 Music Y9 CAT Performance",
     "kind": "gdoc",
     "url": "https://docs.google.com/document/d/1-H7BbUFNwXdItjKsKd0SwG4zCC6cixtB1UpcFMglF9o/edit?usp=classroom_web",
-    "local": "post_files/1-H7BbUFNwXdItjKsKd0SwG4zCC6cixtB1UpcFMglF9o.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1-H7BbUFNwXdItjKsKd0SwG4zCC6cixtB1UpcFMglF9o.pdf"
    }
   ],
   "at": "2026-11-06"
@@ -798,7 +798,7 @@ window.POST_DETAILS = {
     "name": "Lunar New Year a Time of Celebration and Joy Educational Presentation.pdf",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS/view?usp=classroom_web",
-    "local": "post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS.pdf"
+    "local": "https://science-vocab-files.pages.dev/post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS.pdf"
    }
   ],
   "at": "2026-11-06"
@@ -811,7 +811,7 @@ window.POST_DETAILS = {
     "name": "Rewards Slips - Character Recognitions.png",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-/view&usp=classroom_web",
-    "local": "post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-.png"
+    "local": "https://science-vocab-files.pages.dev/post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-.png"
    }
   ],
   "at": "2026-11-08"

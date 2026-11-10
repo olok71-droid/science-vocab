@@ -1,0 +1,9 @@
+# ★2026-11-10 무거운 학교 원본은 Cloudflare Pages science-vocab-files 로 옮겼다(맥 디스크에는 그대로 둔다, git 추적만 끊음).
+#   올리기 = ~/classroom-sync/files_cdn.py. 25MiB 넘어 Cloudflare 에 못 올린 파일만 아래 ! 로 남긴다.
+/pdfs/
+/post_files/
+!/pdfs/
+/pdfs/*
+!/pdfs/genes/
+/pdfs/genes/*
+!/pdfs/genes/CLS Science Learners Book 9.pdf
