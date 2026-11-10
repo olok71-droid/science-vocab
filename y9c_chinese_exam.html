@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>중국어 시험대비 · 9학년 · AMY Study App</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--accent:#0d9488;--pink:#db2777;--text:#243b6b;--strong:#16223f;--muted:#6b7a99;--border:rgba(36,59,107,0.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed}
+header{background:rgba(255,255,255,.82);border-bottom:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;gap:12px}
+header a{color:var(--strong);text-decoration:none;font-weight:800}
+header h1{font-size:18px;color:var(--strong)}
+main{max-width:860px;margin:0 auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin:12px 0}
+.card h2{font-size:16px;color:var(--strong);margin-bottom:8px}
+.btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);background:#fff;border-radius:10px;padding:5px 12px;font-weight:800;font-size:14px;cursor:pointer;margin:2px 4px 2px 0}
+.sent{border-top:1px dashed var(--border);padding:10px 0}
+.sent:first-of-type{border-top:0}
+.zh{font-size:21px;color:var(--strong);line-height:1.5}
+.py{font-size:13px;color:var(--muted)}
+.ko{font-size:14px;margin-top:2px}
+.key{color:var(--pink);font-weight:800}
+img.orig{width:100%;border:1px solid var(--border);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--border);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#f1f5f9}
+</style>
+</head>
+<body>
+<header><a href="index.html">←</a><h1>🐼 중국어 시험대비</h1></header>
+<main>
+
+<div class="card">
+<h2>1. 我的学校 나의 학교 · 중국어 여름캠프</h2>
+<button class="btn" onclick="playAll()">▶ 전체 듣기</button>
+<div id="sents"></div>
+</div>
+
+<div class="card">
+<h2>핵심 표현</h2>
+<table>
+<tr><th>표현</th><th>병음</th><th>뜻</th><th>문장 속에서</th></tr>
+<tr><td class="key">对我来说</td><td>duì wǒ lái shuō</td><td>나에게는, 내 입장에서는</td><td>对我来说，我觉得中文很难。</td></tr>
+<tr><td class="key">因为…</td><td>yīn wèi</td><td>왜냐하면 ~ 때문이다</td><td>因为口语很难。</td></tr>
+<tr><td class="key">既有…又有…</td><td>jì yǒu … yòu yǒu …</td><td>~도 있고 ~도 있다</td><td>夏令营既有中文课，又有文化课。</td></tr>
+<tr><td class="key">还</td><td>hái</td><td>또, 게다가</td><td>还去了图书馆。/ 我还买了…</td></tr>
+<tr><td class="key">除此以外</td><td>chú cǐ yǐ wài</td><td>이 밖에도, 그 외에</td><td>除此以外，我还买了中国的纪念品。</td></tr>
+<tr><td class="key">会继续…</td><td>huì jì xù</td><td>계속 ~할 것이다</td><td>我会继续学习中文。</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>원본</h2>
+<img class="orig" src="y9c_chinese_exam_files/essay1.png" alt="원본 글">
+</div>
+
+</main>
+<script>
+var S=[
+["我的学校很好，一共学八门科目，有英语、数学、化学、中文等等。","wǒ de xué xiào hěn hǎo, yí gòng xué bā mén kē mù, yǒu yīng yǔ, shù xué, huà xué, zhōng wén děng děng.","우리 학교는 아주 좋다. 모두 여덟 과목을 배우는데, 영어·수학·화학·중국어 등이 있다."],
+["对我来说，我觉得中文很难，因为口语很难。","duì wǒ lái shuō, wǒ jué de zhōng wén hěn nán, yīn wèi kǒu yǔ hěn nán.","나에게는 중국어가 어렵다고 느껴진다. 왜냐하면 말하기가 어렵기 때문이다."],
+["8月我参加了上海的中文夏令营，夏令营既有中文课，又有文化课。","bā yuè wǒ cān jiā le shàng hǎi de zhōng wén xià lìng yíng, xià lìng yíng jì yǒu zhōng wén kè, yòu yǒu wén huà kè.","8월에 나는 상하이 중국어 여름캠프에 참가했다. 캠프에는 중국어 수업도 있고 문화 수업도 있었다."],
+["文化课上，我学了武术，还去了图书馆。","wén huà kè shàng, wǒ xué le wǔ shù, hái qù le tú shū guǎn.","문화 수업에서 나는 무술을 배웠고, 도서관에도 갔다."],
+["除此以外，我还买了中国的纪念品，参观了博物馆。","chú cǐ yǐ wài, wǒ hái mǎi le zhōng guó de jì niàn pǐn, cān guān le bó wù guǎn.","그 밖에도 나는 중국 기념품을 샀고, 박물관을 견학했다."],
+["我会继续学习中文，因为我的中文听力进步了。","wǒ huì jì xù xué xí zhōng wén, yīn wèi wǒ de zhōng wén tīng lì jìn bù le.","나는 중국어 공부를 계속할 것이다. 왜냐하면 내 중국어 듣기 실력이 늘었기 때문이다."]
+];
+var KEYS=["对我来说","既有","又有","除此以外","还","因为","会继续"];
+function mark(t){KEYS.forEach(function(k){t=t.split(k).join('<span class="key">'+k+'</span>');});return t;}
+var box=document.getElementById('sents'),au=new Audio();
+S.forEach(function(s,i){var d=document.createElement('div');d.className='sent';
+d.innerHTML='<div class="zh">'+mark(s[0])+' <button class="btn" onclick="play('+(i+1)+')">🔊</button></div><div class="py">'+s[1]+'</div><div class="ko">'+s[2]+'</div>';box.appendChild(d);});
+function play(n){au.pause();au.src='audio/zh_exam1_s'+n+'.mp3';au.play();}
+function playAll(){au.pause();au.src='audio/zh_exam1_all.mp3';au.play();}
+</script>
+<script src="studylog.js"></script>
+</body>
+</html>
