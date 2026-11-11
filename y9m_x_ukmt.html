@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>UKMT 중급 수학 챌린지 2026 · 풀이</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--pink:#db2777;--purple:#6d5dfc;
+--text:#243b6b;--strong:#16223f;--muted:#6b7a99;--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;flex-wrap:wrap;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.shot{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;margin:10px 0 14px;}
+.shot img{width:100%;height:auto;border-radius:8px;display:block;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.8;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+.chk{display:inline-block;font-size:11.5px;font-weight:800;color:#b45309;background:#fef3c7;border:1px solid #fcd34d;border-radius:6px;padding:1px 6px;}
+.tbl{border-collapse:collapse;margin:6px 0;font-size:13px;}
+.tbl td,.tbl th{border:1px solid rgba(36,59,107,.2);padding:4px 8px;text-align:center;}
+.tbl th{background:#e0f2f1;}
+
+.mine{background:#fff4b8;border:1px solid #e6c200;border-left:6px solid #e6b800;border-radius:10px;padding:10px 14px;margin:10px 0;color:#111;font-size:13.5px;line-height:1.9}
+.mine b.lbl{display:inline-block;background:#e6b800;color:#111;border-radius:6px;padding:0 6px;margin-right:6px;font-size:12px}
+.mine ol{margin:6px 0 4px 20px}
+.mine li{margin:3px 0}
+.ansline{font-size:14px;font-weight:800;color:var(--strong);margin:8px 0 2px}
+.tipline{margin-top:6px;font-size:12.5px;color:#7a5a00;font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">📝</div>
+  <div class="header-text">
+    <div class="header-title">UKMT 중급 수학 챌린지 2026</div>
+    <div class="header-sub">UKMT Intermediate Mathematical Challenge · 25문제 · 숙제 마감 11/13(금)</div>
+  </div>
+</header>
+<div class="wrap">
+<div class="q" id="q1">
+  <div class="q-title">Q1.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q01.jpg" alt="UKMT IMC 2026 Q1" loading="lazy"></div>
+  <div class="q-ko">다음 중 값이 가장 큰 것은?</div>
+  <div class="ansline">정답: E</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>분자 1 + 2 + … + n 은 n(n+1)/2 이다. 이것을 n 으로 나누면 (n+1)/2 가 된다.</li><li>그래서 각 보기의 값은 A = 3/2 = 1.5, B = 2, C = 5/2 = 2.5, D = 3, E = 7/2 = 3.5 이다.</li><li>n 이 클수록 값이 커지므로 가장 큰 것은 E (3.5) 이다.</li></ol>
+    <div class="tipline">기억할 점: 평균(mean) 생각: 1부터 n까지의 평균은 가운데 값 (n+1)/2 이다.</div>
+  </div>
+</div>
+<div class="q" id="q2">
+  <div class="q-title">Q2.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q02.jpg" alt="UKMT IMC 2026 Q2" loading="lazy"></div>
+  <div class="q-ko">월요일 20:26 에서 2026분 뒤는 몇 시인가?</div>
+  <div class="ansline">정답: D (수요일 06:12)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>분을 시간으로 바꾼다: 2026 ÷ 60 = 33 나머지 46 → 33시간 46분.</li><li>33시간 = 24시간(하루) + 9시간 → 1일 9시간 46분.</li><li>월요일 20:26 + 1일 = 화요일 20:26.</li><li>화요일 20:26 + 9시간 = 수요일 05:26.</li><li>05:26 + 46분 = 06:12 → 수요일 06:12.</li></ol>
+    <div class="tipline">기억할 점: 큰 분(minutes)은 먼저 &#x27;일·시간·분&#x27;으로 쪼갠 다음 차례로 더한다.</div>
+  </div>
+</div>
+<div class="q" id="q3">
+  <div class="q-title">Q3.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q03.jpg" alt="UKMT IMC 2026 Q3" loading="lazy"></div>
+  <div class="q-ko">직육면체(cuboid)의 세 변의 길이(cm)가 연속하는 세 자연수이고 부피는 120 cm³ 이다. 가장 큰 면의 넓이(cm²)는?</div>
+  <div class="ansline">정답: D (30)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>연속하는 세 수를 n−1, n, n+1 이라고 둔다(consecutive = 연속하는).</li><li>부피 = (n−1) × n × (n+1) = 120.</li><li>작은 수부터 넣어 본다: 3×4×5 = 60 (작다), 4×5×6 = 120 (맞다!).</li><li>변의 길이는 4, 5, 6 cm. 가장 큰 면은 큰 두 변으로 만든 면이므로 5 × 6 = 30 cm².</li></ol>
+    <div class="tipline">기억할 점: 경시대회에서는 식을 다 풀기보다 &#x27;넣어 보기(trial)&#x27;가 빠를 때가 많다.</div>
+  </div>
+</div>
+<div class="q" id="q4">
+  <div class="q-title">Q4.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q04.jpg" alt="UKMT IMC 2026 Q4" loading="lazy"></div>
+  <div class="q-ko">35 를 1 : ½ : ¼ 의 비로 나눌 때 가장 작은 몫은?</div>
+  <div class="ansline">정답: E (5)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>분수 비는 모두 4를 곱해 자연수 비로 바꾼다: 1 : ½ : ¼ = 4 : 2 : 1.</li><li>전체 칸 수 = 4 + 2 + 1 = 7.</li><li>한 칸 = 35 ÷ 7 = 5.</li><li>가장 작은 몫은 1칸 → 5.</li></ol>
+    <div class="tipline">기억할 점: 비(ratio)에 분수가 있으면 분모의 최소공배수를 곱해 정수로 만든다.</div>
+  </div>
+</div>
+<div class="q" id="q5">
+  <div class="q-title">Q5.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q05.jpg" alt="UKMT IMC 2026 Q5" loading="lazy"></div>
+  <div class="q-ko">두 직사각형이 겹쳐서 만든 팔각형(octagon)이다. 이 팔각형의 둘레(perimeter)를 바르게 나타낸 식은?</div>
+  <div class="ansline">정답: A (2p + 2r)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>계단 모양 도형은 꺾인 선을 &#x27;밀어서&#x27; 바깥쪽 큰 직사각형 모양으로 옮길 수 있다.</li><li>가로 방향 선들을 위·아래로 밀면 위쪽 합 = p, 아래쪽 합 = p → 가로 합 2p.</li><li>세로 방향 선들을 왼쪽·오른쪽으로 밀면 왼쪽 합 = r, 오른쪽 합 = r → 세로 합 2r.</li><li>q 는 안쪽으로 들어간 길이일 뿐 둘레를 바꾸지 않는다. 그래서 둘레 = 2p + 2r.</li></ol>
+    <div class="tipline">기억할 점: 직각으로 꺾인 도형의 둘레 = 그 도형을 감싸는 직사각형의 둘레 (안으로 파인 홈이 없을 때).</div>
+  </div>
+</div>
+<div class="q" id="q6">
+  <div class="q-title">Q6.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q06.jpg" alt="UKMT IMC 2026 Q6" loading="lazy"></div>
+  <div class="q-ko">수열의 n번째 항이 n/(n+1) 이다. 값이 0.92 보다 큰 첫 번째 항은?</div>
+  <div class="ansline">정답: D (12/13)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>n/(n+1) &gt; 0.92 를 푼다(inequality = 부등식).</li><li>양변에 (n+1) 을 곱한다: n &gt; 0.92n + 0.92.</li><li>100을 곱해 소수를 없앤다: 100n &gt; 92n + 92 → 8n &gt; 92 → n &gt; 11.5.</li><li>n 은 자연수이므로 처음으로 되는 것은 n = 12 → 12/13.</li><li>확인: 11/12 ≈ 0.9167 (작다), 12/13 ≈ 0.923 (크다) ✓</li></ol>
+    <div class="tipline">기억할 점: n/(n+1) 은 n 이 커질수록 1 에 가까워진다.</div>
+  </div>
+</div>
+<div class="q" id="q7">
+  <div class="q-title">Q7.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q07.jpg" alt="UKMT IMC 2026 Q7" loading="lazy"></div>
+  <div class="q-ko">95, 96, 97, 98, 99 를 1, 3, 5, 7, 9 중 하나와 한 번씩 짝짓는다. 큰 수를 작은 수로 나누면 다섯 개 모두 정수가 된다. 가장 작은 답과 가장 큰 답의 차는?</div>
+  <div class="ansline">정답: B (86)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>나누어떨어져야 하므로 &#x27;누구로 나눠지나&#x27;를 본다.</li><li>97 은 소수(prime) → 1 로만 나눠진다 → 97 ÷ 1 = 97.</li><li>5 의 배수는 95 뿐 → 95 ÷ 5 = 19.</li><li>9 의 배수는 99 뿐 → 99 ÷ 9 = 11.</li><li>남은 3 과 7: 96 = 3 × 32, 98 = 7 × 14 → 32, 14.</li><li>답들은 19, 32, 97, 14, 11. 가장 큰 97 − 가장 작은 11 = 86.</li></ol>
+    <div class="tipline">기억할 점: 짝짓기 문제는 &#x27;선택지가 하나뿐인 것&#x27;부터 정한다.</div>
+  </div>
+</div>
+<div class="q" id="q8">
+  <div class="q-title">Q8.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q08.jpg" alt="UKMT IMC 2026 Q8" loading="lazy"></div>
+  <div class="q-ko">두 삼각형 PQT 와 PQR 에서 QT 와 PR 이 S 에서 만난다. ∠TPR = 20°, ∠TQR = 30°, ∠STP = y°, ∠QRS = z° 일 때 y 와 z 의 관계는?</div>
+  <div class="ansline">정답: A (y = z + 10)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>삼각형의 외각(exterior angle) = 이웃하지 않는 두 내각의 합.</li><li>삼각형 PST 에서 S 의 외각 ∠PSQ = y + 20.</li><li>삼각형 QRS 에서도 S 의 외각이 같은 ∠PSQ 이다 → ∠PSQ = z + 30.</li><li>두 식이 같은 각이므로 y + 20 = z + 30 → y = z + 10.</li></ol>
+    <div class="tipline">기억할 점: X 자로 만나는 두 삼각형은 &#x27;가운데 각&#x27;을 두 번 써서 식을 만든다.</div>
+  </div>
+</div>
+<div class="q" id="q9">
+  <div class="q-title">Q9.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q09.jpg" alt="UKMT IMC 2026 Q9" loading="lazy"></div>
+  <div class="q-ko">5²−1, 7²−1, 9²−1, 11²−1, 13²−1 중 24 로 나누어떨어지는 것은 몇 개?</div>
+  <div class="ansline">정답: D (4개)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>하나씩 계산한다.</li><li>5² − 1 = 24 → 24 × 1 ✓</li><li>7² − 1 = 48 → 24 × 2 ✓</li><li>9² − 1 = 80 → 80 ÷ 24 = 3.33… ✗</li><li>11² − 1 = 120 → 24 × 5 ✓</li><li>13² − 1 = 168 → 24 × 7 ✓</li><li>그래서 4개. (9 는 3 의 배수라 9²−1 은 3 으로 안 나눠진다. 3 의 배수가 아닌 홀수만 24 로 나눠진다.)</li></ol>
+    <div class="tipline">기억할 점: p² − 1 = (p−1)(p+1) 로 쪼개 보면 이유가 보인다.</div>
+  </div>
+</div>
+<div class="q" id="q10">
+  <div class="q-title">Q10.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q10.jpg" alt="UKMT IMC 2026 Q10" loading="lazy"></div>
+  <div class="q-ko">세 변의 비가 5 : 5 : 6 이고 넓이가 108 cm² 인 삼각형에서 가장 긴 변의 길이(cm)는?</div>
+  <div class="ansline">정답: B (18)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>세 변을 5x, 5x, 6x 라고 둔다. 이등변삼각형(isosceles)이다.</li><li>꼭짓점에서 밑변 6x 에 수선을 내리면 밑변이 3x, 3x 로 반씩 나뉜다.</li><li>반쪽 직각삼각형은 빗변 5x, 밑변 3x → 3:4:5 삼각형이라 높이 = 4x.</li><li>넓이 = ½ × 6x × 4x = 12x² = 108 → x² = 9 → x = 3.</li><li>가장 긴 변 = 6x = 18 cm.</li></ol>
+    <div class="tipline">기억할 점: 3 : 4 : 5 직각삼각형(Pythagorean triple)은 자주 나온다. 외워 두자.</div>
+  </div>
+</div>
+<div class="q" id="q11">
+  <div class="q-title">Q11.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q11.jpg" alt="UKMT IMC 2026 Q11" loading="lazy"></div>
+  <div class="q-ko">덧셈 UKMT + IMC = 2026 에서 C, I, K, M, T, U 는 서로 다른 숫자이다. T + I + C + K 의 값은?</div>
+  <div class="ansline">정답: B (15)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>자리마다 두 숫자만 더하므로 받아올림(carry)은 많아야 1 이다.</li><li>천의 자리: U + (받아올림) = 2. 백의 자리에서 K + I 가 0 이 될 수 없으므로 K + I + (받아올림) = 10 이 되어 1 을 올려 준다 → U = 1.</li><li>일의 자리에서 받아올림이 있으면 십의 자리 M + M + 1 이 홀수가 되어 끝자리 2 가 안 된다 → 일의 자리 받아올림 없음 → T + C = 6.</li><li>십의 자리: M + M 의 끝자리가 2 → M = 1 또는 6. U = 1 이므로 M = 6 (6 + 6 = 12, 1 을 올림).</li><li>백의 자리: K + I + 1 = 10 → K + I = 9.</li><li>T + I + C + K = (T + C) + (K + I) = 6 + 9 = 15.</li></ol>
+    <div class="tipline">기억할 점: 복면산(cryptarithm)은 &#x27;받아올림은 0 또는 1&#x27; 을 먼저 쓰고 큰 자리부터 푼다.</div>
+  </div>
+</div>
+<div class="q" id="q12">
+  <div class="q-title">Q12.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q12.jpg" alt="UKMT IMC 2026 Q12" loading="lazy"></div>
+  <div class="q-ko">큰 사분원 OQS 에서 작은 사분원 PRT 를 빼서 색칠된 세 부분이 남았다. OPRT 는 정사각형이고 OP = 2x 이다. 색칠된 세 부분의 넓이 합은?</div>
+  <div class="ansline">정답: E (πx²)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>큰 사분원의 반지름은 OR (정사각형의 대각선) 이다.</li><li>피타고라스 정리(Pythagoras&#x27; theorem): OR² = (2x)² + (2x)² = 8x².</li><li>큰 사분원 넓이 = ¼ × π × OR² = ¼ × π × 8x² = 2πx².</li><li>작은 사분원 PRT 는 반지름 2x → 넓이 = ¼ × π × (2x)² = πx².</li><li>색칠된 부분 = 큰 것 − 작은 것 = 2πx² − πx² = πx².</li></ol>
+    <div class="tipline">기억할 점: 넓이만 필요하면 OR 을 구하지 않고 OR² 을 바로 쓰면 된다.</div>
+  </div>
+</div>
+<div class="q" id="q13">
+  <div class="q-title">Q13.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q13.jpg" alt="UKMT IMC 2026 Q13" loading="lazy"></div>
+  <div class="q-ko">노아가 1, 2, 4, 13 을 쓰고 정수 x 를 하나 더 썼다. x 가 다섯 수의 평균(mean), 중앙값(median), 최빈값(mode) 중 하나가 된다. 가능한 x 는 몇 개?</div>
+  <div class="ansline">정답: E (6개)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>평균이 되는 경우: (1 + 2 + 4 + 13 + x) ÷ 5 = x → 20 + x = 5x → x = 5.</li><li>중앙값이 되는 경우: 크기 순서로 1, 2, x, 4, 13 이 되어야 하므로 x = 2, 3, 4.</li><li>최빈값이 되는 경우: 이미 있는 수와 같으면 두 번 나와 최빈값이 된다 → x = 1, 2, 4, 13.</li><li>모두 모으면(겹치는 것은 한 번만) 1, 2, 3, 4, 5, 13 → 6개.</li></ol>
+    <div class="tipline">기억할 점: 세 경우를 따로 구한 뒤 겹치는 것을 지우고 센다.</div>
+  </div>
+</div>
+<div class="q" id="q14">
+  <div class="q-title">Q14.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q14.jpg" alt="UKMT IMC 2026 Q14" loading="lazy"></div>
+  <div class="q-ko">예각삼각형(acute-angled triangle) PQR 의 세 각(도)이 모두 삼각수(triangular number)이다. 가장 작은 각은?</div>
+  <div class="ansline">정답: C (36°)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>삼각수: 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78 … (예각이라 90 보다 작은 것만).</li><li>가장 큰 각은 60° 보다 커야 하므로 66° 또는 78°.</li><li>66° 라면 나머지 두 각의 합 114°. 둘 중 큰 각이 57° 이상이고 66° 이하라 66° → 마지막 각 48°. 48 은 삼각수가 아니다 ✗.</li><li>78° 라면 나머지 합 102°. 큰 쪽이 51° 이상 → 55°, 66°, 78° 를 해 본다: 나머지는 47°, 36°, 24°.</li><li>삼각수인 것은 36 뿐 → 세 각 78°, 66°, 36°. 가장 작은 각은 36°.</li></ol>
+    <div class="tipline">기억할 점: 삼각수 = 1, 1+2, 1+2+3, … (n(n+1)/2).</div>
+  </div>
+</div>
+<div class="q" id="q15">
+  <div class="q-title">Q15.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q15.jpg" alt="UKMT IMC 2026 Q15" loading="lazy"></div>
+  <div class="q-ko">UKMT 로고는 똑같은 평행사변형(parallelogram) 3개가 한 변이 Y 인 정삼각형을 둘러싼 모양이다. X : Y : Z = 1 : 4 : 5 일 때, 안쪽 삼각형 넓이 : 평행사변형 3개 넓이 의 비는?</div>
+  <div class="ansline">정답: D (8 : 15)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>X = 1, Y = 4, Z = 5 로 두고 계산한다.</li><li>정삼각형 넓이 = ½ × Y × Y × sin 60° = ½ × 16 × sin 60° = 8 sin 60°.</li><li>평행사변형 하나: 밑변 Z = 5, 짧은 변 X = 1, 두 변 사이 각 60° → 높이 = 1 × sin 60°.</li><li>평행사변형 하나 넓이 = 5 × sin 60°, 세 개 = 15 sin 60°.</li><li>비 = 8 sin 60° : 15 sin 60° = 8 : 15.</li></ol>
+    <div class="tipline">기억할 점: sin 60° 는 양쪽에 똑같이 있어서 지워진다. 값을 몰라도 된다.</div>
+  </div>
+</div>
+<div class="q" id="q16">
+  <div class="q-title">Q16.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q16.jpg" alt="UKMT IMC 2026 Q16" loading="lazy"></div>
+  <div class="q-ko">케리와 캐런이 서로 만나러 정오에 각자 집에서 같은 속력으로 출발했다. 오후 1시에 200 km, 오후 2시 15분에 100 km 떨어져 있었다. 두 집 사이 거리는?</div>
+  <div class="ansline">정답: C (280 km)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>1시 → 2시 15분 = 75분 동안 거리가 100 km 줄었다.</li><li>그러면 60분 동안은 100 × 60/75 = 80 km 줄어든다.</li><li>정오 → 1시 (60분) 동안 80 km 줄어서 200 km 가 되었다.</li><li>출발할 때 거리 = 200 + 80 = 280 km.</li></ol>
+    <div class="tipline">기억할 점: &#x27;두 사람 사이 거리가 줄어드는 빠르기&#x27;를 하나로 보고 계산한다.</div>
+  </div>
+</div>
+<div class="q" id="q17">
+  <div class="q-title">Q17.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q17.jpg" alt="UKMT IMC 2026 Q17" loading="lazy"></div>
+  <div class="q-ko">똑같은 1 × 2 직사각형 두 개가 그림처럼 겹쳐 있다. 겹친(색칠된) 부분의 넓이는?</div>
+  <div class="ansline">정답: A (5/4)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>겹친 부분은 평행사변형이고, 높이는 직사각형의 짧은 변 1 이다.</li><li>평행사변형의 밑변(가로 직사각형 윗변 위 길이)을 x 라고 둔다.</li><li>모서리에 생긴 작은 직각삼각형은 한 변 1, 빗변 x, 다른 변 2 − x 이다 (두 삼각형이 합동이어서).</li><li>피타고라스: x² = 1² + (2 − x)² = 1 + 4 − 4x + x² → 4x = 5 → x = 5/4.</li><li>넓이 = 밑변 × 높이 = 5/4 × 1 = 5/4.</li></ol>
+    <div class="tipline">기억할 점: 겹친 부분이 마름모·평행사변형이면 &#x27;밑변 × 높이&#x27; 를 쓴다.</div>
+  </div>
+</div>
+<div class="q" id="q18">
+  <div class="q-title">Q18.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q18.jpg" alt="UKMT IMC 2026 Q18" loading="lazy"></div>
+  <div class="q-ko">그림에서 JK = JL, JN = JM, ∠KJM = 30° 이다. ∠NML 의 값은?</div>
+  <div class="ansline">정답: C (15°)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>∠JKL = α, 구하는 ∠NML = β 로 둔다.</li><li>JK = JL 이라 삼각형 JKL 은 이등변 → ∠JLK = α.</li><li>삼각형 NML 에서 N 의 외각: ∠MNJ = α + β.</li><li>JN = JM 이라 삼각형 JMN 은 이등변 → ∠JMN = ∠MNJ = α + β. 그래서 ∠JML = (α + β) + β = α + 2β.</li><li>삼각형 JKM 에서 M 의 외각: ∠JML = α + 30.</li><li>α + 2β = α + 30 → 2β = 30 → β = 15°.</li></ol>
+    <div class="tipline">기억할 점: 모르는 각을 글자(α, β)로 두고 외각 정리를 두 번 쓰면 α 가 지워진다.</div>
+  </div>
+</div>
+<div class="q" id="q19">
+  <div class="q-title">Q19.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q19.jpg" alt="UKMT IMC 2026 Q19" loading="lazy"></div>
+  <div class="q-ko">1 + 16 / (1 + 1/(1 + 1/x)) = 11 이 되는 x 의 값은?</div>
+  <div class="ansline">정답: D (3/2)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>바깥부터 한 겹씩 벗긴다.</li><li>1 을 넘기면: 16 / (1 + 1/(1 + 1/x)) = 10.</li><li>뒤집으면: 1 + 1/(1 + 1/x) = 16/10 = 8/5.</li><li>1 을 빼면: 1/(1 + 1/x) = 3/5 → 1 + 1/x = 5/3.</li><li>1 을 빼면: 1/x = 2/3 → x = 3/2.</li><li>확인: x = 3/2 를 넣으면 11 이 나온다 ✓</li></ol>
+    <div class="tipline">기억할 점: 번분수(continued fraction)는 &#x27;바깥에서 안으로&#x27; 한 단계씩 푼다.</div>
+  </div>
+</div>
+<div class="q" id="q20">
+  <div class="q-title">Q20.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q20.jpg" alt="UKMT IMC 2026 Q20" loading="lazy"></div>
+  <div class="q-ko">이 도형의 모든 각은 45° 의 배수이고 몇 변의 길이가 주어져 있다. 도형의 둘레는?</div>
+  <div class="ansline">정답: B (18 + 5√2)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>모르는 길이 세 개를 둔다: 비스듬한 두 변 x, y 와 맨 아래 가로 변 z.</li><li>세로 방향: 비스듬한 변은 45° 로 기울어 있어 세로로 (길이 × 1/√2) 만큼 올라간다. 오른쪽에서 올라간 높이 (x + y)/√2 = 왼쪽 높이 2 + 3 = 5 → x + y = 5√2.</li><li>가로 방향: 한 바퀴 돌면 오른쪽·왼쪽으로 간 거리가 같다. z + (x + y)/√2 = 4 + 4 + 1 → z + 5 = 9 → z = 4.</li><li>둘레 = z + (x + y) + 4 + 4 + 3 + 1 + 2 = 4 + 5√2 + 14 = 18 + 5√2.</li></ol>
+    <div class="tipline">기억할 점: 45° 로 기운 길이 L 은 가로·세로로 각각 L/√2 씩 움직인다.</div>
+  </div>
+</div>
+<div class="q" id="q21">
+  <div class="q-title">Q21.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q21.jpg" alt="UKMT IMC 2026 Q21" loading="lazy"></div>
+  <div class="q-ko">x + y = 6, x³ + y³ = 198 일 때 xy 의 값은?</div>
+  <div class="ansline">정답: A (1)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>(x + y)³ = x³ + y³ + 3xy(x + y) 를 쓴다.</li><li>6³ = 198 + 3xy × 6 → 216 = 198 + 18xy.</li><li>18xy = 18 → xy = 1.</li></ol>
+    <div class="tipline">기억할 점: x³ + y³ 이 나오면 (x + y)³ 전개식을 떠올린다.</div>
+  </div>
+</div>
+<div class="q" id="q22">
+  <div class="q-title">Q22.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q22.jpg" alt="UKMT IMC 2026 Q22" loading="lazy"></div>
+  <div class="q-ko">벌이 X 에서 출발해 맞닿은 육각형으로만 움직이며, 같은 곳을 두 번 가지 않고 7개 육각형을 모두 방문한다. 가능한 경로는 몇 가지?</div>
+  <div class="ansline">정답: C (18)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>바깥 6칸을 X, P, Q, R, S, T (둥글게), 가운데를 U 라고 한다. U 는 바깥 6칸과 모두 맞닿아 있다.</li><li>벌은 언젠가 U 에 들어가야 하고, U 앞뒤로는 바깥 고리를 시계방향이나 반시계방향으로만 돈다.</li><li>X 바로 다음에 U: 그 뒤 시계·반시계 → 2가지.</li><li>P 다음에 U (P 는 X 옆): X→P→U 다음 두 방향 2가지 + X→T→S→R→Q→P→U 1가지 = 3가지. T, Q, S 도 똑같이 3가지씩 → 4 × 3 = 12가지.</li><li>R (X 의 맞은편) 다음에 U: 가는 방향 2 × U 뒤 남은 칸 순서 2 = 4가지.</li><li>합: 2 + 12 + 4 = 18가지.</li></ol>
+    <div class="tipline">기억할 점: 경우의 수는 &#x27;언제 가운데로 들어가나&#x27; 처럼 기준 하나로 나누어 센다.</div>
+  </div>
+</div>
+<div class="q" id="q23">
+  <div class="q-title">Q23.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q23.jpg" alt="UKMT IMC 2026 Q23" loading="lazy"></div>
+  <div class="q-ko">올리버가 물어본 사람 중 정확히 99% 가 수학을 좋아한다고 했다. 테레사가 다른 사람들에게 물어 합쳤더니 정확히 98% 가 &#x27;예&#x27; 였다. 테레사에게 &#x27;아니요&#x27; 라고 한 사람은 최소 몇 명?</div>
+  <div class="ansline">정답: B (2명)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>올리버의 &#x27;아니요&#x27; 가 정확히 1% → 올리버는 100n 명에게 물었고 n 명이 &#x27;아니요&#x27;.</li><li>테레사가 x 명에게 물었다고 하자. 합쳐서 &#x27;아니요&#x27; 가 2% → (100n + x) × 2/100 = 2n + x/50 명.</li><li>사람 수는 정수이므로 x 는 50 의 배수.</li><li>테레사의 &#x27;아니요&#x27; = 전체 &#x27;아니요&#x27; − 올리버의 &#x27;아니요&#x27; = (2n + x/50) − n = n + x/50.</li><li>가장 작게: n = 1, x = 50 → 1 + 1 = 2명.</li></ol>
+    <div class="tipline">기억할 점: 퍼센트가 &#x27;정확히&#x27; 라면 사람 수가 특정 수의 배수여야 한다는 뜻이다.</div>
+  </div>
+</div>
+<div class="q" id="q24">
+  <div class="q-title">Q24.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q24.jpg" alt="UKMT IMC 2026 Q24" loading="lazy"></div>
+  <div class="q-ko">K, L, M, N 은 사각형 PQRS 각 변의 중점이다. T 는 안쪽 한 점이고 KQLT, LRMT, MSNT 의 넓이가 20, 24, 15 이다. NPKT 의 넓이는?</div>
+  <div class="ansline">정답: B (11)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>T 에서 네 꼭짓점 P, Q, R, S 로 선을 그으면 작은 삼각형 8개가 생긴다.</li><li>중점에서 나눈 두 삼각형은 밑변이 같고 높이가 같아서 넓이가 같다. 그래서 같은 넓이 짝 A, A, B, B, C, C, D, D 가 생긴다.</li><li>작은 사각형 하나는 서로 다른 짝 두 개로 되어 있다: MSNT = A + D = 15, KQLT = B + C = 20, LRMT = C + D = 24.</li><li>NPKT = A + B = (A + D) + (B + C) − (C + D) = 15 + 20 − 24 = 11.</li></ol>
+    <div class="tipline">기억할 점: 마주 보는 두 사각형 넓이의 합은 같다: x + 24 = 20 + 15 → x = 11.</div>
+  </div>
+</div>
+<div class="q" id="q25">
+  <div class="q-title">Q25.</div>
+  <div class="shot"><img src="assets/y9m/ukmt/q25.jpg" alt="UKMT IMC 2026 Q25" loading="lazy"></div>
+  <div class="q-ko">조이는 일주일 중 서로 다른 3일을 무작위로 골라 그날만 수영한다. 수영하지 않는 날이 적어도 3일 연속으로 이어질 확률은?</div>
+  <div class="ansline">정답: C (3/5)</div>
+  <div class="mine"><b class="lbl">클로드 설명</b>풀이
+    <ol><li>수영하는 3일 사이의 &#x27;쉬는 날 수&#x27; 세 개를 본다(일주일이 돌아가므로 세 군데). 합 = 7 − 3 = 4.</li><li>합이 4 인 세 수 조합: (0,0,4) 3가지 순서, (0,1,3) 6가지, (0,2,2) 3가지, (1,1,2) 3가지 → 모두 15가지이고 똑같이 일어난다.</li><li>3일 이상 연속으로 쉬려면 3 이나 4 가 있어야 한다: (0,0,4) 3가지 + (0,1,3) 6가지 = 9가지.</li><li>확률 = 9/15 = 3/5.</li><li>확인: 7일 중 3일 고르는 35가지를 모두 세어도 21/35 = 3/5 ✓</li></ol>
+    <div class="tipline">기억할 점: 고른 날 대신 &#x27;사이 간격&#x27; 을 세면 경우가 훨씬 적어진다.</div>
+  </div>
+</div>
+</div>
+<script>
+/* 단원 페이지 안(iframe)에서 열릴 때는 이 페이지의 제목 줄을 숨긴다 — 단원 제목이 위에 이미 있어 두 번 나오기 때문이다. */
+if (window.self !== window.top) {
+  document.documentElement.classList.add('embedded');
+  var _h = document.querySelector('header');
+  if (_h) _h.style.display = 'none';
+}
+</script>
+<script src="studylog.js"></script>
+</body>
+</html>
