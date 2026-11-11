@@ -1,11 +1,5 @@
 /* 클래스룸 글 원문·번역·첨부 — ~/classroom-sync/post_details.py 가 만든다. 손으로 고치지 마라. */
 window.POST_DETAILS = {
- "튜터 (Mr Cassels)|Bring your Reading Books!": {
-  "en": "Bring your Reading Books!\nEVERYONE remembered their reading books last week. Well done guys :)\n\nRemember, you should have a reading book with you at all times. On a Wednesday particularly, tutor time will often be put aside for silent reading. Make sure you have a book that is in English. Translated books are also okay for you to bring.",
-  "ko": "읽기 책(reading book)을 가져오세요!\n지난주에는 모두가 읽기 책을 잊지 않고 가져왔어요. 잘했어요, 여러분 :)\n\n기억하세요, 읽기 책은 항상 가지고 다녀야 합니다. 특히 수요일에는 튜터 시간(tutor time)을 조용히 책 읽기(silent reading)에 쓰는 경우가 많습니다. 영어로 된 책을 꼭 준비하세요. 번역본(translated books)을 가져와도 괜찮습니다.",
-  "files": [],
-  "at": "2026-10-06"
- },
  "휴머니티 (Mr Lawrence)|Term 1 History Homework": {
   "en": "Term 1 History Homework\nWhat do I need to do?\n✅ Complete ONE challenge task independently by Friday 27th November 2026.\n✅ Choose any one of the 12 challenge tasks in the following slides.\n⭐ You are welcome to complete more than one task. You may work with a friend on extra tasks, but at least one task must be completed on your own.\n\nHow do I submit it?\n📅 Deadline: 27th November 2026, 5pm.\n💻 Submit your work on Google Classroom. If you have created a physical resource, hand it to your teacher and upload a photo of it to Google Classroom.\n\nWhat are we looking for?\nYour work should show high effort and creativity. You have 6 to complete it, so take your time and produce something you are proud of.\nAim to spend around 30 minutes per week working on your project.\n\nWhy is it important?\nYour teacher will review your work and it will contribute towards your End of Term Report\nYou could create something that helps you revise or a resource that could be used by future students. Excellent work may even be displayed or shared with next year's classes!",
   "ko": "1학기 역사(History) 숙제\n무엇을 해야 하나요?\n✅ 2026년 11월 27일 금요일까지 도전 과제(challenge task) 하나를 혼자 힘으로 완성하세요.\n✅ 다음 슬라이드에 있는 12개 도전 과제(challenge task) 중 아무거나 하나를 고르세요.\n⭐ 과제를 두 개 이상 해도 좋습니다. 추가 과제는 친구와 함께 해도 되지만, 적어도 과제 하나는 반드시 혼자 완성해야 합니다.\n\n어떻게 제출하나요?\n📅 마감: 2026년 11월 27일 오후 5시.\n💻 과제를 Google Classroom에 제출하세요. 실물 자료(physical resource)를 만들었다면 선생님께 직접 내고, 그 사진을 Google Classroom에 올리세요.\n\n무엇을 보나요?\n과제에 많은 노력(effort)과 창의성(creativity)이 드러나야 합니다. 완성할 시간이 6 있으니 서두르지 말고 스스로 자랑스러운 결과물을 만드세요.\n매주 30분 정도를 프로젝트(project)에 쓰는 것을 목표로 하세요.\n\n왜 중요한가요?\n선생님이 과제를 검토하고, 그 결과가 학기말 성적표(End of Term Report)에 반영됩니다\n복습(revise)에 도움이 되는 것이나 나중 학생들이 쓸 수 있는 자료(resource)를 만들 수도 있습니다. 훌륭한 과제는 내년 반 학생들에게 전시되거나 공유될 수도 있습니다!",
@@ -158,12 +152,6 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-09"
- },
- "미술|Haze - 20/10 Lesson": {
-  "en": "Haze - 20/10 Lesson\nHi everyone, \n\nFor today's lesson, please refer to slide 12 on the lesson slides. The task is to complete:\n\n1) one direct, realistic copy of one of your photos using only pencil sketching and shading.\n2) one copy of your photo in the artist's style. This should be fully coloured or shaded in with outlines. \n\nBoth of these artworks should be A6 in size.\n\nThank you!",
-  "ko": "Haze - 20/10 수업\n여러분 안녕하세요, \n\n오늘 수업은 수업 슬라이드(lesson slides)의 12번 슬라이드를 참고하세요. 해야 할 과제는 다음과 같습니다:\n\n1) 연필 스케치(pencil sketching)와 명암 넣기(shading)만 사용해서, 여러분의 사진 중 한 장을 그대로 사실적으로 따라 그린 그림(direct, realistic copy) 한 점.\n2) 여러분의 사진을 그 작가의 화풍(artist's style)으로 따라 그린 그림 한 점. 이 그림은 윤곽선(outlines)과 함께 색을 완전히 칠하거나(fully coloured) 명암을 완전히 넣어야(shaded in) 합니다. \n\n두 작품 모두 A6 크기(A6 in size)여야 합니다.\n\n감사합니다!",
-  "files": [],
-  "at": "2026-10-20"
  },
  "과학 (Mr Phillips)|electrical circuits and symbols": {
   "en": "electrical circuits and symbols\nClick on the link below to start the game",
@@ -464,12 +452,6 @@ window.POST_DETAILS = {
     ]
    }
   ],
-  "at": "2026-10-21"
- },
- "드라마|i seem to be missing most of your monologue work": {
-  "en": "i seem to be missing most of your monologue work: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. If you took it home with you over the holidays please bring it in with you tomorrow.",
-  "ko": "여러분의 독백(monologue) 과제를 대부분 제가 받지 못한 것 같습니다: Celine, Bryan, Furina, Jona, Aditya, Kie Jie, Jack, Damon, Lydia Ray. 방학(holidays) 동안 집에 가져갔다면 내일 꼭 가지고 오세요.",
-  "files": [],
   "at": "2026-10-21"
  },
  "튜터 (Mr Cassels)|PSHE - Y9 - 22/10/26": {
@@ -1057,45 +1039,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
- "튜터 (Mr Cassels)|I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int": {
-  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
-  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 정보를 알려드리게 되어 기쁩니다.\n\n'갈등 속의 사람과 지구(People and Planet in Conflict)'를 주제로 한 이 대회는 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 누구나 참가할 수 있습니다.  에세이 제목(essay titles), 분량(length), 제출 방법(submission details)의 자세한 내용은 첨부 파일에 있습니다. \n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n문의: Karina Mariadas, k.mariadas@elc.edu.my",
-  "files": [
-   {
-    "name": "k.mariadas@elc.edu.my",
-    "kind": "web",
-    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
-    "local": null
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
-    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT_BFx_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
-    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-27"
- },
  "튜터 (Mr Cassels)|Rewards between 21st September and today!": {
   "en": "Rewards between 21st September and today! \nThe next Rewards Slips for Skip the Line or Lift Pass will be handed out on Wednesday 11th and Thursday 12th November for the top students.",
   "ko": "9월 21일부터 오늘까지의 보상(Rewards)! \n줄 서지 않기(Skip the Line) 또는 엘리베이터 이용권(Lift Pass)을 받을 수 있는 다음 보상 쪽지(Rewards Slips)는 11월 11일 수요일과 11월 12일 목요일에 우수 학생(top students)에게 나눠 줄 예정입니다.",
@@ -1422,32 +1365,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-02"
  },
- "과학 (Mr Phillips)|upload resistance graph - here": {
-  "en": "upload resistance graph - here",
-  "ko": "저항(resistance) 그래프 업로드 - 여기에",
-  "files": [],
-  "at": "2026-11-02"
- },
- "과학 (Mr Phillips)|9.4 Practical Circuits workbook questions": {
-  "en": "9.4 Practical Circuits workbook questions",
-  "ko": "9.4 실용 회로(Practical Circuits) 워크북 문제",
-  "files": [
-   {
-    "name": "9.4 Practical circuits - answers",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4/edit?usp=classroom_web",
-    "local": "post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-02"
- },
  "수학 (Mr Anan)|MONDAY MATHS MYSTERY CHALLENGE": {
   "en": "MONDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve",
   "ko": "월요일 수학 미스터리 챌린지(MONDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(GOLDEN MATHS CALCULATOR)가 도난당했다!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 한다!\n1. 첨부된 슬라이드를 살펴보고 오늘의 퍼즐을 찾는다\n2. 답이 나오면 첨부된 구글 폼(google form) 링크로 제출한다\n3. 매일 새로운 단서(clue)가 구글 클래스룸(google classrooms)에 올라오니 풀어 보아라",
@@ -1573,6 +1490,45 @@ window.POST_DETAILS = {
     "kind": "form",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSe5ffCHYFlyx6Xfphfa5UNatoOEFZCgpIAgzCWXtMUNRuYSGw/viewform",
     "local": null
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "튜터 (Mr Cassels)|Humanities and Social Science Essay Competition 2026-27": {
+  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
+  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 안내를 전하게 되어 기쁩니다.\n\n이 대회는 '갈등 속의 인간과 지구(People and Planet in Conflict)'를 주제로 하며, 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 참가할 수 있습니다. 에세이 제목(essay titles), 분량(length), 제출 방법(submission details)에 관한 자세한 내용은 첨부 파일에서 볼 수 있습니다.\n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n연락처: Karina Mariadas, k.mariadas@elc.edu.my",
+  "files": [
+   {
+    "name": "k.mariadas@elc.edu.my",
+    "kind": "web",
+    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
+    "local": null
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
+    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT_BFx_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
+    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
    }
   ],
   "at": "2026-11-02"
@@ -2538,6 +2494,26 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-06"
  },
+ "튜터 (Mr Cassels)|Congratulations to the following students.": {
+  "en": "Congratulations to the following students. Collect your Lift Pass or Skip the Line passes next week!",
+  "ko": "다음 학생들을 축하합니다. 다음 주에 리프트 패스(Lift Pass) 또는 줄 서지 않기 패스(Skip the Line passes)를 받아 가세요!",
+  "files": [
+   {
+    "name": "Rewards Slips - Character Recognitions.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-/view&usp=classroom_web",
+    "local": "post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-.png",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv_.png",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-06"
+ },
  "튜터 (Mr Cassels)|SJIIS Red Packet Design Competition": {
   "en": "SJIIS Red Packet Design Competition\n\nTo celebrate the upcoming Year of the Goat, we are holding a red packet design competition for HS and ES. The competition will run from 9/11/26 to 23/11/26, and all further details can be found in the canva linked to this post. \n\nWinning designs will be made into red packets that you can preorder at the Christmas Bazaar this year!\n\nPlease contact Ms. Aileen if you have any questions.",
   "ko": "SJIIS 홍바오(Red Packet) 디자인 대회\n\n다가오는 양의 해(Year of the Goat)를 기념하여, 고등부(HS)와 초등부(ES)를 대상으로 홍바오(red packet) 디자인 대회를 엽니다. 대회는 26년 11월 9일(9/11/26)부터 26년 11월 23일(23/11/26)까지 진행되며, 자세한 내용은 모두 이 게시물에 연결된 캔바(canva)에서 확인할 수 있습니다.\n\n우승한 디자인은 홍바오(red packets)로 만들어지며, 올해 크리스마스 바자회(Christmas Bazaar)에서 미리 주문할 수 있습니다!\n\n궁금한 점이 있으면 Aileen 선생님(Ms. Aileen)께 문의하세요.",
@@ -2582,25 +2558,5 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-11-06"
- },
- "튜터 (Mr Cassels)|Congratulations to the following students. Collect your Lift Pass or Skip the Line passes next week!": {
-  "en": "Congratulations to the following students. Collect your Lift Pass or Skip the Line passes next week!",
-  "ko": "다음 학생들을 축하합니다. 다음 주에 리프트 패스(Lift Pass) 또는 줄 서기 면제 패스(Skip the Line passes)를 받아 가세요!",
-  "files": [
-   {
-    "name": "Rewards Slips - Character Recognitions.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-/view&usp=classroom_web",
-    "local": "post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-.png",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv_.png",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-08"
  }
 };
