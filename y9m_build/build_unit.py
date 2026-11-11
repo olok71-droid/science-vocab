@@ -96,8 +96,11 @@ CSS = """.vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; displa
 i = src.rindex('</style>'); src = src[:i] + CSS + src[i+len('</style>'):]
 src = src.replace("    window.scrollTo({top:0, behavior:'smooth'});\n",
                   "    window.scrollTo({top:0, behavior:'smooth'});\n    if (typeof stopSeq === 'function') stopSeq();\n")
-js = '<script>\nconst UNIT_ID = "%s";\n%s\n</script>\n<script>\n%s\n</script>\n' % (
-    UNIT, open(os.path.join(SP,'vocabjs.txt'),encoding='utf-8').read(), open(os.path.join(SP,'chunkjs.txt'),encoding='utf-8').read())
+# 전체 듣기·토막 듣기·외운 단어 빼기는 listen.js 한 곳이 맡는다(2026-10-31 be4cb85).
+# 틀에 남아 있는 옛 '외운 단어' 덮어쓰기 블록은 지운다 — 두 벌이 되면 check_app 이 잡는다.
+src = re.sub(r"<script>\n/\* ★2026-09-26 대표님 지시: '외운 단어'.*?</script>\n", '', src, flags=re.S)
+js = '<script>\nconst UNIT_ID = "%s";\n%s\n</script>\n<script src="listen.js"></script>\n' % (
+    UNIT, open(os.path.join(SP,'vocabjs.txt'),encoding='utf-8').read())
 src = src.replace('</body>', js + '</body>')
 open(PAGE, 'w', encoding='utf-8').write(src)
 

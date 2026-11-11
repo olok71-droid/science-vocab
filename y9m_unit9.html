@@ -297,6 +297,14 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 .section-header.hidden { display: none; }
 .allplay-mini{background:var(--accent);border-color:var(--accent);color:#fff;font-size:12.5px;padding:6px 13px;border-radius:15px;box-shadow:0 2px 6px rgba(13,148,136,0.35);}
 .allplay-mini.active{background:var(--purple);border-color:var(--purple);color:#fff;}
+.vtool { max-width: 720px; margin: 0 auto 10px; padding: 0 16px; display: flex; flex-wrap: wrap;
+  align-items: center; gap: 6px; }
+.vtool .search-input { flex: 0 1 48%; max-width: 48%; min-width: 0; padding: 8px 12px; font-size: 13px; }
+.vtool .mem-info { font-size: 12px; font-weight: 800; color: var(--strong, #16223f); white-space: nowrap; }
+.vtool .mem-info b { color: #0b4f45; font-weight: 900; }
+.vtool .blind-btn, .vtool .mem-toggle-btn { padding: 5px 10px; color: #0d5c50; border-color: rgba(13,92,80,0.55); background: rgba(255,255,255,0.85); font-weight: 900; }
+.vtool .blind-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.vtool .allplay-mini { background: var(--accent); border-color: var(--accent); color: #fff; }
 </style>
 </head>
 <body>
@@ -316,19 +324,555 @@ footer { text-align: center; padding: 24px 20px 32px; font-size: 11px; color: #2
 
 <div class="tabs-wrap">
   <div class="tabs">
-    <button class="tab-btn" data-tab="vocab">📖 단어장</button>
+    <button class="tab-btn active" data-tab="vocab">📖 단어장</button>
     <button class="tab-btn" data-tab="notes">📝 핵심노트</button>
     <button class="tab-btn" data-tab="classroom">📂 클래스룸자료</button>
-    <button class="tab-btn active" data-tab="teacher">👩‍🏫 선생님문제</button>
+    <button class="tab-btn" data-tab="teacher">👩‍🏫 선생님문제</button>
   </div>
 </div>
 
-<div class="tab-pane" id="tab-vocab"></div>
-<div class="tab-pane" id="tab-notes"></div>
+<div class="tab-pane active" id="tab-vocab">
+<div class="vtool"><input class="search-input" id="vocab-search" type="search" placeholder="🔍 검색 (영어 또는 한국어)" autocomplete="off"><button class="blind-btn" id="mem-hide-btn" onclick="toggleHideMem()">외운 단어 숨기기</button><span class="mem-info">총 <b id="total-count">0</b>단어 · 외운 단어 <b id="mem-count">0</b>개</span><button class="blind-btn allplay-mini" id="allplay-btn" data-total="34" onclick="toggleAllPlay()" title="34개 단어 한 번에 듣기 — 화면을 꺼도 계속 재생">▶ 전체 듣기</button><audio id="allplay-audio" preload="none" src="audio/y9m_unit9_all.mp3"></audio><button class="blind-btn chunkplay" data-part="1" data-label="▶ 1~20" title="1~20번 단어만 듣기" onclick="playAllFrom(1)">▶ 1~20</button><button class="blind-btn chunkplay" data-part="2" data-label="▶ 21~34" title="21~34번 단어만 듣기" onclick="playAllFrom(2)">▶ 21~34</button><button class="blind-btn" data-b="en" onclick="toggleBlind('en')">🇬🇧 영어가림</button><button class="blind-btn" data-b="ko" onclick="toggleBlind('ko')">🇰🇷 한글가림</button><button class="mem-toggle-btn" onclick="resetMem()">↺ 외움 초기화</button></div>
+  <div class="filter-wrap">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-cat="all" onclick='filterCards("all")'>전체 All</button><button class="filter-btn" data-cat="organ" onclick='filterCards("organ")'>🔢 수열 만들기 Sequences</button><button class="filter-btn" data-cat="process" onclick='filterCards("process")'>📍 n번째 항 nth term</button><button class="filter-btn" data-cat="blood" onclick='filterCards("blood")'>🟰 이차 수열 Quadratic</button><button class="filter-btn" data-cat="gas" onclick='filterCards("gas")'>⚙️ 함수 Functions</button>
+    </div>
+  </div>
+<div class="section-header" data-cat="organ"><h2>🔢 수열 만들기 Sequences</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Sequence</div>
+    <div class="vcard-ko">수열</div>
+    <div class="vcard-def">A list of numbers that follow a rule.</div>
+    <div class="vcard-def-ko">규칙에 따라 늘어놓은 수. 4, 4 2/5, 4 4/5, 5 1/5, …</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Sequence")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Term</div>
+    <div class="vcard-ko">항</div>
+    <div class="vcard-def">Each number in a sequence.</div>
+    <div class="vcard-def-ko">수열 안의 수 하나하나. 5, 7, 9 의 5 는 1st term.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Term")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">First term</div>
+    <div class="vcard-ko">첫째 항</div>
+    <div class="vcard-def">The number at the start of a sequence.</div>
+    <div class="vcard-def-ko">수열의 맨 앞 수. 그대로 쓰고 규칙을 써서 다음 항을 만든다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("First term")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Term-to-term rule</div>
+    <div class="vcard-ko">항에서 항으로 가는 규칙</div>
+    <div class="vcard-def">The rule that changes one term into the next term.</div>
+    <div class="vcard-def-ko">앞 항에서 다음 항을 만드는 규칙. 'add 2/5', 'subtract 0.3'.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Term-to-term rule")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Next term</div>
+    <div class="vcard-ko">다음 항</div>
+    <div class="vcard-def">The term that comes after the last one given.</div>
+    <div class="vcard-def-ko">주어진 마지막 항 다음 수. 7.6 − 0.3 = 7.3.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Next term")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Pattern</div>
+    <div class="vcard-ko">패턴(모양 배열)</div>
+    <div class="vcard-def">One of a set of drawings that grow by a rule.</div>
+    <div class="vcard-def-ko">점(dot)으로 만든 그림. Pattern 1, 2, 3 의 점 개수가 수열이 된다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Pattern")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Position number</div>
+    <div class="vcard-ko">위치 번호</div>
+    <div class="vcard-def">The place of a term in the sequence: 1st, 2nd, 3rd, …</div>
+    <div class="vcard-def-ko">몇 번째 항인지 나타내는 번호 n. 1, 2, 3, 4.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Position number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Position-to-term rule</div>
+    <div class="vcard-ko">위치에서 항으로 가는 규칙</div>
+    <div class="vcard-def">A rule that uses the position number to work out the term.</div>
+    <div class="vcard-def-ko">위치 번호만 넣으면 그 항이 바로 나오는 규칙. term = 2 × position number + 3.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Position-to-term rule")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Linear sequence</div>
+    <div class="vcard-ko">선형 수열(등차수열)</div>
+    <div class="vcard-def">A sequence whose terms go up or down by the same amount each time.</div>
+    <div class="vcard-def-ko">이웃한 항의 차이가 늘 같은 수열. 11, 15, 19, 23 (차이 4).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Linear sequence")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Non-linear sequence</div>
+    <div class="vcard-ko">비선형 수열</div>
+    <div class="vcard-def">A sequence whose terms go up or down by a different amount each time.</div>
+    <div class="vcard-def-ko">차이가 매번 달라지는 수열. 4, 5, 7, 10, 14 (차이 1, 2, 3, 4).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Non-linear sequence")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Difference</div>
+    <div class="vcard-ko">차이</div>
+    <div class="vcard-def">The amount between one term and the next.</div>
+    <div class="vcard-def-ko">뒤 항 − 앞 항. 줄어드는 수열은 음수(−0.3)다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Difference")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="organ">
+  <div class="vcard-left">
+    <div class="vcard-en">Two-step rule</div>
+    <div class="vcard-ko">두 단계 규칙</div>
+    <div class="vcard-def">A rule with two operations done in order.</div>
+    <div class="vcard-def-ko">두 계산을 쓰인 순서대로. 'add 1/2, then multiply by 2' → (2 + 1/2) × 2.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Two-step rule")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="process"><h2>📍 n번째 항 nth term</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">nth term</div>
+    <div class="vcard-ko">n번째 항(일반항)</div>
+    <div class="vcard-def">A rule in n that gives any term of a sequence.</div>
+    <div class="vcard-def-ko">n 자리에 위치 번호를 넣으면 그 항이 나오는 식. 3n − 1.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("nth term")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Common difference</div>
+    <div class="vcard-ko">공차(늘 같은 차이)</div>
+    <div class="vcard-def">The same amount added or subtracted each time in a linear sequence.</div>
+    <div class="vcard-def-ko">선형 수열에서 늘 같은 차이 d. nth term 은 dn + □ 꼴.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Common difference")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Zero term</div>
+    <div class="vcard-ko">0번째 항</div>
+    <div class="vcard-def">The term before the first term: first term minus the difference.</div>
+    <div class="vcard-def-ko">첫째 항 − 차이. nth term 의 뒤 숫자가 된다. 8, 11, 14 → 8 − 3 = 5.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Zero term")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Substitute</div>
+    <div class="vcard-ko">대입하다</div>
+    <div class="vcard-def">To put a number in place of a letter.</div>
+    <div class="vcard-def-ko">n 자리에 1, 2, 3 … 을 넣는 것. 4n + 3 에 n = 10 → 43.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Substitute")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Expression</div>
+    <div class="vcard-ko">식(대수식)</div>
+    <div class="vcard-def">A group of numbers and letters with no equals sign.</div>
+    <div class="vcard-def-ko">등호 없는 식. 'Work out an expression for the nth term' → 3n + 5.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Expression")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Tenth term</div>
+    <div class="vcard-ko">10번째 항</div>
+    <div class="vcard-def">The term in position 10.</div>
+    <div class="vcard-def-ko">n = 10 을 넣은 값. 1/2 n + 12 → 17.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Tenth term")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Mixed number</div>
+    <div class="vcard-ko">대분수</div>
+    <div class="vcard-def">A whole number and a fraction together, such as 1 1/4.</div>
+    <div class="vcard-def-ko">정수와 분수를 붙여 쓴 수. n/4 의 5th term = 1 1/4.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Mixed number")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="process">
+  <div class="vcard-left">
+    <div class="vcard-en">Improper fraction</div>
+    <div class="vcard-ko">가분수</div>
+    <div class="vcard-def">A fraction whose top number is bigger than the bottom, such as 5/4.</div>
+    <div class="vcard-def-ko">분자가 분모보다 큰 분수. 5/4 와 1 1/4 둘 다 맞는 답이다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Improper fraction")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="blood"><h2>🟰 이차 수열 Quadratic</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Quadratic sequence</div>
+    <div class="vcard-ko">이차 수열</div>
+    <div class="vcard-def">A sequence whose nth term has n² in it.</div>
+    <div class="vcard-def-ko">nth term 에 n² 이 든 수열. 2, 5, 10, 17, 26 = n² + 1.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Quadratic sequence")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">First differences</div>
+    <div class="vcard-ko">1차 차이</div>
+    <div class="vcard-def">The differences between neighbouring terms.</div>
+    <div class="vcard-def-ko">이웃한 항의 차이. 2, 5, 10, 17 → +3, +5, +7.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("First differences")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Second differences</div>
+    <div class="vcard-ko">2차 차이(차이의 차이)</div>
+    <div class="vcard-def">The differences between the first differences.</div>
+    <div class="vcard-def-ko">1차 차이끼리의 차이. +3, +5, +7 → +2, +2. 같으면 n² 꼴.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Second differences")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Squared</div>
+    <div class="vcard-ko">제곱된</div>
+    <div class="vcard-def">Multiplied by itself, written with a small 2, such as n².</div>
+    <div class="vcard-def-ko">같은 수를 두 번 곱한 것(square). n² = n × n. 3² = 9 (6 이 아니다).</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Squared")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="blood">
+  <div class="vcard-left">
+    <div class="vcard-en">Serge's method</div>
+    <div class="vcard-ko">세르게 방법</div>
+    <div class="vcard-def">Using second differences and an n² row to find an nth term.</div>
+    <div class="vcard-def-ko">2차 차이가 같으면 n² 줄을 쓰고, 항 − n² 이 늘 같은 수를 더한다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Serge's method")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+<div class="section-header" data-cat="gas"><h2>⚙️ 함수 Functions</h2><div class="section-line"></div></div>
+<div class="cards-wrap">
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Function</div>
+    <div class="vcard-ko">함수</div>
+    <div class="vcard-def">A rule that changes each input into one output.</div>
+    <div class="vcard-def-ko">입력 하나가 규칙을 지나 출력 하나가 되는 것. y = x² + 1.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Function")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Function machine</div>
+    <div class="vcard-ko">함수 기계</div>
+    <div class="vcard-def">A diagram of boxes that shows the steps of a function.</div>
+    <div class="vcard-def-ko">x → ÷2 → +3 → y 처럼 상자를 차례로 지나는 그림.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Function machine")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Input</div>
+    <div class="vcard-ko">입력</div>
+    <div class="vcard-def">The number that goes into a function machine.</div>
+    <div class="vcard-def-ko">기계에 넣는 수 x.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Input")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Output</div>
+    <div class="vcard-ko">출력</div>
+    <div class="vcard-def">The number that comes out of a function machine.</div>
+    <div class="vcard-def-ko">기계에서 나오는 수 y.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Output")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Table of values</div>
+    <div class="vcard-ko">값의 표</div>
+    <div class="vcard-def">A table that shows x values and their y values.</div>
+    <div class="vcard-def-ko">x 줄과 y 줄로 된 표. 빈칸(missing values)을 채운다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Table of values")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Inverse</div>
+    <div class="vcard-ko">역(거꾸로)</div>
+    <div class="vcard-def">The opposite operation that undoes another.</div>
+    <div class="vcard-def-ko">y 에서 x 를 구할 때 오른쪽 상자부터 반대로. +3 ↔ −3, ÷2 ↔ ×2.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Inverse")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Mapping diagram</div>
+    <div class="vcard-ko">대응도</div>
+    <div class="vcard-def">Two number lines with arrows from each x to its y.</div>
+    <div class="vcard-def-ko">x 수직선과 y 수직선을 그리고 x 에서 y 로 화살표를 긋는 그림.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Mapping diagram")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Equation</div>
+    <div class="vcard-ko">방정식(등식)</div>
+    <div class="vcard-def">A statement with an equals sign, such as y = 5(x − 1).</div>
+    <div class="vcard-def-ko">등호가 있는 식. 함수 기계를 'y =' 로 쓴다.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Equation")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+<div class="vcard" data-cat="gas">
+  <div class="vcard-left">
+    <div class="vcard-en">Cubed</div>
+    <div class="vcard-ko">세제곱된</div>
+    <div class="vcard-def">Multiplied by itself three times, written with a small 3, such as x³.</div>
+    <div class="vcard-def-ko">같은 수를 세 번 곱한 것(cube). 5³ = 5 × 5 × 5 = 125.</div>
+  </div>
+  <div class="vcard-right">
+    <button class="btn-speak" onclick='speak("Cubed")'>🔊</button>
+    <button class="btn-mem" onclick="toggleMem(this)" title="외웠으면 체크 (전체듣기에서 빠짐)">🧠</button>
+  </div>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="tab-notes">
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">🔢</span>
+    <div class="ch-text">
+      <h2>9.1 Generating sequences</h2>
+      <span class="ch-sub">수열 만들기</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>두 가지 규칙 — term-to-term 과 position-to-term</h3>
+  </div>
+  <div class="note-body">수열 <b>sequence</b> 의 수 하나하나가 항 <b>term</b> 이다.<br><br>① 항에서 항으로 가는 규칙 <b>term-to-term rule</b> — 앞 항으로 다음 항을 만든다. 'add 2'<br>② 위치에서 항으로 가는 규칙 <b>position-to-term rule</b> = <b>nth term</b> — 위치 번호 <b>position number</b> n 만 넣으면 바로 나온다. '2n + 3'<br><br>Starter 2 (점 그림 <b>pattern</b>): 5, 7, 9, 11<br>• term-to-term rule: <b>add 2</b><br>• position-to-term rule: <b>2 × position number + 3</b> → nth term = <b>2n + 3</b><br><br>★ 'Write the term-to-term rule' 에 2n + 3 을 쓰면 틀린다. 둘을 바꿔 쓰지 않는다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 1 — 줄어드는 수열과 분수 항</h3>
+  </div>
+  <div class="note-body">Starter 1 a: 4, 4 2/5, 4 4/5, 5 1/5 → <b>add 2/5</b><br>다음 항 <b>next term</b>: 5 1/5 + 2/5 = <b>5 3/5</b>, 5 3/5 + 2/5 = 5 5/5 = <b>6</b><br>&nbsp;&nbsp;✘ 5 5/5 ← 분자가 분모와 같으면 정수로 올린다<br><br>Starter 1 b: 8.5, 8.2, 7.9, 7.6 → <b>subtract 0.3</b> (= add −0.3)<br>다음 두 항: <b>7.3, 7</b><br><br>★ 줄어드는 수열은 '−0.3' 처럼 <b>빼기</b>로 쓴다. 'add 0.3' 이라고 쓰면 반대 방향이다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 2 — linear 인가 non-linear 인가: 차이를 전부 구한다</h3>
+  </div>
+  <div class="note-body">선형 수열 <b>linear sequence</b> — 차이 <b>difference</b> 가 늘 같다<br>비선형 수열 <b>non-linear sequence</b> — 차이가 매번 다르다<br><br>뒤 항 − 앞 항 을 <b>하나도 빼지 않고</b> 다 구한다.<br><br>Your turn Q1<br>• a: 11, 15, 19, 23, 27 → 4, 4, 4, 4 → <b>linear</b><br>• d: 20, 18, 15, 11, 6 → −2, −3, −4, −5 → <b>non-linear</b><br>• h: 3 1/2, 5 1/2, 9 1/2, 17 1/2 → 2, 4, 8, 16 → <b>non-linear</b> (두 배씩 커짐)<br>• i: 20, 12, 4, −4, −12 → −8, −8, −8, −8 → <b>linear</b> (음수로 내려가도 같으면 linear)<br><br>★ 'Explain your answers' — "The terms go up/down by the <b>same amount</b> each time." 처럼 이유를 쓴다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 3 — 두 단계 규칙은 쓰인 순서대로</h3>
+  </div>
+  <div class="note-body">두 단계 규칙 <b>two-step rule</b>: 쓰인 순서대로 계산한다. BIDMAS 가 아니다.<br>첫째 항 <b>first term</b> 은 그대로 쓰고 규칙을 두 번 쓴다.<br><br>Your turn Q2 b: first term 2, Add 1/2, then multiply by 2<br>✔ (2 + 1/2) × 2 = <b>5</b> → (5 + 1/2) × 2 = <b>11</b> → 2, 5, 11<br>✘ 2 + 1/2 × 2 = 3 ← × 를 먼저 해 버린 틀린 풀이<br><br>Worked example 9.1 c: first term 3, square, then subtract 5<br>✔ 3² − 5 = <b>4</b> → 4² − 5 = <b>11</b> → 3, 4, 11<br>✘ (3 − 5)² = 4 ← 순서를 바꿔 버린 풀이 (첫 답이 우연히 같아도 다음 항이 틀어진다)</div>
+</div>
+</div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">📍</span>
+    <div class="ch-text">
+      <h2>9.2 Using the nth term</h2>
+      <span class="ch-sub">n번째 항(일반항) 쓰기</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>nth term 에 n 을 대입하기</h3>
+  </div>
+  <div class="note-body">n 자리에 1, 2, 3 … 을 넣는다 = 대입 <b>substitute</b>.<br>3n 은 <b>3 × n</b> 이다.<br><br>Your turn Q2<br>• a: 4n + 3 → 7, 11, 15 · 10번째 항 <b>tenth term</b> = 4 × 10 + 3 = <b>43</b><br>• b: 2n − 5 → <b>−3</b>, −1, 1 · 10th = 15 ← 음수가 나와도 된다<br>• d: n/5 → 1/5, 2/5, 3/5 · 10th = 10/5 = <b>2</b><br><br>Worked example 9.2 b: n/4 의 5th term = 5/4 = 1 1/4<br>★ 가분수 <b>improper fraction</b> 5/4 와 대분수 <b>mixed number</b> 1 1/4 둘 다 맞다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 1 — n² 는 2n 이 아니다</h3>
+  </div>
+  <div class="note-body">n² = <b>n × n</b> (제곱 <b>squared</b>), 2n = 2 × n<br><br>• n = 2 일 때 2² = 4, 2 × 2 = 4 ← 우연히 같다<br>• n = 3 일 때 3² = <b>9</b>, 2 × 3 = 6 ← 다르다<br><br>Worked example 9.2 a: n² + 4 → 5, 8, <b>13</b> · 10th = 10² + 4 = <b>104</b><br>&nbsp;&nbsp;✘ 3번째 항 10, 10번째 항 24 ← n² 을 2n 으로 계산한 답<br>Your turn Q2 e: n² − 1 → 0, 3, 8 · 10th = <b>99</b></div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>선형 수열의 nth term 구하기 — 세 단계</h3>
+  </div>
+  <div class="note-body">① 공차 <b>common difference</b> d 를 구한다 → nth term 은 <b>dn + □</b><br>② 0번째 항 <b>zero term</b> = 첫째 항 − d → 이것이 □<br>③ 확인: n = 1, 2 를 넣어 처음 항이 나오는지 본다.<br><br>Starter 4 a: 8, 11, 14, 17 → d = 3 → 3n, 8 − 3 = 5 → <b>3n + 5</b><br>확인 n = 2 → 6 + 5 = 11 ✓<br><br>Example: 6, 8, 10, 12 → 2n 줄 2, 4, 6, 8 과 비교 → 늘 4 크다 → <b>2n + 4</b><br>★ 'multiply by 2' 는 term-to-term rule 이 아니다. 6, 8, 10 의 term-to-term rule 은 <b>add 2</b>.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 2 — 줄어드는 수열은 차이가 음수</h3>
+  </div>
+  <div class="note-body">Starter 4 b: 19, 14, 9, 4 → d = <b>−5</b> → <b>−5n</b><br>0번째 항 = 19 − (−5) = <b>24</b> → <b>24 − 5n</b> (= −5n + 24)<br>&nbsp;&nbsp;✘ 5n + 14 ← 차이를 +5 로 본 답 (n = 1 → 19 지만 n = 2 → 24 로 커진다)<br><br>Your turn Q12<br>• a: 9 1/4, 9, 8 3/4 → d = −1/4 → 9 1/4 + 1/4 = 9 1/2 → <b>9½ − ¼n</b><br>• b: 20, 19.8, 19.6 → d = −0.2 → <b>20.2 − 0.2n</b><br>• d: −5, −6.5, −8 → d = −1.5 → −5 + 1.5 = −3.5 → <b>−1.5n − 3.5</b><br><br>★ 0번째 항 = 첫째 항 − 차이. 차이가 음수면 <b>더해진다</b>(빼기의 빼기). 마지막에 n = 1, 2 로 꼭 확인한다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>이차 수열 — Serge's method</h3>
+  </div>
+  <div class="note-body">1차 차이 <b>first differences</b> 가 다르면 2차 차이 <b>second differences</b>(차이의 차이)를 본다.<br>2차 차이가 같으면 이차 수열 <b>quadratic sequence</b> → nth term 에 <b>n²</b> 이 들어 있다.<br><br>Serge: 2, 5, 10, 17, 26<br>• 1차 차이 +3, +5, +7, +9 → 2차 차이 <b>+2, +2, +2</b><br>• n² 줄 1, 4, 9, 16 과 비교 → 늘 1 크다 → <b>n² + 1</b><br><br>Your turn Q6 (모두 2차 차이 2 → n² + c, c = 첫째 항 − 1)<br>• a: 4, 7, 12 → <b>n² + 3</b> · c: 0, 3, 8 → <b>n² − 1</b> · d: −8, −5, 0 → <b>n² − 9</b><br><br>★ c 를 구할 때 첫째 항에서 <b>1² = 1</b> 을 뺀다. 2 나 차이(3)를 빼지 않는다.<br>★ 1차 차이만 보고 'non-linear' 에서 멈추지 말고 2차 차이까지 간다.</div>
+</div>
+</div>
+</div>
+<div class="chapter-block">
+  <div class="chapter-head">
+    <span class="ch-icon">⚙️</span>
+    <div class="ch-text">
+      <h2>9.3 Representing functions</h2>
+      <span class="ch-sub">함수 나타내기</span>
+    </div>
+  </div>
+  <div class="notes-list"><div class="note-card">
+  <div class="note-head">
+    <h3>function machine — 입력에서 출력으로</h3>
+  </div>
+  <div class="note-body">함수 기계 <b>function machine</b>: 입력 <b>input</b> x 가 상자를 왼쪽부터 차례로 지나 출력 <b>output</b> y 가 된다.<br>값의 표 <b>table of values</b>: x 줄과 y 줄.<br><br>Starter 5 a1: x → ÷2 → +3 → y<br>• x = 6 → 6 ÷ 2 + 3 = <b>6</b><br>• x = 11 → 11 ÷ 2 + 3 = <b>8 1/2</b></div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 1 — y 에서 x 로: 오른쪽 상자부터 거꾸로</h3>
+  </div>
+  <div class="note-body">역 <b>inverse</b>: 오른쪽 상자부터 <b>반대 연산</b>을 한다.<br>+3 ↔ −3, ÷2 ↔ ×2, ×5 ↔ ÷5, −1 ↔ +1<br><br>Starter 5 a1 (x → ÷2 → +3 → y), y = 12<br>✔ 12 − 3 = 9 → 9 × 2 = <b>18</b><br>✘ 12 × 2 − 3 = 21 ← 왼쪽 상자부터 거꾸로 한 답<br><br>Starter 5 a2 (x → −1 → ×5 → y), y = 35<br>✔ 35 ÷ 5 = 7 → 7 + 1 = <b>8</b><br>★ 답을 다시 기계에 넣어 확인한다: (8 − 1) × 5 = 35 ✓</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>★ 함정 2 — 식으로 쓸 때 괄호</h3>
+  </div>
+  <div class="note-body">식 <b>equation</b> 은 'y =' 를 왼쪽에 쓰고 기계 순서대로 만든다.<br><br>• x → ÷2 → +3 → y : 나누고 더하기 → <b>y = x/2 + 3</b><br>• x → −1 → ×5 → y : 먼저 빼고 그다음 곱하기 → <b>y = 5(x − 1)</b><br>&nbsp;&nbsp;✘ y = 5x − 1 ← 이것은 '×5 먼저, −1 나중' 기계다<br><br>★ + 나 − 가 <b>먼저</b> 오고 × 가 나중이면 괄호가 꼭 필요하다.</div>
+</div>
+<div class="note-card">
+  <div class="note-head">
+    <h3>제곱·세제곱 기계와 mapping diagram</h3>
+  </div>
+  <div class="note-body">□² = 제곱 <b>squared</b>, □³ = 세제곱 <b>cubed</b><br><br>Worked example 9.3: x → □² → +1 → y<br>x 0, 1, 2, 3 → y <b>1, 2, 5, 10</b> → <b>y = x² + 1</b><br>대응도 <b>mapping diagram</b>: x 수직선과 y 수직선을 그리고 0→1, 1→2, 2→5, 3→10 으로 화살표.<br><br>Your turn Q2 ii: x → □³ → −3 → y<br>• 1³ − 3 = <b>−2</b> (1³ = 1, 3 이 아니다)<br>• 5³ − 3 = 125 − 3 = <b>122</b><br>• 10³ − 3 = 1000 − 3 = <b>997</b><br><br>★ 5³ 을 5 × 3 = 15 로 하면 틀린다. <b>5 × 5 × 5</b>.<br>★ y = (x + 1)² 와 y = x² + 1 은 다르다. 기계 순서가 □² 먼저면 x² + 1.</div>
+</div>
+</div>
+</div>
+</div>
 <div class="tab-pane" id="tab-classroom">
   <div class="quiz-wrap"><div id="cr-math"></div></div>
 </div>
-<div class="tab-pane active" id="tab-teacher">
+<div class="tab-pane" id="tab-teacher">
   <iframe src="y9m_ch9_problems.html" style="width:100%;height:80vh;border:0;border-radius:14px;background:#fff;"></iframe>
 </div>
 
@@ -340,6 +884,7 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     window.scrollTo({top:0, behavior:'smooth'});
+    if (typeof stopSeq === 'function') stopSeq();
   });
 });
 </script>
@@ -391,93 +936,222 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
 })();
 </script>
 
-<script>
-/* ★2026-09-26 대표님 지시: '외운 단어'로 체크한 것은 전체 듣기·부분 듣기에서 들리지 않는다.
-   합쳐 둔 mp3 는 통짜라 중간을 건너뛸 수 없다 → 외운 단어가 하나라도 있으면 그 단원(또는 그 토막)은
-   낱개 발음을 이어서 들려준다. 외운 단어가 없으면 예전처럼 합친 mp3 를 튼다(화면을 꺼도 계속 나온다). */
-(function(){
-  var btn = document.getElementById('allplay-btn');
-  var a   = document.getElementById('allplay-audio');
-  if (!btn) return;
-  var seq = null, cur = null, curBtn = null;
-  function slug(t){ return (t||'').replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
-  function cards(){ return Array.prototype.slice.call(document.querySelectorAll('#tab-vocab .vcard')); }
-  function isMem(c){ return c.classList.contains('memorized'); }
-  function enOf(c){ var e = c.querySelector('.vcard-en'); return e ? (e.textContent||'').trim() : ''; }
-  function labelOf(b){ return b === btn ? '▶ 전체 듣기' : (b.getAttribute('data-label') || '▶'); }
-  function stop(){
-    if (cur) { try { cur.pause(); } catch(e){} cur = null; }
-    seq = null;
-    if (curBtn) { curBtn.textContent = labelOf(curBtn); curBtn.classList.remove('active'); curBtn = null; }
-  }
-  window.stopVisibleSeq = stop;
-  function playList(words, b){
-    var i = 0, token = {};
-    seq = token; curBtn = b;
-    b.textContent = '⏸ 멈춤'; b.classList.add('active');
-    (function next(){
-      if (seq !== token) return;
-      if (i >= words.length) { stop(); return; }   // 끝나면 멈춘다
-      var sl = slug(words[i]);
-      var koDone = false, enDone = false;
-      var ko = new Audio('audio/sci_ko/' + sl + '.mp3');
-      cur = ko;
-      var afterEn = function(){
-        if (enDone) return; enDone = true;
-        if (seq === token) { i++; next(); }
-      };
-      var afterKo = function(){
-        if (koDone) return; koDone = true;
-        if (seq !== token) return;
-        var en = new Audio('audio/sci/' + sl + '.mp3');
-        cur = en;
-        en.onended = afterEn; en.onerror = afterEn;
-        en.play().catch(afterEn);
-      };
-      ko.onended = afterKo; ko.onerror = afterKo;
-      ko.play().catch(afterKo);
-    })();
-  }
-  /* 토막 버튼 라벨('1~20')에서 몇 번째~몇 번째 단어인지 읽는다 */
-  function rangeOf(b){
-    var m = (b.getAttribute('data-label') || '').match(/(\d+)\s*~\s*(\d+)/);
-    return m ? [parseInt(m[1],10), parseInt(m[2],10)] : null;
-  }
-  function pick(from, to){            // 1-based, 없으면 전체
-    var all = cards();
-    var part = (from && to) ? all.slice(from - 1, to) : all;
-    var out = [], memCount = 0;
-    part.forEach(function(c){
-      if (c.classList.contains('hidden')) return;
-      if (isMem(c)) { memCount++; return; }
-      var en = enOf(c); if (en) out.push(en);
-    });
-    return { words: out, mem: memCount };
-  }
-  var origToggle = window.toggleAllPlay;
-  var origFrom   = window.playAllFrom;
-  window.toggleAllPlay = function(){
-    if (seq && curBtn === btn) { stop(); return; }
-    stop();
-    var r = pick(null, null);
-    if (!r.mem) { if (origToggle) origToggle(); return; }   // 외운 단어 없음 → 합친 mp3
-    if (a && !a.paused) a.pause();
-    if (!r.words.length) return;
-    playList(r.words, btn);
-  };
-  window.playAllFrom = function(n, label){
-    var b = document.querySelector('.chunkplay[data-part="' + n + '"]');
-    if (seq && curBtn === b) { stop(); return; }
-    stop();
-    var rg = b ? rangeOf(b) : null;
-    var r = pick(rg ? rg[0] : null, rg ? rg[1] : null);
-    if (!r.mem) { if (origFrom) origFrom(n, label); return; }
-    if (a && !a.paused) a.pause();
-    if (!r.words.length || !b) return;
-    playList(r.words, b);
-  };
-})();
-</script>
 <script src="studylog.js"></script>
+<script>
+const UNIT_ID = "y9m_unit9";
+function slugify(t){ return t.replace(/~/g,'').replace(/\//g,' ').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,''); }
+function cleanText(t){ return t.replace(/~/g,'').replace(/\s*\/\s*/g,', ').trim(); }
+let _audio = null;
+function speak(text) {
+  try {
+    // ★2026-09-17: 전체듣기·토막듣기·낱개순차가 돌고 있으면 먼저 멈춘다. 안 그러면 소리가 겹친다.
+    var _ap = document.getElementById('allplay-audio');
+    if (_ap && !_ap.paused) _ap.pause();
+    if (typeof window.stopVisibleSeq === 'function') window.stopVisibleSeq();
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio('audio/sci/' + slugify(text) + '.mp3');
+    a.onerror = () => fallbackSpeak(cleanText(text));
+    _audio = a;
+    const p = a.play();
+    if (p && p.catch) p.catch(() => fallbackSpeak(cleanText(text)));
+  } catch (e) { fallbackSpeak(cleanText(text)); }
+}
+let _voices = [];
+function loadVoices(){ if (window.speechSynthesis) _voices = window.speechSynthesis.getVoices() || []; }
+if (window.speechSynthesis) { loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+function normLang(l){ return (l || '').replace(/_/g,'-').toLowerCase(); }
+function fallbackSpeak(text){
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = 0.9;
+  const en = _voices.filter(v => normLang(v.lang).startsWith('en'));
+  const local = en.filter(v => v.localService);
+  const pool = local.length ? local : en;
+  const v = pool.find(x => normLang(x.lang)==='en-gb') || pool.find(x => normLang(x.lang)==='en-us') || pool[0];
+  if (v) { u.voice = v; u.lang = normLang(v.lang); } else { u.lang = 'en-GB'; }
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+  setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 80);
+}
+
+// ─── 섹션 전체 듣기 (한국어 뜻 → 영어 단어 순서로 쭉 재생) ───
+// Jenny 영어공부의 '전체 듣기'와 동일 방식. 보이는 카드만, 다시 누르면 멈춤.
+let _seq = null;          // {token, btn}
+let _seqToken = 0;
+function stopSeq(){
+  if (_seq) _seq.token = -1;
+  if (_audio) { _audio.pause(); _audio = null; }
+  // ★2026-09-17: 낱개 순차재생(외운단어 숨김 모드 전체듣기)은 _audio 를 안 쓴다.
+  //   여기서 같이 멈추지 않으면 섹션 듣기와 두 소리가 겹친다.
+  _seq = null;
+  document.querySelectorAll('.play-all-btn').forEach(function(b){
+    b.classList.remove('active'); b.textContent = '▶ 듣기';
+  });
+}
+function playFileSeq(src, token, done){
+  if (!_seq || _seq.token !== token) return;
+  // ★2026-09-17: onended·onerror·play().catch() 가 모두 done()을 불러서 한 소리가
+  //   두 갈래로 갈라져 재생되던 것(목소리 겹침)을 막는다. 무슨 일이 나도 딱 한 번만 넘어간다.
+  var fired = false;
+  var go = function(){ if (fired) return; fired = true; if (_seq && _seq.token === token) done(); };
+  try {
+    if (_audio) { _audio.pause(); _audio = null; }
+    const a = new Audio(src);
+    _audio = a;
+    a.onended = go;
+    a.onerror = go;                       // 파일 없으면 건너뜀
+    const p = a.play();
+    if (p && p.catch) p.catch(go);
+  } catch (e) { go(); }
+}
+function playSection(cat, btn){
+  const wasPlaying = btn.classList.contains('active');
+  stopSeq();
+  if (wasPlaying) return;            // 재생 중이던 버튼 다시 누름 → 멈춤
+  // 이 섹션에서 화면에 보이는(필터/검색 반영) 카드의 영어 단어만 모음
+  const words = [];
+  document.querySelectorAll('#tab-vocab .vcard[data-cat="' + cat + '"]').forEach(function(c){
+    if (c.classList.contains('hidden')) return;
+    if (c.classList.contains('memorized')) return;   // 외운 단어는 빼고 재생
+    const en = (c.querySelector('.vcard-en') || {}).textContent;
+    if (en) words.push(en.trim());
+  });
+  if (!words.length) return;
+  btn.classList.add('active'); btn.textContent = '⏹ 멈춤';
+  const token = ++_seqToken;
+  _seq = { token, btn };
+  let idx = 0;
+  const playOne = function(){
+    if (!_seq || _seq.token !== token) return;
+    if (idx >= words.length) { idx = 0; }   // 무한반복: 끝까지 가면 처음부터 다시
+    const slug = slugify(words[idx]);
+    playFileSeq('audio/sci_ko/' + slug + '.mp3', token, function(){   // ① 한국어 뜻
+      playFileSeq('audio/sci/' + slug + '.mp3', token, function(){     // ② 영어 단어
+        idx++;
+        setTimeout(playOne, 350);                                       // 단어 사이 살짝 쉼
+      });
+    });
+  };
+  playOne();
+}
+
+// ─── 외움 체크 (과목별 localStorage 저장, 전체듣기에서 제외) ───
+const MEM_KEY = 'memv_' + UNIT_ID;
+let memSet = new Set();
+try { memSet = new Set(JSON.parse(localStorage.getItem(MEM_KEY) || '[]')); } catch(e){}
+let memHidden = false;
+function cardSlug(c){ return slugify((((c.querySelector('.vcard-en')||{}).textContent)||'').trim()); }
+function saveMem(){ try { localStorage.setItem(MEM_KEY, JSON.stringify([...memSet])); } catch(e){} }
+function memBtnLabel(){ const b=document.getElementById('mem-hide-btn'); if(b) b.textContent=(memHidden?'외운 단어 보기':'외운 단어 숨기기')+' ('+memSet.size+')'; }
+function updateMemCount(){ const el=document.getElementById('mem-count'); if(el) el.textContent=memSet.size; memBtnLabel(); }
+/* 새로고침해도 보던 탭 그대로 — 마지막에 본 탭을 기억한다 */
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('tab_' + UNIT_ID); } catch(e){}
+  if (location.hash && location.hash.length > 1) t = location.hash.slice(1);
+  if (!t) return;
+  var btn = document.querySelector('.tab-btn[data-tab="' + t + '"]');
+  var pane = document.getElementById('tab-' + t);
+  if (!btn || !pane) return;
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  pane.classList.add('active');
+})();
+
+function annotateCounts(){ document.querySelectorAll('#tab-vocab .section-header').forEach(h => { const cat=h.dataset.cat; const n=document.querySelectorAll('#tab-vocab .vcard[data-cat="'+cat+'"]').length; const h2=h.querySelector('h2'); if(h2 && !h2.querySelector('.sec-count')) h2.insertAdjacentHTML('beforeend',' <span class="sec-count">'+n+'</span>'); }); const t=document.getElementById('total-count'); if(t) t.textContent=document.querySelectorAll('#tab-vocab .vcard').length; }
+function numberVocab(){ let n=0; document.querySelectorAll('#tab-vocab .vcard').forEach(c => { n++; const L=c.querySelector('.vcard-left'); if(L && !L.querySelector('.vcard-num')){ const d=document.createElement('div'); d.className='vcard-num'; d.textContent=n+'번'; L.insertBefore(d, L.firstChild); } }); }
+function setMemUI(c){
+  const on = memSet.has(cardSlug(c));
+  c.classList.toggle('memorized', on);
+  const b = c.querySelector('.btn-mem');
+  if(b){ b.textContent = on ? '✅' : '🧠'; b.classList.toggle('on', on); }
+}
+function applyMemStates(){
+  document.querySelectorAll('#tab-vocab .vcard').forEach(setMemUI);
+  updateMemCount();
+}
+function toggleMem(btn){
+  const c = btn.closest('.vcard');
+  const s = cardSlug(c);
+  if(memSet.has(s)) memSet.delete(s); else memSet.add(s);
+  saveMem(); setMemUI(c); updateMemCount();
+  if(memHidden) applyVocabFilter();
+}
+function toggleHideMem(){
+  memHidden = !memHidden;
+  const b = document.getElementById('mem-hide-btn');
+  if(b){ b.classList.toggle('active', memHidden); memBtnLabel(); }
+  applyVocabFilter();
+}
+function resetMem(){
+  if(!memSet.size) return;
+  if(!confirm('외움 표시를 모두 지울까요?')) return;
+  memSet.clear(); saveMem(); applyMemStates();
+  if(memHidden) applyVocabFilter();
+}
+
+// 단어장 가림(영어/한글) — 누를 때마다 켜기/끄기, 가려진 글자 톡 누르면 잠깐 보임
+var blindEn=false, blindKo=false;
+function toggleBlind(side){
+  if(side==='en') blindEn=!blindEn; else blindKo=!blindKo;
+  var v=document.getElementById('tab-vocab');
+  if(v){ v.classList.toggle('blind-en',blindEn); v.classList.toggle('blind-ko',blindKo); }
+  document.querySelectorAll('.blind-btn[data-b="en"]').forEach(function(b){b.classList.toggle('active',blindEn);});
+  document.querySelectorAll('.blind-btn[data-b="ko"]').forEach(function(b){b.classList.toggle('active',blindKo);});
+  document.querySelectorAll('.peek').forEach(function(p){p.classList.remove('peek');});
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('.vcard-en,.vcard-ko,.vcard-def,.vcard-def-ko');
+  if(el && (blindEn||blindKo)) el.classList.toggle('peek');
+});
+
+// 단어장: 필터 + 검색 통합
+let selectedCats = new Set();   // 비어있으면 전체. 여러 단원 다중선택
+let currentQuery = '';
+
+function applyVocabFilter() {
+  if (typeof stopSeq === 'function') stopSeq();   // 검색·필터 바뀌면 전체듣기 정지
+  const q = currentQuery.toLowerCase().trim();
+  let visibleByCat = {};
+  document.querySelectorAll('#tab-vocab .vcard').forEach(c => {
+    const cat = c.dataset.cat;
+    const en = (c.querySelector('.vcard-en')?.textContent || '').toLowerCase();
+    const ko = (c.querySelector('.vcard-ko')?.textContent || '').toLowerCase();
+    const defEn = (c.querySelector('.vcard-def')?.textContent || '').toLowerCase();
+    const defKo = (c.querySelector('.vcard-def-ko')?.textContent || '').toLowerCase();
+    const catOk = (selectedCats.size === 0 || selectedCats.has(cat));
+    const qOk = (!q || en.includes(q) || ko.includes(q) || defEn.includes(q) || defKo.includes(q));
+    const memOk = !(memHidden && memSet.has(cardSlug(c)));
+    const show = catOk && qOk && memOk;
+    c.classList.toggle('hidden', !show);
+    if (show) visibleByCat[cat] = (visibleByCat[cat] || 0) + 1;
+  });
+  document.querySelectorAll('#tab-vocab .section-header').forEach(h => {
+    const target = h.dataset.cat;
+    h.classList.toggle('hidden', !visibleByCat[target]);
+  });
+}
+
+function filterCards(cat) {
+  if (cat === 'all') { selectedCats.clear(); }
+  else { if (selectedCats.has(cat)) selectedCats.delete(cat); else selectedCats.add(cat); }
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if (b.dataset.cat === 'all') b.classList.toggle('active', selectedCats.size === 0);
+    else b.classList.toggle('active', selectedCats.has(b.dataset.cat));
+  });
+  applyVocabFilter();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('vocab-search');
+  if (search) search.addEventListener('input', e => { currentQuery = e.target.value; applyVocabFilter(); });
+  applyMemStates();   // 저장된 외움 표시 복원
+  annotateCounts();   // 단원별·전체 단어 수 표시
+  numberVocab();      // 단어 앞 고정 번호 (1번~)
+});
+
+</script>
+<script src="listen.js"></script>
 </body>
 </html>
