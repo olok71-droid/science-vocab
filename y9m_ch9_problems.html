@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>9학년 수학 9단원 문제 · Sequences and Functions</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--pink:#db2777;--purple:#6d5dfc;
+--text:#243b6b;--strong:#16223f;--muted:#6b7a99;--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;flex-wrap:wrap;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.shot{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;margin:10px 0 14px;}
+.shot img{width:100%;height:auto;border-radius:8px;display:block;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.8;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+.chk{display:inline-block;font-size:11.5px;font-weight:800;color:#b45309;background:#fef3c7;border:1px solid #fcd34d;border-radius:6px;padding:1px 6px;}
+.tbl{border-collapse:collapse;margin:6px 0;font-size:13px;}
+.tbl td,.tbl th{border:1px solid rgba(36,59,107,.2);padding:4px 8px;text-align:center;}
+.tbl th{background:#e0f2f1;}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">📐</div>
+  <div class="header-text">
+    <div class="header-title">9단원 Sequences and Functions</div>
+    <div class="header-sub">TERM 2 · 9단원 수열과 함수 · 문제 + 풀이</div>
+  </div>
+</header>
+<div class="wrap">
+<div class="sec">
+<div class="sec-head"><span class="sec-no">9.1</span><span class="sec-title">Generating sequences</span><span class="sec-ko">수열 만들기</span></div>
+<span class="src">STARTER</span>
+<div class="q">
+  <div class="q-title">1. For each of these sequences, write (1) the term-to-term rule (2) the next two terms. &nbsp; a. 4, 4 2/5, 4 4/5, 5 1/5, …, … &nbsp; b. 8.5, 8.2, 7.9, 7.6, …, …</div>
+  <div class="shot"><img src="assets/y9m/ch9/n01.png" alt="1. For each of these sequences, write (1"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 4 → 4 2/5 → 4 4/5 → 5 1/5 : 매번 2/5 씩 커진다.<br>&nbsp;&nbsp;&nbsp;(1) term-to-term rule: <b>add 2/5</b><br>&nbsp;&nbsp;&nbsp;(2) 5 1/5 + 2/5 = <b>5 3/5</b>, 5 3/5 + 2/5 = <b>6</b><br>b. 8.5 → 8.2 → 7.9 → 7.6 : 매번 0.3 씩 작아진다.<br>&nbsp;&nbsp;&nbsp;(1) term-to-term rule: <b>subtract 0.3</b> (= add −0.3)<br>&nbsp;&nbsp;&nbsp;(2) 7.6 − 0.3 = <b>7.3</b>, 7.3 − 0.3 = <b>7</b><br>선생님 노트 손글씨: t to t = +2/5, adding −0.3 (같음)
+    <span class="how"><b>① sequence (수열)</b>: 규칙에 따라 늘어놓은 수. 하나하나를 term (항) 이라 한다. 1st term (첫째 항), 2nd term (둘째 항) …<br><b>② term-to-term rule (항에서 항으로 가는 규칙)</b>: 앞 항에서 다음 항을 만드는 규칙. 예: ‘add 3’, ‘multiply by 2’.<br><b>③ position-to-term rule = nth term rule (n번째 항 규칙, 일반항)</b>: 위치 번호 n 만 넣으면 그 항이 바로 나오는 식. 예: 2n + 3.<br><b>분수 더하기</b>: 4 4/5 + 2/5 = 4 6/5 = 5 1/5 처럼 분자가 분모를 넘으면 1 을 정수로 올린다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">2. This sequence of patterns is made from dots. &nbsp; a. Write the sequence of the numbers of dots. &nbsp; b. Write the term-to-term rule. &nbsp; c. Draw the next pattern in the sequence. &nbsp; d. Copy and complete the table to find the position-to-term rule.</div>
+  <div class="shot"><img src="assets/y9m/ch9/n02.png" alt="2. This sequence of patterns is made fro"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. <b>5, 7, 9, …</b><br>b. <b>add 2</b> (위 줄에 1 개, 아래 줄에 1 개씩 늘어난다)<br>c. Pattern 4 = 위 줄 6 개 + 아래 줄 5 개 = <b>11 dots</b><br>d. <table class="tbl"><tr><th>position number</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><td>term</td><td>5</td><td>7</td><td>9</td><td>11</td></tr><tr><td>2 × position number</td><td>2</td><td>4</td><td>6</td><td>8</td></tr><tr><td>2 × position number + 3</td><td>5</td><td>7</td><td>9</td><td>11</td></tr></table>Position-to-term rule: <b>term = 2 × position number + 3</b> (nth term = 2n + 3)<br>선생님 노트 손글씨: 9, 11 · 2n · nth = 2n + 3 (같음)
+    <span class="how"><b>왜 2 × 를 하나?</b><br>한 칸 갈 때마다 2 씩 늘어나니까(차이 = 2) 2의 배수 2, 4, 6, 8 과 비교한다. 실제 항 5, 7, 9, 11 은 언제나 2 × n 보다 3 크다 → 2n + 3.<br>선생님이 옆에 적은 <b>y = mn + c</b> 는 직선의 식 y = mx + c 와 같은 모양이라는 뜻이다. m = 차이(기울기, gradient), c = 0번째 항.</span>
+  </div></details>
+</div>
+<span class="src">9.1 Generating sequences</span>
+<div class="shot"><img src="assets/y9m/ch9/n03_kw.png" alt="Key words: linear sequence, non-linear sequence"></div>
+<div class="q">
+  <div class="q-title">Linear sequence: the terms increase (or decrease) by the same amount each time. &nbsp; Example: 1, 3 1/2, 6, 8 1/2, 11, …</div>
+  <div class="shot"><img src="assets/y9m/ch9/n04.png" alt="Linear sequence: the terms increase (or "></div>
+  <details><summary>풀이</summary><div class="ans">
+    차이: 3 1/2 − 1 = 2 1/2, 6 − 3 1/2 = 2 1/2 … 모두 <b>2 1/2</b> → term-to-term rule ‘add 2 1/2’.<br>선생님 손글씨 nth term: <b>2½n − 1½</b> (첫째 항 1 − 2½ = −1½)<br>확인: n = 1 → 2½ − 1½ = 1 ✓, n = 2 → 5 − 1½ = 3½ ✓
+    <span class="how"><b>linear sequence (선형 수열, 등차수열)</b>: 이웃한 두 항의 차이(difference)가 <b>항상 같다</b>.<br><b>non-linear sequence (비선형 수열)</b>: 차이가 <b>매번 달라진다</b>.<br>가리는 법: 뒤 항 − 앞 항 을 모두 구해 본다. 모두 같으면 linear.<br><b>선형 수열의 nth term 구하는 법</b><br>① 차이(common difference) d 를 구한다 → nth term 은 <b>dn + □</b> 꼴.<br>② 첫째 항에서 d 를 빼면 □ (‘0번째 항’, zero term) 이 나온다.<br>③ 확인: n = 1, 2 를 넣어 처음 항들이 나오는지 본다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Non-linear sequence: the terms increase (or decrease) by a different amount each time. &nbsp; Example: 3, 6, 11, 18, 27, …</div>
+  <div class="shot"><img src="assets/y9m/ch9/n05.png" alt="Non-linear sequence: the terms increase "></div>
+  <details><summary>풀이</summary><div class="ans">
+    차이: +3, +5, +7, +9 → 같지 않으니 <b>non-linear</b>.<br>차이가 2 씩 커지므로 다음 차이는 +11 → 다음 항 27 + 11 = <b>38</b>
+    <span class="how">차이들의 차이(second difference, 2차 계차)가 2 로 같다 → 이런 수열은 n² 이 들어 있는 <b>quadratic sequence (이차 수열)</b> 이다. 9.2 에서 다시 나온다.<br>(3, 6, 11, 18, 27 = n² + 2)</span>
+  </div></details>
+</div>
+<span class="src">Worked example 9.1</span>
+<div class="q">
+  <div class="q-title">a. Are these sequences linear or non-linear? &nbsp; i. 6, 4, 2, 0, −2, … &nbsp; ii. 8, 5, 1, −4, −10, … &nbsp; b. The first term of a sequence is 4. The term-to-term rule is: multiply by 2. Write the first three terms of the sequence. &nbsp; c. The first term of a sequence is 3. The term-to-term rule of the sequence is: square, then subtract 5. Write the first three terms of the sequence.</div>
+  <div class="shot"><img src="assets/y9m/ch9/n06.png" alt="a. Are these sequences linear or non-lin"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. i. 차이 −2, −2, −2, −2 → <b>linear</b><br>&nbsp;&nbsp;&nbsp;ii. 차이 −3, −4, −5, −6 → <b>non-linear</b><br>b. 4 → 4 × 2 = 8 → 8 × 2 = 16 → <b>4, 8, 16</b><br>c. 3 → 3² − 5 = 4 → 4² − 5 = 11 → <b>3, 4, 11</b><br>선생님 답: L, NL, 4, 8, 16, 3, 4, 11 (같음)<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch9/n07.png" alt="answer"></div>
+    <span class="how"><b>linear sequence (선형 수열, 등차수열)</b>: 이웃한 두 항의 차이(difference)가 <b>항상 같다</b>.<br><b>non-linear sequence (비선형 수열)</b>: 차이가 <b>매번 달라진다</b>.<br>가리는 법: 뒤 항 − 앞 항 을 모두 구해 본다. 모두 같으면 linear.<br><b>두 단계 규칙(two-step rule)</b>: ‘square, then subtract 5’ 는 순서대로 — 먼저 제곱(square), 그다음 5 를 뺀다. 순서를 바꾸면 (3 − 5)² = 4 처럼 다른 답이 될 수 있다.</span>
+  </div></details>
+</div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">Question 1. Write whether each sequence is linear or non-linear. Explain your answers. &nbsp; a. 11, 15, 19, 23, 27, … &nbsp; b. 20, 30, 40, 50, 60, … &nbsp; c. 4, 5, 7, 10, 14, … &nbsp; d. 20, 18, 15, 11, 6, … &nbsp; e. 100, 95, 90, 85, 80, … &nbsp; f. 10, 7, 1, −8, −20, … &nbsp; g. 0.5, 1, 1.5, 2, 2.5, … &nbsp; h. 3 1/2, 5 1/2, 9 1/2, 17 1/2, 33 1/2, … &nbsp; i. 20, 12, 4, −4, −12, …</div>
+  <div class="shot"><img src="assets/y9m/ch9/n08.png" alt="Question 1. Write whether each sequence "></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 차이 4, 4, 4, 4 → <b>linear</b><br>b. 차이 10, 10, 10, 10 → <b>linear</b><br>c. 차이 1, 2, 3, 4 → <b>non-linear</b><br>d. 차이 −2, −3, −4, −5 → <b>non-linear</b><br>e. 차이 −5, −5, −5, −5 → <b>linear</b><br>f. 차이 −3, −6, −9, −12 → <b>non-linear</b><br>g. 차이 0.5, 0.5, 0.5, 0.5 → <b>linear</b><br>h. 차이 2, 4, 8, 16 → <b>non-linear</b><br>i. 차이 −8, −8, −8, −8 → <b>linear</b><br>Explanation: The linear sequences go up/down by the same amount each time. The non-linear sequences do not go up/down by the same amount each time.<br>선생님 답(Exercise 9.1 Q1): a linear, b linear, c non-linear, d non-linear, e linear, f non-linear, g linear, h non-linear, i linear (같음)
+    <span class="how"><b>linear sequence (선형 수열, 등차수열)</b>: 이웃한 두 항의 차이(difference)가 <b>항상 같다</b>.<br><b>non-linear sequence (비선형 수열)</b>: 차이가 <b>매번 달라진다</b>.<br>가리는 법: 뒤 항 − 앞 항 을 모두 구해 본다. 모두 같으면 linear.<br><b>함정</b>: h 는 차이가 2, 4, 8, 16 으로 두 배씩 커진다(non-linear). f 처럼 줄어드는 수열도 줄어드는 양이 같은지 본다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 2. Write the first three terms of each of these sequences. Show your working. &nbsp; a. first term 3.5, Add 0.7 &nbsp; b. first term 2, Add 1/2, then multiply by 2 &nbsp; c. first term 4 1/3, Subtract 2/3 &nbsp; d. first term 40, Divide by 2, then subtract 2 &nbsp; e. first term 1.25, Multiply by 2, then add 0.75 &nbsp; f. first term 1, Multiply by 3, then subtract 1/2</div>
+  <div class="shot"><img src="assets/y9m/ch9/n09.png" alt="Question 2. Write the first three terms "></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 3.5 + 0.7 = 4.2, 4.2 + 0.7 = 4.9 → <b>3.5, 4.2, 4.9</b><br>b. (2 + 1/2) × 2 = 5, (5 + 1/2) × 2 = 11 → <b>2, 5, 11</b><br>c. 4 1/3 − 2/3 = 3 2/3, 3 2/3 − 2/3 = 3 → <b>4 1/3, 3 2/3, 3</b><br>d. 40 ÷ 2 − 2 = 18, 18 ÷ 2 − 2 = 7 → <b>40, 18, 7</b><br>e. 1.25 × 2 + 0.75 = 3.25, 3.25 × 2 + 0.75 = 7.25 → <b>1.25, 3.25, 7.25</b><br>f. 1 × 3 − 1/2 = 2 1/2, 2 1/2 × 3 − 1/2 = 7 → <b>1, 2 1/2, 7</b><br>선생님 답(Exercise 9.1 Q2): 3.5, 4.2, 4.9 / 2, 5, 11 / 4 1/3, 3 2/3, 3 / 40, 18, 7 / 1.25, 3.25, 7.25 / 1, 2 1/2, 7 (같음)<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch9/n10.png" alt="answer"></div>
+    <span class="how"><b>첫째 항(first term)</b> 은 그대로 쓰고, 규칙을 두 번 써서 둘째·셋째 항을 만든다.<br><b>두 단계 규칙</b>: 쓰인 순서대로. b 는 ‘더하고 → 곱하기’라서 (2 + 1/2) × 2 처럼 괄호가 생긴다. 2 + 1/2 × 2 = 3 으로 하면 틀린다.<br>c 처럼 분수에서 빼기: 4 1/3 − 2/3 → 정수 하나를 빌려 3 4/3 − 2/3 = 3 2/3.</span>
+  </div></details>
+</div>
+<span class="src">Assignment: Textbook Exercise 9.1: 1, 2, 3, 5, 7, 9, 10, 11, 13</span>
+<div class="shot"><img src="assets/y9m/ch9/n11.png" alt="Exercise 9.1 answers 3 to 13"></div>
+</div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">9.2</span><span class="sec-title">Using the nth term</span><span class="sec-ko">n번째 항(일반항) 쓰기</span></div>
+<span class="src">STARTER</span>
+<div class="q">
+  <div class="q-title">3. Work out the first three terms and the 10th term of the sequences with the given nth terms. &nbsp; a. 1/2 n + 12 &nbsp; b. 4n − 3.5 &nbsp;&nbsp; 4. Work out an expression for the nth term of each sequence. &nbsp; a. 8, 11, 14, 17, … &nbsp; b. 19, 14, 9, 4, …</div>
+  <div class="shot"><img src="assets/y9m/ch9/n13.png" alt="3. Work out the first three terms and th"></div>
+  <details><summary>풀이</summary><div class="ans">
+    3a. n = 1, 2, 3 → ½ + 12, 1 + 12, 1½ + 12 = <b>12 1/2, 13, 13 1/2</b>, 10th term = ½ × 10 + 12 = <b>17</b><br>3b. 4 − 3.5, 8 − 3.5, 12 − 3.5 = <b>0.5, 4.5, 8.5</b>, 10th term = 40 − 3.5 = <b>36.5</b><br>4a. 차이 +3 → 3n, 첫째 항 8 − 3 = 5 → <b>3n + 5</b><br>4b. 차이 −5 → −5n, 첫째 항 19 − (−5) = 24 → <b>24 − 5n</b> (= −5n + 24)<br>선생님 답은 노트의 ‘answer tab’ 에만 있어 맞춰 보지 못했다(계산으로 확인).
+    <span class="how"><b>nth term 쓰기</b>: n 자리에 1, 2, 3 … 을 넣는다(substitute).<br><b>선형 수열의 nth term 구하는 법</b><br>① 차이(common difference) d 를 구한다 → nth term 은 <b>dn + □</b> 꼴.<br>② 첫째 항에서 d 를 빼면 □ (‘0번째 항’, zero term) 이 나온다.<br>③ 확인: n = 1, 2 를 넣어 처음 항들이 나오는지 본다.<br><b>함정</b>: 줄어드는 수열은 차이가 음수(−5)라서 −5n. 확인: n = 1 → 24 − 5 = 19 ✓</span>
+  </div></details>
+</div>
+<span class="src">9.2 Using the nth term</span>
+<div class="shot"><img src="assets/y9m/ch9/n14_kw.png" alt="Key word: quadratic sequence"></div>
+<div class="q">
+  <div class="q-title">Example: Write the first three terms of the sequence with nth term 3n − 1.</div>
+  <div class="shot"><img src="assets/y9m/ch9/n15.png" alt="Example: Write the first three terms of "></div>
+  <details><summary>풀이</summary><div class="ans">
+    1st term = 3 × 1 − 1 = 2, 2nd term = 3 × 2 − 1 = 5, 3rd term = 3 × 3 − 1 = 8 → <b>2, 5, 8</b>
+    <span class="how">n 자리에 위치 번호를 넣어 계산한다. 3n 은 ‘3 × n’ 이다.</span>
+  </div></details>
+</div>
+<span class="src">Worked example 9.2</span>
+<div class="q">
+  <div class="q-title">a. The nth term rule of a sequence is n² + 4. Work out the first three terms and the tenth term of the sequence. &nbsp; b. The nth term rule of a sequence is n/4. Work out the fifth term and the eighth term of the sequence.</div>
+  <div class="shot"><img src="assets/y9m/ch9/n16_q.png" alt="a. The nth term rule of a sequence is n²"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 1² + 4 = 5, 2² + 4 = 8, 3² + 4 = 13, 10² + 4 = 104 → <b>5, 8, 13</b> · 10th term <b>104</b><br>b. 5th term = 5/4 = <b>1 1/4</b>, 8th term = 8/4 = <b>2</b><br>선생님 답: 5, 8, 13, 104 · 1 1/4, 2 (같음)<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch9/n16_a.png" alt="answer"></div>
+    <span class="how"><b>n² 는 n × n</b> — 2n 과 헷갈리지 않는다(2² = 4, 2 × 2 = 4 는 같지만 3² = 9, 2 × 3 = 6 은 다르다).<br><b>n/4</b> 는 n ÷ 4. 답은 improper fraction(가분수) 5/4 또는 mixed number(대분수) 1 1/4 둘 다 된다.</span>
+  </div></details>
+</div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">Question 2. Work out the first three terms and the 10th term of the sequences with these nth terms. &nbsp; a. 4n + 3 &nbsp; b. 2n − 5 &nbsp; c. 1/2 n + 3 &nbsp; d. n/5 &nbsp; e. n² − 1</div>
+  <div class="shot"><img src="assets/y9m/ch9/n17.png" alt="Question 2. Work out the first three ter"></div>
+  <div class="shot"><img src="assets/y9m/ch9/n18.png" alt="Question 2. Work out the first three ter"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 4n + 3 → <b>7, 11, 15</b> · 10th term <b>43</b><br>b. 2n − 5 → <b>−3, −1, 1</b> · 10th term <b>15</b><br>c. 1/2 n + 3 → <b>3 1/2, 4, 4 1/2</b> · 10th term <b>8</b><br>d. n/5 → <b>1/5, 2/5, 3/5</b> · 10th term <b>2</b><br>e. n² − 1 → <b>0, 3, 8</b> · 10th term <b>99</b><br>선생님 답은 ‘In textbook exercise 9.2’ 라고만 적혀 있고 노트에 없다(계산으로 확인).
+    <span class="how">a: 4 × 1 + 3 = 7, 4 × 10 + 3 = 43<br>b: 2 × 1 − 5 = −3 (음수가 나와도 된다), 2 × 10 − 5 = 15<br>c: ½ × 1 + 3 = 3½, ½ × 10 + 3 = 8<br>d: 1/5, 2/5, 3/5, 10/5 = 2<br>e: 1² − 1 = 0, 2² − 1 = 3, 3² − 1 = 8, 10² − 1 = 99</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Example: Work out the nth term rule for the sequence 6, 8, 10, 12, …</div>
+  <div class="shot"><img src="assets/y9m/ch9/n19.png" alt="Example: Work out the nth term rule for "></div>
+  <details><summary>풀이</summary><div class="ans">
+    차이 +2 → 2n 줄을 만든다: 2, 4, 6, 8 → 항은 언제나 2n 보다 4 크다 → nth term = <b>2n + 4</b>
+    <span class="how"><b>선형 수열의 nth term 구하는 법</b><br>① 차이(common difference) d 를 구한다 → nth term 은 <b>dn + □</b> 꼴.<br>② 첫째 항에서 d 를 빼면 □ (‘0번째 항’, zero term) 이 나온다.<br>③ 확인: n = 1, 2 를 넣어 처음 항들이 나오는지 본다.<br>(교과서는 ‘multiply by 2’ 라고 썼지만, 뜻은 ‘차이가 2 이니 2n 줄을 만든다’ 이다. term-to-term rule 자체는 ‘add 2’.)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">This is how Serge works out the nth term rule for the sequence 2, 5, 10, 17, 26, 37, …</div>
+  <div class="shot"><img src="assets/y9m/ch9/n20.png" alt="This is how Serge works out the nth term"></div>
+  <details><summary>풀이</summary><div class="ans">
+    First differences (1차 차이): +3, +5, +7, +9, +11<br>Second differences (2차 차이): +2, +2, +2, +2 → 같다 → <b>quadratic sequence</b>, nth term 에 n² 이 들어 있다.<br>n² 줄 1, 4, 9, 16 과 비교하면 항은 언제나 1 크다 → nth term = <b>n² + 1</b>
+    <span class="how"><b>Serge’s method (세르게 방법)</b><br>① 1차 차이를 구한다 → 같지 않다.<br>② 2차 차이(차이의 차이)를 구한다 → <b>2 로 같으면</b> n² 꼴.<br>③ 표에 n² 줄을 쓰고, 실제 항에서 n² 을 뺀 값이 늘 같으면 그 수를 더한다(n² + c).<br>(이 단원 문제는 2차 차이가 모두 2 라서 n² + c 꼴이다)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 6. Use Serge’s method to work out the nth term rules for these sequences. &nbsp; a. 4, 7, 12, 19, 28, … &nbsp; b. 11, 14, 19, 26, … &nbsp; c. 0, 3, 8, 15, 24, … &nbsp; d. −8, −5, 0, 7, 16, …</div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 1차 차이 +3, +5, +7, +9 → 2차 차이 +2, +2, +2 → n². 항 − n²: 4 − 1 = 3 → <b>n² + 3</b><br>b. 1차 차이 +3, +5, +7 → 2차 차이 +2, +2 → n². 항 − n²: 11 − 1 = 10 → <b>n² + 10</b><br>c. 1차 차이 +3, +5, +7, +9 → 2차 차이 +2, +2, +2 → n². 항 − n²: 0 − 1 = −1 → <b>n² − 1</b><br>d. 1차 차이 +3, +5, +7, +9 → 2차 차이 +2, +2, +2 → n². 항 − n²: −8 − 1 = −9 → <b>n² − 9</b><br>선생님 답은 ‘In textbook exercise 9.2’ 라고만 적혀 있고 노트에 없다(계산으로 확인).
+    <span class="how">네 문제 모두 2차 차이가 2 → n² + c. 첫째 항에서 1² = 1 을 빼면 c 가 나온다.<br>확인 d: n = 3 → 9 − 9 = 0 ✓, n = 5 → 25 − 9 = 16 ✓</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 12. Work out an expression for the nth term for each sequence. &nbsp; a. 9 1/4, 9, 8 3/4, 8 1/2, … &nbsp; b. 20, 19.8, 19.6, 19.4, … &nbsp; c. −1 1/2, −2, −2 1/2, −3, … &nbsp; d. −5, −6.5, −8, −9.5, …</div>
+  <div class="shot"><img src="assets/y9m/ch9/n21.png" alt="Question 12. Work out an expression for "></div>
+  <div class="shot"><img src="assets/y9m/ch9/n22.png" alt="Question 12. Work out an expression for "></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 차이 −1/4 → −¼n, 9¼ − (−¼) = 9½ → <b>9½ − ¼n</b><br>b. 차이 −0.2 → −0.2n, 20 − (−0.2) = 20.2 → <b>20.2 − 0.2n</b><br>c. 차이 −1/2 → −½n, −1½ − (−½) = −1 → <b>−½n − 1</b><br>d. 차이 −1.5 → −1.5n, −5 − (−1.5) = −3.5 → <b>−1.5n − 3.5</b><br>(a = −¼n + 9½, b = −0.2n + 20.2 처럼 순서를 바꿔 써도 같다)<br>선생님 답은 ‘In textbook exercise 9.2’ 라고만 적혀 있고 노트에 없다(계산으로 확인).
+    <span class="how"><b>선형 수열의 nth term 구하는 법</b><br>① 차이(common difference) d 를 구한다 → nth term 은 <b>dn + □</b> 꼴.<br>② 첫째 항에서 d 를 빼면 □ (‘0번째 항’, zero term) 이 나온다.<br>③ 확인: n = 1, 2 를 넣어 처음 항들이 나오는지 본다.<br><b>함정</b>: 줄어드는 수열은 차이가 음수. 0번째 항 = 첫째 항 − 차이 = 첫째 항 + |차이|.<br>확인 a: n = 2 → 9½ − ½ = 9 ✓</span>
+  </div></details>
+</div>
+<span class="src">Assignment: Above exercises from 9.2</span>
+</div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">9.3</span><span class="sec-title">Representing functions</span><span class="sec-ko">함수 나타내기</span></div>
+<span class="src">STARTER</span>
+<div class="q">
+  <div class="q-title">5. Work out the missing values in the tables for these function machines. Copy and complete the tables. &nbsp; a. 1. x → ÷2 → +3 → y &nbsp; (x: 6, 11, _, _ / y: _, _, 12, 15 1/2) &nbsp; 2. x → −1 → ×5 → y &nbsp; (x: −2, 1 1/2, _, _ / y: _, _, 35, 52 1/2) &nbsp;&nbsp; b. Copy and complete the equation for each function in part a. 1. y = x/□ + □ &nbsp; 2. y = □(x − □)</div>
+  <div class="shot"><img src="assets/y9m/ch9/n24.png" alt="5. Work out the missing values in the ta"></div>
+  <div class="shot"><img src="assets/y9m/ch9/n25.png" alt="5. Work out the missing values in the ta"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a1. <table class="tbl"><tr><th>x</th><th>6</th><th>11</th><th><b>18</b></th><th><b>25</b></th></tr><tr><td>y</td><td><b>6</b></td><td><b>8 1/2</b></td><td>12</td><td>15 1/2</td></tr></table>&nbsp;&nbsp;6 ÷ 2 + 3 = 6, 11 ÷ 2 + 3 = 8½ · 거꾸로: (12 − 3) × 2 = 18, (15½ − 3) × 2 = 25<br>a2. <table class="tbl"><tr><th>x</th><th>−2</th><th>1 1/2</th><th><b>8</b></th><th><b>11 1/2</b></th></tr><tr><td>y</td><td><b>−15</b></td><td><b>2 1/2</b></td><td>35</td><td>52 1/2</td></tr></table>&nbsp;&nbsp;(−2 − 1) × 5 = −15, (1½ − 1) × 5 = 2½ · 거꾸로: 35 ÷ 5 + 1 = 8, 52½ ÷ 5 + 1 = 11½<br>b. 1. <b>y = x/2 + 3</b> &nbsp; 2. <b>y = 5(x − 1)</b><br>선생님 답은 노트의 ‘answer tab’ 에만 있어 맞춰 보지 못했다(계산으로 확인).
+    <span class="how"><b>function machine (함수 기계)</b>: 입력(input) x 가 상자를 차례로 지나 출력(output) y 가 된다.<br><b>y 에서 x 를 구할 때 (거꾸로, inverse)</b>: 오른쪽 상자부터 <b>반대 연산</b>을 한다. +3 ↔ −3, ÷2 ↔ ×2, ×5 ↔ ÷5, −1 ↔ +1.<br><b>식으로 쓰기</b>: 2번은 먼저 1을 빼고 나서 5배 → 괄호가 필요하다: 5(x − 1). 5x − 1 로 쓰면 틀린다.</span>
+  </div></details>
+</div>
+<span class="src">9.3 Representing functions</span>
+<span class="src">Worked example 9.3</span>
+<div class="q">
+  <div class="q-title">a. Copy and complete the table of values for this two-step function machine. x → □² → +1 → y &nbsp; (x: 0, 1, 2, 3) &nbsp; b. Draw a mapping diagram to show the function in part a. &nbsp; c. Write the function in part a as an equation.</div>
+  <div class="shot"><img src="assets/y9m/ch9/n27.png" alt="a. Copy and complete the table of values"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. <table class="tbl"><tr><th>x</th><th>0</th><th>1</th><th>2</th><th>3</th></tr><tr><td>y</td><td><b>1</b></td><td><b>2</b></td><td><b>5</b></td><td><b>10</b></td></tr></table>0² + 1 = 1, 1² + 1 = 2, 2² + 1 = 5, 3² + 1 = 10<br>b. 위 x 수직선의 0, 1, 2, 3 에서 아래 y 수직선의 1, 2, 5, 10 으로 화살표를 긋는다.<br>c. <b>y = x² + 1</b><br>선생님 답: 1, 2, 5, 10 · y = x² + 1 (같음)<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch9/n28.png" alt="answer"></div>
+    <span class="how"><b>□² (square, 제곱)</b>: 들어온 수를 제곱한다. 이렇게 지수(index, indices)가 들어간 기계가 이 단원에서 새로 나온다.<br><b>mapping diagram (대응도)</b>: 두 개의 수직선(x 줄, y 줄)을 그리고, 각 x 에서 그 출력 y 로 화살표를 긋는 그림.<br><b>equation (식)</b>: ‘y =’ 를 왼쪽에 쓴다. 기계를 지나는 순서대로: x → x² → x² + 1.</span>
+  </div></details>
+</div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">Question 2. a. Copy and complete the table of values for each two-step function machine. &nbsp; i. x → □² → +3 → y &nbsp; (x: 2, 5, 9, 11) &nbsp; ii. x → □³ → −3 → y &nbsp; (x: 1, 3, 5, 10) &nbsp; b. Write each function in part a as an equation.</div>
+  <div class="shot"><img src="assets/y9m/ch9/n29.png" alt="Question 2. a. Copy and complete the tab"></div>
+  <div class="shot"><img src="assets/y9m/ch9/n30.png" alt="Question 2. a. Copy and complete the tab"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. i. <table class="tbl"><tr><th>x</th><th>2</th><th>5</th><th>9</th><th>11</th></tr><tr><td>y</td><td><b>7</b></td><td><b>28</b></td><td><b>84</b></td><td><b>124</b></td></tr></table>2² + 3 = 7, 5² + 3 = 28, 9² + 3 = 84, 11² + 3 = 124<br>&nbsp;&nbsp;&nbsp;ii. <table class="tbl"><tr><th>x</th><th>1</th><th>3</th><th>5</th><th>10</th></tr><tr><td>y</td><td><b>−2</b></td><td><b>24</b></td><td><b>122</b></td><td><b>997</b></td></tr></table>1³ − 3 = −2, 3³ − 3 = 24, 5³ − 3 = 122, 10³ − 3 = 997<br>b. i. <b>y = x² + 3</b> &nbsp; ii. <b>y = x³ − 3</b><br>선생님 답은 ‘In textbook exercise 9.3’ 라고만 적혀 있고 노트에 없다(계산으로 확인).
+    <span class="how"><b>□³ (cube, 세제곱)</b> = 그 수를 세 번 곱한다: 5³ = 5 × 5 × 5 = 125.<br><b>함정</b>: 1³ = 1 이라서 1 − 3 = −2 (음수). 10³ = 1000.</span>
+  </div></details>
+</div>
+<span class="src">Assignment: Textbook Exercise 9.3: 2 to 12</span>
+</div>
+</div>
+<script>
+/* 단원 페이지 안(iframe)에서 열릴 때는 이 페이지의 제목 줄을 숨긴다 — 단원 제목이 위에 이미 있어 두 번 나오기 때문이다. */
+if (window.self !== window.top) {
+  document.documentElement.classList.add('embedded');
+  var _h = document.querySelector('header');
+  if (_h) _h.style.display = 'none';
+}
+</script>
+<script src="studylog.js"></script>
+</body>
+</html>
