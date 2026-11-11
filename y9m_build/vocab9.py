@@ -7,7 +7,7 @@ VOCAB = [
 ("Term","항","Each number in a sequence.","수열 안의 수 하나하나. 5, 7, 9 의 5 는 1st term.","organ"),
 ("First term","첫째 항","The number at the start of a sequence.","수열의 맨 앞 수. 그대로 쓰고 규칙을 써서 다음 항을 만든다.","organ"),
 ("Term-to-term rule","항에서 항으로 가는 규칙","The rule that changes one term into the next term.","앞 항에서 다음 항을 만드는 규칙. 'add 2/5', 'subtract 0.3'.","organ"),
-("Next term","다음 항","The term that comes after the last one given.","주어진 마지막 항 다음 수. 7.6 − 0.3 = 7.3.","organ"),
+("Next two terms","다음 두 항","The two terms that come after the last one given.","주어진 마지막 항 다음 두 수. 7.6 → 7.3, 7.","organ"),
 ("Pattern","패턴(모양 배열)","One of a set of drawings that grow by a rule.","점(dot)으로 만든 그림. Pattern 1, 2, 3 의 점 개수가 수열이 된다.","organ"),
 ("Position number","위치 번호","The place of a term in the sequence: 1st, 2nd, 3rd, …","몇 번째 항인지 나타내는 번호 n. 1, 2, 3, 4.","organ"),
 ("Position-to-term rule","위치에서 항으로 가는 규칙","A rule that uses the position number to work out the term.","위치 번호만 넣으면 그 항이 바로 나오는 규칙. term = 2 × position number + 3.","organ"),

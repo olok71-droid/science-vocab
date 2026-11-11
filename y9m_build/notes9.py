@@ -11,7 +11,7 @@ NOTES = [
   "★ 'Write the term-to-term rule' 에 2n + 3 을 쓰면 틀린다. 둘을 바꿔 쓰지 않는다."),
  ("★ 함정 1 — 줄어드는 수열과 분수 항",
   "Starter 1 a: 4, 4 2/5, 4 4/5, 5 1/5 → <b>add 2/5</b><br>"
-  "다음 항 <b>next term</b>: 5 1/5 + 2/5 = <b>5 3/5</b>, 5 3/5 + 2/5 = 5 5/5 = <b>6</b><br>"
+  "다음 두 항 <b>next two terms</b>: 5 1/5 + 2/5 = <b>5 3/5</b>, 5 3/5 + 2/5 = 5 5/5 = <b>6</b><br>"
   "&nbsp;&nbsp;✘ 5 5/5 ← 분자가 분모와 같으면 정수로 올린다<br><br>"
   "Starter 1 b: 8.5, 8.2, 7.9, 7.6 → <b>subtract 0.3</b> (= add −0.3)<br>"
   "다음 두 항: <b>7.3, 7</b><br><br>"
@@ -23,7 +23,7 @@ NOTES = [
   "Your turn Q1<br>"
   "• a: 11, 15, 19, 23, 27 → 4, 4, 4, 4 → <b>linear</b><br>"
   "• d: 20, 18, 15, 11, 6 → −2, −3, −4, −5 → <b>non-linear</b><br>"
-  "• h: 3 1/2, 5 1/2, 9 1/2, 17 1/2 → 2, 4, 8, 16 → <b>non-linear</b> (두 배씩 커짐)<br>"
+  "• h: 3 1/2, 5 1/2, 9 1/2, 17 1/2, 33 1/2 → 2, 4, 8, 16 → <b>non-linear</b> (두 배씩 커짐)<br>"
   "• i: 20, 12, 4, −4, −12 → −8, −8, −8, −8 → <b>linear</b> (음수로 내려가도 같으면 linear)<br><br>"
   "★ 'Explain your answers' — \"The terms go up/down by the <b>same amount</b> each time.\" 처럼 이유를 쓴다."),
  ("★ 함정 3 — 두 단계 규칙은 쓰인 순서대로",
