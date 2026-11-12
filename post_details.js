@@ -166,294 +166,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "휴머니티 (Mr Lawrence)|Today in class, we read through the case study about Imperialism and answered the questions on the sheet.": {
-  "en": "Today in class, we read through the case study about Imperialism and answered the questions on the sheet.\n\nWe also watched the youtube video on slide 14 and answered those questions",
-  "ko": "오늘 수업에서 우리는 제국주의(Imperialism)에 관한 사례 연구(case study)를 함께 읽고 학습지의 질문에 답했습니다.\n\n또한 14번 슬라이드에 있는 유튜브 영상을 보고 그 질문들에 답했습니다",
-  "files": [
-   {
-    "name": "Screenshot 2026-10-21 at 10.25.03.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1S0tOylzonETShpb9ebrbkeWG6J1Ecdm_/view&usp=classroom_web",
-    "local": "post_files/1S0tOylzonETShpb9ebrbkeWG6J1Ecdm_.png",
-    "pages": [
-     {
-      "src": "assets/pages/humanities/Screenshot_2026_10_21_at_10.25.03.png",
-      "tr": "<b>긴 도화선(The Long Fuse) - 1914년의 유럽(Europe in 1914)</b><br>1. <b>제1차 세계대전(World War I)</b> 전에 유럽 지도자들은 한 나라에 ______이(가) 필요하다고 생각했다.<br>2. 1800년대에 이미 큰 <b>제국(empire)</b>을 가지고 있던 유럽의 두 나라는 ______였다.<br>3. 가장 컸을 때 <b>대영제국(British Empire)</b>은 ______을(를) 지배했다.<br>4. 대영제국의 지배나 영향을 받은 두 나라는 ______였다.<br>5. <b>이탈리아(Italy)</b>와 <b>독일(Germany)</b>은 ______에 <b>통일된 나라(united countries)</b>가 되었다.<br>6. 자원(resources)이 많아서 유럽 <b>강대국(European powers)</b>들이 차지하려고 경쟁한 대륙(continent)은 ______였다.<br>7. 1870년부터 1914년 사이에 유럽 나라들은 <b>군사비(military spending)</b>를 ______만큼 늘렸다.<br>8. 별로 가치가 없었는데도 독일이 차지한 아프리카(Africa)의 지역은 ______였다.<br>9. 독일과 프랑스(France)는 ______년에 <b>모로코(Morocco)</b>를 두고 다퉜다.<br>10. 제1차 세계대전 전 유럽 나라들 사이에 있었던 <b>식민지(colonies)</b>를 둘러싼 다툼은 ______<br>페리 매운맛 측정기(PERI-ometer): 아주 매운맛(Extra Hot) / 매운맛(Hot) / 중간맛(Medium) / 순한맛(Mild) / 아주 순한맛(Extra Mild)<br><b>식민지 경쟁(competition for colonies)</b>은 1914년 이전 유럽에서 전쟁이 일어날 가능성을 어떻게 높였는가?<br>유럽 나라들은 왜 식민지를 두고 싸우고 싶어 했는가?<br><b>하나를 고르시오!(Choose One!)</b>",
-      "note": "'긴 도화선(The Long Fuse)'은 제1차 세계대전이 한 사건으로 갑자기 터진 것이 아니라, 제국주의(imperialism)·식민지 경쟁 같은 오랜 긴장이 쌓여 불이 붙었다는 뜻이다. 모로코 위기(Moroccan Crises, 1905·1911년)는 독일과 프랑스의 식민지 다툼이 전쟁 직전까지 간 대표적인 사건이다."
-     }
-    ]
-   },
-   {
-    "name": "Screenshot 2026-10-21 at 10.25.16.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1kOMAryPfIFhyIwUDAYUPj19YqHamBymG/view?usp=classroom_web",
-    "local": "post_files/1kOMAryPfIFhyIwUDAYUPj19YqHamBymG.png",
-    "pages": [
-     {
-      "src": "assets/pages/humanities/Screenshot_2026_10_21_at_10.25.16.png",
-      "tr": "<b>읽기 활동 - 유럽 제국(empire)의 중요성</b><br>제1차 세계대전(World War I) 이전에 유럽 나라들은 큰 <b>제국(empires)</b>을 세우는 것이 매우 중요하다고 생각했다. 지도자들은 강한 나라로 보이려면 바다 건너 땅을 다스려야 한다고 믿었다. <b>제국(empires)</b>은 국가의 자부심을 보여 주었지만, <b>무역(trade)</b>과 <b>돈(money)</b>에도 쓸모가 있었다. <b>제국(empire)</b>이 클수록 그 나라는 더 많은 존경을 받았다.<br><br>1800년대에 이미 영국과 프랑스는 거대한 <b>제국(empires)</b>을 가지고 있었다. 영국의 <b>제국(empire)</b>은 가장 커서 세계의 약 4분의 1을 덮었다. 여기에는 <b>캐나다(Canada), 인도(India), 남아프리카(South Africa), 이집트(Egypt), 오스트레일리아(Australia), 뉴질랜드(New Zealand)</b>가 들어 있었다. 이 가운데 어떤 곳은 영국이 직접 다스렸고, 다른 곳은 영국의 강한 영향을 받았다.<br>(그림 속 글자: 프랑스(FRANCE))<br><br>1870년대에 <b>이탈리아(Italy)</b>와 <b>독일(Germany)</b>이 통일된 나라가 되자, 이들도 <b>제국(empires)</b>을 원했다. 그러나 그때는 이미 값진 <b>영토(territory)</b> 대부분을, 특히 영국이 차지한 뒤였다. 그래도 독일과 이탈리아는 힘을 키우려 했고, 이는 남은 땅을 차지하려는 경쟁으로 이어졌다. 특히 <b>천연자원(natural resources)</b>이 많은 <b>아프리카(Africa)</b>에서 그랬다.<br>(그림 속 글자: 독일(Germany))<br><br>이 <b>제국(empire)</b> 경쟁은 <b>군비 경쟁(arms race)</b>으로 이어졌다. 나라들이 자기 <b>식민지(colonies)</b>를 지키려고 더 큰 <b>육군(armies)</b>과 <b>해군(navies)</b>을 만들었기 때문이다. 1870년과 1914년 사이에 유럽 나라들은 <b>군대(militaries)</b>에 훨씬 더 많은 돈을 썼다. 예를 들어 독일은 <b>아프리카(Africa)</b>에서 <b>나미비아(Namibia)</b> 같은 <b>식민지(colonies)</b>를 차지했다. 이 <b>식민지(colonies)</b>는 그다지 값지지 않았지만, 독일이 영국과 프랑스에 맞설 수 있다는 것을 보여 주었다.<br><br><b>식민지(colonies)</b> 경쟁은 나라들 사이에 <b>다툼(arguments)</b>도 일으켰다. 예를 들어 독일과 프랑스는 1906년과 1911년에 <b>모로코(Morocco)</b> 지배를 두고 충돌했다. 이 분쟁들이 전쟁을 일으키지는 않았지만 분노와 불신을 만들어 앞으로 <b>갈등(conflict)</b>이 일어날 가능성을 높였다.<br><br><b>용어 풀이(Glossary)</b><br>• <b>제국(Empire)</b> – 하나의 강한 나라가 다스리는 여러 나라나 지역의 무리.<br>• <b>식민지(Colony)</b> – 다른 나라가 지배하거나 사람을 보내 정착한 땅.<br>• <b>영토(Territory)</b> – 한 나라에 속하거나 그 나라가 지배하는 땅.<br>• <b>군비 경쟁(Arms race)</b> – 나라들이 가장 큰 육군과 해군을 만들려고 경쟁하는 것.<br>• <b>군대(Military)</b> – 한 나라의 무장 병력(육군, 해군 등).<br>• <b>천연자원(Natural resources)</b> – 석탄, 석유, 금처럼 땅에서 얻는 쓸모 있는 재료.<br>• <b>갈등(Conflict)</b> – 나라들 사이의 심각한 의견 충돌이나 싸움.",
-      "note": "제국 경쟁은 제1차 세계대전의 원인 가운데 하나인 제국주의(imperialism)에 해당한다. 영어로 쓸 때 empire(제국)·colony(식민지)는 복수형이 empires·colonies이고, army(육군)·navy(해군)도 복수형이 armies·navies인 점에 주의한다."
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-21"
- },
- "음악 (Mr Everett)|Term 1 Lessons": {
-  "en": "Term 1 Lessons",
-  "ko": "1학기 수업 자료(Term 1 Lessons)",
-  "files": [
-   {
-    "name": "Lesson 3",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1Ye1geZHBgMzhbZ-TTxYDtGQBPBN2avSq8Cib5mCtcUs/edit?usp=classroom_web",
-    "local": "post_files/1Ye1geZHBgMzhbZ-TTxYDtGQBPBN2avSq8Cib5mCtcUs.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1Ye1geZHBgMzhbZ_TTxYDtGQBPBN2avSq8Cib5mCtcUs_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Ye1geZHBgMzhbZ_TTxYDtGQBPBN2avSq8Cib5mCtcUs_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Ye1geZHBgMzhbZ_TTxYDtGQBPBN2avSq8Cib5mCtcUs_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Ye1geZHBgMzhbZ_TTxYDtGQBPBN2avSq8Cib5mCtcUs_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Ye1geZHBgMzhbZ_TTxYDtGQBPBN2avSq8Cib5mCtcUs_p5.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "Lesson 8",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1JilF0R4ENZJjQir1XCMfq59I-8_rr8OaYaSxADOk_oQ/edit?usp=classroom_web",
-    "local": "post_files/1JilF0R4ENZJjQir1XCMfq59I-8_rr8OaYaSxADOk_oQ.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1JilF0R4ENZJjQir1XCMfq59I_8_rr8OaYaSxADOk_oQ_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1JilF0R4ENZJjQir1XCMfq59I_8_rr8OaYaSxADOk_oQ_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1JilF0R4ENZJjQir1XCMfq59I_8_rr8OaYaSxADOk_oQ_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1JilF0R4ENZJjQir1XCMfq59I_8_rr8OaYaSxADOk_oQ_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1JilF0R4ENZJjQir1XCMfq59I_8_rr8OaYaSxADOk_oQ_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1JilF0R4ENZJjQir1XCMfq59I_8_rr8OaYaSxADOk_oQ_p6.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "Lesson 7",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA/edit?usp=classroom_web",
-    "local": "post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA_p6.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1kTy4_Fx1KjgWl_1ak0pZd6Gc1jOFZowynsIhsxBi9qA_p7.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "Lesson 6",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1dPdF6dB20VDxvb8IV6l-LShhQdU5StQSD7ntKvypFSU/edit?usp=classroom_web",
-    "local": "post_files/1dPdF6dB20VDxvb8IV6l-LShhQdU5StQSD7ntKvypFSU.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1dPdF6dB20VDxvb8IV6l_LShhQdU5StQSD7ntKvypFSU_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1dPdF6dB20VDxvb8IV6l_LShhQdU5StQSD7ntKvypFSU_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1dPdF6dB20VDxvb8IV6l_LShhQdU5StQSD7ntKvypFSU_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1dPdF6dB20VDxvb8IV6l_LShhQdU5StQSD7ntKvypFSU_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1dPdF6dB20VDxvb8IV6l_LShhQdU5StQSD7ntKvypFSU_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1dPdF6dB20VDxvb8IV6l_LShhQdU5StQSD7ntKvypFSU_p6.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1dPdF6dB20VDxvb8IV6l_LShhQdU5StQSD7ntKvypFSU_p7.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "Lesson 5",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM/edit?usp=classroom_web",
-    "local": "post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM_p6.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM_p7.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1qUFzFZgqfoE01ciXIG2WS5sI3E9VbE9AFDQ9pQ8FPsM_p8.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "Lesson 4",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4/edit?usp=classroom_web",
-    "local": "post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4_p6.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Jyb7K3kUL1sfntbGT0TK8Lxz4zkFNIniHVApW2YW1V4_p7.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-21"
- },
  "튜터 (Mr Cassels)|PSHE - Y9 - 22/10/26": {
   "en": "PSHE - Y9 - 22/10/26\nPlease use this doc to work through today's session.",
   "ko": "PSHE(개인·사회·보건 교육) - 9학년(Y9) - 22/10/26\n오늘 수업은 이 문서를 사용해서 진행하세요.",
@@ -1039,6 +751,45 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
+ "튜터 (Mr Cassels)|I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int": {
+  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
+  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 정보를 알려드리게 되어 기쁩니다.\n\n'갈등 속의 사람과 지구(People and Planet in Conflict)'를 주제로 한 이 대회는 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 누구나 참가할 수 있습니다.  에세이 제목(essay titles), 분량(length), 제출 방법(submission details)의 자세한 내용은 첨부 파일에 있습니다. \n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n문의: Karina Mariadas, k.mariadas@elc.edu.my",
+  "files": [
+   {
+    "name": "k.mariadas@elc.edu.my",
+    "kind": "web",
+    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
+    "local": null
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
+    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT_BFx_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
+    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-10-27"
+ },
  "튜터 (Mr Cassels)|Rewards between 21st September and today!": {
   "en": "Rewards between 21st September and today! \nThe next Rewards Slips for Skip the Line or Lift Pass will be handed out on Wednesday 11th and Thursday 12th November for the top students.",
   "ko": "9월 21일부터 오늘까지의 보상(Rewards)! \n줄 서지 않기(Skip the Line) 또는 엘리베이터 이용권(Lift Pass)을 받을 수 있는 다음 보상 쪽지(Rewards Slips)는 11월 11일 수요일과 11월 12일 목요일에 우수 학생(top students)에게 나눠 줄 예정입니다.",
@@ -1108,6 +859,82 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
+ "과학 (Mr Phillips)|Ohms Law": {
+  "en": "Ohm's Law\nClick on the link below to start the game",
+  "ko": "옴의 법칙(Ohm's Law)\n아래 링크를 눌러 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=h_bdxV3PLQp0Os_DkGyCvBlUJXv_RYUYVs1rJcDEdmV3I3Z8zPYKetZOmwfAT5JpGJ3fochKoyGzvs0bVkEuex2czTWcODIbktcdqg_JlGwXfksd3WSPoRvzbWUZe_k81lJDhwGMxqlpg86XNUPI-pHmxLyTo4HCoc1_25hW7sw1cIg6-3-4vbEqPDjJrnk6M3O5eiznGngeEd7QbuuOply5-Q.vJjyzgUe9UFxi2_w38cPWw.prr_SzRpjaBmJV-l&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-10-28"
+ },
+ "과학 (Mr Phillips)|Resistance - workbook Questions": {
+  "en": "Resistance - workbook Questions",
+  "ko": "저항(Resistance) - 워크북 문제",
+  "files": [],
+  "at": "2026-10-28"
+ },
+ "과학 (Mr Phillips)|Resistance": {
+  "en": "Resistance",
+  "ko": "저항(Resistance)",
+  "files": [
+   {
+    "name": "9.3 Resistance",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1TgvMkA3YZaG21hwxqAYY514-gQjgy8oj/view?usp=classroom_web",
+    "local": "post_files/1TgvMkA3YZaG21hwxqAYY514-gQjgy8oj.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p6.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "Voltage and Resistance - GCSE Physics",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=EcqPg2Ym5NU",
+    "local": null
+   },
+   {
+    "name": "Resistance Connection - Javalab",
+    "kind": "web",
+    "url": "https://javalab.org/en/resistance_connection_en/",
+    "local": null
+   }
+  ],
+  "at": "2026-10-28"
+ },
  "중국어 (Ying Ying老师)|Lesson 4 Grammar Slides (既...又....、除此以外, 还）": {
   "en": "Lesson 4 Grammar Slides (既...又....、除此以外, 还）",
   "ko": "4과(Lesson 4) 문법(grammar) 슬라이드 (既...又....、除此以外, 还）",
@@ -1147,6 +974,31 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-28"
+ },
+ "과학 (Mr Phillips)|CA2 - 11th November": {
+  "en": "CA2 - 11th November",
+  "ko": "CA2 - 11월 11일",
+  "files": [
+   {
+    "name": "CA2 Template Y9 Science Common Assessment 26/27.docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG/view?usp=classroom_web",
+    "local": "post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG.docx",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG_p2.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-10-29"
  },
  "드라마|Drama Cover lesson Thursday 29th October": {
   "en": "Drama Cover lesson Thursday 29th October\nYou shouldn't have anything on your device other than these slides and a translator app (although there are support sheets with translations on my desk).\n\nI have asked the cover teacher to confiscate any devices with anything else on.\n\n\nPlease fold your worksheets neatly back inside your A3 sheet by the end of the lesson and pass them back to the students who handed them out.",
@@ -1365,6 +1217,95 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-02"
  },
+ "과학 (Mr Phillips)|upload resistance graph - here": {
+  "en": "upload resistance graph - here",
+  "ko": "저항(resistance) 그래프 업로드 - 여기에",
+  "files": [],
+  "at": "2026-11-02"
+ },
+ "과학 (Mr Phillips)|9.4 Practical Circuits workbook questions": {
+  "en": "9.4 Practical Circuits workbook questions",
+  "ko": "9.4 실용 회로(Practical Circuits) 워크북 문제",
+  "files": [
+   {
+    "name": "9.4 Practical circuits - answers",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4/edit?usp=classroom_web",
+    "local": "post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "과학 (Mr Phillips)|9.4 Practical Circuits": {
+  "en": "9.4 Practical Circuits",
+  "ko": "9.4 실용 회로(Practical Circuits)",
+  "files": [
+   {
+    "name": "9.4 Practical circuits",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni/view?usp=classroom_web",
+    "local": "post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p6.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "Series and Parallel Circuits | Electricity | Physics | FuseSchool",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=8Z0jhQeYDUE",
+    "local": null
+   },
+   {
+    "name": "‪Circuit Construction Kit: DC‬",
+    "kind": "web",
+    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
+    "local": null
+   },
+   {
+    "name": "Resistors Explained & Ohm's Law Made Simple! | What Are Resistors? & How Do Resistors Work?",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=x6jajfprWZo",
+    "local": null
+   }
+  ],
+  "at": "2026-11-02"
+ },
  "수학 (Mr Anan)|MONDAY MATHS MYSTERY CHALLENGE": {
   "en": "MONDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve",
   "ko": "월요일 수학 미스터리 챌린지(MONDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(GOLDEN MATHS CALCULATOR)가 도난당했다!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 한다!\n1. 첨부된 슬라이드를 살펴보고 오늘의 퍼즐을 찾는다\n2. 답이 나오면 첨부된 구글 폼(google form) 링크로 제출한다\n3. 매일 새로운 단서(clue)가 구글 클래스룸(google classrooms)에 올라오니 풀어 보아라",
@@ -1494,74 +1435,10 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-02"
  },
- "튜터 (Mr Cassels)|Humanities and Social Science Essay Competition 2026-27": {
-  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
-  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 안내를 전하게 되어 기쁩니다.\n\n이 대회는 '갈등 속의 인간과 지구(People and Planet in Conflict)'를 주제로 하며, 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 참가할 수 있습니다. 에세이 제목(essay titles), 분량(length), 제출 방법(submission details)에 관한 자세한 내용은 첨부 파일에서 볼 수 있습니다.\n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n연락처: Karina Mariadas, k.mariadas@elc.edu.my",
-  "files": [
-   {
-    "name": "k.mariadas@elc.edu.my",
-    "kind": "web",
-    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
-    "local": null
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
-    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT_BFx_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
-    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-02"
- },
  "휴머니티 (Mr Lawrence)|Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.": {
   "en": "Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.\n\nMr. Lawrence",
   "ko": "혹시 오늘(11월 3일 화요일) 수업에 없었던 학생을 위해 알립니다. 공통평가(CA, Common Assessment)는 11월 4일 수요일에 실시됩니다.\n\n로렌스 선생님(Mr. Lawrence)",
   "files": [],
-  "at": "2026-11-03"
- },
- "휴머니티 (Mr Lawrence)|Term 1 Common Assessment 2": {
-  "en": "Term 1 Common Assessment 2\nYear 9 History\n\nFocus of assessment:\nYear 9 History Unit 2 - World War 1\n\n\nDate of Assessment: Tuesday 3rd November 2026\nDescription of assessment\nThis will be a 40-minute written assessment covering the key knowledge and skills developed during the Causes of the First World War unit. The assessment will include key term definitions, knowledge questions, source-based questions and an extended written response using historical evidence to explain and evaluate the MAINS causes of the First World War.\nAssessment objectives\nKnowledge and Understanding: Demonstrate knowledge and understanding of the MAINS causes of the First World War and the key events, people and developments that increased tensions in Europe before 1914.\nSource Analysis and Interpretation: Use historical sources to identify relevant information and explain how it helps us understand the causes of the First World War.\nHistorical Explanation and Judgement: Explain how different causes contributed to the outbreak of war and make a justified judgement about which cause was the most important.\nMarking criteria\nDemonstrates accurate historical knowledge and understanding of the MAINS causes.\nUses relevant historical facts, people and events to support answers.\nIdentifies and interprets relevant information from historical sources.\nExplains how different factors increased tensions and contributed to the outbreak of war.\nUses appropriate historical terminology.\nDevelops clear, well-structured explanations and supports judgements with relevant evidence.\n\nSkills being assessed and success criteria\nRecall and explain the five MAINS causes: Militarism, Alliance System, Imperialism, Nationalism and Significant Individuals.\nDemonstrate knowledge of key events and developments leading to the First World War.\nIdentify and use relevant evidence from historical sources.\nExplain how and why tensions between European countries increased before 1914.\nConstruct clear, developed historical explanations using evidence.\nWrite a well-supported PEEL paragraph and justify a judgement about the most important cause of the First World War.\n\nSuggested Revision Approaches\nReview the relevant History lessons, notes and resources on Google Classroom.\nRevise the five MAINS causes, ensuring you can define and explain each one, using key examples such as the arms race, European alliances, imperial competition, nationalism, the assassination of Archduke Franz Ferdinand and the Blank Cheque.\nTest yourself on key historical knowledge, people, events and decisions without looking at your notes.\nPractise answering source-based questions and writing clear historical explanations using PEEL, supporting your ideas with accurate evidence and a justified judgement.\nReview the KS3 Humanities Toolkit, Humanities Exam Command Words and KS3 Humanities Practical Revision Tips resources on Google Classroom under Support Materials to help you prepare effectively.",
-  "ko": "1학기 공통평가 2 (Term 1 Common Assessment 2)\n9학년 역사 (Year 9 History)\n\n평가 범위:\n9학년 역사 2단원 - 제1차 세계대전(World War 1)\n\n\n평가 날짜: 2026년 11월 3일 화요일\n평가 설명\n40분 동안 보는 서술형 평가로, 제1차 세계대전의 원인(Causes of the First World War) 단원에서 배운 핵심 지식과 기능을 다룹니다. 평가에는 핵심 용어 정의(key term definitions), 지식 문제(knowledge questions), 자료 기반 문제(source-based questions), 그리고 역사적 증거(historical evidence)를 사용해 제1차 세계대전의 MAINS 원인(MAINS causes)을 설명하고 평가하는 긴 서술형 답안(extended written response)이 포함됩니다.\n평가 목표\n지식과 이해(Knowledge and Understanding): 제1차 세계대전의 MAINS 원인과, 1914년 이전 유럽의 긴장(tensions)을 높인 주요 사건·인물·변화에 대한 지식과 이해를 보여 준다.\n자료 분석과 해석(Source Analysis and Interpretation): 역사 자료(historical sources)를 사용해 관련 정보를 찾아내고, 그것이 제1차 세계대전의 원인을 이해하는 데 어떻게 도움이 되는지 설명한다.\n역사적 설명과 판단(Historical Explanation and Judgement): 여러 원인이 전쟁 발발(outbreak of war)에 어떻게 영향을 주었는지 설명하고, 어떤 원인이 가장 중요했는지 근거 있는 판단(justified judgement)을 내린다.\n채점 기준\nMAINS 원인에 대한 정확한 역사 지식과 이해를 보여 준다.\n관련된 역사적 사실·인물·사건을 사용해 답을 뒷받침한다.\n역사 자료에서 관련 정보를 찾아내고 해석한다.\n여러 요인(factors)이 어떻게 긴장을 높이고 전쟁 발발에 영향을 주었는지 설명한다.\n알맞은 역사 용어(historical terminology)를 사용한다.\n명확하고 짜임새 있는 설명을 쓰고, 관련 증거로 판단을 뒷받침한다.\n\n평가하는 기능과 성공 기준\n다섯 가지 MAINS 원인을 떠올리고 설명한다: 군국주의(Militarism), 동맹 체제(Alliance System), 제국주의(Imperialism), 민족주의(Nationalism), 주요 인물(Significant Individuals).\n제1차 세계대전으로 이어진 주요 사건과 변화에 대한 지식을 보여 준다.\n역사 자료에서 관련 증거를 찾아 사용한다.\n1914년 이전 유럽 국가들 사이의 긴장이 어떻게, 왜 높아졌는지 설명한다.\n증거를 사용해 명확하고 깊이 있는 역사적 설명을 쓴다.\n근거가 잘 갖춰진 PEEL 문단(PEEL paragraph)을 쓰고, 제1차 세계대전의 가장 중요한 원인에 대한 판단을 정당화한다.\n\n추천 복습 방법\n구글 클래스룸(Google Classroom)에 있는 관련 역사 수업, 노트, 자료를 다시 본다.\n다섯 가지 MAINS 원인을 복습하고, 각각을 정의하고 설명할 수 있도록 한다. 군비 경쟁(arms race), 유럽의 동맹(European alliances), 제국 간 경쟁(imperial competition), 민족주의(nationalism), 프란츠 페르디난트 대공 암살(assassination of Archduke Franz Ferdinand), 백지수표(Blank Cheque) 같은 핵심 예시를 사용한다.\n노트를 보지 않고 핵심 역사 지식, 인물, 사건, 결정에 대해 스스로 시험해 본다.\n자료 기반 문제에 답하는 연습과, PEEL을 사용해 명확한 역사적 설명을 쓰는 연습을 하고, 정확한 증거와 근거 있는 판단으로 생각을 뒷받침한다.\n효과적으로 준비할 수 있도록 구글 클래스룸의 지원 자료(Support Materials)에 있는 KS3 인문학 툴킷(KS3 Humanities Toolkit), 인문학 시험 지시어(Humanities Exam Command Words), KS3 인문학 실전 복습 팁(KS3 Humanities Practical Revision Tips) 자료를 살펴본다.",
-  "files": [
-   {
-    "name": "Year 9 History T1 CAT2  2026",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI/edit?usp=classroom_web",
-    "local": "post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv-aN_vrzNI.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv_aN_vrzNI_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1DADrf1KUkU7KSue_bexk9mS5PJU8gWi4kv_aN_vrzNI_p2.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
   "at": "2026-11-03"
  },
  "영어 (Mr Glanz)|The Adria Richards story:": {
@@ -2558,5 +2435,119 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-11-06"
+ },
+ "과학 (Mr Phillips)|Ionic and Covalent Bonds": {
+  "en": "Ionic and Covalent Bonds\nClick on the link below to start the game",
+  "ko": "이온 결합(ionic bonds)과 공유 결합(covalent bonds)\n아래 링크를 눌러 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=KSxVA9JA7hmAmlEcZc7shIowBf30O5XcGyNFjlVFE_PUClKLoNwU5QH2yaJUOVsNn723NXsRKHVvUVxVByPqUUVgGWGfPQx0T-JTQT_wWO8o1KFWLaJmFkE4ewMybShX2KxhYs3XoOCj9IJsfN9u7XHj6b1M4Rrl6BwGXFq_1SowIxTVWTPeLmJKy6x7VqDjJMwiXUN8PVLKuVjQWg0OpSnZiA.Op1EWKkZvEEBRMF7LxMRTQ.m6PJFEAFU_r6MqNg&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-11-12"
+ },
+ "과학 (Mr Phillips)|ionic and covalent bonding": {
+  "en": "ionic and covalent bonding",
+  "ko": "이온 결합(ionic bonding)과 공유 결합(covalent bonding)",
+  "files": [
+   {
+    "name": "Chemical Bonds: Ionic and Covalent",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=lP_EsVY4CVg",
+    "local": null
+   },
+   {
+    "name": "What Are Dot and Cross Diagrams - Part 1| Properties of Matter | Chemistry | FuseSchool",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=7tHM-40iK7E",
+    "local": null
+   }
+  ],
+  "at": "2026-11-12"
+ },
+ "튜터 (Mr Cassels)|BRING IN YOUR MATERIALS FOR DIWALI FASHION PREPARATION TOMORROW!": {
+  "en": "BRING IN YOUR MATERIALS FOR DIWALI FASHION PREPARATION TOMORROW! \n\n1. Register in your PSHCE Classes \n2. Go to your House Room\n3. Let's start making!!!\n\nFriday we walk the runway! So be ready. Who is gonna win?",
+  "ko": "내일 디왈리 패션(Diwali fashion) 준비를 위한 재료를 가져오세요!\n\n1. PSHCE 수업에서 출석 등록하기\n2. 하우스 교실(House Room)로 가기\n3. 만들기 시작해요!!!\n\n금요일에는 런웨이(runway)를 걸어요! 그러니 준비하세요. 누가 이길까요?",
+  "files": [
+   {
+    "name": "PSHCE Plan.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1hiRshSiJ_EUkM9IpsE_vwC4QK-1Uc9-c/view&usp=classroom_web",
+    "local": "post_files/1hiRshSiJ_EUkM9IpsE_vwC4QK-1Uc9-c.png",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1hiRshSiJ_EUkM9IpsE_vwC4QK_1Uc9_c.png",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-12"
+ },
+ "과학 (Mr Phillips)|Circuits": {
+  "en": "electrical circuits and symbols\nClick on the link below to start the game",
+  "ko": "전기 회로(electrical circuits)와 기호(symbols)\n아래 링크를 눌러 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=h8iiwbAcHOtA-6o6LmNMqV5ZEgdaCHaxiuWv8nnlx4mtf0isPNKoiVAkXnnxNUda1WWa7NuVTWInUjpmX-ZBphj7y3j42BuqeCCGfjpMrQ-azvOvSvTcl8Tomp2qpgBlBtYLGTaBvNHWGKmh3lYM4_ZtaaHS8HZYUmxsWkuLQeEHrzKT5NtUWXXRb_cWp-rakD_UYnHVov6RM02-p_cLw6JiHQ.EqKwRws7_9_n5NDHd57osA.UAiW-PVUKHOA5ijF&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-11-12"
+ },
+ "과학 (Mr Phillips)|Y9 Electricity Revision - Circuits": {
+  "en": "Y9 Electricity Revision - Circuits",
+  "ko": "9학년 전기(electricity) 복습 - 회로(circuits)",
+  "files": [],
+  "at": "2026-11-12"
+ },
+ "과학 (Mr Phillips)|Electrical revision": {
+  "en": "Electrical revision",
+  "ko": "전기(electrical) 복습",
+  "files": [
+   {
+    "name": "How to Build Real Circuits that Work - GCSE Physics PRACTICAL",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=kz9-oMMWI6Q",
+    "local": null
+   },
+   {
+    "name": "‪Circuit Construction Kit: DC‬",
+    "kind": "web",
+    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
+    "local": null
+   },
+   {
+    "name": "Current vs Voltage | What's The Difference?",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=gOk3pl4hmeQ",
+    "local": null
+   },
+   {
+    "name": "Resistors | Electricity | Physics | FuseSchool",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=ue6w5aXhxjU",
+    "local": null
+   }
+  ],
+  "at": "2026-11-12"
+ },
+ "드라마|Hi everyone, The deadline for the FOBISIA Monologue Competition is nearing.": {
+  "en": "Hi everyone, \n\nThe deadline for the FOBISIA Monologue Competition is nearing. \n\nIf you are interested in entering the competition, then please drop me an email and let me know a day and a time on the week commencing 23rd November (2 weeks away) when you would be free to do the recording. \n\nWe will need around 20 minutes for you to perform to me once, get some final feedback and then film it a couple of times to get the best take. Please note you need to have your lines memorised. It can be before school, after school or during a tutor time if your tutor gives you permission first\n\nHope to hear from some of you soon. There's a lot of talent in Year 9, so I hope we have a few entries. Looks great on your CV too, entering an Asia-wide speech and drama competition. \n\nAll the best\nMs Heather",
+  "ko": "여러분 안녕하세요, \n\nFOBISIA 독백 대회(Monologue Competition) 마감이 다가오고 있습니다. \n\n대회 참가에 관심이 있다면 저에게 이메일을 보내서, 11월 23일이 시작되는 주(2주 뒤) 중 녹화할 수 있는 날짜와 시간을 알려 주세요. \n\n여러분이 제 앞에서 한 번 공연(perform)하고, 마지막 피드백(feedback)을 받은 뒤, 가장 좋은 테이크(take)를 얻기 위해 두어 번 촬영하는 데 약 20분이 필요합니다. 대사(lines)는 반드시 외워 와야 한다는 점에 유의하세요. 등교 전, 방과 후, 또는 담임(tutor) 선생님께 먼저 허락을 받으면 튜터 시간(tutor time) 중에도 할 수 있습니다\n\n곧 몇몇 학생들에게서 연락이 오기를 바랍니다. 9학년(Year 9)에는 재능 있는 학생이 많으니 몇 명은 참가하기를 바랍니다. 아시아 전역의 스피치·드라마 대회(speech and drama competition)에 참가하는 것은 이력서(CV)에도 아주 좋아 보입니다. \n\n잘 지내세요\nHeather 선생님",
+  "files": [],
+  "at": "2026-11-12"
+ },
+ "튜터 (Mr Cassels)|PSHCE - 12/11/26": {
+  "en": "PSHCE - 12/11/26\nEstigfend\nTaking Control of your Career",
+  "ko": "PSHCE(인성·사회·보건·경제 교육) - 12/11/26\nEstigfend\n나의 진로 주도하기(Taking Control of your Career)",
+  "files": [],
+  "at": "2026-11-12"
  }
 };
