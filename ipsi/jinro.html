@@ -48,7 +48,7 @@
 <!-- ===================== 호주 ===================== -->
 <section class="nation" id="au">
 <h2>🇦🇺 호주 <span class="en">Australia</span></h2>
-<div class="majors"><a href="#au-pharm">💊 약학</a><a href="#au-med">🩺 의학</a><a href="#au-act">🤝 봉사·활동</a></div>
+<div class="majors"><a href="#au-pharm">💊 약학</a><a href="#au-med">🩺 의학</a><a href="#au-nurse">🏥 간호학</a><a href="#au-cmp">📊 세 학과 점수 비교</a><a href="#au-act">🤝 봉사·활동</a></div>
 
 <h3 id="au-pharm">💊 약학 — 모나쉬대학교 <span class="en">Monash Pharmacy (P6007)</span></h3>
 <div class="box">
@@ -115,6 +115,23 @@ A-Level로 가면 12~13학년을 거쳐 2032년 3월 입학이라 MUFY가 1년 �
 면접(MMI)은 평생 한 번만 볼 수 있습니다.<br>
 고등학교를 마친 지 2년 안에 지원해야 하고, 그 사이 대학 공부를 시작했으면 안 됩니다. 입학 때 만 17세 이상이어야 합니다.
 </div>
+
+<h3 id="au-nurse">🏥 간호학 — 모나쉬대학교 <span class="en">Monash Nursing (M2006)</span></h3>
+<div class="scroll"><table>
+<tr><th>입학 방법</th><th>Clayton 캠퍼스</th><th>Peninsula 캠퍼스</th><th>간호 우수 과정 (Scholars)</th></tr>
+<tr><td>A-Level (3과목 합)</td><td>8.5점</td><td>7점</td><td>12점 = B B B</td></tr>
+<tr><td>IB</td><td>27</td><td>25</td><td>33</td></tr>
+<tr><td>MUFY</td><td>72.5%</td><td>67.5%</td><td>85%</td></tr>
+<tr><td>호주 고교 ATAR</td><td>77.5</td><td>70</td><td>90</td></tr>
+</table></div>
+
+<h3 id="au-cmp">📊 세 학과 점수 비교 (모나쉬, 2027년 입학)</h3>
+<div class="scroll"><table>
+<tr><th>학과</th><th>A-Level</th><th>IB</th><th>MUFY</th><th>ATAR</th><th>추가</th></tr>
+<tr><td>간호학 (Clayton)</td><td>8.5</td><td>27</td><td>72.5%</td><td>77.5</td><td>없음</td></tr>
+<tr><td>약학</td><td>12 (B B B)</td><td>33</td><td>75%</td><td>90</td><td>없음</td></tr>
+<tr><td>의학</td><td>15 (A A A)</td><td>39</td><td>92%</td><td>97.5</td><td>ISAT + 면접, 정원 보장 없음</td></tr>
+</table></div>
 
 <h3 id="au-act">🤝 봉사·활동</h3>
 <div class="box">모나쉬 의대는 고등학교 성적, ISAT, 면접 세 가지만 봅니다. 봉사·과외활동은 점수에 들어가지 않지만, 면접에서 이야기할 거리가 됩니다. 약대는 점수만 봅니다.</div>
@@ -240,8 +257,9 @@ A-Level, IB 학생은 비JUPAS(국제) 전형으로 지원합니다. 2027년 입
     btns.forEach(function(b){b.classList.toggle('on',b.dataset.n===n);});
   }
   btns.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.n);history.replaceState(null,'','#'+b.dataset.n);});});
-  var h=(location.hash||'#au').slice(1).split('-')[0];
+  var full=(location.hash||'#au').slice(1), h=full.split('-')[0];
   show(h);
+  if(full.indexOf('-')<0) setTimeout(function(){window.scrollTo(0,0);},0);
   document.querySelectorAll('.majors a').forEach(function(a){
     a.addEventListener('click',function(e){
       var t=document.getElementById(a.getAttribute('href').slice(1));
