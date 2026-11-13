@@ -166,46 +166,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "튜터 (Mr Cassels)|PSHE - Y9 - 22/10/26": {
-  "en": "PSHE - Y9 - 22/10/26\nPlease use this doc to work through today's session.",
-  "ko": "PSHE(개인·사회·보건 교육) - 9학년(Y9) - 22/10/26\n오늘 수업은 이 문서를 사용해서 진행하세요.",
-  "files": [
-   {
-    "name": "Lesson 8 - Exploring Career Pathways",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1KBj-SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY/edit?usp=classroom_web",
-    "local": "post_files/1KBj-SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1KBj_SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1KBj_SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1KBj_SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1KBj_SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1KBj_SiUE5xmMSmOdC91vLORwgZUHR8uevyozgL6T4rY_p5.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-22"
- },
  "미술|Year 9 Sip and Paint": {
   "en": "Year 9 Sip and Paint\n\nDear Y9 students, \n\nWe will be having our annual sip and paint event on Monday 2/11 and Tuesday 3/11. This is an event where your parents and guardians will be invited to join in your art class, and create a festive painting together with you. It is a great chance to show off all the skills you've learned so far in KS3 and Y9, and will also be a good opportunity to do something creative with your family. \n\nThe event will take place during your normal art lessons. Please make sure to clarify this with your parents if there is any confusion.\n\nPlease let me know if you have any questions!\nMs. Aileen",
   "ko": "9학년 십 앤 페인트(Sip and Paint)\n\n9학년 학생 여러분께,\n\n11월 2일 월요일과 11월 3일 화요일에 매년 하는 십 앤 페인트(sip and paint) 행사를 엽니다. 이 행사에는 부모님과 보호자분들을 미술 수업에 초대해, 여러분과 함께 축제 분위기의 그림(festive painting)을 그립니다. 지금까지 KS3(Key Stage 3)와 9학년에서 배운 모든 기술을 뽐낼 좋은 기회이고, 가족과 함께 창의적인 활동을 해 볼 좋은 기회이기도 합니다.\n\n행사는 평소 미술 수업 시간에 열립니다. 헷갈리는 점이 있으면 꼭 부모님께 이 내용을 분명히 알려 드리세요.\n\n궁금한 점이 있으면 알려 주세요!\nAileen 선생님",
@@ -751,45 +711,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
- "튜터 (Mr Cassels)|I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int": {
-  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
-  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 정보를 알려드리게 되어 기쁩니다.\n\n'갈등 속의 사람과 지구(People and Planet in Conflict)'를 주제로 한 이 대회는 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 누구나 참가할 수 있습니다.  에세이 제목(essay titles), 분량(length), 제출 방법(submission details)의 자세한 내용은 첨부 파일에 있습니다. \n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n문의: Karina Mariadas, k.mariadas@elc.edu.my",
-  "files": [
-   {
-    "name": "k.mariadas@elc.edu.my",
-    "kind": "web",
-    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
-    "local": null
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
-    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT_BFx_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
-    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-27"
- },
  "튜터 (Mr Cassels)|Rewards between 21st September and today!": {
   "en": "Rewards between 21st September and today! \nThe next Rewards Slips for Skip the Line or Lift Pass will be handed out on Wednesday 11th and Thursday 12th November for the top students.",
   "ko": "9월 21일부터 오늘까지의 보상(Rewards)! \n줄 서지 않기(Skip the Line) 또는 엘리베이터 이용권(Lift Pass)을 받을 수 있는 다음 보상 쪽지(Rewards Slips)는 11월 11일 수요일과 11월 12일 목요일에 우수 학생(top students)에게 나눠 줄 예정입니다.",
@@ -1087,97 +1008,6 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-11-01"
  },
- "수학 (Mr Anan)|Maths Week 2026: Get Involved!": {
-  "en": "Maths Week 2026: Get Involved!\n\nDear Students,\n\nWe are excited to announce Maths Week 2026, taking place from 2nd to 6th November!\n\nThroughout the week, we have planned a range of exciting activities designed to challenge your thinking, spark your curiosity and show you that Mathematics goes far beyond the classroom.\n\nRead on to discover what's happening and how you can get involved!\n\n1. The Great Maths Mystery - FOUR SUSPECTS. FIVE DAYS. ONE CULPRIT.\n\nThe Maths Department needs your help! Our prized Golden Calculator has mysteriously vanished from its display cabinet, and four teachers are under suspicion!\n\nMeet the suspects:\nMr Boyce\nMr Hember\nMr Lim\nMr Ovenden\n\nEach suspect has an alibi, but can you work out who is telling the truth?\n\nThroughout Maths Week, new clues and evidence will be released daily during tutor time and via Google Classroom. Your mission is to crack mathematical codes, examine the evidence, question the alibis and identify the culprit.\n\nPut your logical reasoning, code-breaking and problem-solving skills to the test as you piece together the mystery.\n\nRemember: Don't accuse anyone without evidence!\n\nWill you be the detective who solves the case? Go through these slides to be ready to investigate: The Great Maths Mystery\n\n2. Maths Week Shape Estimation Challenge\n\nHow good are your estimation skills?\n\nThree posters, labelled Monday, Wednesday and Friday, will be displayed on the Mathematics bulletin board along the Maths corridor, beside Mr Hember's classroom.\n\nYour challenge is to estimate the number of shapes on each poster and submit your answers using the Google Form below.\n\nSubmit your answers (only once for all three estimation) via the Google Form below\nSubmission deadline: Friday, 6th November 2026, at 3:00 pm.\n\n3. Mathematics Competition Questions as Lesson Starters\n\nThroughout Maths Week, your teachers will introduce actual Mathematics competition questions as lesson starters.\n\nThese questions will challenge you to think critically, explore different approaches and apply your mathematical knowledge in unfamiliar situations, beyond the usual examination-style questions.\n\nDiscuss your ideas with your classmates, challenge one another's reasoning and discover new ways of thinking mathematically!\n\n4. American Mathematics Competition (AMC)\n\nFor the first time, SJIIS will be participating in the American Mathematics Competition (AMC)!\n\nStudents who have registered will take part in the competition on Friday, 6th November 2026, bringing our Maths\nWeek celebrations to an exciting conclusion.\n\nWe wish all participants the very best as they take on this international mathematical challenge!\n\nLet's make Maths Week 2026 a week of curiosity, creativity and mathematical discovery!\nWhether you are solving a challenging problem, estimating shapes or exploring a new mathematical idea, we encourage everyone to get involved.\n\nThe Mathematics Department\nhttps://forms.gle/raf3W2zSivDaad8W8",
-  "ko": "수학 주간(Maths Week) 2026: 함께 참여하세요!\n\n학생 여러분,\n\n11월 2일부터 6일까지 열리는 수학 주간(Maths Week) 2026을 알리게 되어 기쁩니다!\n\n한 주 동안 여러분의 생각에 도전하고, 호기심을 일깨우고, 수학(Mathematics)이 교실을 훨씬 넘어선다는 것을 보여 줄 다양하고 신나는 활동을 준비했습니다.\n\n어떤 활동이 있는지, 어떻게 참여할 수 있는지 아래에서 확인하세요!\n\n1. 위대한 수학 미스터리(The Great Maths Mystery) - 용의자 넷. 닷새. 범인 하나.\n\n수학과가 여러분의 도움이 필요합니다! 우리의 소중한 황금 계산기(Golden Calculator)가 진열장에서 수수께끼처럼 사라졌고, 선생님 네 분이 의심을 받고 있습니다!\n\n용의자를 소개합니다:\nBoyce 선생님\nHember 선생님\nLim 선생님\nOvenden 선생님\n\n용의자마다 알리바이(alibi)가 있습니다. 누가 진실을 말하고 있는지 알아낼 수 있나요?\n\n수학 주간 동안 매일 튜터 시간(tutor time)과 구글 클래스룸을 통해 새로운 단서와 증거가 공개됩니다. 여러분의 임무는 수학 암호(mathematical codes)를 풀고, 증거를 살피고, 알리바이를 따져 보고, 범인(culprit)을 찾아내는 것입니다.\n\n미스터리를 맞춰 가면서 논리적 추론(logical reasoning), 암호 해독(code-breaking), 문제 해결(problem-solving) 실력을 시험해 보세요.\n\n기억하세요: 증거 없이 누구도 고발하지 마세요!\n\n사건을 해결하는 탐정은 여러분이 될까요? 수사 준비를 위해 이 슬라이드를 살펴보세요: The Great Maths Mystery\n\n2. 수학 주간 도형 어림하기 챌린지(Shape Estimation Challenge)\n\n여러분의 어림하기(estimation) 실력은 얼마나 좋을까요?\n\n월요일·수요일·금요일이라고 적힌 포스터 세 장이 수학 복도, Hember 선생님 교실 옆에 있는 수학 게시판에 붙습니다.\n\n여러분의 도전 과제는 포스터마다 도형(shapes)이 몇 개인지 어림하고, 아래 구글 폼으로 답을 제출하는 것입니다.\n\n아래 구글 폼으로 답을 제출하세요(세 개 어림 모두 한 번에, 한 번만)\n제출 마감: 2026년 11월 6일 금요일 오후 3시.\n\n3. 수업 시작 문제로 나오는 수학 경시대회 문제(Mathematics Competition Questions)\n\n수학 주간 동안 선생님들이 실제 수학 경시대회 문제를 수업 시작 문제(lesson starters)로 내 주십니다.\n\n이 문제들은 평소의 시험식 문제를 넘어, 비판적으로 생각하고(think critically), 여러 가지 접근법을 탐구하고, 익숙하지 않은 상황에 수학 지식을 적용하도록 여러분에게 도전할 것입니다.\n\n반 친구들과 생각을 나누고, 서로의 추론(reasoning)을 따져 보고, 수학적으로 생각하는 새로운 방법을 발견하세요!\n\n4. 미국 수학 경시대회(American Mathematics Competition, AMC)\n\nSJIIS가 처음으로 미국 수학 경시대회(AMC)에 참가합니다!\n\n신청한 학생들은 2026년 11월 6일 금요일에 대회에 참가하며, 이것으로 수학\n주간 행사가 신나게 마무리됩니다.\n\n이 국제 수학 도전에 나서는 모든 참가자에게 행운을 빕니다!\n\n수학 주간 2026을 호기심과 창의성, 수학적 발견의 한 주로 만들어 봅시다!\n어려운 문제를 풀든, 도형을 어림하든, 새로운 수학 아이디어를 탐구하든, 모두 참여하기를 바랍니다.\n\n수학과(The Mathematics Department)\nhttps://forms.gle/raf3W2zSivDaad8W8",
-  "files": [
-   {
-    "name": "The Great Maths Mystery",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU/edit?usp=classroom_web",
-    "local": "post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1u5KQbyELUVzbAZ62HuPoZp75w2E4ofwvHgqxRvgjPIU_p6.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "Google Forms: Sign-in",
-    "kind": "form",
-    "url": "https://forms.gle/raf3W2zSivDaad8W8",
-    "local": null
-   }
-  ],
-  "at": "2026-11-01"
- },
- "수학 (Mr Anan)|Answers for worksheet": {
-  "en": "Answers for worksheet",
-  "ko": "학습지(worksheet) 답안",
-  "files": [
-   {
-    "name": "Y9_CA2_120min_Worked_Answers.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/12zSocJXEf-c9mSDgzUojrEuqpYMDcESJ/view?usp=classroom_web",
-    "local": "post_files/12zSocJXEf-c9mSDgzUojrEuqpYMDcESJ.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/12zSocJXEf_c9mSDgzUojrEuqpYMDcESJ_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/12zSocJXEf_c9mSDgzUojrEuqpYMDcESJ_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/12zSocJXEf_c9mSDgzUojrEuqpYMDcESJ_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/12zSocJXEf_c9mSDgzUojrEuqpYMDcESJ_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/12zSocJXEf_c9mSDgzUojrEuqpYMDcESJ_p5.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-01"
- },
  "라살 교육|STRUCTURE OF LEDU TALKS": {
   "en": "STRUCTURE OF LEDU TALKS\nClick the link below and work on your LEDU Talks Structure. Follow the instructions found in the Worksheet.",
   "ko": "LEDU 토크 구성(STRUCTURE OF LEDU TALKS)\n아래 링크를 눌러 LEDU 토크 구성(LEDU Talks Structure)을 작성하세요. 워크시트(Worksheet)에 있는 지시사항을 따르세요.",
@@ -1431,6 +1261,45 @@ window.POST_DETAILS = {
     "kind": "form",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSe5ffCHYFlyx6Xfphfa5UNatoOEFZCgpIAgzCWXtMUNRuYSGw/viewform",
     "local": null
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "튜터 (Mr Cassels)|Humanities and Social Science Essay Competition 2026-27": {
+  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
+  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 안내를 전하게 되어 기쁩니다.\n\n이 대회는 '갈등 속의 인간과 지구(People and Planet in Conflict)'를 주제로 하며, 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 참가할 수 있습니다. 에세이 제목(essay titles), 분량(length), 제출 방법(submission details)에 관한 자세한 내용은 첨부 파일에서 볼 수 있습니다.\n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n연락처: Karina Mariadas, k.mariadas@elc.edu.my",
+  "files": [
+   {
+    "name": "k.mariadas@elc.edu.my",
+    "kind": "web",
+    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
+    "local": null
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
+    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT_BFx_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
+    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
    }
   ],
   "at": "2026-11-02"
@@ -2549,5 +2418,67 @@ window.POST_DETAILS = {
   "ko": "PSHCE(인성·사회·보건·경제 교육) - 12/11/26\nEstigfend\n나의 진로 주도하기(Taking Control of your Career)",
   "files": [],
   "at": "2026-11-12"
+ },
+ "수학 (Mr Anan)|Answers for Exercise 9.3": {
+  "en": "Answers for Exercise 9.3",
+  "ko": "연습문제(Exercise) 9.3 정답(Answers)",
+  "files": [
+   {
+    "name": "answers9_3.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1dsJM9aIPqLM_PBZwNtFNFRZBMAuxWS-9/view?usp=classroom_web",
+    "local": "post_files/1dsJM9aIPqLM_PBZwNtFNFRZBMAuxWS-9.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1dsJM9aIPqLM_PBZwNtFNFRZBMAuxWS_9_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1dsJM9aIPqLM_PBZwNtFNFRZBMAuxWS_9_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1dsJM9aIPqLM_PBZwNtFNFRZBMAuxWS_9_p3.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-13"
+ },
+ "수학 (Mr Anan)|Dear Students, a reminder to complete your homework on Dr Frost": {
+  "en": "Dear Students, a reminder to complete your homework on Dr Frost",
+  "ko": "학생 여러분, Dr Frost에서 숙제(homework)를 끝내라는 안내(reminder)입니다",
+  "files": [],
+  "at": "2026-11-13"
+ },
+ "디자인 기술 (Mr Mathyk)|For your exam on Friday November 20 study the slide presentation.": {
+  "en": "For your exam on Friday November 20 study the slide presentation. Study everything from Situation, Design Brief, 5 R's of sustainability, materials, annotations, 2-pt perspective, rendering, package design, product design, to the target user (customer). You have the entire class for the exam. Be prepared!",
+  "ko": "11월 20일 금요일 시험을 위해 슬라이드 발표 자료(slide presentation)를 공부하세요. 상황(Situation), 디자인 개요(Design Brief), 지속가능성의 5R(5 R's of sustainability), 재료(materials), 주석(annotations), 2점 투시(2-pt perspective), 렌더링(rendering), 포장 디자인(package design), 제품 디자인(product design)부터 대상 사용자(고객)(target user (customer))까지 모두 공부하세요. 시험 시간은 수업 시간 전체입니다. 준비하세요!",
+  "files": [],
+  "at": "2026-11-13"
+ },
+ "튜터 (Mr Cassels)|Promote unity, build relationships, and empower people!": {
+  "en": "Promote unity, build relationships, and empower people!\n\nCongratulations on your participation. Here are the winners.",
+  "ko": "화합을 증진하고, 관계를 쌓고, 사람들에게 힘을 실어 주세요!\n\n참가해 주셔서 축하합니다. 수상자는 다음과 같습니다.",
+  "files": [
+   {
+    "name": "Winners.png",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1c6VxyXk9on_D3pYnXmid9vxwAGb9q_64/view&usp=classroom_web",
+    "local": "post_files/1c6VxyXk9on_D3pYnXmid9vxwAGb9q_64.png",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1c6VxyXk9on_D3pYnXmid9vxwAGb9q_64.png",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-13"
  }
 };
