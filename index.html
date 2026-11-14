@@ -639,13 +639,6 @@ body.in-subject .cn-card { display: none; }
 
 <button class="backb" id="backBtn" type="button" onclick="backToSubjects()">← 과목 고르기</button>
   <div class="cat-grid">
-    <!-- 2026-11-14 대표님 지시: 설명회·행사는 대학 입시 밖에, 이름과 날짜만 첫 화면에 -->
-    <div style="grid-column:1/-1;background:#fff;border:1px solid #ddd;border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.7">
-      <b>📅 설명회·행사</b><br>
-      <a href="ipsi/monash_focus_day.html" style="color:#111">모나쉬대학교 포커스데이 · 2026년 11월 14일(토)</a><br>
-      말레이시아한국국제학교 진로진학 설명회 · 2026년 11월 20일(금)<br>
-      박람회 + 대학 진학 설명회 · 2027년 2월 20일(토)
-    </div>
     <button class="cat-btn" data-cat="y9sci" onclick="showCat('y9sci')">
       <span class="cat-emoji">📗</span>
       <span class="cat-name">9학년 과학</span>
@@ -655,18 +648,6 @@ body.in-subject .cn-card { display: none; }
       <span class="cat-emoji">📐</span>
       <span class="cat-name">9학년 수학</span>
       <span class="cat-sub">Year 9 Maths</span>
-    </button>
-    <!-- 2026-10-20 대표님 지시: 과목 칸 밖에 'IGCSE 과목 선택' 하나. 누르면 바로 igcse/igcse_options.html -->
-    <button class="cat-btn" data-cat="igcse" onclick="location.href='igcse/igcse_options.html'">
-      <span class="cat-emoji">🎯</span>
-      <span class="cat-name">IGCSE 과목 선택</span>
-      <span class="cat-sub">IGCSE Options</span>
-    </button>
-    <!-- 2026-11-09 대표님 지시: 입시 정보 칸 하나. 누르면 ipsi/index.html, 요청마다 자료 추가 -->
-    <button class="cat-btn" data-cat="ipsi" onclick="location.href='ipsi/index.html'">
-      <span class="cat-emoji">🎓</span>
-      <span class="cat-name">대학 입시</span>
-      <span class="cat-sub">진학·대학·영주권</span>
     </button>
     <button class="cat-btn" data-cat="eng" onclick="showCat('eng')">
       <span class="cat-emoji">📖</span>
@@ -700,6 +681,26 @@ body.in-subject .cn-card { display: none; }
       <span class="cat-name">IGCSE 수학</span>
       <span class="cat-sub">Maths 0580</span>
     </button>
+    <!-- 2026-11-14 대표님 지시: IGCSE 과목 선택·대학 입시·설명회는 맨 마지막 -->
+    <!-- 2026-10-20 대표님 지시: 과목 칸 밖에 'IGCSE 과목 선택' 하나. 누르면 바로 igcse/igcse_options.html -->
+    <button class="cat-btn" data-cat="igcse" onclick="location.href='igcse/igcse_options.html'">
+      <span class="cat-emoji">🎯</span>
+      <span class="cat-name">IGCSE 과목 선택</span>
+      <span class="cat-sub">IGCSE Options</span>
+    </button>
+    <!-- 2026-11-09 대표님 지시: 입시 정보 칸 하나. 누르면 ipsi/index.html, 요청마다 자료 추가 -->
+    <button class="cat-btn" data-cat="ipsi" onclick="location.href='ipsi/index.html'">
+      <span class="cat-emoji">🎓</span>
+      <span class="cat-name">대학 입시</span>
+      <span class="cat-sub">진학·대학·영주권</span>
+    </button>
+    <!-- 2026-11-14 대표님 지시: 설명회·행사는 대학 입시 밖에, 이름과 날짜만 첫 화면에 -->
+    <div style="grid-column:1/-1;background:#fff;border:1px solid #ddd;border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.7">
+      <b>📅 설명회·행사</b><br>
+      <a href="ipsi/monash_focus_day.html" style="color:#111">모나쉬대학교 포커스데이 · 2026년 11월 14일(토)</a><br>
+      말레이시아한국국제학교 진로진학 설명회 · 2026년 11월 20일(금)<br>
+      박람회 + 대학 진학 설명회 · 2027년 2월 20일(토)
+    </div>
   </div>
 
   <div class="cat-pane" id="cat-y9sci">
