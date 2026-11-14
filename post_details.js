@@ -45,114 +45,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
- "컴퓨터 과학 (Ms Meha)|Year 9 Common Assessment Task 1 Term 1 2025": {
-  "en": "Year 9 Common Assessment Task 1 Term 1 2025\nDear Year 9 students,\nAttached is your Term 1 Common Assessment. \nPlease complete all 6 questions carefully. \nFor each question:\n\nWrite the Python code.\nTake a screenshot of your code and the output.\nPaste all screenshots (code and output for each question) in the google docs attached\nDue Date: 6th November 2026\n\nSubmit your completed Google Docs document via Google Classroom before the deadline.\n\n以下是为您翻译的中文版本：\n亲爱的九年级同学们：\n附件是你们第一学期的阶段性评估（Term 1 Common Assessment）。\n请认真完成全部 6 道题目。\n对于每道题目，请按以下要求操作：\n编写 Python 代码。\n截取你的代码以及运行输出结果（Output）的截图。\n将每道题的代码和输出截图全部粘贴至随附的 Google Docs 文档中。\n截止日期：2026 年 11 月 6 日\n请在截止日期前通过 Google Classroom 提交已完成的 Google Docs 文档。",
-  "ko": "9학년 공통 평가 과제 1(Common Assessment Task 1) 1학기 2025\n9학년 학생 여러분,\n1학기 공통 평가(Term 1 Common Assessment)를 첨부했습니다.\n6개 문제를 모두 꼼꼼히 풀어 주세요.\n각 문제마다:\n\n파이썬 코드(Python code)를 작성하세요.\n코드와 출력 결과(output)의 스크린샷(screenshot)을 찍으세요.\n모든 스크린샷(각 문제의 코드와 출력 결과)을 첨부된 구글 문서(Google Docs)에 붙여 넣으세요.\n마감일: 2026년 11월 6일\n\n완성한 구글 문서(Google Docs)를 마감 전에 구글 클래스룸(Google Classroom)으로 제출하세요.\n\n아래는 중국어로 번역한 내용입니다:\n9학년 학생 여러분:\n첨부 파일은 여러분의 1학기 공통 평가(Term 1 Common Assessment)입니다.\n6개 문제를 모두 꼼꼼히 풀어 주세요.\n각 문제는 다음과 같이 하세요:\n파이썬 코드(Python code)를 작성하세요.\n코드와 실행 출력 결과(Output)의 스크린샷(screenshot)을 찍으세요.\n각 문제의 코드와 출력 스크린샷을 모두 첨부된 구글 문서(Google Docs)에 붙여 넣으세요.\n마감일: 2026년 11월 6일\n마감일 전에 완성한 구글 문서(Google Docs)를 구글 클래스룸(Google Classroom)으로 제출하세요.",
-  "files": [
-   {
-    "name": "Year9_Python_Common Assessment  Term 1 2026",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c/edit?usp=classroom_web",
-    "local": "post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c_p6.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c_p7.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c_p8.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1YhrEXvlzEs24K2732StX3a7_DxqbsGxy2ev2xrNC22c_p9.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "Year9_Python_Common_Assessment_Term1_2026_Mandarin.docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/14Jkb-JU68smhCNsY9sWExloCaGFsQ4jj/view?usp=classroom_web",
-    "local": "post_files/14Jkb-JU68smhCNsY9sWExloCaGFsQ4jj.docx",
-    "pages": [
-     {
-      "src": "assets/pages/cs/Year9_Python_Common_Assessment_Term1_2026_Ma_p1.jpg",
-      "tr": "VORA ET LABORA(기도하고 일하라)<br>성 요셉 국제학교<br><b>ST JOSEPH'S INSTITUTION INTERNATIONAL SCHOOL</b><br>\"배우러 들어와 봉사하러 나간다\" | \"Enter to Learn, Leave to Serve\"<br><br><b>단계별 평가 과제(프로젝트 기반 학습)</b> - 1학기<br>과목: 9학년 컴퓨터 과학(Computer Science)<br>평가 내용: Python 프로그램 개발과 <b>알고리즘적 사고(Algorithmic Thinking)</b><br><b>과제 마감일: 2026년 11월 6일 (06/11/2026)</b><br><br><b>1. 평가 설명(Description of Assessment)</b><br>이 과제는 학생들이 '알고리즘적 사고(Algorithmic Thinking)'와 'Python 개발(Python Development)' 단원에서 배운 지식을 보여 줄 기회를 준다. 학생들은 모두 <b>6개</b>의 프로그램을 작성해야 하며, 이 프로그램들은 이 문서 마지막 쪽에 있는 <b>채점 기준표(Rubric)</b>로 평가된다.<br><br>학생들은 6개의 프로그램을 만들어 이번 학기에 익힌 여러 기술을 보여 주어야 한다. 프로그램에는 다음 도구/구조가 들어가야 한다(주의: 모든 프로그램에 모든 도구가 다 들어갈 필요는 없다):<br>• <b>입력 함수(Input function)</b><br>• <b>출력 함수(Print function)</b><br>• <b>변수(Variable/s)</b><br>• <b>If, Elif, Else 조건문(conditional statements)</b><br>• <b>For, While 반복문(loops)</b><br>• <b>형 변환(Casting)</b>: 정수(Integers), 실수(Floats)<br>• <b>문자열(Strings)</b><br>• <b>대입문(Assignment statements)</b>",
-      "note": "형 변환(Casting)은 input()으로 받은 문자열을 int()나 float()로 바꾸어 계산할 수 있게 하는 것이다. 대입문(Assignment statement)은 x = 5 처럼 변수에 값을 넣는 문장이다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_Common_Assessment_Term1_2026_Ma_p2.jpg",
-      "tr": "<b>주의(NOTE)</b>: 6개 프로그램 모두 <b>코드 주석(Comments)</b>을 달아 프로그램의 구체적인 단계를 간단히 설명해야 한다. 여기에는 <b>입력(Inputs)</b>, <b>처리 과정(Processes)</b>(예: <b>if/else 조건 판단</b>, <b>반복문(loop)</b>), <b>출력(Outputs)</b>, <b>데이터 저장(Storage/변수(variable))</b>이 포함된다.<br><br><b>2. 평가 중점과 과제 (Focus of Assessment &amp; Task)</b><br>평가 중점: Python 언어로 <b>프로그램 묶음</b>을 개발한다.<br>여러분의 과제는 이번 학기 '<b>알고리즘적 사고(algorithmic thinking)</b>'와 '<b>Python 프로그램 개발</b>' 단원에서 배운 기술과 도구를 활용해, 자신이 고른 Python 코드 편집기에서 여러 개의 프로그램을 만드는 것이다. 프로그램은 '<b>입력, 처리, 출력, 저장</b>'(<b>IPOS</b>: Inputs, Processes, Outputs, Storage)의 핵심 개념을 완전하게 보여 주어야 한다.<br><br><b>프로그램 1: 카운트다운 프로그램 (Program 1 - Countdown)</b><br>프로그램을 하나 작성한다(<b>for 반복문(for loop)</b>을 사용해야 한다):<br>1. 사용자에게 1에서 100 사이의 숫자 하나를 입력하라고 안내한다.<br>2. for 반복문을 사용해 그 숫자부터 1까지 거꾸로 센다.<br>3. 카운트다운이 끝나면 \"Blast off!\"(발사!)를 출력한다.<br><br><b>예상 출력 예시 (Expected Output)</b>:<br>Enter a starting number: 5 (시작 숫자를 입력하세요: 5)<br>5<br>4<br>3<br>2<br>1<br>Blast off!<br><br><b>프로그램 2: 영화표 가격 계산 프로그램 (Program 2 - Movie Ticket Pricing)</b><br>프로그램을 하나 작성한다(<b>if/else 조건문(if/else statement)</b>을 사용해야 한다):<br>1. 사용자에게 나이와, 영화 상영 시간이 낮(day)인지 밤(night)인지 입력하라고 안내한다.<br>2. 영화표 가격은 사용자의 나이와 관람 시간에 따라 정해지며, 요금 기준은 다음과 같다:<br>• <b>낮 상영(Daytime tickets)</b>:",
-      "note": "for 반복문으로 거꾸로 셀 때는 range(n, 0, -1)처럼 끝값 0과 간격 -1을 넣으면 n부터 1까지 하나씩 줄어든다. input()으로 받은 값은 글자이므로 int()로 숫자로 바꾼 뒤 써야 한다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_Common_Assessment_Term1_2026_Ma_p3.jpg",
-      "tr": "- 어린이(Child, 12세 이하): $8<br>- 청소년(Teenager, 13~17세): $10<br>- 성인(Adult, 18세 이상): $12<br>• <b>저녁 상영(Night tickets)</b>:<br>- 어린이(Child, 12세 이하): $10<br>- 청소년(Teenager, 13~17세): $12<br>- 성인(Adult, 18세 이상): $15<br>3. 프로그램은 올바른 <b>표 가격(ticket price)</b>을 계산해서 보여 주어야 한다.<br><b>예상 출력 예시(Expected Outcome)</b>:<br>Enter your age: 15 (나이를 입력하세요: 15)<br>Is the movie during the day or night? night (영화가 낮인가요, 밤인가요? night)<br>The ticket price is $12. (표 가격은 $12입니다.)<br><br><b>프로그램 3: 숫자 맞히기 게임 프로그램(Program 3 - Number Guessing Game)</b><br>프로그램을 하나 작성하라(<b>while 반복문(while loop)</b>을 반드시 사용한다):<br>1. 프로그램은 1부터 500 사이의 숫자 하나를 <b>무작위로(random)</b> 만들어 저장하고, 사용자가 맞히게 한다.<br>2. 사용자에게 게임이 '마음속에 생각한' 숫자를 맞혀 보라고 알려 준다.<br>3. 사용자가 입력한 숫자가 맞으면 프로그램은 \"You win!\"(이겼습니다!)를 출력하고 끝낸다.<br>4. 답이 틀리면 사용자는 최대 <b>10번의 시도 기회(attempts)</b>를 가진다. 10번의 기회를 다 쓰면 프로그램은 \"Too many incorrect guesses, the answer is (정답)\"(틀린 추측이 너무 많습니다, 정답은 (정답)입니다)를 출력하고 끝낸다.<br>5. 프로그램은 상황에 따라 바뀌는 <b>힌트 메시지(hint)</b>도 보여 주어야 한다:<br>• 추측한 값과 비밀 숫자의 차이가 10 이내이면 \"Very close! You are too near.\"(아주 가까워요! 거의 다 왔어요.)를 보여 준다.<br>• 추측한 값과 비밀 숫자의 차이가 50 이내이면 \"Not bad, but still far.\"(나쁘지 않지만 아직 멀어요.)를 보여 준다.<br>• 그렇지 않으면 \"Too far!\"(너무 멀어요!)를 보여 준다.<br>6. <b>심화 도전(Challenge)</b>: 프로그램을 늘려서, 게임이 끝난 뒤 사용자가 다시 시작할지 고를 수 있게 하고, 새 판에서는 완전히 새로운 <b>난수(random number)</b>를 만든다.<br><b>예상 출력 예시(Expected Outcome)</b>:<br>I'm thinking of a number between 1 and 500... (1부터 500 사이의 숫자 하나를 생각하고 있어요...)",
-      "note": "난수는 import random 뒤 random.randint(1, 500)으로 만들고, 시도 횟수는 while 반복문 안에서 1씩 더해 10이 되면 멈춘다. 차이는 abs(추측값 - 비밀숫자)로 구하며, 10 이내를 먼저 검사하고 그다음 50 이내를 검사해야 힌트가 바르게 나온다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_Common_Assessment_Term1_2026_Ma_p4.jpg",
-      "tr": "비밀 숫자를 맞혀 보세요(Guess the secret number): 120<br>너무 멀어요!(Too far!)<br>9번 더 맞힐 수 있습니다(You have 9 guesses left.)<br>비밀 숫자를 맞혀 보세요: 480<br>아주 가까워요! 거의 다 왔어요(Very close! You are too near.)<br>비밀 숫자를 맞혀 보세요: 489<br>맞혔어요! 당신이 이겼어요!(You got it! You win!)<br>다시 하시겠어요? (yes/no): no<br>플레이해 주셔서 고마워요! 안녕히 가세요(Thanks for playing! Goodbye)<br><br><b>프로그램 4: 소포 배송비 계산 프로그램(Program 4 - Parcel Delivery Cost)</b><br>요구 사항 설명: 소포의 배송비를 계산하는 시스템이 필요하다. 무게가 5kg 이하인 소포는 모두 <b>고정 요금(fixed cost)</b>을 받는다.<br>• <b>국내 배송(Local delivery)</b>: 고정 요금은 $20이다.<br>• <b>국제 배송(International delivery)</b>: 고정 요금이 $40로 오른다.<br>• <b>제한과 초과 무게 규정</b>: 국제 배송의 <b>최대 무게 제한(maximum weight limit)</b>은 5kg이다. 국내 배송은 5kg을 넘어도 되며, 넘는 부분은 1kg마다 $1을 더 받는다.<br><br>소포가 국내인지 국제인지 판단하고, 알맞은 무게 공식을 적용해 올바른 배송비를 계산하는 Python 프로그램을 작성하라.<br><br><b>예상 출력 예시(Expected Outcome)</b>:<br>예시 1(국내, 무게 초과):<br>소포가 국내인가요 국제인가요?(Is the parcel local or international?) local<br>소포 무게를 입력하세요(kg)(Enter the weight of the parcel (in kg)): 8<br>배송비는 $23입니다(The delivery cost is $23)<br><br>예시 2(국제, 정상):<br>소포가 국내인가요 국제인가요? international<br>소포 무게를 입력하세요(kg): 4<br>배송비는 $40입니다(The delivery cost is $40)<br><br>예시 3(국제, 무게 초과로 거절):<br>소포가 국내인가요 국제인가요? international<br>소포 무게를 입력하세요(kg): 6<br>죄송합니다, 국제 배송의 최대 무게 제한은 5kg입니다(Sorry, the maximum weight limit for international delivery is 5kg.)",
-      "note": "국내 배송비는 무게가 5kg 이하이면 20달러이고, 5kg을 넘으면 20 + (무게 − 5)로 계산한다. 그래서 8kg이면 20 + 3 = 23달러가 된다. 국제 배송은 무게가 5kg보다 크면 if 문으로 거절 문장을 출력하고, 5kg 이하이면 40달러를 출력한다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_Common_Assessment_Term1_2026_Ma_p5.jpg",
-      "tr": "<b>프로그램 5: 자판기 시뮬레이션 프로그램(Program 5 - Vending Machine Simulation)</b><br>프로그램을 작성한다(<b>if/else 조건문(if/else statement)</b>을 반드시 사용한다):<br>1. 자판기의 작동 과정을 <b>시뮬레이션(simulation)</b>한다.<br>2. 6~8가지 상품의 이름과 그에 해당하는 가격을 보여 준다.<br>3. 사용자가 그중 한 가지 상품을 골라 살 수 있게 한다(숫자 번호를 <b>입력(input)</b>해서 고를 수 있다).<br>4. 사용자에게 그 상품값으로 낼 금액을 입력하라고 안내한다.<br>5. 사용자에게 돌려줄 <b>거스름돈(change)</b>을 계산해 <b>출력(output)</b>한다. 낸 금액이 모자라면 금액이 부족하다는 안내를 출력하고, 사용자에게 금액을 다시 입력하라고 한다(새로 입력한 금액은 앞서 입력한 금액에 <b>누적(accumulate)</b>된다).<br>6. 사용자에게 거스름돈 금액을 출력한다.<br>7. <b>심화 도전(Challenge)</b>: 프로그램을 확장해 거스름돈을 지폐와 동전 단위의 조합으로 출력한다. 예: 거스름돈이 RM3.25이면 3 x 1RM, 1 x 20c, 1 x 5c 를 출력한다.<br><br><b>예상 출력 예시(Expected Outcome)</b>:<br>Welcome to the Vending Machine! (자판기에 오신 것을 환영합니다!)<br>1. Milo - RM2.50 (마일로)<br>2. Pepsi - RM2.20 (펩시)<br>3. Water - RM1.50 (물)<br>4. Iced Lemon Tea - RM2.80 (아이스 레몬티)<br>5. Chocolate Bar - RM3.00 (초콜릿 바)<br>6. Orange Juice - RM2.00 (오렌지 주스)<br>7. Green Tea - RM2.70 (녹차)<br>8. Coffee - RM3.50 (커피)<br>Enter the number of the product you want to buy: 1 (사려는 상품 번호를 입력하세요: 1)<br>You selected Milo - RM2.50 (마일로 - RM2.50을 골랐습니다)<br>Enter amount to pay: 5 (낼 금액을 입력하세요: 5)<br>Payment successful! Your change is RM2.50 (결제 성공! 거스름돈은 RM2.50입니다)<br>Change breakdown: 2 x RM1, 1 x 50c (거스름돈 내역: RM1 2개, 50c 1개)<br>Enjoy your Drink! (음료 맛있게 드세요!)<br><br><b>프로그램 6: 주차장 요금 시스템 시뮬레이션 프로그램(Program 6 - Parking Payment System)</b><br>주차장 요금 시스템을 시뮬레이션하는 프로그램을 작성한다(<b>if/else 조건문(if/else statement)</b>을 반드시 사용한다).<br>프로그램은 다음을 해야 한다:<br>1. 6~8가지 차량 종류(예: 승용차 Car, 오토바이 Motorbike, 트럭 Truck 등)와 각각의 주차 요금을 담은 <b>목록(list)</b>을 보여 준다.<br>2. 사용자가 번호를 입력해 차량 종류를 고를 수 있게 한다.",
-      "note": "거스름돈 단위 나누기는 큰 단위부터 몫 연산자(//)로 개수를 구하고 나머지 연산자(%)로 남은 금액을 넘기는 방식으로 풀 수 있다. 금액은 소수 오차를 피하려고 센(sen) 단위 정수로 바꿔(예: RM3.25 → 325) 계산하면 정확하다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_Common_Assessment_Term1_2026_Ma_p6.jpg",
-      "tr": "3. 사용자에게 <b>지불 금액</b>(payment amount)을 입력하라고 안내한다.<br>4. 지불 금액이 필요한 주차 요금보다 적으면 금액이 부족하다는 안내를 보여 주고, 사용자에게 모자란 금액을 더 내라고 요구한다(새로 낸 금액은 이미 낸 총액에 자동으로 <b>누적해서 더해진다</b>(accumulate)).<br>5. 지불이 끝나면 <b>차량 종류</b>(vehicle type), <b>지불한 총액</b>(total paid), 돌려줘야 할 <b>거스름돈</b>(change)을 보여 준다.<br><br><b>예상 출력 예시 (Expected Outcome)</b>:<br>Welcome to the Parking Payment System! (주차 요금 결제 시스템에 오신 것을 환영합니다!)<br>1. Car - RM6.00 (승용차)<br>2. Motorbike - RM3.00 (오토바이)<br>3. Van - RM10.00 (승합차)<br>4. Truck - RM8.00 (트럭)<br>5. Bus - RM15.00 (버스)<br>6. Bicycle - RM1.00 (자전거)<br>Enter your vehicle type (1-6): 1 (차량 종류를 입력하세요(1-6): 1)<br>You selected Car - RM6.00 (승용차 - RM6.00을 선택했습니다)<br>Enter amount to pay: 5 (낼 금액을 입력하세요: 5)<br>Insufficient payment! You still need RM1.00 more. (금액이 부족합니다! RM1.00이 더 필요합니다.)<br>Enter additional amount: 1 (추가 금액을 입력하세요: 1)<br>Payment successful! (결제 성공!)<br>Vehicle Type: Car (차량 종류: 승용차)<br>Total Paid: RM6.00 (지불한 총액: RM6.00)<br>Change: RM0.00 (거스름돈: RM0.00)<br>Thank you for using the Parking Payment System! (주차 요금 결제 시스템을 이용해 주셔서 감사합니다!)<br><br><b>3. 권장 복습 방법 (Suggested Revision Approaches)</b><br>• Google Classroom에 올라온 PowerPoint <b>발표 자료</b>(Slides)를 꼼꼼히 복습한다.<br>• Google Classroom에 올라온 <b>학습 자료</b>(Handouts)를 참고하고 찾아본다.<br>• Google Classroom에 올라온 Python 프로그래밍 <b>튜토리얼과 연습 문제</b>(Tutorials)를 복습한다.<br><br><b>4. 채점 기준 (Grading Rubric - 총점: 60점)</b><br>평가는 모두 6개의 <b>프로그램</b>(program)으로 이루어지며, 프로그램마다 만점은 10점이고 총 60점이다. 자세한 채점 기준은 아래 표와 같다.<br>프로그램 항목 | 0 - 2점 (개선 필요) | 3 - 5점 (합격) | 6 - 8점 (좋음) | 9 - 10점 (우수)",
-      "note": "모자란 돈을 다 낼 때까지 계속 더 받으려면 <b>while 반복문</b>(while loop)을 쓰고, 낸 돈은 total_paid += amount처럼 <b>누적</b>(accumulate)한다. 거스름돈은 지불한 총액에서 요금을 뺀 값(change = total_paid - fee)이고, RM6.00처럼 소수 둘째 자리까지 보이려면 f\"{value:.2f}\" 형식을 쓴다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_Common_Assessment_Term1_2026_Ma_p7.jpg",
-      "tr": "<b>프로그램 1</b><br>(<b>카운트다운</b>(countdown))<br>[ /10점]<br>프로그램이 실행되지 않거나 큰 <b>문법 오류</b>(syntax error)/<b>논리 오류</b>(logic error)가 있다. <b>for 반복문</b>(for loop)을 올바르게 사용하지 못했다. 카운트다운이나 출력이 빠져 있다. 반복 구조에 대한 이해가 매우 부족하다.<br>프로그램은 실행되지만 논리 오류나 문법 오류가 있다(예: 위로 세기, \"Blast off!\" 빠뜨림). for 반복문을 부분적으로 이해한다. 출력이 완전하지 않다.<br>프로그램이 올바르게 실행되고 카운트다운을 수행한다. 작은 형식 문제가 있거나 <b>입력 검증</b>(input validation)이 빠진 정도다. \"Blast off!\"를 올바르게 표시한다.<br>프로그램이 오류 없이 완벽하게 실행된다. for 반복문을 효율적이고 올바르게 사용한다. 카운트다운이 분명하고, 출력이 올바르며, 화면이 사용하기 편하다. 입력 검증을 포함한다(예: 입력을 1-100 사이로 제한).<br><br><b>프로그램 2</b><br>(<b>영화 티켓 가격</b>(movie ticket price))<br>[ /10점]<br>프로그램이 실행되지 않거나 큰 문법/논리 오류가 있다. <b>if/else</b>를 올바르게 사용하지 못했다. 나이대나 상영 시간을 분명하게 구분하지 못한다. 출력이 틀렸거나 빠져 있다.<br>프로그램은 실행되지만 논리 오류나 문법 오류가 있다(예: 티켓 가격 계산 오류 또는 판단 조건 누락). 나이/시간에 따른 가격 책정을 부분적으로 이해한다. 출력이 일관되지 않다.<br>프로그램이 올바르게 실행되고, 알맞은 나이 및 시간 검사를 갖추었다. 올바른 티켓 가격을 표시할 수 있고, 작은 형식 또는 입력 처리 문제만 있다. if/else 구조가 분명하다.<br>프로그램이 오류 없이 완벽하게 실행된다. 모든 나이대와 상영 시간에 대한 계산이 완전히 정확하다. 설계가 사용하기 편하고, if/else 논리 구조가 좋으며, 안내가 분명하고, 출력 형식이 완벽하다.<br><br><b>프로그램 3</b><br>(<b>숫자 맞히기</b>(guess the number))<br>[ /10점]<br>프로그램이 실행되지 않거나 큰 문법 오류가 있다. <b>while 반복문</b>(while loop)이 없거나 부적절하게 사용했다. 맞히기 횟수를 제한하지 않았고, <b>피드백</b>(feedback) 정보가 없다. 출력이 틀렸거나 빠져 있다.<br>프로그램은 실행되지만 논리 오류가 있다(예: 맞히기 횟수 제한 없음, 피드백 정보 오류 또는 조건 누락). while 반복문이나 <b>난수 생성</b>(random number generation)을 부분적으로만 이해한다.<br>프로그램이 올바르게 실행되고, 올바른 난수 생성, 맞히기 횟수 제한 및 힌트 기능(\"too near\", \"too far\")을 갖추었다. 형식이나 사용자 입력 처리에 작은 문제가 있다.<br>기능이 완전하고, 올바른 난수를 만들 수 있으며, 피드백 정보가 분명하고, 엄격하게 10번으로 시도를 제한하며, 다시 시작하기 선택지를 포함한다. while 반복문을 효율적으로 사용하고, 상호작용이 사용하기 편하며, 출력이 깔끔하다.<br><br><b>프로그램 4</b><br>(<b>소포 배송비</b>(parcel shipping fee))<br>[ /10점]<br>프로그램이 실행되지 않거나 큰 문법/논리 오류가 있다. 소포 종류(<b>국내</b>(local)/<b>국제</b>(international)) 또는 무게 조건을 올바르게 처리하지 못한다. 출력의 대부분이 틀렸거나 빠져 있다.<br>프로그램은 실행되지만 논리 오류나 문법 오류가 있다(예: 요금 계산 오류, 국제 특송 무게 제한 검증 누락). if/else에 대한 기초적인 이해를 보였다.<br>프로그램이 올바르게 실행되고, 올바른 <b>고정 요금</b>(fixed fee) 및 국내 초과 중량 추가 요금 계산을 갖추었다. 대부분의 조건을 정확하게 처리할 수 있고, 작은 출력 또는 형식 문제만 있다.<br>기능이 완전히 성숙하고, 국내와 국제 특송 논리가 완전히 정확하며, 계산이 정밀하고, 완벽한 무게 제한 검증을 갖추었다. 코드가 효율적이고, 사용하기 편하며, 구조가 분명하다.<br><br><b>프로그램 5</b><br>(<b>자동판매기</b>(vending machine))<br>[ /10점]<br>프로그램이 실행되지 않거나 큰 문법/논리 오류가 있다. 상품 선택과 결제 기능이 정상적으로 작동하지 않고, 출력이 빠져 있거나 대부분 틀렸다. if/else 논리에 대한 이해가 부족하다.<br>프로그램은 실행되지만 논리 오류나 문법 오류를 포함한다(예: 가격 계산 오류 또는 검증 누락). if/else를 사용하려 했지만 충분히 정확하지 않다. 상호작용이 제한적이거나 분명하지 않다.<br>프로그램이 올바르게 실행되고 대부분의 기능이 정상이며, 상품 선택, 결제 처리 및 <b>거스름돈 계산</b>(change calculation)을 포함한다. 사용자 상호작용이 기본적으로 분명하고 정확하며, 작은 형식 또는 논리 문제만 있다.<br>프로그램 기능이 완전하고, 사용하기 편하며, 구조가 우수하다. 모든 상품과 결제 선택지가 완벽하게 실행되고, 거스름돈 계산이 정확하다. 구체적인 액면가별로 거스름돈을 주는 등의 심화 기능을 포함한다. 코드가 효율적이고 읽기 쉽다.<br><br><b>프로그램 6</b><br>(<b>주차 요금</b>(parking fee))<br>[ /10점]<br>프로그램이 실행되지 않거나 큰 문법/논리 오류를 포함한다. 차량 선택이나 요금 계산을<br>프로그램은 실행되지만 논리 오류나 문법 오류를 포함한다(예: 요금 처리 오류 또는 결제 검증이<br>프로그램이 올바르게 실행되고, 필요한 기능의 대부분을 처리할 수 있으며, 차량 선택, 결제 처리 및<br>프로그램 기능이 완전하고, 정확하며, 사용하기 편하다. 모든 차량 선택지를 올바르게 표시하고, 정밀하게 계산",
-      "note": "이 표는 프로그램마다 왼쪽 칸부터 오른쪽 칸으로 갈수록 점수가 높아지는 채점 기준이다. 문법 오류(syntax error)는 코드 규칙을 어겨 실행조차 안 되는 오류이고, 논리 오류(logic error)는 실행은 되지만 결과가 틀리는 오류다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_Common_Assessment_Term1_2026_Ma_p8.jpg",
-      "tr": "…정상적으로 작동한다. 출력(output)이 대부분 빠졌거나, 알아보기 어렵거나, 틀렸다. <b>if/else</b> 구조를 거의 이해하지 못했다.<br>…완전하다). <b>if/else</b>의 기초적인 사용을 보여 주었지만, 안내 문구(prompt)와 출력(output)이 분명하지 않다.<br>…<b>거스름돈(change)</b> 계산. 사용자 입력(user input)과 출력(output)이 분명하고 제대로 작동하며, 작은 논리(logic)나 형식(format) 문제만 있다.<br>…<b>지불 총액(total payment)</b>과 <b>거스름돈(change)</b>을 계산하고, <b>지불 금액이 부족한 경우(insufficient payment)</b>를 잘 검사(validation)한다. 코드가 효율적이고 깔끔하며, 안내 문구(prompt)가 분명하다.",
-      "note": "이 장은 앞 장에서 이어지는 채점 기준표의 나머지 칸으로, 왼쪽부터 오른쪽으로 갈수록 더 높은 점수 단계다. if/else는 조건이 맞으면 if 아래 코드를, 맞지 않으면 else 아래 코드를 실행하는 구조로, 예를 들어 낸 돈이 물건값보다 적으면 '금액 부족'을 출력하고 아니면 거스름돈을 계산하게 만들 수 있다."
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-09"
- },
  "과학 (Mr Phillips)|electrical circuits and symbols": {
   "en": "electrical circuits and symbols\nClick on the link below to start the game",
   "ko": "전기 회로(electrical circuits)와 기호(symbols)\n아래 링크를 클릭해 게임을 시작하세요",
@@ -165,39 +57,6 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-21"
- },
- "미술|Year 9 Sip and Paint": {
-  "en": "Year 9 Sip and Paint\n\nDear Y9 students, \n\nWe will be having our annual sip and paint event on Monday 2/11 and Tuesday 3/11. This is an event where your parents and guardians will be invited to join in your art class, and create a festive painting together with you. It is a great chance to show off all the skills you've learned so far in KS3 and Y9, and will also be a good opportunity to do something creative with your family. \n\nThe event will take place during your normal art lessons. Please make sure to clarify this with your parents if there is any confusion.\n\nPlease let me know if you have any questions!\nMs. Aileen",
-  "ko": "9학년 십 앤 페인트(Sip and Paint)\n\n9학년 학생 여러분께,\n\n11월 2일 월요일과 11월 3일 화요일에 매년 하는 십 앤 페인트(sip and paint) 행사를 엽니다. 이 행사에는 부모님과 보호자분들을 미술 수업에 초대해, 여러분과 함께 축제 분위기의 그림(festive painting)을 그립니다. 지금까지 KS3(Key Stage 3)와 9학년에서 배운 모든 기술을 뽐낼 좋은 기회이고, 가족과 함께 창의적인 활동을 해 볼 좋은 기회이기도 합니다.\n\n행사는 평소 미술 수업 시간에 열립니다. 헷갈리는 점이 있으면 꼭 부모님께 이 내용을 분명히 알려 드리세요.\n\n궁금한 점이 있으면 알려 주세요!\nAileen 선생님",
-  "files": [
-   {
-    "name": "Screenshot 2026-10-23 at 10.07.10 AM.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1XrecH5joDXSH4ijV36PQ1bP7ShCbAKsc/view&usp=classroom_web",
-    "local": "post_files/1XrecH5joDXSH4ijV36PQ1bP7ShCbAKsc.png",
-    "pages": [
-     {
-      "src": "assets/pages/art/Screenshot_2026_10_23_at_10.07.10_AM.png",
-      "tr": "<b>9학년 미술 - 학부모 십 앤 페인트(Parent Sip &amp; Paint)</b><br>제5회 연례 9학년 학부모 십 앤 페인트(Sip and Paint)에 함께해 주세요! 자녀가 매주 배우는 <b>미술 교육과정(art curriculum)</b>을 직접 경험하면서 다른 학부모님, 선생님들과도 어울릴 수 있는 좋은 기회다. 커피, 차, <b>핑거푸드(finger food)</b>를 즐기며 자녀와 함께 집에 가져갈 <b>수채화(watercolour painting)</b>를 <b>협업(collaborate)</b>해 그린다. 완성된 <b>걸작(masterpiece)</b>은 <b>디지털화(digitised)</b>되어 전문 <b>연하장(greeting cards)</b>으로 만들어지고, 다가오는 <b>크리스마스 바자회(Christmas Fair)</b>에서 판매되어 좋은 일을 위한 <b>기금을 모으는 데(raise funds)</b> 쓰인다.<br>자녀의 반에 맞는 시간에 참석해 주시기 바란다:<br><b>11월 2일 월요일</b><br>• 9C 미술: 오전 8:00 – 8:55<br>• 9D 미술: 오전 10:55 – 11:50<br>• 9B 미술: 오전 11:55 – 오후 12:50<br><b>11월 3일 화요일</b><br>• 9A 미술: 오전 8:00 – 8:55<br>• 9E 미술: 오전 9:00 – 9:55<br>11월 2일 월요일 또는 11월 3일 화요일에 자녀의 <b>시간표 수업(timetabled lesson)</b>에 함께하세요<br>9학년 학부모(Year 9 Parent)<br><b>십 앤 페인트(Sip &amp; Paint)</b> 2026",
-      "note": "Sip &amp; Paint는 음료를 마시며(sip) 그림을 그리는(paint) 모임이다. watercolour는 물에 녹여 쓰는 물감으로 그리는 수채화를 뜻한다."
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-23"
- },
- "디자인 기술 DEC (Mr Mathyk)|MR. MATHYKS FESTIVAL E-PORTFOLIO": {
-  "en": "MR. MATHYK'S FESTIVAL E-PORTFOLIO",
-  "ko": "매시크 선생님의 축제 전자 포트폴리오(E-PORTFOLIO)",
-  "files": [
-   {
-    "name": "Amazingly Simple Graphic Design Software – Canva",
-    "kind": "web",
-    "url": "https://canva.link/o3ozrcinuau6xz8",
-    "local": null
-   }
-  ],
-  "at": "2026-10-23"
  },
  "중국어 (Ying Ying老师)|Lesson 4 中文短期培训班 Quizlet": {
   "en": "Lesson 4 中文短期培训班 Quizlet",
@@ -2407,12 +2266,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-12"
  },
- "드라마|Hi everyone, The deadline for the FOBISIA Monologue Competition is nearing.": {
-  "en": "Hi everyone, \n\nThe deadline for the FOBISIA Monologue Competition is nearing. \n\nIf you are interested in entering the competition, then please drop me an email and let me know a day and a time on the week commencing 23rd November (2 weeks away) when you would be free to do the recording. \n\nWe will need around 20 minutes for you to perform to me once, get some final feedback and then film it a couple of times to get the best take. Please note you need to have your lines memorised. It can be before school, after school or during a tutor time if your tutor gives you permission first\n\nHope to hear from some of you soon. There's a lot of talent in Year 9, so I hope we have a few entries. Looks great on your CV too, entering an Asia-wide speech and drama competition. \n\nAll the best\nMs Heather",
-  "ko": "여러분 안녕하세요, \n\nFOBISIA 독백 대회(Monologue Competition) 마감이 다가오고 있습니다. \n\n대회 참가에 관심이 있다면 저에게 이메일을 보내서, 11월 23일이 시작되는 주(2주 뒤) 중 녹화할 수 있는 날짜와 시간을 알려 주세요. \n\n여러분이 제 앞에서 한 번 공연(perform)하고, 마지막 피드백(feedback)을 받은 뒤, 가장 좋은 테이크(take)를 얻기 위해 두어 번 촬영하는 데 약 20분이 필요합니다. 대사(lines)는 반드시 외워 와야 한다는 점에 유의하세요. 등교 전, 방과 후, 또는 담임(tutor) 선생님께 먼저 허락을 받으면 튜터 시간(tutor time) 중에도 할 수 있습니다\n\n곧 몇몇 학생들에게서 연락이 오기를 바랍니다. 9학년(Year 9)에는 재능 있는 학생이 많으니 몇 명은 참가하기를 바랍니다. 아시아 전역의 스피치·드라마 대회(speech and drama competition)에 참가하는 것은 이력서(CV)에도 아주 좋아 보입니다. \n\n잘 지내세요\nHeather 선생님",
-  "files": [],
-  "at": "2026-11-12"
- },
  "튜터 (Mr Cassels)|PSHCE - 12/11/26": {
   "en": "PSHCE - 12/11/26\nEstigfend\nTaking Control of your Career",
   "ko": "PSHCE(인성·사회·보건·경제 교육) - 12/11/26\nEstigfend\n나의 진로 주도하기(Taking Control of your Career)",
@@ -2480,5 +2333,36 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-11-13"
+ },
+ "드라마|The FOBISIA Drama Festival is happening in Malaysia in March 2027!": {
+  "en": "The FOBISIA Drama Festival is happening in Malaysia in March 2027!\n\nFor those of you who love Drama, this is a chance to take part in a 4-day theatre festival where you take part in workshops, create theatre and perform in front of live audiences. There are also a range of fun evening activities, and you will make new friends with students from other FOBISIA schools across Asia.\n\nIf you're interested, please see the letter attached and ask your parents to sign you up in the next 10 days.\n\nFor those of you considering iGCSE Drama, this festival will really help you to develop the skills required for your Year 10 coursework.",
+  "ko": "FOBISIA 연극 페스티벌(Drama Festival)이 2027년 3월 말레이시아에서 열립니다!\n\n연극(Drama)을 좋아하는 학생들에게는 4일간 열리는 연극 페스티벌(theatre festival)에 참가할 기회입니다. 워크숍(workshops)에 참여하고, 연극을 만들고(create theatre), 실제 관객 앞에서 공연(perform in front of live audiences)하게 됩니다. 재미있는 저녁 활동도 다양하게 있고, 아시아 곳곳의 다른 FOBISIA 학교 학생들과 새 친구를 사귀게 될 것입니다.\n\n관심이 있으면 첨부된 안내문을 보고 10일 안에 부모님께 신청해 달라고 부탁하세요.\n\niGCSE 연극(iGCSE Drama)을 선택하려고 생각 중인 학생들에게 이 페스티벌은 10학년 과제(Year 10 coursework)에 필요한 기술(skills)을 키우는 데 정말 도움이 될 것입니다.",
+  "files": [
+   {
+    "name": "expression of Interest letter FOBISIA Senior Drama Festival 2026.docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1ZI9nYnkhnAUPK40QiGjBNu0RaLqUZNdl/view?usp=classroom_web",
+    "local": "pdfs/drama/expression of Interest letter FOBISIA Senior Drama Festival 2026.docx",
+    "pages": [
+     {
+      "src": "assets/pages/drama/expression_of_Interest_letter_FOBISIA_Senior_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/drama/expression_of_Interest_letter_FOBISIA_Senior_p2.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-14"
+ },
+ "드라마|The deadline for the FOBISIA Monologue Competition is nearing.": {
+  "en": "Hi everyone,\n\nThe deadline for the FOBISIA Monologue Competition is nearing.\n\nIf you are interested in entering the competition, then please drop me an email and let me know a day and a time on the week commencing 23rd November (2 weeks away) when you would be free to do the recording.\n\nWe will need around 20 minutes for you to perform to me once, get some final feedback and then film it a couple of times to get the best take. Please note you need to have your lines memorised. It can be before school, after school or during a tutor time if your tutor gives you permission first\n\nHope to hear from some of you soon. There's a lot of talent in Year 9, so I hope we have a few entries. Looks great on your CV too, entering an Asia-wide speech and drama competition.\n\nAll the best\nMs Heather",
+  "ko": "안녕하세요 여러분,\n\nFOBISIA 독백 대회(Monologue Competition) 마감이 다가오고 있습니다.\n\n대회에 참가하고 싶으면 저에게 이메일을 보내서, 11월 23일로 시작하는 주(2주 뒤)에 녹화(recording)할 수 있는 요일과 시간을 알려 주세요.\n\n저에게 한 번 공연(perform)하고, 마지막 피드백(feedback)을 받은 뒤, 가장 좋은 테이크(take)를 얻기 위해 두어 번 촬영하는 데 약 20분이 필요합니다. 대사(lines)를 반드시 외워 와야(memorised) 한다는 점에 유의하세요. 등교 전, 방과 후, 또는 담임(tutor)이 먼저 허락해 주면 튜터 시간(tutor time) 중에도 할 수 있습니다\n\n곧 여러분 중 몇 명에게서 연락이 오기를 바랍니다. 9학년(Year 9)에는 재능 있는 학생이 많으니 몇 명이 참가하기를 바랍니다. 아시아 전역의 스피치 및 연극 대회(speech and drama competition)에 참가하는 것은 이력서(CV)에도 아주 좋아 보입니다.\n\n행운을 빌어요\nHeather 선생님",
+  "files": [],
+  "at": "2026-11-14"
  }
 };

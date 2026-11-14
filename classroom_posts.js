@@ -4,7 +4,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-13",
   "type": "자료",
   "title": "Answers for Exercise 9.3",
-  "ko": "연습문제 9.3 답안 PDF 게시",
+  "ko": "연습문제 9.3 답지 PDF 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -22,16 +22,25 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-13",
   "type": "공지",
   "title": "For your exam on Friday November 20 study the slide presentation.",
-  "ko": "시험 대비 슬라이드 전체 내용 공부하기",
+  "ko": "슬라이드 전체 복습해 시험 준비, 수업 내내 시험",
   "due": "2026-11-20",
   "url": "https://classroom.google.com/c/ODc0NDE4Mzg1MTY5"
+ },
+ {
+  "subject": "드라마",
+  "date": "2026-11-13",
+  "type": "공지",
+  "title": "The FOBISIA Drama Festival is happening in Malaysia in March 2027!",
+  "ko": "FOBISIA 연극축제 참가 희망 시 부모님 신청",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
  {
   "subject": "튜터 (Mr Cassels)",
   "date": "2026-11-13",
   "type": "공지",
   "title": "Promote unity, build relationships, and empower people!",
-  "ko": "참가 축하, 우승자 발표",
+  "ko": "참여 축하, 우승자 발표",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -49,7 +58,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-12",
   "type": "과제",
   "title": "Y9 Electricity Revision - Circuits",
-  "ko": "9학년 전기 복습 회로 과제",
+  "ko": "9학년 전기 복습 - 회로 과제",
   "due": "2026-11-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk4OTgxMTg5MDg4/details"
  },
@@ -66,8 +75,8 @@ window.CLASSROOM_POSTS = [
   "subject": "드라마",
   "date": "2026-11-12",
   "type": "공지",
-  "title": "Hi everyone, The deadline for the FOBISIA Monologue Competition is nearing.",
-  "ko": "독백대회 참가자는 메일로 녹화시간 신청, 대사 암기 필수",
+  "title": "The deadline for the FOBISIA Monologue Competition is nearing.",
+  "ko": "독백대회 참가 시 녹화일정 메일, 대사 암기 필수",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -76,7 +85,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-12",
   "type": "과제",
   "title": "PSHCE - 12/11/26",
-  "ko": "PSHCE 수업 과제 게시",
+  "ko": "PSHCE 새 과제 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -103,7 +112,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-11",
   "type": "공지",
   "title": "BRING IN YOUR MATERIALS FOR DIWALI FASHION PREPARATION TOMORROW!",
-  "ko": "디왈리 패션 준비물 챙겨 하우스룸 집합",
+  "ko": "디왈리 패션쇼 준비물 지참, 하우스룸에서 제작",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -112,7 +121,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-06",
   "type": "자료",
   "title": "MATHS MYSTERY SOLVED",
-  "ko": "황금 계산기 도둑 정답 슬라이드 공개",
+  "ko": "골든 계산기 도둑 정답 슬라이드 공개",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -130,7 +139,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-06",
   "type": "공지",
   "title": "Congratulations to the following students.",
-  "ko": "수상 학생 리프트·새치기 패스 수령 안내",
+  "ko": "수상 학생 발표, 리프트패스·줄서기면제권 수령",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -184,7 +193,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "자료",
   "title": "Heare are the answers for the UKMT Intermediate Math Challenge.",
-  "ko": "UKMT 중급 수학 챌린지 해답 PDF 게시",
+  "ko": "UKMT 중급 수학 챌린지 해답 PDF 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -195,14 +204,14 @@ window.CLASSROOM_POSTS = [
   "title": "Homework/Classwork - UKMT Intermediate Math Challenge",
   "ko": "UKMT 중급 수학 챌린지 문제 풀기",
   "due": "2026-11-13",
-  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3/a/ODk3NzUxNTMzNzA3/details"
+  "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
  {
   "subject": "수학 (Mr Anan)",
   "date": "2026-11-05",
   "type": "공지",
   "title": "THURSDAY'S MATHS MYSTERY CHALLENGE",
-  "ko": "목요일 퍼즐을 풀고 구글폼으로 답 제출",
+  "ko": "슬라이드 퍼즐 풀고 구글폼으로 답 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -211,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "공지",
   "title": "Greetings from Leave a Nest Malaysia!",
-  "ko": "미세플라스틱 체험 워크숍 모집(RM45)",
+  "ko": "미세플라스틱 워크숍 참가 안내(RM45)",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -238,7 +247,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-04",
   "type": "공지",
   "title": "WEDNESDAY MATHS MYSTERY CHALLENGE",
-  "ko": "수요일 퍼즐을 풀고 구글폼으로 답 제출",
+  "ko": "슬라이드 퍼즐 풀고 구글폼으로 답 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -301,7 +310,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "공지",
   "title": "TUESDAY MATHS MYSTERY CHALLENGE",
-  "ko": "화요일 퍼즐을 풀고 구글폼으로 답 제출",
+  "ko": "슬라이드 퍼즐 풀고 구글폼으로 답 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -319,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9 Electricity - Check your Progress",
-  "ko": "전기 단원 진도 점검 과제",
+  "ko": "9 전기 단원 진도 점검 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -328,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "upload resistance graph - here",
-  "ko": "저항 그래프 올리기 과제",
+  "ko": "저항 그래프 업로드 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -355,7 +364,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "공지",
   "title": "MONDAY MATHS MYSTERY CHALLENGE",
-  "ko": "월요일 퍼즐을 풀고 구글폼으로 답 제출",
+  "ko": "슬라이드 퍼즐 풀고 구글폼으로 답 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -364,7 +373,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "공지",
   "title": "Common Assessment 1 Guide",
-  "ko": "공통평가 1 대비 파이썬 학습 안내서 자료",
+  "ko": "공통평가1 대비 파이썬 학습 가이드 자료 게시",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -373,7 +382,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "공지",
   "title": "MONDAY MATHS MYSTERY CHALLENGE",
-  "ko": "매일 수학 퍼즐 풀고 구글폼으로 답 제출",
+  "ko": "수학 미스터리 퍼즐 풀고 구글폼 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -400,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "공지",
   "title": "Dear Students, as homework this week, please complete the revision worksheet given in Friday's lesson to help you prepar",
-  "ko": "CA2 대비 복습 워크시트 완성하기",
+  "ko": "CA2 대비 복습 워크시트 숙제 완성",
   "due": "2026-11-03",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -418,7 +427,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-29",
   "type": "공지",
   "title": "CA2 - 11th November",
-  "ko": "CA2 공통평가 안내와 양식 파일",
+  "ko": "CA2 과학 공통평가 안내, 양식 첨부",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -500,7 +509,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-27",
   "type": "공지",
   "title": "Humanities and Social Science Essay Competition 2026-27",
-  "ko": "9학년 이상 인문사회 에세이 대회 안내",
+  "ko": "인문사회 에세이 대회 참가 안내(9학년 이상)",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -509,7 +518,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-27",
   "type": "공지",
   "title": "Rewards between 21st September and today!",
-  "ko": "상점 우수 학생 보상 쪽지 배부 안내",
+  "ko": "상점 우수 학생 명단 공지",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
@@ -532,24 +541,6 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
  {
-  "subject": "미술",
-  "date": "2026-10-23",
-  "type": "공지",
-  "title": "Year 9 Sip and Paint",
-  "ko": "부모님과 미술시간에 함께 그림 그리는 행사",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
- },
- {
-  "subject": "디자인 기술 DEC (Mr Mathyk)",
-  "date": "2026-10-23",
-  "type": "자료",
-  "title": "MR. MATHYK'S FESTIVAL E-PORTFOLIO",
-  "ko": "선생님의 축제 e-포트폴리오 예시 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODU2MDE2OTU4MzA2"
- },
- {
   "subject": "휴머니티 (Mr Lawrence)",
   "date": "2026-10-09",
   "type": "과제",
@@ -558,15 +549,6 @@ window.CLASSROOM_POSTS = [
   "due": "2026-11-27",
   "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz",
   "part": "역사"
- },
- {
-  "subject": "컴퓨터 과학 (Ms Meha)",
-  "date": "2026-10-09",
-  "type": "과제",
-  "title": "Year 9 Common Assessment Task 1 Term 1 2025",
-  "ko": "9학년 1학기 공통평가 과제 1",
-  "due": "2026-11-13",
-  "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-13 18:09";
+window.CLASSROOM_POSTS_AT = "2026-11-14 18:11";
