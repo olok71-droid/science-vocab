@@ -1,5 +1,14 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "미술",
+  "date": "2026-11-15",
+  "type": "공지",
+  "title": "Hi Y9, Please do not forget about the 2 primary research artworks deadline.",
+  "ko": "1차 조사 작품 2점 늦지 않게 제출하기",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
+ },
+ {
   "subject": "수학 (Mr Anan)",
   "date": "2026-11-13",
   "type": "자료",
@@ -256,7 +265,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-04",
   "type": "과제",
   "title": "2 Primary Research Artworks",
-  "ko": "1차 조사 미술작품 2점 제출",
+  "ko": "1차 조사 작품 2점 제출",
   "due": "2026-11-17",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1/a/ODk3NTA0NDUzMzk1/details"
  },
@@ -551,4 +560,4 @@ window.CLASSROOM_POSTS = [
   "part": "역사"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-15 04:23";
+window.CLASSROOM_POSTS_AT = "2026-11-15 18:07";

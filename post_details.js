@@ -2364,5 +2364,11 @@ window.POST_DETAILS = {
   "ko": "안녕하세요 여러분,\n\nFOBISIA 독백 대회(Monologue Competition) 마감이 다가오고 있습니다.\n\n대회에 참가하고 싶으면 저에게 이메일을 보내서, 11월 23일로 시작하는 주(2주 뒤)에 녹화(recording)할 수 있는 요일과 시간을 알려 주세요.\n\n저에게 한 번 공연(perform)하고, 마지막 피드백(feedback)을 받은 뒤, 가장 좋은 테이크(take)를 얻기 위해 두어 번 촬영하는 데 약 20분이 필요합니다. 대사(lines)를 반드시 외워 와야(memorised) 한다는 점에 유의하세요. 등교 전, 방과 후, 또는 담임(tutor)이 먼저 허락해 주면 튜터 시간(tutor time) 중에도 할 수 있습니다\n\n곧 여러분 중 몇 명에게서 연락이 오기를 바랍니다. 9학년(Year 9)에는 재능 있는 학생이 많으니 몇 명이 참가하기를 바랍니다. 아시아 전역의 스피치 및 연극 대회(speech and drama competition)에 참가하는 것은 이력서(CV)에도 아주 좋아 보입니다.\n\n행운을 빌어요\nHeather 선생님",
   "files": [],
   "at": "2026-11-14"
+ },
+ "미술|Hi Y9, Please do not forget about the 2 primary research artworks deadline.": {
+  "en": "Hi Y9,\n\nPlease do not forget about the 2 primary research artworks deadline. Our goal is to complete this whole coursework by the end of T1, and we will not be able to do that if work is submitted late. Incomplete and missing work will have an effect on your T1 grade.\n\nThank you!,\nMs. Aileen",
+  "ko": "9학년(Y9) 여러분 안녕하세요,\n\n1차 조사 작품(primary research artworks) 2점의 마감을 잊지 마세요. 우리의 목표는 이 과제(coursework) 전체를 1학기(T1) 말까지 끝내는 것인데, 과제가 늦게 제출되면 그렇게 할 수 없습니다. 완성되지 않은 과제와 제출하지 않은 과제는 여러분의 1학기(T1) 성적에 영향을 줍니다.\n\n감사합니다!,\nAileen 선생님",
+  "files": [],
+  "at": "2026-11-15"
  }
 };
