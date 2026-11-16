@@ -1,10 +1,55 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-11-16",
+  "type": "과제",
+  "title": "GCSE Electricity V = IR Characteristics",
+  "ko": "Wayground 전기 V=IR 특성 퀴즈 풀기",
+  "due": "2026-11-22",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-11-16",
+  "type": "과제",
+  "title": "upload your completed IV graph for the filament lamp here",
+  "ko": "필라멘트 전구 IV 그래프 완성해 올리기",
+  "due": "2026-11-22",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "과학 (Mr Phillips)",
+  "date": "2026-11-16",
+  "type": "자료",
+  "title": "Resistance of a filament bulb",
+  "ko": "필라멘트 전구의 저항 학습 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
+ },
+ {
+  "subject": "컴퓨터 과학 (Ms Meha)",
+  "date": "2026-11-16",
+  "type": "과제",
+  "title": "Python Arrays",
+  "ko": "파이썬 배열 과제",
+  "due": "2026-11-23",
+  "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
+ },
+ {
+  "subject": "중국어 (Ying Ying老师)",
+  "date": "2026-11-16",
+  "type": "자료",
+  "title": "T1 CA2 Model Essay",
+  "ko": "1학기 CA2 모범 에세이 자료",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
+ },
+ {
   "subject": "미술",
   "date": "2026-11-15",
   "type": "공지",
-  "title": "Hi Y9, Please do not forget about the 2 primary research artworks deadline.",
-  "ko": "1차 조사 작품 2점 늦지 않게 제출하기",
+  "title": "Please do not forget about the 2 primary research artworks deadline.",
+  "ko": "1차 조사 작품 2점 마감 잊지 말 것",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMzNTAzMTU1"
  },
@@ -58,7 +103,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-12",
   "type": "과제",
   "title": "Circuits",
-  "ko": "Wayground(퀴즈) 회로 과제",
+  "ko": "Wayground 회로 퀴즈 풀기",
   "due": "2026-11-19",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk4OTgyNTM4Nzkz/details"
  },
@@ -103,7 +148,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-11",
   "type": "과제",
   "title": "Ionic and Covalent Bonds",
-  "ko": "Wayground(퀴즈) 이온·공유결합 과제",
+  "ko": "Wayground 이온결합·공유결합 퀴즈 풀기",
   "due": "2026-11-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk4ODA5MjY5MzM3/details"
  },
@@ -112,7 +157,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-11",
   "type": "과제",
   "title": "ionic and covalent bonding",
-  "ko": "이온결합과 공유결합 과제",
+  "ko": "이온결합·공유결합 과제",
   "due": "2026-11-17",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -166,7 +211,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble Gases",
-  "ko": "Wayground(퀴즈) 비활성 기체 과제",
+  "ko": "Wayground 비활성 기체 퀴즈 풀기",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -238,8 +283,8 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-04",
   "type": "과제",
   "title": "Revision Questions on Periodic Table",
-  "ko": "주기율표 복습 문제 과제",
-  "due": "2026-11-10",
+  "ko": "주기율표 복습 문제 풀기",
+  "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
@@ -283,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-04",
   "type": "자료",
   "title": "T1 CA2 Revision notes",
-  "ko": "CA2 시험 복습 노트 자료",
+  "ko": "1학기 CA2 시험 복습 노트",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -310,7 +355,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "과제",
   "title": "Make your voice heard, vocab homework 1",
-  "ko": "'Make your voice heard' 단원 어휘 숙제 1",
+  "ko": "Make your voice heard 단원 어휘 숙제 1",
   "due": "2026-11-05",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -328,7 +373,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "Wayground(퀴즈) 전기회로와 기호 과제",
+  "ko": "Wayground 전기회로와 기호 퀴즈 풀기",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -337,7 +382,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9 Electricity - Check your Progress",
-  "ko": "9 전기 단원 진도 점검 과제",
+  "ko": "9 전기 단원 학습 점검 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -346,7 +391,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "upload resistance graph - here",
-  "ko": "저항 그래프 업로드 과제",
+  "ko": "저항 그래프 그려서 올리기",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -355,7 +400,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9.4 Practical Circuits workbook questions",
-  "ko": "9.4 실용 회로 워크북 문제 과제",
+  "ko": "9.4 실험 회로 워크북 문제 풀기",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -364,7 +409,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "자료",
   "title": "9.4 Practical Circuits",
-  "ko": "9.4 실용 회로 수업 자료",
+  "ko": "9.4 실험 회로 학습 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -380,9 +425,9 @@ window.CLASSROOM_POSTS = [
  {
   "subject": "컴퓨터 과학 (Ms Meha)",
   "date": "2026-11-02",
-  "type": "공지",
+  "type": "자료",
   "title": "Common Assessment 1 Guide",
-  "ko": "공통평가1 대비 파이썬 학습 안내 자료 게시",
+  "ko": "공통평가 1 파이썬 학습 가이드 문서",
   "due": "",
   "url": "https://classroom.google.com/c/ODY5MTMyODc2ODQ4"
  },
@@ -409,7 +454,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "과제",
   "title": "NARRATIVE COMMON ASSESSMENT",
-  "ko": "서사문 공통평가 과제 제출",
+  "ko": "서사문 공통평가 과제",
   "due": "2026-10-30",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -436,7 +481,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-29",
   "type": "공지",
   "title": "CA2 - 11th November",
-  "ko": "CA2 과학 공통평가 안내, 양식 첨부",
+  "ko": "CA2 과학 공통평가 안내 및 양식 첨부",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -454,7 +499,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-29",
   "type": "자료",
   "title": "T1 CA2 template - Writing Assessment",
-  "ko": "CA2 쓰기 평가 양식 자료",
+  "ko": "1학기 CA2 작문 평가 양식",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -468,38 +513,11 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
  {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-28",
-  "type": "과제",
-  "title": "Ohm's Law",
-  "ko": "Wayground(퀴즈) 옴의 법칙 과제",
-  "due": "2026-10-29",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-28",
-  "type": "과제",
-  "title": "Resistance - workbook Questions",
-  "ko": "저항 워크북 문제 과제",
-  "due": "2026-11-03",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
-  "subject": "과학 (Mr Phillips)",
-  "date": "2026-10-28",
-  "type": "자료",
-  "title": "Resistance",
-  "ko": "저항 수업 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
- },
- {
   "subject": "중국어 (Ying Ying老师)",
   "date": "2026-10-28",
   "type": "자료",
   "title": "Lesson 4 Grammar Slides (既...又....、除此以外, 还）",
-  "ko": "4과 문법 슬라이드 자료",
+  "ko": "4과 문법 슬라이드(既…又…, 除此以外)",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -545,7 +563,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-26",
   "type": "자료",
   "title": "Lesson 4 中文短期培训班 Quizlet",
-  "ko": "4과 중국어 단기연수반 퀴즐렛",
+  "ko": "4과 중국어 단기연수반 퀴즐렛 단어",
   "due": "",
   "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
  },
@@ -560,4 +578,4 @@ window.CLASSROOM_POSTS = [
   "part": "역사"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-15 18:07";
+window.CLASSROOM_POSTS_AT = "2026-11-16 18:12";

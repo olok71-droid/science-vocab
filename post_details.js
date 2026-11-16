@@ -678,82 +678,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
- "과학 (Mr Phillips)|Ohms Law": {
-  "en": "Ohm's Law\nClick on the link below to start the game",
-  "ko": "옴의 법칙(Ohm's Law)\n아래 링크를 눌러 게임을 시작하세요",
-  "files": [
-   {
-    "name": "Quizizz is now Wayground | Teacher AI and Resources",
-    "kind": "web",
-    "url": "https://wayground.com/join?c=h_bdxV3PLQp0Os_DkGyCvBlUJXv_RYUYVs1rJcDEdmV3I3Z8zPYKetZOmwfAT5JpGJ3fochKoyGzvs0bVkEuex2czTWcODIbktcdqg_JlGwXfksd3WSPoRvzbWUZe_k81lJDhwGMxqlpg86XNUPI-pHmxLyTo4HCoc1_25hW7sw1cIg6-3-4vbEqPDjJrnk6M3O5eiznGngeEd7QbuuOply5-Q.vJjyzgUe9UFxi2_w38cPWw.prr_SzRpjaBmJV-l&linktype=web",
-    "local": null
-   }
-  ],
-  "at": "2026-10-28"
- },
- "과학 (Mr Phillips)|Resistance - workbook Questions": {
-  "en": "Resistance - workbook Questions",
-  "ko": "저항(Resistance) - 워크북 문제",
-  "files": [],
-  "at": "2026-10-28"
- },
- "과학 (Mr Phillips)|Resistance": {
-  "en": "Resistance",
-  "ko": "저항(Resistance)",
-  "files": [
-   {
-    "name": "9.3 Resistance",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1TgvMkA3YZaG21hwxqAYY514-gQjgy8oj/view?usp=classroom_web",
-    "local": "post_files/1TgvMkA3YZaG21hwxqAYY514-gQjgy8oj.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1TgvMkA3YZaG21hwxqAYY514_gQjgy8oj_p6.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "Voltage and Resistance - GCSE Physics",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=EcqPg2Ym5NU",
-    "local": null
-   },
-   {
-    "name": "Resistance Connection - Javalab",
-    "kind": "web",
-    "url": "https://javalab.org/en/resistance_connection_en/",
-    "local": null
-   }
-  ],
-  "at": "2026-10-28"
- },
  "중국어 (Ying Ying老师)|Lesson 4 Grammar Slides (既...又....、除此以外, 还）": {
   "en": "Lesson 4 Grammar Slides (既...又....、除此以外, 还）",
   "ko": "4과(Lesson 4) 문법(grammar) 슬라이드 (既...又....、除此以外, 还）",
@@ -2365,10 +2289,80 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-11-14"
  },
- "미술|Hi Y9, Please do not forget about the 2 primary research artworks deadline.": {
-  "en": "Hi Y9,\n\nPlease do not forget about the 2 primary research artworks deadline. Our goal is to complete this whole coursework by the end of T1, and we will not be able to do that if work is submitted late. Incomplete and missing work will have an effect on your T1 grade.\n\nThank you!,\nMs. Aileen",
-  "ko": "9학년(Y9) 여러분 안녕하세요,\n\n1차 조사 작품(primary research artworks) 2점의 마감을 잊지 마세요. 우리의 목표는 이 과제(coursework) 전체를 1학기(T1) 말까지 끝내는 것인데, 과제가 늦게 제출되면 그렇게 할 수 없습니다. 완성되지 않은 과제와 제출하지 않은 과제는 여러분의 1학기(T1) 성적에 영향을 줍니다.\n\n감사합니다!,\nAileen 선생님",
+ "과학 (Mr Phillips)|GCSE Electricity V = IR Characteristics": {
+  "en": "GCSE Electricity V = IR Characteristics\nClick on the link below to start the game",
+  "ko": "GCSE 전기 V = IR 특성(Characteristics)\n아래 링크를 눌러 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=FMA7EuHs2qwJtmKb1aSUUbozO-qkEjLf3_eowMA7jaPGB-APDhMxzQaBYbp5hWMpxTYCmr7l3u_p2cBcjw1ybDBoZarLx8-sR-COR6ODrdbrYrGepI_2MQJpp8PCoOgq3q880PELVRFkfgyvcfVyIQAkRTc0KMYuocxQbjRrdZgJdn5w8Afwck8vhAEjJ0qN6kbq4a_DTpF8NiuBtuOW0UVxDg.c3k53v6KPo7UofQXSdhwnQ.8YrhjmYuHEBWlB1l&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-11-16"
+ },
+ "과학 (Mr Phillips)|upload your completed IV graph for the filament lamp here": {
+  "en": "upload your completed IV graph for the filament lamp here",
+  "ko": "필라멘트 전구(filament lamp)의 완성된 IV 그래프(IV graph)를 여기에 올리세요",
   "files": [],
-  "at": "2026-11-15"
+  "at": "2026-11-16"
+ },
+ "과학 (Mr Phillips)|Resistance of a filament bulb": {
+  "en": "Resistance of a filament bulb",
+  "ko": "필라멘트 전구(filament bulb)의 저항(resistance)",
+  "files": [
+   {
+    "name": "Light bulb filament",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=DIGqBb3iZPo",
+    "local": null
+   },
+   {
+    "name": "IV Characteristics of a Bulb Experiment - GCSE Physics Required Practical",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=z5pQ4hitt14",
+    "local": null
+   },
+   {
+    "name": "IV Characteristics of a Bulb Experiment RESULTS - GCSE Physics Required Practical",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=Oau4WrY4wNk",
+    "local": null
+   }
+  ],
+  "at": "2026-11-16"
+ },
+ "컴퓨터 과학 (Ms Meha)|Python Arrays": {
+  "en": "Python Arrays\nEstigfend",
+  "ko": "파이썬 배열(Python Arrays)\nEstigfend",
+  "files": [],
+  "at": "2026-11-16"
+ },
+ "중국어 (Ying Ying老师)|T1 CA2 Model Essay": {
+  "en": "T1 CA2 Model Essay",
+  "ko": "1학기(T1) CA2 모범 작문(model essay)",
+  "files": [
+   {
+    "name": "Y9 T1 CA2 model essay.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1yp6sgr4As7k9kEkGou0CkJlQGxVohoLr/view?usp=classroom_web",
+    "local": "pdfs/chinese_y9/Y9 T1 CA2 model essay.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/chinese_y9/Y9_T1_CA2_model_essay_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-16"
+ },
+ "미술|Please do not forget about the 2 primary research artworks deadline.": {
+  "en": "Hi Y9,\n\nPlease do not forget about the 2 primary research artworks deadline. Our goal is to complete this whole coursework by the end of T1, and we will not be able to do that if work is submitted late. Incomplete and missing work will have an effect on your T1 grade.\n\nThank you!,\nMs. Aileen",
+  "ko": "9학년(Y9) 여러분 안녕하세요,\n\n1차 조사 작품(primary research artworks) 2점의 마감일을 잊지 마세요. 우리의 목표는 1학기(T1)가 끝날 때까지 이 과제(coursework) 전체를 완성하는 것이며, 과제가 늦게 제출되면 그렇게 할 수 없습니다. 완성되지 않은 과제와 제출하지 않은 과제는 1학기(T1) 성적에 영향을 줍니다.\n\n감사합니다!,\nAileen 선생님",
+  "files": [],
+  "at": "2026-11-16"
  }
 };
