@@ -39,6 +39,9 @@
   .rub td[data-b]::before{content:attr(data-b);display:block;font-size:12px;color:#555;font-weight:800}
  }
  .y8{width:auto}
+ .y8 td.subj{overflow-wrap:normal;word-break:keep-all}
+ .y8 td.subj .en{display:block;font-size:10.5px}
+ .y8 .fbtn{padding:2px 6px;font-size:11.5px}
  .y8 td,.y8 th{padding:4px 4px;font-size:13px;line-height:1.35}
  .y8 td.eal{font-size:10.5px;line-height:1.3;text-align:center;overflow-wrap:normal;word-break:normal}
  .rub{table-layout:auto}
@@ -51,6 +54,11 @@
  tr.fb>td{padding:0 6px 6px;border-top:none}
  tr.fb details{border:none;margin:0;padding:0}
  tr.fb summary{padding:4px 0;font-size:14px}
+ .fbtn{display:inline-block;text-decoration:none;white-space:nowrap;border:1px solid #111;background:#fff;border-radius:8px;padding:2px 8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;color:#111}
+ .pop-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:50;align-items:center;justify-content:center;padding:16px}
+ .pop-bg.on{display:flex}
+ .pop{position:relative;background:#fff;border-radius:14px;max-width:760px;width:100%;max-height:85vh;overflow:auto;padding:18px 16px 16px}
+ .pop-x{position:absolute;top:8px;right:8px;border:none;background:#f1f1ef;border-radius:50%;width:32px;height:32px;font-size:16px;cursor:pointer}
  .note{font-size:13px;color:#555;margin:6px 2px}
 </style>
 </head>
@@ -64,13 +72,47 @@
 
 <h3>영어 — 시험 결과</h3>
 <div class="scroll">
-<table>
-<colgroup><col style="width:64%"><col style="width:20%"><col style="width:16%"></colgroup>
-<tr><th>시험</th><th>점수</th><th>등급</th></tr>
-<tr><td>영어 CA1 읽기 시험 (The Art of Storytelling)<br><a href="y9e_result.html">시험 결과 페이지</a></td><td class="g">8 / 16</td><td class="g">C</td></tr>
-<tr><td>영어 쓰기 공통평가 — The Art of Storytelling Writing</td><td class="g">15 / 25</td><td class="g">B</td></tr>
-<tr class="fb"><td colspan="3"><details>
-<summary>선생님 의견·채점표 보기</summary>
+<table style="max-width:620px">
+<colgroup><col style="width:52%"><col style="width:17%"><col style="width:13%"><col style="width:18%"></colgroup>
+<tr><th>시험</th><th>점수</th><th>등급</th><th>선생님 코멘트</th></tr>
+<tr><td>영어 CA1 읽기 시험 (The Art of Storytelling)</td><td class="g">8 / 16</td><td class="g">C</td><td class="g"><a class="fbtn" href="y9e_result.html">보기</a></td></tr>
+<tr><td>영어 쓰기 공통평가 — The Art of Storytelling Writing</td><td class="g">15 / 25</td><td class="g">B</td><td class="g"><button class="fbtn" type="button" onclick="openPop('eng')">보기</button></td></tr>
+
+</table>
+</div>
+
+
+
+<h2>8학년 성적표 <span class="en">Year 8 · Term 2 · Term 3</span></h2>
+<div class="note">성취도 = Achievement, 학습 태도 = ATL, EOY = 학년말 시험(End of Year)</div>
+<div class="scroll">
+<table class="y8">
+<colgroup><col style="width:84px"><col style="width:38px"><col style="width:62px"><col style="width:38px"><col style="width:62px"><col style="width:38px"><col style="width:60px"></colgroup>
+<tr><th rowspan="2">과목</th><th colspan="3">8학년 3학기 (T8-Term3)</th><th colspan="2">8학년 2학기 (T8-Term2)</th><th rowspan="2">선생님 코멘트</th></tr>
+<tr><th>EOY</th><th>성취도</th><th>학습 태도</th><th>성취도</th><th>학습 태도</th></tr>
+<tr><td class="subj">수학 <span class="en">Mathematics</span></td><td class="g">A+</td><td class="g">A+</td><td class="g">1</td><td class="g">A*</td><td class="g">1</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-수학')">선생님</button></td></tr>
+<tr><td class="subj">과학 <span class="en">Science</span></td><td class="g">C</td><td class="g">B</td><td class="g">1</td><td class="g">B</td><td class="g">2</td><td class="g"><button class="fbtn" type="button" onclick="openPop('sci')">답장</button></td></tr>
+<tr><td class="subj">영어</td><td class="g"></td><td class="g"></td><td class="g"></td><td class="g"></td><td class="g"></td><td class="g"></td></tr>
+<tr><td class="subj">컴퓨터 <span class="en">Computer Science</span></td><td class="g"></td><td class="g">A*</td><td class="g">1</td><td class="g">A*</td><td class="g">2</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-컴퓨터')">선생님</button></td></tr>
+<tr><td class="subj">역사 <span class="en">History</span></td><td class="g">C</td><td class="g">C</td><td class="g">1</td><td class="g">A</td><td class="g">1</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-역사')">선생님</button></td></tr>
+<tr><td class="subj">음악 <span class="en">Music</span></td><td class="g"></td><td class="g">A</td><td class="g">1</td><td class="g">A</td><td class="g">1</td><td class="g"><button class="fbtn" type="button" onclick="openPop('mus')">답장</button></td></tr>
+<tr><td class="subj">연극 <span class="en">Drama</span></td><td class="g"></td><td class="g">A+</td><td class="g">1</td><td class="g">A</td><td class="g">1</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-연극')">선생님</button></td></tr>
+<tr><td class="subj">지리 <span class="en">Geography</span></td><td class="g">C</td><td class="g">B</td><td class="g">1</td><td class="g">A-</td><td class="g">1</td><td class="g"><button class="fbtn" type="button" onclick="openPop('geo')">답장</button></td></tr>
+<tr><td class="subj">미술 <span class="en">Art</span></td><td class="g"></td><td class="g">A</td><td class="g">1</td><td class="g">A-</td><td class="g">1</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-미술')">선생님</button></td></tr>
+<tr><td class="subj">체육 <span class="en">Physical Education</span></td><td class="g"></td><td class="g">B-</td><td class="g">2</td><td class="g">B</td><td class="g">2</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-체육')">선생님</button></td></tr>
+<tr><td class="subj">라살리안 교육 <span class="en">LEDU</span></td><td class="g"></td><td class="g">-</td><td class="g">1</td><td class="g">-</td><td class="g">1</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-라살리안 교육')">선생님</button></td></tr>
+<tr><td class="subj">의사소통 <span class="en">EAL Core</span></td><td class="g"></td><td class="g"></td><td class="g"></td><td class="eal">Listening: Competent+<br>Reading: Competent+<br>Writing: Competent+<br>Speaking: Reaching-</td><td class="g">1</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-의사소통')">선생님</button></td></tr>
+<tr><td class="subj">소설분석 <span class="en">EAL English</span></td><td class="g">B</td><td class="eal">Listening: Competent+<br>Reading: Competent+<br>Writing: Competent+<br>Speaking: Competent+</td><td class="g">1</td><td class="eal">Listening: Competent-<br>Reading: Competent-<br>Writing: Competent-<br>Speaking: Competent-</td><td class="g">2</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-소설분석')">선생님</button></td></tr>
+<tr><td class="subj">교과지원 <span class="en">EAL Support</span></td><td class="g"></td><td class="g"></td><td class="g">2</td><td class="g"></td><td class="g">2</td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-교과지원')">선생님</button></td></tr>
+<tr><td class="subj">중국어 <span class="en">Mandarin</span></td><td class="g">N/A</td><td class="g">B</td><td class="g">2</td><td class="g"></td><td class="g"></td><td class="g"><button class="fbtn" type="button" onclick="openPop('t-중국어')">선생님</button></td></tr>
+</table>
+</div>
+
+
+
+
+<div id="popBg" class="pop-bg" onclick="if(event.target===this)closePop()"><div class="pop"><button class="pop-x" type="button" onclick="closePop()">✕</button><div id="popBody"></div></div></div>
+<template id="pop-eng"><h3 style="margin-top:0">영어 쓰기 공통평가 15/25 B — 선생님 의견</h3>
 <h3>선생님 의견 <span class="en">Teacher Comment</span></h3>
 <ul>
 <li>기본적인 이야기 구성은 갖췄다. <span class="en">Basic narrative structure implemented</span></li>
@@ -121,61 +163,8 @@
 <td data-b="1~5점">실수가 계속 있어서 뜻이 흐려지거나 글을 따라가기 어렵다.</td></tr>
 </table>
 </div>
-</details></td></tr>
-</table>
-</div>
-
-
-
-<h2>8학년 성적표 <span class="en">Year 8 · Term 2 · Term 3</span></h2>
-<div class="note">성취도 = Achievement, 학습 태도 = ATL, EOY = 학년말 시험(End of Year)</div>
-<div class="scroll">
-<table class="y8">
-<colgroup><col style="width:92px"><col style="width:40px"><col style="width:66px"><col style="width:40px"><col style="width:66px"><col style="width:40px"></colgroup>
-<tr><th rowspan="2">과목</th><th colspan="3">8학년 3학기 (T8-Term3)</th><th colspan="2">8학년 2학기 (T8-Term2)</th></tr>
-<tr><th>EOY</th><th>성취도</th><th>학습 태도</th><th>성취도</th><th>학습 태도</th></tr>
-<tr><td class="subj">수학 <span class="en">Mathematics</span></td><td class="g">A+</td><td class="g">A+</td><td class="g">1</td><td class="g">A*</td><td class="g">1</td></tr>
-<tr><td class="subj">과학 <span class="en">Science</span></td><td class="g">C</td><td class="g">B</td><td class="g">1</td><td class="g">B</td><td class="g">2</td></tr>
-<tr><td class="subj">영어</td><td class="g"></td><td class="g"></td><td class="g"></td><td class="g"></td><td class="g"></td></tr>
-<tr><td class="subj">컴퓨터 <span class="en">Computer Science</span></td><td class="g"></td><td class="g">A*</td><td class="g">1</td><td class="g">A*</td><td class="g">2</td></tr>
-<tr><td class="subj">역사 <span class="en">History</span></td><td class="g">C</td><td class="g">C</td><td class="g">1</td><td class="g">A</td><td class="g">1</td></tr>
-<tr><td class="subj">음악 <span class="en">Music</span></td><td class="g"></td><td class="g">A</td><td class="g">1</td><td class="g">A</td><td class="g">1</td></tr>
-<tr><td class="subj">연극 <span class="en">Drama</span></td><td class="g"></td><td class="g">A+</td><td class="g">1</td><td class="g">A</td><td class="g">1</td></tr>
-<tr><td class="subj">지리 <span class="en">Geography</span></td><td class="g">C</td><td class="g">B</td><td class="g">1</td><td class="g">A-</td><td class="g">1</td></tr>
-<tr><td class="subj">미술 <span class="en">Art</span></td><td class="g"></td><td class="g">A</td><td class="g">1</td><td class="g">A-</td><td class="g">1</td></tr>
-<tr><td class="subj">체육 <span class="en">Physical Education</span></td><td class="g"></td><td class="g">B-</td><td class="g">2</td><td class="g">B</td><td class="g">2</td></tr>
-<tr><td class="subj">라살리안 교육 <span class="en">LEDU</span></td><td class="g"></td><td class="g">-</td><td class="g">1</td><td class="g">-</td><td class="g">1</td></tr>
-<tr><td class="subj">의사소통 <span class="en">EAL Core</span></td><td class="g"></td><td class="g"></td><td class="g"></td><td class="eal">Listening: Competent+<br>Reading: Competent+<br>Writing: Competent+<br>Speaking: Reaching-</td><td class="g">1</td></tr>
-<tr><td class="subj">소설분석 <span class="en">EAL English</span></td><td class="g">B</td><td class="eal">Listening: Competent+<br>Reading: Competent+<br>Writing: Competent+<br>Speaking: Competent+</td><td class="g">1</td><td class="eal">Listening: Competent-<br>Reading: Competent-<br>Writing: Competent-<br>Speaking: Competent-</td><td class="g">2</td></tr>
-<tr><td class="subj">교과지원 <span class="en">EAL Support</span></td><td class="g"></td><td class="g"></td><td class="g">2</td><td class="g"></td><td class="g">2</td></tr>
-<tr><td class="subj">중국어 <span class="en">Mandarin</span></td><td class="g">N/A</td><td class="g">B</td><td class="g">2</td><td class="g"></td><td class="g"></td></tr>
-</table>
-</div>
-<details>
-<summary>8학년 선생님 이름 보기</summary>
-<ul>
-<li>수학 <span class="en">Mathematics</span> — Sharthak Saiful Haque, Eng Yong Lim</li>
-<li>과학 <span class="en">Science</span> — Natalie Siew, Katherine Nicholls</li>
-<li>컴퓨터 <span class="en">Computer Science</span> — Donald May</li>
-<li>역사 <span class="en">History</span> — Phillip Weatherup</li>
-<li>음악 <span class="en">Music</span> — Yann Zhe Yau</li>
-<li>연극 <span class="en">Drama</span> — Heather Smith</li>
-<li>지리 <span class="en">Geography</span> — Joseph Taylor</li>
-<li>미술 <span class="en">Art</span> — Ai Leen Tan</li>
-<li>체육 <span class="en">Physical Education</span> — Ross McManus, James Regan</li>
-<li>라살리안 교육 <span class="en">LEDU</span> — Abram Michael De Leon</li>
-<li>의사소통 <span class="en">EAL Core</span> — Rebecca Merrett</li>
-<li>소설분석 <span class="en">EAL English</span> — Rick De Boer</li>
-<li>교과지원 <span class="en">EAL Support</span> — Jeremy Bong</li>
-<li>중국어 <span class="en">Mandarin</span> — Lee Ee Tan</li>
-</ul>
-</details>
-
-
-<h2>8학년 선생님 답장 <span class="en">Teacher replies</span></h2>
-
-<details>
-<summary>과학 — Natalie Siew · Katherine Nicholls 선생님 답장 보기</summary>
+</template>
+<template id="pop-sci"><h3 style="margin-top:0">과학 — Natalie Siew · Katherine Nicholls 선생님 답장</h3><p><b>선생님:</b> Natalie Siew, Katherine Nicholls</p>
 <p>Kate 선생님께서 언급하셨듯이, 서정이는 매우 집중력이 높은 학생입니다. 학습 태도에서 "1점"으로 나아가기 위해, 저는 서정이가 소그룹 토론에 더 적극적으로 참여하고, 수업 중 궁금한 점이 생길 때마다 편안하게 질문할 것을 권장합니다.</p>
 <p><b>성적 향상을 위한 권장 사항</b><br>서정이가 성적을 올리는 데 도움을 주기 위해, 저는 1학기(Term 1)에 놓쳤던 주제들을 훑어보는 데 시간을 할애할 것을 제안합니다.</p>
 <ul>
@@ -186,10 +175,8 @@
 <p>저는 서정이의 성실한 노력에 매우 만족하고 있으며, 다음 학기에 서정이의 자신감이 커지는 모습을 보기를 기대하고 있습니다.</p>
 <p>저는 일주일에 한 번 서정이의 과학을 가르치고 있지만, 이 과목의 주 담당 선생님은 Ms Nat입니다. Ms Nat 선생님이 서정이와 더 많은 수업을 진행하며, 성적표 작성과 PTC(학부모 상담)도 담당하고 계십니다. 그럼에도 불구하고 서정이를 알아가기 시작하게 되어 기쁩니다. 제 수업에서 서정이는 저나 학급의 다른 친구들에게 자신의 생각을 공유하는 데 있어 여전히 자신감을 찾아가는 과정에 있습니다. 개별 과제를 수행할 때 서정이는 정말 집중력이 좋으며 자신이 가진 최선의 능력을 다해 임합니다. 자신감이 필요한 일이라는 점은 이해하지만, 소그룹 토론에 더 많이 참여하고 나아가 학급 전체 앞에서 질문에 자진해서 답변하는 모습을 볼 수 있다면 정말 좋을 것 같습니다.</p>
 <p>Ms Nat 선생님이 서정이의 학습 진전 상황과 다음 학기를 위한 제안 사항에 대해 더 자세히 답변해 주실 수 있도록 이번 회신에 그분을 포함하였습니다.</p>
-</details>
-
-<details>
-<summary>음악 — Yann Zhe Yau 선생님 답장 보기</summary>
+</template>
+<template id="pop-mus"><h3 style="margin-top:0">음악 — Yann Zhe Yau 선생님 답장</h3><p><b>선생님:</b> Yann Zhe Yau</p>
 <p>서정(Amy)이가 음악 수업을 즐기고 있다는 소식을 들어 기쁩니다. 서정이가 선택한 악기는 피아노이며, 리듬에 대한 좋은 이해도와 음정(pitch)을 읽는 능력을 보여주고 있습니다.</p>
 <p>서정이는 음악에 있어서 안정감(stability), 명확한 표현(articulation), 그리고 강약 조절(dynamic)을 보완할 필요가 있으며, 음악을 더 많이 표현할 수 있는 능력이 있다는 것을 보여주기 위해 대비(contrast)를 만들어내야 합니다. 음악의 스타일은 우리가 현재 집중하고 있는 부분이며, 만약 서정이가 엇박자(offbeat)의 특징과 뒤에 깔리는 미묘한 액센트(subtle accents)들을 잘 살려낼 수 있다면 더 높은 수준의 음악적 이해도에 도달할 수 있을 것입니다.</p>
 <p><b>[핵심 내용 확인]</b><br>선생님은 서정이가 기초적인 리듬과 악보 읽기 능력은 좋다고 평가하셨습니다. 다만, 더 높은 점수(레벨)를 받기 위해서는 단순히 연주하는 것을 넘어 다음의 네 가지를 강조하셨습니다.</p>
@@ -199,10 +186,8 @@
 <li>엇박자(Offbeat): 정박자가 아닌 엇박의 느낌을 살리는 것.</li>
 <li>미묘한 강조(Subtle Accents): 세밀한 부분의 강조점을 살려 스타일을 완성하는 것.</li>
 </ul>
-</details>
-
-<details>
-<summary>지리 — Joseph Taylor 선생님 답장 보기</summary>
+</template>
+<template id="pop-geo"><h3 style="margin-top:0">지리 — Joseph Taylor 선생님 답장</h3><p><b>선생님:</b> Joseph Taylor</p>
 <p>서정(Amy)이는 새로운 국제학교 환경에 아주 편안하게 잘 정착한 것으로 보이며, 지리 수업을 즐기고 있다는 소식을 들어 기쁩니다.</p>
 <p><b>앞으로 집중해야 할 부분들</b></p>
 <ul>
@@ -212,8 +197,23 @@
 <li>시험 상황에서의 지시어(Command words) 이해: 시험 문제에서 요구하는 지시어(설명하라, 묘사하라 등)의 의미를 정확히 파악하고 그에 맞춰 답하는 능력을 키워야 합니다.</li>
 </ul>
 <p>이 내용이 현재로서는 도움이 되기를 바랍니다. 3학기에도 서정이가 계속해서 좋은 발전을 이룰 수 있도록 함께 지도해 나가기를 기대하겠습니다.</p>
-</details>
-
+</template>
+<template id="pop-t-수학"><h3 style="margin-top:0">수학</h3><p><b>선생님:</b> Sharthak Saiful Haque, Eng Yong Lim</p></template>
+<template id="pop-t-컴퓨터"><h3 style="margin-top:0">컴퓨터</h3><p><b>선생님:</b> Donald May</p></template>
+<template id="pop-t-역사"><h3 style="margin-top:0">역사</h3><p><b>선생님:</b> Phillip Weatherup</p></template>
+<template id="pop-t-연극"><h3 style="margin-top:0">연극</h3><p><b>선생님:</b> Heather Smith</p></template>
+<template id="pop-t-미술"><h3 style="margin-top:0">미술</h3><p><b>선생님:</b> Ai Leen Tan</p></template>
+<template id="pop-t-체육"><h3 style="margin-top:0">체육</h3><p><b>선생님:</b> Ross McManus, James Regan</p></template>
+<template id="pop-t-라살리안 교육"><h3 style="margin-top:0">라살리안 교육</h3><p><b>선생님:</b> Abram Michael De Leon</p></template>
+<template id="pop-t-의사소통"><h3 style="margin-top:0">의사소통</h3><p><b>선생님:</b> Rebecca Merrett</p></template>
+<template id="pop-t-소설분석"><h3 style="margin-top:0">소설분석</h3><p><b>선생님:</b> Rick De Boer</p></template>
+<template id="pop-t-교과지원"><h3 style="margin-top:0">교과지원</h3><p><b>선생님:</b> Jeremy Bong</p></template>
+<template id="pop-t-중국어"><h3 style="margin-top:0">중국어</h3><p><b>선생님:</b> Lee Ee Tan</p></template>
+<script>
+function openPop(k){document.getElementById('popBody').innerHTML=document.getElementById('pop-'+k).innerHTML;document.getElementById('popBg').classList.add('on');document.body.style.overflow='hidden';}
+function closePop(){document.getElementById('popBg').classList.remove('on');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop();});
+</script>
 <script src="studylog.js"></script>
 </body>
 </html>
