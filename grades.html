@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>성적표 · AMY Study App</title>
+<!-- 2026-11-16 대표님 지시: 첫 화면 'IGCSE 과목 선택' 옆 '성적표' 칸. 9학년 시험 결과 + 예전 성적(구글시트 '세인트조셉_성적표.시간표.목차.' 성적표 탭) -->
+<style>
+ body{font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+      max-width:980px;margin:0 auto;padding:22px 16px 70px;color:#111820;background:#fafaf9;line-height:1.7;font-size:16px}
+ h1{font-size:26px;margin:0 0 4px}
+ h2{font-size:20px;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid #111}
+ h3{font-size:17px;margin:18px 0 6px}
+ .sub{color:#555;margin-bottom:14px;font-size:14px}
+ .box{background:#fff;border:1px solid #ddd;border-radius:12px;padding:14px 16px;margin:10px 0}
+ .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+ table{border-collapse:collapse;width:100%;background:#fff;font-size:15px}
+ th,td{border:1px solid #ddd;padding:7px 8px;vertical-align:top;text-align:left}
+ th{background:#f1f1ef;white-space:nowrap}
+ td.g{text-align:center;font-weight:800;white-space:nowrap}
+ td.subj{font-weight:700;white-space:nowrap}
+ .en{color:#555;font-size:13px}
+ .hl{background:#fde047;padding:0 2px}
+ .score{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+ .score .s{background:#fff;border:1px solid #ddd;border-radius:12px;padding:10px 14px;min-width:140px}
+ .score .s .l{font-size:13px;color:#555}
+ .score .s .n{font-size:26px;font-weight:900}
+ .score .s .n small{font-size:15px;color:#555;font-weight:700}
+ a{color:#111;font-weight:700}
+ ul{margin:6px 0;padding-left:22px}
+ .rub td{font-size:14px}
+ .note{font-size:13px;color:#555;margin:6px 2px}
+</style>
+</head>
+<body>
+<p><a href="index.html">← 과목 고르기</a></p>
+<h1>📊 성적표</h1>
+<div class="sub">Report &amp; Results · 서정이 성적 모음</div>
+
+<h2>9학년 1학기 <span class="en">Year 9 · Term 1</span></h2>
+<div class="note">1학기 성적표는 12월 3일에 나온다. 나오면 여기에 넣는다.</div>
+
+<h3>영어 — 시험 결과</h3>
+<div class="scroll">
+<table>
+<tr><th>시험</th><th>점수</th><th>등급</th><th>보기</th></tr>
+<tr><td>영어 CA1 읽기 시험 (The Art of Storytelling)</td><td class="g">8 / 16</td><td class="g">C</td><td><a href="y9e_result.html">시험 결과 페이지</a></td></tr>
+<tr><td>영어 쓰기 공통평가 — The Art of Storytelling Writing</td><td class="g">15 / 25</td><td class="g">B</td><td>아래에 채점표</td></tr>
+</table>
+</div>
+
+<div class="box">
+<b>영어 쓰기 공통평가 — 이야기 쓰기의 기술</b>
+<div class="score">
+ <div class="s"><div class="l">점수</div><div class="n">15<small> / 25</small> B</div></div>
+</div>
+<div class="note">노란색 = 선생님이 형광펜으로 칠한 칸</div>
+<div class="scroll">
+<table class="rub">
+<tr><th>평가항목</th><th>21~25점</th><th>16~20점</th><th>11~15점</th><th>6~10점</th><th>1~5점</th></tr>
+<tr><td class="subj">W1 내용<br><span class="en">Content</span></td>
+<td>내용이 복합적이고 흥미로우며 효과적이다. 아이디어가 상상력 있고 목적이 분명하며, 강한 인상을 주도록 공들여 짜였다.</td>
+<td>내용이 잘 전개되고 흥미롭다. 아이디어에 목적이 있고 대체로 효과적이다.</td>
+<td><span class="hl">내용이 주제에 맞고 어느 정도 전개된다. 아이디어는 대체로 분명하지만 깊이가 부족할 수 있다.</span></td>
+<td>내용이 단순하고 짧게 전개된다. 아이디어가 단순하거나 뻔하다.</td>
+<td>내용이 단순하거나 불분명하다. 아이디어가 덜 전개됐거나 반복된다.</td></tr>
+<tr><td class="subj">W2 구성<br><span class="en">Structure</span></td>
+<td>구성이 탄탄하고 의도한 효과를 위해 세심하게 짜였다. 줄거리가 잘 전개되고 이야기의 흐름이 뚜렷하다.</td>
+<td>구성이 잘 짜였고, 효과를 노린 선택이 일부 보인다. 줄거리가 분명하고 잘 진행된다.</td>
+<td><span class="hl">구성이 무난하게 짜였다. 줄거리가 앞뒤로 잘 이어지고, 이야기 요소(배경, 인물 등)를 어느 정도 활용했다.</span></td>
+<td>구성이 대체로 정리돼 있다. 줄거리가 단순하고, 구성이나 이야기 전개에 대한 인식이 부족하다.</td>
+<td>구성이 부분적으로만 정리돼 있다. 줄거리가 불분명하거나 느슨하게 이어지거나 헷갈린다.</td></tr>
+<tr><td class="subj">W3 어휘와 문장 구조<br><span class="en">Vocabulary &amp; Sentence Structure</span></td>
+<td>어휘가 정확하고 잘 골랐다. 문장 구조가 다양하고 효과를 위해 공들여 썼다.</td>
+<td>어휘가 대체로 정확하다. 다양한 문장 구조를 대체로 효과 있게 썼다.</td>
+<td><span class="hl">정확한 어휘를 일부 썼다.</span> 문장 구조에 어느 정도 변화가 있고 가끔 효과가 있다.</td>
+<td>어휘가 단순하다. <span class="hl">문장 구조가 대부분 단순하고 변화가 적다.</span></td>
+<td>어휘와 문장 구조가 제한적이거나 부정확하다.</td></tr>
+<tr><td class="subj">W4 어조와 말투<br><span class="en">Tone &amp; Register</span></td>
+<td>어조가 잘 판단됐고 일관되며, 이야기 상황에 아주 잘 맞는다.</td>
+<td><span class="hl">어조가 대체로 일관되고 상황에 맞다.</span></td>
+<td>어조가 가끔은 맞지만 흔들릴 수 있다. 이야기 화자의 목소리를 어느 정도 인식하고 있다.</td>
+<td>어조가 단순하거나 일반적이다. 상황이나 의도한 효과에 대한 인식이 부족하다.</td>
+<td>어조가 불분명하거나 맞지 않는다. 이야기 화자의 목소리가 거의 느껴지지 않는다.</td></tr>
+<tr><td class="subj">W5 철자, 문장부호, 문법<br><span class="en">Spelling, Punctuation &amp; Grammar</span></td>
+<td><span class="hl">철자, 문장부호, 문법이 거의 항상 정확하다. 실수가 있더라도 사소하고 뜻을 흐리지 않는다.</span></td>
+<td>철자, 문장부호, 문법이 대체로 정확하다. 가끔 실수가 있지만 이해에 지장이 없다.</td>
+<td>대체로 정확하지만 철자, 문장부호, 문법에 눈에 띄는 실수가 몇 개 있다.</td>
+<td>기술적인 실수가 잦고, 그중 일부는 뜻을 흐린다.</td>
+<td>실수가 계속 있어서 뜻이 흐려지거나 글을 따라가기 어렵다.</td></tr>
+</table>
+</div>
+<h3>선생님 의견 <span class="en">Teacher Comment</span></h3>
+<ul>
+<li>기본적인 이야기 구성은 갖췄다. <span class="en">Basic narrative structure implemented</span></li>
+<li>복선은 깔았지만, 그 복선을 회수하는 것은 부족하다. <span class="en">Foreshadowing done; payoff not so much</span></li>
+<li>대화와 인물의 목소리가 살아 있다. <span class="en">Dialogue &amp; character voice is present</span></li>
+<li>감정을 불러일으키는 표현이 일부 있다. <span class="en">Some evocative language.</span></li>
+</ul>
+<h3>다음 목표 <span class="en">Action Target</span></h3>
+<ul>
+<li>열린 결말(클리프행어)로 끝나는 부분이 갑작스럽고 조금 불분명하다. <span class="en">Cliffhanger ending is sudden / a little unclear</span></li>
+<li>비유적 표현을 더 쓰면 글이 생기 있어질 것이다. 특히 글자 수에 아직 여유가 있으니 더 써도 된다! <span class="en">Could be livened up with some figurative language, especially when you still have word count to play with!</span></li>
+<li>문서에 단 구체적인 피드백도 같이 확인하기 바란다. <span class="en">See specific feedback in doc as well.</span></li>
+</ul>
+</div>
+
+<h2>8학년 성적표 <span class="en">Year 8 · Term 2 · Term 3</span></h2>
+<div class="note">성취도 = Achievement, 학습 태도 = ATL, EOY = 학년말 시험(End of Year)</div>
+<div class="scroll">
+<table>
+<tr><th rowspan="2">과목</th><th colspan="3">8학년 3학기 (T8-Term3)</th><th colspan="2">8학년 2학기 (T8-Term2)</th><th rowspan="2">선생님</th></tr>
+<tr><th>EOY</th><th>성취도</th><th>학습 태도</th><th>성취도</th><th>학습 태도</th></tr>
+<tr><td class="subj">수학 <span class="en">Mathematics</span></td><td class="g">A+</td><td class="g">A+</td><td class="g">1</td><td class="g">A*</td><td class="g">1</td><td>Sharthak Saiful Haque, Eng Yong Lim</td></tr>
+<tr><td class="subj">과학 <span class="en">Science</span></td><td class="g">C</td><td class="g">B</td><td class="g">1</td><td class="g">B</td><td class="g">2</td><td>Natalie Siew, Katherine Nicholls</td></tr>
+<tr><td class="subj">영어</td><td class="g"></td><td class="g"></td><td class="g"></td><td class="g"></td><td class="g"></td><td></td></tr>
+<tr><td class="subj">컴퓨터 <span class="en">Computer Science</span></td><td class="g"></td><td class="g">A*</td><td class="g">1</td><td class="g">A*</td><td class="g">2</td><td>Donald May</td></tr>
+<tr><td class="subj">역사 <span class="en">History</span></td><td class="g">C</td><td class="g">C</td><td class="g">1</td><td class="g">A</td><td class="g">1</td><td>Phillip Weatherup</td></tr>
+<tr><td class="subj">음악 <span class="en">Music</span></td><td class="g"></td><td class="g">A</td><td class="g">1</td><td class="g">A</td><td class="g">1</td><td>Yann Zhe Yau</td></tr>
+<tr><td class="subj">연극 <span class="en">Drama</span></td><td class="g"></td><td class="g">A+</td><td class="g">1</td><td class="g">A</td><td class="g">1</td><td>Heather Smith</td></tr>
+<tr><td class="subj">지리 <span class="en">Geography</span></td><td class="g">C</td><td class="g">B</td><td class="g">1</td><td class="g">A-</td><td class="g">1</td><td>Joseph Taylor</td></tr>
+<tr><td class="subj">미술 <span class="en">Art</span></td><td class="g"></td><td class="g">A</td><td class="g">1</td><td class="g">A-</td><td class="g">1</td><td>Ai Leen Tan</td></tr>
+<tr><td class="subj">체육 <span class="en">Physical Education</span></td><td class="g"></td><td class="g">B-</td><td class="g">2</td><td class="g">B</td><td class="g">2</td><td>Ross McManus, James Regan</td></tr>
+<tr><td class="subj">라살리안 교육 <span class="en">LEDU</span></td><td class="g"></td><td class="g">-</td><td class="g">1</td><td class="g">-</td><td class="g">1</td><td>Abram Michael De Leon</td></tr>
+<tr><td class="subj">의사소통 <span class="en">EAL Core</span></td><td class="g"></td><td class="g"></td><td class="g"></td><td>Listening: Competent+<br>Reading: Competent+<br>Writing: Competent+<br>Speaking: Reaching-</td><td class="g">1</td><td>Rebecca Merrett</td></tr>
+<tr><td class="subj">소설분석 <span class="en">EAL English</span></td><td class="g">B</td><td>Listening: Competent+<br>Reading: Competent+<br>Writing: Competent+<br>Speaking: Competent+</td><td class="g">1</td><td>Listening: Competent-<br>Reading: Competent-<br>Writing: Competent-<br>Speaking: Competent-</td><td class="g">2</td><td>Rick De Boer</td></tr>
+<tr><td class="subj">교과지원 <span class="en">EAL Support</span></td><td class="g"></td><td class="g"></td><td class="g">2</td><td class="g"></td><td class="g">2</td><td>Jeremy Bong</td></tr>
+<tr><td class="subj">중국어 <span class="en">Mandarin</span></td><td class="g">N/A</td><td class="g">B</td><td class="g">2</td><td class="g"></td><td class="g"></td><td>Lee Ee Tan</td></tr>
+</table>
+</div>
+
+<h2>8학년 선생님 답장 <span class="en">Teacher replies</span></h2>
+
+<div class="box">
+<b>과학 — Natalie Siew · Katherine Nicholls 선생님</b>
+<p>Kate 선생님께서 언급하셨듯이, 서정이는 매우 집중력이 높은 학생입니다. 학습 태도에서 "1점"으로 나아가기 위해, 저는 서정이가 소그룹 토론에 더 적극적으로 참여하고, 수업 중 궁금한 점이 생길 때마다 편안하게 질문할 것을 권장합니다.</p>
+<p><b>성적 향상을 위한 권장 사항</b><br>서정이가 성적을 올리는 데 도움을 주기 위해, 저는 1학기(Term 1)에 놓쳤던 주제들을 훑어보는 데 시간을 할애할 것을 제안합니다.</p>
+<ul>
+<li>플래시카드 &amp; 퀴지즈(Quizizz): 이것들은 과학 전문 용어를 마스터하는 데 매우 훌륭한 도구입니다. 제가 정기적으로 구글 클래스룸(Google Classroom)에 서정이가 사용할 수 있도록 퀴지즈 링크를 게시하고 있습니다.</li>
+<li>학습 교재(Learner’s Book): 각 단원 끝에 있는 "End of Chapter" 문제들을 풀어보는 것은 다가올 주제들을 미리 예습하고 저희의 평가 방식(시험 스타일)에 대비하는 아주 좋은 방법입니다.</li>
+<li>8학년 전체 복습: 기말고사는 8학년 전체 교육 과정을 다루기 때문에, 서정이는 제가 구글 클래스룸에 올려둔 슬라이드 자료들을 활용해 1단원(Chapter 1)을 다시 살펴봐야 합니다.</li>
+</ul>
+<p>저는 서정이의 성실한 노력에 매우 만족하고 있으며, 다음 학기에 서정이의 자신감이 커지는 모습을 보기를 기대하고 있습니다.</p>
+<p>저는 일주일에 한 번 서정이의 과학을 가르치고 있지만, 이 과목의 주 담당 선생님은 Ms Nat입니다. Ms Nat 선생님이 서정이와 더 많은 수업을 진행하며, 성적표 작성과 PTC(학부모 상담)도 담당하고 계십니다. 그럼에도 불구하고 서정이를 알아가기 시작하게 되어 기쁩니다. 제 수업에서 서정이는 저나 학급의 다른 친구들에게 자신의 생각을 공유하는 데 있어 여전히 자신감을 찾아가는 과정에 있습니다. 개별 과제를 수행할 때 서정이는 정말 집중력이 좋으며 자신이 가진 최선의 능력을 다해 임합니다. 자신감이 필요한 일이라는 점은 이해하지만, 소그룹 토론에 더 많이 참여하고 나아가 학급 전체 앞에서 질문에 자진해서 답변하는 모습을 볼 수 있다면 정말 좋을 것 같습니다.</p>
+</div>
+
+<div class="box">
+<b>음악 — Yann Zhe Yau 선생님</b>
+<p>서정(Amy)이가 음악 수업을 즐기고 있다는 소식을 들어 기쁩니다. 서정이가 선택한 악기는 피아노이며, 리듬에 대한 좋은 이해도와 음정(pitch)을 읽는 능력을 보여주고 있습니다.</p>
+<p>서정이는 음악에 있어서 안정감(stability), 명확한 표현(articulation), 그리고 강약 조절(dynamic)을 보완할 필요가 있으며, 음악을 더 많이 표현할 수 있는 능력이 있다는 것을 보여주기 위해 대비(contrast)를 만들어내야 합니다. 음악의 스타일은 우리가 현재 집중하고 있는 부분이며, 만약 서정이가 엇박자(offbeat)의 특징과 뒤에 깔리는 미묘한 액센트(subtle accents)들을 잘 살려낼 수 있다면 더 높은 수준의 음악적 이해도에 도달할 수 있을 것입니다.</p>
+<p><b>핵심 내용</b> — 기초적인 리듬과 악보 읽기 능력은 좋다. 더 높은 점수(레벨)를 받으려면:</p>
+<ul>
+<li>안정감과 명확한 타건(Articulation): 소리를 분명하게 내는 것.</li>
+<li>강약의 대비(Dynamic Contrast): 아주 작게 혹은 아주 크게 연주하며 감정을 표현하는 것.</li>
+<li>엇박자(Offbeat): 정박자가 아닌 엇박의 느낌을 살리는 것.</li>
+<li>미묘한 강조(Subtle Accents): 세밀한 부분의 강조점을 살려 스타일을 완성하는 것.</li>
+</ul>
+</div>
+
+<div class="box">
+<b>지리 — Joseph Taylor 선생님</b>
+<p>서정(Amy)이는 새로운 국제학교 환경에 아주 편안하게 잘 정착한 것으로 보이며, 지리 수업을 즐기고 있다는 소식을 들어 기쁩니다.</p>
+<p><b>앞으로 집중해야 할 부분들</b></p>
+<ul>
+<li>지리 전문 용어(Tier 3 Geography vocabulary)의 어휘 및 정의: 일반적인 단어가 아닌 지리 교과 특유의 전문 용어들을 익히는 것이 중요합니다.</li>
+<li>상세한 묘사와 설명: 지리 전문 용어와 함께 구체적인 근거(고유 명사와 숫자 데이터 등)를 활용하여 답안을 작성하는 연습이 필요합니다.</li>
+<li>지리적 기술(Geographical skills) 연습: 격자 참조(Grid references) 읽기, 지도 및 그래프 분석하기 등의 기술을 숙달해야 합니다.</li>
+<li>시험 상황에서의 지시어(Command words) 이해: 시험 문제에서 요구하는 지시어(설명하라, 묘사하라 등)의 의미를 정확히 파악하고 그에 맞춰 답하는 능력을 키워야 합니다.</li>
+</ul>
+</div>
+
+<script src="studylog.js"></script>
+</body>
+</html>
