@@ -29,6 +29,15 @@
  a{color:#111;font-weight:700}
  ul{margin:6px 0;padding-left:22px}
  .rub td{font-size:14px}
+ @media (max-width:700px){
+  .rub tr:first-child{display:none}
+  .rub,.rub tbody,.rub tr,.rub td{display:block;width:auto}
+  .rub{background:none}
+  .rub tr{border:1px solid #ddd;border-radius:10px;margin:10px 0;background:#fff;overflow:hidden}
+  .rub td{border:none;border-top:1px solid #eee}
+  .rub td.subj{border-top:none;background:#f1f1ef}
+  .rub td[data-b]::before{content:attr(data-b);display:block;font-size:12px;color:#555;font-weight:800}
+ }
  .note{font-size:13px;color:#555;margin:6px 2px}
 </style>
 </head>
@@ -43,9 +52,9 @@
 <h3>영어 — 시험 결과</h3>
 <div class="scroll">
 <table>
-<tr><th>시험</th><th>점수</th><th>등급</th><th>보기</th></tr>
-<tr><td>영어 CA1 읽기 시험 (The Art of Storytelling)</td><td class="g">8 / 16</td><td class="g">C</td><td><a href="y9e_result.html">시험 결과 페이지</a></td></tr>
-<tr><td>영어 쓰기 공통평가 — The Art of Storytelling Writing</td><td class="g">15 / 25</td><td class="g">B</td><td>아래에 채점표</td></tr>
+<tr><th>시험</th><th>점수</th><th>등급</th></tr>
+<tr><td>영어 CA1 읽기 시험 (The Art of Storytelling)<br><a href="y9e_result.html">시험 결과 페이지</a></td><td class="g">8 / 16</td><td class="g">C</td></tr>
+<tr><td>영어 쓰기 공통평가 — The Art of Storytelling Writing</td><td class="g">15 / 25</td><td class="g">B</td></tr>
 </table>
 </div>
 
@@ -59,35 +68,35 @@
 <table class="rub">
 <tr><th>평가항목</th><th>21~25점</th><th>16~20점</th><th>11~15점</th><th>6~10점</th><th>1~5점</th></tr>
 <tr><td class="subj">W1 내용<br><span class="en">Content</span></td>
-<td>내용이 복합적이고 흥미로우며 효과적이다. 아이디어가 상상력 있고 목적이 분명하며, 강한 인상을 주도록 공들여 짜였다.</td>
-<td>내용이 잘 전개되고 흥미롭다. 아이디어에 목적이 있고 대체로 효과적이다.</td>
-<td><span class="hl">내용이 주제에 맞고 어느 정도 전개된다. 아이디어는 대체로 분명하지만 깊이가 부족할 수 있다.</span></td>
-<td>내용이 단순하고 짧게 전개된다. 아이디어가 단순하거나 뻔하다.</td>
-<td>내용이 단순하거나 불분명하다. 아이디어가 덜 전개됐거나 반복된다.</td></tr>
+<td data-b="21~25점">내용이 복합적이고 흥미로우며 효과적이다. 아이디어가 상상력 있고 목적이 분명하며, 강한 인상을 주도록 공들여 짜였다.</td>
+<td data-b="16~20점">내용이 잘 전개되고 흥미롭다. 아이디어에 목적이 있고 대체로 효과적이다.</td>
+<td data-b="11~15점"><span class="hl">내용이 주제에 맞고 어느 정도 전개된다. 아이디어는 대체로 분명하지만 깊이가 부족할 수 있다.</span></td>
+<td data-b="6~10점">내용이 단순하고 짧게 전개된다. 아이디어가 단순하거나 뻔하다.</td>
+<td data-b="1~5점">내용이 단순하거나 불분명하다. 아이디어가 덜 전개됐거나 반복된다.</td></tr>
 <tr><td class="subj">W2 구성<br><span class="en">Structure</span></td>
-<td>구성이 탄탄하고 의도한 효과를 위해 세심하게 짜였다. 줄거리가 잘 전개되고 이야기의 흐름이 뚜렷하다.</td>
-<td>구성이 잘 짜였고, 효과를 노린 선택이 일부 보인다. 줄거리가 분명하고 잘 진행된다.</td>
-<td><span class="hl">구성이 무난하게 짜였다. 줄거리가 앞뒤로 잘 이어지고, 이야기 요소(배경, 인물 등)를 어느 정도 활용했다.</span></td>
-<td>구성이 대체로 정리돼 있다. 줄거리가 단순하고, 구성이나 이야기 전개에 대한 인식이 부족하다.</td>
-<td>구성이 부분적으로만 정리돼 있다. 줄거리가 불분명하거나 느슨하게 이어지거나 헷갈린다.</td></tr>
+<td data-b="21~25점">구성이 탄탄하고 의도한 효과를 위해 세심하게 짜였다. 줄거리가 잘 전개되고 이야기의 흐름이 뚜렷하다.</td>
+<td data-b="16~20점">구성이 잘 짜였고, 효과를 노린 선택이 일부 보인다. 줄거리가 분명하고 잘 진행된다.</td>
+<td data-b="11~15점"><span class="hl">구성이 무난하게 짜였다. 줄거리가 앞뒤로 잘 이어지고, 이야기 요소(배경, 인물 등)를 어느 정도 활용했다.</span></td>
+<td data-b="6~10점">구성이 대체로 정리돼 있다. 줄거리가 단순하고, 구성이나 이야기 전개에 대한 인식이 부족하다.</td>
+<td data-b="1~5점">구성이 부분적으로만 정리돼 있다. 줄거리가 불분명하거나 느슨하게 이어지거나 헷갈린다.</td></tr>
 <tr><td class="subj">W3 어휘와 문장 구조<br><span class="en">Vocabulary &amp; Sentence Structure</span></td>
-<td>어휘가 정확하고 잘 골랐다. 문장 구조가 다양하고 효과를 위해 공들여 썼다.</td>
-<td>어휘가 대체로 정확하다. 다양한 문장 구조를 대체로 효과 있게 썼다.</td>
-<td><span class="hl">정확한 어휘를 일부 썼다.</span> 문장 구조에 어느 정도 변화가 있고 가끔 효과가 있다.</td>
-<td>어휘가 단순하다. <span class="hl">문장 구조가 대부분 단순하고 변화가 적다.</span></td>
-<td>어휘와 문장 구조가 제한적이거나 부정확하다.</td></tr>
+<td data-b="21~25점">어휘가 정확하고 잘 골랐다. 문장 구조가 다양하고 효과를 위해 공들여 썼다.</td>
+<td data-b="16~20점">어휘가 대체로 정확하다. 다양한 문장 구조를 대체로 효과 있게 썼다.</td>
+<td data-b="11~15점"><span class="hl">정확한 어휘를 일부 썼다.</span> 문장 구조에 어느 정도 변화가 있고 가끔 효과가 있다.</td>
+<td data-b="6~10점">어휘가 단순하다. <span class="hl">문장 구조가 대부분 단순하고 변화가 적다.</span></td>
+<td data-b="1~5점">어휘와 문장 구조가 제한적이거나 부정확하다.</td></tr>
 <tr><td class="subj">W4 어조와 말투<br><span class="en">Tone &amp; Register</span></td>
-<td>어조가 잘 판단됐고 일관되며, 이야기 상황에 아주 잘 맞는다.</td>
-<td><span class="hl">어조가 대체로 일관되고 상황에 맞다.</span></td>
-<td>어조가 가끔은 맞지만 흔들릴 수 있다. 이야기 화자의 목소리를 어느 정도 인식하고 있다.</td>
-<td>어조가 단순하거나 일반적이다. 상황이나 의도한 효과에 대한 인식이 부족하다.</td>
-<td>어조가 불분명하거나 맞지 않는다. 이야기 화자의 목소리가 거의 느껴지지 않는다.</td></tr>
+<td data-b="21~25점">어조가 잘 판단됐고 일관되며, 이야기 상황에 아주 잘 맞는다.</td>
+<td data-b="16~20점"><span class="hl">어조가 대체로 일관되고 상황에 맞다.</span></td>
+<td data-b="11~15점">어조가 가끔은 맞지만 흔들릴 수 있다. 이야기 화자의 목소리를 어느 정도 인식하고 있다.</td>
+<td data-b="6~10점">어조가 단순하거나 일반적이다. 상황이나 의도한 효과에 대한 인식이 부족하다.</td>
+<td data-b="1~5점">어조가 불분명하거나 맞지 않는다. 이야기 화자의 목소리가 거의 느껴지지 않는다.</td></tr>
 <tr><td class="subj">W5 철자, 문장부호, 문법<br><span class="en">Spelling, Punctuation &amp; Grammar</span></td>
-<td><span class="hl">철자, 문장부호, 문법이 거의 항상 정확하다. 실수가 있더라도 사소하고 뜻을 흐리지 않는다.</span></td>
-<td>철자, 문장부호, 문법이 대체로 정확하다. 가끔 실수가 있지만 이해에 지장이 없다.</td>
-<td>대체로 정확하지만 철자, 문장부호, 문법에 눈에 띄는 실수가 몇 개 있다.</td>
-<td>기술적인 실수가 잦고, 그중 일부는 뜻을 흐린다.</td>
-<td>실수가 계속 있어서 뜻이 흐려지거나 글을 따라가기 어렵다.</td></tr>
+<td data-b="21~25점"><span class="hl">철자, 문장부호, 문법이 거의 항상 정확하다. 실수가 있더라도 사소하고 뜻을 흐리지 않는다.</span></td>
+<td data-b="16~20점">철자, 문장부호, 문법이 대체로 정확하다. 가끔 실수가 있지만 이해에 지장이 없다.</td>
+<td data-b="11~15점">대체로 정확하지만 철자, 문장부호, 문법에 눈에 띄는 실수가 몇 개 있다.</td>
+<td data-b="6~10점">기술적인 실수가 잦고, 그중 일부는 뜻을 흐린다.</td>
+<td data-b="1~5점">실수가 계속 있어서 뜻이 흐려지거나 글을 따라가기 어렵다.</td></tr>
 </table>
 </div>
 <h3>선생님 의견 <span class="en">Teacher Comment</span></h3>
