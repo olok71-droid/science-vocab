@@ -688,25 +688,23 @@ body.in-subject .cn-card { display: none; }
       <span class="cat-name">IGCSE 과목 선택</span>
       <span class="cat-sub">IGCSE Options</span>
     </button>
-    <!-- 2026-11-16 대표님 지시: IGCSE 과목 선택 바로 옆 '성적표'. 누르면 grades.html -->
-    <button class="cat-btn" data-cat="grades" onclick="location.href='grades.html'">
-      <span class="cat-emoji">📊</span>
-      <span class="cat-name">성적표</span>
-      <span class="cat-sub">Report &amp; Results</span>
-    </button>
     <!-- 2026-11-09 대표님 지시: 입시 정보 칸 하나. 누르면 ipsi/index.html, 요청마다 자료 추가 -->
     <button class="cat-btn" data-cat="ipsi" onclick="location.href='ipsi/index.html'">
       <span class="cat-emoji">🎓</span>
       <span class="cat-name">대학 입시</span>
       <span class="cat-sub">진학·대학·영주권</span>
     </button>
-    <!-- 2026-11-14 대표님 지시: 설명회·행사는 대학 입시 밖에, 이름과 날짜만 첫 화면에 -->
-    <div style="grid-column:1/-1;background:#fff;border:1px solid #ddd;border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.7">
-      <b>📅 설명회·행사</b><br>
-      <a href="ipsi/monash_focus_day.html" style="color:#111">모나쉬대학교 포커스데이 · 2026년 11월 14일(토)</a><br>
-      말레이시아한국국제학교 진로진학 설명회 · 2026년 11월 20일(금)<br>
-      박람회 + 대학 진학 설명회 · 2027년 2월 20일(토)
-    </div>
+    <!-- 2026-11-16 대표님 지시: 설명회·행사도 아이콘으로(누르면 ipsi/events.html, 이름·날짜). 성적표는 맨 마지막 -->
+    <button class="cat-btn" data-cat="events" onclick="location.href='ipsi/events.html'">
+      <span class="cat-emoji">📅</span>
+      <span class="cat-name">설명회·행사</span>
+      <span class="cat-sub">Events</span>
+    </button>
+    <button class="cat-btn" data-cat="grades" onclick="location.href='grades.html'">
+      <span class="cat-emoji">📊</span>
+      <span class="cat-name">성적표</span>
+      <span class="cat-sub">Report &amp; Results</span>
+    </button>
   </div>
 
   <div class="cat-pane" id="cat-y9sci">
