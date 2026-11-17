@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>9학년 수학 CA2 · 시험 문제 + 풀이</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--pink:#db2777;--purple:#6d5dfc;
+--text:#243b6b;--strong:#16223f;--muted:#6b7a99;--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;flex-wrap:wrap;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.shot{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;margin:10px 0 14px;}
+.shot img{width:100%;height:auto;border-radius:8px;display:block;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.8;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+.chk{display:inline-block;font-size:11.5px;font-weight:800;color:#b45309;background:#fef3c7;border:1px solid #fcd34d;border-radius:6px;padding:1px 6px;}
+.tbl{border-collapse:collapse;margin:6px 0;font-size:13px;}
+.tbl td,.tbl th{border:1px solid rgba(36,59,107,.2);padding:4px 8px;text-align:center;}
+.tbl th{background:#e0f2f1;}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">📝</div>
+  <div class="header-text">
+    <div class="header-title">CA2 시험 문제</div>
+    <div class="header-sub">Continuous Assessment 2 · 계산·방정식·각·통계·백분율·한계값·부등식·작도 · 문제 + 풀이</div>
+  </div>
+</header>
+<div class="wrap">
+<div class="sec">
+<div class="sec-head"><span class="sec-no">S</span><span class="sec-title">Starter</span><span class="sec-ko">생각 퍼즐</span></div>
+<div class="q">
+  <div class="q-title">A 30 year old man married a 25 year old woman. She died at age 50 and her husband was so devastated that he cried for years. Ten years after he stopped crying, he died. If he had lived to be 80. How many years was he a widower?</div>
+  <div class="shot"><img src="assets/y9m/ca2/starter.png" alt="CA2 starter"></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>25 years</b>
+    <span class="how">① 아내는 25살에 결혼해 50살에 죽었다 → 결혼 생활 = 50 − 25 = 25년<br>② 그동안 남편도 25살을 더 먹었다 → 아내가 죽을 때 남편 나이 = 30 + 25 = 55살<br>③ <b>홀아비 widower</b> = 아내가 죽은 뒤 혼자 사는 남자 → 55살부터 죽은 80살까지<br>④ 80 − 55 = 25년<br>⑤ '울었던 기간', '10년 뒤에 죽었다'는 답을 헷갈리게 하려는 정보다 — 필요 없는 정보 irrelevant information 를 걸러내는 게 핵심</span>
+  </div></details>
+</div>
+</div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">1</span><span class="sec-title">Calculation and equations</span><span class="sec-ko">계산 · 방정식 · 부등식</span></div>
+<div class="q">
+  <div class="q-title">Q1(a). Work out 0.057 × 10³ <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>57</b>
+    <span class="how">① 10³ = 1000 → 1000 을 곱하면 소수점 decimal point 이 오른쪽으로 3칸 간다<br>② 0.057 → 0.57 → 5.7 → 57</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q1(b). Work out 4.8 ÷ 0.06 <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>80</b>
+    <span class="how">① 소수로 나눌 때는 나누는 수 divisor 를 정수로 만든다 → 두 수에 모두 100 을 곱한다<br>② 4.8 ÷ 0.06 = 480 ÷ 6 = 80<br>③ 확인 check: 80 × 0.06 = 4.8 ✓<br>④ 1 보다 작은 수로 나누면 답이 더 커진다</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2(a). Solve 5(x − 2) = 25 <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x = 7</b>
+    <span class="how">① 양변을 5 로 나눈다: x − 2 = 5<br>② 양변에 2 를 더한다: x = 7<br>③ 확인 check: 5(7 − 2) = 5 × 5 = 25 ✓</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q2(b). Solve 3x + 2 &lt; 14 <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x &lt; 4</b>
+    <span class="how">① <b>부등식 inequality</b> 도 방정식처럼 양변에 같은 계산을 한다<br>② 양변에서 2 를 뺀다: 3x &lt; 12<br>③ 양변을 3 으로 나눈다: x &lt; 4<br>④ 답에 부등호를 꼭 남긴다 — 'x = 4' 라고 쓰면 틀린다<br>⑤ 음수 negative number 로 곱하거나 나눌 때만 부등호 방향이 바뀐다 (여기는 3 이라 안 바뀐다)</span>
+  </div></details>
+</div>
+</div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">2</span><span class="sec-title">Geometry</span><span class="sec-ko">각 · 다각형 · 피타고라스</span></div>
+<div class="q">
+  <div class="q-title">Q3(a). In the diagram, AOB is a straight line. Find x. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <div class="shot" style="max-width:420px"><img src="assets/y9m/ca2/q03_fig.png" alt="CA2 Q3 diagram"></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x = 55</b>
+    <span class="how">① <b>직선 위의 각 angles on a straight line</b> 의 합 = 180°<br>② 125 + x = 180<br>③ x = 180 − 125 = 55</span>
+    <div class="shot"><img src="assets/y9m/ca2/t_q03.png" alt="CA2 Q3 선생님 풀이"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q3(b). Find the size of each interior angle of a regular pentagon. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>108°</b>
+    <span class="how">① <b>정오각형 regular pentagon</b> = 변 n = 5 개, 변과 각이 모두 같다<br>② 외각 exterior angle = 360 ÷ 5 = 72°<br>③ 내각 interior angle = 180 − 72 = 108° (내각 + 외각 = 180°)<br>④ 다른 방법: 내각의 합 = (5 − 2) × 180 = 540° → 540 ÷ 5 = 108°</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q7(a). A regular polygon has an exterior angle of 24°. Find its number of sides. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>15</b>
+    <span class="how">① 정다각형 regular polygon 의 <b>외각 exterior angle 을 모두 더하면 항상 360°</b><br>② 변의 수 number of sides = 360 ÷ 외각 = 360 ÷ 24 = 15</span>
+    <div class="shot"><img src="assets/y9m/ca2/t_q07.png" alt="CA2 Q7 선생님 풀이"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q7(b). Calculate each interior angle. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>156°</b>
+    <span class="how">① 내각 interior angle 과 외각 exterior angle 은 한 직선 위에 있으므로 더하면 180°<br>② 내각 = 180 − 24 = 156°<br>③ 확인 check: 15각형 내각의 합 = (15 − 2) × 180 = 2340°, 2340 ÷ 15 = 156° ✓</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q7(c). A separate right-angled triangle has perpendicular sides of 5 cm and 12 cm. Calculate its hypotenuse. <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>13 cm</b>
+    <span class="how">① <b>피타고라스 정리 Pythagoras' theorem</b>: a² + b² = c² (c = 빗변 hypotenuse, 직각의 맞은편 가장 긴 변)<br>② 5² + 12² = 25 + 144 = 169<br>③ c = √169 = 13 cm<br>④ 5, 12, 13 은 외워 두면 좋은 피타고라스 수 Pythagorean triple 이다 (3, 4, 5 도 있다)</span>
+  </div></details>
+</div>
+</div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">3</span><span class="sec-title">Statistical investigations</span><span class="sec-ko">조사 · 편향 · 표본</span></div>
+<div class="q">
+  <div class="q-title">Q4. A school wants to investigate how Year 9 pupils travel to school. A teacher surveys only pupils waiting for the school bus.<br>(a) State one piece of data that the survey should collect. <span style="font-weight:600;color:var(--muted)">(1)</span><br>(b) Explain why the teacher’s choice of students is biased. <span style="font-weight:600;color:var(--muted)">(1)</span><br>(c) Suggest one change that would make the sample more representative. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답 (예시):<br>(a) <b>The method of travel to school</b> (e.g. bus, car, walk, bike). 또는 the time taken / distance to school.<br>(b) <b>Pupils waiting for the bus all travel by bus, so pupils who walk, cycle or come by car are left out.</b><br>(c) <b>Choose pupils at random from the whole of Year 9</b> (e.g. from the class lists), not only at the bus stop.
+    <span class="how">① (a) 조사 질문이 '어떻게 학교에 오나'이므로 모아야 할 자료 data 는 <b>교통수단 method of travel</b> 이다<br>② (b) <b>편향 biased</b> = 표본 sample 이 한쪽으로 치우쳐서 전체 population 를 대표하지 못하는 것. 버스 정류장에서만 물으면 거의 다 '버스'라고 답한다<br>③ (c) <b>대표성 있는 표본 representative sample</b> = 9학년 전체에서 골고루 뽑는 것 → 무작위 random 로 뽑거나 모든 반에서 뽑는다<br>④ 서술형은 '왜 치우쳤는지'를 구체적으로 쓴다 (버스 타는 학생만 → 다른 교통수단 학생이 빠진다)</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q11. A Year 9 population consists of 120 pupils in House Blue and 80 pupils in House Green. A proportionate sample of 30 pupils is needed for an investigation.<br>(a) Calculate how many pupils should be chosen from each group. <span style="font-weight:600;color:var(--muted)">(2)</span><br>(b) Suggest a way to select those pupils within each group so that selection bias is reduced. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: (a) <b>Blue 18, Green 12</b> &nbsp;/&nbsp; (b) 예시: <b>Number the pupils in each house and choose them at random</b> (e.g. random number generator or names drawn from a hat).
+    <span class="how">① <b>비례 표본 proportionate (stratified) sample</b> = 각 그룹 크기에 비례해서 뽑는다<br>② 전체 = 120 + 80 = 200 명<br>③ Blue: 120/200 × 30 = 18 명<br>④ Green: 80/200 × 30 = 12 명<br>⑤ 확인 check: 18 + 12 = 30 ✓<br>⑥ (b) 그룹 안에서는 <b>무작위 random</b> 로 뽑아야 선택 편향 selection bias 이 줄어든다 — 친한 친구나 손 든 학생만 고르면 안 된다</span>
+  </div></details>
+</div>
+</div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">4</span><span class="sec-title">Percentages and simultaneous equations</span><span class="sec-ko">백분율 변화 · 연립방정식</span></div>
+<div class="q">
+  <div class="q-title">Q5. A tablet costs RM800. Its price increases by 12%, then the new price is reduced by 10%.<br>(a) Calculate the final price. <span style="font-weight:600;color:var(--muted)">(2)</span><br>(b) Find the overall percentage change from the original price. State whether it is an increase or decrease. <span style="font-weight:600;color:var(--muted)">(1)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: (a) <b>RM806.40</b> &nbsp;/&nbsp; (b) <b>0.8% increase</b>
+    <span class="how">① 12% 오르면 112% → <b>곱하는 수 multiplier</b> 1.12<br>② 10% 내리면 90% → 곱하는 수 0.9<br>③ 800 × 1.12 = 896, 896 × 0.9 = 806.40 → RM806.40<br>④ 바뀐 양 = 806.40 − 800 = 6.40<br>⑤ <b>백분율 변화 percentage change</b> = 바뀐 양 ÷ 처음 값 × 100 = 6.4 ÷ 800 × 100 = 0.8%<br>⑥ 값이 올랐으니 증가 increase<br>⑦ 함정: 12% − 10% = 2% 가 아니다! 10% 는 '오른 뒤 가격'의 10% 라서 더 큰 금액이 빠진다 (1.12 × 0.9 = 1.008)</span>
+    <div class="shot"><img src="assets/y9m/ca2/t_q05.png" alt="CA2 Q5 선생님 풀이"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q6. Solve the simultaneous equations. <span style="font-weight:600;color:var(--muted)">(3)</span><br>2x + 3y = 17<br>3x − y = 9</div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>x = 4, y = 3</b>
+    <span class="how">① <b>소거법 elimination</b>: y 를 없애려고 두 번째 식에 3 을 곱한다 → 9x − 3y = 27<br>② 첫 번째 식과 더한다: (2x + 3y) + (9x − 3y) = 17 + 27 → 11x = 44<br>③ x = 4<br>④ 3x − y = 9 에 넣는다: 3(4) − y = 9 → 12 − y = 9 → y = 3<br>⑤ 확인 check: 2(4) + 3(3) = 8 + 9 = 17 ✓</span>
+    <div class="shot"><img src="assets/y9m/ca2/t_q06.png" alt="CA2 Q6 선생님 풀이"></div>
+  </div></details>
+</div>
+</div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">5</span><span class="sec-title">Bounds and inequalities</span><span class="sec-ko">한계값 · 부등식 문장제</span></div>
+<div class="q">
+  <div class="q-title">Q8. A rectangle has a measured length of 12.4 cm and width of 7.8 cm. Each measurement is correct to the nearest 0.1 cm.<br>(a) Write the lower and upper bounds for its true length, L. <span style="font-weight:600;color:var(--muted)">(1)</span><br>(b) Calculate the smallest possible perimeter of the rectangle. <span style="font-weight:600;color:var(--muted)">(1)</span><br>(c) A student says, “The true area is definitely at least 96.0 cm².” Use an appropriate bound to decide whether the student’s claim is guaranteed. Show your working. <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: (a) <b>12.35 ≤ L &lt; 12.45</b> &nbsp;/&nbsp; (b) <b>40.2 cm</b> &nbsp;/&nbsp; (c) <b>Not guaranteed</b> — smallest area = 12.35 × 7.75 = 95.7125 cm², which is less than 96.0 cm².
+    <span class="how">① 0.1 cm 단위로 반올림 → 반 칸 = 0.1 ÷ 2 = 0.05<br>② <b>하한 lower bound</b> = 12.4 − 0.05 = 12.35, <b>상한 upper bound</b> = 12.4 + 0.05 = 12.45<br>③ 폭 width 도 같은 방법: 7.75 ~ 7.85<br>④ (b) 가장 작은 둘레 perimeter = 하한끼리 → 2 × (12.35 + 7.75) = 2 × 20.1 = 40.2 cm<br>⑤ (c) '반드시 96 이상'인지 보려면 <b>가장 작은 넓이</b> 를 본다 = 하한 × 하한 = 12.35 × 7.75 = 95.7125 cm²<br>⑥ 95.7125 &lt; 96.0 이므로 실제 넓이가 96 보다 작을 수도 있다 → 학생 말은 보장되지 않는다 not guaranteed</span>
+    <div class="shot"><img src="assets/y9m/ca2/t_q08.png" alt="CA2 Q8 선생님 풀이"></div>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Q9. The sum of three consecutive whole numbers is greater than 63 but no more than 78. Find all possible values of the largest number. Show your working using inequalities. <span style="font-weight:600;color:var(--muted)">(4)</span></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>23, 24, 25, 26, 27</b>
+    <span class="how">① <b>연속하는 세 정수 three consecutive whole numbers</b> = n, n + 1, n + 2<br>② 합 = n + (n + 1) + (n + 2) = 3n + 3<br>③ 'greater than 63' → &gt; 63, '<b>no more than</b> 78' → ≤ 78 (78 도 된다!)<br>④ 63 &lt; 3n + 3 ≤ 78<br>⑤ 3 을 뺀다: 60 &lt; 3n ≤ 75<br>⑥ 3 으로 나눈다: 20 &lt; n ≤ 25 → n = 21, 22, 23, 24, 25<br>⑦ 문제는 <b>가장 큰 수 largest number = n + 2</b> 를 묻는다 → 23, 24, 25, 26, 27<br>⑧ 확인 check: n = 21 → 21 + 22 + 23 = 66 &gt; 63 ✓, n = 25 → 25 + 26 + 27 = 78 ≤ 78 ✓, n = 20 → 63 은 63 보다 크지 않아서 ✗</span>
+    <div class="shot"><img src="assets/y9m/ca2/t_q09.png" alt="CA2 Q9 선생님 풀이"></div>
+  </div></details>
+</div>
+</div>
+
+<div class="sec">
+<div class="sec-head"><span class="sec-no">6</span><span class="sec-title">Construction</span><span class="sec-ko">자와 컴퍼스 작도</span></div>
+<div class="q">
+  <div class="q-title">Q10. Using a ruler and compasses only, construct ray OB above the printed ray OA so that ∠AOB = 30°. Leave your construction arcs clearly visible. <span style="font-weight:600;color:var(--muted)">(2)</span></div>
+  <div class="shot" style="max-width:520px"><img src="assets/y9m/ca2/q10_fig.png" alt="CA2 Q10 ray OA"></div>
+  <details><summary>풀이</summary><div class="ans">
+    답: <b>60° 를 먼저 만들고, 그 각을 이등분 bisect 해서 30° 를 만든다.</b>
+    <span class="how">① <b>60° 만들기</b>: 컴퍼스 compasses 를 O 에 꽂고 호 arc 를 그려 OA 와 만나는 점을 P 라 한다<br>② 컴퍼스 폭을 그대로 두고 P 에 꽂아 첫 호와 만나는 점 Q 를 표시한다 → O, P, Q 는 정삼각형 equilateral triangle 이라 ∠AOQ = 60°<br>③ <b>각의 이등분 angle bisector</b>: P 에 꽂고 호, 같은 폭으로 Q 에 꽂고 호 → 두 호가 만나는 점 R<br>④ 자 ruler 로 O 에서 R 을 지나는 반직선 ray 을 긋는다 → 이것이 OB, ∠AOB = 30°<br>⑤ 호 construction arcs 를 지우지 않는다 — 지우면 점수를 못 받는다<br>⑥ 각도기 protractor 는 쓰면 안 된다 (ruler and compasses only)</span>
+  </div></details>
+</div>
+</div>
+</div>
+<script>
+/* 단원 페이지 안(iframe)에서 열릴 때는 이 페이지의 제목 줄을 숨긴다 — 단원 제목이 위에 이미 있어 두 번 나오기 때문이다. */
+if (window.self !== window.top) {
+  document.documentElement.classList.add('embedded');
+  var _h = document.querySelector('header');
+  if (_h) _h.style.display = 'none';
+}
+</script>
+<script src="studylog.js"></script>
+</body>
+</html>
