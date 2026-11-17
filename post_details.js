@@ -58,19 +58,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "중국어 (Ying Ying老师)|Lesson 4 中文短期培训班 Quizlet": {
-  "en": "Lesson 4 中文短期培训班 Quizlet",
-  "ko": "4과 중국어 단기 연수반(中文短期培训班) 퀴즐렛(Quizlet)",
-  "files": [
-   {
-    "name": "Y9 Unit 1 Lesson 4 中文短期培训班 Short-term Chinese course Flashcards | Quizlet",
-    "kind": "web",
-    "url": "https://quizlet.com/my/1227086408/y9-unit-1-lesson-4-%E4%B8%AD%E6%96%87%E7%9F%AD%E6%9C%9F%E5%9F%B9%E8%AE%AD%E7%8F%AD-short-term-chinese-course-flash-cards/?i=5znqnt&x=1qqW",
-    "local": null
-   }
-  ],
-  "at": "2026-10-26"
- },
  "휴머니티 (Mr Lawrence)|Lessons 1-5 of WW1": {
   "en": "Lessons 1-5 of WW1",
   "ko": "제1차 세계대전(WW1) 1~5차시 수업",
@@ -570,114 +557,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-27"
  },
- "튜터 (Mr Cassels)|I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC Int": {
-  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
-  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 정보를 알려드리게 되어 기쁩니다.\n\n'갈등 속의 사람과 지구(People and Planet in Conflict)'를 주제로 한 이 대회는 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 누구나 참가할 수 있습니다.  에세이 제목(essay titles), 분량(length), 제출 방법(submission details)의 자세한 내용은 첨부 파일에 있습니다. \n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n문의: Karina Mariadas, k.mariadas@elc.edu.my",
-  "files": [
-   {
-    "name": "k.mariadas@elc.edu.my",
-    "kind": "web",
-    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
-    "local": null
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
-    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT_BFx_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
-    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-27"
- },
- "튜터 (Mr Cassels)|Rewards between 21st September and today!": {
-  "en": "Rewards between 21st September and today! \nThe next Rewards Slips for Skip the Line or Lift Pass will be handed out on Wednesday 11th and Thursday 12th November for the top students.",
-  "ko": "9월 21일부터 오늘까지의 보상(Rewards)! \n줄 서지 않기(Skip the Line) 또는 엘리베이터 이용권(Lift Pass)을 받을 수 있는 다음 보상 쪽지(Rewards Slips)는 11월 11일 수요일과 11월 12일 목요일에 우수 학생(top students)에게 나눠 줄 예정입니다.",
-  "files": [
-   {
-    "name": "21-Sep-2026 - 27-Oct-2026.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8/view?usp=classroom_web",
-    "local": "post_files/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/125bFUl0Ii8utTT_fb8LyQkE3ry9B76w8_p3.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-27"
- },
- "음악 (Mr Everett)|FOBISIA Online Guitar Solo Competition": {
-  "en": "FOBISIA Online Guitar Solo Competition\nStudents can register your interest and submit your performance details to represent SJIIS in the FOBISIA Online Guitar Solo competition.\n\nComplete attached form as soon as you decide you would like to compete.\n\nPerformance Video Deadline: Monday 9th November 2026\n\nSubmissions can be of any genre. \n\nMax length 4mins",
-  "ko": "FOBISIA 온라인 기타 독주 대회(FOBISIA Online Guitar Solo Competition)\n학생들은 FOBISIA 온라인 기타 독주(guitar solo) 대회에 SJIIS 대표로 나가고 싶다는 뜻을 등록하고 연주(performance) 세부 정보를 제출할 수 있습니다.\n\n대회에 나가기로 정하면 바로 첨부된 양식을 작성하세요.\n\n연주 영상 마감(Performance Video Deadline): 2026년 11월 9일 월요일\n\n어떤 장르(genre)로든 제출할 수 있습니다. \n\n최대 길이 4분",
-  "files": [
-   {
-    "name": "Google Forms: Sign-in",
-    "kind": "form",
-    "url": "https://forms.gle/YvhH4JnJF1A251Wx5",
-    "local": null
-   },
-   {
-    "name": "FOBISIA Online Guitar Solo comp criteria.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1cWz8kWvWuMAHG_hAyAWt5KwXgu46EGdL/view?usp=classroom_web",
-    "local": "post_files/1cWz8kWvWuMAHG_hAyAWt5KwXgu46EGdL.png",
-    "pages": [
-     {
-      "src": "assets/pages/music/FOBISIA_Online_Guitar_Solo_comp_criteria.png",
-      "tr": "<b>평가 기준(Criteria)</b> | <b>점수(Marks)</b> | <b>심사위원이 보는 것(What Judges Look For)</b><br><b>기술적 통제(Technical Control)</b> | /10 | 정확성(accuracy), 유창성(fluency), 협응(coordination), 음색 조절(tone control), 아티큘레이션(articulation)<br><b>음악성과 표현(Musicality &amp; Expression)</b> | /10 | 셈여림(dynamics), 프레이징(phrasing), 감정(emotion), 전달력(communication), 양식에 대한 감각(stylistic sensitivity)<br><b>리듬과 타이밍(Rhythm &amp; Timing)</b> | /10 | 박(pulse), 그루브(groove), 안정성(stability), 반주 음원을 쓴다면 반주 음원과의 합주(ensemble with backing track if used)<br><b>양식 이해(Stylistic Understanding)</b> | /10 | 고른 장르·양식에 대한 이해(understanding of the chosen genre/style)와 알맞은 해석(appropriate interpretation)<br><b>연주와 무대 표현(Performance &amp; Presentation)</b> | /10 | 자신감(confidence), 무대 장악력(stage presence), 준비(preparation), 전문가다운 태도(professionalism)",
-      "note": "아티큘레이션(articulation)은 음을 끊거나 이어서 연주하는 방식이고, 프레이징(phrasing)은 음악을 문장처럼 자연스러운 덩어리로 나누어 연주하는 것이다. 다섯 항목이 각각 10점이므로 총점은 50점이다."
-     }
-    ]
-   },
-   {
-    "name": "FOBISIA Online Guitar Solo.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7/view?usp=classroom_web",
-    "local": "post_files/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1L3rU4GJFdhXzs0ucMOTxEofnvsDRIDn7_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-27"
- },
  "중국어 (Ying Ying老师)|Lesson 4 Grammar Slides (既...又....、除此以外, 还）": {
   "en": "Lesson 4 Grammar Slides (既...又....、除此以外, 还）",
   "ko": "4과(Lesson 4) 문법(grammar) 슬라이드 (既...又....、除此以外, 还）",
@@ -821,12 +700,6 @@ window.POST_DETAILS = {
  "영어 (Mr Glanz)|NARRATIVE COMMON ASSESSMENT": {
   "en": "NARRATIVE COMMON ASSESSMENT\nPlease type your final copy of your story directly into the attached doc. Make sure you click submit / turn in before 3:30pm, or I will not be able to mark it.",
   "ko": "서사문 공통 평가(NARRATIVE COMMON ASSESSMENT)\n이야기의 최종본(final copy)을 첨부된 문서에 바로 입력하세요. 오후 3시 30분 전에 반드시 제출(submit / turn in)을 누르세요. 그렇지 않으면 채점할 수 없습니다.",
-  "files": [],
-  "at": "2026-11-01"
- },
- "수학 (Mr Anan)|Dear Students, as homework this week, please complete the revision worksheet given in Fridays lesson to help you prepar": {
-  "en": "Dear Students, as homework this week, please complete the revision worksheet given in Friday's lesson to help you prepare for CA2 next Tuesday.",
-  "ko": "학생 여러분, 이번 주 숙제로 다음 주 화요일 CA2(평가)를 준비할 수 있도록 금요일 수업 때 나눠 준 복습 학습지(revision worksheet)를 완성해 오세요.",
   "files": [],
   "at": "2026-11-01"
  },
@@ -1083,6 +956,45 @@ window.POST_DETAILS = {
     "kind": "form",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSe5ffCHYFlyx6Xfphfa5UNatoOEFZCgpIAgzCWXtMUNRuYSGw/viewform",
     "local": null
+   }
+  ],
+  "at": "2026-11-02"
+ },
+ "튜터 (Mr Cassels)|Humanities and Social Science Essay Competition 2026-27": {
+  "en": "I am delighted to share information about the Humanities and Social Science Essay Competition 2026-27, hosted by ELC International School, Malaysia.\n\nThemed around People and Planet in Conflict, the competition is open to Humanities and Social Science students in year 9 and above.  Full details of essay titles, length and submission details can be found attached. \nDates: 22nd October - 29th January 2027 (Submission Deadline: 29th January)\nHost: elc International School\nContact: Karina Mariadas, k.mariadas@elc.edu.my",
+  "ko": "말레이시아 ELC 국제학교(ELC International School)가 주최하는 2026-27 인문사회과학 에세이 대회(Humanities and Social Science Essay Competition)에 관한 안내를 전하게 되어 기쁩니다.\n\n이 대회는 '갈등 속의 인간과 지구(People and Planet in Conflict)'를 주제로 하며, 9학년(year 9) 이상의 인문사회과학(Humanities and Social Science) 학생이면 참가할 수 있습니다. 에세이 제목(essay titles), 분량(length), 제출 방법(submission details)에 관한 자세한 내용은 첨부 파일에서 볼 수 있습니다.\n기간: 10월 22일 - 2027년 1월 29일 (제출 마감(Submission Deadline): 1월 29일)\n주최: elc 국제학교(elc International School)\n연락처: Karina Mariadas, k.mariadas@elc.edu.my",
+  "files": [
+   {
+    "name": "k.mariadas@elc.edu.my",
+    "kind": "web",
+    "url": "https://mail.google.com/mail/?view=cm&fs=1&to=k.mariadas%40elc.edu.my",
+    "local": null
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-2026-2027_elc_Poster.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx/view?usp=classroom_web",
+    "local": "post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT-BFx.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1xKUUg1eXp10_lDZ8yBYOwuzImGDT_BFx_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "FOBISIA-Humanities-and-Social-Science-Essay-Competition-Submission-details.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-/view?usp=classroom_web",
+    "local": "post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH-.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1vHpVRy2UDxpxM6B1dlRglRvk4kMwXRH_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
    }
   ],
   "at": "2026-11-02"
@@ -2364,5 +2276,66 @@ window.POST_DETAILS = {
   "ko": "9학년(Y9) 여러분 안녕하세요,\n\n1차 조사 작품(primary research artworks) 2점의 마감일을 잊지 마세요. 우리의 목표는 1학기(T1)가 끝날 때까지 이 과제(coursework) 전체를 완성하는 것이며, 과제가 늦게 제출되면 그렇게 할 수 없습니다. 완성되지 않은 과제와 제출하지 않은 과제는 1학기(T1) 성적에 영향을 줍니다.\n\n감사합니다!,\nAileen 선생님",
   "files": [],
   "at": "2026-11-16"
+ },
+ "영어 (Mr Glanz)|Make your voice heard - Vocab HW 2": {
+  "en": "Make your voice heard - Vocab HW 2",
+  "ko": "너의 목소리를 내라(Make your voice heard) - 어휘 숙제(Vocab HW) 2",
+  "files": [],
+  "at": "2026-11-17"
+ },
+ "수학 (Mr Anan)|CA2 Reflection": {
+  "en": "CA2 Reflection\nEstigfend\nLO: To reflect on my assessment performance, identify gaps in my understanding, and determine how I can improve.\n\nSteps:\n1. You will receive your marked paper. Please go through. Discussion is allowed for 3 minutes.\n2. Open GC to fill in your RAG analysis (5 mins)\n3. Open Metacognition reflection sheet at the back of your workbook to fill in actual score and reflection (2 mins)\n4. We will discuss selected questions\n5. Keep your paper, don't loose it.",
+  "ko": "CA2 되돌아보기(Reflection)\nEstigfend\n학습 목표(LO): 내 평가(assessment) 결과를 되돌아보고, 내가 이해하지 못한 부분(gaps in my understanding)을 찾고, 어떻게 나아질 수 있을지 정한다.\n\n순서:\n1. 채점된 시험지(marked paper)를 받는다. 꼼꼼히 살펴본다. 3분 동안 서로 이야기해도 된다.\n2. GC(구글 클래스룸)를 열어 RAG 분석(RAG analysis)을 채운다 (5분)\n3. 워크북(workbook) 맨 뒤에 있는 메타인지 되돌아보기 종이(Metacognition reflection sheet)를 펴서 실제 점수(actual score)와 되돌아보기(reflection)를 채운다 (2분)\n4. 고른 문제들을 같이 풀이·토론한다\n5. 시험지를 잘 보관하고, 잃어버리지 마라.",
+  "files": [],
+  "at": "2026-11-17"
+ },
+ "음악 (Mr Everett)|Cover Work 17/11/26": {
+  "en": "Cover Work 17/11/26\nApologies, I will not be in your lesson today. Please use the videos below to create either Last Christmas or Golden in Chrome Music Lab (link below). You can post a link to your finished song in the comments here. If you finish, try the other song, and if you complete both, use this playlist to pick another song:",
+  "ko": "대체 수업 과제(Cover Work) 17/11/26\n죄송하지만 오늘은 제가 수업에 들어가지 못합니다. 아래 영상을 보고 크롬 뮤직 랩(Chrome Music Lab)(아래 링크)에서 Last Christmas 또는 Golden 중 한 곡을 만드세요. 완성한 곡의 링크는 여기 댓글로 올리면 됩니다. 다 만들었으면 나머지 곡도 해 보고, 두 곡을 모두 끝냈으면 이 재생목록(playlist)에서 다른 곡을 골라 만드세요:",
+  "files": [
+   {
+    "name": "Chrome Music Lab - Song Maker",
+    "kind": "web",
+    "url": "https://musiclab.chromeexperiments.com/Song-Maker",
+    "local": null
+   },
+   {
+    "name": "Recreate Last Christmas (Intro) by Wham in Chrome Music Lab Song Maker",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=LXvYqBQurZQ",
+    "local": null
+   },
+   {
+    "name": "Recreate Last Christmas (Chorus) in Chrome Music Lab Song Maker",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=ImZCd07yYm8",
+    "local": null
+   },
+   {
+    "name": "Recreate 'Golden' by KPop Demon Hunters on Chrome Music Lab Song Maker",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=AU6SEdlSJmc",
+    "local": null
+   },
+   {
+    "name": "Chrome Music Lab 'Song Maker' Recreates - YouTube",
+    "kind": "web",
+    "url": "https://youtube.com/playlist?list=PLkF4DRqaz__aEcXwnJVjHmTdJDHVb7yYN&si=f8CBSG3sELNeJBEs",
+    "local": null
+   },
+   {
+    "name": "https://musiclab.chromeexperiments.com/Song-Maker/song/5777591478386688",
+    "kind": "web",
+    "url": "https://musiclab.chromeexperiments.com/Song-Maker/song/5777591478386688",
+    "local": null
+   }
+  ],
+  "at": "2026-11-17"
+ },
+ "튜터 (Mr Cassels)|House Meetings - Register in your Tutor Group First!": {
+  "en": "House Meetings - Register in your Tutor Group First!\nFriday 20th November & Friday 27th November\nBenilde- MPH\nMutien- Art Room \nMiguel- Music Room E4-01\nJaime- White Box",
+  "ko": "하우스 모임(House Meetings) - 먼저 튜터 그룹(Tutor Group)에서 출석 등록(Register)하세요!\n11월 20일 금요일 & 11월 27일 금요일\n베닐드(Benilde)- 다목적홀(MPH)\n뮤티엔(Mutien)- 미술실(Art Room) \n미겔(Miguel)- 음악실(Music Room) E4-01\n하이메(Jaime)- 화이트 박스(White Box)",
+  "files": [],
+  "at": "2026-11-17"
  }
 };
