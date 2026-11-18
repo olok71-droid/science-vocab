@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#d6f5ec">
+<title>9학년 수학 10단원 문제 · Graphs</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3f2ee;--card:#fff;--card2:#eef3fb;--accent:#0d9488;--pink:#db2777;--purple:#6d5dfc;
+--text:#243b6b;--strong:#16223f;--muted:#6b7a99;--border:rgba(36,59,107,0.12);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans KR',sans-serif;min-height:100vh;
+background-image:linear-gradient(150deg,#d6f5ec 0%,#dceff0 32%,#e4e9fb 70%,#e7e2fb 100%);background-attachment:fixed;}
+header{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:10px;}
+.header-back{font-size:22px;color:var(--accent);width:32px;height:32px;display:inline-flex;align-items:center;
+justify-content:center;border-radius:50%;background:rgba(20,184,166,.08);text-decoration:none;flex-shrink:0;}
+.header-icon{font-size:24px;line-height:1;flex-shrink:0;}
+.header-title{font-size:16px;font-weight:900;color:var(--strong);letter-spacing:-.3px;}
+.header-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 60px;}
+.sec{margin-bottom:26px;}
+.sec-head{display:flex;align-items:center;gap:8px;margin:22px 0 10px;flex-wrap:wrap;}
+.sec-no{background:var(--accent);color:#fff;font-weight:900;font-size:12px;padding:4px 10px;border-radius:999px;}
+.sec-title{font-size:17px;font-weight:900;color:var(--strong);}
+.sec-ko{font-size:12px;color:var(--muted);}
+.src{display:inline-block;font-size:11px;font-weight:700;color:var(--purple);background:rgba(109,93,252,.1);
+border:1px solid rgba(109,93,252,.25);border-radius:8px;padding:3px 8px;margin:10px 0 6px;}
+.shot{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;margin:10px 0 14px;}
+.shot img{width:100%;height:auto;border-radius:8px;display:block;}
+.q{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px;}
+.q-title{font-size:14px;font-weight:800;color:var(--strong);margin-bottom:4px;}
+.q-ko{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.8;}
+.items{font-size:14px;line-height:2.0;letter-spacing:.2px;}
+.items span{display:inline-block;margin-right:14px;white-space:nowrap;}
+.tag{font-weight:800;color:var(--accent);}
+details{margin-top:9px;border-top:1px dashed var(--border);padding-top:9px;}
+summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--pink);list-style:none;}
+summary::-webkit-details-marker{display:none;}
+summary:before{content:"▶ ";font-size:11px;}
+details[open] summary:before{content:"▼ ";}
+.ans{margin-top:8px;background:var(--card2);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.95;}
+.ans .how{display:block;margin-top:7px;color:#0f766e;font-weight:700;font-size:12.5px;line-height:1.8;}
+sup{font-size:.72em;}
+.chk{display:inline-block;font-size:11.5px;font-weight:800;color:#b45309;background:#fef3c7;border:1px solid #fcd34d;border-radius:6px;padding:1px 6px;}
+.tbl{border-collapse:collapse;margin:6px 0;font-size:13px;}
+.tbl td,.tbl th{border:1px solid rgba(36,59,107,.2);padding:4px 8px;text-align:center;}
+.tbl th{background:#e0f2f1;}
+</style>
+</head>
+<body>
+<header>
+  <a class="header-back" href="index.html">←</a>
+  <div class="header-icon">📐</div>
+  <div class="header-text">
+    <div class="header-title">10단원 Graphs</div>
+    <div class="header-sub">TERM 2 · 10단원 그래프 · 문제 + 풀이</div>
+  </div>
+</header>
+<div class="wrap">
+<div class="sec">
+<div class="sec-head"><span class="sec-no">10.1</span><span class="sec-title">Functions</span><span class="sec-ko">함수</span></div>
+<span class="src">STARTER</span>
+<div class="q">
+  <div class="q-title">Question 1. The cost of hiring a ladder is a fixed charge of $10 plus $3 per day. &nbsp; a. Work out the cost of hiring the ladder for one week. &nbsp; b. Explain why y = 3x + 10 where x is the number of days’ hire and y is the total cost in dollars.</div>
+  <details><summary>풀이</summary><div class="ans">
+    a. one week = 7 days → 10 + 3 × 7 = 10 + 21 = <b>$31</b><br>b. 하루에 $3 씩이니 x 일이면 3 × x = 3x 달러, 여기에 기본요금 $10 을 더한다 → total cost <b>y = 3x + 10</b>.<br>(영어로: The cost is $3 for each day, so 3x for x days, plus the fixed charge of $10.)<br>선생님 답은 ‘In textbook exercise 10.1’ 이라고만 적혀 있고 노트에 없다(계산으로 확인).
+    <span class="how"><b>function (함수)</b>: x 값 하나를 넣으면 y 값이 하나 나오는 규칙. 예: y = 3x + 10.<br><b>fixed charge (기본요금)</b> + <b>per day (하루마다)</b> 요금 → y = (하루 요금)x + (기본요금). 하루 요금이 x 앞 숫자, 기본요금이 더하는 숫자.<br><b>함정</b>: one week 를 1 로 넣지 않는다. 일(day) 단위이니 x = 7.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 2. The cost of hiring a chainsaw is a fixed charge of $15 plus $10 per day. &nbsp; a. Aran pays $45. For how many days does he hire the chainsaw? &nbsp; b. If t is the total cost in dollars for n days, write a function to show the cost.</div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 15 + 10n = 45 → 10n = 30 → n = <b>3 days</b><br>b. <b>t = 10n + 15</b><br>선생님 답은 ‘In textbook exercise 10.1’ 이라고만 적혀 있고 노트에 없다(계산으로 확인).
+    <span class="how"><b>function (함수)</b>: x 값 하나를 넣으면 y 값이 하나 나오는 규칙. 예: y = 3x + 10.<br><b>fixed charge (기본요금)</b> + <b>per day (하루마다)</b> 요금 → y = (하루 요금)x + (기본요금). 하루 요금이 x 앞 숫자, 기본요금이 더하는 숫자.<br><b>거꾸로 풀기</b>: 전체 요금에서 기본요금을 먼저 빼고(45 − 15 = 30), 하루 요금으로 나눈다(30 ÷ 10 = 3).<br>b 는 글자가 바뀐 것만 주의: 비용은 t, 날 수는 n → t = 10n + 15.</span>
+  </div></details>
+</div>
+<span class="src">Assignment: Textbook Exercise 10.1: 3, 4, 5</span>
+</div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">10.2</span><span class="sec-title">Plotting graphs</span><span class="sec-ko">그래프 그리기</span></div>
+<div class="shot"><img src="assets/y9m/ch10/n02_kw.png" alt="Key word: linear function"></div>
+<div class="q">
+  <div class="q-title">y = 2x + 3 and 2x + 3y = 12 are examples of linear functions. The graph of a linear function is a straight line. &nbsp; Where does this graph cross the x-axis? What is this place called? What is the value of y when this happens? &nbsp; Where does this graph cross the y-axis? What is this place called? What is the value of x when this happens? &nbsp; Can we build a story around this equation like in the starter?</div>
+  <div class="shot"><img src="assets/y9m/ch10/n03.png" alt="y = 2x + 3 and 2x + 3y = 12 are examples"></div>
+  <div class="shot"><img src="assets/y9m/ch10/n04.png" alt="y = 2x + 3 and 2x + 3y = 12 are examples"></div>
+  <details><summary>풀이</summary><div class="ans">
+    표: <table class="tbl"><tr><th>x</th><th>−2</th><th>−1</th><th>0</th><th>1</th><th>2</th><th>3</th></tr><tr><td>y</td><td>−1</td><td>1</td><td>3</td><td>5</td><td>7</td><td>9</td></tr></table>x-axis 를 지나는 곳: 2x + 3 = 0 → x = −3/2 = −1.5 → <b>(−1.5, 0)</b>, 이름은 <b>x-intercept</b>, 이때 <b>y = 0</b><br>y-axis 를 지나는 곳: x = 0 → y = 3 → <b>(0, 3)</b>, 이름은 <b>y-intercept</b>, 이때 <b>x = 0</b><br>Story 예: 택시 기본요금 $3, 1 km 마다 $2 → 요금 y = 2x + 3 (x = km). 선생님 손글씨 ‘int = 0’ 은 절편에서 다른 좌표가 0 이라는 뜻.
+    <span class="how"><b>linear function (일차 함수)</b>: 그래프가 <b>straight line (직선)</b> 인 함수. x 에 제곱이 없다.<br><b>그래프 그리는 순서</b>: ① x 값 몇 개를 고른다 ② 식에 넣어 y 를 구해 table of values (값의 표) 에 쓴다 ③ (x, y) 점을 plot (찍기) ④ 자로 직선을 긋고 점 밖으로도 늘인다.<br><b>x-intercept (x절편)</b>: 그래프가 <b>x-axis (x축)</b>을 지나는 점. 이때 언제나 <b>y = 0</b>. (이차 그래프에서는 root(근)라고도 부른다)<br><b>y-intercept (y절편)</b>: 그래프가 <b>y-axis (y축)</b>을 지나는 점. 이때 언제나 <b>x = 0</b>.</span>
+  </div></details>
+</div>
+<span class="src">Worked example 10.2</span>
+<div class="q">
+  <div class="q-title">a. Copy and complete this table of values for 2x + 3y = 12. &nbsp; b. Draw a graph of 2x + 3y = 12. &nbsp; Where does this graph cross the x-axis? Where does this graph cross the y-axis?</div>
+  <div class="shot"><img src="assets/y9m/ch10/n05_q.png" alt="a. Copy and complete this table of value"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. x = 0 → 3y = 12 → y = <b>4</b> · y = 3 → 2x + 9 = 12 → x = <b>1.5</b> · x = 3 → 6 + 3y = 12 → y = <b>2</b> · y = 0 → 2x = 12 → x = <b>6</b><br><table class="tbl"><tr><th>x</th><th>0</th><th>1.5</th><th>3</th><th>6</th></tr><tr><td>y</td><td>4</td><td>3</td><td>2</td><td>0</td></tr></table>x-axis: <b>(6, 0)</b> (y = 0) · y-axis: <b>(0, 4)</b> (x = 0)<br>선생님 답: 4, 1.5, 2, 6 (같음)<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch10/n05_a.png" alt="answer"></div>
+    <span class="how"><b>ax + by = c 꼴</b>은 x 나 y 하나를 넣고 나머지 하나를 방정식으로 푼다(substitute → solve).<br>x = 0, y = 0 을 넣으면 절편 두 개가 바로 나와서 그리기 쉽다(cover-up method).<br><b>x-intercept (x절편)</b>: 그래프가 <b>x-axis (x축)</b>을 지나는 점. 이때 언제나 <b>y = 0</b>. (이차 그래프에서는 root(근)라고도 부른다)<br><b>y-intercept (y절편)</b>: 그래프가 <b>y-axis (y축)</b>을 지나는 점. 이때 언제나 <b>x = 0</b>.</span>
+  </div></details>
+</div>
+<span class="src">Worked example 10.3</span>
+<div class="q">
+  <div class="q-title">a. Copy and complete the table of values for y = x² − 3. &nbsp; b. Use the table to draw a graph of y = x² − 3. &nbsp; When the points are not in a straight line, join them with a smooth curve. &nbsp; Where does this graph cross the x-axis? Where does this graph cross the y-axis?</div>
+  <div class="shot"><img src="assets/y9m/ch10/n06_q.png" alt="a. Copy and complete the table of values"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. <table class="tbl"><tr><th>x</th><th>−3</th><th>−2</th><th>−1</th><th>0</th><th>1</th><th>2</th><th>3</th></tr><tr><td>y</td><td><b>6</b></td><td><b>1</b></td><td><b>−2</b></td><td><b>−3</b></td><td><b>−2</b></td><td><b>1</b></td><td><b>6</b></td></tr></table>(−3)² − 3 = 9 − 3 = 6, (−2)² − 3 = 1, (−1)² − 3 = −2, 0² − 3 = −3 …<br>x-axis: x² − 3 = 0 → x = ±√3 ≈ <b>±1.73</b> → (−1.73, 0), (1.73, 0) — 그래프에서 대략 −1.7 과 1.7<br>y-axis: <b>(0, −3)</b><br>선생님 답: 6, 1, −2, −3, −2, 1, 6 (같음)<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch10/n06_a.png" alt="answer"></div>
+    <span class="how"><b>The square of any negative number is positive.</b> 음수의 제곱은 양수: (−3)² = 9. 계산기에 −3² 로 치면 −9 가 나오니 괄호를 꼭 친다.<br><b>x² 이 있는 함수 (quadratic, 이차 함수)</b> 의 그래프는 직선이 아니라 U 자 모양 곡선(parabola). 점을 자로 잇지 말고 <b>smooth curve (부드러운 곡선)</b> 으로 잇는다.<br>그래프가 y축을 기준으로 좌우가 똑같다(대칭, symmetrical) → 표의 y 값도 6, 1, −2, −3, −2, 1, 6 으로 대칭.</span>
+  </div></details>
+</div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">Question 7. Here is a function: 3x + 2y = 18 &nbsp; a. Copy and complete this table of values for this function. &nbsp; b. Write the coordinates of the point where the graph of 3x + 2y = 18 crosses i. the x-axis ii. the y-axis. &nbsp; c. Use the table to draw a graph of 3x + 2y = 18.</div>
+  <div class="shot"><img src="assets/y9m/ch10/n07.png" style="max-width:220px" alt="Question 7. Here is a function: 3x + 2y "></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. <table class="tbl"><tr><th>x</th><th>0</th><th><b>1</b></th><th>2</th><th>4</th><th><b>6</b></th></tr><tr><td>y</td><td><b>9</b></td><td>7.5</td><td><b>6</b></td><td><b>3</b></td><td>0</td></tr></table>x = 0 → 2y = 18 → y = 9 · y = 7.5 → 3x + 15 = 18 → x = 1 · x = 2 → 6 + 2y = 18 → y = 6 · x = 4 → 12 + 2y = 18 → y = 3 · y = 0 → 3x = 18 → x = 6<br>b. i. x-axis <b>(6, 0)</b> &nbsp; ii. y-axis <b>(0, 9)</b><br>c. 점 (0, 9), (1, 7.5), (2, 6), (4, 3), (6, 0) 을 찍고 직선으로 잇는다:<br><svg viewBox="-14 -14 204 270" style="max-width:300px;width:100%;background:#fff;border-radius:8px;margin:6px 0" xmlns="http://www.w3.org/2000/svg" font-family="Nunito,sans-serif" font-size="10"><line x1="0" y1="0" x2="0" y2="242" stroke="#bfe3f2"/><line x1="22" y1="0" x2="22" y2="242" stroke="#bfe3f2"/><line x1="44" y1="0" x2="44" y2="242" stroke="#bfe3f2"/><line x1="66" y1="0" x2="66" y2="242" stroke="#bfe3f2"/><line x1="88" y1="0" x2="88" y2="242" stroke="#bfe3f2"/><line x1="110" y1="0" x2="110" y2="242" stroke="#bfe3f2"/><line x1="132" y1="0" x2="132" y2="242" stroke="#bfe3f2"/><line x1="154" y1="0" x2="154" y2="242" stroke="#bfe3f2"/><line x1="176" y1="0" x2="176" y2="242" stroke="#bfe3f2"/><line x1="0" y1="242" x2="176" y2="242" stroke="#bfe3f2"/><line x1="0" y1="220" x2="176" y2="220" stroke="#bfe3f2"/><line x1="0" y1="198" x2="176" y2="198" stroke="#bfe3f2"/><line x1="0" y1="176" x2="176" y2="176" stroke="#bfe3f2"/><line x1="0" y1="154" x2="176" y2="154" stroke="#bfe3f2"/><line x1="0" y1="132" x2="176" y2="132" stroke="#bfe3f2"/><line x1="0" y1="110" x2="176" y2="110" stroke="#bfe3f2"/><line x1="0" y1="88" x2="176" y2="88" stroke="#bfe3f2"/><line x1="0" y1="66" x2="176" y2="66" stroke="#bfe3f2"/><line x1="0" y1="44" x2="176" y2="44" stroke="#bfe3f2"/><line x1="0" y1="22" x2="176" y2="22" stroke="#bfe3f2"/><line x1="0" y1="0" x2="176" y2="0" stroke="#bfe3f2"/><line x1="0" y1="220" x2="176" y2="220" stroke="#243b6b" stroke-width="1.4"/><line x1="22" y1="0" x2="22" y2="242" stroke="#243b6b" stroke-width="1.4"/><text x="0" y="231" text-anchor="middle">-1</text><text x="44" y="231" text-anchor="middle">1</text><text x="66" y="231" text-anchor="middle">2</text><text x="88" y="231" text-anchor="middle">3</text><text x="110" y="231" text-anchor="middle">4</text><text x="132" y="231" text-anchor="middle">5</text><text x="154" y="231" text-anchor="middle">6</text><text x="176" y="231" text-anchor="middle">7</text><text x="18" y="245" text-anchor="end">-1</text><text x="18" y="201" text-anchor="end">1</text><text x="18" y="179" text-anchor="end">2</text><text x="18" y="157" text-anchor="end">3</text><text x="18" y="135" text-anchor="end">4</text><text x="18" y="113" text-anchor="end">5</text><text x="18" y="91" text-anchor="end">6</text><text x="18" y="69" text-anchor="end">7</text><text x="18" y="47" text-anchor="end">8</text><text x="18" y="25" text-anchor="end">9</text><text x="18" y="3" text-anchor="end">10</text><text x="182" y="224" font-style="italic">x</text><text x="26" y="-4" font-style="italic">y</text><line x1="11.0" y1="5.5" x2="165.0" y2="236.5" stroke="#db2777" stroke-width="2"/><circle cx="22" cy="22" r="3" fill="#16223f"/><circle cx="44" cy="55.0" r="3" fill="#16223f"/><circle cx="66" cy="88" r="3" fill="#16223f"/><circle cx="110" cy="154" r="3" fill="#16223f"/><circle cx="154" cy="220" r="3" fill="#16223f"/><text x="79.2" y="35.19999999999999" font-size="12" font-style="italic" fill="#db2777">3x + 2y = 18</text></svg><br>선생님 답은 ‘In textbook exercise 10.2’ 라고만 적혀 있고 노트에 없다(계산으로 확인).
+    <span class="how"><b>ax + by = c 꼴</b>은 Worked example 10.2 처럼 아는 값을 넣고 남은 글자를 푼다.<br>b 는 표에서 바로 읽는다: y 가 0 인 칸 → x-axis, x 가 0 인 칸 → y-axis.<br><b>확인</b>: 점이 모두 한 직선 위에 있어야 한다. x 가 2 늘 때마다 y 가 3 씩 준다(9 → 6 → 3 → 0). 하나라도 벗어나면 계산이 틀린 것.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Add on questions: (a) Does the point (−1, 8) lie on the line y = 2x + 11? &nbsp; (b) Does the point (12, 60) lie on the line y = 7x − 18?</div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) x = −1 → y = 2 × (−1) + 11 = 9 ≠ 8 → <b>No</b> (안 지난다)<br>(b) x = 12 → y = 7 × 12 − 18 = 84 − 18 = 66 ≠ 60 → <b>No</b> (안 지난다)<br>선생님 답: ‘discuss in lesson’ (노트에 없음, 계산으로 확인).
+    <span class="how"><b>점이 직선 위에 있는지 (Does the point lie on the line?)</b>: 점의 x 를 식에 넣어 y 를 계산한다. 나온 y 가 점의 y 와 <b>같으면 Yes</b>, 다르면 No.</span>
+  </div></details>
+</div>
+<span class="src">Assignment: Textbook Exercise 10.2: 9, 12, 13</span>
+</div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">10.3</span><span class="sec-title">Gradient and intercepts</span><span class="sec-ko">기울기와 절편</span></div>
+<span class="src">STARTER</span>
+<div class="q">
+  <div class="q-title">Does the point lie on the line? &nbsp; (a) (2, 5) on y = 3x − 1? &nbsp; (b) (4, 1) on y = 3x + 1? &nbsp; (c) (3, 1) on y = x − 3? &nbsp; (d) (5, 7) on y = −3x + 22? &nbsp; (e) (−4, −8) on y = −2x?</div>
+  <details><summary>풀이</summary><div class="ans">
+    (a) 3 × 2 − 1 = 5 → 점의 y 는 5 → <b>Yes</b> (지난다)<br>(b) 3 × 4 + 1 = 13 → 점의 y 는 1 → <b>No</b> (안 지난다)<br>(c) 3 − 3 = 0 → 점의 y 는 1 → <b>No</b> (안 지난다)<br>(d) −3 × 5 + 22 = 7 → 점의 y 는 7 → <b>Yes</b> (지난다)<br>(e) −2 × (−4) = 8 → 점의 y 는 −8 → <b>No</b> (안 지난다)<br>선생님 답: ‘In class discussion’ (노트에 없음, 계산으로 확인).
+    <span class="how"><b>점이 직선 위에 있는지 (Does the point lie on the line?)</b>: 점의 x 를 식에 넣어 y 를 계산한다. 나온 y 가 점의 y 와 <b>같으면 Yes</b>, 다르면 No.<br><b>함정</b> (e): −2 × (−4) = +8. 음수 × 음수 = 양수라서 −8 이 아니다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Straight line equations can ALWAYS be written in this special general form: y = mx + c. &nbsp; You saw this graph of y = 2x + 3 at the start of Section 10.2. The gradient is 2 and the y-intercept is 3. For any graph in the form y = mx + c, the gradient is m and the y-intercept is c. &nbsp; Can we relate this to a real life situation? What does m and c mean in real life?</div>
+  <div class="shot"><img src="assets/y9m/ch10/n11.png" style="max-width:330px" alt="Straight line equations can ALWAYS be wr"></div>
+  <div class="shot"><img src="assets/y9m/ch10/n12.png" alt="Straight line equations can ALWAYS be wr"></div>
+  <details><summary>풀이</summary><div class="ans">
+    y = 2x + 3 → <b>m = 2</b> (x 가 1 늘면 y 가 2 늘어난다: 그래프에서 (0, 3) → (1, 5)), <b>c = 3</b> (y축을 (0, 3) 에서 지난다)<br>Real life: 10.1 사다리 대여 y = 3x + 10 에서 m = 3 = 하루 요금(rate, 변하는 양), c = 10 = 기본요금(fixed charge, 처음 값).
+    <span class="how"><b>y = mx + c</b> — 직선(straight line)의 식은 언제나 이 꼴로 쓸 수 있다.<br><b>m = gradient (기울기)</b>: x 가 1 늘 때 y 가 얼마나 변하나. 오른쪽 위로 올라가면 +, 내려가면 −.<br><b>c = y-intercept (y절편)</b>: x = 0 일 때 y 값, 그래프가 y축을 지나는 높이.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">You saw in the last section that a graph of ax + by = c is a straight line. To find the gradient and intercept, rewrite the function with y as the subject. &nbsp; Worked example 10.4: the graph of 2x + 3y = 12</div>
+  <div class="shot"><img src="assets/y9m/ch10/n13.png" alt="You saw in the last section that a graph"></div>
+  <details><summary>풀이</summary><div class="ans">
+    2x + 3y = 12 → 3y = 12 − 2x → y = 4 − ⅔x → y = −⅔x + 4 → <b>gradient −2/3</b>, <b>y-intercept 4</b><br>그래프로: x 가 3 늘 때 y 가 2 준다 → gradient = −2/3. 선생님 노트(Worked example 10.4): The gradient is −2/3, y-intercept is 4 (같음)
+    <span class="how"><b>y as the subject (y 를 주어로)</b>: 식을 ‘y = …’ 꼴로 바꾸면 x 앞의 수가 m, 더하는 수가 c.<br>순서: ① y 가 없는 항을 반대편으로 넘긴다(부호 바뀜) ② y 앞의 수로 양변을 나눈다.<br><b>오른쪽 아래로 내려가는 직선 = 음의 기울기 (negative gradient)</b>.</span>
+  </div></details>
+</div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">Question 1. Write the gradient and the y-intercept of each of these straight lines. &nbsp; a. y = 4x − 6 &nbsp; b. y = 6x + 4 &nbsp; c. y = 4 − 6x &nbsp; d. 7x = 1 − 2y &nbsp; e. 15y − 6x = 8 &nbsp; f. ⅔x + 2y = 5</div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 이미 y = mx + c 꼴 → gradient <b>4</b>, y-intercept <b>−6</b><br>b. 이미 y = mx + c 꼴 → gradient <b>6</b>, y-intercept <b>4</b><br>c. y = −6x + 4 로 순서만 바꾼다 → gradient <b>−6</b>, y-intercept <b>4</b><br>d. 2y = 1 − 7x → y = ½ − 7/2 x → gradient <b>−7/2</b>, y-intercept <b>1/2</b><br>e. 15y = 6x + 8 → y = 6/15 x + 8/15 = 2/5 x + 8/15 → gradient <b>2/5</b>, y-intercept <b>8/15</b><br>f. 2y = 5 − ⅔x → y = 5/2 − ⅓x → gradient <b>−1/3</b>, y-intercept <b>5/2</b><br>선생님 답: ‘Discuss in lesson’ (노트에 없음, 계산으로 확인).
+    <span class="how"><b>y = mx + c</b> — 직선(straight line)의 식은 언제나 이 꼴로 쓸 수 있다.<br><b>m = gradient (기울기)</b>: x 가 1 늘 때 y 가 얼마나 변하나. 오른쪽 위로 올라가면 +, 내려가면 −.<br><b>c = y-intercept (y절편)</b>: x = 0 일 때 y 값, 그래프가 y축을 지나는 높이.<br><b>함정</b>: c 는 y = 4 − 6x 처럼 순서가 바뀌어도 x 앞의 수(−6)가 gradient. 부호까지 같이 가져간다.<br>d 처럼 y 가 오른쪽에 있으면 y 쪽 항을 왼쪽으로 옮기고 나눈다. 7/2 = 3.5, 2/5 = 0.4 로 써도 된다.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Method to calculate gradient, m: Calculate the gradient of each line. Leave your answer as a whole number or fraction in its lowest terms. &nbsp; Can we create the straight line equation for the example above by finding c through observation?</div>
+  <div class="shot"><img src="assets/y9m/ch10/n14.png" alt="Method to calculate gradient, m: Calcula"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. (2, 4), (4, 10) → (10 − 4) / (4 − 2) = 6/2 = <b>3</b> · y축을 −2 에서 지난다 → <b>y = 3x − 2</b><br>b. (2, 1), (4, 0) → (0 − 1) / (4 − 2) = <b>−1/2</b> · y축을 2 에서 지난다 → <b>y = −½x + 2</b><br>선생님 노트 답: a 3, b −1/2 (같음). c 는 그래프에서 읽고, 점을 넣어 확인: a 3 × 2 − 2 = 4 ✓, b −½ × 4 + 2 = 0 ✓
+    <span class="how"><b>gradient = y-change ÷ x-increase</b> (y 변화량 ÷ x 증가량) = (y₂ − y₁) / (x₂ − x₁)<br>그래프에서 격자점(눈금이 딱 맞는 점) 두 개를 골라 계산한다. 왼쪽에서 오른쪽으로 갈 때 내려가면 y-change 가 음수 → gradient 음수.<br><b>c 를 눈으로 찾기 (through observation)</b>: 직선이 y축과 만나는 눈금을 읽는다. 그래프 a 는 y축이 −2 칸, b 는 2 칸.</span>
+  </div></details>
+</div>
+<div class="q">
+  <div class="q-title">Question 5: Find the equation of each line. &nbsp; (d) (e) (g) (h)</div>
+  <div class="shot"><img src="assets/y9m/ch10/n15.png" style="max-width:306px" alt="Question 5: Find the equation of each li"></div>
+  <div class="shot"><img src="assets/y9m/ch10/n16.png" alt="Question 5: Find the equation of each li"></div>
+  <details><summary>풀이</summary><div class="ans">
+    (d) y축 점 (0, −1), 다른 점 (3, 8) → m = <b>3</b>, c = <b>−1</b> → <b>y = 3x − 1</b><br>(e) y축 점 (0, 6), 다른 점 (6, 0) → m = <b>−1</b>, c = <b>6</b> → <b>y = −x + 6</b><br>(g) y축 점 (0, −4), 다른 점 (1, 0) → m = <b>4</b>, c = <b>−4</b> → <b>y = 4x − 4</b><br>(h) y축 점 (0, 3), 다른 점 (3, 0) → m = <b>−1</b>, c = <b>3</b> → <b>y = −x + 3</b><br>(그래프 끝점도 같은 식에 맞는다: d (3, 8), e (8, −2), g (3, 8), h (−1.5, 4.5))<br>선생님 답은 노트의 ‘answer tab’ 에만 있어 맞춰 보지 못했다(계산으로 확인).
+    <span class="how"><b>직선의 식 찾기</b>: ① y축과 만나는 점에서 c ② 격자점 하나를 더 골라 gradient m ③ y = mx + c.<br>(e)·(h) 처럼 x 앞의 수가 −1 이면 y = −x + c 로 쓴다(1 은 생략).</span>
+  </div></details>
+</div>
+<span class="src">Assignment: Textbook Exercise 10.3: 2, 3, 4, 8, 9, 10</span>
+</div>
+<div class="sec">
+<div class="sec-head"><span class="sec-no">10.4</span><span class="sec-title">Interpreting graphs</span><span class="sec-ko">그래프 읽고 해석하기</span></div>
+<span class="src">STARTER</span>
+<div class="q">
+  <div class="q-title">22. Arrange these shapes into four pairs.</div>
+  <div class="shot"><img src="assets/y9m/ch10/n18.png" alt="22. Arrange these shapes into four pairs"></div>
+  <details><summary>풀이</summary><div class="ans">
+    <span class="chk">⚠ 확인 필요</span> 짝: <b>A – F</b>, <b>B – C</b>, <b>D – G</b>, <b>E – H</b><br>B · C = 정사각형 4개 · D · G = 정사각형 3개 + 삼각형 1개 · A · E · F · H = 정사각형 3개 + 삼각형 2개.<br>A 와 F 는 삼각형이 줄의 <b>반대쪽</b> 두 끝에, E 와 H 는 <b>같은 쪽</b> 두 끝에 붙어 있다 → A – F, E – H. 짝끼리는 돌리면(rotation) 겹친다.<br>선생님 답은 노트의 ‘answer tab’ 에만 있어 맞춰 보지 못했다.
+    <span class="how"><b>congruent (합동)</b>: 돌리거나(rotate) 뒤집어도(reflect) 꼭 겹치는 모양. 짝을 찾을 때는 ① 조각 수 ② 조각이 붙은 위치를 차례로 비교한다.</span>
+  </div></details>
+</div>
+<span class="src">10.4 Interpreting graphs</span>
+<span class="src">Worked example 10.5</span>
+<div class="q">
+  <div class="q-title">This graph shows how the temperature of a metal bar changes over 50 minutes. &nbsp; a. How does the graph show that the rate of cooling is constant? &nbsp; b. Find the gradient of the line. &nbsp; c. What does the gradient tell you? &nbsp; d. The temperature is y°C after t minutes. Find the equation of the line. &nbsp; e. The bar continues to cool at the same rate. Find the temperature after 1½ hours.</div>
+  <div class="shot"><img src="assets/y9m/ch10/n20.png" alt="This graph shows how the temperature of "></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. 그래프가 <b>straight line (직선)</b> 이라서 식는 빠르기(rate of cooling)가 일정하다.<br>b. (0, 500), (50, 300) → (300 − 500) / (50 − 0) = −200/50 = <b>−4</b><br>c. 1 분에 4 °C 씩 내려간다 — <b>rate of cooling is 4 °C/minute</b><br>d. y-intercept 500 → <b>y = 500 − 4t</b><br>e. 1½ hours = 90 minutes → y = 500 − 4 × 90 = <b>140 °C</b><br>선생님 답: −4, 4 °C/minute, y = 500 − 4t, 140 °C (같음)<div class="shot" style="margin:8px 0"><img src="assets/y9m/ch10/n21.png" alt="answer"></div>
+    <span class="how"><b>real-life graph 의 gradient = rate (변화율)</b>: y 단위 ÷ x 단위. 여기는 °C ÷ minute = °C/minute.<br>gradient 가 음수 → 값이 줄어든다(cooling). y-intercept = 처음 값(시작 온도).<br><b>함정</b>: e 에서 hours 를 minutes 로 바꾼다(t 는 분). 1½ × 60 = 90.</span>
+  </div></details>
+</div>
+<span class="src">YOUR TURN</span>
+<div class="q">
+  <div class="q-title">Question 1. This graph shows the distance travelled by a car. &nbsp; a. Find the distance travelled after 20 seconds. &nbsp; b. Find the time taken to travel 200 m. &nbsp; c. Find the speed of the car in m/s. &nbsp; d. The car travels d m in t s. Write an equation for d in terms of t. &nbsp; e. Work out how far the car travels in 50 seconds.</div>
+  <div class="shot"><img src="assets/y9m/ch10/n22.png" alt="Question 1. This graph shows the distanc"></div>
+  <details><summary>풀이</summary><div class="ans">
+    a. t = 20 에서 위로 올라가 읽는다 → <b>250 m</b><br>b. d = 200 에서 옆으로 가 읽는다 → <b>16 s</b> (200 ÷ 12.5)<br>c. speed = gradient = 250 / 20 = <b>12.5 m/s</b><br>d. 원점(0, 0)에서 시작 → c = 0 → <b>d = 12.5t</b><br>e. d = 12.5 × 50 = <b>625 m</b><br>선생님 답은 ‘In textbook exercise 10.4’ 라고만 적혀 있고 노트에 없다(그래프 눈금 (20, 250) 으로 계산해 확인).
+    <span class="how"><b>distance–time graph (거리–시간 그래프)</b>: gradient = 거리 ÷ 시간 = <b>speed (속력)</b>.<br>격자 한 칸 = 5 s (가로), 50 m (세로). 직선이 눈금이 딱 맞는 점 (20, 250) 을 지나는 것을 쓴다.<br>원점을 지나는 직선은 y = mx (c = 0) → d = 12.5t.</span>
+  </div></details>
+</div>
+<span class="src">Assignment: Textbook Exercise 10.4: 2, 3, 4, 5, 7, 10, 11, 12</span>
+</div>
+</div>
+<script>
+/* 단원 페이지 안(iframe)에서 열릴 때는 이 페이지의 제목 줄을 숨긴다 — 단원 제목이 위에 이미 있어 두 번 나오기 때문이다. */
+if (window.self !== window.top) {
+  document.documentElement.classList.add('embedded');
+  var _h = document.querySelector('header');
+  if (_h) _h.style.display = 'none';
+}
+</script>
+<script src="studylog.js"></script>
+</body>
+</html>
