@@ -27,7 +27,8 @@ async def main():
         br=await p.chromium.launch(executable_path=EXE, args=['--autoplay-policy=no-user-gesture-required'])
         bad=[]; ok=0
         for f in pages:
-            ctx=await br.new_context(); await ctx.add_init_script(INIT); pg=await ctx.new_page()
+            # 서비스워커를 막는다 — 새 창마다 첫 설치 뒤 페이지가 저절로 새로고침돼 시험 도중 화면이 날아갔다(11-18)
+            ctx=await br.new_context(service_workers='block'); await ctx.add_init_script(INIT); pg=await ctx.new_page()
             errs=[]; pg.on('pageerror', lambda e: errs.append(str(e)))
             await pg.goto('http://127.0.0.1:%d/'%PORT+f); await pg.wait_for_timeout(500)
             await pg.evaluate("document.querySelectorAll('#tab-vocab .vcard.memorized').forEach(c=>c.querySelector('button[onclick^=\"toggleMem\"]').click())")
