@@ -58,71 +58,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "중국어 (Ying Ying老师)|Lesson 4 Grammar Slides (既...又....、除此以外, 还）": {
-  "en": "Lesson 4 Grammar Slides (既...又....、除此以外, 还）",
-  "ko": "4과(Lesson 4) 문법(grammar) 슬라이드 (既...又....、除此以外, 还）",
-  "files": [
-   {
-    "name": "U1 L4 grammar slides.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1kazIOcH1wkhMAbfW5z3PEJk24cj-Fxam/view?usp=classroom_web",
-    "local": "pdfs/chinese_y9/U1 L4 grammar slides.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/chinese_y9/U1_L4_grammar_slides_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/chinese_y9/U1_L4_grammar_slides_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/chinese_y9/U1_L4_grammar_slides_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/chinese_y9/U1_L4_grammar_slides_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/chinese_y9/U1_L4_grammar_slides_p5.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-28"
- },
- "과학 (Mr Phillips)|CA2 - 11th November": {
-  "en": "CA2 - 11th November",
-  "ko": "CA2 - 11월 11일",
-  "files": [
-   {
-    "name": "CA2 Template Y9 Science Common Assessment 26/27.docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG/view?usp=classroom_web",
-    "local": "post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG.docx",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG_p2.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-29"
- },
  "드라마|Drama Cover lesson Thursday 29th October": {
   "en": "Drama Cover lesson Thursday 29th October\nYou shouldn't have anything on your device other than these slides and a translator app (although there are support sheets with translations on my desk).\n\nI have asked the cover teacher to confiscate any devices with anything else on.\n\n\nPlease fold your worksheets neatly back inside your A3 sheet by the end of the lesson and pass them back to the students who handed them out.",
   "ko": "드라마 대체 수업(Cover lesson) 10월 29일 목요일\n기기에는 이 슬라이드와 번역 앱 말고는 아무것도 켜져 있으면 안 됩니다(번역이 들어 있는 보조 자료(support sheets)가 제 책상 위에 있기는 합니다).\n\n대체 수업 선생님(cover teacher)께 다른 것이 켜져 있는 기기는 모두 압수해 달라고 부탁해 두었습니다.\n\n\n수업이 끝날 때까지 활동지(worksheets)를 A3 용지(A3 sheet) 안에 다시 깔끔하게 접어 넣고, 나눠 준 학생에게 돌려주세요.",
@@ -1799,5 +1734,117 @@ window.POST_DETAILS = {
   "ko": "하우스 모임(House Meetings) - 먼저 튜터 그룹(Tutor Group)에서 출석 등록(Register)하세요!\n11월 20일 금요일 & 11월 27일 금요일\n베닐드(Benilde)- 다목적홀(MPH)\n뮤티엔(Mutien)- 미술실(Art Room) \n미겔(Miguel)- 음악실(Music Room) E4-01\n하이메(Jaime)- 화이트 박스(White Box)",
   "files": [],
   "at": "2026-11-17"
+ },
+ "라살 교육|As Advent draws near, I’d love for you to join us for Mass.": {
+  "en": "Dear students,\n\nAs Advent draws near, I’d love for you to join us for Mass. In the middle of a busy school week, let’s take a little time to pause, pray together, and make room in our hearts for Christ.\n\nMass will be tomorrow, Thursday, 19 November, from 10:00 am to 10:55 am. All non-Muslim students are welcome. Snacks will be shared afterwards.\n\nIf you’d like to come, please register by 3:00 pm today using the attached link so we can add your name to the attendance list.\n\nGod bless,\nBrother Mico and Brother Miggy",
+  "ko": "학생 여러분께,\n\n대림절(Advent)이 다가오면서, 여러분이 미사(Mass)에 함께해 주면 좋겠습니다. 바쁜 학교 생활의 한 주 가운데, 잠시 멈추어 함께 기도하고 우리 마음에 그리스도(Christ)를 위한 자리를 마련하는 시간을 가져 봅시다.\n\n미사(Mass)는 내일, 11월 19일 목요일, 오전 10시부터 오전 10시 55분까지 있습니다. 무슬림이 아닌 학생은 누구나 환영합니다. 미사 후에는 간식을 함께 나눕니다.\n\n참석하고 싶다면, 출석 명단(attendance list)에 이름을 올릴 수 있도록 첨부된 링크로 오늘 오후 3시까지 신청(register)해 주세요.\n\n하느님의 축복을 빕니다(God bless),\n미코 수사(Brother Mico)와 미기 수사(Brother Miggy)",
+  "files": [
+   {
+    "name": "Mass Registration Form",
+    "kind": "form",
+    "url": "https://forms.gle/z6dmrr6VCxeZNb8P6",
+    "local": null
+   }
+  ],
+  "at": "2026-11-19"
+ },
+ "과학 (Mr Phillips)|CA2 Assessment - Paper and Mar kscheme": {
+  "en": "CA2 Assessment - Paper and Mar kscheme",
+  "ko": "CA2 평가(Assessment) - 시험지(Paper)와 채점 기준표(Mark scheme)",
+  "files": [
+   {
+    "name": "Y9 CA2 - 26_27.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1pjCaDmPbrN8p4-MruWSR1d4KKoHhH-FU/view?usp=classroom_web",
+    "local": "pdfs/genes/Y9 CA2 - 26_27.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p6.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p7.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p8.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p9.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p10.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p11.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_p12.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "Y9 CA2 - 26/27 MS - KPH",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1XCRHocjfwUiQcCy6s7UtjlK4jAZX8ekiQ3zaxWtBdrQ/edit?usp=classroom_web",
+    "local": "pdfs/genes/Y9 CA2 - 26_27 MS - KPH.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_MS_KPH_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_MS_KPH_p2.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-19"
+ },
+ "음악 (Mr Everett)|Common Assessment Term 1": {
+  "en": "Common Assessment Term 1",
+  "ko": "1학기 공통 평가(Common Assessment)",
+  "files": [],
+  "at": "2026-11-19"
  }
 };
