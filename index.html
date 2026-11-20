@@ -571,28 +571,22 @@ body.in-subject .cn-card { display: none; }
     </div>
   </div>
 
-<!--PTC:START 2026-11-20 대표님 지시: 12/4 학부모 상담 시간표. 상담 끝나면 지운다(~/sji-calendar/ptc_remove.py 가 12/5 자동 삭제) -->
-  <div class="tt-card ptc-card" id="ptcCard" data-until="2026-12-04">
-    <div class="ptc-title">👪 학부모 상담 (PTC) · 12월 4일(금) 온라인</div>
-    <table class="ptc-table">
-      <thead><tr><th>시간</th><th>과목</th><th>선생님</th></tr></thead>
-      <tbody>
-        <tr><td>09:30</td><td>수학 <span>Mathematics</span></td><td>Mr A Seluerajah</td></tr>
-        <tr><td>09:36</td><td>과학 <span>Science</span></td><td>Mr K Phillips</td></tr>
-        <tr><td>09:42</td><td>영어 <span>English</span></td><td>Mr G Glanz</td></tr>
-      </tbody>
-    </table>
-    <p class="ptc-note">한 분당 7분 온라인 상담. 이날 7~10학년은 학교에 안 가요. 학생도 같이 참석하라고 학교가 안내했어요.</p>
+<!--PTC:START 2026-11-20 대표님 지시: 12/4 학부모 상담 시간표, 작은 버튼(대표님 "너무 크게 들어갔어. 그냥 버튼으로 작게"). 상담 끝나면 지운다(~/sji-calendar/ptc_remove.py 가 12/5 자동 삭제) -->
+  <div class="ptc-wrap" id="ptcCard" data-until="2026-12-04">
+    <button class="ptc-btn" type="button" onclick="this.parentNode.classList.toggle('open')">👪 12/4(금) 학부모 상담 3건</button>
+    <div class="ptc-box">
+      <div>09:30 수학 · Mr A Seluerajah</div>
+      <div>09:36 과학 · Mr K Phillips</div>
+      <div>09:42 영어 · Mr G Glanz</div>
+      <div class="ptc-note">온라인 · 이날 학교 안 감</div>
+    </div>
   </div>
   <style>
-  .ptc-card{border-left:5px solid #c2410c;padding:12px 14px}
-  .ptc-title{font-weight:900;color:#c2410c;font-size:15px;margin-bottom:8px}
-  .ptc-table{width:100%;border-collapse:collapse;font-size:13.5px}
-  .ptc-table th{text-align:left;font-size:12px;color:#6f6f6f;padding:4px 6px;border-bottom:1px solid #eee}
-  .ptc-table td{padding:6px;border-bottom:1px solid #f1e4dc;color:#222;font-weight:700}
-  .ptc-table td:first-child{white-space:nowrap;color:#c2410c}
-  .ptc-table td span{display:block;font-size:11px;color:#8a8a8a;font-weight:400}
-  .ptc-note{font-size:12px;color:#444;margin:8px 2px 0}
+  .ptc-wrap{margin:-14px 0 18px}
+  .ptc-btn{font:inherit;font-size:12.5px;font-weight:800;color:#c2410c;background:#fff;border:1.5px solid #f0c9b4;border-radius:999px;padding:5px 12px;cursor:pointer}
+  .ptc-box{display:none;margin-top:6px;padding:8px 12px;background:#fff;border:1px solid #f0c9b4;border-radius:12px;font-size:13px;font-weight:700;color:#222;line-height:1.7}
+  .ptc-wrap.open .ptc-box{display:inline-block}
+  .ptc-note{font-size:11.5px;color:#777;font-weight:400}
   </style>
   <script>
   (function(){var c=document.getElementById('ptcCard');var t=new Date();var k=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');if(c&&c.getAttribute('data-until')<k)c.remove();})();
