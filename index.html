@@ -571,6 +571,36 @@ body.in-subject .cn-card { display: none; }
     </div>
   </div>
 
+<!--PTC:START 2026-11-20 대표님 지시: 12/4 학부모 상담 시간표. 상담 끝나면 지운다(~/sji-calendar/ptc_remove.py 가 12/5 자동 삭제) -->
+  <div class="tt-card ptc-card" id="ptcCard" data-until="2026-12-04">
+    <div class="ptc-title">👪 학부모 상담 (PTC) · 12월 4일(금) 온라인</div>
+    <table class="ptc-table">
+      <thead><tr><th>시간</th><th>과목</th><th>선생님</th></tr></thead>
+      <tbody>
+        <tr><td>09:18</td><td>컴퓨터 과학 <span>Computer Science</span></td><td>Ms M Nowshath</td></tr>
+        <tr><td>09:24</td><td>수학 <span>Mathematics</span></td><td>Mr A Seluerajah</td></tr>
+        <tr><td>09:30</td><td>중국어 <span>Mandarin</span></td><td>Ms Y Tan</td></tr>
+        <tr><td>09:36</td><td>과학 <span>Science</span></td><td>Mr K Phillips</td></tr>
+        <tr><td>09:42</td><td>영어 <span>English</span></td><td>Mr G Glanz</td></tr>
+      </tbody>
+    </table>
+    <p class="ptc-note">한 분당 7분 온라인 상담. 이날 7~10학년은 학교에 안 가요. 학생도 같이 참석하라고 학교가 안내했어요.</p>
+  </div>
+  <style>
+  .ptc-card{border-left:5px solid #c2410c;padding:12px 14px}
+  .ptc-title{font-weight:900;color:#c2410c;font-size:15px;margin-bottom:8px}
+  .ptc-table{width:100%;border-collapse:collapse;font-size:13.5px}
+  .ptc-table th{text-align:left;font-size:12px;color:#6f6f6f;padding:4px 6px;border-bottom:1px solid #eee}
+  .ptc-table td{padding:6px;border-bottom:1px solid #f1e4dc;color:#222;font-weight:700}
+  .ptc-table td:first-child{white-space:nowrap;color:#c2410c}
+  .ptc-table td span{display:block;font-size:11px;color:#8a8a8a;font-weight:400}
+  .ptc-note{font-size:12px;color:#444;margin:8px 2px 0}
+  </style>
+  <script>
+  (function(){var c=document.getElementById('ptcCard');var t=new Date();var k=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');if(c&&c.getAttribute('data-until')<k)c.remove();})();
+  </script>
+<!--PTC:END-->
+
   <div class="cn-card gw" id="cnCard">
     <div class="fold-bar" onclick="toggleFold('cnCard')">
       <span class="fold-name">클래스룸 과제</span>
