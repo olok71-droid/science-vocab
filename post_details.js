@@ -58,81 +58,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "드라마|Drama Cover lesson Thursday 29th October": {
-  "en": "Drama Cover lesson Thursday 29th October\nYou shouldn't have anything on your device other than these slides and a translator app (although there are support sheets with translations on my desk).\n\nI have asked the cover teacher to confiscate any devices with anything else on.\n\n\nPlease fold your worksheets neatly back inside your A3 sheet by the end of the lesson and pass them back to the students who handed them out.",
-  "ko": "드라마 대체 수업(Cover lesson) 10월 29일 목요일\n기기에는 이 슬라이드와 번역 앱 말고는 아무것도 켜져 있으면 안 됩니다(번역이 들어 있는 보조 자료(support sheets)가 제 책상 위에 있기는 합니다).\n\n대체 수업 선생님(cover teacher)께 다른 것이 켜져 있는 기기는 모두 압수해 달라고 부탁해 두었습니다.\n\n\n수업이 끝날 때까지 활동지(worksheets)를 A3 용지(A3 sheet) 안에 다시 깔끔하게 접어 넣고, 나눠 준 학생에게 돌려주세요.",
-  "files": [
-   {
-    "name": "Year 9 cover lesson w/c/ 26th oct",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1adh-rcMkXf2I_BWXuAd91cyX0JYsfXouA7FwFMMg0go/edit?usp=classroom_web",
-    "local": "post_files/1adh-rcMkXf2I_BWXuAd91cyX0JYsfXouA7FwFMMg0go.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/drama/Year_9_cover_lesson_w_c__26th_oct_p1.jpg",
-      "tr": "<b>과제 1: 행동 단위(Units of Action) 찾기</b><br><b>목표(Goal):</b> 자신의 독백(monologue)과 여러 색깔 펜을 준비하고, 장면을 <b>단위(units)</b>로 나눈다. 단위란 행동(action), 감정(emotion), 의도(intention)가 바뀌는 지점이다.<br>1. 무언가가 <b>바뀌는(changes)</b> 순간을 표시한다(감정, 사용하는 <b>전술(tactic)</b>, 대화의 <b>초점(focus)</b>).<br>2. 각 단위에 간단한 동사(verb), 형용사(adjective), 또는 구(phrase)를 붙인다(예: \"설득하다(to persuade)\", \"도망치다(to escape)\", \"위로하다(to comfort)\").<br>3. 이제 독백의 각 부분을 소리 내어 말해 본다. 인물이 표현하는 감정/전술을 보여 주려면 목소리를 어떻게 쓸 수 있을까?<br><br><b>몬스터 콜(A Monster Calls)</b><br>주목나무(Yew Tree):<br>[나는 누구냐고? 나는 누구냐고?!] <b>격분(OUTRAGE)</b><br>[나는 오래된 주목나무다! 그리고 나는 시간 그 자체의 햇수만큼이나 많은 이름을 가졌다!<br>나는 사냥꾼 헌(Herne the Hunter)이다! 나는 영원한 그린맨(Green Man)이다!] <b>자랑스러운(PROUD)</b><br>[나는 산들이 매달린 등뼈다! 나는 강들이 흘리는 눈물이다! 나는 수사슴을 죽이는 늑대, 파리를 죽이는 거미다! <b>불길한(SINISTER)</b><br>나는 제 꼬리를 삼키는 세상의 뱀이다! 나는 길들지 않았고 길들일 수 없는 모든 것이다!] [나는 너를 찾아온 이 거친 대지다, 코너 오말리(Conor O'Malley).] <b>위협적인(THREATENING)</b><br>나는 자주 걸어 다니지 않는다, 얘야 — 삶과 죽음이 걸린 일에만 그런다. 내 말을 들어야 한다!",
-      "note": "행동 단위(unit of action)는 인물의 감정이나 목적이 바뀔 때마다 대사를 끊어 나눈 한 덩어리이고, 각 단위에 붙이는 '전술(tactic)'은 인물이 상대에게 원하는 것을 얻으려고 쓰는 방법(예: 위협하다, 설득하다)을 뜻한다."
-     },
-     {
-      "src": "assets/pages/drama/Year_9_cover_lesson_w_c__26th_oct_p2.jpg",
-      "tr": "<b>과제 2: 내 인물 이해하기(Understanding Your Character)</b><br>여기 있는 예시처럼 <b>롤 온 더 월(role on the wall)</b> 활동지를 최대한 자세히 채운다.<br>설명은 뒷면에 있다.<br>다 채웠으면 혼자, 짝과 함께, 또는 3명 모둠으로 일어서서 <b>독백(monologue)</b>을 직접 해 본다. 이때 <b>내적 특성(internal traits)</b>(무엇을 생각하고 느끼는지)과 <b>외적 특성(external traits)</b>(다른 사람에게 자신을 어떻게 보여 주는지)을 둘 다 드러내도록 해 본다.<br>이것이 내 <b>신체 표현 선택(physical choices)</b>에 어떤 영향을 주는가? 내 인물은 어떻게 서고, 걷고, 앉는가?<br><br><b>인물 – 리아(Leah) (DNA)</b><br><b>안쪽(INSIDE) – 리아가 생각하고 느끼는 것</b><br>자기 의심(self-doubt)<br>안심시켜 주는 말이 필요하다(needs reassurance)<br>사랑받고 싶어 한다(wants to be loved)<br>필(Phil)이 자기를 사랑한다고 말해 주길 바란다<br>우정을 소중히 여긴다(values friendships)<br>모두가 사이좋게 지내길 바란다(wants everyone to get along)<br>똑똑하다(intelligent)<br>호기심이 많다(curious-minded)<br>생각이 지나치게 많다(overthinks things)<br>다른 사람과 그들의 감정에 민감하다(sensitive to others and their feelings)<br>친구들에게 의리가 있다(loyal to her friends)<br>불안하고 자신감이 없다(anxious and insecure)<br>인정받고 싶어 한다(needs validation)<br><b>바깥쪽(OUTSIDE) – 다른 사람이 보고 알아채는 것</b><br>15살<br>여자<br>교복을 입는다<br>예쁘다<br>말할 때 손을 많이 쓴다<br>꼼지락거린다(fidgety)<br>앉은 자세를 자주 바꾼다<br>빨리 걷는다(walks at speed)<br>표정이 아주 풍부하다(very expressive face)<br>말이 많다<br>침묵을 거의 편하게 여기지 못한다",
-      "note": "롤 온 더 월(role on the wall)은 사람 모양 윤곽선을 그려 안쪽에는 인물의 생각과 감정(내적 특성)을, 바깥쪽에는 겉모습과 남들이 보는 행동(외적 특성)을 적는 연극 활동이다. 안쪽의 불안함이 바깥쪽의 꼼지락거림이나 빨리 걷기 같은 몸짓으로 드러나는 것처럼, 두 특성을 연결해 연기에 쓰는 것이 핵심이다."
-     },
-     {
-      "src": "assets/pages/drama/Year_9_cover_lesson_w_c__26th_oct_p3.jpg",
-      "tr": "<b>과제 3: 숨은 뜻(Subtext)/ 동기(Motivation) 탐구하기</b><br>활동지(worksheet)에 여러분의 <b>독백(monologue)</b>에서 가장 중요한 대사나 구절 5개를 옮겨 쓰고, 각 대사 아래에 인물이 말 뒤에서 <b>진짜로 무엇을 뜻하거나 느끼는지(what the character really means or feels)</b> 쓴다.<br>또는 인물이 그 대사를 <b>왜(why)</b> 말하는지 쓴다. 인물은 <b>자기 말을 듣는 다른 인물(들)에게 어떤 효과가 생기기를 바라는가(hoping the effect will be on the character/s listening to them)?</b><br>일찍 끝내면 <b>심화 과제(extension task)</b>를 해 주기 바란다.",
-      "note": "숨은 뜻(subtext)은 인물이 겉으로 하는 말 아래에 숨어 있는 진짜 생각이나 감정이다. 동기(motivation)는 인물이 그 말이나 행동을 하는 이유, 곧 무엇을 얻고 싶어 하는지를 말한다."
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-29"
- },
- "튜터 (Mr Cassels)|UNITY WEEK CHESS!": {
-  "en": "UNITY WEEK CHESS! \n\nGet involved with Mr Hember.",
-  "ko": "유니티 위크 체스(UNITY WEEK CHESS)! \n\n헴버 선생님(Mr Hember)과 함께 참여하세요.",
-  "files": [
-   {
-    "name": "Unity Week - Chess",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/13t91YWHvr-4o1u8A7NXsvwRXEWy--m9WVPsBgHP3OrM/edit?usp=classroom_web",
-    "local": "post_files/13t91YWHvr-4o1u8A7NXsvwRXEWy--m9WVPsBgHP3OrM.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/tutor/Unity_Week_Chess_p1.jpg",
-      "tr": "<b>유니티 위크 체스(Unity Week Chess)</b><br>두고, 배우고, 친구를 사귀자!(Play, Learn, and Make Friends!)<br><br><b>무엇을?(What?)</b><br>1. <b>배우는 사람 코너(Learner's Corner)</b> (전문가(expert)에게 배운다)<br>2. <b>친선 경기(Friendly Games)</b><br>3. <b>체스 토너먼트(Chess Tournament)</b><br><br>그림 속 글자: 유니티 체스(UNITY CHESS) / 배우고 두자!(LEARN &amp; PLAY!) / Gemini Notebook<br><br><b>언제, 어디서?(When &amp; Where?)</b><br>• 11월 16일 월요일 ~ 11월 20일 금요일(Mon 16th - Fri 20th November)<br>• <b>점심시간(Lunchtime)</b><br>• <b>연극실(Drama room)</b><br><br><b>누가?(Who?)</b><br>• 5학년부터 9학년까지 모두(Everyone in Years 5 to 9)!<br>• <b>초보자(Beginners)</b>와 <b>전문가(experts)</b><br>• 혼자 와도 되고 친구를 데려와도 된다(Come alone or bring a friend).<br>• 모두가 경기를 할 수 있다(Everyone gets to play)!<br><br>체스판 그림 속 글자: C, D, E, F, G<br><br><b>왜?(Why?)</b><br>• 여러 학년(multiple Year groups)의 새 친구를 사귄다.<br>• <b>두뇌 능력(brain power)</b>을 키운다.<br>• <b>문제 해결(problem solving)</b>을 연습한다.<br>• <b>부담 없는(pressure-free)</b> 분위기에서 편하게 이야기를 나눈다.",
-      "note": "유니티 위크(Unity Week)는 여러 학년 학생이 함께 어울리도록 마련한 행사 주간이다. 토너먼트(tournament)는 여러 사람이 차례로 겨루어 우승자를 가리는 대회이고, 체스판 가장자리의 C·D·E·F·G는 칸의 세로줄 이름이다."
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-29"
- },
- "중국어 (Ying Ying老师)|T1 CA2 template - Writing Assessment": {
-  "en": "T1 CA2 template - Writing Assessment",
-  "ko": "T1 CA2 양식 - 쓰기 평가(Writing Assessment)",
-  "files": [
-   {
-    "name": "Y9 Man FL CA2 Writing.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1zi16CAHFVP6Vig6W20zqky85qsEFM0cZ/view?usp=classroom_web",
-    "local": "post_files/1zi16CAHFVP6Vig6W20zqky85qsEFM0cZ.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/chinese_y9/Y9_Man_FL_CA2_Writing_p1.jpg",
-      "tr": "세인트 조셉 인스티튜션 인터내셔널 스쿨 말레이시아(St Joseph's Institution International School Malaysia)<br>(트로피카나 PJ 캠퍼스(Tropicana PJ Campus))<br>ORA et LABORA(기도하고 일하라)<br><b>1학기 공통평가 2(Term 1 Common Assessment 2)</b><br><b>9학년 중국어 외국어반(Year 9 Mandarin FL)</b><br><b>평가 영역(Focus of assessment):</b><br><b>쓰기(Writing)</b><br><b>평가 날짜(Date of Assessment):</b><br>2026년 11월 11일(수요일)<br><b>평가 설명(Description of assessment): 25%</b><br><b>1단원(Unit 1) (1과, 2과, 3과, 4과)</b><br>✧ A부분(Section A): <b>문장 재배열(sentence rearranging)</b>(重组句子)<br>✧ B부분(Section B): <b>안내에 따른 쓰기 과제(guided writing task)</b>: 자기 <b>학교 과목(school subjects)</b>과 <b>중국어를 배운 경험(experience of learning Chinese)</b>에 대해 쓴다<br><b>평가 목표/채점 기준/평가하는 기술/성공 기준(Assessment objectives/Marking criteria/skills being assessed/success criteria):</b><br>✧ 학교 과목, 의견, 중국어 배우기와 관련된 <b>어휘(vocabulary)</b>를 쓰기에서 정확하게 사용한다.<br>✧ 핵심 <b>문법 구조(grammar structures)</b>를 문장에 정확하게 적용한다:<br>• A + <b>比</b> + B + 형용사(adjective) (두 과목 비교하기(comparing two subjects)), 예: 数学比物理难一点儿。(수학은 물리보다 조금 더 어렵다.)<br>• 주어(Subject) + 동사(verb) + <b>得</b> + 묘사(description), 예: 我中文学得还可以。(나는 중국어를 그런대로 괜찮게 배운다.)<br>• <b>一……就……</b> (~하자마자 곧 ~하다(as soon as… then…))<br>• <b>只要……就……</b> (~하기만 하면 ~하다(as long as… then…))<br>• <b>既……又……</b> (~하기도 하고 ~하기도 하다(both… and…))<br>• <b>除此以外，……还……</b> (이 밖에도 ~도 ~하다(besides this… also…))<br>• <b>对……感兴趣</b> (~에 관심이 있다(to be interested in…))<br>• <b>因为……所以……</b> (~이기 때문에 그래서 ~하다(because… so…)) 그리고 <b>虽然……但是……</b> (비록 ~이지만 ~하다(although… but…))",
-      "note": "比 비교문에서 차이를 나타내는 말(一点儿 등)은 형용사 뒤에 붙고, 很·非常 같은 말은 형용사 앞에 쓸 수 없다. 得 뒤에는 동작을 얼마나 잘하는지를 나타내는 말이 오고, 목적어가 있으면 '我中文学得…'처럼 목적어를 동사 앞으로 옮긴다."
-     },
-     {
-      "src": "assets/pages/chinese_y9/Y9_Man_FL_CA2_Writing_p2.jpg",
-      "tr": "✧ 낱말과 구절을 바른 어순(correct word order)으로 다시 배열하여 정확하고 논리적인 중국어 문장을 만든다.<br>✧ <b>학교 과목(学校科目, school subjects)</b>과 <b>중국어를 배운 경험(学中文的经历, experience of learning Chinese)</b>에 대해 의견(opinions)과 이유(reasons)를 들어 분명하고 잘 이어지는 글을 쓴다.<br>✧ <b>접속어(connectives)</b>로 생각을 잇고 한자(Chinese characters)를 정확하게 쓴다.<br><br><b>추천 복습 방법(Suggested Revision Approaches):</b><br>✧ Quizlet: 1과~4과(Lesson 1 to Lesson 4)<br>✧ <b>문법 복습(Grammar revision)</b><br>✧ <b>문법 공책(Grammar notebook)</b><br><br><b>시험 범위 단원·주제(Chapter(s) / Topic(s) covered)</b><br>✧ 1단원 1과 《我的新学校》 <b>나의 새 학교(My New School)</b><br>✧ 1단원 2과 《我的学校科目》 <b>나의 학교 과목(My School Subjects)</b><br>✧ 1단원 3과 《参加中文夏令营》 <b>중국어 여름 캠프 참가(Joining a Chinese Summer Camp)</b><br>✧ 1단원 4과 《中文短期培训班》 <b>중국어 단기 연수반(Short Chinese Course)</b>",
-      "note": "접속어(connectives)는 因为…所以…(왜냐하면…그래서…), 但是(하지만), 而且(게다가)처럼 문장과 생각을 이어 주는 말이다. 의견과 이유를 쓸 때 因为·所以를 함께 쓰면 글이 자연스럽게 이어진다."
-     }
-    ]
-   }
-  ],
-  "at": "2026-10-29"
- },
  "영어 (Mr Glanz)|NARRATIVE COMMON ASSESSMENT": {
   "en": "NARRATIVE COMMON ASSESSMENT\nPlease type your final copy of your story directly into the attached doc. Make sure you click submit / turn in before 3:30pm, or I will not be able to mark it.",
   "ko": "서사문 공통 평가(NARRATIVE COMMON ASSESSMENT)\n이야기의 최종본(final copy)을 첨부된 문서에 바로 입력하세요. 오후 3시 30분 전에 반드시 제출(submit / turn in)을 누르세요. 그렇지 않으면 채점할 수 없습니다.",
@@ -1499,6 +1424,12 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-12"
  },
+ "드라마|Hi everyone, The deadline for the FOBISIA Monologue Competition is nearing.": {
+  "en": "Hi everyone, \n\nThe deadline for the FOBISIA Monologue Competition is nearing. \n\nIf you are interested in entering the competition, then please drop me an email and let me know a day and a time on the week commencing 23rd November (2 weeks away) when you would be free to do the recording. \n\nWe will need around 20 minutes for you to perform to me once, get some final feedback and then film it a couple of times to get the best take. Please note you need to have your lines memorised. It can be before school, after school or during a tutor time if your tutor gives you permission first\n\nHope to hear from some of you soon. There's a lot of talent in Year 9, so I hope we have a few entries. Looks great on your CV too, entering an Asia-wide speech and drama competition. \n\nAll the best\nMs Heather",
+  "ko": "여러분 안녕하세요, \n\nFOBISIA 독백 대회(Monologue Competition) 마감이 다가오고 있습니다. \n\n대회 참가에 관심이 있다면 저에게 이메일을 보내서, 11월 23일이 시작되는 주(2주 뒤) 중 녹화할 수 있는 날짜와 시간을 알려 주세요. \n\n여러분이 제 앞에서 한 번 공연(perform)하고, 마지막 피드백(feedback)을 받은 뒤, 가장 좋은 테이크(take)를 얻기 위해 두어 번 촬영하는 데 약 20분이 필요합니다. 대사(lines)는 반드시 외워 와야 한다는 점에 유의하세요. 등교 전, 방과 후, 또는 담임(tutor) 선생님께 먼저 허락을 받으면 튜터 시간(tutor time) 중에도 할 수 있습니다\n\n곧 몇몇 학생들에게서 연락이 오기를 바랍니다. 9학년(Year 9)에는 재능 있는 학생이 많으니 몇 명은 참가하기를 바랍니다. 아시아 전역의 스피치·드라마 대회(speech and drama competition)에 참가하는 것은 이력서(CV)에도 아주 좋아 보입니다. \n\n잘 지내세요\nHeather 선생님",
+  "files": [],
+  "at": "2026-11-12"
+ },
  "튜터 (Mr Cassels)|PSHCE - 12/11/26": {
   "en": "PSHCE - 12/11/26\nEstigfend\nTaking Control of your Career",
   "ko": "PSHCE(인성·사회·보건·경제 교육) - 12/11/26\nEstigfend\n나의 진로 주도하기(Taking Control of your Career)",
@@ -1590,12 +1521,6 @@ window.POST_DETAILS = {
     ]
    }
   ],
-  "at": "2026-11-14"
- },
- "드라마|The deadline for the FOBISIA Monologue Competition is nearing.": {
-  "en": "Hi everyone,\n\nThe deadline for the FOBISIA Monologue Competition is nearing.\n\nIf you are interested in entering the competition, then please drop me an email and let me know a day and a time on the week commencing 23rd November (2 weeks away) when you would be free to do the recording.\n\nWe will need around 20 minutes for you to perform to me once, get some final feedback and then film it a couple of times to get the best take. Please note you need to have your lines memorised. It can be before school, after school or during a tutor time if your tutor gives you permission first\n\nHope to hear from some of you soon. There's a lot of talent in Year 9, so I hope we have a few entries. Looks great on your CV too, entering an Asia-wide speech and drama competition.\n\nAll the best\nMs Heather",
-  "ko": "안녕하세요 여러분,\n\nFOBISIA 독백 대회(Monologue Competition) 마감이 다가오고 있습니다.\n\n대회에 참가하고 싶으면 저에게 이메일을 보내서, 11월 23일로 시작하는 주(2주 뒤)에 녹화(recording)할 수 있는 요일과 시간을 알려 주세요.\n\n저에게 한 번 공연(perform)하고, 마지막 피드백(feedback)을 받은 뒤, 가장 좋은 테이크(take)를 얻기 위해 두어 번 촬영하는 데 약 20분이 필요합니다. 대사(lines)를 반드시 외워 와야(memorised) 한다는 점에 유의하세요. 등교 전, 방과 후, 또는 담임(tutor)이 먼저 허락해 주면 튜터 시간(tutor time) 중에도 할 수 있습니다\n\n곧 여러분 중 몇 명에게서 연락이 오기를 바랍니다. 9학년(Year 9)에는 재능 있는 학생이 많으니 몇 명이 참가하기를 바랍니다. 아시아 전역의 스피치 및 연극 대회(speech and drama competition)에 참가하는 것은 이력서(CV)에도 아주 좋아 보입니다.\n\n행운을 빌어요\nHeather 선생님",
-  "files": [],
   "at": "2026-11-14"
  },
  "과학 (Mr Phillips)|GCSE Electricity V = IR Characteristics": {
@@ -1846,5 +1771,11 @@ window.POST_DETAILS = {
   "ko": "1학기 공통 평가(Common Assessment)",
   "files": [],
   "at": "2026-11-19"
+ },
+ "드라마|Hi All, a reminder that the deadline to express interest in the FOBISIA Junior Drama Festival happening in March 2027 is": {
+  "en": "Hi All,\n\na reminder that the deadline to express interest in the FOBISIA Junior Drama Festival happening in March 2027 is this coming Monday.\n\nPlease speak to your parents this weekend if you're interested and get them to sign the Google Form in the letter below/ email I sent to them.\n\nThe trip will only run if we have enough people who are interested. So if you are interested and you think your friends might be, talk to them, too!",
+  "ko": "안녕하세요 여러분,\n\n2027년 3월에 열리는 FOBISIA 주니어 연극 페스티벌(FOBISIA Junior Drama Festival) 참가 희망 의사를 밝히는 마감일이 이번 주 월요일이라는 것을 다시 알려드립니다.\n\n관심이 있다면 이번 주말에 부모님과 이야기하고, 아래 안내문/제가 부모님께 보낸 이메일에 있는 구글 폼(Google Form)에 부모님이 서명하도록 해 주세요.\n\n이 여행은 관심 있는 사람이 충분히 모여야만 진행됩니다. 그러니 관심이 있고 친구들도 관심이 있을 것 같다면, 친구들에게도 이야기해 주세요!",
+  "files": [],
+  "at": "2026-11-20"
  }
 };

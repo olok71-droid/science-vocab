@@ -1,10 +1,19 @@
 window.CLASSROOM_POSTS = [
  {
+  "subject": "드라마",
+  "date": "2026-11-20",
+  "type": "공지",
+  "title": "Hi All, a reminder that the deadline to express interest in the FOBISIA Junior Drama Festival happening in March 2027 is",
+  "ko": "FOBISIA 연극축제 참가 희망 시 부모 구글폼 서명",
+  "due": "",
+  "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
+ },
+ {
   "subject": "과학 (Mr Phillips)",
   "date": "2026-11-19",
   "type": "자료",
   "title": "CA2 Assessment - Paper and Mar kscheme",
-  "ko": "CA2 평가 시험지와 채점기준표 자료",
+  "ko": "CA2 시험지와 채점기준표 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -22,7 +31,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-18",
   "type": "공지",
   "title": "As Advent draws near, I’d love for you to join us for Mass.",
-  "ko": "미사 참석 희망 시 신청서 작성(간식 제공)",
+  "ko": "대림 미사 참석 희망자 등록 안내, 간식 제공",
   "due": "",
   "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
  },
@@ -31,9 +40,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-17",
   "type": "과제",
   "title": "Make your voice heard - Vocab HW 2",
-  "ko": "'Make your voice heard' 어휘 숙제 2 제출",
+  "ko": "'Make your voice heard' 어휘 숙제 2",
   "due": "2026-11-20",
-  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy/a/ODk5OTIwNDc0MDM0/details"
+  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
  {
   "subject": "수학 (Mr Anan)",
@@ -67,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-16",
   "type": "과제",
   "title": "GCSE Electricity V = IR Characteristics",
-  "ko": "V=IR 특성 Wayground 퀴즈 풀기",
+  "ko": "Wayground로 V=IR 특성 퀴즈 풀기",
   "due": "2026-11-22",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk5NzA1MjA4Nzc2/details"
  },
@@ -121,7 +130,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-13",
   "type": "자료",
   "title": "Answers for Exercise 9.3",
-  "ko": "연습문제 9.3 정답 PDF 게시",
+  "ko": "연습문제 9.3 정답 PDF 올림",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -130,7 +139,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-13",
   "type": "공지",
   "title": "Dear Students, a reminder to complete your homework on Dr Frost",
-  "ko": "Dr Frost 숙제를 끝내라는 알림",
+  "ko": "Dr Frost 숙제를 끝내라는 안내",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -148,7 +157,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-13",
   "type": "공지",
   "title": "The FOBISIA Drama Festival is happening in Malaysia in March 2027!",
-  "ko": "FOBISIA 연극축제 참가 희망 시 부모님 신청",
+  "ko": "2027년 3월 FOBISIA 연극축제, 첨부 편지 보고 부모 신청",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -166,9 +175,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-12",
   "type": "과제",
   "title": "Circuits",
-  "ko": "회로 Wayground 퀴즈 풀기",
+  "ko": "Wayground로 회로 퀴즈 풀기",
   "due": "2026-11-19",
-  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk4OTgyNTM4Nzkz/details"
+  "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
  {
   "subject": "과학 (Mr Phillips)",
@@ -192,8 +201,8 @@ window.CLASSROOM_POSTS = [
   "subject": "드라마",
   "date": "2026-11-12",
   "type": "공지",
-  "title": "The deadline for the FOBISIA Monologue Competition is nearing.",
-  "ko": "모놀로그 대회 참가 시 녹화일 이메일, 대사 암기",
+  "title": "Hi everyone, The deadline for the FOBISIA Monologue Competition is nearing.",
+  "ko": "모놀로그 대회 참가 시 녹화 일정 메일, 대사 암기 필수",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -211,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-11",
   "type": "과제",
   "title": "Ionic and Covalent Bonds",
-  "ko": "이온결합·공유결합 Wayground 퀴즈",
+  "ko": "Wayground로 이온·공유결합 퀴즈 풀기",
   "due": "2026-11-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -274,7 +283,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble Gases",
-  "ko": "비활성 기체 Wayground 퀴즈 풀기",
+  "ko": "Wayground로 비활성 기체 퀴즈 풀기",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -283,7 +292,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble gas - wordsearch",
-  "ko": "비활성 기체 낱말 찾기 과제",
+  "ko": "비활성 기체 낱말찾기 과제",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -310,7 +319,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "자료",
   "title": "Heare are the answers for the UKMT Intermediate Math Challenge.",
-  "ko": "UKMT 중급 수학 챌린지 정답 PDF 게시",
+  "ko": "UKMT 수학 챌린지 정답 PDF 올림",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -319,7 +328,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Homework/Classwork - UKMT Intermediate Math Challenge",
-  "ko": "UKMT 중급 수학 챌린지 숙제·수업과제",
+  "ko": "UKMT 중급 수학 챌린지 문제 풀기",
   "due": "2026-11-13",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -328,7 +337,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "공지",
   "title": "THURSDAY'S MATHS MYSTERY CHALLENGE",
-  "ko": "목요일 미스터리 퍼즐 풀고 구글폼에 답 제출",
+  "ko": "수학주간 미스터리 4일차 퍼즐 풀고 폼 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -364,7 +373,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-04",
   "type": "공지",
   "title": "WEDNESDAY MATHS MYSTERY CHALLENGE",
-  "ko": "수요일 미스터리 퍼즐 풀고 구글폼에 답 제출",
+  "ko": "수학주간 미스터리 3일차 퍼즐 풀고 폼 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -418,7 +427,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "과제",
   "title": "Make your voice heard, vocab homework 1",
-  "ko": "'Make your voice heard' 어휘 숙제 1 제출",
+  "ko": "'Make your voice heard' 어휘 숙제 1",
   "due": "2026-11-05",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -427,7 +436,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "공지",
   "title": "TUESDAY MATHS MYSTERY CHALLENGE",
-  "ko": "화요일 미스터리 퍼즐 풀고 구글폼에 답 제출",
+  "ko": "수학주간 미스터리 2일차 퍼즐 풀고 폼 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -436,7 +445,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "전기 회로와 기호 Wayground 퀴즈",
+  "ko": "Wayground로 전기회로·기호 퀴즈 풀기",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -445,7 +454,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9 Electricity - Check your Progress",
-  "ko": "전기 단원 진도 점검 과제",
+  "ko": "전기 단원 성취도 점검 과제",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -481,7 +490,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "공지",
   "title": "MONDAY MATHS MYSTERY CHALLENGE",
-  "ko": "월요일 미스터리 퍼즐 풀고 구글폼에 답 제출",
+  "ko": "수학주간 미스터리 1일차 퍼즐 풀고 폼 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDI0OTkxNTg3"
  },
@@ -517,7 +526,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "과제",
   "title": "NARRATIVE COMMON ASSESSMENT",
-  "ko": "이야기 글쓰기 공통평가 제출",
+  "ko": "서사문 공통평가 제출",
   "due": "2026-10-30",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -526,36 +535,9 @@ window.CLASSROOM_POSTS = [
   "date": "2026-10-30",
   "type": "자료",
   "title": "Keyboard Notes",
-  "ko": "키보드 계이름 자료",
+  "ko": "건반 음이름 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
- },
- {
-  "subject": "드라마",
-  "date": "2026-10-29",
-  "type": "자료",
-  "title": "Drama Cover lesson Thursday 29th October",
-  "ko": "드라마 대체수업 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
- },
- {
-  "subject": "중국어 (Ying Ying老师)",
-  "date": "2026-10-29",
-  "type": "자료",
-  "title": "T1 CA2 template - Writing Assessment",
-  "ko": "1학기 CA2 작문 평가 양식",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODU1ODg0ODQ3MTgy"
- },
- {
-  "subject": "튜터 (Mr Cassels)",
-  "date": "2026-10-29",
-  "type": "공지",
-  "title": "UNITY WEEK CHESS!",
-  "ko": "유니티 위크 체스 대회 참가 안내",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODcyMDkwNzQ1ODA5"
  },
  {
   "subject": "휴머니티 (Mr Lawrence)",
@@ -568,4 +550,4 @@ window.CLASSROOM_POSTS = [
   "part": "역사"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-19 18:12";
+window.CLASSROOM_POSTS_AT = "2026-11-20 18:09";
