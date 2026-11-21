@@ -58,36 +58,10 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "영어 (Mr Glanz)|NARRATIVE COMMON ASSESSMENT": {
-  "en": "NARRATIVE COMMON ASSESSMENT\nPlease type your final copy of your story directly into the attached doc. Make sure you click submit / turn in before 3:30pm, or I will not be able to mark it.",
-  "ko": "서사문 공통 평가(NARRATIVE COMMON ASSESSMENT)\n이야기의 최종본(final copy)을 첨부된 문서에 바로 입력하세요. 오후 3시 30분 전에 반드시 제출(submit / turn in)을 누르세요. 그렇지 않으면 채점할 수 없습니다.",
-  "files": [],
-  "at": "2026-11-01"
- },
  "라살 교육|STRUCTURE OF LEDU TALKS": {
   "en": "STRUCTURE OF LEDU TALKS\nClick the link below and work on your LEDU Talks Structure. Follow the instructions found in the Worksheet.",
   "ko": "LEDU 토크 구성(STRUCTURE OF LEDU TALKS)\n아래 링크를 눌러 LEDU 토크 구성(LEDU Talks Structure)을 작성하세요. 워크시트(Worksheet)에 있는 지시사항을 따르세요.",
   "files": [],
-  "at": "2026-11-01"
- },
- "음악 (Mr Everett)|Keyboard Notes": {
-  "en": "Keyboard Notes",
-  "ko": "건반 음이름(Keyboard Notes)",
-  "files": [
-   {
-    "name": "Grand Staff Guide.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1vwwtLLRvkZqduAMgC_JUs9s_Bu_LkHzs/view?usp=classroom_web",
-    "local": "pdfs/music/Grand Staff Guide.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/music/Grand_Staff_Guide_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
   "at": "2026-11-01"
  },
  "과학 (Mr Phillips)|9 Electricity - Check your Progress": {

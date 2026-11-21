@@ -4,7 +4,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-20",
   "type": "공지",
   "title": "Hi All, a reminder that the deadline to express interest in the FOBISIA Junior Drama Festival happening in March 2027 is",
-  "ko": "FOBISIA 연극축제 참가 희망 시 부모 구글폼 서명",
+  "ko": "FOBISIA 주니어 연극제 참가 희망 시 부모님 구글폼 서명",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -13,7 +13,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-19",
   "type": "자료",
   "title": "CA2 Assessment - Paper and Mar kscheme",
-  "ko": "CA2 시험지와 채점기준표 자료",
+  "ko": "CA2 평가 시험지와 채점기준표 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -22,7 +22,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-19",
   "type": "과제",
   "title": "Common Assessment Term 1",
-  "ko": "1학기 공통평가 과제 게시",
+  "ko": "1학기 공통평가 과제가 올라옴",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -58,7 +58,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-17",
   "type": "공지",
   "title": "Cover Work 17/11/26",
-  "ko": "크롬 뮤직랩으로 Last Christmas나 Golden 만들기",
+  "ko": "크롬 뮤직랩으로 노래 만들어 댓글로 제출",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
  },
@@ -76,7 +76,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-16",
   "type": "과제",
   "title": "GCSE Electricity V = IR Characteristics",
-  "ko": "Wayground로 V=IR 특성 퀴즈 풀기",
+  "ko": "웨이그라운드로 V=IR 특성 퀴즈 풀기",
   "due": "2026-11-22",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy/a/ODk5NzA1MjA4Nzc2/details"
  },
@@ -85,7 +85,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-16",
   "type": "과제",
   "title": "upload your completed IV graph for the filament lamp here",
-  "ko": "필라멘트 전구 IV 그래프 완성본 올리기",
+  "ko": "필라멘트 전구 IV 그래프 완성해 올리기",
   "due": "2026-11-22",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -157,7 +157,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-13",
   "type": "공지",
   "title": "The FOBISIA Drama Festival is happening in Malaysia in March 2027!",
-  "ko": "2027년 3월 FOBISIA 연극축제, 첨부 편지 보고 부모 신청",
+  "ko": "FOBISIA 연극제 안내, 관심 있으면 부모님 신청",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -175,7 +175,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-12",
   "type": "과제",
   "title": "Circuits",
-  "ko": "Wayground로 회로 퀴즈 풀기",
+  "ko": "웨이그라운드로 회로 퀴즈 풀기",
   "due": "2026-11-19",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -202,7 +202,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-12",
   "type": "공지",
   "title": "Hi everyone, The deadline for the FOBISIA Monologue Competition is nearing.",
-  "ko": "모놀로그 대회 참가 시 녹화 일정 메일, 대사 암기 필수",
+  "ko": "독백 대회 참가 시 녹화 날짜 메일, 대사 암기 필수",
   "due": "",
   "url": "https://classroom.google.com/c/ODU2MDcxNDkxMzQ3"
  },
@@ -220,7 +220,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-11",
   "type": "과제",
   "title": "Ionic and Covalent Bonds",
-  "ko": "Wayground로 이온·공유결합 퀴즈 풀기",
+  "ko": "웨이그라운드로 이온·공유결합 퀴즈 풀기",
   "due": "2026-11-18",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -283,7 +283,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble Gases",
-  "ko": "Wayground로 비활성 기체 퀴즈 풀기",
+  "ko": "웨이그라운드로 비활성 기체 퀴즈 풀기",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -292,7 +292,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-05",
   "type": "과제",
   "title": "Noble gas - wordsearch",
-  "ko": "비활성 기체 낱말찾기 과제",
+  "ko": "비활성 기체 낱말 찾기 과제",
   "due": "2026-11-11",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -409,16 +409,17 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-03",
   "type": "공지",
   "title": "Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.",
-  "ko": "결석자를 위한 CA 시험 일정 안내",
+  "ko": "역사 CA 시험 일정 변경 안내",
   "due": "2026-11-04",
-  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz"
+  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz",
+  "part": "역사"
  },
  {
   "subject": "영어 (Mr Glanz)",
   "date": "2026-11-03",
   "type": "공지",
   "title": "The Adria Richards story:",
-  "ko": "Adria Richards 이야기 이미지 공유",
+  "ko": "에이드리아 리처즈 이야기 사진 공유",
   "due": "",
   "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
  },
@@ -445,7 +446,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "electrical circuits and symbols",
-  "ko": "Wayground로 전기회로·기호 퀴즈 풀기",
+  "ko": "웨이그라운드로 회로와 기호 퀴즈 풀기",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -472,7 +473,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "과제",
   "title": "9.4 Practical Circuits workbook questions",
-  "ko": "9.4 실용 회로 워크북 문제 풀기",
+  "ko": "9.4 실험 회로 워크북 문제 풀기",
   "due": "2026-11-08",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -481,7 +482,7 @@ window.CLASSROOM_POSTS = [
   "date": "2026-11-02",
   "type": "자료",
   "title": "9.4 Practical Circuits",
-  "ko": "9.4 실용 회로 자료",
+  "ko": "9.4 실험 회로 자료",
   "due": "",
   "url": "https://classroom.google.com/c/ODc0Mzk2NjE4MTMy"
  },
@@ -522,32 +523,14 @@ window.CLASSROOM_POSTS = [
   "url": "https://classroom.google.com/c/ODcyMDg0NDQyODUz"
  },
  {
-  "subject": "영어 (Mr Glanz)",
-  "date": "2026-10-30",
-  "type": "과제",
-  "title": "NARRATIVE COMMON ASSESSMENT",
-  "ko": "서사문 공통평가 제출",
-  "due": "2026-10-30",
-  "url": "https://classroom.google.com/c/ODc1MjM4NDI2MTMy"
- },
- {
-  "subject": "음악 (Mr Everett)",
-  "date": "2026-10-30",
-  "type": "자료",
-  "title": "Keyboard Notes",
-  "ko": "건반 음이름 자료",
-  "due": "",
-  "url": "https://classroom.google.com/c/ODc0NDIwMjU1MzU1"
- },
- {
   "subject": "휴머니티 (Mr Lawrence)",
   "date": "2026-10-09",
   "type": "과제",
   "title": "Term 1 History Homework",
-  "ko": "1학기 역사 숙제",
+  "ko": "1학기 역사 숙제 제출",
   "due": "2026-11-27",
-  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz",
+  "url": "https://classroom.google.com/c/ODY5MTMxODczMjMz/a/ODkwMTA5ODA2MDM1/details",
   "part": "역사"
  }
 ];
-window.CLASSROOM_POSTS_AT = "2026-11-20 18:09";
+window.CLASSROOM_POSTS_AT = "2026-11-21 18:09";
