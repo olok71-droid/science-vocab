@@ -58,12 +58,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "라살 교육|STRUCTURE OF LEDU TALKS": {
-  "en": "STRUCTURE OF LEDU TALKS\nClick the link below and work on your LEDU Talks Structure. Follow the instructions found in the Worksheet.",
-  "ko": "LEDU 토크 구성(STRUCTURE OF LEDU TALKS)\n아래 링크를 눌러 LEDU 토크 구성(LEDU Talks Structure)을 작성하세요. 워크시트(Worksheet)에 있는 지시사항을 따르세요.",
-  "files": [],
-  "at": "2026-11-01"
- },
  "과학 (Mr Phillips)|9 Electricity - Check your Progress": {
   "en": "9 Electricity - Check your Progress",
   "ko": "9 전기(Electricity) - 학습 진도 점검(Check your Progress)",
