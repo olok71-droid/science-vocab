@@ -1799,6 +1799,15 @@ function bellSet(text, cls){
   var b = document.getElementById('cnBell'); if(!b) return;
   b.textContent = text; b.className = 'cn-bell' + (cls ? ' ' + cls : '');
 }
+// anon 은 읽기 권한이 없어 upsert(Prefer: resolution=…)는 401 이다. 그냥 넣고, 409 = 이미 저장됨.
+function amyPushSave(sub){
+  var j = sub.toJSON();
+  return fetch(AMY_PUSH.url, {
+    method:'POST',
+    headers:{'apikey':AMY_PUSH.key,'Authorization':'Bearer '+AMY_PUSH.key,'Content-Type':'application/json'},
+    body: JSON.stringify({endpoint: j.endpoint, sub: j})
+  }).then(function(r){ if (!r.ok && r.status !== 409) throw new Error('push save ' + r.status); });
+}
 function amyPushOn(){
   if (!('serviceWorker' in navigator) || !('PushManager' in window)){
     bellSet('홈 화면에 추가해야 알림', 'warn'); return;
@@ -1809,15 +1818,8 @@ function amyPushOn(){
       return reg.pushManager.getSubscription().then(function(sub){
         return sub || reg.pushManager.subscribe({userVisibleOnly:true, applicationServerKey:b64ToU8(AMY_PUSH.vapid)});
       });
-    }).then(function(sub){
-      var j = sub.toJSON();
-      return fetch(AMY_PUSH.url, {
-        method:'POST',
-        headers:{'apikey':AMY_PUSH.key,'Authorization':'Bearer '+AMY_PUSH.key,
-                 'Content-Type':'application/json','Prefer':'resolution=merge-duplicates'},
-        body: JSON.stringify({endpoint: j.endpoint, sub: j})
-      });
-    }).then(function(){ bellSet('🔔 알림 켜짐','on'); })
+    }).then(amyPushSave)
+      .then(function(){ bellSet('🔔 알림 켜짐','on'); })
       .catch(function(){ bellSet('알림 실패','warn'); });
   });
 }
@@ -1828,7 +1830,9 @@ function amyPushOn(){
   }
   if (Notification.permission === 'granted'){
     navigator.serviceWorker.ready.then(function(reg){ return reg.pushManager.getSubscription(); })
-      .then(function(sub){ if (sub) bellSet('🔔 알림 켜짐','on'); });
+      .then(function(sub){
+        if (sub) return amyPushSave(sub).then(function(){ bellSet('🔔 알림 켜짐','on'); });
+      }).catch(function(){ bellSet('알림 실패','warn'); });
   }
 })();
 </script>
