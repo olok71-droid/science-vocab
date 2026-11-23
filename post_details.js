@@ -58,108 +58,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-21"
  },
- "과학 (Mr Phillips)|9 Electricity - Check your Progress": {
-  "en": "9 Electricity - Check your Progress",
-  "ko": "9 전기(Electricity) - 학습 진도 점검(Check your Progress)",
-  "files": [
-   {
-    "name": "‪Circuit Construction Kit: DC‬",
-    "kind": "web",
-    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
-    "local": null
-   }
-  ],
-  "at": "2026-11-02"
- },
- "과학 (Mr Phillips)|upload resistance graph - here": {
-  "en": "upload resistance graph - here",
-  "ko": "저항(resistance) 그래프 업로드 - 여기에",
-  "files": [],
-  "at": "2026-11-02"
- },
- "과학 (Mr Phillips)|9.4 Practical Circuits workbook questions": {
-  "en": "9.4 Practical Circuits workbook questions",
-  "ko": "9.4 실용 회로(Practical Circuits) 워크북 문제",
-  "files": [
-   {
-    "name": "9.4 Practical circuits - answers",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4/edit?usp=classroom_web",
-    "local": "post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1zjbujdTcbNoaZZpBgijV8kFI7d0XvSjhafursL6sXj4_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-02"
- },
- "과학 (Mr Phillips)|9.4 Practical Circuits": {
-  "en": "9.4 Practical Circuits",
-  "ko": "9.4 실용 회로(Practical Circuits)",
-  "files": [
-   {
-    "name": "9.4 Practical circuits",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni/view?usp=classroom_web",
-    "local": "post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nLoCQPxxOcssrsdgK0K9WobfLJO1uFni_p6.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "Series and Parallel Circuits | Electricity | Physics | FuseSchool",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=8Z0jhQeYDUE",
-    "local": null
-   },
-   {
-    "name": "‪Circuit Construction Kit: DC‬",
-    "kind": "web",
-    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
-    "local": null
-   },
-   {
-    "name": "Resistors Explained & Ohm's Law Made Simple! | What Are Resistors? & How Do Resistors Work?",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=x6jajfprWZo",
-    "local": null
-   }
-  ],
-  "at": "2026-11-02"
- },
  "수학 (Mr Anan)|MONDAY MATHS MYSTERY CHALLENGE": {
   "en": "MONDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve",
   "ko": "월요일 수학 미스터리 챌린지(MONDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(GOLDEN MATHS CALCULATOR)가 도난당했다!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 한다!\n1. 첨부된 슬라이드를 살펴보고 오늘의 퍼즐을 찾는다\n2. 답이 나오면 첨부된 구글 폼(google form) 링크로 제출한다\n3. 매일 새로운 단서(clue)가 구글 클래스룸(google classrooms)에 올라오니 풀어 보아라",
@@ -1641,10 +1539,266 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-19"
  },
- "과학 (Mr Phillips)|CA2 Assessment - Paper and Mar kscheme": {
-  "en": "CA2 Assessment - Paper and Mar kscheme",
-  "ko": "CA2 평가(Assessment) - 시험지(Paper)와 채점 기준표(Mark scheme)",
+ "음악 (Mr Everett)|Common Assessment Term 1": {
+  "en": "Common Assessment Term 1",
+  "ko": "1학기 공통 평가(Common Assessment)",
+  "files": [],
+  "at": "2026-11-19"
+ },
+ "드라마|Hi All, a reminder that the deadline to express interest in the FOBISIA Junior Drama Festival happening in March 2027 is": {
+  "en": "Hi All,\n\na reminder that the deadline to express interest in the FOBISIA Junior Drama Festival happening in March 2027 is this coming Monday.\n\nPlease speak to your parents this weekend if you're interested and get them to sign the Google Form in the letter below/ email I sent to them.\n\nThe trip will only run if we have enough people who are interested. So if you are interested and you think your friends might be, talk to them, too!",
+  "ko": "안녕하세요 여러분,\n\n2027년 3월에 열리는 FOBISIA 주니어 연극 페스티벌(FOBISIA Junior Drama Festival) 참가 희망 의사를 밝히는 마감일이 이번 주 월요일이라는 것을 다시 알려드립니다.\n\n관심이 있다면 이번 주말에 부모님과 이야기하고, 아래 안내문/제가 부모님께 보낸 이메일에 있는 구글 폼(Google Form)에 부모님이 서명하도록 해 주세요.\n\n이 여행은 관심 있는 사람이 충분히 모여야만 진행됩니다. 그러니 관심이 있고 친구들도 관심이 있을 것 같다면, 친구들에게도 이야기해 주세요!",
+  "files": [],
+  "at": "2026-11-20"
+ },
+ "과학 (Mr Phillips)|Factors affecting photosynthesis": {
+  "en": "Factors affecting photosynthesis\nClick on the link below to start the game",
+  "ko": "광합성(photosynthesis)에 영향을 주는 요인(factors)\n아래 링크를 눌러 게임을 시작하세요",
   "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=6ltLTaIYtsI5rWUTrhi3kGNlAreO69998j9cEXJ3gi8KbJup3bPFtqGuKV2MxVcrv-QpuimnnhJbDj71pi_cwdXF88Lf0UBMdwJzvGIQHsTyr5jK-eyP1ckgcbZ_FZzlRXNhrGqbCOAroYaL_9D_fMzoiNj-53dR4SjGAd1uwWSaHFjGLu6_bYrClH6ydSozVzwAzNBTEpa1goKf22pWaB8Kqg.nU7UbIdo_igoA7veYzdA4A.FCFk9gdpAr6sHINA&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-11-23"
+ },
+ "과학 (Mr Phillips)|Photosynthesis - video worksheet": {
+  "en": "Photosynthesis - video worksheet",
+  "ko": "광합성(photosynthesis) - 영상 학습지(video worksheet)",
+  "files": [
+   {
+    "name": "Y9 Answers to Photosynthesis worksheet",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1p7Q4hy_ZVlePaJ-2fnczkX02nXqoIgRKxO0KNyP0QXo/edit?usp=classroom_web",
+    "local": "pdfs/genes/Y9 Answers to Photosynthesis worksheet.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/genes/Y9_Answers_to_Photosynthesis_worksheet_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "Sci Eye Photosynthesis G53LS13",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=1j7DFjr0IdA",
+    "local": null
+   }
+  ],
+  "at": "2026-11-23"
+ },
+ "과학 (Mr Phillips)|Photosynthesis - workbook questions": {
+  "en": "Photosynthesis - workbook questions",
+  "ko": "광합성(photosynthesis) - 워크북 문제(workbook questions)",
+  "files": [
+   {
+    "name": "1.1 Photosynthesis - workbook answers",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1BrPTj29dLP4tnvmqsayS_CK-ifLNYkJeR78lzsUf1mM/edit?usp=classroom_web",
+    "local": "pdfs/genes/1.1 Photosynthesis - workbook answers.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/genes/1_1_Photosynthesis_workbook_answers_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/1_1_Photosynthesis_workbook_answers_p2.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-23"
+ },
+ "과학 (Mr Phillips)|Photosynthesis": {
+  "en": "Photosynthesis",
+  "ko": "광합성(photosynthesis)",
+  "files": [
+   {
+    "name": "Photosynthesis Bubble Simulation (Jar Left • Lamp Centre • Bubble Count Right)",
+    "kind": "web",
+    "url": "https://iwant2study.org/lookangejss/biology/ai/riazSulaimi/photosynthesis_bubble_sim_moving_lamp_glow.html",
+    "local": null
+   },
+   {
+    "name": "B2.1 Photosynthesis DCA",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1SkVpWX_dGHoGxMQBtIIu7a6EpiqglxlRmCd21RW6BkA/edit?usp=classroom_web",
+    "local": "pdfs/genes/B2.1 Photosynthesis DCA.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p6.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p7.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p8.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p9.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p10.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p11.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p12.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p13.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p14.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p15.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_1_Photosynthesis_DCA_p16.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "1.1 Photosynthesis and the carbon cycle",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1XSccCGZl0Rv6FpPHHXR76p3_TMQ-CDdK/view?usp=classroom_web",
+    "local": "post_files/1XSccCGZl0Rv6FpPHHXR76p3_TMQ-CDdK.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1XSccCGZl0Rv6FpPHHXR76p3_TMQ_CDdK_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1XSccCGZl0Rv6FpPHHXR76p3_TMQ_CDdK_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1XSccCGZl0Rv6FpPHHXR76p3_TMQ_CDdK_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1XSccCGZl0Rv6FpPHHXR76p3_TMQ_CDdK_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1XSccCGZl0Rv6FpPHHXR76p3_TMQ_CDdK_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1XSccCGZl0Rv6FpPHHXR76p3_TMQ_CDdK_p6.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1XSccCGZl0Rv6FpPHHXR76p3_TMQ_CDdK_p7.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "9B2 Photosynthesis keywords.docx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1byGLnQ87TjUaRD-73JGg6ephnxw4KsYD/view?usp=classroom_web",
+    "local": "pdfs/genes/9B2 Photosynthesis keywords.docx",
+    "pages": [
+     {
+      "src": "assets/pages/genes/9B2_Photosynthesis_keywords_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/9B2_Photosynthesis_keywords_p2.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-23"
+ },
+ "과학 (Mr Phillips)|CA2 Assessment - Paper and Markscheme": {
+  "en": "CA2 Assessment - Paper and Markscheme",
+  "ko": "CA2 평가(assessment) - 시험지(paper)와 채점 기준표(markscheme)",
+  "files": [
+   {
+    "name": "Y9 CA2 - 26/27 MS - KPH",
+    "kind": "gdoc",
+    "url": "https://docs.google.com/document/d/1XCRHocjfwUiQcCy6s7UtjlK4jAZX8ekiQ3zaxWtBdrQ/edit?usp=classroom_web",
+    "local": "pdfs/genes/Y9 CA2 - 26_27 MS - KPH.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_MS_KPH_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/Y9_CA2_26_27_MS_KPH_p2.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
    {
     "name": "Y9 CA2 - 26_27.pdf",
     "kind": "drive",
@@ -1712,38 +1866,124 @@ window.POST_DETAILS = {
       "note": ""
      }
     ]
+   }
+  ],
+  "at": "2026-11-23"
+ },
+ "컴퓨터 과학 (Ms Meha)|Google Spreadsheet Exercise 1": {
+  "en": "Google Spreadsheet Exercise 1\nDear All,\n\nI am on Medical Leave .Watch the spreadsheet Video and complete the spreadsheet Exercise\n\nhttps://www.youtube.com/watch?v=Jl0Qk63z2ZY",
+  "ko": "구글 스프레드시트(Google Spreadsheet) 연습 문제(Exercise) 1\n여러분께,\n\n저는 병가(Medical Leave) 중입니다. 스프레드시트(spreadsheet) 영상을 보고 스프레드시트 연습 문제(Exercise)를 완료하세요.\n\nhttps://www.youtube.com/watch?v=Jl0Qk63z2ZY",
+  "files": [
+   {
+    "name": "https://www.youtube.com/watch?v=Jl0Qk63z2ZY",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=Jl0Qk63z2ZY",
+    "local": null
    },
    {
-    "name": "Y9 CA2 - 26/27 MS - KPH",
-    "kind": "gdoc",
-    "url": "https://docs.google.com/document/d/1XCRHocjfwUiQcCy6s7UtjlK4jAZX8ekiQ3zaxWtBdrQ/edit?usp=classroom_web",
-    "local": "pdfs/genes/Y9 CA2 - 26_27 MS - KPH.pdf",
+    "name": "Functions_in_a_nutshell.xlsx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83/view?usp=classroom_web",
+    "local": "post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83.xlsx"
+   },
+   {
+    "name": "Year_9_Spreadsheet_Basics_Lesson",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/1-6Et0F5P_NecCXBWW1G-oz_Qk3OINp4fPQxlcWQRQ4E/edit?usp=classroom_web",
+    "local": "pdfs/cs/Year_9_Spreadsheet_Basics_Lesson.pdf",
     "pages": [
      {
-      "src": "assets/pages/genes/Y9_CA2_26_27_MS_KPH_p1.jpg",
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p1.jpg",
       "tr": "",
       "note": ""
      },
      {
-      "src": "assets/pages/genes/Y9_CA2_26_27_MS_KPH_p2.jpg",
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p6.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p7.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p8.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p9.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p10.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p11.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p12.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p13.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/cs/Year_9_Spreadsheet_Basics_Lesson_p14.jpg",
       "tr": "",
       "note": ""
      }
     ]
    }
   ],
-  "at": "2026-11-19"
+  "at": "2026-11-23"
  },
- "음악 (Mr Everett)|Common Assessment Term 1": {
-  "en": "Common Assessment Term 1",
-  "ko": "1학기 공통 평가(Common Assessment)",
-  "files": [],
-  "at": "2026-11-19"
+ "튜터 (Mr Cassels)|Christmas Party Drinks": {
+  "en": "Christmas Party Drinks\nHere is the list of drinks you and your groups agreed to bring in for your party. Remember to take the responsibility to ensure that everyone can have the best possible time!\n\nIf you need to make any changes, then ensure you agree as a group and let me know so I can update the sheet.",
+  "ko": "크리스마스 파티 음료\n여러분과 각 모둠이 파티에 가져오기로 합의한 음료 목록입니다. 모두가 최대한 즐거운 시간을 보낼 수 있도록 책임감을 갖고 챙겨 주세요!\n\n바꿀 것이 있으면 모둠끼리 꼭 합의한 뒤 저에게 알려 주세요. 그러면 제가 시트를 고쳐 놓겠습니다.",
+  "files": [
+   {
+    "name": "9Y Christmas Party Drinks",
+    "kind": "gsheet",
+    "url": "https://docs.google.com/spreadsheets/d/1RJ5e4EvK1HTYdQukGMES5AAjOuG24b8PfveJm7Qk-sc/edit?usp=classroom_web",
+    "local": null
+   }
+  ],
+  "at": "2026-11-23"
  },
- "드라마|Hi All, a reminder that the deadline to express interest in the FOBISIA Junior Drama Festival happening in March 2027 is": {
-  "en": "Hi All,\n\na reminder that the deadline to express interest in the FOBISIA Junior Drama Festival happening in March 2027 is this coming Monday.\n\nPlease speak to your parents this weekend if you're interested and get them to sign the Google Form in the letter below/ email I sent to them.\n\nThe trip will only run if we have enough people who are interested. So if you are interested and you think your friends might be, talk to them, too!",
-  "ko": "안녕하세요 여러분,\n\n2027년 3월에 열리는 FOBISIA 주니어 연극 페스티벌(FOBISIA Junior Drama Festival) 참가 희망 의사를 밝히는 마감일이 이번 주 월요일이라는 것을 다시 알려드립니다.\n\n관심이 있다면 이번 주말에 부모님과 이야기하고, 아래 안내문/제가 부모님께 보낸 이메일에 있는 구글 폼(Google Form)에 부모님이 서명하도록 해 주세요.\n\n이 여행은 관심 있는 사람이 충분히 모여야만 진행됩니다. 그러니 관심이 있고 친구들도 관심이 있을 것 같다면, 친구들에게도 이야기해 주세요!",
+ "라살 교육|Cover Task w/c Nov 23 - Saint Benilde": {
+  "en": "Cover Task w/c Nov 23 - Saint Benilde",
+  "ko": "11월 23일 시작 주 대체 과제(Cover Task) - 성 베닐드(Saint Benilde)",
   "files": [],
-  "at": "2026-11-20"
+  "at": "2026-11-23"
  }
 };
