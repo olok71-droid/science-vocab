@@ -1,5 +1,11 @@
 /* 클래스룸 글 원문·번역·첨부 — ~/classroom-sync/post_details.py 가 만든다. 손으로 고치지 마라. */
 window.POST_DETAILS = {
+ "튜터 (Mr Cassels)|Bring your Reading Books!": {
+  "en": "Bring your Reading Books!\nEVERYONE remembered their reading books last week. Well done guys :)\n\nRemember, you should have a reading book with you at all times. On a Wednesday particularly, tutor time will often be put aside for silent reading. Make sure you have a book that is in English. Translated books are also okay for you to bring.",
+  "ko": "읽기 책(reading book)을 가져오세요!\n지난주에는 모두가 읽기 책을 잊지 않고 가져왔어요. 잘했어요, 여러분 :)\n\n기억하세요, 읽기 책은 항상 가지고 다녀야 합니다. 특히 수요일에는 튜터 시간(tutor time)을 조용히 책 읽기(silent reading)에 쓰는 경우가 많습니다. 영어로 된 책을 꼭 준비하세요. 번역본(translated books)을 가져와도 괜찮습니다.",
+  "files": [],
+  "at": "2026-10-06"
+ },
  "휴머니티 (Mr Lawrence)|Term 1 History Homework": {
   "en": "Term 1 History Homework\nWhat do I need to do?\n✅ Complete ONE challenge task independently by Friday 27th November 2026.\n✅ Choose any one of the 12 challenge tasks in the following slides.\n⭐ You are welcome to complete more than one task. You may work with a friend on extra tasks, but at least one task must be completed on your own.\n\nHow do I submit it?\n📅 Deadline: 27th November 2026, 5pm.\n💻 Submit your work on Google Classroom. If you have created a physical resource, hand it to your teacher and upload a photo of it to Google Classroom.\n\nWhat are we looking for?\nYour work should show high effort and creativity. You have 6 to complete it, so take your time and produce something you are proud of.\nAim to spend around 30 minutes per week working on your project.\n\nWhy is it important?\nYour teacher will review your work and it will contribute towards your End of Term Report\nYou could create something that helps you revise or a resource that could be used by future students. Excellent work may even be displayed or shared with next year's classes!",
   "ko": "1학기 역사(History) 숙제\n무엇을 해야 하나요?\n✅ 2026년 11월 27일 금요일까지 도전 과제(challenge task) 하나를 혼자 힘으로 완성하세요.\n✅ 다음 슬라이드에 있는 12개 도전 과제(challenge task) 중 아무거나 하나를 고르세요.\n⭐ 과제를 두 개 이상 해도 좋습니다. 추가 과제는 친구와 함께 해도 되지만, 적어도 과제 하나는 반드시 혼자 완성해야 합니다.\n\n어떻게 제출하나요?\n📅 마감: 2026년 11월 27일 오후 5시.\n💻 과제를 Google Classroom에 제출하세요. 실물 자료(physical resource)를 만들었다면 선생님께 직접 내고, 그 사진을 Google Classroom에 올리세요.\n\n무엇을 보나요?\n과제에 많은 노력(effort)과 창의성(creativity)이 드러나야 합니다. 완성할 시간이 6 있으니 서두르지 말고 스스로 자랑스러운 결과물을 만드세요.\n매주 30분 정도를 프로젝트(project)에 쓰는 것을 목표로 하세요.\n\n왜 중요한가요?\n선생님이 과제를 검토하고, 그 결과가 학기말 성적표(End of Term Report)에 반영됩니다\n복습(revise)에 도움이 되는 것이나 나중 학생들이 쓸 수 있는 자료(resource)를 만들 수도 있습니다. 훌륭한 과제는 내년 반 학생들에게 전시되거나 공유될 수도 있습니다!",
@@ -44,148 +50,6 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-10-09"
- },
- "과학 (Mr Phillips)|electrical circuits and symbols": {
-  "en": "electrical circuits and symbols\nClick on the link below to start the game",
-  "ko": "전기 회로(electrical circuits)와 기호(symbols)\n아래 링크를 클릭해 게임을 시작하세요",
-  "files": [
-   {
-    "name": "Quizizz is now Wayground | Teacher AI and Resources",
-    "kind": "web",
-    "url": "https://wayground.com/join?c=h8iiwbAcHOtA-6o6LmNMqV5ZEgdaCHaxiuWv8nnlx4mtf0isPNKoiVAkXnnxNUda1WWa7NuVTWInUjpmX-ZBphj7y3j42BuqeCCGfjpMrQ-azvOvSvTcl8Tomp2qpgBlBtYLGTaBvNHWGKmh3lYM4_ZtaaHS8HZYUmxsWkuLQeEHrzKT5NtUWXXRb_cWp-rakD_UYnHVov6RM02-p_cLw6JiHQ.EqKwRws7_9_n5NDHd57osA.UAiW-PVUKHOA5ijF&linktype=web",
-    "local": null
-   }
-  ],
-  "at": "2026-10-21"
- },
- "수학 (Mr Anan)|MONDAY MATHS MYSTERY CHALLENGE": {
-  "en": "MONDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve",
-  "ko": "월요일 수학 미스터리 챌린지(MONDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(GOLDEN MATHS CALCULATOR)가 도난당했다!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 한다!\n1. 첨부된 슬라이드를 살펴보고 오늘의 퍼즐을 찾는다\n2. 답이 나오면 첨부된 구글 폼(google form) 링크로 제출한다\n3. 매일 새로운 단서(clue)가 구글 클래스룸(google classrooms)에 올라오니 풀어 보아라",
-  "files": [
-   {
-    "name": "MONDAY MATHS WEEK MYSTERY.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5/view?usp=classroom_web",
-    "local": "post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5_p6.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1EkZuyBdwEAH1LnajI3nlSsCHWvMCakL5_p7.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "MONDAYS MATHS MYSTERY ANSWER",
-    "kind": "form",
-    "url": "https://forms.gle/MM5jARBPDzLABMKw7",
-    "local": null
-   }
-  ],
-  "at": "2026-11-02"
- },
- "컴퓨터 과학 (Ms Meha)|Common Assessment 1 Guide": {
-  "en": "Common Assessment 1 Guide",
-  "ko": "공통 평가(Common Assessment) 1 안내",
-  "files": [
-   {
-    "name": "Year9_Python_EAL_Support_Guide.docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1FF-qD4hdGi5IgxI25zwHd-1sPJKOa7a4/view?usp=classroom_web",
-    "local": "post_files/1FF-qD4hdGi5IgxI25zwHd-1sPJKOa7a4.docx",
-    "pages": [
-     {
-      "src": "assets/pages/cs/Year9_Python_EAL_Support_Guide_p1.jpg",
-      "tr": "<b>9학년 파이썬 평가(Year 9 Python Assessment)</b><br>EAL 학생 지원 안내서(EAL Student Support Guide) | 프로그램 6개 | 2026년 1학기(Term 1)<br>이 안내서는 평가지(assessment sheet)와 함께 쓴다. 각 문제를 쉬운 영어로 설명하고, 완성된 답이 아니라 <b>코드 시작 부분(code starters)</b>을 준다. 빈칸을 채우고, 자기만의 <b>주석(comments)</b>을 넣고, 작업한 것을 <b>시험해 본다(test)</b>.<br>평가 마감일: 2026년 11월 6일. 프로그램 하나는 10점이다(모두 합쳐 60점).<br><br><b>파이썬 미니 사전(Python mini-dictionary)</b><br>파이썬(Python) | 뜻(Meaning)<br><b>input()</b> | 사용자에게 무언가를 입력하라고 한다<br><b>print()</b> | 글이나 결과를 화면에 보여 준다<br><b>int() / float()</b> | 글자(text)를 <b>정수(whole number)</b> / <b>소수(decimal number)</b>로 바꾼다<br><b>if / elif / else</b> | <b>조건(condition)</b>에 따라 무슨 일이 일어날지 고른다<br><b>for</b> | 정해진 횟수만큼 <b>반복한다(repeat)</b><br><b>while</b> | 조건이 참(true)인 동안 반복한다<br><b>변수(variable)</b> | 데이터를 저장하는 데 쓰는 이름<br><b># 주석(comment)</b> | 한 줄이나 한 부분이 무엇을 하는지 설명한다<br><br><b>기억하기: IPOS</b><br><b>입력(Input)</b> = 사용자가 입력하는 것. <b>처리(Process)</b> = 계산과 판단(calculations and decisions). <b>출력(Output)</b> = 화면에 나타나는 것. <b>저장(Storage)</b> = 값을 담고 있는 변수(variables holding values).<br><br><b>제출하기 전에(Before you submit)</b><br>• 서로 다른 파이썬 프로그램을 <b>여섯 개(SIX)</b> 만든다.<br>• 프로그램마다 입력·처리·저장·출력(input, process, storage and output)을 설명하는 <b>주석(#)</b>을 넣는다.<br>• 모든 프로그램을 <b>보통 입력(normal inputs)</b>과 <b>특이한 입력(unusual inputs)</b>으로 실행해 본다.<br>• <b>뜻이 분명한 변수 이름(meaningful variable names)</b>과 알아보기 쉬운 출력 메시지(clear output messages)를 쓴다.",
-      "note": "input()으로 받은 값은 항상 글자(문자열)이므로, 계산하려면 int()나 float()로 숫자로 바꿔야 한다. for는 반복 횟수를 미리 알 때 쓰고, while은 조건이 거짓이 될 때까지 계속 반복할 때 쓴다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_EAL_Support_Guide_p2.jpg",
-      "tr": "<b>문제 1 | 로켓 카운트다운(Rocket Countdown)</b><br>학습 목표: <b>for 반복문(for loop)</b>을 사용해 어떤 수부터 1까지 거꾸로 센 다음 \"Blast off!(발사!)\"를 보여 준다.<br><br><b>알아야 할 낱말(Words to know)</b><br>낱말(Word) | 쉬운 뜻(Simple meaning)<br><b>카운트다운(countdown)</b> | 큰 수에서 작은 수로 거꾸로 세는 것이다.<br><b>range()</b> | 수들의 차례(sequence)를 만든다.<br><b>for 반복문(for loop)</b> | 차례로 놓인 수마다 코드를 되풀이한다.<br><br><b>다음 단계를 따른다(Follow these steps)</b><br>1. 1부터 100 사이의 시작 수를 물어본다.<br>2. 사용자가 입력한 글자(text)를 <b>정수(integer)</b>로 바꾼다(convert).<br>3. 그 수가 허용된 범위(allowed range) 안에 있는지 확인한다.<br>4. range(start, stop, step)를 써서 1까지 <b>거꾸로(DOWN)</b> 센다. 생각해 보기: <b>간격(step)</b>은 +1인가, -1인가?<br>5. 반복문이 끝난 뒤 \"Blast off!\"를 출력한다(print).<br><br><b>파이썬 시작 코드 – 빈칸 채우기(Python starter – complete the blanks)</b><br># INPUT(입력): 시작 수를 물어본다<br>start = int(input(\"Enter a starting number (1-100): \")) — \"시작 수를 입력하세요 (1-100): \"<br># PROCESS(처리): 수가 올바른지(valid) 확인한다<br>if 1 &lt;= start &lt;= 100:<br>    # range() 안의 빈칸을 채운다<br>    for number in range(____, ____, ____):<br>        print(number)<br>    print(\"Blast off!\") — \"발사!\"<br>else:<br>    print(\"Please enter a number from 1 to 100.\") — \"1부터 100 사이의 수를 입력하세요.\"<br><br><b>이 시험을 해 본다(Try these tests)</b><br>시험 입력(Test input) | 어떻게 되어야 하나?(What should happen?)<br>5 | 5, 4, 3, 2, 1, 그다음 Blast off!<br>1 | 1, 그다음 Blast off!<br>101 | 도움이 되는 <b>오류 메시지(error message)</b>를 보여 준다.<br><br><b>나의 점검표(My checklist)</b><br>☐ for 반복문(for loop)을 썼다.<br>☐ 내 반복문은 위로가 아니라 아래로(down) 센다.<br>☐ Blast off!를 딱 한 번만 출력한다.<br>☐ 수가 1–100인지 확인한다.<br>나의 메모 / 질문(My notes / questions): ______<br><br><b>문제 2 | 영화관 표 가격(Cinema Ticket Price)</b><br>학습 목표: <b>결정(decisions)</b>을 사용해 나이와 상영 시간(show time)에 따라 표 가격을 고른다.<br><br><b>알아야 할 낱말(Words to know)</b><br>낱말(Word) | 쉬운 뜻(Simple meaning)<br><b>조건(condition)</b> | 참(true) 또는 거짓(false)이 될 수 있는 검사이다.<br><b>elif</b> | 또 다른 조건을 확인한다.<br><b>중첩 if(nested if)</b> | 다른 if 문(if statement) 안에 들어 있는 if 문이다.",
-      "note": "range(start, stop, step)에서 stop 값은 포함되지 않으므로, 5부터 1까지 거꾸로 세려면 range(start, 0, -1)처럼 stop을 0으로, step을 -1로 둔다. elif는 'else if'의 줄임말로, 앞의 조건이 거짓일 때 다음 조건을 검사한다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_EAL_Support_Guide_p3.jpg",
-      "tr": "<b>다음 단계를 따른다</b><br>1. 사용자에게 나이와 상영 시간(\"day\"(낮) 또는 \"night\"(밤))을 묻는다(<b>입력(input)</b>).<br>2. 알맞은 <b>나이대(age group)</b>를 고른다.<br>3. 낮 또는 밤에 맞는 알맞은 가격을 고른다.<br>4. 표 가격을 <b>변수(variable)</b>에 저장한다.<br>5. 결과를 달러 기호($)를 붙여 화면에 보여준다(<b>출력(display)</b>).<br>6. 중요: 평가 과제에는 \"12세 미만(under 12)\"과 \"13–17세\"라고 적혀 있어 12세는 정해져 있지 않다(<b>not defined</b>). 12세에 어떤 가격을 쓸지 선생님께 묻는다.<br><br><b>파이썬 시작 코드(Python starter) – 빈칸을 채운다</b><br>age = int(input(\"Enter your age: \"))  → \"나이를 입력하세요: \"<br>time = input(\"Day or night? \").lower()  → \"낮 또는 밤?\"<br>price = 0<br># 나이 확인과 가격 선택을 완성한다.<br>if time == \"day\":<br>    if age &lt; 12:<br>        price = ____<br>    elif age &gt;= 13 and age &lt;= 17:<br>        price = ____<br>    else:<br>        price = ____<br>elif time == \"night\":<br>    # 여기에 나이대와 가격을 추가한다.<br>    pass<br>else:<br>    print(\"Please enter day or night.\")  → \"day 또는 night를 입력하세요.\"<br># 올바른 입력일 때만 가격을 출력한다.<br><br><b>다음 테스트를 해 본다(Try these tests)</b><br>테스트 입력(Test input) | 어떻게 되어야 하나?<br>15, night(밤) | $12<br>20, day(낮) | $12<br>10, day(낮) | $8<br>12, day(낮) | 선생님께 확인한다: 12세는 정해져 있지 않다<br><br><b>나의 점검표(My checklist)</b><br>☐ 나이와(AND) 상영 시간을 둘 다 묻는다.<br>☐ <b>if / elif / else</b>를 쓴다.<br>☐ 적힌 가격이 모두 과제와 맞는다.<br>☐ 잘못된 상영 시간(<b>invalid</b> show time)을 처리한다.<br>나의 메모 / 질문: ________<br><br><b>문제 3 | 비밀 숫자 맞히기 게임(Secret Number Guessing Game)</b><br>학습 목표: <b>while 반복문(while loop)</b>, <b>무작위 숫자(random number)</b>, <b>힌트(hints)</b>, 그리고 최대 10번의 추측(guesses)을 사용한다.<br><br><b>알아야 할 낱말(Words to know)</b><br>낱말 | 쉬운 뜻<br><b>무작위(random)</b> | 컴퓨터가 고른 것으로, 정해져 있지 않다<br><b>시도(attempt)</b> | 한 번의 추측<br><b>차이(difference)</b> | 두 숫자 사이의 거리<br><b>abs()</b> | 숫자를 음수가 아니게 만든다; 거리를 구할 때 쓸모 있다",
-      "note": ".lower()는 입력한 글자를 모두 소문자로 바꿔서 \"Day\"나 \"DAY\"로 쳐도 \"day\"와 같게 비교되도록 한다. abs()는 절댓값(absolute value)을 구하는 함수로, 예를 들어 abs(3-10)은 7이 되어 추측한 숫자와 정답이 얼마나 떨어져 있는지 알려준다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_EAL_Support_Guide_p4.jpg",
-      "tr": "<b>다음 단계를 따른다(Follow these steps)</b><br>1. <b>random 모듈(random module)</b>을 <b>가져오고(import)</b> 1부터 500까지의 <b>비밀 숫자(secret number)</b>를 만든다.<br>2. <b>추측 횟수(number of guesses)</b>를 0에서 시작한다.<br>3. 사용자의 추측이 10번보다 적은 동안(while), 숫자를 물어본다.<br>4. 추측할 때마다 <b>추측 횟수 세는 변수(guess counter)</b>를 늘린다(increase).<br>5. 맞히면 \"You win!\"(이겼다!)를 보여 주고 <b>반복문(loop)</b>을 멈춘다(stop).<br>6. 맞히지 못하면 abs(guess - secret)를 계산한다. 10 이하면 \"Very close!\"(아주 가깝다!), 그렇지 않고 50 이하면 \"Not bad\"(나쁘지 않다), 둘 다 아니면 \"Too far!\"(너무 멀다!)를 보여 준다.<br>7. 10번을 다 쓰고도 맞히지 못하면 비밀 숫자를 보여 준다.<br><br><b>파이썬 시작 코드 – 빈칸을 채운다(Python starter – complete the blanks)</b><br>import random<br>secret = random.randint(1, 500)<br>attempts = 0<br>won = False<br>while attempts &lt; 10:<br>    guess = int(input(\"Guess the secret number: \"))  (비밀 숫자를 맞혀 봐:)<br>    attempts = attempts + ____<br>    if guess == secret:<br>        print(\"You win!\")  (이겼다!)<br>        won = True<br>        break<br>    distance = abs(guess - secret)<br>    if distance &lt;= 10:<br>        print(\"Very close! You are too near.\")  (아주 가깝다! 바로 근처다.)<br>    elif distance &lt;= 50:<br>        print(\"Not bad, but still far.\")  (나쁘지 않지만 아직 멀다.)<br>    else:<br>        print(\"Too far!\")  (너무 멀다!)<br>    print(\"Guesses left:\", 10 - attempts)  (남은 추측 횟수:)<br>if not won:<br>    print(\"Too many incorrect guesses, the answer is\", secret)  (틀린 추측이 너무 많다, 답은)<br><br><b>이 시험을 해 본다(Try these tests)</b><br><b>시험 입력(Test input)</b> | <b>어떻게 되어야 하나?(What should happen?)</b><br>정답(Correct answer) | You win!(이겼다!)가 나오고 더 이상 추측하지 않는다<br>10 이내로 추측(Guess within 10) | Very close!(아주 가깝다!)<br>50 이내지만 10 이내는 아닌 추측(Guess within 50 but not 10) | Not bad, but still far.(나쁘지 않지만 아직 멀다.)<br>10번 틀린 추측(10 wrong guesses) | 게임이 멈추고 답을 보여 준다(Game stops and reveals answer)<br><br><b>나의 점검표(My checklist)</b><br>☐ 새 <b>무작위 숫자(random number)</b>가 만들어진다.<br>☐ 추측은 10번을 넘지 않는다.<br>☐ <b>힌트(hints)</b>가 올바른 순서를 따른다.<br>☐ 이기면 반복문을 빠져나간다(Winning exits the loop).<br><br><b>추가 도전(Extra challenge)</b><br>플레이어가 yes/no를 입력해 다시 할 수 있게 한다. 게임마다 <b>새(NEW)</b> 무작위 숫자를 만든다.<br><br>나의 메모 / 질문(My notes / questions): ____________",
-      "note": "abs()는 <b>절댓값(absolute value)</b>을 구하는 함수라서, 추측이 비밀 숫자보다 크든 작든 두 수의 거리를 양수로 준다. 빈칸에는 추측할 때마다 횟수를 1씩 늘려야 하므로 1이 들어가고, break는 반복문을 즉시 끝내는 명령이다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_EAL_Support_Guide_p5.jpg",
-      "tr": "<b>문제 4 | 소포 배송비(Parcel Delivery Cost)</b><br>학습 목표: 소포 종류와 무게를 사용해 배송 요금(delivery charges)을 계산한다.<br><br><b>알아야 할 낱말(Words to know)</b><br>낱말(Word) | 쉬운 뜻(Simple meaning)<br><b>국내(local)</b> | 같은 지역 안으로 보내는 배송이다<br><b>국제(international)</b> | 다른 나라로 보내는 배송이다<br><b>고정 요금(fixed fee)</b> | 바뀌지 않는 가격이다<br><b>추가 무게(extra weight)</b> | 처음 5kg을 넘는 킬로그램이다<br><br><b>다음 단계를 따른다(Follow these steps)</b><br>1. 배송이 국내(local)인지 국제(international)인지 묻는다.<br>2. 소포 무게를 킬로그램으로 묻는다. 소수가 허용되면 <b>float()</b>를 쓴다.<br>3. 5kg 이하 국내 소포: $20을 받는다.<br>4. 5kg을 넘는 국내 소포: 5를 넘는 1킬로그램마다 $1씩 더한다.<br>5. 5kg을 넘는 국제 소포: 소포를 받지 않는다.<br>6. 받을 수 있는 국제 소포: $40을 받는다.<br><br><b>파이썬 시작 코드 – 빈칸을 채운다(Python starter – complete the blanks)</b><br>kind = input(\"Local or international? \").lower()  (국내인지 국제인지 묻고 소문자로 바꾼다)<br>weight = float(input(\"Weight in kg: \"))  (무게를 kg으로 묻는다)<br>if weight &lt;= 0:<br>    print(\"Enter a positive weight.\")  (양수 무게를 입력하라)<br>elif kind == \"local\":<br>    if weight &lt;= 5:<br>        cost = ____<br>    else:<br>        cost = 20 + (weight - ____)*____<br>    print(\"Delivery cost: $\", cost)  (배송비: $)<br>elif kind == \"international\":<br>    if weight &gt; 5:<br>        print(\"Sorry, maximum weight is 5kg.\")  (죄송합니다, 최대 무게는 5kg입니다)<br>    else:<br>        print(\"Delivery cost: $\", ____)<br>else:<br>    print(\"Enter local or international.\")  (local 또는 international을 입력하라)<br><br><b>이 테스트를 해 본다(Try these tests)</b><br>테스트 입력(Test input) | 어떻게 되어야 하나?(What should happen?)<br>국내(local), 8kg | $23<br>국내(local), 5kg | $20<br>국제(international), 4kg | $40<br>국제(international), 6kg | 거절(Reject): 최대 5kg<br><br><b>나의 점검표(My checklist)</b><br>☐ 국내와 국제 가격이 맞다.<br>☐ 추가 무게(extra weight)는 국내 배송에만 요금을 받는다.<br>☐ 5kg을 넘는 국제 소포는 거절된다.<br>☐ 소포 종류와 양수 무게를 <b>검사한다(validate)</b>.<br><br><b>추가 도전(Extra challenge)</b><br>선생님이 정수 킬로그램만 기대한다면, <b>반올림(rounding)</b>을 구현하기 전에 5.5kg을 어떻게 요금 매길지 확인한다.<br><br>나의 메모 / 질문(My notes / questions): ________",
-      "note": "빈칸 답은 차례로 20, 5, 1, 40이다. 국내 8kg은 20 + (8 − 5) × 1 = 23달러가 된다. .lower()는 입력한 글자를 소문자로 바꾸는 기능이라, 학생이 \"Local\"처럼 대문자로 써도 \"local\"과 같게 비교된다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_EAL_Support_Guide_p6.jpg",
-      "tr": "<b>문제 5 | 자판기(Vending Machine)</b><br>학습 목표: 사용자가 <b>상품(product)</b>을 고르고, 돈을 넣고, <b>거스름돈(change)</b>을 받게 한다.<br><br><b>알아야 할 낱말(Words to know)</b><br>낱말(Word) | 쉬운 뜻(Simple meaning)<br><b>상품(product)</b> | 살 물건<br><b>가격(price)</b> | 물건 하나의 값<br><b>낸 돈 합계(total paid)</b> | 지금까지 낸 돈<br><b>거스름돈(change)</b> | 낸 돈 합계에서 가격을 뺀 것<br><br><b>다음 단계를 따라 한다(Follow these steps)</b><br>1. 상품 6~8개를 각각 번호와 가격을 붙여 출력(print)한다.<br>2. 사용자에게 상품 번호를 고르라고 묻는다.<br>3. <b>if/elif</b>를 써서 상품 이름과 가격을 정한다.<br>4. 첫 번째 결제 금액을 묻고, 그것을 <b>total_paid</b>에 저장한다.<br>5. 결제 금액이 모자라면 돈을 <b>더(MORE)</b> 달라고 하고 그것을 total_paid에 <b>더한다(ADD)</b>. 충분한 돈이 낼 때까지 <b>반복한다(Repeat)</b>.<br>6. 거스름돈을 계산한다: change = total_paid - price.<br>7. 고른 상품과 거스름돈을 보여준다.<br><br><b>파이썬 시작 코드 – 빈칸을 채운다(Python starter – complete the blanks)</b><br>print(\"Welcome to the Vending Machine!\") (자판기에 오신 것을 환영합니다!)<br>print(\"1. Milo - RM2.50\")<br>print(\"2. Pepsi - RM2.20\")<br># Add 4-6 more products with prices. (가격이 있는 상품을 4~6개 더 추가한다.)<br>choice = int(input(\"Choose a product number: \")) (상품 번호를 고르세요:)<br>if choice == 1:<br>    item = \"Milo\"<br>    price = 2.50<br>elif choice == 2:<br>    item = \"Pepsi\"<br>    price = ____<br># Add other valid product choices. (다른 올바른 상품 선택지를 추가한다.)<br>else:<br>    item = \"\"<br>    price = 0<br>if item != \"\":<br>    total_paid = float(input(\"Enter amount to pay: \")) (낼 금액을 입력하세요:)<br>    while total_paid &lt; price:<br>        extra = float(input(\"Add more money: \")) (돈을 더 넣으세요:)<br>        total_paid = total_paid + ____<br>    change = total_paid - price<br>    print(\"Change: RM\", f\"{change:.2f}\") (거스름돈: RM)<br><br><b>이 테스트를 해 본다(Try these tests)</b><br>테스트 입력(Test input) | 어떻게 되어야 하나?(What should happen?)<br>Milo, RM5.00 | 거스름돈 RM2.50<br>Milo, RM1.00 다음에 RM2.00 | 결제 성공, 거스름돈 RM0.50<br>잘못된 상품 번호(Invalid product number) | 도움이 되는 선택 안내 메시지를 보여준다<br><br><b>나의 점검표(My checklist)</b><br>☐ 상품을 6~8개 나열했다.<br>☐ 상품마다 올바른 가격이 있다.<br>☐ 추가로 낸 돈은 바꿔 넣지(replaced) 않고 <b>더했다(ADDED)</b>.<br>☐ 거스름돈을 올바르게 계산했다.<br>☐ 금액을 <b>소수점 둘째 자리(two decimal places)</b>까지 보여준다.",
-      "note": "첫 번째 빈칸은 Pepsi 가격이므로 2.20, 두 번째 빈칸은 새로 넣은 돈이므로 extra 이다(total_paid = total_paid + extra). while 반복문(while loop)은 낸 돈 합계가 가격보다 작은 동안 계속 돈을 더 받고, f\"{change:.2f}\" 는 숫자를 소수점 둘째 자리까지 보여 준다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_EAL_Support_Guide_p7.jpg",
-      "tr": "<b>추가 도전 과제(Extra challenge)</b><br>거스름돈을 지폐와 동전으로 나누어 보여 준다. 예: RM2.50 = 2 × RM1 + 1 × 50 sen. 예시 과제는 Milo를 고른 뒤에도 실수로 \"Enjoy your Coke(콜라 맛있게 드세요)\"라고 출력한다. 그러지 말고 실제로 고른 품목을 보여 준다.<br>내 메모 / 질문: ____________<br><br><b>문제 6 | 주차 요금 결제 시스템(Parking Payment System)</b><br>학습 목표: 차량 종류를 고르고, 요금을 받고, 거스름돈(change)을 계산한다.<br><br><b>알아야 할 낱말(Words to know)</b><br>낱말 | 쉬운 뜻<br><b>차량 종류(vehicle type)</b> | 승용차, 오토바이, 버스 등<br><b>요금(fee)</b> | 내야 하는 주차 요금<br><b>부족한(insufficient)</b> | 돈이 모자람<br><b>추가의(additional)</b> | 나중에 더 넣는 돈<br><br><b>다음 단계를 따른다(Follow these steps)</b><br>1. 차량 종류 6~8개와 각각의 주차 요금을 화면에 보여 준다.<br>2. 차량 번호를 묻는다.<br>3. <b>if/elif/else</b>를 써서 차량 종류와 요금을 고른다.<br>4. 낼 돈을 묻고 그 금액을 <b>total_paid</b>에 저장한다.<br>5. total_paid가 요금(fee)보다 적으면 돈을 더 달라고 하고 그 돈을 합계에 <b>더한다(ADD)</b>.<br>6. 돈을 충분히 내면 차량, 낸 돈 합계, 거스름돈을 보여 준다.<br><br><b>파이썬 시작 코드 – 빈칸을 채운다(Python starter – complete the blanks)</b><br>print(\"Welcome to the Parking Payment System!\")  → 주차 요금 결제 시스템에 오신 것을 환영합니다!<br>print(\"1. Car - RM6.00\")  → 1. 승용차 - RM6.00<br>print(\"2. Motorbike - RM3.00\")  → 2. 오토바이 - RM3.00<br># Add more vehicle types.  → 차량 종류를 더 추가한다.<br>choice = int(input(\"Vehicle number: \"))  → 차량 번호:<br>if choice == 1:<br>    vehicle = \"Car\"<br>    fee = 6.00<br>elif choice == 2:<br>    vehicle = \"Motorbike\"<br>    fee = ____<br># Add other choices.  → 다른 선택지를 추가한다.<br>else:<br>    vehicle = \"\"<br>    fee = 0<br>if vehicle != \"\":<br>    total_paid = float(input(\"Enter amount to pay: \"))  → 낼 금액을 입력하세요:<br>    while total_paid &lt; fee:<br>        more = float(input(\"Additional amount: \"))  → 추가 금액:<br>        total_paid = total_paid + ____<br>    change = total_paid - fee<br>    print(\"Vehicle Type:\", vehicle)  → 차량 종류:<br>    print(\"Total Paid: RM\", f\"{total_paid:.2f}\")  → 낸 돈 합계: RM<br>    print(\"Change: RM\", f\"{change:.2f}\")  → 거스름돈: RM<br><br><b>이 테스트를 해 본다(Try these tests)</b><br>테스트 입력 | 어떻게 되어야 하나?<br>승용차, RM5 낸 뒤 RM1 더 냄 | 합계 RM6, 거스름돈 RM0<br>오토바이, RM5 | 거스름돈 RM2",
-      "note": "<b>while</b> 반복문은 total_paid가 fee보다 적은 동안 계속 추가 금액을 묻는다. 그래서 빈칸에는 새로 받은 돈인 <b>more</b>를 넣어 합계를 늘리고, 오토바이 요금 빈칸에는 <b>3.00</b>을 넣는다. <b>:.2f</b>는 숫자를 소수점 둘째 자리까지(예: 2.00) 보여 주라는 뜻이다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_EAL_Support_Guide_p8.jpg",
-      "tr": "<b>잘못된 차량 번호(Invalid vehicle number)</b> | 도움이 되는 선택 안내 메시지를 보여 준다(Show helpful selection message)<br><br><b>나의 점검표(My checklist)</b><br>☐ 차량 종류(vehicle types) 6~8개를 요금(fees)과 함께 나열한다.<br>☐ 선택(selection)에 <b>if / elif / else</b>를 사용한다.<br>☐ 요금이 채워질 때까지 <b>결제 금액(payments)</b>을 계속 더한다.<br>☐ 차량(vehicle), <b>낸 총액(total paid)</b>, <b>거스름돈(change)</b>을 화면에 보여 준다.<br><br><b>추가 도전(Extra challenge)</b><br>잘못된 차량 번호(invalid vehicle numbers)와 <b>음수 결제 금액(negative payments)</b>을 정중하게 처리한다.<br><br>나의 메모 / 질문(My notes / questions): ________",
-      "note": "if / elif / else는 조건에 따라 여러 갈래 중 하나를 고르는 파이썬 문법이다. '요금이 채워질 때까지 계속 더한다'는 while 반복문으로 만들고, 거스름돈(change)은 낸 총액에서 요금을 뺀 값이다."
-     },
-     {
-      "src": "assets/pages/cs/Year9_Python_EAL_Support_Guide_p9.jpg",
-      "tr": "<b>제출 전 마지막 스스로 점검(Final self-check before submission)</b><br>내 파일 여섯 개 <b>각각</b>에 대해 나는 이렇게 말할 수 있다:<br>☐ 내 프로그램은 <b>파이썬 오류(Python errors)</b> 없이 실행된다.<br>☐ 내 프로그램은 요구된 <b>출력(output)</b>을 만들어 낸다.<br>☐ 나는 올바른 <b>반복문(loop)</b>이나 <b>조건문(conditional statements)</b>을 쓴다.<br>☐ 나는 <b>입력(INPUT)</b>, <b>처리(PROCESS)</b>, <b>출력(OUTPUT)</b>, <b>저장(STORAGE)</b>을 보여 주는 <b>주석(comments)</b>을 단다.<br>☐ 나는 적어도 두세 가지 다른 <b>입력(inputs)</b>으로 <b>시험(test)</b>해 본다.<br>☐ 나는 내 코드가 무엇을 하는지 내 말로 설명할 수 있다.<br><br><b>EAL 학습자를 위한 문장 시작 표현(Sentence starters for EAL learners)</b><br>“입력은 ______이다. 왜냐하면 사용자가 ______을 입력하기 때문이다.” (The input is ______ because the user types ______.)<br>“나는 ______을 저장하려고 ______라는 이름의 <b>변수(variable)</b>를 쓴다.” (I use a variable named ______ to store ______.)<br>“이 <b>if 문(if statement)</b>은 ______인지 아닌지 확인한다.” (The if statement checks whether ______.)<br>“이 <b>반복문(loop)</b>은 ______할 때까지 되풀이된다.” (The loop repeats until ______.)<br>“<b>출력(output)</b>은 ______이다.” (The output is ______.)<br>“나는 ______을 시험해 봤고 결과는 ______였다.” (I tested ______ and the result was ______.)<br><br>교사 참고: 이 평가는 12살의 <b>영화관 요금(cinema price)</b>을 정해 두지 않았다. 소포 과제는 초과한 몇 분의 1 킬로그램(fractional extra kilograms)을 어떻게 <b>반올림(round)</b>할지 설명하지 않는다. 학생들이 같은 기준으로 채점되도록 이 점들을 반에서 분명히 정해 둔다.",
-      "note": "주석(comment)은 파이썬에서 # 뒤에 쓰는 설명 글로, 실행되지 않고 사람이 코드를 이해하도록 돕는다. EAL은 English as an Additional Language의 줄임말로, 영어를 모국어가 아닌 추가 언어로 배우는 학생을 뜻한다."
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-02"
- },
- "튜터 (Mr Cassels)|MONDAY MATHS MYSTERY CHALLENGE": {
-  "en": "MONDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve\nMONDAYS MATHS MYSTERY ANSWER\nhttps://docs.google.com/forms/d/e/1FAIpQLSe5ffCHYFlyx6Xfphfa5UNatoOEFZCgpIAgzCWXtMUNRuYSGw/viewform",
-  "ko": "월요일 수학 미스터리 챌린지(MONDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(calculator)를 도둑맞았습니다!\n누가 훔쳐 갔는지 알아내려면 날마다 퍼즐(puzzle)을 풀어야 합니다!\n1. 첨부된 슬라이드를 훑어보고 오늘의 퍼즐(puzzle)을 찾으세요\n2. 답을 구했으면 첨부된 구글 폼 링크로 제출하세요\n3. 날마다 여러분의 구글 클래스룸에 풀어야 할 새 단서(clue)가 올라옵니다\n월요일 수학 미스터리 정답(MONDAYS MATHS MYSTERY ANSWER)\nhttps://docs.google.com/forms/d/e/1FAIpQLSe5ffCHYFlyx6Xfphfa5UNatoOEFZCgpIAgzCWXtMUNRuYSGw/viewform",
-  "files": [
-   {
-    "name": "MONDAYS MATHS MYSTERY ANSWER",
-    "kind": "form",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSe5ffCHYFlyx6Xfphfa5UNatoOEFZCgpIAgzCWXtMUNRuYSGw/viewform",
-    "local": null
-   }
-  ],
-  "at": "2026-11-02"
  },
  "휴머니티 (Mr Lawrence)|Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.": {
   "en": "Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.\n\nMr. Lawrence",
@@ -1985,5 +1849,44 @@ window.POST_DETAILS = {
   "ko": "11월 23일 시작 주 대체 과제(Cover Task) - 성 베닐드(Saint Benilde)",
   "files": [],
   "at": "2026-11-23"
+ },
+ "영어 (Mr Glanz)|Suggested reading list": {
+  "en": "Suggested reading list\nHi, all. This is a reading list I made some time ago, and thought you might find it helpful.",
+  "ko": "추천 도서 목록(suggested reading list)\n안녕하세요, 여러분. 이것은 제가 얼마 전에 만든 도서 목록(reading list)인데, 여러분에게 도움이 될 것 같아서 올립니다.",
+  "files": [
+   {
+    "name": "Suggested reading list.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1poCXB5CUCPK2CoEnYXpUJy6WQ06nHivO/view?usp=classroom_web",
+    "local": "post_files/1poCXB5CUCPK2CoEnYXpUJy6WQ06nHivO.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1poCXB5CUCPK2CoEnYXpUJy6WQ06nHivO_p1.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-24"
+ },
+ "영어 (Mr Glanz)|Exemplar speech": {
+  "en": "Exemplar speech",
+  "ko": "모범 연설문(exemplar speech)",
+  "files": [],
+  "at": "2026-11-24"
+ },
+ "중국어 (Ying Ying老师)|Unit 1 Lesson 5 学汉语 Quizlet": {
+  "en": "Unit 1 Lesson 5 学汉语 Quizlet",
+  "ko": "1단원(Unit 1) 5과(Lesson 5) 学汉语(중국어 배우기) Quizlet",
+  "files": [
+   {
+    "name": "Y9 U1 Lesson 5 学汉语 Flashcards | Quizlet",
+    "kind": "web",
+    "url": "https://quizlet.com/my/1239127391/y9-u1-lesson-5-%E5%AD%A6%E6%B1%89%E8%AF%AD-flash-cards/?i=5znqnt&x=1qqW",
+    "local": null
+   }
+  ],
+  "at": "2026-11-24"
  }
 };
