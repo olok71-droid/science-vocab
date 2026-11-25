@@ -51,104 +51,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
- "휴머니티 (Mr Lawrence)|Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.": {
-  "en": "Just in case you were not in lesson today (Tuesday 3rd Nov) your CA will take place on Wednesday 4th November.\n\nMr. Lawrence",
-  "ko": "혹시 오늘(11월 3일 화요일) 수업에 없었던 학생을 위해 알립니다. 공통평가(CA, Common Assessment)는 11월 4일 수요일에 실시됩니다.\n\n로렌스 선생님(Mr. Lawrence)",
-  "files": [],
-  "at": "2026-11-03"
- },
- "영어 (Mr Glanz)|The Adria Richards story:": {
-  "en": "The Adria Richards story:",
-  "ko": "에이드리아 리처즈(Adria Richards) 이야기:",
-  "files": [
-   {
-    "name": "Screenshot 2026-11-03 at 15.16.42.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/19X7bxipBm16t1GgegeDA5gqxRD1L-ZEV/view?usp=classroom_web",
-    "local": "post_files/19X7bxipBm16t1GgegeDA5gqxRD1L-ZEV.png",
-    "pages": [
-     {
-      "src": "assets/pages/english/Screenshot_2026_11_03_at_15.16.42.png",
-      "tr": "<b>우리의 의견(opinions)을 표현하는 것이 잘못일 수도 있을까?</b><br><br>존 론슨(Jon Ronson)은 큰 인기를 얻은 책 <b>『그래서 당신은 공개적으로 망신을 당했다(So You've Been Publicly Shamed)』</b>에서, 여러 가지 가운데 특히 사람들이 자기 의견을 표현했을 때 생기는 <b>결과(consequences)</b>를 살펴본다. 다음은 그가 살펴보는 <b>실제 상황(real-life situations)</b> 가운데 하나다.<br><br>에이드리아 리처즈(Adria Richards)는 2013년 '기술 분야의 여성(women in technology)' 회의에서 마주친 두 남자에 대해 자기 견해를 밝혔다가 <b>온라인 소동(online drama)</b>의 한가운데에 서게 된 여성이다.<br><br>리처즈는 한 발표 자리에서 자기 뒤에 앉은 두 남자가 기술 용어(tech lingo)를 가지고 성적인 뜻을 담은 <b>말장난(puns)</b>을 하는 것을 보고 불쾌했다. 그래서 그녀는 그 남자들의 사진을 찍어 당시 이름으로 트위터(Twitter)에 올리고, 기술 분야의 여성들(특히 리처즈처럼 유색인 여성과 <b>종교적 소수자(religious minorities)</b>에 속한 여성들)이 어쩔 수 없이 참아야 하는 일들에 대해 팔로워들에게 하소연했다.<br><br>인터넷 여론은 그 남자 행크(Hank)와 그의 친구에게 등을 돌렸고, 이 사건으로 두 남자는 모두 회사에서 <b>해고(dismissed)</b>되었다.<br><br>행크가 자기 말 때문에 순식간에 <b>온라인 반발(online backlash)</b>을 맞는 동안, 갑자기 <b>남성 인권 운동가(men's rights activists)</b>라고 자칭하는 사람들이 인터넷의 어두운 구석에서 나타나 리처즈에게 살해 협박까지 담긴 <b>여성 혐오적(misogynistic)</b> 공격을 퍼부었다. 결국 리처즈 자신도 이 <b>소동(fracas)</b> 때문에 일자리를 잃었다.<br><br>[책 표지] 존 론슨(JON RONSON)<br>『사이코패스 테스트(The Psychopath Test)』와 『염소를 노려보는 사람들(The Men Who Stare at Goats)』을 쓴 베스트셀러 작가<br>그래서 당신은 공개적으로 망신을 당했다(SO YOU'VE BEEN PUBLICLY SHAMED)",
-      "note": "공개 망신(public shaming)은 인터넷에서 여러 사람이 한 사람을 한꺼번에 비난해 사회적 대가를 치르게 하는 일이다. 이 사례에서는 의견을 밝힌 사람과 비판받은 사람 둘 다 일자리를 잃었다. 그래서 표현의 자유(freedom of expression)와 그 결과(consequences)를 함께 따져 보게 한다."
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-03"
- },
- "영어 (Mr Glanz)|Make your voice heard, vocab homework 1": {
-  "en": "Make your voice heard, vocab homework 1\nPlease complete this before Thursday's lesson - we'll have a spelling test on the words then.",
-  "ko": "목소리를 내세요(Make your voice heard), 어휘 숙제(vocab homework) 1\n목요일 수업 전까지 이것을 끝내 주세요 - 그때 이 단어들로 철자 시험(spelling test)을 볼 거예요.",
-  "files": [],
-  "at": "2026-11-03"
- },
- "수학 (Mr Anan)|TUESDAY MATHS MYSTERY CHALLENGE": {
-  "en": "TUESDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve",
-  "ko": "화요일 수학 미스터리 챌린지(TUESDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(GOLDEN MATHS CALCULATOR)를 누군가 훔쳐 갔어요!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 해요!\n1. 첨부된 슬라이드(slides)를 보고 오늘의 퍼즐을 찾으세요\n2. 답을 찾으면 첨부된 구글 폼(google form) 링크로 제출하세요\n3. 매일 새로운 단서(clue)가 구글 클래스룸(google classrooms)에 올라오니 풀어 보세요",
-  "files": [
-   {
-    "name": "TUESDAYS MATHS MYSTERY ANSWER",
-    "kind": "form",
-    "url": "https://forms.gle/snjvCtVa84cZWiL89",
-    "local": null
-   },
-   {
-    "name": "TUESDAY MATHS WEEK MYSTERY.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7/view?usp=classroom_web",
-    "local": "post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7_p6.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7_p7.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7_p8.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1b27JxwLpJpPKiVE3uypJ9GR72cDF5kp7_p9.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-03"
- },
  "과학 (Mr Phillips)|Revision Questions on Periodic Table": {
   "en": "Revision Questions on Periodic Table\nEstigfend",
   "ko": "주기율표(Periodic Table) 복습 문제\nEstigfend",
@@ -175,251 +77,6 @@ window.POST_DETAILS = {
       "note": ""
      }
     ]
-   }
-  ],
-  "at": "2026-11-04"
- },
- "과학 (Mr Phillips)|Revision for CA2": {
-  "en": "Revision for CA2",
-  "ko": "CA2 복습(Revision)",
-  "files": [
-   {
-    "name": "CA2 Template Y9 Science Common Assessment 26/27.docx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG/view?usp=classroom_web",
-    "local": "post_files/17iQ8uCt5H_0wigt6KFabysvrne8cY5DG.docx",
-    "pages": [
-     {
-      "src": "assets/pages/genes/CA2_Template_Y9_Science_Common_Assessment_26_p1.jpg",
-      "tr": "<b>세인트조셉 인터내셔널 스쿨</b>(St. Joseph's Institution International School)<br><b>9학년 과학 공통평가 2</b>(Year 9 Science Common Assessment 2)<br><b>1학기</b>(Term 1)<br>9C1 <b>주기율표</b>(Periodic Table), 9P1 <b>정전기와 전류</b>(Electrostatic and Electric Current)<br><br><b>평가 날짜</b>(Date of Assessment):<br><b>2026년 11월 11일 수요일</b><br><br><b>평가 구성</b>(Description of Assessment):<br><b>객관식 문항</b>(multiple choice questions) 10개<br><b>단답 서술형 문항</b>(short structured questions)과 <b>실험 대체 문항</b>(alternative to practical questions) 35점<br><br><b>평가 범위</b>(Focus of Assessment):<br>9C1 <b>주기율표</b>(Periodic Table)<br>C1.3 <b>1족</b>(Group 1)<br>C1.4 <b>7족</b>(Group 7)<br>C1.5 <b>0족</b>(Group 0)<br>C1.6 <b>이온 결합</b>(Ionic bonds)<br>C1.7 <b>공유 결합</b>(Covalent bonds)<br><br>9P1 <b>정전기와 전류</b>(Electrostatic and Electric Current)<br>P1.1 <b>회로 기호</b>(Circuit Symbols)<br>P1.2 <b>회로와 전류</b>(Circuits &amp; Current)<br>P1.2 <b>회로와 전류</b>(Circuits &amp; Current)<br>P1.4 <b>전압</b>(Voltage)<br>P1.5 <b>저항</b>(Resistance)<br><br>과학은 앞에서 배운 것 위에 단계적으로 쌓아 가는 과목이므로, 평가에 이전 과학 공부에서 익힌 기능이 나올 수 있다. 그래서 평가 준비의 하나로 이미 알고 있던 부족한 부분을 채워 두기를 권한다.<br><br><b>평가하는 기능</b>(Skills being assessed):<br>● <b>이해를 바탕으로 한 지식</b>(Knowledge with understanding)<br>● <b>과학 용어</b>(Scientific vocabulary)<br>● <b>정보 처리와 문제 해결</b>(Handling information and problem-solving)<br>● <b>실험 기능</b>(Experimental skills)<br><br><b>추천 복습 방법</b>(Suggested Revision Approaches):<br>● 학생용 교과서(Learner's textbook)의 <b>단원 끝 문제</b>(End of Chapter questions)<br>● <b>워크북</b>(Workbook) 문제<br>● 연습장(exercise books)과 구글 클래스룸(Google Classroom)에 있는 수업 필기를 다시 보기 — 이것으로 <b>복습 노트</b>(revision notes)나 <b>플래시 카드</b>(flash cards)를 만들어도 좋다<br>● 요약 노트와 짧은 퀴즈가 있는 <b>BBC Bitesize</b> 같은 유용한 웹사이트<br>● 이 단원들에 대해 공책에 인쇄해 붙인 <b>성취 기준</b>(Success criteria)",
-      "note": "시험은 객관식 10문항과 서술형·실험 대체 문항 35점으로 이루어지므로, 1족·7족·0족의 성질, 이온 결합과 공유 결합, 회로 기호·전류·전압·저항의 영어 용어를 정확한 철자로 쓸 수 있게 익혀 둔다. 실험 기능(Experimental skills)도 평가하므로 회로를 그리고 측정값을 읽는 연습을 해 둔다."
-     },
-     {
-      "src": "assets/pages/genes/CA2_Template_Y9_Science_Common_Assessment_26_p2.jpg",
-      "tr": "<b>세인트조셉 국제학교</b>(St. Joseph’s Institution International School)<br><b>9C1 주기율표</b>(Periodic Table)<br><b>9P1 정전기</b>(Electrostatic)<b>와 전류</b>(Electric Current)",
-      "note": "이번 CA2 평가 범위는 화학 단원 9C1 주기율표(Periodic Table)와 물리 단원 9P1 정전기와 전류(Electrostatic and Electric Current) 두 단원이다."
-     }
-    ]
-   },
-   {
-    "name": "C1.3 Group 1 elements",
-    "kind": "gslides",
-    "url": "https://docs.google.com/presentation/d/1nQHDc1SOzlHLqNMfEShnbQf9-hGXRG6720hBYJbl3H4/edit?usp=classroom_web",
-    "local": "post_files/1nQHDc1SOzlHLqNMfEShnbQf9-hGXRG6720hBYJbl3H4.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p6.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p7.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p8.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p9.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p10.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p11.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p12.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p13.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p14.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p15.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p16.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p17.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p18.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p19.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p20.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p21.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p22.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p23.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p24.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p25.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p26.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p27.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p28.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p29.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p30.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p31.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p32.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p33.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p34.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p35.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p36.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p37.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p38.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p39.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1nQHDc1SOzlHLqNMfEShnbQf9_hGXRG6720hBYJbl3H4_p40.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "GCSE Chemistry: Exam Revision | The Periodic Table",
-    "kind": "youtube",
-    "url": "https://www.youtube.com/watch?v=gmf9ZWdmO-M",
-    "local": null
-   },
-   {
-    "name": "Group 1 Alkali Metals Practice Test Test Questions | Quizlet",
-    "kind": "web",
-    "url": "https://quizlet.com/practice-test/practice-test-e8c72fae-d72f-411d-bff2-b24f7a86e2cb",
-    "local": null
    }
   ],
   "at": "2026-11-04"
@@ -1748,7 +1405,189 @@ window.POST_DETAILS = {
     "name": "Functions_in_a_nutshell.xlsx",
     "kind": "drive",
     "url": "https://drive.google.com/file/d/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83/view?usp=classroom_web",
-    "local": "post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83.xlsx"
+    "local": "post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83.xlsx",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p6.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p7.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p8.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p9.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p10.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p11.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p12.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p13.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p14.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p15.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p16.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p17.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p18.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p19.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p20.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p21.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p22.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p23.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p24.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p25.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p26.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p27.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p28.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p29.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p30.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p31.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p32.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p33.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p34.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p35.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16ylCtC82uVDYhYEk37ZVUqwLtEYJT_83_xlsx_p36.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
    },
    {
     "name": "Year_9_Spreadsheet_Basics_Lesson",
@@ -1888,5 +1727,171 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-11-24"
+ },
+ "과학 (Mr Phillips)|testing for starch worksheet": {
+  "en": "testing for starch worksheet",
+  "ko": "녹말 검출(testing for starch) 학습지(worksheet)",
+  "files": [],
+  "at": "2026-11-25"
+ },
+ "과학 (Mr Phillips)|Photosynthesis - Testing for Starch": {
+  "en": "Photosynthesis - Testing for Starch",
+  "ko": "광합성(photosynthesis) - 녹말 검출(testing for starch)",
+  "files": [
+   {
+    "name": "B2.2 Testing a leaf for starch",
+    "kind": "gslides",
+    "url": "https://docs.google.com/presentation/d/18ET2UJOkLnSi8Ye2jCCyLzxH94h76tHPB7EgN0Sp87Y/edit?usp=classroom_web",
+    "local": "pdfs/genes/B2.2 Testing a leaf for starch.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p6.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p7.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p8.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p9.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p10.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p11.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p12.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p13.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p14.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p15.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p16.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p17.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Testing_a_leaf_for_starch_p18.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "Testing a leaf for starch",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=8yvN6MZAL54",
+    "local": null
+   }
+  ],
+  "at": "2026-11-25"
+ },
+ "수학 (Mr Anan)|Answers for the Junior Kangaroo competition questions. Please self mark": {
+  "en": "Answers for the Junior Kangaroo competition questions. Please self mark",
+  "ko": "주니어 캥거루 대회(Junior Kangaroo competition) 문제의 답입니다. 스스로 채점(self mark)하세요",
+  "files": [
+   {
+    "name": "jk-2015-s.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/14vTxlQ6uY0izMFUxjn8UwPlnlhEp2z0q/view?usp=classroom_web",
+    "local": "post_files/14vTxlQ6uY0izMFUxjn8UwPlnlhEp2z0q.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/14vTxlQ6uY0izMFUxjn8UwPlnlhEp2z0q_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/14vTxlQ6uY0izMFUxjn8UwPlnlhEp2z0q_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/14vTxlQ6uY0izMFUxjn8UwPlnlhEp2z0q_p3.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-25"
+ },
+ "수학 (Mr Anan)|Junior Kangaroo Competition Question": {
+  "en": "Junior Kangaroo Competition Question\nDear Students,\n\nLO: You should be able to complete at least half of the Junior Kangaroo Competition Questions which is a slightly more challenging competition than JMC (the last competition question you completed)\n\nWe will practice the Junior Kangaroo Competition Questions during lesson today. \n\nYou are allowed to work in pairs. Discussion with your table partner is allowed. Answers will be shared shortly for you to self mark.\n\nPlease do the work in your Maths exercise book",
+  "ko": "주니어 캥거루 대회 문제(Junior Kangaroo Competition Question)\n학생 여러분,\n\n학습 목표(LO): 주니어 캥거루 대회 문제(Junior Kangaroo Competition Questions)의 최소 절반은 풀 수 있어야 합니다. 이 대회는 JMC(여러분이 지난번에 푼 대회 문제)보다 조금 더 어렵습니다\n\n오늘 수업 시간에 주니어 캥거루 대회 문제(Junior Kangaroo Competition Questions)를 연습할 것입니다.\n\n짝과 함께 풀어도 됩니다. 같은 책상 짝과 의논해도 됩니다. 스스로 채점(self mark)할 수 있도록 답을 곧 공유하겠습니다.\n\n수학 연습장(Maths exercise book)에 풀어 오세요",
+  "files": [],
+  "at": "2026-11-25"
+ },
+ "튜터 (Mr Cassels)|What are you thinking of choosing for your IGCSE?": {
+  "en": "What are you thinking of choosing for your IGCSE? \n\nComplete the link in tutor time today.",
+  "ko": "IGCSE에서 무엇을 선택하려고 생각하고 있나요? \n\n오늘 튜터 시간(tutor time)에 링크를 작성하세요.",
+  "files": [
+   {
+    "name": "Y9 Options Interest Form 2026/2027",
+    "kind": "form",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLSc6H6JH-ykh9lGBeryMZD6BDLoB4Nyog3IeIPwcAdqj5MTj4w/viewform",
+    "local": null
+   }
+  ],
+  "at": "2026-11-25"
  }
 };
