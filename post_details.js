@@ -51,113 +51,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-10-09"
  },
- "수학 (Mr Anan)|WEDNESDAY MATHS MYSTERY CHALLENGE": {
-  "en": "WEDNESDAY MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve",
-  "ko": "수요일 수학 미스터리 챌린지(WEDNESDAY MATHS MYSTERY CHALLENGE)\n\n황금 수학 계산기(golden maths calculator)가 도난당했습니다!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 합니다!\n1. 첨부된 슬라이드를 살펴보고 오늘의 퍼즐(puzzle)을 찾으세요\n2. 답을 구하면 첨부된 구글 폼(google form) 링크로 제출하세요\n3. 매일 새로운 단서(clue)가 구글 클래스룸(google classroom)에 올라오니 풀어 보세요",
-  "files": [
-   {
-    "name": "WEDNESDAY MATHS WEEK MYSTERY.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7/view?usp=classroom_web",
-    "local": "post_files/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1aRrq079I0AJtJIS0Vk2bbrRnhUy6_zp7_p6.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "WEDNESDAYS MATHS MYSTERY ANSWER",
-    "kind": "form",
-    "url": "https://forms.gle/frDnDqXDmV2uqUM26",
-    "local": null
-   }
-  ],
-  "at": "2026-11-04"
- },
- "미술|2 Primary Research Artworks": {
-  "en": "2 Primary Research Artworks\nHi all, due to the public holiday, please ensure you complete these pieces in the two weeks before our next lesson. \n\n1) Realistic Primary research sketch - A6 size, pencil\n2) Primary research interpretation - A6 size, any media. \n\nThe artwork should be fully rendered including the background. If you are unsure, please refer to the lesson slides or send me an email. Your pieces will be marked on the week of the due date. \n\nThank you",
-  "ko": "1차 조사 작품(Primary Research Artworks) 2점\n여러분 안녕하세요, 공휴일 때문에 다음 수업 전 2주 동안 이 작품들을 꼭 완성하도록 하세요. \n\n1) 사실적인 1차 조사 스케치(Realistic Primary research sketch) - A6 크기, 연필(pencil)\n2) 1차 조사 재해석(Primary research interpretation) - A6 크기, 아무 재료나(any media). \n\n작품은 배경(background)까지 포함해 완전히 표현(fully rendered)되어야 합니다. 잘 모르겠으면 수업 슬라이드(lesson slides)를 참고하거나 저에게 이메일을 보내세요. 작품은 마감일이 있는 주에 채점됩니다. \n\n감사합니다",
-  "files": [],
-  "at": "2026-11-04"
- },
- "디자인 기술 (Mr Mathyk)|CA2 CAT": {
-  "en": "CA2 CAT\nCommon Assessment 2 for DT will be on Friday, November 20. Please see the CAT for revision tips attached here.",
-  "ko": "CA2 CAT(공통 평가 템플릿, Common Assessment Template)\n디자인 기술(DT)의 공통 평가 2(Common Assessment 2)는 11월 20일 금요일에 있습니다. 여기 첨부된 CAT에서 복습 팁(revision tips)을 확인하세요.",
-  "files": [
-   {
-    "name": "9E 9C 9B MATHYK DT CA Y9 Term1b - Common Assessment Template.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/15RprvIJqc15TeiitujVp6TNYqz3yJWal/view?usp=classroom_web",
-    "local": "post_files/15RprvIJqc15TeiitujVp6TNYqz3yJWal.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/15RprvIJqc15TeiitujVp6TNYqz3yJWal_p1.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-04"
- },
- "중국어 (Ying Ying老师)|T1 CA2 Revision notes": {
-  "en": "T1 CA2 Revision notes\nRevision notes for your own revision at home in preparation of CA2. \n\nGood luck!",
-  "ko": "T1 CA2 복습 노트(Revision notes)\nCA2(Continuous Assessment 2) 대비로 집에서 스스로 복습할 수 있는 복습 노트(revision notes)입니다. \n\n행운을 빌어요!",
-  "files": [
-   {
-    "name": "Y9 CA2 Revision Notes.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1iQgu-5bTyUGvayfPuogn0SoB1KjJW0Pd/view?usp=classroom_web",
-    "local": "post_files/1iQgu-5bTyUGvayfPuogn0SoB1KjJW0Pd.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1iQgu_5bTyUGvayfPuogn0SoB1KjJW0Pd_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1iQgu_5bTyUGvayfPuogn0SoB1KjJW0Pd_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1iQgu_5bTyUGvayfPuogn0SoB1KjJW0Pd_p3.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-04"
- },
  "수학 (Mr Anan)|MATHS MYSTERY SOLVED": {
   "en": "MATHS MYSTERY SOLVED\n\nGo through the slides to see who stole the Golden Maths Calculator... were you right?",
   "ko": "수학 미스터리 해결\n\n슬라이드를 넘겨 보면서 누가 황금 수학 계산기(Golden Maths Calculator)를 훔쳤는지 확인해 보세요... 여러분이 맞혔나요?",
@@ -309,95 +202,22 @@ window.POST_DETAILS = {
   "files": [],
   "at": "2026-11-06"
  },
- "수학 (Mr Anan)|THURSDAYS MATHS MYSTERY CHALLENGE": {
-  "en": "THURSDAY'S MATHS MYSTERY CHALLENGE\n\nTHE GOLDEN MATHS CALCULATOR HAS BEEN STOLEN!\nYou need to solve the puzzles each day to figure out who stole it!\n1. Look through the slides attached to find today's puzzle\n2. Once you have your answer, submit it through the google form link attached\n3. Every day a new clue will be posted on your google classrooms for you to solve\nTHURSDAYS MATHS MYSTERY ANSWER\nhttps://forms.gle/8Saf2PdaFDbRdTVx5",
-  "ko": "목요일 수학 미스터리 챌린지\n\n황금 수학 계산기(Golden Maths Calculator)를 도둑맞았습니다!\n누가 훔쳤는지 알아내려면 매일 퍼즐(puzzle)을 풀어야 합니다!\n1. 첨부된 슬라이드를 보고 오늘의 퍼즐을 찾으세요\n2. 답을 구하면 첨부된 구글 폼(google form) 링크로 제출하세요\n3. 매일 여러분의 구글 클래스룸에 풀어야 할 새로운 단서(clue)가 올라옵니다\n목요일 수학 미스터리 정답 제출\nhttps://forms.gle/8Saf2PdaFDbRdTVx5",
+ "과학 (Mr Phillips)|Noble Gases": {
+  "en": "Noble Gases\nClick on the link below to start the game",
+  "ko": "비활성 기체(Noble Gases)\n아래 링크를 눌러 게임을 시작하세요",
   "files": [
    {
-    "name": "THURSDAY MATHS WEEK MYSTERY.pptx",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6/view?usp=classroom_web",
-    "local": "post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p6.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p7.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p8.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p9.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p10.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p11.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p12.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1rc1W83QRsNE2mcwPzjKwk5sjpu2dhrP6_p13.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   },
-   {
-    "name": "THURSDAYS MATHS MYSTERY ANSWER",
-    "kind": "form",
-    "url": "https://forms.gle/8Saf2PdaFDbRdTVx5",
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=6mJhCyFre4oBSN0r-MjgqPNjjnq5K2csEGb-kFxZXFC0k8Sepq8Fc3gpmCEvJHZ8nVViH7d1Yqgr5b2U4PFeacWtC_8EfYfHC868PU74yFtannkBgBVkVdwAXgFf0YBB3qWIEC1YoxcLpuaCeF_a1QGwgxtdWunu35vT8OjTErtBWgxD9gttdzPAwOHUBR5SH-ystSAgnqV3Du4dvgq7BmdF_w._1J9trbjPbz7MbdfLuGeVw.IcpgBrehStPUqP7S&linktype=web",
     "local": null
    }
   ],
   "at": "2026-11-06"
  },
- "튜터 (Mr Cassels)|Greetings from Leave a Nest Malaysia!": {
-  "en": "Greetings from Leave a Nest Malaysia!\nWe would like to invite students from your school, aged , to join , a hands-on workshop held in conjunction with .\nStudents will explore microplastics through sand extraction activities, group discussions and simple actions for responsible plastic use. The workshop offers an opportunity to connect classroom science with environmental issues while encouraging curiosity and teamwork.\n📅 11 November 2026\n⏰ 10:00 AM–12:30 PM\n📍 IMU University, Bukit Jalil\n\nRM45 per participant\nLunch and e-certificate provided\nLimited to 30 participants\nThere will also be a .\nParticipants are encouraged to bring for recycling or proper disposal.",
-  "ko": "Leave a Nest Malaysia에서 인사드립니다!\n귀교의  세 학생들을 와 연계해 열리는 직접 해 보는 워크숍인 에 초대하고자 합니다.\n학생들은 모래 추출 활동, 모둠 토론, 책임 있는 플라스틱 사용을 위한 간단한 실천을 통해 미세플라스틱(microplastics)을 탐구합니다. 이 워크숍은 교실에서 배운 과학을 환경 문제(environmental issues)와 연결하는 기회가 되며, 호기심과 협동심을 북돋워 줍니다.\n📅 2026년 11월 11일\n⏰ 오전 10:00–오후 12:30\n📍 IMU University, Bukit Jalil\n\n참가자 1인당 RM45\n점심과 전자 수료증 제공\n참가 인원 30명 한정\n도 있을 예정입니다.\n참가자들은 재활용(recycling) 또는 올바른 폐기(proper disposal)를 위해 를 가져오시길 권장합니다.",
+ "과학 (Mr Phillips)|Noble gas - wordsearch": {
+  "en": "Noble gas - wordsearch",
+  "ko": "비활성 기체(noble gas) - 단어 찾기(wordsearch)",
   "files": [],
   "at": "2026-11-06"
  },
@@ -446,50 +266,37 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-06"
  },
- "튜터 (Mr Cassels)|SJIIS Red Packet Design Competition": {
-  "en": "SJIIS Red Packet Design Competition\n\nTo celebrate the upcoming Year of the Goat, we are holding a red packet design competition for HS and ES. The competition will run from 9/11/26 to 23/11/26, and all further details can be found in the canva linked to this post. \n\nWinning designs will be made into red packets that you can preorder at the Christmas Bazaar this year!\n\nPlease contact Ms. Aileen if you have any questions.",
-  "ko": "SJIIS 홍바오(Red Packet) 디자인 대회\n\n다가오는 양의 해(Year of the Goat)를 기념하여, 고등부(HS)와 초등부(ES)를 대상으로 홍바오(red packet) 디자인 대회를 엽니다. 대회는 26년 11월 9일(9/11/26)부터 26년 11월 23일(23/11/26)까지 진행되며, 자세한 내용은 모두 이 게시물에 연결된 캔바(canva)에서 확인할 수 있습니다.\n\n우승한 디자인은 홍바오(red packets)로 만들어지며, 올해 크리스마스 바자회(Christmas Bazaar)에서 미리 주문할 수 있습니다!\n\n궁금한 점이 있으면 Aileen 선생님(Ms. Aileen)께 문의하세요.",
+ "과학 (Mr Phillips)|Ionic and Covalent Bonds": {
+  "en": "Ionic and Covalent Bonds\nClick on the link below to start the game",
+  "ko": "이온 결합(ionic bonds)과 공유 결합(covalent bonds)\n아래 링크를 눌러 게임을 시작하세요",
   "files": [
    {
-    "name": "Lunar New Year a Time of Celebration and Joy Educational Presentation.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS/view?usp=classroom_web",
-    "local": "post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS_p5.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1Gu_tSckSl6nBtZNXQT1xQg3mhC2XmcfS_p6.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=KSxVA9JA7hmAmlEcZc7shIowBf30O5XcGyNFjlVFE_PUClKLoNwU5QH2yaJUOVsNn723NXsRKHVvUVxVByPqUUVgGWGfPQx0T-JTQT_wWO8o1KFWLaJmFkE4ewMybShX2KxhYs3XoOCj9IJsfN9u7XHj6b1M4Rrl6BwGXFq_1SowIxTVWTPeLmJKy6x7VqDjJMwiXUN8PVLKuVjQWg0OpSnZiA.Op1EWKkZvEEBRMF7LxMRTQ.m6PJFEAFU_r6MqNg&linktype=web",
+    "local": null
    }
   ],
-  "at": "2026-11-06"
+  "at": "2026-11-12"
+ },
+ "과학 (Mr Phillips)|ionic and covalent bonding": {
+  "en": "ionic and covalent bonding",
+  "ko": "이온 결합(ionic bonding)과 공유 결합(covalent bonding)",
+  "files": [
+   {
+    "name": "Chemical Bonds: Ionic and Covalent",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=lP_EsVY4CVg",
+    "local": null
+   },
+   {
+    "name": "What Are Dot and Cross Diagrams - Part 1| Properties of Matter | Chemistry | FuseSchool",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=7tHM-40iK7E",
+    "local": null
+   }
+  ],
+  "at": "2026-11-12"
  },
  "튜터 (Mr Cassels)|BRING IN YOUR MATERIALS FOR DIWALI FASHION PREPARATION TOMORROW!": {
   "en": "BRING IN YOUR MATERIALS FOR DIWALI FASHION PREPARATION TOMORROW! \n\n1. Register in your PSHCE Classes \n2. Go to your House Room\n3. Let's start making!!!\n\nFriday we walk the runway! So be ready. Who is gonna win?",
@@ -507,6 +314,56 @@ window.POST_DETAILS = {
       "note": ""
      }
     ]
+   }
+  ],
+  "at": "2026-11-12"
+ },
+ "과학 (Mr Phillips)|Circuits": {
+  "en": "electrical circuits and symbols\nClick on the link below to start the game",
+  "ko": "전기 회로(electrical circuits)와 기호(symbols)\n아래 링크를 눌러 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=h8iiwbAcHOtA-6o6LmNMqV5ZEgdaCHaxiuWv8nnlx4mtf0isPNKoiVAkXnnxNUda1WWa7NuVTWInUjpmX-ZBphj7y3j42BuqeCCGfjpMrQ-azvOvSvTcl8Tomp2qpgBlBtYLGTaBvNHWGKmh3lYM4_ZtaaHS8HZYUmxsWkuLQeEHrzKT5NtUWXXRb_cWp-rakD_UYnHVov6RM02-p_cLw6JiHQ.EqKwRws7_9_n5NDHd57osA.UAiW-PVUKHOA5ijF&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-11-12"
+ },
+ "과학 (Mr Phillips)|Y9 Electricity Revision - Circuits": {
+  "en": "Y9 Electricity Revision - Circuits",
+  "ko": "9학년 전기(electricity) 복습 - 회로(circuits)",
+  "files": [],
+  "at": "2026-11-12"
+ },
+ "과학 (Mr Phillips)|Electrical revision": {
+  "en": "Electrical revision",
+  "ko": "전기(electrical) 복습",
+  "files": [
+   {
+    "name": "How to Build Real Circuits that Work - GCSE Physics PRACTICAL",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=kz9-oMMWI6Q",
+    "local": null
+   },
+   {
+    "name": "‪Circuit Construction Kit: DC‬",
+    "kind": "web",
+    "url": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html",
+    "local": null
+   },
+   {
+    "name": "Current vs Voltage | What's The Difference?",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=gOk3pl4hmeQ",
+    "local": null
+   },
+   {
+    "name": "Resistors | Electricity | Physics | FuseSchool",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=ue6w5aXhxjU",
+    "local": null
    }
   ],
   "at": "2026-11-12"
@@ -1593,5 +1450,235 @@ window.POST_DETAILS = {
    }
   ],
   "at": "2026-11-25"
+ },
+ "과학 (Mr Phillips)|Leaf Structure and Function Photosynthesis": {
+  "en": "Leaf Structure and Function Photosynthesis\nClick on the link below to start the game",
+  "ko": "잎의 구조(leaf structure)와 기능(function) 광합성(photosynthesis)\n아래 링크를 눌러 게임을 시작하세요",
+  "files": [
+   {
+    "name": "Quizizz is now Wayground | Teacher AI and Resources",
+    "kind": "web",
+    "url": "https://wayground.com/join?c=FzbEUbCzADn7zJPMHgL196pC7WWbWIpsYwVi6xg5tUhPhi8w5FKayxFN-jdxjMFKQIpccVptQekSmwMGfDBpwFpu0fVe34N7pMwoAyalNUATTaqxn_-A48-dMLsRO4ctN-vwhTF9CM3UoZ6qjqjxwHGazfgK74AtDRGnrGex3EEz1ou3bjvF92FfU4FqjXq1HRAtxiwFBheEDyeNpzGU2TjgWg.l-js5L2qbBL5hONddFCC6Q.4S5ZojQn9D4K7G0l&linktype=web",
+    "local": null
+   }
+  ],
+  "at": "2026-11-26"
+ },
+ "과학 (Mr Phillips)|Adaptation of leaf - worksheet fill in gaps": {
+  "en": "Adaptation of leaf - worksheet fill in gaps",
+  "ko": "잎의 적응(adaptation of leaf) - 학습지 빈칸 채우기(fill in gaps)",
+  "files": [],
+  "at": "2026-11-26"
+ },
+ "과학 (Mr Phillips)|1.2 More about Photosynthesis - the leaf structure": {
+  "en": "1.2 More about Photosynthesis - the leaf structure",
+  "ko": "1.2 광합성(photosynthesis) 더 알아보기 - 잎의 구조(leaf structure)",
+  "files": [
+   {
+    "name": "B2.2 Leaf structure and function.pptx",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1nu-u6N2RoudvR7MpCYR0hRnjYjZbNyDh/view?usp=classroom_web",
+    "local": "pdfs/genes/B2.2 Leaf structure and function.pptx",
+    "pages": [
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p6.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p7.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p8.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p9.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p10.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p11.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p12.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p13.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p14.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p15.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p16.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p17.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p18.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p19.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/genes/B2_2_Leaf_structure_and_function_p20.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "GCSE Biology - Structure of a Leaf | Plant Cell Organisation (2027/28 exams)",
+    "kind": "youtube",
+    "url": "https://www.youtube.com/watch?v=c9aUWHleZ_k",
+    "local": null
+   },
+   {
+    "name": "1.2 More about Photosynthesis",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6/view?usp=classroom_web",
+    "local": "post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6_p4.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6_p5.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6_p6.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6_p7.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6_p8.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/16s4XlKEF5eGEBfMzL83kuRSNttBtZMY6_p9.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-26"
+ },
+ "휴머니티 (Mr Lawrence)|Upload your propaganda poster in the comments here": {
+  "en": "Upload your propaganda poster in the comments here",
+  "ko": "여기 댓글에 여러분의 선전 포스터(propaganda poster)를 올리세요",
+  "files": [],
+  "at": "2026-11-26"
+ },
+ "튜터 (Mr Cassels)|Rewards between 9th November and today!": {
+  "en": "Rewards between 9th November and today!\nThe next Rewards Slips for Skip the Line or Lift Pass will be handed out after the Christmas Break.",
+  "ko": "11월 9일부터 오늘까지의 보상(Rewards)!\n다음 줄 건너뛰기(Skip the Line) 또는 리프트 패스(Lift Pass) 보상 쪽지(Rewards Slips)는 크리스마스 방학(Christmas Break) 이후에 나누어 줄 예정입니다.",
+  "files": [
+   {
+    "name": "Character Recognitions 9th November to 26th November.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1zg6p7zKo21TCRwjLhC9AQ16mBD4St6fg/view?usp=classroom_web",
+    "local": "post_files/1zg6p7zKo21TCRwjLhC9AQ16mBD4St6fg.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1zg6p7zKo21TCRwjLhC9AQ16mBD4St6fg_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1zg6p7zKo21TCRwjLhC9AQ16mBD4St6fg_p2.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-26"
+ },
+ "튜터 (Mr Cassels)|Please be informed that, starting this week and for the next six weeks, the MPH will be unavailable for student use duri": {
+  "en": "Please be informed that, starting this week and for the next six weeks, the MPH will be unavailable for student use during lunchtime on due to ES PE activities.",
+  "ko": "이번 주부터 앞으로 6주 동안 초등부(ES) 체육(PE) 활동으로 인해 점심시간에 다목적 강당(MPH)을 학생들이 사용할 수 없음을 알려 드립니다.",
+  "files": [],
+  "at": "2026-11-26"
  }
 };
