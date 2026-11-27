@@ -156,71 +156,6 @@ window.POST_DETAILS = {
   ],
   "at": "2026-11-06"
  },
- "수학 (Mr Anan)|Heare are the answers for the UKMT Intermediate Math Challenge.": {
-  "en": "Heare are the answers for the UKMT Intermediate Math Challenge.",
-  "ko": "UKMT 중급 수학 챌린지(UKMT Intermediate Math Challenge) 정답입니다.",
-  "files": [
-   {
-    "name": "IMC_Solutions_2026.pdf",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1IOqAMoeVKYa-k0dKLgD4zZ0vbLKuk9ma/view?usp=classroom_web",
-    "local": "post_files/1IOqAMoeVKYa-k0dKLgD4zZ0vbLKuk9ma.pdf",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1IOqAMoeVKYa_k0dKLgD4zZ0vbLKuk9ma_p1.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1IOqAMoeVKYa_k0dKLgD4zZ0vbLKuk9ma_p2.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1IOqAMoeVKYa_k0dKLgD4zZ0vbLKuk9ma_p3.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1IOqAMoeVKYa_k0dKLgD4zZ0vbLKuk9ma_p4.jpg",
-      "tr": "",
-      "note": ""
-     },
-     {
-      "src": "assets/pages/post_files/1IOqAMoeVKYa_k0dKLgD4zZ0vbLKuk9ma_p5.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-06"
- },
- "수학 (Mr Anan)|Homework/Classwork - UKMT Intermediate Math Challenge": {
-  "en": "Homework/Classwork - UKMT Intermediate Math Challenge\nDear Students,\n\nAs we are very comfortable in the completion of our Year 9 Syllabus, we will spend lesson time today to work on the attached UKMT Intermediate Math Challenge competition questions as part of Maths Week. Please complete as much as you can and submit with a screenshot by the due date. I will post the answers shortly for you to check.",
-  "ko": "숙제/수업 과제 - UKMT 중급 수학 챌린지(UKMT Intermediate Math Challenge)\n학생 여러분께,\n\n9학년 교육과정(Year 9 Syllabus)을 여유 있게 마무리하고 있으므로, 오늘 수업 시간에는 수학 주간(Maths Week) 활동으로 첨부된 UKMT 중급 수학 챌린지(UKMT Intermediate Math Challenge) 대회 문제를 풀겠습니다. 최대한 많이 풀고 마감일까지 스크린샷과 함께 제출하세요. 확인할 수 있도록 곧 정답을 올리겠습니다.",
-  "files": [],
-  "at": "2026-11-06"
- },
- "과학 (Mr Phillips)|Noble Gases": {
-  "en": "Noble Gases\nClick on the link below to start the game",
-  "ko": "비활성 기체(Noble Gases)\n아래 링크를 눌러 게임을 시작하세요",
-  "files": [
-   {
-    "name": "Quizizz is now Wayground | Teacher AI and Resources",
-    "kind": "web",
-    "url": "https://wayground.com/join?c=6mJhCyFre4oBSN0r-MjgqPNjjnq5K2csEGb-kFxZXFC0k8Sepq8Fc3gpmCEvJHZ8nVViH7d1Yqgr5b2U4PFeacWtC_8EfYfHC868PU74yFtannkBgBVkVdwAXgFf0YBB3qWIEC1YoxcLpuaCeF_a1QGwgxtdWunu35vT8OjTErtBWgxD9gttdzPAwOHUBR5SH-ystSAgnqV3Du4dvgq7BmdF_w._1J9trbjPbz7MbdfLuGeVw.IcpgBrehStPUqP7S&linktype=web",
-    "local": null
-   }
-  ],
-  "at": "2026-11-06"
- },
- "과학 (Mr Phillips)|Noble gas - wordsearch": {
-  "en": "Noble gas - wordsearch",
-  "ko": "비활성 기체(noble gas) - 단어 찾기(wordsearch)",
-  "files": [],
-  "at": "2026-11-06"
- },
  "음악 (Mr Everett)|Term 1 Common Assessment Template": {
   "en": "Term 1 Common Assessment Template",
   "ko": "1학기 공통 평가(Common Assessment) 양식(Template)",
@@ -238,26 +173,6 @@ window.POST_DETAILS = {
      },
      {
       "src": "assets/pages/post_files/1_H7BbUFNwXdItjKsKd0SwG4zCC6cixtB1UpcFMglF9o_p2.jpg",
-      "tr": "",
-      "note": ""
-     }
-    ]
-   }
-  ],
-  "at": "2026-11-06"
- },
- "튜터 (Mr Cassels)|Congratulations to the following students.": {
-  "en": "Congratulations to the following students. Collect your Lift Pass or Skip the Line passes next week!",
-  "ko": "다음 학생들을 축하합니다. 다음 주에 리프트 패스(Lift Pass) 또는 줄 서지 않기 패스(Skip the Line passes)를 받아 가세요!",
-  "files": [
-   {
-    "name": "Rewards Slips - Character Recognitions.png",
-    "kind": "drive",
-    "url": "https://drive.google.com/file/d/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-/view&usp=classroom_web",
-    "local": "post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv-.png",
-    "pages": [
-     {
-      "src": "assets/pages/post_files/1uhSM89pHq9hDYIgjWZPcdPKrCmdrXpv_.png",
       "tr": "",
       "note": ""
      }
@@ -1680,5 +1595,80 @@ window.POST_DETAILS = {
   "ko": "이번 주부터 앞으로 6주 동안 초등부(ES) 체육(PE) 활동으로 인해 점심시간에 다목적 강당(MPH)을 학생들이 사용할 수 없음을 알려 드립니다.",
   "files": [],
   "at": "2026-11-26"
+ },
+ "수학 (Mr Anan)|Maths Escape Room": {
+  "en": "LO: Recall and apply key objectives and skills learnt in Term 1 to successfully escape the room\n\nMaths Escape Room\n\nPlease click on the link below to join. Choose proceed without signing in. You do not need to key in the code if you've clicked the link below but just in case the code is VEN3UH.\n\nTo successfully escape all the rooms, you will need to be able to use index laws and to write small and large numbers using standard form. You will also need to solve equations, substitute into expressions and expand brackets successfully.\n\nYou are encouraged to use previous class notes and classwork to go through the tasks and to use your books for working out.\n\nIf you are done with the escape room, please practice the attached JMC competition question. Answers are also attached for you to check your progress.",
+  "ko": "학습 목표(LO): 1학기(Term 1)에 배운 핵심 목표와 기술을 떠올리고 적용해서 방을 탈출한다\n\n수학 방탈출(Maths Escape Room)\n\n아래 링크를 눌러 참여하세요. 로그인 없이 진행(proceed without signing in)을 고르세요. 아래 링크를 눌렀다면 코드를 입력하지 않아도 되지만, 혹시 몰라 알려 주면 코드는 VEN3UH입니다.\n\n모든 방을 탈출하려면 지수 법칙(index laws)을 쓸 수 있어야 하고, 아주 작은 수와 아주 큰 수를 표준형(standard form)으로 쓸 수 있어야 합니다. 또 방정식 풀기(solve equations), 식에 값 대입하기(substitute into expressions), 괄호 전개하기(expand brackets)도 잘 해내야 합니다.\n\n문제를 풀 때 이전 수업 노트와 수업 과제(classwork)를 활용하고, 풀이 과정(working out)은 공책에 쓰기를 권합니다.\n\n방탈출을 다 끝냈으면 첨부된 JMC 경시대회(competition) 문제를 연습하세요. 자기 진도를 확인할 수 있도록 답안도 첨부되어 있습니다.",
+  "files": [
+   {
+    "name": "Year 9 Term 1 Intervention Escape Room",
+    "kind": "web",
+    "url": "https://student.amplify.com/join/VEN3UH",
+    "local": null
+   },
+   {
+    "name": "jmc-2016-s.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1TbigcdFm8KAAZpSq22HAdVfM8hEBVeJV/view?usp=classroom_web",
+    "local": "post_files/1TbigcdFm8KAAZpSq22HAdVfM8hEBVeJV.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1TbigcdFm8KAAZpSq22HAdVfM8hEBVeJV_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1TbigcdFm8KAAZpSq22HAdVfM8hEBVeJV_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1TbigcdFm8KAAZpSq22HAdVfM8hEBVeJV_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1TbigcdFm8KAAZpSq22HAdVfM8hEBVeJV_p4.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   },
+   {
+    "name": "jmc-2016-q.pdf",
+    "kind": "drive",
+    "url": "https://drive.google.com/file/d/1-Cpsiv7HJ0ctVD24m-NJy2_GEADJ4r7e/view?usp=classroom_web",
+    "local": "post_files/1-Cpsiv7HJ0ctVD24m-NJy2_GEADJ4r7e.pdf",
+    "pages": [
+     {
+      "src": "assets/pages/post_files/1_Cpsiv7HJ0ctVD24m_NJy2_GEADJ4r7e_p1.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1_Cpsiv7HJ0ctVD24m_NJy2_GEADJ4r7e_p2.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1_Cpsiv7HJ0ctVD24m_NJy2_GEADJ4r7e_p3.jpg",
+      "tr": "",
+      "note": ""
+     },
+     {
+      "src": "assets/pages/post_files/1_Cpsiv7HJ0ctVD24m_NJy2_GEADJ4r7e_p4.jpg",
+      "tr": "",
+      "note": ""
+     }
+    ]
+   }
+  ],
+  "at": "2026-11-27"
+ },
+ "튜터 (Mr Cassels)|The LYM is running a project with Mitchell Care Home for the Elderly.": {
+  "en": "The LYM is running a project with Mitchell Care Home for the Elderly. As part of this, we have organised a food drive to get items that the home requested. Our team has placed a cardboard box with a list of items to fill it with inside each of the tutor classrooms.\n\nWe kindly request that tutors help their tutees decide what they will each be contributing to the class donation. We request that the boxes be filled by 4th December 2026 (next Friday). This ensures that we are able to collect the items and have them ready for our visit to the home on Saturday 5th December.",
+  "ko": "LYM은 미첼 노인 요양원(Mitchell Care Home for the Elderly)과 함께 프로젝트를 진행하고 있습니다. 이 프로젝트의 하나로, 요양원이 요청한 물품을 모으기 위해 식품 기부 운동(food drive)을 마련했습니다. 저희 팀이 각 튜터 교실(tutor classroom)마다 상자를 하나씩 놓아두었고, 상자 안에는 채워 넣을 물품 목록이 들어 있습니다.\n\n튜터 선생님(tutor)들께서는 학생(tutee)들이 학급 기부에 각자 무엇을 낼지 정하도록 도와주시기 바랍니다. 상자는 2026년 12월 4일(다음 주 금요일)까지 채워 주시기 바랍니다. 그래야 물품을 거두어 12월 5일 토요일 요양원 방문 때 준비해 둘 수 있습니다.",
+  "files": [],
+  "at": "2026-11-27"
  }
 };
